@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Temperature / Top-p / Top-k Laboratuvarı — Cilt 1, Bölüm 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 780px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  @media (prefers-color-scheme: dark) { h1 { color: #bfe9e4; } }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  .row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  input[type=range] { flex: 1; accent-color: var(--teal); }
+  .val { min-width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; }
+  .bars { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .bar-row { display: grid; grid-template-columns: 70px 1fr 60px; align-items: center; gap: 10px; }
+  .bar-track { background: var(--gray); border-radius: 6px; height: 22px; overflow: hidden; display: block; }
+  .bar-fill { background: var(--teal); height: 100%; border-radius: 6px; transition: width .15s ease; display: block; }
+  .bar-fill.excluded { background: #b8c0d0; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin-right: 8px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+</style>
+</head>
+<body>
+  <h1>Temperature / Top-p / Top-k Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 1 — 1.6-1.8 (Şekil 1.6). Kaydırıcıları
+  hareket ettirin, "Bugün hava çok ..." cümlesinin aday devamlarının olasılığının nasıl
+  değiştiğini görün. Kurulum gerekmez; bu sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <div class="row">
+      <label style="min-width:140px">Temperature</label>
+      <input type="range" id="temp" min="0.1" max="2.0" step="0.05" value="1.0">
+      <span class="val" id="tempVal">1.00</span>
+    </div>
+    <div class="row">
+      <label style="min-width:140px">Top-k (0 = kapalı)</label>
+      <input type="range" id="topk" min="0" max="4" step="1" value="0">
+      <span class="val" id="topkVal">kapalı</span>
+    </div>
+    <div class="row">
+      <label style="min-width:140px">Top-p (1,00 = kapalı)</label>
+      <input type="range" id="topp" min="0.1" max="1.0" step="0.05" value="1.0">
+      <span class="val" id="toppVal">1.00</span>
+    </div>
+    <button id="resetBtn" class="secondary" type="button">Sıfırla</button>
+
+    <div class="bars" id="bars"></div>
+    <p class="note" id="note"></p>
+  </div>
+
+  <p class="note">Değerler temsilîdir; gerçek bir modelin ürettiği olasılıklar
+  sağlayıcıya, modele ve prompta göre değişir. Aynı laboratuvarın Python sürümü
+  (<code>sampling_lab.py</code>) için <code>README.md</code>'ye bakın.</p>
+
+<script>
+  const CANDIDATES = ["güzel", "sıcak", "kötü", "mavi"];
+  const LOGITS = [3.0, 1.8, 0.9, 0.2];
+
+  function softmax(logits, temperature) {
+    const scaled = logits.map(l => l / temperature);
+    const peak = Math.max(...scaled);
+    const exps = scaled.map(s => Math.exp(s - peak));
+    const total = exps.reduce((a, b) => a + b, 0);
+    return exps.map(e => e / total);
+  }
+
+  function applyTopK(probs, k) {
+    if (!k) return probs.map(p => ({ p, kept: true }));
+    const ranked = [...probs.keys()].sort((a, b) => probs[b] - probs[a]);
+    const keep = new Set(ranked.slice(0, k));
+    const filtered = probs.map((p, i) => keep.has(i) ? p : 0);
+    const total = filtered.reduce((a, b) => a + b, 0) || 1;
+    return filtered.map((p, i) => ({ p: p / total, kept: keep.has(i) }));
+  }
+
+  function applyTopP(items, p) {
+    if (p >= 0.999) return items;
+    const order = items.map((it, i) => i).sort((a, b) => items[b].p - items[a].p);
+    let cumulative = 0;
+    const keep = new Set();
+    for (const i of order) {
+      if (cumulative >= p) break;
+      keep.add(i);
+      cumulative += items[i].p;
+    }
+    const filtered = items.map((it, i) => keep.has(i) ? it.p : 0);
+    const total = filtered.reduce((a, b) => a + b, 0) || 1;
+    return filtered.map((p, i) => ({ p: p / total, kept: keep.has(i) && items[i].kept }));
+  }
+
+  const tempEl = document.getElementById('temp');
+  const topkEl = document.getElementById('topk');
+  const toppEl = document.getElementById('topp');
+  const barsEl = document.getElementById('bars');
+  const noteEl = document.getElementById('note');
+
+  function render() {
+    const temperature = parseFloat(tempEl.value);
+    const k = parseInt(topkEl.value, 10);
+    const p = parseFloat(toppEl.value);
+
+    document.getElementById('tempVal').textContent = temperature.toFixed(2);
+    document.getElementById('topkVal').textContent = k ? String(k) : 'kapalı';
+    document.getElementById('toppVal').textContent = p.toFixed(2);
+
+    let items = softmax(LOGITS, temperature).map(pr => ({ p: pr, kept: true }));
+    items = applyTopK(items.map(it => it.p), k);
+    items = applyTopP(items, p);
+
+    barsEl.innerHTML = '';
+    items.forEach((it, i) => {
+      const row = document.createElement('div');
+      row.className = 'bar-row';
+      row.innerHTML = `
+        <span>${CANDIDATES[i]}</span>
+        <span class="bar-track"><span class="bar-fill ${it.kept ? '' : 'excluded'}"
+              style="width:${(it.p * 100).toFixed(1)}%"></span></span>
+        <span class="val">${(it.p * 100).toFixed(1)}%</span>`;
+      barsEl.appendChild(row);
+    });
+
+    const excluded = items.filter(it => !it.kept).length;
+    noteEl.textContent = excluded > 0
+      ? `${excluded} aday top-k/top-p tarafından havuzdan elendi (gri).`
+      : 'Tüm adaylar havuzda.';
+  }
+
+  [tempEl, topkEl, toppEl].forEach(el => el.addEventListener('input', render));
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    tempEl.value = 1.0; topkEl.value = 0; toppEl.value = 1.0; render();
+  });
+
+  render();
+</script>
+</body>
+</html>
