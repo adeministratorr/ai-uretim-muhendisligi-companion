@@ -195,7 +195,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     pilot = load_json(resolve_path(args.pilot_file))
     scorecard = evaluate_pilot(pilot)
 
-    print("Yaşayan vaka tablosu:", summarize_cases(cases))
+    print("Vaka tablosu:", summarize_cases(cases))
     print(format_scorecard(scorecard))
     return 0 if scorecard.passed else 1
 
