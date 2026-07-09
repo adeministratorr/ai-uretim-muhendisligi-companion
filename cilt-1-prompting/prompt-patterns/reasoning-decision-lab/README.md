@@ -44,7 +44,14 @@ uygular: düşünce dökümü değil, kontrol edilebilir gerekçe.
 
 ## Nasıl Kullanılır?
 
-Terminalde bu klasöre geçin:
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://lab.ademyuce.tr/cilt-1-prompting/prompt-patterns/reasoning-decision-lab/reasoning_decision_lab.html>
+İsterseniz `reasoning_decision_lab.html` dosyasını indirip çift tıklayarak da
+açabilirsiniz; kurulum, terminal veya internet bağlantısı gerekmez. Puan ve kaynak
+kutucuklarını değiştirdikçe sıralama tablosu ve önerilen dal canlı güncellenir.
+
+**Kod biliyorsanız:** Aynı mantığın Python sürümü `reasoning_decision_lab.py`
+dosyasındadır. Terminalde bu klasöre geçin:
 
 ```bash
 cd cilt-1-prompting/prompt-patterns/reasoning-decision-lab
