@@ -24,7 +24,13 @@ last_verified: "2026-07"
 
 ## Ne Yapar?
 
-Gerçek bir API çağrısı yapmadan, Bölüm 3'teki prompt bileşenlerini küçük bir
+Bölüm 3'ün temel fikri, promptu bir dilek cümlesi olarak değil, iş tarifi olarak
+yazmaktır. İyi bir tarifte kimin konuştuğu (persona), ne istendiği (görev), hangi
+koşullarda çalışılacağı (bağlam), çıktının biçimi (format), sınırlar (kısıt) ve
+neyin başarı sayılacağı (başarı kriteri) ayrı ayrı bellidir. Eksik bırakılan her
+bileşeni model kendi varsayımıyla doldurur.
+
+Bu laboratuvar, gerçek bir API çağrısı yapmadan, bu bileşen denetimini küçük bir
 Python denetimine çevirir:
 
 - `PromptRecipe`: persona, görev, bağlam, format, kısıt ve başarı kriteri
