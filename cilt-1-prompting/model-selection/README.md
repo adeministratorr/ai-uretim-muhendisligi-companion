@@ -45,7 +45,14 @@ Güncel model/araç adları için güncel referans
 
 ## Nasıl Kullanılır?
 
-Terminalde bu klasöre geçin:
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://lab.ademyuce.tr/cilt-1-prompting/model-selection/model_selection_lab.html>
+İsterseniz `model_selection_lab.html` dosyasını indirip çift tıklayarak da açabilirsiniz;
+kurulum, terminal veya internet bağlantısı gerekmez. Görev türünü ve gereksinim
+kutucuklarını değiştirdikçe katman/mod/ekosistem kararı canlı güncellenir.
+
+**Kod biliyorsanız:** Aynı mantığın Python sürümü `model_selection_lab.py`
+dosyasındadır. Terminalde bu klasöre geçin:
 
 ```bash
 cd cilt-1-prompting/model-selection
