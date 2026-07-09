@@ -16,10 +16,11 @@ aday tokenlar üzerinde saf Python ile şunları gösterir:
 
 ## Nasıl Kullanılır?
 
-**Kod bilmiyorsanız (önerilen yol):** `sampling_lab.html` dosyasına çift tıklayın veya
-tarayıcınıza sürükleyin. Kurulum, terminal veya internet bağlantısı gerekmez;
-kaydırıcılarla temperature/top-k/top-p'yi değiştirip çubukların canlı güncellenmesini
-izleyebilirsiniz.
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://adeministratorr.github.io/ai-uretim-muhendisligi-companion/cilt-1-prompting/parameter-matrix/sampling_lab.html>
+İsterseniz `sampling_lab.html` dosyasını indirip çift tıklayarak da açabilirsiniz;
+kurulum, terminal veya internet bağlantısı gerekmez. Kaydırıcılarla
+temperature/top-k/top-p'yi değiştirip çubukların canlı güncellenmesini izleyebilirsiniz.
 
 **Kod biliyorsanız:** Aynı mantığın Python sürümü `sampling_lab.py` dosyasındadır.
 
