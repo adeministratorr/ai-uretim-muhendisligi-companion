@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Multimodal Çıktı Denetimi Laboratuvarı — Cilt 1, Bölüm 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  textarea {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .88rem; font-family: ui-monospace, monospace;
+    resize: vertical; min-height: 220px;
+  }
+  .presets { margin-bottom: 10px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin: 4px 8px 4px 0; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  dl.audit { display: grid; grid-template-columns: 190px 1fr; row-gap: 8px; column-gap: 12px; margin: 0; }
+  dl.audit dt { font-weight: 700; }
+  dl.audit dd { margin: 0; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .82rem; font-weight: 700; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Multimodal Çıktı Denetimi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 9 — 9.3, 9.6, 9.11, 9.12. Bir modelden
+  gelen cevabı (Betimleme / Yorum / Varsayım Listesi / Gizlilik ve Telif Kontrolü dört
+  başlığıyla) aşağıya yapıştırın; laboratuvar dört adımlı yapıya uyup uymadığını canlı
+  denetler. Kurulum gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <div class="presets">
+      <button type="button" class="secondary" data-preset="weak">Zayıf cevabı yükle</button>
+      <button type="button" class="secondary" data-preset="ready">Denetlenebilir cevabı yükle</button>
+      <button type="button" class="secondary" id="clearBtn">Temizle</button>
+    </div>
+    <label for="response">Model cevabı</label>
+    <textarea id="response"></textarea>
+
+    <div class="panel" id="resultPanel" style="margin-top:16px;">
+      <dl class="audit" id="auditOut"></dl>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Denetim neye bakıyor?</h2>
+    <p>Dört başlığın (betimleme, yorum, varsayım listesi, gizlilik ve telif kontrolü)
+    hepsi bulunmalı. <strong>Betimleme</strong> bölümü yorum sızıntısı içermemeli — "muhtemelen",
+    "kesin", "teşhis" gibi ifadeler görüldüğünde gözlem ile yorum karışmış demektir.
+    <strong>Yorum</strong> bölümü, dayanak yoksa bunu açıkça söylemeli ("sözlük verilmedi",
+    "kesin neden söylemiyorum" gibi). <strong>Varsayım listesi</strong>nde en az iki madde
+    olmalı ve en az ikisi doğrulama yolu içermeli ("kontrol", "servis dokümanı", "bakım
+    kaydı" gibi). <strong>Gizlilik ve telif kontrolü</strong> ayrı tutulmalı ve somut bir
+    işaret taşımalı ("maskele", "anonim", "izin" gibi).</p>
+    <p>Zayıf cevap örneğinde betimleme ile yorum aynı cümlede birleşir ve hata kodunu kesin
+    bir teşhise bağlar; dayanak doküman verilmemiş olmasına rağmen. Denetlenebilir cevap
+    önce görüneni aktarır, sonra yorumun sınırını çizer, varsayımları doğrulama yoluyla
+    yazar ve gizlilik kontrolünü ayrı tutar.</p>
+  </div>
+
+  <p class="note">Bu laboratuvar bir görseli okumaz ve model cevabının doğru olduğunu
+  kanıtlamaz; yalnızca cevabın denetlenebilir çıktı biçimine uyup uymadığını kontrol eder.
+  Model adı, fiyat veya güncel yetenek iddiası içermez; güncel model bilgisi için
+  <a href="../../../docs/model-watch/">docs/model-watch</a> kullanılmalıdır. Aynı
+  laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/prompt-patterns/multimodal-output-review/multimodal_review_lab.py">multimodal_review_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/prompt-patterns/multimodal-output-review">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const REQUIRED_SECTIONS = ["description", "interpretation", "assumptions", "privacy"];
+  const SECTION_LABELS = {
+    description: "betimleme", interpretation: "yorum",
+    assumptions: "varsayım listesi", privacy: "gizlilik ve telif kontrolü",
+  };
+  const SECTION_ALIASES = {
+    description: ["betimleme", "gözlem"],
+    interpretation: ["yorum", "değerlendirme"],
+    assumptions: ["varsayım listesi", "varsayımlar"],
+    privacy: ["gizlilik ve telif kontrolü", "gizlilik", "telif kontrolü"],
+  };
+  const INTERPRETATION_MARKERS = ["olası neden", "muhtemelen", "kesin", "teşhis", "uygundur", "uygun değildir"];
+  const REFERENCE_GUARD_MARKERS = ["sözlük verilmedi", "doküman verilmedi", "kesin neden söylemiyorum", "tahmin üretmiyorum", "dayanak yok"];
+  const VERIFICATION_MARKERS = ["doğrula", "kontrol", "bakılmalı", "servis dokümanı", "bakım kaydı", "ham veri", "uzman", "teknisyen", "fiziksel ölçüm", "veri tabanı"];
+  const PRIVACY_MARKERS = ["risk yok", "kırp", "maskele", "bulanıklaştır", "anonim", "meta veri", "izin", "veri politikası", "telif"];
+
+  function normalize(text) { return text.trim().toLowerCase(); }
+
+  function sectionKeyForHeading(line) {
+    const heading = normalize(line.replace(/^#+/, '').trim().replace(/^[\s:.\-]+|[\s:.\-]+$/g, ''));
+    for (const [key, aliases] of Object.entries(SECTION_ALIASES)) {
+      if (aliases.some(a => heading.includes(a))) return key;
+    }
+    return null;
+  }
+
+  function extractSections(response) {
+    const sections = {};
+    let currentKey = null;
+    for (const line of response.split('\n')) {
+      if (line.trimStart().startsWith('#')) {
+        const key = sectionKeyForHeading(line);
+        if (key) {
+          currentKey = key;
+          if (!sections[key]) sections[key] = [];
+          continue;
+        }
+      }
+      if (currentKey) sections[currentKey].push(line);
+    }
+    const result = {};
+    for (const [key, lines] of Object.entries(sections)) result[key] = lines.join('\n').trim();
+    return result;
+  }
+
+  function bulletLines(text) {
+    const pattern = /^\s*(?:[-*]|\d+[.)])\s+(.+)$/;
+    return text.split('\n').map(line => {
+      const m = pattern.exec(line);
+      return m ? m[1].trim() : null;
+    }).filter(Boolean);
+  }
+
+  function containsAny(text, markers) {
+    const lowered = normalize(text);
+    return markers.some(m => lowered.includes(m));
+  }
+
+  function countVerifiableAssumptions(assumptions) {
+    return assumptions.filter(item => containsAny(item, VERIFICATION_MARKERS)).length;
+  }
+
+  function auditResponse(response, referenceProvided) {
+    const sections = extractSections(response);
+    const missing = REQUIRED_SECTIONS.filter(key => !(key in sections));
+    const assumptions = bulletLines(sections.assumptions || "");
+    const descriptionClean = !containsAny(sections.description || "", INTERPRETATION_MARKERS);
+    const referenceGuardReady = referenceProvided || containsAny(sections.interpretation || "", REFERENCE_GUARD_MARKERS);
+    const privacyReady = containsAny(sections.privacy || "", PRIVACY_MARKERS);
+    const assumptionsWithVerification = countVerifiableAssumptions(assumptions);
+
+    const ready = missing.length === 0 && descriptionClean && referenceGuardReady &&
+      assumptions.length >= 2 && assumptionsWithVerification >= 2 && privacyReady;
+
+    return { ready, missing, assumptionCount: assumptions.length, assumptionsWithVerification, descriptionClean, referenceGuardReady, privacyReady };
+  }
+
+  function tagList(items, cls) {
+    if (!items.length) return `<span class="tag">yok</span>`;
+    return items.map(i => `<span class="tag ${cls || ''}">${i}</span>`).join(' ');
+  }
+
+  function boolTag(v) {
+    return v ? '<span class="tag ok">evet</span>' : '<span class="tag warn">hayır</span>';
+  }
+
+  function render() {
+    const response = document.getElementById('response').value;
+    const audit = auditResponse(response, false);
+    const missingLabels = audit.missing.map(m => SECTION_LABELS[m]);
+
+    document.getElementById('auditOut').innerHTML = `
+      <dt>Hazır</dt><dd>${boolTag(audit.ready)}</dd>
+      <dt>Eksik başlıklar</dt><dd>${tagList(missingLabels, 'warn')}</dd>
+      <dt>Varsayım sayısı</dt><dd>${audit.assumptionCount}</dd>
+      <dt>Doğrulanabilir varsayım</dt><dd>${audit.assumptionsWithVerification}</dd>
+      <dt>Betimleme temiz mi</dt><dd>${boolTag(audit.descriptionClean)}</dd>
+      <dt>Dayanak güvencesi var mı</dt><dd>${boolTag(audit.referenceGuardReady)}</dd>
+      <dt>Gizlilik kontrolü hazır mı</dt><dd>${boolTag(audit.privacyReady)}</dd>
+    `;
+  }
+
+  const PRESETS = {
+    weak: `## Betimleme
+Ekranda E-204 hatası görünüyor; muhtemelen sensör bozuk ve istasyon durdurulmalı.
+
+## Yorum
+Sensör kesin arızalı. Bakım ekibi sensörü değiştirmeli.
+`,
+    ready: `## Betimleme
+Ekranda "HATA E-204: Sensör bağlantısı zaman aşımına uğradı" metni ve
+"İstasyon 7" etiketi görünüyor.
+
+## Yorum
+Bu sistemin hata kodu sözlüğü verilmedi. Bu yüzden kesin neden söylemiyorum;
+kök neden için servis dokümanı ve bakım kaydı kontrol edilmeli.
+
+## Varsayım Listesi
+- E-204 kodunun bu sistemde aynı anlama geldiğini varsaydım; servis dokümanı ile doğrula.
+- İstasyon 7 etiketinin fiziksel makineyle eşleştiğini varsaydım; bakım kaydı üzerinden kontrol et.
+- Hatanın tekrar eden bir olay olup olmadığını bilmiyorum; veri tabanı geçmişine bakılmalı.
+
+## Gizlilik ve Telif Kontrolü
+Ekran görüntüsünde çalışan yüzü veya rozet görünmüyorsa risk yok notu yazılabilir.
+Görünüyorsa paylaşmadan önce kalıcı maskeleme yapılmalı ve aracın veri politikası kontrol edilmeli.
+`,
+  };
+
+  document.querySelectorAll('[data-preset]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById('response').value = PRESETS[btn.dataset.preset];
+      render();
+    });
+  });
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    document.getElementById('response').value = '';
+    render();
+  });
+  document.getElementById('response').addEventListener('input', render);
+
+  document.getElementById('response').value = PRESETS.ready;
+  render();
+</script>
+</body>
+</html>
