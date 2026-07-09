@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Model Seçimi Karar Matrisi Laboratuvarı — Cilt 1, Bölüm 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  select {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .95rem; margin-bottom: 18px;
+  }
+  .checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px 18px; margin-bottom: 8px; }
+  .check-row { display: flex; align-items: flex-start; gap: 8px; font-weight: 400; }
+  .check-row input { margin-top: 4px; accent-color: var(--teal); }
+  .check-row span.hint { display: block; font-size: .78rem; color: #5a6472; font-weight: 400; }
+  .result { margin-top: 16px; }
+  dl.decision { display: grid; grid-template-columns: 160px 1fr; row-gap: 8px; column-gap: 12px; margin: 0; }
+  dl.decision dt { font-weight: 700; }
+  dl.decision dd { margin: 0; }
+  .tag { display: inline-block; background: var(--teal); color: #05221f; border-radius: 6px;
+         padding: 2px 8px; font-size: .82rem; font-weight: 700; margin: 2px 4px 2px 0; }
+  .tag.veto { background: var(--orange); color: #3a2400; }
+  .tag.none { background: var(--gray); color: var(--text); }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin-right: 8px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+</style>
+</head>
+<body>
+  <h1>Model Seçimi Karar Matrisi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 2 — 2.1, 2.4, 2.10, 2.13. Kendi senaryonuzu
+  aşağıda kurun; laboratuvar belirleyici katmanı, modu, ekosistemi ve dağıtım tercihini
+  Bölüm 2'deki beş soruluk karar çerçevesiyle hesaplar. Kurulum gerekmez, sayfa tek başına
+  çalışır.</p>
+
+  <div class="panel">
+    <label for="taskType">Görev türü</label>
+    <select id="taskType">
+      <option value="simple_generation">Basit üretim (kısa metin, e-posta taslağı)</option>
+      <option value="classification">Sınıflandırma / etiketleme</option>
+      <option value="summarization">Özetleme</option>
+      <option value="multi_step_analysis">Çok adımlı analiz</option>
+      <option value="coding_change">Kod değişikliği</option>
+      <option value="contract_review">Sözleşme/belge incelemesi</option>
+    </select>
+
+    <label>Görevin gereksinimleri</label>
+    <div class="checks">
+      <label class="check-row"><input type="checkbox" id="needsCurrent">
+        <span>Güncel bilgi gerekir<span class="hint">bugünün haberi, fiyatı, sürümü</span></span></label>
+      <label class="check-row"><input type="checkbox" id="needsInternal">
+        <span>İç kaynak/RAG gerekir<span class="hint">kurum içi doküman aramak</span></span></label>
+      <label class="check-row"><input type="checkbox" id="needsCitations">
+        <span>Kaynak gösterme gerekir<span class="hint">iddia başına referans</span></span></label>
+      <label class="check-row"><input type="checkbox" id="needsAction">
+        <span>Eylem gerekir<span class="hint">dosya değiştirme, kod çalıştırma</span></span></label>
+      <label class="check-row"><input type="checkbox" id="sensitiveData">
+        <span>Veri hassas<span class="hint">kişisel, ticari sır, gizli</span></span></label>
+      <label class="check-row"><input type="checkbox" id="commercialUse">
+        <span>Ticari kullanım<span class="hint">lisans kontrolü gerekir</span></span></label>
+      <label class="check-row"><input type="checkbox" id="latencySensitive">
+        <span>Gecikmeye duyarlı<span class="hint">anlık yanıt beklenir</span></span></label>
+      <label class="check-row"><input type="checkbox" id="budgetSensitive">
+        <span>Bütçeye duyarlı<span class="hint">hacimli/tekrarlı çağrı</span></span></label>
+    </div>
+    <button id="resetBtn" class="secondary" type="button">Sıfırla</button>
+
+    <div class="result panel" id="resultPanel" style="margin-top:16px;">
+      <dl class="decision" id="decisionOut"></dl>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Bu karar nasıl kuruluyor?</h2>
+    <p>Bölüm 2'nin ayrımı üç katmandır. <strong>Model</strong> üretimi yapan çekirdektir;
+    <strong>mod</strong> aynı modelin standart veya akıl yürütme gibi çalışma biçimidir;
+    <strong>araç</strong> ise modeli sohbet arayüzü, kod yardımcısı ya da ajan olarak
+    paketleyen üründür. Bu laboratuvar önce hangi katmanın belirleyici olduğuna bakar: eylem
+    gerekiyorsa araç katmanı, güncellik/iç kaynak gerekiyorsa modelin etrafındaki araç katmanı,
+    veri hassasiyeti varsa modelin nerede çalıştığı öne çıkar.</p>
+    <p>Mod seçimi görev türüne bakar: çok adımlı analiz, kod değişikliği ve sözleşme
+    incelemesi akıl yürütme modunu; sınıflandırma, kısa üretim ve özetleme standart modu
+    gerektirir. Veri hassasiyeti ise tek başına önceki dört sorunun cevabını geçersiz
+    kılacak kadar ağır basar — teknik olarak basit bir özetleme görevi bile, gizli veri
+    içeriyorsa yerel çalıştırma veya sıkı sözleşmeli kurumsal API'ye yönlendirilir.</p>
+  </div>
+
+  <p class="note">Bu laboratuvar model adı, fiyat, benchmark skoru veya lisans iddiası
+  üretmez; yalnızca karar çerçevesini uygular. Güncel model/araç adları için
+  <a href="../../docs/model-watch/">docs/model-watch</a> kullanılmalıdır. Aynı laboratuvarın
+  test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/model-selection/model_selection_lab.py">model_selection_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/model-selection">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const REASONING_TASKS = new Set(["multi_step_analysis", "coding_change", "contract_review"]);
+  const SIMPLE_TASKS = new Set(["classification", "simple_generation", "summarization"]);
+
+  function chooseMode(p) {
+    if (REASONING_TASKS.has(p.taskType)) {
+      return ["akil_yurutme", "Çok adımlı analiz veya kod değişikliği ek düşünme bütçesi gerektirir."];
+    }
+    if (SIMPLE_TASKS.has(p.taskType)) {
+      return ["standart", "Basit sınıflandırma, özetleme veya kısa üretim için hız/maliyet önceliklidir."];
+    }
+    return ["standart", "Görev türü net değilse önce standart modla küçük bir test seti denenir."];
+  }
+
+  function chooseLayer(p) {
+    if (p.needsAction) {
+      return ["arac", "Dosya değiştirme, kod çalıştırma veya işlem yapma gereksinimi araç katmanını belirleyici yapar."];
+    }
+    if (p.needsCurrent || p.needsInternal || p.needsCitations) {
+      return ["arac_model", "Kaynak, web arama veya RAG gereksinimi modelin etrafındaki araç katmanına bağlıdır."];
+    }
+    if (p.sensitiveData) {
+      return ["model_dagitim", "Hassas veri için belirleyici soru modelin nerede çalıştığı ve verinin nereye gittiğidir."];
+    }
+    return ["arac", "Kullanıcının işini hızlı çözen sohbet veya API arayüzü belirleyici katmandır."];
+  }
+
+  function chooseEcosystem(p) {
+    if (p.sensitiveData) {
+      return ["acik_agirlikli_yerel_veya_sik_sozlesmeli_kurumsal_api", "yerel_oncelikli", ["ucretsiz_genel_sohbet_arayuzu"]];
+    }
+    if (p.needsAction) {
+      return ["arac_izinlerine_gore_kapali_veya_acik", "aracin_izole_ortami_ve_onay_akisi", []];
+    }
+    return ["kapali_api_veya_sohbet_araci_yeterli_olabilir", "bulut_api_kabul_edilebilir", []];
+  }
+
+  function collectTooling(p) {
+    const tooling = [];
+    if (p.needsCurrent) tooling.push("web_aramasi");
+    if (p.needsInternal) tooling.push("rag_belge_arama");
+    if (p.needsCitations) tooling.push("kaynak_gosterebilen_arac");
+    if (p.needsAction) tooling.push("ajan_tabanli_arac_diff_ve_test_onayi");
+    if (!tooling.length) tooling.push("sohbet_veya_api_yeterli_olabilir");
+    return tooling;
+  }
+
+  function collectChecks(p) {
+    const checks = ["kendi_3_10_ornek_mini_test_seti"];
+    if (p.sensitiveData) checks.push("veri_saklama_log_telemetri_kontrolu", "gizlilik_sozlesmesi_kontrolu");
+    if (p.commercialUse) checks.push("lisans_ve_ticari_kullanim_kontrolu");
+    if (p.latencySensitive) checks.push("gecikme_olcumu");
+    if (p.budgetSensitive) checks.push("hacim_ve_birim_maliyet_kontrolu");
+    checks.push("turkce_orneklerle_kalite_kontrolu");
+    if (p.needsAction) checks.push("insan_diff_review_ve_test");
+    return checks;
+  }
+
+  function tagList(items, cls) {
+    if (!items.length) return `<span class="tag none">yok</span>`;
+    return items.map(i => `<span class="tag ${cls || ''}">${i}</span>`).join('');
+  }
+
+  function render() {
+    const p = {
+      taskType: document.getElementById('taskType').value,
+      needsCurrent: document.getElementById('needsCurrent').checked,
+      needsInternal: document.getElementById('needsInternal').checked,
+      needsCitations: document.getElementById('needsCitations').checked,
+      needsAction: document.getElementById('needsAction').checked,
+      sensitiveData: document.getElementById('sensitiveData').checked,
+      commercialUse: document.getElementById('commercialUse').checked,
+      latencySensitive: document.getElementById('latencySensitive').checked,
+      budgetSensitive: document.getElementById('budgetSensitive').checked,
+    };
+
+    const [mode, modeReason] = chooseMode(p);
+    const [layer, layerReason] = chooseLayer(p);
+    const [ecosystem, deployment, vetoes] = chooseEcosystem(p);
+    const tooling = collectTooling(p);
+    const checks = collectChecks(p);
+
+    const out = document.getElementById('decisionOut');
+    out.innerHTML = `
+      <dt>Katman</dt><dd>${layer}</dd>
+      <dt>Mod</dt><dd>${mode}</dd>
+      <dt>Ekosistem</dt><dd>${ecosystem}</dd>
+      <dt>Dağıtım</dt><dd>${deployment}</dd>
+      <dt>Araç gereksinimi</dt><dd>${tagList(tooling)}</dd>
+      <dt>Veto</dt><dd>${tagList(vetoes, 'veto')}</dd>
+      <dt>Kontroller</dt><dd>${tagList(checks)}</dd>
+      <dt>Gerekçe</dt><dd>${layerReason} ${modeReason}</dd>
+    `;
+  }
+
+  document.querySelectorAll('select, input[type=checkbox]').forEach(el =>
+    el.addEventListener('change', render));
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    document.getElementById('taskType').value = 'simple_generation';
+    document.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>
