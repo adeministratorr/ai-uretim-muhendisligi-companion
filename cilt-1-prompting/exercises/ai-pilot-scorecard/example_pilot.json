@@ -1,0 +1,12 @@
+{
+  "hedef": "Muhasebe departmanında yurt içi tedarikçi faturalarının sınıflandırma süresini bir çeyrek içinde fatura başına 8 dakikadan 5 dakikanın altına indirmek.",
+  "kullanici_grubu": "Muhasebe departmanındaki 4 uzman; ilk ayda yalnızca yurt içi tedarikçi faturaları.",
+  "veri_riski": "Faturalarda tedarikçi banka hesap bilgisi bulunur. Pilot yalnızca kurumsal onaylı, verinin model eğitiminde kullanılmadığı bir araçla yürütülür ve örneklem insan kontrolünden geçer.",
+  "basari_metrikleri": {
+    "zaman_kazanci": "Fatura başına ortalama işlem süresi 8 dakikadan 5 dakikanın altına inmeli.",
+    "kalite": "Yanlış sınıflandırma oranı %5'in altında kalmalı; örneklem haftalık 50 fatura.",
+    "maliyet": "Araç lisansı ve insan denetimi dahil görev başına toplam maliyet %10'dan fazla artmamalı.",
+    "risk_azalmasi": "Geciken veya kaçırılan fatura sayısı ayda 3'ün altına inmeli."
+  },
+  "pilot_sonrasi_karar_kriteri": "Dört ölçüt hedefi karşılarsa pilot yurt dışı tedarikçilere genişletilir. Kalite %5'in üstüne çıkarsa kapsam daraltılır ve insan kontrolü artırılır. Üç ay sonunda zaman veya risk göstergesi iyileşmezse pilot durdurulur."
+}

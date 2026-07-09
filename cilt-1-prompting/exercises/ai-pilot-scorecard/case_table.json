@@ -1,0 +1,82 @@
+[
+  {
+    "bolum": "15.1",
+    "sirket": "Duolingo",
+    "ders": "Evals ile küçük kullanıcı açılımından önce denetim yapmak.",
+    "kaynak_turu": "şirket ürün duyurusu + OpenAI müşteri örneği",
+    "tarih": "2023",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.2",
+    "sirket": "Klarna",
+    "ders": "Yapay zekâyı yalnızca ürüne değil, iç destek sürecine de gömmek.",
+    "kaynak_turu": "şirket basın açıklaması",
+    "tarih": "2024-02",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.3",
+    "sirket": "JPMorgan Chase",
+    "ders": "Erken yatırım yaparken aracı, veri sınırını ve yaygınlaştırmayı kontrol etmek.",
+    "kaynak_turu": "haber + yatırımcı mektubu",
+    "tarih": "2023-2024",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.4",
+    "sirket": "Bloomberg",
+    "ders": "Model özelleştirmeyi kurumun veri, bütçe ve görev sınırına göre seçmek.",
+    "kaynak_turu": "teknik rapor",
+    "tarih": "2023",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.5",
+    "sirket": "Morgan Stanley",
+    "ders": "Uzmanın kararını devretmeden bilgiye erişim süresini kısaltmak.",
+    "kaynak_turu": "şirket + OpenAI ortak açıklaması",
+    "tarih": "2023",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.6",
+    "sirket": "GitHub / Microsoft",
+    "ders": "Geliştirici aracını günlük çalışma ortamının içine yerleştirmek.",
+    "kaynak_turu": "şirket duyurusu",
+    "tarih": "2022-2023",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.7",
+    "sirket": "Shopify",
+    "ders": "Cesur otomasyon hedefini ölçülebilir ama çalışan güvenini zedelemeyecek biçimde kurmak.",
+    "kaynak_turu": "iç yazı + haber",
+    "tarih": "2025-04",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.8",
+    "sirket": "Samsung Electronics",
+    "ders": "Hassas verinin hangi araca girebileceğini pilot başlamadan önce tanımlamak.",
+    "kaynak_turu": "haber",
+    "tarih": "2023-04",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.9",
+    "sirket": "GitHub / Microsoft",
+    "ders": "Pilot sonucunu zaman, kalite, maliyet ve risk eksenlerinde birlikte ölçmek.",
+    "kaynak_turu": "şirket araştırma yayını",
+    "tarih": "2022-09",
+    "dogrulama_durumu": "beklemede"
+  },
+  {
+    "bolum": "15.10",
+    "sirket": "Klarna",
+    "ders": "Kalite eşiği bozulursa otomasyon kapsamını daraltıp insan sürecini geri getirmek.",
+    "kaynak_turu": "haber + CEO açıklaması",
+    "tarih": "2025-05",
+    "dogrulama_durumu": "beklemede"
+  }
+]
