@@ -25,8 +25,14 @@ last_verified: "2026-07"
 
 ## Ne Yapar?
 
-Gerçek bir API çağrısı yapmadan, Bölüm 4'teki müşteri destek talebi örneğini
-çalışan bir laboratuvara çevirir:
+Bölüm 4'teki kalıpların özü örnek yönetimidir. Zero-shot prompt görevi yalnızca
+tarif eder; one-shot tek örnekle çıktı biçimini sabitler; few-shot ise dengeli
+örnekler ve sınır durumlarını gösteren karşı örneklerle modelin karar çizgisini
+netleştirir. Şema, çıktının alanlarını önceden sözleşmeye bağlar; doğrulama da bu
+sözleşmenin tutulup tutulmadığını kontrol eder.
+
+Bu laboratuvar, gerçek bir API çağrısı yapmadan, Bölüm 4'teki müşteri destek
+talebi örneğini çalışan bir laboratuvara çevirir:
 
 - `build_zero_shot_prompt`: görevi örneksiz tarif eder.
 - `build_one_shot_prompt`: tek örnekle biçimi sabitler.
