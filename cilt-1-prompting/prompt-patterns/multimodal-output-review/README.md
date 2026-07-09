@@ -45,7 +45,14 @@ uymadığını kontrol eder.
 
 ## Nasıl Kullanılır?
 
-Terminalde bu klasöre geçin:
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://lab.ademyuce.tr/cilt-1-prompting/prompt-patterns/multimodal-output-review/multimodal_review_lab.html>
+İsterseniz `multimodal_review_lab.html` dosyasını indirip çift tıklayarak da
+açabilirsiniz; kurulum, terminal veya internet bağlantısı gerekmez. Hazır cevaplardan
+birini yükleyin veya kendi cevabınızı yapıştırın; denetim sonucu canlı güncellenir.
+
+**Kod biliyorsanız:** Aynı mantığın Python sürümü `multimodal_review_lab.py`
+dosyasındadır. Terminalde bu klasöre geçin:
 
 ```bash
 cd cilt-1-prompting/prompt-patterns/multimodal-output-review
