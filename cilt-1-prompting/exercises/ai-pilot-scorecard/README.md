@@ -39,7 +39,14 @@ tasarımını küçük bir denetim kartına dönüştürür:
 
 ## Nasıl Kullanılır?
 
-Önce şablonu kopyalayıp kendi pilot fikrinizi doldurun:
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://lab.ademyuce.tr/cilt-1-prompting/exercises/ai-pilot-scorecard/ai_pilot_scorecard.html>
+İsterseniz `ai_pilot_scorecard.html` dosyasını indirip çift tıklayarak da açabilirsiniz;
+kurulum, terminal veya internet bağlantısı gerekmez. Örnek pilotu yükleyin veya boş
+şablonla kendi pilot fikrinizi doldurun; kontrol sonucu canlı güncellenir.
+
+**Kod biliyorsanız:** Aynı mantığın Python sürümü `ai_pilot_scorecard.py`
+dosyasındadır. Önce şablonu kopyalayıp kendi pilot fikrinizi doldurun:
 
 ```bash
 cp pilot_template.json benim_pilotum.json
