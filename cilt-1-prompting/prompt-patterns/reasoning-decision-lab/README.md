@@ -20,8 +20,14 @@ last_verified: "2026-07"
 
 ## Ne Yapar?
 
-Gerçek bir API çağrısı yapmadan, Bölüm 6'daki Derya ve 142 numaralı hat
-vakasını küçük bir karar laboratuvarına çevirir:
+Bölüm 6, modelin iç düşünme dökümü ile kritere bağlanmış gerekçeyi birbirinden
+ayırır; ilki denetlenemez, ikincisi denetlenebilir. Tree of Thoughts kalıbı karar
+seçeneklerini ayrı dallar olarak açar ve her dalı aynı kriter setiyle puanlar;
+pilot plan da seçilen dalı tek seferlik bir karara değil, ölçülebilir bir denemeye
+çevirir.
+
+Bu laboratuvar, gerçek bir API çağrısı yapmadan, Bölüm 6'daki Derya ve 142
+numaralı hat vakasını küçük bir karar laboratuvarına çevirir:
 
 - `build_tree_of_thoughts_prompt`: üç karar dalını ve üç kriteri aynı promptta
   açık biçimde adlandırır.
@@ -91,4 +97,4 @@ için öne çıkar. Pilot plan ise öneriyi tek seferlik karara çevirmek yerine
 - Sayısal eşik bulunması planı doğru yapmaz. Eşiklerin sahadaki karşılığı insan
   tarafından kontrol edilmelidir.
 - Model adı, fiyat veya benchmark iddiası içermez; güncel model bilgisi için
-  `docs/model-watch/README.md` kullanılmalıdır.
+  [docs/model-watch](../../../docs/model-watch/) kullanılmalıdır.
