@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Yapay Zekâ Pilotu Ölçüm Kartı Laboratuvarı — Cilt 1, Bölüm 15</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 4px; margin-top: 14px; }
+  label:first-child { margin-top: 0; }
+  textarea {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .9rem; font-family: inherit;
+    resize: vertical; min-height: 46px;
+  }
+  h3.metrics-title { font-size: .92rem; margin: 18px 0 4px 0; color: var(--navy); }
+  @media (prefers-color-scheme: dark) { h3.metrics-title { color: #bfe9e4; } }
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px 14px; }
+  .presets { margin-bottom: 10px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin: 4px 8px 4px 0; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  dl.result { display: grid; grid-template-columns: 170px 1fr; row-gap: 8px; column-gap: 12px; margin: 0; }
+  dl.result dt { font-weight: 700; }
+  dl.result dd { margin: 0; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .82rem; font-weight: 700; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  ul.issues { margin: 6px 0 0 0; padding-left: 18px; font-size: .88rem; }
+  ul.issues li { margin-bottom: 4px; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Yapay Zekâ Pilotu Ölçüm Kartı Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 15 — 15.1, 15.8, 15.9, 15.10. Kendi pilot
+  tasarımınızı beş alan ve dört ölçütle doldurun; laboratuvar ölçülebilirlik, veri riski ve
+  geri çekilme eşiği açısından canlı denetler. Kurulum gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <div class="presets">
+      <button type="button" class="secondary" id="exampleBtn">Örnek pilotu yükle</button>
+      <button type="button" class="secondary" id="templateBtn">Boş şablonu yükle</button>
+    </div>
+
+    <label for="hedef">Hedef<span style="font-weight:400;font-size:.8rem;color:#5a6472;"> — ölçülebilir bir süre, oran veya eşik içermeli</span></label>
+    <textarea id="hedef"></textarea>
+
+    <label for="kullaniciGrubu">Kullanıcı grubu</label>
+    <textarea id="kullaniciGrubu"></textarea>
+
+    <label for="veriRiski">Veri riski<span style="font-weight:400;font-size:.8rem;color:#5a6472;"> — hassas veri varsa kontrol önlemi de yazın</span></label>
+    <textarea id="veriRiski"></textarea>
+
+    <h3 class="metrics-title">Başarı metrikleri (dört ölçüt)</h3>
+    <div class="metric-grid">
+      <div><label for="zamanKazanci">Zaman kazancı</label><textarea id="zamanKazanci"></textarea></div>
+      <div><label for="kalite">Kalite</label><textarea id="kalite"></textarea></div>
+      <div><label for="maliyet">Maliyet</label><textarea id="maliyet"></textarea></div>
+      <div><label for="riskAzalmasi">Risk azalması</label><textarea id="riskAzalmasi"></textarea></div>
+    </div>
+
+    <label for="karar">Pilot sonrası karar kriteri<span style="font-weight:400;font-size:.8rem;color:#5a6472;"> — en az iki karar yolu (genişlet/daralt/durdur/insan kontrolü gibi)</span></label>
+    <textarea id="karar"></textarea>
+
+    <div class="panel" id="resultPanel" style="margin-top:16px;">
+      <dl class="result" id="resultOut"></dl>
+      <ul class="issues" id="issuesOut"></ul>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Denetim neye bakıyor?</h2>
+    <p>Bölüm 15'in dersi, yapay zekâ pilotunu heves üzerine değil, ölçüm üzerine kurmaktır.
+    Beş ana alanın (hedef, kullanıcı grubu, veri riski, başarı metrikleri, pilot sonrası
+    karar kriteri) hepsi doldurulmalı. <strong>Hedef</strong> ve dört ölçütün hepsi rakam,
+    oran, süre gibi somut bir ölçü içermeli — "daha hızlı olsun" ölçülebilir değildir,
+    "8 dakikadan 5 dakikanın altına insin" ölçülebilirdir.</p>
+    <p><strong>Veri riski</strong> alanında kişisel, mali veya müşteri verisi gibi hassas bir
+    ifade geçiyorsa, onaylı araç veya insan kontrolü gibi bir önlem de yazılmalı; aksi hâlde
+    denetim bunu eksik sayar. <strong>Pilot sonrası karar kriteri</strong> en az iki karar
+    yolu (genişlet, daralt, durdur, insan kontrolü gibi) ve ölçülebilir bir eşik içermeli —
+    bu, geri çekilme eşiğinin önceden tanımlanması demektir.</p>
+  </div>
+
+  <p class="note">Bu araç bir yapay zekâ pilotunu otomatik onaylamaz; yalnızca eksik alanları
+  ve zayıf karar eşiğini görünür kılar. Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/exercises/ai-pilot-scorecard/ai_pilot_scorecard.py">ai_pilot_scorecard.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/exercises/ai-pilot-scorecard">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const METRIC_FIELDS = ["zamanKazanci", "kalite", "maliyet", "riskAzalmasi"];
+  const METRIC_LABELS = { zamanKazanci: "zaman_kazancı", kalite: "kalite", maliyet: "maliyet", riskAzalmasi: "risk_azalması" };
+  const MEASUREMENT_HINTS = ["%", "yüzde", "dakika", "saat", "gün", "ay", "çeyrek", "adet", "sayı", "oran", "tl", "maliyet", "süre", "alt", "üst", "başına"];
+  const SENSITIVE_DATA_HINTS = ["kişisel", "banka", "iban", "sağlık", "öğrenci", "kaynak kodu", "mali", "finansal", "müşteri"];
+  const CONTROL_HINTS = ["kurumsal onaylı", "onaylı araç", "insan kontrol", "insan denetim", "uzman kontrol", "model eğitiminde kullanılmadığı", "maskele", "anonim"];
+  const DECISION_ACTIONS = ["genişlet", "daralt", "durdur", "geri çek", "insan kontrol", "onay"];
+
+  function hasText(v) { return typeof v === 'string' && v.trim().length > 0; }
+  function normalized(v) { return v.toLowerCase(); }
+  function hasAny(text, hints) { const l = normalized(text); return hints.some(h => l.includes(h)); }
+  function isMeasurable(text) { return /[0-9]/.test(text) || hasAny(text, MEASUREMENT_HINTS); }
+
+  function evaluatePilot(pilot) {
+    const issues = [];
+    let completedChecks = 0;
+    const totalChecks = 5 + METRIC_FIELDS.length;
+
+    for (const [field, label] of [["hedef", "hedef"], ["kullaniciGrubu", "kullanici_grubu"], ["veriRiski", "veri_riski"], ["karar", "pilot_sonrasi_karar_kriteri"]]) {
+      if (hasText(pilot[field])) completedChecks += 1;
+      else issues.push(`\`${label}\` alanı boş bırakılmamalıdır.`);
+    }
+
+    const hedef = pilot.hedef;
+    if (hasText(hedef) && !isMeasurable(hedef)) {
+      issues.push("`hedef` ölçülebilir bir süre, oran, eşik veya birim içermelidir.");
+    }
+
+    const veriRiski = pilot.veriRiski;
+    if (hasText(veriRiski) && hasAny(veriRiski, SENSITIVE_DATA_HINTS)) {
+      if (!hasAny(veriRiski, CONTROL_HINTS)) {
+        issues.push("`veri_riski` hassas veri içeriyor; onaylı araç veya insan kontrolü yazılmalıdır.");
+      }
+    }
+
+    // basari_metrikleri "nesne" olarak her zaman var sayılır (form alanları hazır); +1
+    completedChecks += 1;
+    for (const field of METRIC_FIELDS) {
+      const value = pilot[field];
+      if (hasText(value)) {
+        completedChecks += 1;
+        if (!isMeasurable(value)) {
+          issues.push(`\`basari_metrikleri.${METRIC_LABELS[field]}\` ölçülebilir bir gösterge içermelidir.`);
+        }
+      } else {
+        issues.push(`\`basari_metrikleri.${METRIC_LABELS[field]}\` boş bırakılmamalıdır.`);
+      }
+    }
+
+    const karar = pilot.karar;
+    if (hasText(karar)) {
+      const actionCount = DECISION_ACTIONS.filter(a => normalized(karar).includes(a)).length;
+      if (actionCount < 2) issues.push("`pilot_sonrasi_karar_kriteri` en az iki karar yolu içermelidir.");
+      if (!isMeasurable(karar)) issues.push("`pilot_sonrasi_karar_kriteri` ölçülebilir bir eşik içermelidir.");
+    }
+
+    const status = issues.length === 0 ? "geçti" : "revizyon gerekli";
+    return { status, completedChecks, totalChecks, issues, passed: issues.length === 0 };
+  }
+
+  const FIELD_IDS = ["hedef", "kullaniciGrubu", "veriRiski", "zamanKazanci", "kalite", "maliyet", "riskAzalmasi", "karar"];
+
+  function render() {
+    const pilot = {};
+    FIELD_IDS.forEach(id => pilot[id] = fieldEl(id).value);
+    const card = evaluatePilot(pilot);
+
+    document.getElementById('resultOut').innerHTML = `
+      <dt>Durum</dt><dd><span class="tag ${card.passed ? 'ok' : 'warn'}">${card.status}</span></dd>
+      <dt>Tamamlanan kontrol</dt><dd>${card.completedChecks}/${card.totalChecks}</dd>
+    `;
+    document.getElementById('issuesOut').innerHTML = card.passed
+      ? `<li>Kabul kriteri geçti: beş alan ve dört ölçüt dolduruldu.</li>`
+      : card.issues.map(i => `<li>${i}</li>`).join('');
+  }
+
+  function fieldEl(id) { return document.getElementById(id); }
+
+  const EXAMPLE = {
+    hedef: "Muhasebe departmanında yurt içi tedarikçi faturalarının sınıflandırma süresini bir çeyrek içinde fatura başına 8 dakikadan 5 dakikanın altına indirmek.",
+    kullaniciGrubu: "Muhasebe departmanındaki 4 uzman; ilk ayda yalnızca yurt içi tedarikçi faturaları.",
+    veriRiski: "Faturalarda tedarikçi banka hesap bilgisi bulunur. Pilot yalnızca kurumsal onaylı, verinin model eğitiminde kullanılmadığı bir araçla yürütülür ve örneklem insan kontrolünden geçer.",
+    zamanKazanci: "Fatura başına ortalama işlem süresi 8 dakikadan 5 dakikanın altına inmeli.",
+    kalite: "Yanlış sınıflandırma oranı %5'in altında kalmalı; örneklem haftalık 50 fatura.",
+    maliyet: "Araç lisansı ve insan denetimi dahil görev başına toplam maliyet %10'dan fazla artmamalı.",
+    riskAzalmasi: "Geciken veya kaçırılan fatura sayısı ayda 3'ün altına inmeli.",
+    karar: "Dört ölçüt hedefi karşılarsa pilot yurt dışı tedarikçilere genişletilir. Kalite %5'in üstüne çıkarsa kapsam daraltılır ve insan kontrolü artırılır. Üç ay sonunda zaman veya risk göstergesi iyileşmezse pilot durdurulur.",
+  };
+  const TEMPLATE = Object.fromEntries(FIELD_IDS.map(id => [id, ""]));
+
+  function loadValues(values) {
+    FIELD_IDS.forEach(id => { fieldEl(id).value = values[id] || ""; });
+    render();
+  }
+
+  document.getElementById('exampleBtn').addEventListener('click', () => loadValues(EXAMPLE));
+  document.getElementById('templateBtn').addEventListener('click', () => loadValues(TEMPLATE));
+  FIELD_IDS.forEach(id => fieldEl(id).addEventListener('input', render));
+
+  loadValues(EXAMPLE);
+</script>
+</body>
+</html>
