@@ -14,10 +14,9 @@ güncel tutulan ek olarak çalışır.
 
 ## Güncel Model Tablosu
 
-> Bu tablo iki ayrı web araştırması + bir doğrulama turuyla derlenmiştir (son tur: 2026-07-09,
-> haftanın gelişmelerine özel odaklandı). Belirsizliği işaretli satırlar (**doğrulanmamış**,
-> **belirsiz**, **tek kaynak turu**) resmî model kartı/duyuru ile teyit edilmeden kitap veya lab
-> içeriğinde kesin bilgi gibi kullanılmamalıdır.
+> Bu tablo 2026-07-09 tarihinde doğrulanmıştır. Belirsizliği işaretli satırlar
+> (**doğrulanmamış**, **belirsiz**, **tek kaynak**) resmî model kartı/duyuru ile teyit
+> edilmeden kitap veya lab içeriğinde kesin bilgi gibi kullanılmamalıdır.
 
 ### Anthropic (Claude)
 
@@ -59,11 +58,11 @@ güncel Meta modeli hâlâ **Llama 4 Maverick**; ardılı yok, strateji kapalı 
 |---|---|---|---|
 | **Grok 4.5** (yeni flagship) | **500K — Grok 4.3'ün 1M'ine göre gerileme** | $2/$6 (cache girişi $0.50) | Geliştiricilere 2026-07-08, halka 2026-07-09'da açıldı; "V9" temel model üzerine, Cursor ile birlikte eğitilmiş; Artificial Analysis'te 168 modelde 54 puan/4. sıra; AB'de henüz yok |
 | Grok 4.3 (önceki flagship) | 1M | $1.25/$2.50 per MTok | Artık ikincil konumda |
-| Grok 4.1 Fast (bütçe) | 2M | $0.20/$0.50 | Bu turda yeniden doğrulanmadı |
-| Grok Build (kodlama) | 256K | $1.00/$2.00 | Bu turda yeniden doğrulanmadı |
+| Grok 4.1 Fast (bütçe) | 2M | $0.20/$0.50 | Son doğrulamada yeniden kontrol edilmedi |
+| Grok Build (kodlama) | 256K | $1.00/$2.00 | Son doğrulamada yeniden kontrol edilmedi |
 
-**Not (tek tur, çoklu kaynak — Axios/TechCrunch/Forbes):** xAI/SpaceX birleşmesi sonrası şirket
-bazı kaynaklarda "SpaceXAI" olarak anılmaya başladı; bu depoda bağımsız doğrulanmadı, izlenmeli.
+**Not (kaynak: Axios/TechCrunch/Forbes):** xAI/SpaceX birleşmesi sonrası şirket bazı
+kaynaklarda "SpaceXAI" olarak anılmaya başladı; bağımsız doğrulanmadı, izlenmeli.
 "Grok 5" söylentisi muhtemelen anlamsızlaştı — 4.5 doğrudan çıktı, isimlendirme atlanmış olabilir.
 
 ### Mistral AI
@@ -104,10 +103,4 @@ Grok 4.1 Fast/Build güncel spek.
 
 Son doğrulama: 2026-07-09
 
-## Durum
-
-İlk tablo dolduruldu ve aynı gün içinde bir doğrulama turuyla güncellendi (2026-07-09) —
-hızlı hareket eden bir hafta yakalandı (Grok 4.5, GPT-5.6 geniş kamuya açılışı, Qwen 3.7 Max,
-Gemma 4, MiniMax M3, GLM-5.2 hepsi Haziran-Temmuz 2026 içinde). Sonraki güncelleme aylık kontrol
-takvimine göre yapılacak; her bölüm lab'ı bu tabloyu referans alır, kendi başına farklı bir model
-iddiası üretmez.
+Her bölüm lab'ı bu tabloyu referans alır, kendi başına farklı bir model iddiası üretmez.
