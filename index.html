@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Kitap Destek Deposu — Yapay Zekâ ile Üretim Mühendisliği Serisi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Yapay Zekâ ile Üretim Mühendisliği kitap serisinin etkileşimli laboratuvarları ve destek deposu.">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; --muted: #9fb0c4; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 0 24px 48px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 980px; margin-inline: auto; }
+  header.hero {
+    padding: 48px 0 28px; border-bottom: 1px solid var(--gray); margin-bottom: 32px;
+  }
+  header.hero h1 { font-size: 1.6rem; color: var(--navy); margin: 0 0 10px 0; }
+  header.hero p { color: var(--muted); max-width: 640px; margin: 0 0 18px 0; }
+  @media (prefers-color-scheme: dark) { header.hero h1 { color: #bfe9e4; } }
+  .hero-links a {
+    display: inline-block; background: var(--navy); color: #fff; text-decoration: none;
+    border-radius: 8px; padding: 8px 16px; font-size: .88rem; font-weight: 600; margin: 4px 8px 4px 0;
+  }
+  .hero-links a.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    .hero-links a.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  h2.section-title { font-size: 1.2rem; color: var(--navy); margin: 40px 0 6px 0; }
+  @media (prefers-color-scheme: dark) { h2.section-title { color: #bfe9e4; } }
+  p.section-lead { color: var(--muted); margin: 0 0 18px 0; max-width: 640px; }
+  .lab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  a.lab-card {
+    display: block; background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 16px 18px; text-decoration: none; color: var(--text); transition: border-color .15s ease;
+  }
+  a.lab-card:hover { border-color: var(--teal); }
+  a.lab-card .chapter { display: inline-block; background: var(--teal); color: #05221f;
+    border-radius: 6px; padding: 1px 8px; font-size: .74rem; font-weight: 700; margin-bottom: 8px; }
+  a.lab-card h3 { font-size: .98rem; margin: 0 0 6px 0; color: var(--navy); }
+  @media (prefers-color-scheme: dark) { a.lab-card h3 { color: #e8edf3; } }
+  a.lab-card p { font-size: .84rem; color: var(--muted); margin: 0; }
+
+  .repo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  a.repo-card {
+    display: block; background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    overflow: hidden; text-decoration: none; color: var(--text); transition: border-color .15s ease;
+  }
+  a.repo-card:hover { border-color: var(--orange); }
+  a.repo-card img { width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; display: block;
+    background: var(--gray); }
+  a.repo-card .repo-body { padding: 12px 16px 16px; }
+  a.repo-card h3 { font-size: .94rem; margin: 0 0 6px 0; color: var(--navy); word-break: break-word; }
+  @media (prefers-color-scheme: dark) { a.repo-card h3 { color: #e8edf3; } }
+  a.repo-card p { font-size: .82rem; color: var(--muted); margin: 0 0 8px 0; min-height: 2.6em; }
+  .repo-meta { display: flex; gap: 10px; font-size: .76rem; color: var(--muted); }
+  .repo-meta span.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal); margin-right: 4px; vertical-align: middle; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--gray);
+    font-size: .82rem; color: var(--muted); }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Kitap Destek Deposu</h1>
+    <p><strong>Yapay Zekâ ile Üretim Mühendisliği</strong> dört ciltlik Türkçe kitap serisinin
+    (Prompt Mühendisliği · Vibe Coding ve Loop Engineering · Agent Engineering · AI-Native
+    Production) çalışan kod örnekleri, güncel model/araç takibi ve etkileşimli
+    laboratuvarları burada tutulur.</p>
+    <div class="hero-links">
+      <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">GitHub'da görüntüle</a>
+      <a class="secondary" href="/docs/model-watch/">Model/Araç Takibi</a>
+      <a class="secondary" href="https://github.com/adeministratorr">GitHub profilim</a>
+    </div>
+  </header>
+
+  <h2 class="section-title">Etkileşimli Laboratuvarlar</h2>
+  <p class="section-lead">Kurulum gerekmez, tarayıcıda doğrudan açılır. Her biri kitabın
+  ilgili bölümündeki bir kavramı canlı olarak deneyimletir.</p>
+  <div class="lab-grid" id="labGrid">
+    <a class="lab-card" href="/cilt-1-prompting/parameter-matrix/sampling_lab.html">
+      <span class="chapter">Cilt 1 · Bölüm 1</span>
+      <h3>Temperature / Top-p / Top-k</h3>
+      <p>Kaydırıcılarla örnekleme parametrelerinin token olasılıklarını nasıl değiştirdiğini görün.</p>
+    </a>
+    <a class="lab-card" href="/cilt-1-prompting/model-selection/model_selection_lab.html">
+      <span class="chapter">Cilt 1 · Bölüm 2</span>
+      <h3>Model Seçimi Karar Matrisi</h3>
+      <p>Görev gereksinimlerinden katman/mod/ekosistem/dağıtım kararını canlı hesaplayın.</p>
+    </a>
+    <a class="lab-card" href="/cilt-1-prompting/prompt-patterns/prompt_anatomy_lab.html">
+      <span class="chapter">Cilt 1 · Bölüm 3</span>
+      <h3>Prompt Anatomisi</h3>
+      <p>Persona/görev/bağlam/format/kısıt/başarı kriterini doldurup tarifin düzeyini denetleyin.</p>
+    </a>
+    <a class="lab-card" href="/cilt-1-prompting/prompt-patterns/ticket-classification/ticket_classification_lab.html">
+      <span class="chapter">Cilt 1 · Bölüm 4</span>
+      <h3>Talep Sınıflandırma</h3>
+      <p>Zero/one/few-shot promptları ve şema doğrulamalı yerel sınıflandırmayı karşılaştırın.</p>
+    </a>
+    <a class="lab-card" href="/cilt-1-prompting/prompt-patterns/reasoning-decision-lab/reasoning_decision_lab.html">
+      <span class="chapter">Cilt 1 · Bölüm 6</span>
+      <h3>Karar Gerekçesi ve Pilot Plan</h3>
+      <p>Tree of Thoughts dallarını puanlayın, uygulanabilir dalı ve pilot eşiklerini görün.</p>
+    </a>
+    <a class="lab-card" href="/cilt-1-prompting/prompt-patterns/multimodal-output-review/multimodal_review_lab.html">
+      <span class="chapter">Cilt 1 · Bölüm 9</span>
+      <h3>Multimodal Çıktı Denetimi</h3>
+      <p>Betimleme/yorum/varsayım/gizlilik dört başlığının denetlenebilirliğini kontrol edin.</p>
+    </a>
+    <a class="lab-card" href="/cilt-1-prompting/exercises/ai-pilot-scorecard/ai_pilot_scorecard.html">
+      <span class="chapter">Cilt 1 · Bölüm 15</span>
+      <h3>Yapay Zekâ Pilotu Ölçüm Kartı</h3>
+      <p>Beş alanlı pilot tasarımınızı ölçülebilirlik ve geri çekilme eşiği açısından denetleyin.</p>
+    </a>
+  </div>
+
+  <h2 class="section-title">Diğer Açık Kaynak Projelerim</h2>
+  <p class="section-lead">GitHub'daki diğer kendi (fork olmayan) genel depolarım.</p>
+  <div class="repo-grid" id="repoGrid"></div>
+
+  <footer>
+    <p>© Adem Yüce · <a href="https://github.com/adeministratorr">github.com/adeministratorr</a> ·
+    Kitap içeriğinin telif hakları saklıdır; bu depodaki kod örnekleri
+    <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/LICENSE">MIT</a>
+    lisansıyla paylaşılır.</p>
+  </footer>
+
+</div>
+
+<script>
+  const REPOS = [
+    { name: "genctek_atlas", desc: "GençTek etkinlik ve projelerini Türkiye haritası üzerinde görselleştiren Firebase tabanlı web uygulaması.", lang: "JavaScript" },
+    { name: "genctek_atlas_android", desc: "GençTek Atlas Android uygulaması.", lang: "Kotlin" },
+    { name: "genctek_atlas_laravel_backend", desc: "Etkinlik haritaları için Laravel tabanlı, geliştirilebilir açık kaynak backend API.", lang: "PHP" },
+    { name: "genctek_atlas_laravel_frontend", desc: "Etkinlik haritaları için web arayüzü; Vibe Coding sürecini öğrenmek için hazırlandı.", lang: "JavaScript" },
+    { name: "genctek_atlas_mobile_android_studio_firebase", desc: "Firebase destekli Android Studio activity-map boilerplate.", lang: "Kotlin" },
+    { name: "cyberpanel-vault", desc: "CyberPanel sunucu yedekleme/geri yükleme yöneticisi: haftalık tam yedek, artımlı zincir, Google Drive, şifreleme.", lang: "Shell" },
+    { name: "PardusEtap_ilk_Kurulum_Yardimcisi", desc: "Pardus ETAP23 için GUI/CLI ilk kurulum ve bakım araçları.", lang: "Shell" },
+    { name: "Arduino---C-Communication-with-Bluetooth", desc: "Arduino ve bilgisayardaki Bluetooth modülünü kullanarak C# ile haberleşme örneği.", lang: "C#" },
+    { name: "Add-App-To-Samsung-Dual-Messenger", desc: "ADB komutlarıyla herhangi bir uygulamayı Samsung Dual Messenger'a klonlayan script.", lang: "Shell" },
+    { name: "Yapay-Zeka-Dokumanlari", desc: "GençTek projesi kapsamında hazırlanan yapay zekâ dokümanları.", lang: null },
+    { name: "MySQL-to-Sqlite-Converter", desc: "MySQL veritabanlarını SQLite'a dönüştüren araç.", lang: "Python" },
+  ];
+
+  const grid = document.getElementById('repoGrid');
+  for (const repo of REPOS) {
+    const a = document.createElement('a');
+    a.className = 'repo-card';
+    a.href = `https://github.com/adeministratorr/${repo.name}`;
+    a.innerHTML = `
+      <img src="https://opengraph.githubassets.com/1/adeministratorr/${repo.name}" alt="" loading="lazy">
+      <div class="repo-body">
+        <h3>${repo.name}</h3>
+        <p>${repo.desc}</p>
+        <div class="repo-meta">${repo.lang ? `<span><span class="dot"></span>${repo.lang}</span>` : ''}</div>
+      </div>
+    `;
+    grid.appendChild(a);
+  }
+</script>
+</body>
+</html>
