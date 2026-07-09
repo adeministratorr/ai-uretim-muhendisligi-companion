@@ -21,9 +21,15 @@ last_verified: "2026-07"
 
 ## Ne Yapar?
 
-Gerçek bir API çağrısı yapmadan, Bölüm 9'daki "betimle, yorumla, varsayım
-listele, gizlilik/telif kontrolü yap" disiplinini küçük bir Python denetimine
-çevirir:
+Bölüm 9'un denetim disiplini dört adımdan oluşur: görselde ne göründüğünü aktaran
+betimleme, bunun ne anlama geldiğini söyleyen yorum, doğrulama yolu gösterilmiş
+varsayım listesi ve ayrı tutulan gizlilik/telif kontrolü. Betimleme ile yorumun
+birbirine karışması, model cevabına duyulan güvendeki en yaygın tuzaktır; görünen
+bilgi ile modelin tahmini aynı cümlede birleştiğinde okur ikisini de doğrulanmış
+sanır.
+
+Bu laboratuvar, gerçek bir API çağrısı yapmadan, bu dört adımlı disiplini küçük
+bir Python denetimine çevirir:
 
 - `MultimodalReviewTask`: ekran görüntüsü, grafik, tablo veya PDF kesiti için
   görev bağlamını ve varsa dayanak dokümanını ayrı tutar.
@@ -83,5 +89,5 @@ ayrı tutar.
 - Basit metin işaretlerine bakar. Kritik üretim, sağlık, hukuk, finans veya güvenlik
   kararlarında insan denetimi ve bağımsız kaynak kontrolü gerekir.
 - Model adı, fiyat, benchmark veya güncel yetenek iddiası içermez. Bu tür hızla
-  eskiyen bilgiler için `../../../docs/model-watch/` ayrıca kontrol edilmelidir.
-  Son doğrulama: 2026-07.
+  eskiyen bilgiler için [docs/model-watch](../../../docs/model-watch/) ayrıca
+  kontrol edilmelidir. Son doğrulama: 2026-07.
