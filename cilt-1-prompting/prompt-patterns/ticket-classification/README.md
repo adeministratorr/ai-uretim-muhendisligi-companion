@@ -48,7 +48,14 @@ Bu laboratuvar model davranışını taklit etmeye çalışmaz. Amaç, prompt ka
 
 ## Nasıl Kullanılır?
 
-Terminalde bu klasöre geçin:
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://lab.ademyuce.tr/cilt-1-prompting/prompt-patterns/ticket-classification/ticket_classification_lab.html>
+İsterseniz `ticket_classification_lab.html` dosyasını indirip çift tıklayarak da
+açabilirsiniz; kurulum, terminal veya internet bağlantısı gerekmez. Talep metnini
+değiştirdikçe ve sekmeler arasında geçtikçe prompt ve doğrulama sonucu canlı güncellenir.
+
+**Kod biliyorsanız:** Aynı mantığın Python sürümü `ticket_classification_lab.py`
+dosyasındadır. Terminalde bu klasöre geçin:
 
 ```bash
 cd cilt-1-prompting/prompt-patterns/ticket-classification

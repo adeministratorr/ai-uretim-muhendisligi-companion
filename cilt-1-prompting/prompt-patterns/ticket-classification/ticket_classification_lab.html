@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Talep Sınıflandırma Laboratuvarı — Cilt 1, Bölüm 4</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  textarea {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .92rem; font-family: inherit;
+    resize: vertical; min-height: 64px; margin-bottom: 14px;
+  }
+  .tabs { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .tab-btn { background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+             border-radius: 8px; padding: 6px 12px; font-size: .85rem; cursor: pointer; }
+  .tab-btn.active { background: var(--navy); color: #fff; }
+  @media (prefers-color-scheme: dark) {
+    .tab-btn { color: #bfe9e4; border-color: #bfe9e4; }
+    .tab-btn.active { background: #bfe9e4; color: #05221f; }
+  }
+  pre { background: var(--bg); border: 1px solid var(--gray); border-radius: 8px;
+        padding: 12px 14px; white-space: pre-wrap; font-size: .85rem; margin: 0; }
+  .linecount { font-size: .8rem; color: #5a6472; margin-bottom: 6px; }
+  dl.result { display: grid; grid-template-columns: 150px 1fr; row-gap: 8px; column-gap: 12px; margin: 0 0 12px 0; }
+  dl.result dt { font-weight: 700; }
+  dl.result dd { margin: 0; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .82rem;
+         font-weight: 700; margin: 2px 4px 2px 0; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Talep Sınıflandırma Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 4 — 4.3-4.11. Bir müşteri destek talebi
+  yazın; laboratuvar zero-shot, one-shot ve few-shot promptlarını kurar, ardından yerel bir
+  sınıflandırma kuralıyla şema doğrulamalı bir çıktı üretir. Kurulum gerekmez, sayfa tek
+  başına çalışır.</p>
+
+  <div class="panel">
+    <label for="ticket">Müşteri destek talebi</label>
+    <textarea id="ticket">Kargom gelmedi, ayrıca yanlış ürün gönderilmiş, hem iade hem yeni gönderim istiyorum.</textarea>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="zero" type="button">Zero-shot</button>
+      <button class="tab-btn" data-tab="one" type="button">One-shot</button>
+      <button class="tab-btn" data-tab="few" type="button">Few-shot + şema</button>
+    </div>
+    <div class="linecount" id="lineCount"></div>
+    <pre id="promptOut"></pre>
+  </div>
+
+  <div class="panel">
+    <h2>Yerel sınıflandırma + şema doğrulama</h2>
+    <dl class="result" id="classifyOut"></dl>
+    <pre id="jsonOut"></pre>
+  </div>
+
+  <div class="panel">
+    <h2>Üç prompt arasındaki fark ne?</h2>
+    <p>Bölüm 4'ün kalıpları örnek yönetimiyle ilgilidir. <strong>Zero-shot</strong> prompt
+    görevi yalnızca tarif eder, biçimi modele bırakır. <strong>One-shot</strong> tek örnekle
+    çıktı biçimini sabitler ama sınır durumlarını göstermez. <strong>Few-shot</strong> ise
+    dengeli örnekler ve karşı örneklerle (aynı kelimenin farklı kategorilere düştüğü
+    durumlar) modelin karar çizgisini netleştirir; ayrıca bir JSON şeması ekleyerek çıktının
+    alanlarını önceden sözleşmeye bağlar.</p>
+    <p>Sekmeleri değiştirdikçe satır sayısının arttığını görürsünüz — bu, örnek ve şema
+    eklemenin somut maliyetidir (daha fazla token). Alttaki yerel sınıflandırma ise gerçek
+    bir modelin üreteceği çıktıyı taklit etmez; yalnızca şema doğrulamasının nasıl
+    çalıştığını gösterir.</p>
+  </div>
+
+  <p class="note">Bu laboratuvar gerçek model çıktısını ölçmez; prompt tasarımı ve çıktı
+  doğrulamasını yerel olarak gösterir. Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/prompt-patterns/ticket-classification/ticket_classification_lab.py">ticket_classification_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/prompt-patterns/ticket-classification">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const CATEGORIES = ["İade", "Teknik Sorun", "Fatura", "Genel Bilgi"];
+  const URGENCY_LEVELS = ["Acil", "Normal", "Düşük"];
+  const APOLOGY_WORDS = ["özür", "üzgünüz", "kusura bakmayın"];
+
+  const DEFAULT_EXAMPLES = [
+    { request: "Kargom 10 gündür yerinde sayıyor, ne zaman gelecek bilmiyorum.", category: "Teknik Sorun", urgency: "Normal" },
+    { request: "Hesabımdan iki kez para çekilmiş, acilen iade istiyorum.", category: "Fatura", urgency: "Acil" },
+    { request: "Ürünü beğenmedim, iade koşullarını öğrenmek istiyorum.", category: "İade", urgency: "Düşük" },
+    { request: "Uygulama ödeme ekranında hata veriyor, sipariş tamamlanmıyor.", category: "Teknik Sorun", urgency: "Acil" },
+    { request: "Mağazanız hafta sonu açık mı?", category: "Genel Bilgi", urgency: "Düşük" },
+  ];
+
+  const CONTRAST_EXAMPLES = [
+    { request: "Param ne zaman iade edilecek?", category: "Fatura", urgency: "Normal", note: "Başlamış ödeme/iade sürecinin durumunu soruyor." },
+    { request: "Ürünü iade etmek istiyorum, süreç nasıl işliyor?", category: "İade", urgency: "Düşük", note: "Yeni iade talebi başlatıyor." },
+  ];
+
+  function formatExample(ex, label) {
+    const note = ex.note ? ` Not: ${ex.note}` : '';
+    return `${label} — Talep: ${ex.request}\nEtiket: Kategori: ${ex.category}, Aciliyet: ${ex.urgency}.${note}`;
+  }
+
+  function schemaInstruction() {
+    return "Çıktı yalnızca tek satırlık JSON nesnesi olsun. " +
+      `kategori alanı şu değerlerden biri olmalı: ${CATEGORIES.join(", ")}. ` +
+      `aciliyet alanı şu değerlerden biri olmalı: ${URGENCY_LEVELS.join(", ")}. ` +
+      "ozet en fazla 20 kelime olsun. onerilen_ilk_cumle, sorunu doğrudan " +
+      "çözüme bağlayan tek cümle olsun; özür kalıbı kullanma.";
+  }
+
+  function buildZeroShot(ticket) {
+    return `Aşağıdaki müşteri destek talebini kategori ve aciliyete göre etiketle: ${ticket}`;
+  }
+
+  function buildOneShot(ticket) {
+    return [
+      "Aşağıdaki müşteri destek talebini örnekteki biçimde etiketle.",
+      formatExample(DEFAULT_EXAMPLES[0], "Örnek"),
+      `Şimdi bu talebi etiketle: ${ticket}`,
+    ].join("\n");
+  }
+
+  function buildFewShot(ticket) {
+    const exampleLines = DEFAULT_EXAMPLES.map((ex, i) => formatExample(ex, `Örnek ${i + 1}`));
+    const contrastLines = CONTRAST_EXAMPLES.map((ex, i) => formatExample(ex, `Karşı örnek ${i + 1}`));
+    return [
+      "Bir e-ticaret müşteri destek ekibi için talep sınıflandırma asistanısın.",
+      "Talep birden fazla konu içeriyorsa baskın konuyu esas al.",
+      schemaInstruction(),
+      "",
+      ...exampleLines,
+      "",
+      ...contrastLines,
+      "",
+      `Şimdi bu yeni talebi aynı biçimde etiketle: ${ticket}`,
+    ].join("\n");
+  }
+
+  function containsAny(text, markers) {
+    return markers.some(m => text.includes(m));
+  }
+
+  function chooseCategory(ticket) {
+    const t = ticket.toLowerCase();
+    if (containsAny(t, ["iki kez", "mükerrer", "tahsil", "para çek", "param", "ödeme", "fatura"])) return "Fatura";
+    if (containsAny(t, ["iade", "değişim", "yanlış ürün", "kırık", "beğenmedim"])) return "İade";
+    if (containsAny(t, ["kargo", "gelmedi", "hata", "uygulama", "çalışmıyor", "bozuk"])) return "Teknik Sorun";
+    return "Genel Bilgi";
+  }
+
+  function chooseUrgency(ticket) {
+    const t = ticket.toLowerCase();
+    if (containsAny(t, ["acil", "hemen", "iki kez", "mükerrer", "para çek", "hesabımdan"])) return "Acil";
+    if (containsAny(t, ["öğrenmek", "bilgi", "koşul", "hafta sonu", "açık mı"])) return "Düşük";
+    return "Normal";
+  }
+
+  function summaryFor(category) {
+    return {
+      "İade": "Müşteri iade veya değişim sürecinin başlatılmasını istiyor.",
+      "Teknik Sorun": "Müşteri teslimat veya teknik sorun için destek istiyor.",
+      "Fatura": "Müşteri ödeme veya iade sürecindeki durumu sorguluyor.",
+      "Genel Bilgi": "Müşteri genel bilgi talep ediyor.",
+    }[category];
+  }
+
+  function openingFor(category, urgency) {
+    if (urgency === "Acil") return "Talebinizi hemen inceliyor ve çözüm adımlarını başlatıyoruz.";
+    return {
+      "İade": "İade süreci için gerekli adımları hemen kontrol ediyoruz.",
+      "Teknik Sorun": "Teslimat veya teknik sorun için gerekli kontrolü başlatıyoruz.",
+      "Fatura": "Ödeme sürecinizi kontrol edip net durumu paylaşacağız.",
+      "Genel Bilgi": "Talep ettiğiniz bilgiyi net biçimde paylaşacağız.",
+    }[category];
+  }
+
+  function classifyTicketLocally(ticket) {
+    const category = chooseCategory(ticket);
+    const urgency = chooseUrgency(ticket);
+    return {
+      kategori: category, aciliyet: urgency,
+      ozet: summaryFor(category), onerilen_ilk_cumle: openingFor(category, urgency),
+    };
+  }
+
+  function validateTicketOutput(payload) {
+    const errors = [];
+    const required = ["kategori", "aciliyet", "ozet", "onerilen_ilk_cumle"];
+    const keys = Object.keys(payload);
+    const missing = required.filter(k => !keys.includes(k));
+    const extra = keys.filter(k => !required.includes(k));
+    if (missing.length) errors.push("Eksik alan: " + missing.join(", "));
+    if (extra.length) errors.push("Beklenmeyen alan: " + extra.join(", "));
+    if (!CATEGORIES.includes(payload.kategori)) errors.push("kategori alanı izin verilen değerlerden biri olmalıdır.");
+    if (!URGENCY_LEVELS.includes(payload.aciliyet)) errors.push("aciliyet alanı izin verilen değerlerden biri olmalıdır.");
+    if (typeof payload.ozet !== 'string' || !payload.ozet.trim()) {
+      errors.push("ozet alanı boş olmayan metin olmalıdır.");
+    } else if (payload.ozet.trim().split(/\s+/).length > 20) {
+      errors.push("ozet alanı en fazla 20 kelime olmalıdır.");
+    }
+    if (typeof payload.onerilen_ilk_cumle !== 'string' || !payload.onerilen_ilk_cumle.trim()) {
+      errors.push("onerilen_ilk_cumle alanı boş olmayan metin olmalıdır.");
+    } else if (containsAny(payload.onerilen_ilk_cumle.toLowerCase(), APOLOGY_WORDS)) {
+      errors.push("onerilen_ilk_cumle özür kalıbı içermemelidir.");
+    }
+    return errors;
+  }
+
+  let activeTab = 'zero';
+
+  function render() {
+    const ticket = document.getElementById('ticket').value.trim() || "(boş talep)";
+    const builders = { zero: buildZeroShot, one: buildOneShot, few: buildFewShot };
+    const prompt = builders[activeTab](ticket);
+    document.getElementById('promptOut').textContent = prompt;
+    document.getElementById('lineCount').textContent = `Satır sayısı: ${prompt.split('\n').length}`;
+
+    const payload = classifyTicketLocally(ticket);
+    const errors = validateTicketOutput(payload);
+    document.getElementById('classifyOut').innerHTML = `
+      <dt>Kategori</dt><dd><span class="tag ok">${payload.kategori}</span></dd>
+      <dt>Aciliyet</dt><dd><span class="tag ${payload.aciliyet === 'Acil' ? 'warn' : 'ok'}">${payload.aciliyet}</span></dd>
+      <dt>Özet</dt><dd>${payload.ozet}</dd>
+      <dt>Önerilen ilk cümle</dt><dd>${payload.onerilen_ilk_cumle}</dd>
+      <dt>Doğrulama</dt><dd>${errors.length
+        ? `<span class="tag warn">geçmedi</span> ${errors.join('; ')}`
+        : '<span class="tag ok">geçti</span>'}</dd>
+    `;
+    document.getElementById('jsonOut').textContent = JSON.stringify(payload);
+  }
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTab = btn.dataset.tab;
+      render();
+    });
+  });
+  document.getElementById('ticket').addEventListener('input', render);
+
+  render();
+</script>
+</body>
+</html>
