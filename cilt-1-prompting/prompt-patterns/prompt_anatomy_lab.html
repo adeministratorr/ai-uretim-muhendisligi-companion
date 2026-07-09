@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Prompt Anatomisi Laboratuvarı — Cilt 1, Bölüm 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 4px; margin-top: 14px; }
+  label:first-child { margin-top: 0; }
+  label .hint { font-weight: 400; font-size: .8rem; color: #5a6472; }
+  textarea, input[type=text] {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .92rem; font-family: inherit;
+    resize: vertical;
+  }
+  textarea { min-height: 44px; }
+  .presets { margin-bottom: 4px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin: 4px 8px 4px 0; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .result { margin-top: 16px; }
+  dl.audit { display: grid; grid-template-columns: 160px 1fr; row-gap: 8px; column-gap: 12px; margin: 0; }
+  dl.audit dt { font-weight: 700; }
+  dl.audit dd { margin: 0; }
+  .level-badge { display: inline-block; border-radius: 6px; padding: 3px 10px; font-weight: 700; }
+  .level-zayif { background: var(--orange); color: #3a2400; }
+  .level-iyi { background: var(--gray); color: var(--text); }
+  .level-profesyonel { background: var(--teal); color: #05221f; }
+  .tag { display: inline-block; background: var(--gray); color: var(--text); border-radius: 6px;
+         padding: 2px 8px; font-size: .82rem; font-weight: 700; margin: 2px 4px 2px 0; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Prompt Anatomisi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 3 — 3.2-3.10. Altı alanı (persona, görev,
+  bağlam, format, kısıt, başarı kriteri) doldurun; laboratuvar tarifi zayıf/iyi/profesyonel
+  düzeylerinden birine yerleştirir ve doldurulmamış [değişken] alanlarını işaretler. Kurulum
+  gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <div class="presets">
+      <button type="button" class="secondary" data-preset="weak">Zayıf tarif yükle</button>
+      <button type="button" class="secondary" data-preset="good">İyi tarif yükle</button>
+      <button type="button" class="secondary" data-preset="pro">Profesyonel tarif yükle</button>
+      <button type="button" class="secondary" id="clearBtn">Temizle</button>
+    </div>
+
+    <label for="persona">Persona</label>
+    <textarea id="persona" placeholder="Örn: Bir stratejik danışman gibi değerlendir."></textarea>
+
+    <label for="task">Görev</label>
+    <textarea id="task" placeholder="Örn: [şirket adı] için rakip karşılaştırma tablosu hazırla."></textarea>
+
+    <label for="context">Bağlam</label>
+    <textarea id="context" placeholder="Örn: Okuyucu [okuyucu_rolü]; yalnızca [veri_kaynağı] kullanılsın."></textarea>
+
+    <label for="format">Format<span class="hint"> — çıktının biçimi</span></label>
+    <textarea id="format" placeholder="Örn: Çıktıyı tablo olarak ver; sütunlar: Rakip, [ölçüt_1]."></textarea>
+
+    <label for="constraints">Kısıtlar<span class="hint"> — her satır bir kısıt</span></label>
+    <textarea id="constraints" placeholder="Örn:&#10;Kaynağı belirsiz sayısal iddia üretme.&#10;Ton nesnel ve kurumsal olsun."></textarea>
+
+    <label for="acceptance">Başarı kriterleri<span class="hint"> — her satır bir kriter; sayı veya "en az/her/hiçbir/yalnızca/olmalı" gibi denetlenebilir bir işaret içermeli</span></label>
+    <textarea id="acceptance" placeholder="Örn:&#10;Her rakip tabloda bir satırla temsil edilmeli.&#10;Tablo dışında ek metin yer almamalı."></textarea>
+
+    <div class="result panel" id="resultPanel" style="margin-top:16px;">
+      <dl class="audit" id="auditOut"></dl>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Düzeyler nasıl belirleniyor?</h2>
+    <p>Bir tarif tek parça içeriyorsa (yalnızca görev gibi) <strong>zayıf</strong> sayılır;
+    model geri kalan her şeyi kendi varsayımıyla doldurur. Altı parçanın tamamı doluysa ama
+    başarı kriterleri denetlenebilir değilse (sayı, "en az", "her", "hiçbir" gibi somut bir
+    işaret taşımıyorsa) tarif <strong>iyi</strong> düzeyde kalır — biçim bellidir ama kabul
+    şartı öznel yorum bırakır. Altı parçanın hepsi dolu ve her kriter denetlenebilirse tarif
+    <strong>profesyonel</strong> sayılır.</p>
+    <p>Köşeli parantezli alanlar ([şirket adı] gibi) kasıtlı değişkendir; bu laboratuvar
+    onları bilgi eksikliği olarak değil, doldurulacak yer tutucu olarak işaretler. Gerçek
+    kullanımda gönderilmeden önce her değişkenin doldurulmuş olması gerekir.</p>
+  </div>
+
+  <p class="note">Bu laboratuvar serbest metni yorumlayan bir yapay zekâ denetçisi değildir;
+  yapılandırılmış bir iş tarifini denetler, gerçek bir API çağrısı yapmaz. Aynı laboratuvarın
+  test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/prompt-patterns/prompt_anatomy_lab.py">prompt_anatomy_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/prompt-patterns">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const PART_LABELS = {
+    persona: "persona", task: "görev", context: "bağlam",
+    output_format: "format", constraints: "kısıt", acceptance_criteria: "başarı kriteri",
+  };
+  const REQUIRED_PARTS = ["persona", "task", "context", "output_format", "constraints", "acceptance_criteria"];
+  const CHECKABLE_MARKERS = ["en az", "en fazla", "her ", "hiçbir", "yalnızca", "olmalı", "bulunmalı", "geçmemeli", "yer almamalı"];
+  const VARIABLE_RE = /\[([^\[\]]+)\]/g;
+
+  function lines(text) {
+    return text.split('\n').map(s => s.trim()).filter(Boolean);
+  }
+
+  function findUnresolvedVariables(text) {
+    const found = [];
+    let m;
+    VARIABLE_RE.lastIndex = 0;
+    while ((m = VARIABLE_RE.exec(text)) !== null) {
+      const name = m[1].trim();
+      if (name && !found.includes(name)) found.push(name);
+    }
+    return found;
+  }
+
+  function isCheckableCriterion(text) {
+    const norm = text.trim().toLowerCase();
+    if (/[0-9]/.test(norm)) return true;
+    return CHECKABLE_MARKERS.some(marker => norm.includes(marker));
+  }
+
+  function classifyLevel(presentCount, acceptanceReady) {
+    if (presentCount <= 1) return "zayıf";
+    if (presentCount < REQUIRED_PARTS.length || !acceptanceReady) return "iyi";
+    return "profesyonel";
+  }
+
+  function renderedText(recipe) {
+    const parts = [
+      recipe.persona, recipe.task, recipe.context,
+      recipe.constraints.join(' '), recipe.output_format,
+    ];
+    if (recipe.acceptance_criteria.length) {
+      parts.push("Kabul kriteri: " + recipe.acceptance_criteria.join('; '));
+    }
+    return parts.map(p => p.trim()).filter(Boolean).join(' ');
+  }
+
+  function auditRecipe(recipe) {
+    const partMap = {
+      persona: recipe.persona, task: recipe.task, context: recipe.context,
+      output_format: recipe.output_format, constraints: recipe.constraints,
+      acceptance_criteria: recipe.acceptance_criteria,
+    };
+    const present = REQUIRED_PARTS.filter(name => {
+      const v = partMap[name];
+      return Array.isArray(v) ? v.some(x => x.trim()) : Boolean(v.trim());
+    });
+    const missing = REQUIRED_PARTS.filter(name => !present.includes(name));
+    const acceptanceReady = recipe.acceptance_criteria.length > 0 &&
+      recipe.acceptance_criteria.every(isCheckableCriterion);
+
+    return {
+      level: classifyLevel(present.length, acceptanceReady),
+      present, missing,
+      unresolvedVariables: findUnresolvedVariables(renderedText(recipe)),
+      acceptanceReady,
+    };
+  }
+
+  function tagList(items, cls) {
+    if (!items.length) return `<span class="tag">yok</span>`;
+    return items.map(i => `<span class="tag ${cls || ''}">${i}</span>`).join('');
+  }
+
+  function levelBadge(level) {
+    const cls = level === 'zayıf' ? 'level-zayif' : level === 'iyi' ? 'level-iyi' : 'level-profesyonel';
+    return `<span class="level-badge ${cls}">${level}</span>`;
+  }
+
+  function render() {
+    const recipe = {
+      persona: document.getElementById('persona').value,
+      task: document.getElementById('task').value,
+      context: document.getElementById('context').value,
+      output_format: document.getElementById('format').value,
+      constraints: lines(document.getElementById('constraints').value),
+      acceptance_criteria: lines(document.getElementById('acceptance').value),
+    };
+    const audit = auditRecipe(recipe);
+    const missingLabels = audit.missing.map(m => PART_LABELS[m]);
+
+    document.getElementById('auditOut').innerHTML = `
+      <dt>Düzey</dt><dd>${levelBadge(audit.level)}</dd>
+      <dt>Eksik parçalar</dt><dd>${tagList(missingLabels, 'warn')}</dd>
+      <dt>Açık değişken</dt><dd>${tagList(audit.unresolvedVariables, 'warn')}</dd>
+      <dt>Kabul kriteri hazır mı</dt><dd>${audit.acceptanceReady
+        ? '<span class="tag ok">evet</span>' : '<span class="tag warn">hayır</span>'}</dd>
+    `;
+  }
+
+  const PRESETS = {
+    weak: {
+      persona: '', task: 'Rakip analizi yap.', context: '', format: '', constraints: '', acceptance: '',
+    },
+    good: {
+      persona: '', task: 'Beş ana rakibimizi fiyat ve pazar payına göre karşılaştır.',
+      context: '', format: 'Çıktıyı tablo olarak ver.', constraints: '', acceptance: '',
+    },
+    pro: {
+      persona: 'Bir stratejik danışman gibi değerlendir.',
+      task: '[şirket adı] için, [rakip_listesi] rakiplerini [karşılaştırma_ölçütleri] ölçütlerine göre karşılaştıran bir tablo hazırla.',
+      context: 'Okuyucu [okuyucu_rolü]; çıktı [kullanım_amacı] için kullanılacak. Yalnızca [veri_kaynağı] içindeki bilgileri kullan.',
+      format: 'Çıktıyı tablo olarak ver; sütunlar: Rakip, [ölçüt_1], [ölçüt_2], Tehdit Düzeyi.',
+      constraints: 'Kaynağı belirsiz sayısal iddia üretme; eksik veri varsa "veri mevcut değil" yaz.\nTablo bir sayfayı geçmesin, ton nesnel ve kurumsal olsun.',
+      acceptance: '[rakip_listesi] içindeki her rakip tabloda bir satırla temsil edilmeli.\nHer satırda en az bir sayısal veya kaynaklı veri bulunmalı.\nTablo dışında ek metin yer almamalı.',
+    },
+  };
+
+  document.querySelectorAll('[data-preset]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const p = PRESETS[btn.dataset.preset];
+      document.getElementById('persona').value = p.persona;
+      document.getElementById('task').value = p.task;
+      document.getElementById('context').value = p.context;
+      document.getElementById('format').value = p.format;
+      document.getElementById('constraints').value = p.constraints;
+      document.getElementById('acceptance').value = p.acceptance;
+      render();
+    });
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    ['persona', 'task', 'context', 'format', 'constraints', 'acceptance'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    render();
+  });
+
+  document.querySelectorAll('textarea').forEach(el => el.addEventListener('input', render));
+
+  render();
+</script>
+</body>
+</html>
