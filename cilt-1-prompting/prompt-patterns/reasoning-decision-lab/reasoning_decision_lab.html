@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Karar Gerekçesi ve Pilot Plan Laboratuvarı — Cilt 1, Bölüm 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 860px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .95rem; color: var(--navy); margin: 0 0 8px 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .branches { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .branch-card { background: var(--bg); border: 1px solid var(--gray); border-radius: 10px; padding: 14px; }
+  .branch-card p.desc { font-size: .82rem; color: #5a6472; margin: 4px 0 10px 0; }
+  .field-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .field-row label { font-size: .82rem; font-weight: 600; }
+  .field-row input[type=range] { flex: 1; margin: 0 8px; accent-color: var(--teal); }
+  .field-row .val { min-width: 1.6em; text-align: right; font-variant-numeric: tabular-nums; font-size: .82rem; }
+  .field-row input[type=number] { width: 52px; padding: 3px 6px; border-radius: 6px;
+    border: 1px solid var(--gray); background: var(--bg); color: var(--text); }
+  table.rank { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  table.rank th, table.rank td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--gray); font-size: .88rem; }
+  table.rank th:last-child, table.rank td:last-child { text-align: right; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .8rem; font-weight: 700; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  ul.thresholds { margin: 8px 0 0 0; padding-left: 18px; font-size: .88rem; }
+  ul.thresholds li { margin-bottom: 4px; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+    border-radius: 8px; padding: 6px 12px; font-size: .85rem; cursor: pointer; }
+  @media (prefers-color-scheme: dark) { button.secondary { color: #bfe9e4; border-color: #bfe9e4; } }
+</style>
+</head>
+<body>
+  <h1>Karar Gerekçesi ve Pilot Plan Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 6 — 6.6 ve 6.8. Aşağıdaki üç karar dalı
+  Bölüm 6'daki 142 numaralı hat vakasıdır. Puanları ve kaynak kullanımını değiştirin;
+  laboratuvar ağırlıklı puanı, uygulanabilirliği ve önerilen dalı canlı hesaplar. Kurulum
+  gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <div class="branches" id="branches"></div>
+    <button class="secondary" id="resetBtn" type="button" style="margin-top:14px;">Varsayılanlara dön</button>
+  </div>
+
+  <div class="panel">
+    <h2>Tree of Thoughts tablo özeti</h2>
+    <table class="rank" id="rankTable"></table>
+    <p id="recommendation" style="margin-top:10px; font-weight:700;"></p>
+  </div>
+
+  <div class="panel">
+    <h2>Önerilen dal için pilot plan kontrolü</h2>
+    <p id="pilotIntro" style="font-size:.9rem;"></p>
+    <ul class="thresholds" id="thresholds"></ul>
+    <p id="validation" style="margin-top:10px;"></p>
+  </div>
+
+  <div class="panel">
+    <h2>Puan ve kısıt nasıl işleniyor?</h2>
+    <p>Her dal üç kriterle (sefer sıklığı, mahalle erişimi, bütçe kısıtı) ağırlıklı puanlanır;
+    ağırlıklar kriterin bölümdeki önemini yansıtır (erişim 4, sefer sıklığı 3, bütçe 2).
+    Bir dal araç/şoför sınırını aşarsa <strong>engel</strong> sayılır ve puanı ne olursa olsun
+    "kontrol gerekli" durumuna düşer — Bölüm 6'nın vurguladığı ayrım budur: yüksek puan,
+    uygulanabilirlik garantisi değildir.</p>
+    <p>Önerilen dal seçildikten sonra pilot plan, sayısal bir eşik ve "eşik karşılanmazsa ne
+    yapılacağı" adımı olmadan tamamlanmış sayılmaz. Bu, düşünce dökümü ile kontrol edilebilir
+    gerekçe arasındaki farkın uygulamaya dökülmüş hâlidir.</p>
+  </div>
+
+  <p class="note">Bu laboratuvar gerçek model çıktısını ölçmez; karar dallarını yerel ve
+  şeffaf kurallarla puanlar. Model adı, fiyat veya benchmark iddiası içermez; güncel model
+  bilgisi için <a href="../../../docs/model-watch/">docs/model-watch</a> kullanılmalıdır.
+  Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/prompt-patterns/reasoning-decision-lab/reasoning_decision_lab.py">reasoning_decision_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/prompt-patterns/reasoning-decision-lab">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const CRITERIA = [
+    { key: "peak_load", label: "sefer sıklığı", weight: 3 },
+    { key: "access", label: "mahalle erişimi", weight: 4 },
+    { key: "budget_fit", label: "bütçe kısıtı", weight: 2 },
+  ];
+  const RESOURCE_LIMITS = { vehicles: 2, drivers: 4 };
+
+  const DEFAULT_BRANCHES = [
+    { key: "A", title: "Sefer sıklığını artır",
+      description: "Mevcut güzergâhı koru, sabah yoğun saatlerde ek sefer koy.",
+      scores: { peak_load: 5, access: 1, budget_fit: 4 }, resources: { vehicles: 1, drivers: 2 } },
+    { key: "B", title: "Hattı ikiye böl",
+      description: "142 numaralı hattı iki kısa hatta ayır, aktarma noktasını merkeze al.",
+      scores: { peak_load: 3, access: 2, budget_fit: 2 }, resources: { vehicles: 2, drivers: 4 } },
+    { key: "C", title: "Besleyici hat ekle",
+      description: "Yeşiltepe için kısa besleyici hat kur, ana hatta aktarma ver.",
+      scores: { peak_load: 3, access: 5, budget_fit: 4 }, resources: { vehicles: 1, drivers: 2 } },
+  ];
+
+  let state = JSON.parse(JSON.stringify(DEFAULT_BRANCHES));
+
+  function scoreBranch(branch) {
+    const blockers = [];
+    for (const [name, limit] of Object.entries(RESOURCE_LIMITS)) {
+      const used = branch.resources[name] || 0;
+      if (used > limit) {
+        const label = name === "vehicles" ? "araç" : "şoför";
+        blockers.push(`${label} kısıtı aşıldı: ${used}/${limit}`);
+      }
+    }
+    let weightedScore = 0;
+    for (const c of CRITERIA) {
+      const value = branch.scores[c.key] ?? 0;
+      weightedScore += value * c.weight;
+    }
+    return { branch, weightedScore, blockers, isActionable: blockers.length === 0 };
+  }
+
+  function rankBranches() {
+    const evals = state.map(scoreBranch);
+    return evals.slice().sort((a, b) => {
+      if (a.isActionable !== b.isActionable) return a.isActionable ? -1 : 1;
+      return b.weightedScore - a.weightedScore;
+    });
+  }
+
+  function buildPilotPlan(branch) {
+    return {
+      durationWeeks: 4,
+      plan: `${branch.title} dalını dört haftalık sınırlı pilot olarak çalıştır. Sabah yoğun saatleri önceliklendir; uygulamayı tüm hat ağına yayma.`,
+      thresholds: [
+        { metric: "Yeşiltepe kaynaklı şikâyet sayısı", target: "4 hafta sonunda en az %50 azalma", failureAction: "Sefer saatlerini ve durak konumunu yeniden düzenle." },
+        { metric: "besleyici hat doluluk oranı", target: "haftalık ortalama %30'un altına düşmemeli", failureAction: "Sefer sayısını azalt veya güzergâhı kısalt." },
+        { metric: "sabah ana hat doluluk oranı", target: "07:00-09:00 aralığında %85'in altına inmeli", failureAction: "Ana hat sabah sefer sıklığını ayrı bir dal olarak yeniden değerlendir." },
+      ],
+    };
+  }
+
+  function hasNumber(text) { return /\d/.test(text); }
+
+  function validatePilotPlan(plan) {
+    const errors = [];
+    if (plan.durationWeeks <= 0) errors.push("Pilot süresi pozitif olmalıdır.");
+    if (!plan.plan.trim()) errors.push("Plan bölümü boş olmamalıdır.");
+    if (!plan.thresholds.length) errors.push("Kontrol eşiği bulunmalıdır.");
+    for (const t of plan.thresholds) {
+      if (!hasNumber(t.target)) errors.push(`${t.metric} için sayısal eşik bulunmalıdır.`);
+      if (!t.failureAction.trim()) errors.push(`${t.metric} için karşılanmazsa adımı bulunmalıdır.`);
+    }
+    return errors;
+  }
+
+  function buildBranchCard(branch, idx) {
+    const div = document.createElement('div');
+    div.className = 'branch-card';
+    const criteriaHtml = CRITERIA.map(c => `
+      <div class="field-row">
+        <label>${c.label}</label>
+        <input type="range" min="0" max="5" step="1" value="${branch.scores[c.key]}"
+               data-branch="${idx}" data-field="score" data-key="${c.key}">
+        <span class="val" data-out="score-${idx}-${c.key}">${branch.scores[c.key]}</span>
+      </div>`).join('');
+    div.innerHTML = `
+      <h3>${branch.key} — ${branch.title}</h3>
+      <p class="desc">${branch.description}</p>
+      ${criteriaHtml}
+      <div class="field-row">
+        <label>Araç</label>
+        <input type="number" min="0" max="4" value="${branch.resources.vehicles}"
+               data-branch="${idx}" data-field="resource" data-key="vehicles" style="margin-left:auto;">
+      </div>
+      <div class="field-row">
+        <label>Şoför</label>
+        <input type="number" min="0" max="8" value="${branch.resources.drivers}"
+               data-branch="${idx}" data-field="resource" data-key="drivers" style="margin-left:auto;">
+      </div>
+    `;
+    return div;
+  }
+
+  function renderBranchCards() {
+    const container = document.getElementById('branches');
+    container.innerHTML = '';
+    state.forEach((branch, idx) => container.appendChild(buildBranchCard(branch, idx)));
+    container.querySelectorAll('input').forEach(el => el.addEventListener('input', onFieldChange));
+  }
+
+  function onFieldChange(e) {
+    const idx = Number(e.target.dataset.branch);
+    const field = e.target.dataset.field;
+    const key = e.target.dataset.key;
+    const value = Number(e.target.value);
+    if (field === 'score') {
+      state[idx].scores[key] = value;
+      const out = document.querySelector(`[data-out="score-${idx}-${key}"]`);
+      if (out) out.textContent = value;
+    } else {
+      state[idx].resources[key] = value;
+    }
+    renderResults();
+  }
+
+  function renderResults() {
+    const ranked = rankBranches();
+    const table = document.getElementById('rankTable');
+    table.innerHTML = `
+      <tr><th>Dal</th><th>Toplam puan</th><th>Durum</th></tr>
+      ${ranked.map(e => `
+        <tr>
+          <td>${e.branch.key} - ${e.branch.title}</td>
+          <td>${e.weightedScore}</td>
+          <td>${e.isActionable
+            ? '<span class="tag ok">uygulanabilir</span>'
+            : `<span class="tag warn">kontrol gerekli</span> ${e.blockers.join('; ')}`}</td>
+        </tr>`).join('')}
+    `;
+
+    const chosen = ranked.find(e => e.isActionable);
+    const recEl = document.getElementById('recommendation');
+    if (!chosen) {
+      recEl.textContent = 'Uygulanabilir karar dalı bulunamadı — tüm dallar kaynak kısıtını aşıyor.';
+      document.getElementById('pilotIntro').textContent = '';
+      document.getElementById('thresholds').innerHTML = '';
+      document.getElementById('validation').innerHTML = '';
+      return;
+    }
+    recEl.textContent = `Önerilen dal: ${chosen.branch.key} - ${chosen.branch.title} (gerekçe puanı: ${chosen.weightedScore})`;
+
+    const plan = buildPilotPlan(chosen.branch);
+    const errors = validatePilotPlan(plan);
+    document.getElementById('pilotIntro').textContent = `Süre: ${plan.durationWeeks} hafta. ${plan.plan}`;
+    document.getElementById('thresholds').innerHTML = plan.thresholds
+      .map(t => `<li><strong>${t.metric}:</strong> ${t.target} — karşılanmazsa: ${t.failureAction}</li>`).join('');
+    document.getElementById('validation').innerHTML = errors.length
+      ? `<span class="tag warn">geçmedi</span> ${errors.join('; ')}`
+      : '<span class="tag ok">geçti</span>';
+  }
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    state = JSON.parse(JSON.stringify(DEFAULT_BRANCHES));
+    renderBranchCards();
+    renderResults();
+  });
+
+  renderBranchCards();
+  renderResults();
+</script>
+</body>
+</html>
