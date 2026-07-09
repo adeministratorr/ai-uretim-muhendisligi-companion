@@ -16,6 +16,8 @@ Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltle
 - Okurun AI ile ürettiği kodu test, review, checkpoint ve rollback disipliniyle yönetmesini öğretir.
 - Web yayınındaki bölüm sayfalarına kod, şablon ve güncel tablo bağlantısı sağlar.
 - Model ve araç ekosistemi değiştikçe güncellenen bir alan olarak çalışır.
+- Etkileşimli HTML laboratuvarlarını <https://lab.ademyuce.tr> adresinde kurulumsuz sunar
+  (örnek: [temperature/top-p/top-k laboratuvarı](https://lab.ademyuce.tr/cilt-1-prompting/parameter-matrix/sampling_lab.html)).
 
 **Temel ilke:** Bu repo hem insan okur hem de coding agent tarafından okunabilir olmalıdır.
 
@@ -53,8 +55,8 @@ adımlarını taşır.
 | 4 | AI-Native Production | `cilt-4-production/` |
 
 Şu an yalnızca ilk uygulama paketindeki klasörler açık; her klasördeki README, o örneğin
-ne zaman doldurulacağını belirtir. Kitabın ilgili bölümü web'de yayınlandıkça klasör
-içeriği doldurulur (bkz. `../eKitap_Otomasyon/companion_repo_plani.md` — kaynak plan).
+ne zaman doldurulacağını belirtir. Kitabın ilgili bölümü yayınlandıkça klasör içeriği
+doldurulur.
 
 ---
 

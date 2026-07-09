@@ -2,7 +2,7 @@
 
 Aylık model/araç uyumluluk kontrolü ve güncel karşılaştırma tabloları burada tutulur.
 Kitap metninde model/araç adları kalıcı tavsiye gibi yazılmaz; güncel tablolar bu klasörde
-güncel tutulan ek olarak çalışır (bkz. kök dizindeki `../../companion_repo_plani.md` §8).
+güncel tutulan ek olarak çalışır.
 
 ## Güncelleme Sıklığı
 
