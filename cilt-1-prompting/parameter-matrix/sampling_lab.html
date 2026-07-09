@@ -19,7 +19,12 @@
     max-width: 780px; margin-inline: auto; line-height: 1.5;
   }
   h1 { font-size: 1.3rem; color: var(--navy); }
-  @media (prefers-color-scheme: dark) { h1 { color: #bfe9e4; } }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
   p.lead { color: #5a6472; margin-bottom: 24px; }
   .panel {
     background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
@@ -45,9 +50,10 @@
 </head>
 <body>
   <h1>Temperature / Top-p / Top-k Laboratuvarı</h1>
-  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 1 — 1.6-1.8 (Şekil 1.6). Kaydırıcıları
-  hareket ettirin, "Bugün hava çok ..." cümlesinin aday devamlarının olasılığının nasıl
-  değiştiğini görün. Kurulum gerekmez; bu sayfa tek başına çalışır.</p>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 1 — 1.6-1.8 (Şekil 1.6). Aşağıdaki
+  kaydırıcılar, "Bugün hava çok ..." cümlesinin dört aday devamı üzerinde çalışır.
+  Bir ayarı değiştirdiğinizde adayların olasılıkları anında güncellenir; gri çubuklar
+  havuzdan elenen adayları gösterir. Kurulum gerekmez, sayfa tek başına çalışır.</p>
 
   <div class="panel">
     <div class="row">
@@ -71,9 +77,33 @@
     <p class="note" id="note"></p>
   </div>
 
+  <div class="panel">
+    <h2>Bu üç ayar ne yapar?</h2>
+    <p><strong>Temperature</strong>, olasılık dağılımının keskinliğini ayarlar. Değeri
+    düşürdükçe model en olası adaya yüklenir ve çıktı tahmin edilebilir hâle gelir;
+    yükselttikçe adaylar birbirine yaklaşır, çeşitlilik artar ama tutarsızlık riski de
+    büyür. Kaydırıcıyı 0,2'ye çekerek "güzel" adayının neredeyse bütün olasılığı
+    topladığını deneyebilirsiniz.</p>
+    <p><strong>Top-k</strong>, modelin seçim yapacağı havuzu en olası k adayla sınırlar.
+    Örneğin k=2 seçtiğinizde "kötü" ve "mavi" havuza hiç giremez; kalan olasılık iki
+    aday arasında yeniden paylaştırılır.</p>
+    <p><strong>Top-p</strong>, havuzu sabit bir aday sayısıyla değil, toplam olasılıkla
+    sınırlar. Adaylar en olasıdan başlayarak toplanır; toplam, seçtiğiniz p eşiğine
+    ulaştığında geri kalanlar elenir. Bu yüzden havuzun genişliği dağılıma göre değişir;
+    dağılım sivriyse havuz daralır, yayvansa genişler.</p>
+    <p>Üç ayar birlikte çalışır. Temperature dağılımın biçimini belirler; top-k ve top-p
+    bu dağılımdan hangi adayların havuzda kalacağına karar verir. Ayrıntılı anlatım ve
+    dört parametrenin karşılaştırması kitapta Şekil 1.6'dadır.</p>
+  </div>
+
   <p class="note">Değerler temsilîdir; gerçek bir modelin ürettiği olasılıklar
-  sağlayıcıya, modele ve prompta göre değişir. Aynı laboratuvarın Python sürümü
-  (<code>sampling_lab.py</code>) için <code>README.md</code>'ye bakın.</p>
+  sağlayıcıya, modele ve prompta göre değişir. Aynı laboratuvarın test edilmiş Python
+  sürümü <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/parameter-matrix/sampling_lab.py">sampling_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/parameter-matrix">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
 
 <script>
   const CANDIDATES = ["güzel", "sıcak", "kötü", "mavi"];
@@ -144,8 +174,8 @@
 
     const excluded = items.filter(it => !it.kept).length;
     noteEl.textContent = excluded > 0
-      ? `${excluded} aday top-k/top-p tarafından havuzdan elendi (gri).`
-      : 'Tüm adaylar havuzda.';
+      ? `Top-k/top-p filtreleri ${excluded} adayı havuzdan çıkardı (gri çubuklar).`
+      : 'Dört aday da havuzda; filtreler hiçbir adayı elemedi.';
   }
 
   [tempEl, topkEl, toppEl].forEach(el => el.addEventListener('input', render));
