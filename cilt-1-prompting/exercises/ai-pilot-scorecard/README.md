@@ -20,8 +20,14 @@ last_verified: "2026-07"
 
 ## Ne Yapar?
 
-Gerçek bir API çağrısı yapmadan, bölüm sonundaki beş alanlı pilot tasarımını küçük
-bir denetim kartına dönüştürür:
+Bölüm 15'in dersi, yapay zekâ pilotunu heves üzerine değil, ölçüm üzerine
+kurmaktır. Beş alanlı tasarım pilotun hedefini, kullanıcı grubunu, veri riskini,
+başarı metriğini ve pilot sonrası kararı daha başlamadan yazıya bağlar; geri
+çekilme eşiği ise hangi sonuçta pilotun durdurulacağını önceden tanımlar.
+Başarısız pilotu erken ve ucuz bitirmenin güvencesi budur.
+
+Bu laboratuvar, gerçek bir API çağrısı yapmadan, bölüm sonundaki beş alanlı pilot
+tasarımını küçük bir denetim kartına dönüştürür:
 
 - `pilot_template.json`: hedef, kullanıcı grubu, veri riski, başarı metriği ve pilot
   sonrası karar kriteri için doldurulabilir şablon.
