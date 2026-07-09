@@ -6,7 +6,7 @@ Tool adı, açıklama, parametre, yan etki ve izin seviyesi şemaları.
 
 ## ACI Standardı
 
-- Agent'ın kullanacağı tool insan için değil, model için de açık olmalıdır.
+- Agent'ın kullanacağı tool yalnız insan için değil, model için de açık olmalıdır.
 - Tool açıklaması kısa, eylem odaklı ve risk sınıfı belirtilmiş olmalıdır.
 - Yan etkili işlemler varsayılan olarak onay gerektirir.
 
