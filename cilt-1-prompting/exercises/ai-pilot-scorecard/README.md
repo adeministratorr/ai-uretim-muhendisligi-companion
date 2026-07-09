@@ -25,7 +25,7 @@ bir denetim kartına dönüştürür:
 
 - `pilot_template.json`: hedef, kullanıcı grubu, veri riski, başarı metriği ve pilot
   sonrası karar kriteri için doldurulabilir şablon.
-- `case_table.json`: bölümde anılan şirket vakalarını yaşayan tablo biçiminde tutar.
+- `case_table.json`: bölümde anılan şirket vakalarını tablo biçiminde tutar.
   Bu satırlar kaynak doğrulaması beklediğini açıkça gösterir; doğrulanmış kaynak gibi
   sunulmaz.
 - `ai_pilot_scorecard.py`: doldurulan pilot dosyasının ölçülebilirlik, veri riski ve
@@ -50,7 +50,7 @@ python3 -m pytest -q
 ## Beklenen Çıktı (özet)
 
 ```text
-Yaşayan vaka tablosu: Vaka satırı: 10 | Kaynak doğrulaması bekleyen: 10
+Vaka tablosu: Vaka satırı: 10 | Kaynak doğrulaması bekleyen: 10
 Durum: geçti
 Tamamlanan kontrol: 9/9
 Kabul kriteri geçti: beş alan ve dört ölçüt dolduruldu.
@@ -72,7 +72,7 @@ yazıldığını, veri riskinin işaretlendiğini ve başarısızlık durumunda 
 
 - Bu araç bir yapay zekâ pilotunu otomatik onaylamaz; yalnızca eksik alanları ve zayıf
   karar eşiğini görünür kılar.
-- `case_table.json` yaşayan tablo iskeletidir. Bölümdeki vaka satırları kaynak
+- `case_table.json` tablo iskeletidir. Bölümdeki vaka satırları kaynak
   doğrulaması tamamlanana kadar karar dayanağı olarak kullanılmamalıdır.
 - Ölçülebilirlik denetimi basit anahtar sözcük ve eşik kontrolleriyle yapılır. Kritik
   kurumsal pilotlarda insan değerlendirmesi ve hukuk/güvenlik kontrolü gerekir.

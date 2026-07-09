@@ -2,7 +2,7 @@
 
 Bu depo, dört ciltlik Türkçe kitap serisinin (Prompt Mühendisliği · Vibe Coding ve Loop
 Engineering · Agent Engineering · AI-Native Production) **companion (destek) deposudur**.
-Yalnızca örnek kod deposu değildir; kitabın yaşayan laboratuvarı, güncel araç/model izleme
+Yalnızca örnek kod deposu değildir; kitabın uygulama laboratuvarı, güncel araç/model izleme
 alanı ve web yayınının teknik tamamlayıcısıdır.
 
 Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltler.
@@ -15,7 +15,7 @@ Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltle
 - Prompt, skill, loop, eval, schema, MCP ve agent örneklerini tek yerde toplar.
 - Okurun AI ile ürettiği kodu test, review, checkpoint ve rollback disipliniyle yönetmesini öğretir.
 - Web yayınındaki bölüm sayfalarına kod, şablon ve güncel tablo bağlantısı sağlar.
-- Model ve araç ekosistemi değiştikçe yaşayan güncelleme alanı olarak çalışır.
+- Model ve araç ekosistemi değiştikçe güncellenen bir alan olarak çalışır.
 
 **Temel ilke:** Bu repo hem insan okur hem de coding agent tarafından okunabilir olmalıdır.
 
