@@ -45,7 +45,14 @@ Promptu, bölümde anlatıldığı gibi yapılandırılmış bir iş tarifi olar
 
 ## Nasıl Kullanılır?
 
-Terminalde bu klasöre geçin:
+**Kod bilmiyorsanız (önerilen yol):** Laboratuvarın yayındaki sürümünü tarayıcınızda
+açın: <https://lab.ademyuce.tr/cilt-1-prompting/prompt-patterns/prompt_anatomy_lab.html>
+İsterseniz `prompt_anatomy_lab.html` dosyasını indirip çift tıklayarak da açabilirsiniz;
+kurulum, terminal veya internet bağlantısı gerekmez. Altı alanı doldurdukça veya hazır
+tariflerden birini yüklediğinizde düzey ve eksik parça listesi canlı güncellenir.
+
+**Kod biliyorsanız:** Aynı mantığın Python sürümü `prompt_anatomy_lab.py`
+dosyasındadır. Terminalde bu klasöre geçin:
 
 ```bash
 cd cilt-1-prompting/prompt-patterns
