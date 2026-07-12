@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Araç İzni Denetimi Laboratuvarı — Cilt 1, Bölüm 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #d64545; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --row-bg: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; --row-bg: #182233; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 880px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  @media (prefers-color-scheme: dark) { p.lead { color: #9aa7bb; } }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  table { width: 100%; border-collapse: collapse; }
+  .table-scroll { overflow-x: auto; }
+  th, td { text-align: left; padding: 8px 6px; vertical-align: top; font-size: .88rem; }
+  thead th { border-bottom: 2px solid var(--gray); color: var(--navy); }
+  @media (prefers-color-scheme: dark) { thead th { color: #bfe9e4; } }
+  tbody tr { background: var(--row-bg); border-bottom: 1px solid var(--gray); }
+  input[type=text] {
+    width: 100%; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .85rem;
+  }
+  select {
+    width: 100%; padding: 6px 4px; border-radius: 6px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .85rem;
+  }
+  input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--teal); }
+  .checkbox-cell { text-align: center; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .85rem; cursor: pointer; margin-right: 8px; margin-top: 10px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  button.danger-outline { background: transparent; color: var(--red); border: 1.5px solid var(--red);
+                           padding: 4px 10px; font-size: .8rem; margin: 0; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+    button.danger-outline { color: #ff8a8a; border-color: #ff8a8a; }
+  }
+  .status-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700;
+  }
+  .status-riskli { background: #f6d3d3; color: #7a1f1f; }
+  .status-guvenli { background: #d3f0e6; color: #10614a; }
+  @media (prefers-color-scheme: dark) {
+    .status-riskli { background: #4a1f1f; color: #ffb3b3; }
+    .status-guvenli { background: #123c30; color: #85e8c8; }
+  }
+  .gerekceler { list-style: none; margin: 4px 0 0; padding: 0; font-size: .78rem; color: #5a6472; }
+  @media (prefers-color-scheme: dark) { .gerekceler { color: #9aa7bb; } }
+  .gerekceler li::before { content: "· "; }
+  .summary { font-size: .95rem; margin-top: 14px; padding: 12px 14px; border-radius: 8px; }
+  .summary.ok { background: #d3f0e6; color: #10614a; }
+  .summary.warn { background: #f6d3d3; color: #7a1f1f; }
+  @media (prefers-color-scheme: dark) {
+    .summary.ok { background: #123c30; color: #85e8c8; }
+    .summary.warn { background: #4a1f1f; color: #ffb3b3; }
+  }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  @media (prefers-color-scheme: dark) { .note { color: #9aa7bb; } }
+</style>
+</head>
+<body>
+  <h1>Araç İzni Denetimi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 13 — Yapay Zekâ Ajanları: Kavramlar,
+  13.4-13.5 (araç tanımı, ajanın beş bileşeni) ve 13.10 (araştır-özetle-raporla
+  örneği). Aşağıdaki tablo, bir ajana tanımlanan araçların listesini "araç listesi +
+  parametre sınırı + onay noktası" üçlü denetiminden geçirir. Bir satırı değiştirdiğinizde
+  denetim sonucu anında güncellenir. Kurulum gerekmez, sayfa tek başına çalışır; gerçek
+  bir model veya API çağrısı yapılmaz.</p>
+
+  <div class="panel">
+    <h2>Ajana tanımlı araçlar</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:140px">Araç adı</th>
+            <th style="min-width:220px">İzinli parametreler (virgülle ayırın; sınırsız için boş bırakın veya * yazın)</th>
+            <th style="min-width:110px">Eylem</th>
+            <th style="min-width:90px">Onay noktası</th>
+            <th style="min-width:110px">Sonuç</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <button id="addBtn" type="button">+ Araç ekle</button>
+    <button id="resetBtn" class="secondary" type="button">Selin'in listesine sıfırla</button>
+
+    <div id="summary" class="summary"></div>
+    <p class="note" id="detailNote"></p>
+  </div>
+
+  <div class="panel">
+    <h2>Denetim kuralı ne diyor?</h2>
+    <p>Bir araç yalnızca şu üç koşulun <strong>hepsi</strong> birden sağlandığında
+    riskli işaretlenir: (1) parametre sınırı yok — herhangi bir değerle çağrılabilir,
+    (2) eylem geri alınamaz — gönderme, silme, ödeme gibi, (3) onay noktası
+    tanımlanmamış. Üç koşuldan biri bile eksikse araç riskli sayılmaz: parametre
+    sınırlıysa araç zaten dar bir alanda çalışır (13.10'daki <code>web_oku</code>
+    örneği); eylem geri alınabilirse yanlış bir çağrının bedeli düşüktür; onay
+    noktası varsa çalıştırılmadan önce bir insan araya girer (13.9'daki yarı otonom
+    çalışma).</p>
+    <p>Varsayılan tablo, 13.10'daki Selin örneğinin üç aracına (<code>web_oku</code>,
+    <code>gecmis_raporu_getir</code>, <code>rapor_taslagi_olustur</code>) ek olarak,
+    aynı alt bölümün kabul kriterinde tarif edilen hatayı somutlaştıran hayali bir
+    dördüncü araç (<code>eposta_gonder</code>) içerir: parametresi sınırlanmamış,
+    geri alınamaz ve onay noktası tanımlanmamış bir gönderme aracı — tam da kabul
+    kriterinin üçüncü kontrolünün yakalamaya çalıştığı hata.</p>
+  </div>
+
+  <p class="note">Bu araç gerçek bir ajan çatısına bağlanmaz; yalnızca girdiğiniz
+  bilgi üzerinde saf mantık çalıştırır — riski otomatik olarak "gidermez", yalnızca
+  görünür kılar. Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/exercises/tool-permission-audit/tool_permission_audit.py">tool_permission_audit.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/exercises/tool-permission-audit">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const VARSAYILAN_ARACLAR = [
+    { ad: "web_oku", parametreler: "rakip1.com/fiyat, rakip2.com/fiyat, rakip3.com/fiyat, rakip4.com/fiyat, rakip5.com/fiyat", geriAlinabilir: true, onay: false },
+    { ad: "gecmis_raporu_getir", parametreler: "musteri_id, hafta", geriAlinabilir: true, onay: false },
+    { ad: "rapor_taslagi_olustur", parametreler: "icerik", geriAlinabilir: true, onay: false },
+    { ad: "eposta_gonder", parametreler: "", geriAlinabilir: false, onay: false }
+  ];
+
+  const rowsEl = document.getElementById('rows');
+  const summaryEl = document.getElementById('summary');
+  const detailNoteEl = document.getElementById('detailNote');
+  let state = [];
+  let nextId = 0;
+
+  function yeniSatir(veri) {
+    return { id: nextId++, ...veri };
+  }
+
+  function yukle(liste) {
+    state = liste.map(v => yeniSatir({
+      ad: v.ad, parametreler: v.parametreler, geriAlinabilir: v.geriAlinabilir, onay: v.onay
+    }));
+    render();
+  }
+
+  function parametreSinirsizMi(parametreMetni) {
+    const parcalar = parametreMetni.split(',').map(s => s.trim()).filter(s => s.length > 0);
+    return parcalar.length === 0 || parcalar.includes('*');
+  }
+
+  function araciDenetle(satir) {
+    const sinirsiz = parametreSinirsizMi(satir.parametreler);
+    const riskli = sinirsiz && !satir.geriAlinabilir && !satir.onay;
+    const gerekceler = [];
+    gerekceler.push(sinirsiz
+      ? 'parametre sınırı yok (herhangi bir değerle çağrılabilir)'
+      : 'parametre sınırlı: ' + satir.parametreler.split(',').map(s => s.trim()).filter(Boolean).join(', '));
+    gerekceler.push(satir.geriAlinabilir ? 'eylem geri alınabilir' : 'eylem geri alınamaz');
+    gerekceler.push(satir.onay ? 'onay noktası tanımlı' : 'onay noktası tanımlanmamış');
+    return { riskli, gerekceler };
+  }
+
+  function render() {
+    rowsEl.innerHTML = '';
+    let riskliSayisi = 0;
+
+    state.forEach(satir => {
+      const sonuc = araciDenetle(satir);
+      if (sonuc.riskli) riskliSayisi++;
+
+      const tr = document.createElement('tr');
+
+      const adTd = document.createElement('td');
+      const adInput = document.createElement('input');
+      adInput.type = 'text';
+      adInput.value = satir.ad;
+      adInput.addEventListener('input', e => { satir.ad = e.target.value; render(); });
+      adTd.appendChild(adInput);
+
+      const paramTd = document.createElement('td');
+      const paramInput = document.createElement('input');
+      paramInput.type = 'text';
+      paramInput.placeholder = '* (sınırsız)';
+      paramInput.value = satir.parametreler;
+      paramInput.addEventListener('input', e => { satir.parametreler = e.target.value; render(); });
+      paramTd.appendChild(paramInput);
+
+      const eylemTd = document.createElement('td');
+      const eylemSelect = document.createElement('select');
+      eylemSelect.innerHTML = `
+        <option value="true">Geri alınabilir</option>
+        <option value="false">Geri alınamaz</option>`;
+      eylemSelect.value = String(satir.geriAlinabilir);
+      eylemSelect.addEventListener('change', e => { satir.geriAlinabilir = e.target.value === 'true'; render(); });
+      eylemTd.appendChild(eylemSelect);
+
+      const onayTd = document.createElement('td');
+      onayTd.className = 'checkbox-cell';
+      const onayInput = document.createElement('input');
+      onayInput.type = 'checkbox';
+      onayInput.checked = satir.onay;
+      onayInput.addEventListener('change', e => { satir.onay = e.target.checked; render(); });
+      onayTd.appendChild(onayInput);
+
+      const sonucTd = document.createElement('td');
+      const badge = document.createElement('span');
+      badge.className = 'status-badge ' + (sonuc.riskli ? 'status-riskli' : 'status-guvenli');
+      badge.textContent = sonuc.riskli ? 'RİSKLİ' : 'güvenli';
+      sonucTd.appendChild(badge);
+      const ul = document.createElement('ul');
+      ul.className = 'gerekceler';
+      sonuc.gerekceler.forEach(g => {
+        const li = document.createElement('li');
+        li.textContent = g;
+        ul.appendChild(li);
+      });
+      sonucTd.appendChild(ul);
+
+      const silTd = document.createElement('td');
+      const silBtn = document.createElement('button');
+      silBtn.type = 'button';
+      silBtn.className = 'danger-outline';
+      silBtn.textContent = 'Sil';
+      silBtn.addEventListener('click', () => {
+        state = state.filter(s => s.id !== satir.id);
+        render();
+      });
+      silTd.appendChild(silBtn);
+
+      tr.append(adTd, paramTd, eylemTd, onayTd, sonucTd, silTd);
+      rowsEl.appendChild(tr);
+    });
+
+    if (state.length === 0) {
+      summaryEl.className = 'summary ok';
+      summaryEl.textContent = 'Araç listesi boş.';
+      detailNoteEl.textContent = '';
+      return;
+    }
+
+    if (riskliSayisi > 0) {
+      summaryEl.className = 'summary warn';
+      summaryEl.textContent = `${state.length} araçtan ${riskliSayisi} tanesi riskli işaretlendi.`;
+    } else {
+      summaryEl.className = 'summary ok';
+      summaryEl.textContent = `${state.length} araçtan hiçbiri riskli işaretlenmedi.`;
+    }
+    detailNoteEl.textContent = 'Denetim kuralı: parametre sınırı yok + eylem geri alınamaz + onay noktası yok → riskli (13.10\'daki kabul kriterinin üçlü kontrolü).';
+  }
+
+  document.getElementById('addBtn').addEventListener('click', () => {
+    state.push(yeniSatir({ ad: 'yeni_arac', parametreler: '', geriAlinabilir: true, onay: false }));
+    render();
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => yukle(VARSAYILAN_ARACLAR));
+
+  yukle(VARSAYILAN_ARACLAR);
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Etki/Efor ve Risk/Değer Değerlendirme Şablonu — Cilt 1, Bölüm 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --red: #e15554; --purple: #7d5ba6;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  :root[data-theme="dark"] { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  :root[data-theme="light"] { --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --gray: #c9d4e4; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 900px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .95rem; color: var(--navy); margin: 0 0 8px 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) { h1, h2, h3 { color: #bfe9e4; } a { color: #7fd8ce; } }
+  :root[data-theme="dark"] h1, :root[data-theme="dark"] h2, :root[data-theme="dark"] h3 { color: #bfe9e4; }
+  :root[data-theme="dark"] a { color: #7fd8ce; }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 4px; margin-top: 12px; font-size: .88rem; }
+  label:first-child { margin-top: 0; }
+  input[type=text] {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .9rem; font-family: inherit;
+  }
+  .slider-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 18px; margin-top: 10px; }
+  .slider-row { display: flex; align-items: center; gap: 10px; }
+  input[type=range] { flex: 1; accent-color: var(--teal); }
+  .val { min-width: 1.6em; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+  .checkbox-row { display: flex; align-items: center; gap: 8px; margin-top: 14px; }
+  .checkbox-row label { margin: 0; font-weight: 400; font-size: .88rem; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin: 4px 8px 4px 0; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) { button.secondary { color: #bfe9e4; border-color: #bfe9e4; } }
+  :root[data-theme="dark"] button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+
+  .grids { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+  .matrix {
+    position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+    aspect-ratio: 1.3 / 1; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray);
+  }
+  .matrix .cell { padding: 8px 10px; font-size: .74rem; line-height: 1.3; }
+  .matrix .cell .title { font-weight: 700; display: block; margin-bottom: 2px; }
+  .cell.q1 { background: rgba(46,196,182,.18); }
+  .cell.q2 { background: rgba(255,159,28,.16); }
+  .cell.q3 { background: rgba(201,212,228,.28); }
+  .cell.q4 { background: rgba(225,85,84,.14); }
+  @media (prefers-color-scheme: dark) {
+    .cell.q1 { background: rgba(46,196,182,.14); } .cell.q2 { background: rgba(255,159,28,.14); }
+    .cell.q3 { background: rgba(51,65,90,.5); } .cell.q4 { background: rgba(225,85,84,.16); }
+  }
+  .axis-label { position: absolute; font-size: .68rem; color: #5a6472; font-weight: 700; }
+  .axis-x-left { bottom: 2px; left: 6px; } .axis-x-right { bottom: 2px; right: 6px; }
+  .axis-y-top { top: 2px; left: 50%; transform: translateX(-50%); }
+  .axis-y-bottom { bottom: 2px; left: 50%; transform: translateX(-50%); }
+  .dots { position: absolute; inset: 0; pointer-events: none; }
+  .dot {
+    position: absolute; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--navy); border: 2px solid #fff; transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 1px var(--navy);
+  }
+  .dot.riskli { background: var(--purple); box-shadow: 0 0 0 1px var(--purple); }
+  @media (prefers-color-scheme: dark) { .dot { border-color: #12181f; } }
+  :root[data-theme="dark"] .dot { border-color: #12181f; }
+
+  table.list { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  table.list th, table.list td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--gray); vertical-align: top; }
+  table.list th { font-size: .78rem; color: #5a6472; font-weight: 700; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .78rem; font-weight: 700; white-space: nowrap; }
+  .tag.p1 { background: var(--teal); color: #05221f; }
+  .tag.p2 { background: #9fd8ff; color: #06304f; }
+  .tag.p3 { background: var(--orange); color: #3a2400; }
+  .tag.p4 { background: var(--red); color: #3a0505; }
+  .tag.uzman { background: var(--purple); color: #fff; }
+  .rm-btn { background: transparent; color: var(--red); border: 1px solid var(--red); border-radius: 6px;
+            padding: 3px 8px; font-size: .76rem; cursor: pointer; margin: 0; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  .empty { font-size: .88rem; color: #5a6472; padding: 8px 0; }
+</style>
+</head>
+<body>
+  <h1>Etki/Efor ve Risk/Değer Değerlendirme Şablonu</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 10 — 10.12, 10.13, 10.16. Kendi görev
+  listenizi aşağıya ekleyin; her görevi etki/efor ve risk/değer eksenlerinde canlı
+  konumlandırır, ardından hangisinin önce otomatikleştirilmeye uygun olduğuna karar
+  verir. Kurulum gerekmez, sayfa tek başına çalışır; hiçbir görev sunucuya gönderilmez.</p>
+
+  <div class="panel">
+    <h2>Görev ekle</h2>
+    <label for="ad">Görev adı</label>
+    <input type="text" id="ad" placeholder="Örn. Müşteri mesajı cevap taslağı">
+
+    <div class="slider-grid">
+      <div>
+        <label for="etki">Etki (1 düşük – 5 yüksek): <span class="val" id="etkiVal">3</span></label>
+        <div class="slider-row"><input type="range" id="etki" min="1" max="5" step="1" value="3"></div>
+      </div>
+      <div>
+        <label for="efor">Efor (1 düşük – 5 yüksek): <span class="val" id="eforVal">3</span></label>
+        <div class="slider-row"><input type="range" id="efor" min="1" max="5" step="1" value="3"></div>
+      </div>
+      <div>
+        <label for="risk">Risk (1 düşük – 5 yüksek): <span class="val" id="riskVal">3</span></label>
+        <div class="slider-row"><input type="range" id="risk" min="1" max="5" step="1" value="3"></div>
+      </div>
+      <div>
+        <label for="deger">Değer (1 düşük – 5 yüksek): <span class="val" id="degerVal">3</span></label>
+        <div class="slider-row"><input type="range" id="deger" min="1" max="5" step="1" value="3"></div>
+      </div>
+    </div>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="yuksekRiskliAlan">
+      <label for="yuksekRiskliAlan">Yüksek riskli karar alanı (10.16) — hukuk, sağlık, finans veya kişisel veri içerir</label>
+    </div>
+
+    <div style="margin-top:14px;">
+      <button type="button" id="addBtn">Görevi ekle</button>
+      <button type="button" class="secondary" id="exampleBtn">Örnek listeyi yükle</button>
+      <button type="button" class="secondary" id="clearBtn">Listeyi temizle</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>İki matriste konum</h2>
+    <div class="grids">
+      <div>
+        <h3>Etki/Efor Matrisi (10.12)</h3>
+        <div class="matrix" id="ieMatrix">
+          <div class="cell q1"><span class="title">Yüksek Etki / Düşük Efor</span>Önce bunlar kurulur (hızlı kazanç)</div>
+          <div class="cell q2"><span class="title">Yüksek Etki / Yüksek Efor</span>Planlanır, sıraya alınır (büyük proje)</div>
+          <div class="cell q3"><span class="title">Düşük Etki / Düşük Efor</span>Zaman kalırsa denenir (dolgu işi)</div>
+          <div class="cell q4"><span class="title">Düşük Etki / Yüksek Efor</span>Genellikle ertelenir veya vazgeçilir (kaçın)</div>
+          <span class="axis-label axis-x-left">← düşük efor</span>
+          <span class="axis-label axis-x-right">yüksek efor →</span>
+          <div class="dots" id="ieDots"></div>
+        </div>
+      </div>
+      <div>
+        <h3>Risk/Değer Matrisi (10.13)</h3>
+        <div class="matrix" id="rvMatrix">
+          <div class="cell q4"><span class="title">Yüksek Risk / Düşük Değer</span>Muhtemelen kurulmaz</div>
+          <div class="cell q2"><span class="title">Yüksek Risk / Yüksek Değer</span>Kurulur ama sıkı onay noktası zorunlu</div>
+          <div class="cell q3"><span class="title">Düşük Risk / Düşük Değer</span>İhtiyaç olursa denenir</div>
+          <div class="cell q1"><span class="title">Düşük Risk / Yüksek Değer</span>Düşük düzeyde insan onayıyla kurulabilir</div>
+          <span class="axis-label axis-x-left">← düşük değer</span>
+          <span class="axis-label axis-x-right">yüksek değer →</span>
+          <div class="dots" id="rvDots"></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Her nokta bir görevi temsil eder; mor noktalar 10.16 anlamında yüksek
+    riskli karar alanı işaretli görevlerdir. Bir görevin iki matriste farklı köşeye
+    düşmesi normaldir — kitap 10.13'ün asıl noktası budur.</p>
+  </div>
+
+  <div class="panel">
+    <h2>Öncelik sıralaması</h2>
+    <div id="listOut"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Bu araç neye göre karar verir?</h2>
+    <p><strong>Etki/efor matrisi</strong> (10.12), bir görevin sağlayacağı faydayı ve
+    kurulum çabasını karşılaştırıp "bunu kurmaya değer mi?" sorusuna cevap verir.
+    <strong>Risk/değer matrisi</strong> (10.13) ise aynı görevin ne kadar sıkı
+    denetleneceğine, "bu çıktıya ne kadar güvenilebilir?" sorusuna cevap verir. Aynı
+    görev iki matriste farklı köşeye düşebilir: hızlı kurulabilen bir iş akışı, yüksek
+    riskli bir içerik taşıyorsa yine de sıkı bir onay noktası gerektirebilir.</p>
+    <p>Bu laboratuvar iki çeyrek sırasının <strong>en kötüsünü</strong> alarak birleşik
+    bir öncelik puanı üretir: bir görev tek eksende iyi görünse bile öteki eksende
+    "kaçın" veya "muhtemelen kurulmaz" çeyreğindeyse, öncelik o kötü eksene göre
+    belirlenir. Hukuk, sağlık, finans veya kişisel veri içeren yüksek riskli karar
+    alanları (10.16) bu puanlamadan bağımsız olarak ayrıca işaretlenir ve listenin
+    sonuna bırakılır; bu görevler otomatikleştirilmeden önce ilgili alanın uzmanına
+    danışılmalıdır.</p>
+  </div>
+
+  <p class="note">Bu araç bir kararı otomatik onaylamaz; yalnızca görev listenizi iki
+  eksende görünür kılıp bir öncelik sırası önerir. Aynı laboratuvarın test edilmiş
+  Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/exercises/impact-effort-matrix/impact_effort_matrix.py">impact_effort_matrix.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/exercises/impact-effort-matrix">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const YUKSEK_ESIGI = 3;
+
+  const IE_QUADRANTS = {
+    "yüksek,düşük": ["hızlı kazanç", "Önce bunlar kurulur", 1],
+    "yüksek,yüksek": ["büyük proje", "Planlanır, sıraya alınır", 2],
+    "düşük,düşük": ["dolgu işi", "Zaman kalırsa denenir", 3],
+    "düşük,yüksek": ["kaçın", "Genellikle ertelenir veya vazgeçilir", 4],
+  };
+  const RV_QUADRANTS = {
+    "düşük,yüksek": ["düşük risk / yüksek değer", "Düşük düzeyde insan onayıyla kurulabilir", 1],
+    "düşük,düşük": ["düşük risk / düşük değer", "İhtiyaç olursa denenir", 2],
+    "yüksek,yüksek": ["yüksek risk / yüksek değer", "Kurulur ama sıkı onay noktası zorunlu", 3],
+    "yüksek,düşük": ["yüksek risk / düşük değer", "Muhtemelen kurulmaz", 4],
+  };
+  const PRIORITY_LABELS = {
+    1: "Öncelik 1 — hemen kurulmaya uygun",
+    2: "Öncelik 2 — planlanır, orta düzeyde onayla sıraya alınır",
+    3: "Öncelik 3 — dikkatli değerlendirilmeli, sıkı onay veya erteleme düşünülmeli",
+    4: "Öncelik 4 — muhtemelen ertelenir veya vazgeçilir",
+  };
+  const YUKSEK_RISKLI_ALAN_ETIKETI = "Yüksek riskli karar alanı (10.16) — uzman onayı zorunlu";
+
+  function level(v) { return v >= YUKSEK_ESIGI ? "yüksek" : "düşük"; }
+
+  function degerlendir(gorev) {
+    const [ieCeyrek, ieEylem, ieSira] = IE_QUADRANTS[`${level(gorev.etki)},${level(gorev.efor)}`];
+    const [rvCeyrek, rvEylem, rvSira] = RV_QUADRANTS[`${level(gorev.risk)},${level(gorev.deger)}`];
+    const puan = Math.max(ieSira, rvSira);
+    const etiket = gorev.yuksekRiskliAlan ? YUKSEK_RISKLI_ALAN_ETIKETI : PRIORITY_LABELS[puan];
+    return { gorev, ieCeyrek, ieEylem, ieSira, rvCeyrek, rvEylem, rvSira, puan, etiket };
+  }
+
+  function onceliklendir(gorevler) {
+    return gorevler.map(degerlendir).sort((a, b) => {
+      if (a.gorev.yuksekRiskliAlan !== b.gorev.yuksekRiskliAlan) return a.gorev.yuksekRiskliAlan ? 1 : -1;
+      if (a.puan !== b.puan) return a.puan - b.puan;
+      const sumA = a.ieSira + a.rvSira, sumB = b.ieSira + b.rvSira;
+      if (sumA !== sumB) return sumA - sumB;
+      return a.gorev.ad.localeCompare(b.gorev.ad, 'tr');
+    });
+  }
+
+  const EXAMPLE = [
+    { ad: "Müşteri mesajı cevap taslağı", etki: 5, efor: 2, risk: 2, deger: 4, yuksekRiskliAlan: false },
+    { ad: "Toplantı notu özeti ve görev çıkarma", etki: 4, efor: 1, risk: 1, deger: 3, yuksekRiskliAlan: false },
+    { ad: "Sosyal medya paylaşımı — rutin ürün tanıtımı", etki: 4, efor: 2, risk: 2, deger: 4, yuksekRiskliAlan: false },
+    { ad: "Haftalık kişisel planlama taslağı", etki: 3, efor: 2, risk: 1, deger: 2, yuksekRiskliAlan: false },
+    { ad: "Sipariş takip sistemini tam otomatikleştirme", etki: 5, efor: 5, risk: 4, deger: 5, yuksekRiskliAlan: false },
+    { ad: "Kozmetik etiket mevzuat araştırması", etki: 4, efor: 3, risk: 5, deger: 5, yuksekRiskliAlan: false },
+    { ad: "Sosyal medya paylaşımı — sağlık/tedavi iddiası içeren taslak", etki: 4, efor: 2, risk: 5, deger: 4, yuksekRiskliAlan: false },
+    { ad: "Bir defalık afiş metni", etki: 1, efor: 1, risk: 1, deger: 1, yuksekRiskliAlan: false },
+    { ad: "Vergi beyanı taslağı", etki: 3, efor: 2, risk: 5, deger: 4, yuksekRiskliAlan: true },
+  ];
+
+  let gorevler = [];
+
+  const els = {
+    ad: document.getElementById('ad'),
+    etki: document.getElementById('etki'), efor: document.getElementById('efor'),
+    risk: document.getElementById('risk'), deger: document.getElementById('deger'),
+    yuksekRiskliAlan: document.getElementById('yuksekRiskliAlan'),
+  };
+  ['etki', 'efor', 'risk', 'deger'].forEach(id => {
+    els[id].addEventListener('input', () => {
+      document.getElementById(id + 'Val').textContent = els[id].value;
+    });
+  });
+
+  function addGorev() {
+    const ad = els.ad.value.trim();
+    if (!ad) { els.ad.focus(); return; }
+    gorevler.push({
+      ad,
+      etki: parseInt(els.etki.value, 10), efor: parseInt(els.efor.value, 10),
+      risk: parseInt(els.risk.value, 10), deger: parseInt(els.deger.value, 10),
+      yuksekRiskliAlan: els.yuksekRiskliAlan.checked,
+    });
+    els.ad.value = '';
+    els.yuksekRiskliAlan.checked = false;
+    render();
+  }
+
+  function removeGorev(index) { gorevler.splice(index, 1); render(); }
+
+  function placeDots(containerId, gorevler, xField, yField, xInvert, riskField) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '';
+    gorevler.forEach((g) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot' + (g.yuksekRiskliAlan ? ' riskli' : '');
+      const xVal = g[xField], yVal = g[yField];
+      const xPct = ((xVal - 1) / 4) * 100;
+      const yPct = 100 - (((yVal - 1) / 4) * 100);
+      dot.style.left = xPct + '%';
+      dot.style.top = yPct + '%';
+      dot.title = `${g.ad} (${xField}=${xVal}, ${yField}=${yVal})`;
+      container.appendChild(dot);
+    });
+  }
+
+  function render() {
+    placeDots('ieDots', gorevler, 'efor', 'etki');
+    placeDots('rvDots', gorevler, 'deger', 'risk');
+
+    const listOut = document.getElementById('listOut');
+    if (gorevler.length === 0) {
+      listOut.innerHTML = '<p class="empty">Henüz görev eklenmedi. Yukarıdan bir görev ekleyin veya örnek listeyi yükleyin.</p>';
+      return;
+    }
+    const siralanmis = onceliklendir(gorevler);
+    const rows = siralanmis.map((d, i) => {
+      const tagClass = d.gorev.yuksekRiskliAlan ? 'uzman' : `p${d.puan}`;
+      const origIndex = gorevler.indexOf(d.gorev);
+      return `<tr>
+        <td>${i + 1}</td>
+        <td>${d.gorev.ad}</td>
+        <td>${d.ieCeyrek}</td>
+        <td>${d.rvCeyrek}</td>
+        <td><span class="tag ${tagClass}">${d.etiket}</span></td>
+        <td><button type="button" class="rm-btn" data-idx="${origIndex}">Sil</button></td>
+      </tr>`;
+    }).join('');
+    listOut.innerHTML = `<table class="list">
+      <thead><tr><th>#</th><th>Görev</th><th>Etki/Efor</th><th>Risk/Değer</th><th>Öncelik</th><th></th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+    listOut.querySelectorAll('.rm-btn').forEach(btn => {
+      btn.addEventListener('click', () => removeGorev(parseInt(btn.dataset.idx, 10)));
+    });
+  }
+
+  document.getElementById('addBtn').addEventListener('click', addGorev);
+  document.getElementById('exampleBtn').addEventListener('click', () => { gorevler = EXAMPLE.map(g => ({ ...g })); render(); });
+  document.getElementById('clearBtn').addEventListener('click', () => { gorevler = []; render(); });
+
+  render();
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Bilgi bankasında arama",
+    "risk_level": "düşük",
+    "configured_layers": ["girdi denetimi"],
+    "note": "Salt okunur, tüm çalışanlar için açık (14.6 tablosu)."
+  },
+  {
+    "name": "Destek kaydı oluşturma/güncelleme",
+    "risk_level": "orta",
+    "configured_layers": ["girdi denetimi", "çıktı doğrulama"],
+    "note": "Yalnızca talebi açan çalışanın kaydı; işlem günlüğe kaydedilir."
+  },
+  {
+    "name": "Standart kullanıcı şifre sıfırlama",
+    "risk_level": "yüksek",
+    "configured_layers": ["girdi denetimi", "çıktı doğrulama"],
+    "note": "Yalnızca kimliği doğrulanmış talep sahibinin kendi hesabı; anlık bildirim gönderilir."
+  },
+  {
+    "name": "Yetki yükseltme / yönetici erişimi verme",
+    "risk_level": "kritik",
+    "configured_layers": ["girdi denetimi", "çıktı doğrulama"],
+    "note": "Bölüm başındaki olay: ajan bu aracı hiçbir ek onay adımı olmadan çağırabiliyordu."
+  }
+]

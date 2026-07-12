@@ -1,0 +1,46 @@
+[
+  {
+    "ad": "Elif Turan",
+    "rol": "öğretmen",
+    "seviyeler": {
+      "ders_materyali_hazirlama": "eleştirel_değerlendirme",
+      "veri_yorumu_ve_dogrulama": "temel_kullanım"
+    }
+  },
+  {
+    "ad": "Deniz Aksoy",
+    "rol": "yönetici",
+    "seviyeler": {
+      "rapor_ve_yazisma": "eleştirel_değerlendirme",
+      "standart_yazisma_ve_form": "temel_kullanım"
+    }
+  },
+  {
+    "ad": "Mert Şahin",
+    "rol": "yönetici",
+    "seviyeler": {
+      "rapor_ve_yazisma": "eleştirel_değerlendirme"
+    }
+  },
+  {
+    "ad": "Selen Kaya",
+    "rol": "analist",
+    "seviyeler": {
+      "veri_yorumu_ve_dogrulama": "eleştirel_değerlendirme"
+    }
+  },
+  {
+    "ad": "Barış Yıldız",
+    "rol": "operasyon",
+    "seviyeler": {
+      "standart_yazisma_ve_form": "temel_kullanım"
+    }
+  },
+  {
+    "ad": "Onur Demir",
+    "rol": "operasyon",
+    "seviyeler": {
+      "standart_yazisma_ve_form": "farkındalık"
+    }
+  }
+]

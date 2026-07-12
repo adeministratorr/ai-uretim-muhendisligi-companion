@@ -1,0 +1,66 @@
+[
+  {
+    "ad": "Müşteri mesajı cevap taslağı",
+    "etki": 5,
+    "efor": 2,
+    "risk": 2,
+    "deger": 4
+  },
+  {
+    "ad": "Toplantı notu özeti ve görev çıkarma",
+    "etki": 4,
+    "efor": 1,
+    "risk": 1,
+    "deger": 3
+  },
+  {
+    "ad": "Sosyal medya paylaşımı — rutin ürün tanıtımı",
+    "etki": 4,
+    "efor": 2,
+    "risk": 2,
+    "deger": 4
+  },
+  {
+    "ad": "Haftalık kişisel planlama taslağı",
+    "etki": 3,
+    "efor": 2,
+    "risk": 1,
+    "deger": 2
+  },
+  {
+    "ad": "Sipariş takip sistemini tam otomatikleştirme",
+    "etki": 5,
+    "efor": 5,
+    "risk": 4,
+    "deger": 5
+  },
+  {
+    "ad": "Kozmetik etiket mevzuat araştırması",
+    "etki": 4,
+    "efor": 3,
+    "risk": 5,
+    "deger": 5
+  },
+  {
+    "ad": "Sosyal medya paylaşımı — sağlık/tedavi iddiası içeren taslak",
+    "etki": 4,
+    "efor": 2,
+    "risk": 5,
+    "deger": 4
+  },
+  {
+    "ad": "Bir defalık afiş metni",
+    "etki": 1,
+    "efor": 1,
+    "risk": 1,
+    "deger": 1
+  },
+  {
+    "ad": "Vergi beyanı taslağı",
+    "etki": 3,
+    "efor": 2,
+    "risk": 5,
+    "deger": 4,
+    "yuksek_riskli_alan": true
+  }
+]

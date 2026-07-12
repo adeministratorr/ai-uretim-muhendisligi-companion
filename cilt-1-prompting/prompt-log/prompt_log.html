@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Prompt Versiyon Günlüğü Laboratuvarı — Cilt 1, Bölüm 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #d1495b; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 900px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+  th, td { border: 1px solid var(--gray); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--gray); color: var(--navy); }
+  @media (prefers-color-scheme: dark) { th { color: #0d1117; } }
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  .version-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .version-chip {
+    border: 1.5px solid var(--gray); border-radius: 999px; padding: 6px 14px;
+    cursor: pointer; font-size: .85rem; background: transparent; color: var(--text);
+  }
+  .version-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .version-chip.regressed { border-color: var(--red); }
+  fieldset { border: 1px solid var(--gray); border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; }
+  legend { font-weight: 700; padding: 0 6px; }
+  .test-row { display: flex; align-items: center; justify-content: space-between; gap: 10px;
+              padding: 4px 0; font-size: .9rem; }
+  .test-row label { font-weight: 400; margin: 0; }
+  .pill { border-radius: 6px; padding: 2px 8px; font-size: .78rem; font-weight: 700; }
+  .pill.pass { background: #d7f5ef; color: #0f6f5c; }
+  .pill.fail { background: #fde2e4; color: #9d1c2e; }
+  @media (prefers-color-scheme: dark) {
+    .pill.pass { background: #143d34; color: #7fd8ce; }
+    .pill.fail { background: #401820; color: #ff9fac; }
+  }
+  .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 6px; }
+  .score-cell { text-align: center; }
+  .score-cell input { width: 100%; }
+  .report { white-space: pre-wrap; font-family: ui-monospace, Menlo, Consolas, monospace;
+            font-size: .82rem; background: var(--panel); border: 1px solid var(--gray);
+            border-radius: 8px; padding: 12px; margin-top: 8px; }
+  .report .flag { color: var(--red); font-weight: 700; }
+  .report .ok { color: #0f6f5c; font-weight: 700; }
+  @media (prefers-color-scheme: dark) { .report .ok { color: #7fd8ce; } }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin-right: 8px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h1>Prompt Versiyon Günlüğü Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 7 — 7.10 (Prompt Log Şablonu) ve 7.11
+  (Prompt Sürümleme). Aşağıdaki tablo, Kaan'ın Hasar Özet Asistanı için tuttuğu prompt
+  günlüğünü gösterir. Bir sürümü seçip test sonuçlarını veya puanları değiştirin;
+  <strong>gerileme raporu</strong> (bir önceki sürümde geçen bir testin yeni sürümde
+  başarısız olması, veya bir metriğin tolerans payını aşarak düşmesi) anında güncellenir.
+  Kurulum gerekmez, gerçek bir model çağrısı yapılmaz.</p>
+
+  <div class="panel">
+    <h2>1. Sürüm seç ve düzenle</h2>
+    <div class="version-row" id="versionRow"></div>
+
+    <fieldset>
+      <legend>Değişiklik özeti / gerekçesi</legend>
+      <div class="test-row"><label style="min-width:140px">Değişiklik özeti</label>
+        <input type="text" id="summaryInput" style="flex:1"></div>
+      <div class="test-row"><label style="min-width:140px">Karar</label>
+        <input type="text" id="decisionInput" style="flex:1"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Test sonuçları (test-30'dan temsilî bir alt küme)</legend>
+      <div id="testRows"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Metrik puanları (D=Doğruluk, E=Eksiksizlik, B=Biçim uyumu, K=Kullanılabilirlik)</legend>
+      <div class="score-grid" id="scoreGrid"></div>
+    </fieldset>
+
+    <button id="resetBtn" class="secondary" type="button">Örnek günlüğe sıfırla</button>
+  </div>
+
+  <div class="panel">
+    <h2>2. Günlük tablosu (7.10 formatı)</h2>
+    <div class="table-wrap"><table id="logTable"></table></div>
+  </div>
+
+  <div class="panel">
+    <h2>3. Gerileme raporu</h2>
+    <p class="note">Kırmızı çerçeveli sürüm rozeti, bir önceki sürüme göre en az bir test
+    veya metrik gerilemesi taşıdığını gösterir (7.11'deki "v2'nin üretimde beklenmedik bir
+    hataya yol açtığı" senaryosunun somut karşılığı). Puan gerilemesi, 7.9'da anlatılan
+    gürültü payını (D/E/B için 1,0 puan, K için 0,15 puan) aşan düşüşlerde tetiklenir.</p>
+    <div class="report" id="report"></div>
+  </div>
+
+  <p class="note">Bu laboratuvar gerçek bir prompt değerlendirme sistemi değildir; test
+  sonuçları ve puanlar temsilîdir, elle girilir. Aynı mantığın test edilmiş Python
+  sürümü <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/prompt-log/prompt_log.py">prompt_log.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/prompt-log">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const METRIC_KEYS = ["D", "E", "B", "K"];
+  const METRIC_LABELS = { D: "Doğruluk", E: "Eksiksizlik", B: "Biçim uyumu", K: "Kullanılabilirlik" };
+  const DEFAULT_TOLERANCE = { D: 1.0, E: 1.0, B: 1.0, K: 0.15 };
+
+  // Kaan'ın Hasar Özet Asistanı günlüğü — prompt_log.py:DEFAULT_LOG ile birebir aynı veriler.
+  const DEFAULT_LOG = [
+    {
+      version: "A", date: "2026-06-02",
+      summary: "İlk taslak (rol tanımı yok, serbest metin çıktı)",
+      decision: "Elendi",
+      tests: { dosya_03_kolay: true, dosya_28_kolay: true, dosya_07_orta: false,
+               dosya_18_orta: false, dosya_15_zor: false, dosya_22_zor: false },
+      scores: { D: 61, E: 58, B: 40, K: 1.8 },
+    },
+    {
+      version: "B", date: "2026-06-05",
+      summary: "Rol + katı JSON şeması eklendi",
+      decision: "Elendi (C'ye göre düşük doğruluk)",
+      tests: { dosya_03_kolay: true, dosya_28_kolay: true, dosya_07_orta: true,
+               dosya_18_orta: true, dosya_15_zor: false, dosya_22_zor: true },
+      scores: { D: 84, E: 90, B: 98, K: 2.1 },
+    },
+    {
+      version: "C", date: "2026-06-09",
+      summary: "Meta-prompting ile tutar arama stratejisi eklendi",
+      decision: "Kabul edildi",
+      tests: { dosya_03_kolay: true, dosya_28_kolay: true, dosya_07_orta: true,
+               dosya_18_orta: true, dosya_15_zor: true, dosya_22_zor: true },
+      scores: { D: 91, E: 93, B: 97, K: 2.6 },
+    },
+    {
+      version: "v1.1", date: "2026-06-20",
+      summary: "hasar_tutari alanına sayısal tip zorlaması eklendi",
+      decision: "Kabul edildi (üretimde)",
+      tests: { dosya_03_kolay: true, dosya_28_kolay: true, dosya_07_orta: true,
+               dosya_18_orta: true, dosya_15_zor: true, dosya_22_zor: true },
+      scores: { D: 91, E: 93, B: 99, K: 2.6 },
+    },
+    {
+      version: "v2", date: "2026-07-01",
+      summary: "Hasar tutarı arama stratejisi kökten değiştirildi (iki adımlı çıkarım)",
+      decision: "Geri alındı (v1.1'e dönüldü)",
+      tests: { dosya_03_kolay: true, dosya_28_kolay: true, dosya_07_orta: true,
+               dosya_18_orta: true, dosya_15_zor: false, dosya_22_zor: true },
+      scores: { D: 88, E: 90, B: 97, K: 2.5 },
+    },
+  ];
+
+  const TEST_IDS = Object.keys(DEFAULT_LOG[0].tests);
+
+  let log = DEFAULT_LOG.map(entry => ({
+    ...entry, tests: { ...entry.tests }, scores: { ...entry.scores },
+  }));
+  let activeIndex = 2; // "C" — 7.9'daki karar noktası
+
+  function formatScoreValue(value) {
+    return Number.isInteger(value) ? String(value) : value.toFixed(1).replace(".", ",");
+  }
+
+  function detectTestRegressions() {
+    const regressions = [];
+    for (let i = 1; i < log.length; i++) {
+      const prev = log[i - 1], curr = log[i];
+      for (const id of TEST_IDS) {
+        if (id in prev.tests && id in curr.tests && prev.tests[id] && !curr.tests[id]) {
+          regressions.push({ test_id: id, from: prev.version, to: curr.version });
+        }
+      }
+    }
+    return regressions;
+  }
+
+  function detectScoreRegressions() {
+    const regressions = [];
+    for (let i = 1; i < log.length; i++) {
+      const prev = log[i - 1], curr = log[i];
+      for (const metric of METRIC_KEYS) {
+        if (!(metric in prev.scores) || !(metric in curr.scores)) continue;
+        const drop = prev.scores[metric] - curr.scores[metric];
+        if (drop > DEFAULT_TOLERANCE[metric]) {
+          regressions.push({
+            metric, from: prev.version, to: curr.version,
+            previous: prev.scores[metric], current: curr.scores[metric], drop,
+          });
+        }
+      }
+    }
+    return regressions;
+  }
+
+  function versionsWithRegression(testRegs, scoreRegs) {
+    const set = new Set();
+    testRegs.forEach(r => set.add(r.to));
+    scoreRegs.forEach(r => set.add(r.to));
+    return set;
+  }
+
+  function renderVersionChips(regressedVersions) {
+    const row = document.getElementById('versionRow');
+    row.innerHTML = '';
+    log.forEach((entry, i) => {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'version-chip' + (i === activeIndex ? ' active' : '')
+        + (regressedVersions.has(entry.version) ? ' regressed' : '');
+      chip.textContent = entry.version;
+      chip.addEventListener('click', () => { activeIndex = i; render(); });
+      row.appendChild(chip);
+    });
+  }
+
+  function renderEditor() {
+    const entry = log[activeIndex];
+
+    const summaryInput = document.getElementById('summaryInput');
+    const decisionInput = document.getElementById('decisionInput');
+    summaryInput.value = entry.summary;
+    decisionInput.value = entry.decision;
+    summaryInput.oninput = () => { entry.summary = summaryInput.value; render(); };
+    decisionInput.oninput = () => { entry.decision = decisionInput.value; render(); };
+
+    const testRows = document.getElementById('testRows');
+    testRows.innerHTML = '';
+    TEST_IDS.forEach(id => {
+      const passed = entry.tests[id];
+      const row = document.createElement('div');
+      row.className = 'test-row';
+      row.innerHTML = `<label>${id}</label>`;
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = 'pill ' + (passed ? 'pass' : 'fail');
+      pill.textContent = passed ? 'GEÇTİ' : 'BAŞARISIZ';
+      pill.addEventListener('click', () => { entry.tests[id] = !entry.tests[id]; render(); });
+      row.appendChild(pill);
+      testRows.appendChild(row);
+    });
+
+    const scoreGrid = document.getElementById('scoreGrid');
+    scoreGrid.innerHTML = '';
+    METRIC_KEYS.forEach(metric => {
+      const cell = document.createElement('div');
+      cell.className = 'score-cell';
+      const max = metric === 'K' ? 3 : 100;
+      const step = metric === 'K' ? 0.1 : 1;
+      cell.innerHTML = `
+        <label>${metric} — ${METRIC_LABELS[metric]}</label>
+        <input type="number" min="0" max="${max}" step="${step}" value="${entry.scores[metric]}">`;
+      const input = cell.querySelector('input');
+      input.addEventListener('input', () => {
+        const value = parseFloat(input.value);
+        entry.scores[metric] = Number.isNaN(value) ? 0 : value;
+        render();
+      });
+      scoreGrid.appendChild(cell);
+    });
+  }
+
+  function renderTable() {
+    const table = document.getElementById('logTable');
+    const header = '<tr><th>Tarih</th><th>Sürüm</th><th>Değişiklik özeti</th>'
+      + '<th>Test seti</th><th>Model sürümü</th><th>Puan (D/E/B/K)</th><th>Karar</th></tr>';
+    const rows = log.map(entry => {
+      const scoreText = METRIC_KEYS.map(k => formatScoreValue(entry.scores[k])).join('/');
+      return `<tr><td>${entry.date}</td><td>${entry.version}</td><td>${entry.summary}</td>`
+        + `<td>test-30</td><td>temel model v1</td><td>${scoreText}</td><td>${entry.decision}</td></tr>`;
+    }).join('');
+    table.innerHTML = header + rows;
+  }
+
+  function renderReport(testRegs, scoreRegs) {
+    const report = document.getElementById('report');
+    if (testRegs.length === 0 && scoreRegs.length === 0) {
+      report.innerHTML = '<span class="ok">Gerileme tespit edilmedi: her sürüm bir öncekinde '
+        + 'geçen testleri korudu.</span>';
+      return;
+    }
+    const lines = [];
+    testRegs.forEach(r => {
+      lines.push(`<span class="flag">[TEST GERİLEMESİ]</span> ${r.test_id}: ${r.from} sürümünde `
+        + `geçti, ${r.to} sürümünde başarısız oldu.`);
+    });
+    scoreRegs.forEach(r => {
+      lines.push(`<span class="flag">[PUAN GERİLEMESİ]</span> ${r.metric}: ${r.from} sürümünde `
+        + `${formatScoreValue(r.previous)}, ${r.to} sürümünde ${formatScoreValue(r.current)} `
+        + `(düşüş: ${formatScoreValue(r.drop)}).`);
+    });
+    report.innerHTML = lines.join('\n');
+  }
+
+  function render() {
+    const testRegs = detectTestRegressions();
+    const scoreRegs = detectScoreRegressions();
+    renderVersionChips(versionsWithRegression(testRegs, scoreRegs));
+    renderEditor();
+    renderTable();
+    renderReport(testRegs, scoreRegs);
+  }
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    log = DEFAULT_LOG.map(entry => ({
+      ...entry, tests: { ...entry.tests }, scores: { ...entry.scores },
+    }));
+    activeIndex = 2;
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>

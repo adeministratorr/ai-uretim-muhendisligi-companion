@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Guardrail Zinciri Denetimi Laboratuvarı — Cilt 1, Bölüm 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #d64545; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 860px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  thead th { text-align: left; padding: 6px 8px; border-bottom: 2px solid var(--gray); }
+  tbody td { padding: 8px 8px; border-bottom: 1px solid var(--gray); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  select { font: inherit; padding: 4px 6px; border-radius: 6px; border: 1px solid var(--gray);
+           background: var(--bg); color: var(--text); }
+  .layer-boxes { display: flex; flex-wrap: wrap; gap: 10px; }
+  .layer-boxes label { display: inline-flex; align-items: center; gap: 5px; font-weight: 400; white-space: nowrap; }
+  input[type=checkbox] { accent-color: var(--teal); width: 16px; height: 16px; }
+  .status-pill {
+    display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .8rem; font-weight: 700;
+  }
+  .status-pill.ok { background: #d7f3ee; color: #146356; }
+  .status-pill.gap { background: #fde3e3; color: #9c2c2c; }
+  .status-pill.critical { background: var(--red); color: #fff; }
+  @media (prefers-color-scheme: dark) {
+    .status-pill.ok { background: #143a34; color: #7fe0cb; }
+    .status-pill.gap { background: #3a1c1c; color: #f4a3a3; }
+  }
+  .summary { font-weight: 700; margin-top: 4px; }
+  .warning-list { margin: 10px 0 0; padding-left: 20px; }
+  .warning-list li { margin-bottom: 6px; }
+  .warning-list li.critical { color: var(--red); font-weight: 700; }
+  @media (prefers-color-scheme: dark) {
+    .warning-list li.critical { color: #ff8a8a; }
+  }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin-right: 8px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  code { background: var(--gray); padding: 1px 5px; border-radius: 4px; font-size: .85em; }
+</style>
+</head>
+<body>
+  <h1>Guardrail Zinciri Denetimi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 14 — 14.1 (girdi guardrail → ajan → çıktı
+  guardrail zinciri) ve 14.6 (araç risk sınıflandırma tablosu). Aşağıdaki dört araç, BT
+  Destek Ajanı'nın 14.6'daki risk tablosundaki dört satırıdır. Her aracın risk seviyesini
+  değiştirebilir, hangi guardrail katmanlarının (girdi denetimi / çıktı doğrulama / insan
+  onayı) fiilen tanımlı olduğunu işaretleyebilirsiniz; denetim sonucu anında güncellenir.
+  Kurulum gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <table>
+      <thead>
+        <tr>
+          <th>Araç</th>
+          <th>Risk seviyesi</th>
+          <th>Tanımlı guardrail katmanları</th>
+          <th>Durum</th>
+        </tr>
+      </thead>
+      <tbody id="toolRows"></tbody>
+    </table>
+    <button id="incidentBtn" class="secondary" type="button">Bölüm başındaki olayı yükle</button>
+    <button id="fixedBtn" class="secondary" type="button">14.6'daki düzeltilmiş hâli yükle</button>
+
+    <p class="summary" id="summary"></p>
+    <ul class="warning-list" id="warnings"></ul>
+  </div>
+
+  <div class="panel">
+    <h2>Bu denetim ne yapıyor?</h2>
+    <p>Her risk seviyesi için beklenen guardrail katmanı 14.6'daki tablodan türetilir:
+    <strong>düşük</strong> risk yalnızca girdi denetimi ister (talep zaten 14.2-14.5'teki
+    girdi guardrailinden geçmiştir); <strong>orta</strong> ve <strong>yüksek</strong> risk
+    buna çıktı doğrulamayı (14.7) — günlük kaydı veya anlık bildirim gibi tespit edici bir
+    kontrolü — ekler; <strong>kritik</strong> risk (örneğin yetki yükseltme) üçüncü katman
+    olarak insan onayını (14.8) zorunlu kılar, çünkü tabloya göre bu satırda "hiçbir otomatik
+    yürütme yok".</p>
+    <p>"Bölüm başındaki olayı yükle" düğmesi, kitabın açılış vinyetindeki durumu kurar: yetki
+    yükseltme aracı kritik risk taşır ama insan onayı katmanı tanımlı değildir — ajan bu
+    aracı hiçbir ek onay adımı olmadan çağırabilmektedir. "14.6'daki düzeltilmiş hâli yükle"
+    düğmesi, Barış'ın ekibinin yeniden tasarımından sonraki durumu gösterir.</p>
+  </div>
+
+  <p class="note">Bu araç bir yapay zekâ sisteminin gerçekten güvenli olduğunu kanıtlamaz;
+  yalnızca beyan edilen guardrail katmanlarıyla risk seviyesi arasındaki tutarsızlığı görünür
+  kılar. Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/exercises/guardrail-chain-check/guardrail_chain_check.py">guardrail_chain_check.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/exercises/guardrail-chain-check">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const RISK_LEVELS = ["düşük", "orta", "yüksek", "kritik"];
+  const LAYERS = ["girdi denetimi", "çıktı doğrulama", "insan onayı"];
+
+  const REQUIRED_LAYERS = {
+    "düşük": ["girdi denetimi"],
+    "orta": ["girdi denetimi", "çıktı doğrulama"],
+    "yüksek": ["girdi denetimi", "çıktı doğrulama"],
+    "kritik": ["girdi denetimi", "çıktı doğrulama", "insan onayı"],
+  };
+
+  const INCIDENT_STATE = [
+    { name: "Bilgi bankasında arama", risk: "düşük", layers: ["girdi denetimi"] },
+    { name: "Destek kaydı oluşturma/güncelleme", risk: "orta", layers: ["girdi denetimi", "çıktı doğrulama"] },
+    { name: "Standart kullanıcı şifre sıfırlama", risk: "yüksek", layers: ["girdi denetimi", "çıktı doğrulama"] },
+    { name: "Yetki yükseltme / yönetici erişimi verme", risk: "kritik", layers: ["girdi denetimi", "çıktı doğrulama"] },
+  ];
+
+  const FIXED_STATE = INCIDENT_STATE.map(tool =>
+    tool.name === "Yetki yükseltme / yönetici erişimi verme"
+      ? { ...tool, layers: ["girdi denetimi", "çıktı doğrulama", "insan onayı"] }
+      : { ...tool }
+  );
+
+  let state = INCIDENT_STATE.map(tool => ({ ...tool, layers: [...tool.layers] }));
+
+  const rowsEl = document.getElementById('toolRows');
+  const summaryEl = document.getElementById('summary');
+  const warningsEl = document.getElementById('warnings');
+
+  function buildRows() {
+    rowsEl.innerHTML = '';
+    state.forEach((tool, index) => {
+      const tr = document.createElement('tr');
+
+      const nameTd = document.createElement('td');
+      nameTd.textContent = tool.name;
+      tr.appendChild(nameTd);
+
+      const riskTd = document.createElement('td');
+      const select = document.createElement('select');
+      RISK_LEVELS.forEach(level => {
+        const option = document.createElement('option');
+        option.value = level;
+        option.textContent = level;
+        if (level === tool.risk) option.selected = true;
+        select.appendChild(option);
+      });
+      select.addEventListener('change', () => {
+        state[index].risk = select.value;
+        render();
+      });
+      riskTd.appendChild(select);
+      tr.appendChild(riskTd);
+
+      const layersTd = document.createElement('td');
+      const box = document.createElement('div');
+      box.className = 'layer-boxes';
+      LAYERS.forEach(layer => {
+        const label = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = tool.layers.includes(layer);
+        checkbox.addEventListener('change', () => {
+          const layers = new Set(state[index].layers);
+          if (checkbox.checked) layers.add(layer); else layers.delete(layer);
+          state[index].layers = [...layers];
+          render();
+        });
+        label.appendChild(checkbox);
+        label.append(layer);
+        box.appendChild(label);
+      });
+      layersTd.appendChild(box);
+      tr.appendChild(layersTd);
+
+      const statusTd = document.createElement('td');
+      statusTd.id = `status-${index}`;
+      tr.appendChild(statusTd);
+
+      rowsEl.appendChild(tr);
+    });
+  }
+
+  function auditTool(tool) {
+    const required = REQUIRED_LAYERS[tool.risk];
+    const missing = required.filter(layer => !tool.layers.includes(layer));
+    const isCriticalGap = tool.risk === "kritik" && missing.includes("insan onayı");
+    return { required, missing, isCompliant: missing.length === 0, isCriticalGap };
+  }
+
+  function render() {
+    let compliantCount = 0;
+    const warnings = [];
+
+    state.forEach((tool, index) => {
+      const result = auditTool(tool);
+      const statusTd = document.getElementById(`status-${index}`);
+      if (result.isCompliant) {
+        compliantCount += 1;
+        statusTd.innerHTML = '<span class="status-pill ok">UYUMLU</span>';
+      } else {
+        const pillClass = result.isCriticalGap ? 'critical' : 'gap';
+        const pillLabel = result.isCriticalGap ? 'KRİTİK BOŞLUK' : 'EKSİK';
+        statusTd.innerHTML = `<span class="status-pill ${pillClass}">${pillLabel}</span>`;
+        result.missing.forEach(layer => {
+          const prefix = (result.isCriticalGap && layer === "insan onayı") ? '[YÜKSEK ÖNCELİKLİ]' : '[UYARI]';
+          warnings.push({
+            text: `${prefix} '${tool.name}' aracı ${tool.risk} risk seviyesinde ama '${layer}' katmanı tanımlı değil.`,
+            critical: result.isCriticalGap && layer === "insan onayı",
+          });
+        });
+      }
+    });
+
+    summaryEl.textContent = `Denetlenen araç: ${state.length} | Uyumlu: ${compliantCount}/${state.length}`;
+
+    warningsEl.innerHTML = '';
+    if (warnings.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = 'Tüm araçlar risk seviyesine uygun guardrail katmanlarıyla tanımlı.';
+      warningsEl.appendChild(li);
+    } else {
+      warnings.forEach(warning => {
+        const li = document.createElement('li');
+        if (warning.critical) li.className = 'critical';
+        li.textContent = warning.text;
+        warningsEl.appendChild(li);
+      });
+    }
+  }
+
+  document.getElementById('incidentBtn').addEventListener('click', () => {
+    state = INCIDENT_STATE.map(tool => ({ ...tool, layers: [...tool.layers] }));
+    buildRows();
+    render();
+  });
+  document.getElementById('fixedBtn').addEventListener('click', () => {
+    state = FIXED_STATE.map(tool => ({ ...tool, layers: [...tool.layers] }));
+    buildRows();
+    render();
+  });
+
+  buildRows();
+  render();
+</script>
+</body>
+</html>
