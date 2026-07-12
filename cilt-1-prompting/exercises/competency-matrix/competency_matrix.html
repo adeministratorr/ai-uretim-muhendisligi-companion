@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Ekip Yetkinlik Matrisi Laboratuvarı — Cilt 1, Bölüm 16</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #d64550; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 900px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .95rem; color: var(--navy); margin: 18px 0 6px 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2, h3 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--gray); vertical-align: top; }
+  th { font-weight: 700; }
+  select {
+    width: 100%; padding: 5px 6px; border-radius: 6px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .85rem; font-family: inherit;
+  }
+  input[type=text] {
+    width: 100%; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .85rem; font-family: inherit;
+  }
+  .scroll-x { overflow-x: auto; }
+  .presets { margin-bottom: 12px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin: 4px 8px 4px 0; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  button.small { padding: 4px 10px; font-size: .8rem; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .78rem; font-weight: 700; white-space: nowrap; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  .tag.bad { background: var(--red); color: #ffecec; }
+  ul.issues { margin: 6px 0 0 0; padding-left: 18px; font-size: .86rem; }
+  ul.issues li { margin-bottom: 3px; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  .member-row td:first-child { font-weight: 700; min-width: 120px; }
+  .remove-btn { background: transparent; color: var(--red); border: 1px solid var(--red);
+                padding: 2px 8px; font-size: .78rem; margin: 0; }
+</style>
+</head>
+<body>
+  <h1>Ekip Yetkinlik Matrisi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 16 — AI Odaklı Kültür, 16.2-16.4. Ekip
+  üyesi × yetkinlik alanı ızgarasını doldurun; laboratuvar kimsenin hedef seviyeye
+  ulaşmadığı boşlukları ve tek kişiye bağımlı alanları canlı işaretler. Ayrı bir panelde
+  kurum çapında prompt kütüphanesi kayıtlarınızın zorunlu alanlarını denetleyin. Kurulum
+  gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <h2>1) Ekip Yetkinlik Matrisi</h2>
+    <div class="presets">
+      <button type="button" class="secondary" id="exampleTeamBtn">Örnek ekibi yükle</button>
+      <button type="button" class="secondary" id="emptyTeamBtn">Boş satırla başla</button>
+      <button type="button" class="secondary small" id="addMemberBtn">+ Ekip üyesi ekle</button>
+    </div>
+    <div class="scroll-x">
+      <table id="teamTable">
+        <thead>
+          <tr id="teamHeadRow"><th>Ekip üyesi</th></tr>
+        </thead>
+        <tbody id="teamBody"></tbody>
+      </table>
+    </div>
+
+    <h3>Yetkinlik alanı sonuçları</h3>
+    <div class="scroll-x">
+      <table>
+        <thead><tr><th>Yetkinlik alanı</th><th>Hedef seviye</th><th>Durum</th><th>Karşılayan(lar)</th></tr></thead>
+        <tbody id="gapOut"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>2) Prompt Kütüphanesi Kaydı Denetimi</h2>
+    <p style="font-size:.88rem;color:#5a6472;margin-top:0;">Zorunlu alanlar: başlık, sahip,
+    kullanım alanı, son doğrulama tarihi (YYYY-AA-GG). Referans tarih 2026-07-01 kabul
+    edilir; kaydın son doğrulaması bu tarihten 365 günden eskiyse "eski" işaretlenir.</p>
+    <div class="presets">
+      <button type="button" class="secondary" id="exampleLibraryBtn">Örnek kayıtları yükle</button>
+      <button type="button" class="secondary" id="emptyLibraryBtn">Boş kayıtla başla</button>
+      <button type="button" class="secondary small" id="addEntryBtn">+ Kayıt ekle</button>
+    </div>
+    <div class="scroll-x">
+      <table>
+        <thead>
+          <tr><th>Başlık</th><th>Sahip</th><th>Kullanım alanı</th><th>Son doğrulama</th><th></th></tr>
+        </thead>
+        <tbody id="libraryBody"></tbody>
+      </table>
+    </div>
+    <h3>Kayıt denetim sonucu</h3>
+    <div id="libraryOut"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Denetim neye bakıyor?</h2>
+    <p>Bölüm 16'nın dersi, bir kurumdaki AI okuryazarlığının tek bir eşik değil, role göre
+    değişen kademeli bir harita olduğudur (16.1-16.2). Bu laboratuvarın ilk paneli, beş rol
+    ailesinin (öğretmen, yönetici, analist, geliştirici, operasyon) 16.3'teki beceri
+    setlerinden türetilmiş beş yetkinlik alanında ekibinizin nerede durduğunu gösterir:
+    <strong>boşluk</strong> (hiç kimse hedef seviyeye ulaşmıyor), <strong>tek nokta riski</strong>
+    (yalnızca bir kişi karşılıyor — o kişi ayrılırsa alan boşalır) veya <strong>yeterli</strong>
+    (en az iki kişi karşılıyor).</p>
+    <p>İkinci panel, 16.4'teki kurum çapında prompt kütüphanesi kaydının zorunlu alanlarını
+    denetler. Bir kayıt, en az bir başka okulda denenmiş ve bir iç şampiyon tarafından
+    sahiplenilmiş olsa bile, başlık/sahip/kullanım alanı/son doğrulama tarihi alanlarından
+    biri eksikse veya son doğrulama tarihi güncelliğini yitirmişse kütüphaneye "geçti"
+    olarak giremez.</p>
+  </div>
+
+  <p class="note">Bu araç bir kurumun AI kültürünü otomatik onaylamaz; yalnızca doldurduğunuz
+  ızgaradaki boşlukları ve kayıt eksiklerini görünür kılar. Aynı laboratuvarın test edilmiş
+  Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/exercises/competency-matrix/competency_matrix.py">competency_matrix.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/exercises/competency-matrix">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const LEVELS = ["", "farkındalık", "temel_kullanım", "eleştirel_değerlendirme", "sistematik_entegrasyon"];
+  const LEVEL_LABELS = {
+    "": "(değerlendirilmedi)",
+    "farkındalık": "Farkındalık",
+    "temel_kullanım": "Temel kullanım",
+    "eleştirel_değerlendirme": "Eleştirel değerlendirme",
+    "sistematik_entegrasyon": "Sistematik entegrasyon",
+  };
+
+  const COMPETENCY_AREAS = [
+    { key: "ders_materyali_hazirlama", etiket: "Ders materyali ve etkinlik hazırlama", hedef: "eleştirel_değerlendirme" },
+    { key: "rapor_ve_yazisma", etiket: "Rapor, yazışma ve veli iletişimi", hedef: "eleştirel_değerlendirme" },
+    { key: "veri_yorumu_ve_dogrulama", etiket: "Veri yorumu ve doğrulama disiplini", hedef: "eleştirel_değerlendirme" },
+    { key: "arac_secimi_ve_entegrasyon", etiket: "Model/araç seçimi ve entegrasyon", hedef: "sistematik_entegrasyon" },
+    { key: "standart_yazisma_ve_form", etiket: "Standart yazışma, form ve özet metni üretme", hedef: "temel_kullanım" },
+  ];
+
+  function levelRank(level) { return LEVELS.indexOf(level); }
+
+  const EXAMPLE_TEAM = [
+    { ad: "Elif Turan", seviyeler: { ders_materyali_hazirlama: "eleştirel_değerlendirme", veri_yorumu_ve_dogrulama: "temel_kullanım" } },
+    { ad: "Deniz Aksoy", seviyeler: { rapor_ve_yazisma: "eleştirel_değerlendirme", standart_yazisma_ve_form: "temel_kullanım" } },
+    { ad: "Mert Şahin", seviyeler: { rapor_ve_yazisma: "eleştirel_değerlendirme" } },
+    { ad: "Selen Kaya", seviyeler: { veri_yorumu_ve_dogrulama: "eleştirel_değerlendirme" } },
+    { ad: "Barış Yıldız", seviyeler: { standart_yazisma_ve_form: "temel_kullanım" } },
+    { ad: "Onur Demir", seviyeler: { standart_yazisma_ve_form: "farkındalık" } },
+  ];
+
+  // ---- Ekip tablosu ----
+
+  function buildTeamHead() {
+    const row = document.getElementById('teamHeadRow');
+    row.innerHTML = '<th>Ekip üyesi</th>' + COMPETENCY_AREAS.map(a => `<th>${a.etiket}</th>`).join('') + '<th></th>';
+  }
+
+  function memberRowHtml(member, index) {
+    const cells = COMPETENCY_AREAS.map(a => {
+      const value = (member.seviyeler && member.seviyeler[a.key]) || "";
+      const options = LEVELS.map(l => `<option value="${l}" ${l === value ? "selected" : ""}>${LEVEL_LABELS[l]}</option>`).join('');
+      return `<td><select data-row="${index}" data-area="${a.key}">${options}</select></td>`;
+    }).join('');
+    return `<tr class="member-row" data-row="${index}">
+      <td><input type="text" data-row="${index}" data-field="ad" value="${member.ad || ''}" placeholder="Ad Soyad"></td>
+      ${cells}
+      <td><button type="button" class="remove-btn" data-row="${index}">Sil</button></td>
+    </tr>`;
+  }
+
+  let teamState = [];
+
+  function renderTeamTable() {
+    document.getElementById('teamBody').innerHTML = teamState.map(memberRowHtml).join('');
+    document.querySelectorAll('#teamBody select').forEach(el => el.addEventListener('change', onTeamFieldChange));
+    document.querySelectorAll('#teamBody input').forEach(el => el.addEventListener('input', onTeamFieldChange));
+    document.querySelectorAll('#teamBody .remove-btn').forEach(el => el.addEventListener('click', onRemoveMember));
+  }
+
+  function onTeamFieldChange(evt) {
+    const row = Number(evt.target.dataset.row);
+    if (evt.target.dataset.field === 'ad') {
+      teamState[row].ad = evt.target.value;
+    } else {
+      const area = evt.target.dataset.area;
+      teamState[row].seviyeler[area] = evt.target.value;
+    }
+    renderGaps();
+  }
+
+  function onRemoveMember(evt) {
+    const row = Number(evt.target.dataset.row);
+    teamState.splice(row, 1);
+    renderTeamTable();
+    renderGaps();
+  }
+
+  function loadTeam(members) {
+    teamState = members.map(m => ({ ad: m.ad, seviyeler: { ...(m.seviyeler || {}) } }));
+    renderTeamTable();
+    renderGaps();
+  }
+
+  function evaluateTeam(team) {
+    return COMPETENCY_AREAS.map(area => {
+      const hedefRank = levelRank(area.hedef);
+      let enYuksekRank = -1;
+      const yeterli = [];
+      for (const member of team) {
+        const seviye = (member.seviyeler || {})[area.key];
+        if (!seviye) continue;
+        const rank = levelRank(seviye);
+        enYuksekRank = Math.max(enYuksekRank, rank);
+        if (rank >= hedefRank) yeterli.push(member.ad || "İsimsiz");
+      }
+      let durum = "boşluk";
+      if (yeterli.length === 1) durum = "tek_nokta_riski";
+      else if (yeterli.length >= 2) durum = "yeterli";
+      return { ...area, durum, yeterli, enYuksekSeviye: enYuksekRank >= 0 ? LEVELS[enYuksekRank] : null };
+    });
+  }
+
+  function renderGaps() {
+    const reports = evaluateTeam(teamState);
+    document.getElementById('gapOut').innerHTML = reports.map(r => {
+      const tagClass = r.durum === "boşluk" ? "bad" : (r.durum === "tek_nokta_riski" ? "warn" : "ok");
+      const tagText = r.durum === "boşluk" ? "boşluk" : (r.durum === "tek_nokta_riski" ? "tek nokta riski" : "yeterli");
+      const kisiler = r.yeterli.length ? r.yeterli.join(", ") : "—";
+      return `<tr>
+        <td>${r.etiket}</td>
+        <td>${LEVEL_LABELS[r.hedef]}</td>
+        <td><span class="tag ${tagClass}">${tagText}</span></td>
+        <td>${kisiler}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  document.getElementById('exampleTeamBtn').addEventListener('click', () => loadTeam(EXAMPLE_TEAM));
+  document.getElementById('emptyTeamBtn').addEventListener('click', () => loadTeam([{ ad: "", seviyeler: {} }]));
+  document.getElementById('addMemberBtn').addEventListener('click', () => {
+    teamState.push({ ad: "", seviyeler: {} });
+    renderTeamTable();
+    renderGaps();
+  });
+
+  buildTeamHead();
+
+  // ---- Prompt kütüphanesi tablosu ----
+
+  const REFERENCE_DATE = new Date("2026-07-01T00:00:00Z");
+  const STALE_AFTER_DAYS = 365;
+  const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+  const EXAMPLE_LIBRARY = [
+    { baslik: "Ders Planı Taslağı Standardı", sahip: "Elif Turan (iç şampiyon, Kadıköy Kampüsü)", kullanim_alani: "Öğretmen - haftalık ders planı taslağı hazırlama", son_dogrulama_tarihi: "2026-03-15" },
+    { baslik: "Veli Bilgilendirme Yazışması Standardı", sahip: "Barış Yıldız (iç şampiyon, Beşiktaş Kampüsü)", kullanim_alani: "Operasyon - veli bilgilendirme metni hazırlama", son_dogrulama_tarihi: "2024-01-10" },
+    { baslik: "Dönem Başarı Eğilimi Analizi Standardı", sahip: "", kullanim_alani: "Analist - dönem başarı eğilimini yorumlama", son_dogrulama_tarihi: "2026-05-01" },
+    { baslik: "", sahip: "Mert Şahin", kullanim_alani: "", son_dogrulama_tarihi: "31/07/2025" },
+  ];
+
+  let libraryState = [];
+
+  function libraryRowHtml(entry, index) {
+    const field = (name, placeholder) => `<input type="text" data-row="${index}" data-field="${name}" value="${(entry[name] || '').replace(/"/g, '&quot;')}" placeholder="${placeholder}">`;
+    return `<tr data-row="${index}">
+      <td>${field('baslik', 'Başlık')}</td>
+      <td>${field('sahip', 'Sahip')}</td>
+      <td>${field('kullanim_alani', 'Kullanım alanı')}</td>
+      <td>${field('son_dogrulama_tarihi', 'YYYY-AA-GG')}</td>
+      <td><button type="button" class="remove-btn" data-row="${index}">Sil</button></td>
+    </tr>`;
+  }
+
+  function renderLibraryTable() {
+    document.getElementById('libraryBody').innerHTML = libraryState.map(libraryRowHtml).join('');
+    document.querySelectorAll('#libraryBody input').forEach(el => el.addEventListener('input', onLibraryFieldChange));
+    document.querySelectorAll('#libraryBody .remove-btn').forEach(el => el.addEventListener('click', onRemoveEntry));
+  }
+
+  function onLibraryFieldChange(evt) {
+    const row = Number(evt.target.dataset.row);
+    libraryState[row][evt.target.dataset.field] = evt.target.value;
+    renderLibraryChecks();
+  }
+
+  function onRemoveEntry(evt) {
+    const row = Number(evt.target.dataset.row);
+    libraryState.splice(row, 1);
+    renderLibraryTable();
+    renderLibraryChecks();
+  }
+
+  function loadLibrary(entries) {
+    libraryState = entries.map(e => ({ ...e }));
+    renderLibraryTable();
+    renderLibraryChecks();
+  }
+
+  function hasText(v) { return typeof v === 'string' && v.trim().length > 0; }
+
+  function validateEntry(entry) {
+    const issues = [];
+    for (const [field, label] of [["baslik", "baslik"], ["sahip", "sahip"], ["kullanim_alani", "kullanim_alani"], ["son_dogrulama_tarihi", "son_dogrulama_tarihi"]]) {
+      if (!hasText(entry[field])) issues.push(`\`${label}\` alanı boş bırakılmamalıdır.`);
+    }
+    const tarihMetni = entry.son_dogrulama_tarihi;
+    if (hasText(tarihMetni)) {
+      if (!ISO_DATE_RE.test(tarihMetni.trim())) {
+        issues.push("`son_dogrulama_tarihi` YYYY-AA-GG biçiminde geçerli bir tarih olmalıdır.");
+      } else {
+        const tarih = new Date(tarihMetni.trim() + "T00:00:00Z");
+        const days = Math.round((REFERENCE_DATE - tarih) / 86400000);
+        if (!Number.isNaN(days) && days > STALE_AFTER_DAYS) {
+          issues.push(`\`son_dogrulama_tarihi\` ${STALE_AFTER_DAYS} günden eski; yıllık gözden geçirmeden geçmemiş olabilir.`);
+        }
+      }
+    }
+    const baslik = hasText(entry.baslik) ? entry.baslik : "(başlıksız kayıt)";
+    return { baslik, passed: issues.length === 0, issues };
+  }
+
+  function renderLibraryChecks() {
+    const checks = libraryState.map(validateEntry);
+    document.getElementById('libraryOut').innerHTML = checks.map(c => `
+      <p style="margin:8px 0 2px 0;"><span class="tag ${c.passed ? 'ok' : 'warn'}">${c.passed ? 'geçti' : 'revizyon gerekli'}</span> ${c.baslik}</p>
+      ${c.issues.length ? `<ul class="issues">${c.issues.map(i => `<li>${i}</li>`).join('')}</ul>` : ''}
+    `).join('');
+  }
+
+  document.getElementById('exampleLibraryBtn').addEventListener('click', () => loadLibrary(EXAMPLE_LIBRARY));
+  document.getElementById('emptyLibraryBtn').addEventListener('click', () => loadLibrary([{ baslik: "", sahip: "", kullanim_alani: "", son_dogrulama_tarihi: "" }]));
+  document.getElementById('addEntryBtn').addEventListener('click', () => {
+    libraryState.push({ baslik: "", sahip: "", kullanim_alani: "", son_dogrulama_tarihi: "" });
+    renderLibraryTable();
+    renderLibraryChecks();
+  });
+
+  loadTeam(EXAMPLE_TEAM);
+  loadLibrary(EXAMPLE_LIBRARY);
+</script>
+</body>
+</html>

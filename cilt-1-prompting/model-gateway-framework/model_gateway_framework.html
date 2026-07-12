@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Model Gateway İhtiyaç Çerçevesi Laboratuvarı — Cilt 1, Bölüm 17</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  .row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  input[type=range] { flex: 1; accent-color: var(--teal); }
+  .val { min-width: 2.4em; text-align: right; font-variant-numeric: tabular-nums; }
+  .checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px 18px; margin-bottom: 8px; }
+  .check-row { display: flex; align-items: flex-start; gap: 8px; font-weight: 400; }
+  .check-row input { margin-top: 4px; accent-color: var(--teal); }
+  .check-row span.hint { display: block; font-size: .78rem; color: #5a6472; font-weight: 400; }
+  .result { margin-top: 16px; }
+  dl.decision { display: grid; grid-template-columns: 160px 1fr; row-gap: 8px; column-gap: 12px; margin: 0; }
+  dl.decision dt { font-weight: 700; }
+  dl.decision dd { margin: 0; }
+  .tag { display: inline-block; background: var(--teal); color: #05221f; border-radius: 6px;
+         padding: 2px 8px; font-size: .82rem; font-weight: 700; margin: 2px 4px 2px 0; }
+  .tag.verdict-onerilir { background: var(--orange); color: #3a2400; }
+  .tag.verdict-degerlendirilebilir { background: var(--gray); color: var(--text); }
+  ul.plain { margin: 0; padding-left: 18px; }
+  ul.plain li { margin-bottom: 4px; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin-right: 8px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+</style>
+</head>
+<body>
+  <h1>Model Gateway İhtiyaç Çerçevesi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 17 — 17.5 (KAVRAM — Model Gateway). Kendi
+  kurumunuzun mevcut durumunu aşağıda kurun; laboratuvar yalnızca kaç sağlayıcı kullandığınıza
+  değil, maliyet izleme/yönlendirme/yedekleme boşluklarına bakarak "gateway'e ihtiyacınız var mı"
+  sorusuna kanıta dayalı bir cevap üretir. Kurulum gerekmez, sayfa tek başına çalışır. Hiçbir
+  model, araç veya sağlayıcı adı geçmez — bu laboratuvar isimden bağımsız bir çerçevedir.</p>
+
+  <div class="panel">
+    <div class="row">
+      <label style="min-width:220px">Kaç farklı sağlayıcı/model kullanılıyor?</label>
+      <input type="range" id="providerCount" min="1" max="5" step="1" value="2">
+      <span class="val" id="providerCountVal">2</span>
+    </div>
+
+    <label>Mevcut durum</label>
+    <div class="checks">
+      <label class="check-row"><input type="checkbox" id="costTracking">
+        <span>Maliyet tek yerden izleniyor<span class="hint">tüm sağlayıcıların kullanımı/faturası tek panelde</span></span></label>
+      <label class="check-row"><input type="checkbox" id="fallbackProvider">
+        <span>Yedek sağlayıcı var<span class="hint">birincil durduğunda geçiş planı hazır</span></span></label>
+      <label class="check-row"><input type="checkbox" id="centralRouting">
+        <span>Tek noktadan yönlendirme var<span class="hint">tüm sağlayıcılar ortak bir arayüzden çağrılıyor</span></span></label>
+      <label class="check-row"><input type="checkbox" id="switchesByTask">
+        <span>Göreve göre sağlayıcı/model değiştiriliyor<span class="hint">basit görevde ucuz, karmaşık görevde güçlü seçim</span></span></label>
+      <label class="check-row"><input type="checkbox" id="sensitiveData">
+        <span>Gizlilik nedeniyle yerel çalıştırma gerekiyor<span class="hint">veri dışarı çıkmamalı</span></span></label>
+      <label class="check-row"><input type="checkbox" id="plansToAdd">
+        <span>Yeni bir sağlayıcı eklenmesi planlanıyor<span class="hint">yalnızca tek sağlayıcı varken anlamlı</span></span></label>
+    </div>
+    <button id="resetBtn" class="secondary" type="button">Sıfırla</button>
+
+    <div class="result panel" id="resultPanel" style="margin-top:16px;">
+      <dl class="decision" id="decisionOut"></dl>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Bu değerlendirme nasıl kuruluyor?</h2>
+    <p>Sağlayıcı sayısı ikiden azsa, gateway'in çözdüğü temel problem (birden fazla sağlayıcıyı
+    tek noktadan karşılaştırma/yönlendirme) henüz ortaya çıkmamış demektir; doğrudan sağlayıcı
+    API'si yeterli kabul edilir. İki veya daha fazla sağlayıcı varsa, laboratuvar dört noktayı
+    (maliyet izleme, yönlendirme, yedekleme, göreve göre elle geçiş) tarar; eksik olan her
+    nokta bir sinyal sayılır. Üç veya daha fazla sinyal birikmişse gateway önerilir; bir-iki
+    sinyal varsa "değerlendirilebilir ama henüz zorunlu değil" sonucu döner; hiç sinyal yoksa
+    (yani birden fazla sağlayıcı olsa bile takip zaten elde tutuluyorsa) doğrudan API yeterli
+    kabul edilir.</p>
+    <p>Bu, kitaptaki KAVRAM kutusunun ("gateway kullanmak maliyeti otomatik olarak düşürmez;
+    ara katmanın kendi gecikmesi olabilir") uyarısıyla tutarlıdır: sayaç yalnızca sağlayıcı
+    sayısını değil, o sayının yönetiminden doğan somut boşlukları ölçer.</p>
+  </div>
+
+  <p class="note">Bu laboratuvar model, araç, sağlayıcı adı veya fiyat/benchmark iddiası
+  üretmez; yalnızca 17.5'teki çerçeveyi uygular. Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/model-gateway-framework/model_gateway_framework.py">model_gateway_framework.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/model-gateway-framework">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const MIN_PROVIDERS_FOR_GATEWAY = 2;
+  const STRONG_SIGNAL_THRESHOLD = 3;
+
+  const GENERAL_CAUTION = "Gateway kullanmak maliyeti otomatik olarak düşürmez; ara katmanın kendi gecikmesi olabilir ve bazı sağlayıcıya özgü bir özellik gateway üzerinden tam desteklenmeyebilir.";
+  const TOTAL_COST_CAUTION = "Karar yalnızca birim fiyatla değil, toplam işletme maliyetiyle (donanım, bakım, güncelleme emeği ve hatalı seçimin düzeltme maliyeti dahil) verilmelidir; en ucuz seçenek her zaman en doğru seçim değildir.";
+  const LOCAL_DATA_CAUTION = "Yerel çalıştırma güvencesi yalnızca çıkarım adımı için geçerlidir; loglama, izleme veya harici bir arama/RAG servisi hâlâ kurum dışı bir sunucuya bağlıysa veri o bileşen üzerinden dışarı çıkabilir.";
+
+  function collectSignals(p) {
+    const signals = [];
+    if (!p.costTracking) signals.push("Maliyet tek yerden izlenmiyor; her sağlayıcının faturası ayrı takip ediliyor.");
+    if (p.switchesByTask) signals.push("Göreve göre sağlayıcı/model değiştiriliyor; bu geçiş elle yönetiliyor.");
+    if (!p.centralRouting) signals.push("Tek noktadan yönlendirme yok; her sağlayıcıya ayrı entegrasyon/arayüzle bağlanılıyor.");
+    if (!p.fallbackProvider) signals.push("Yedek sağlayıcı yok; birincil sağlayıcı durduğunda elle geçiş planına bağlı kalınıyor.");
+    return signals;
+  }
+
+  function collectCautions(p) {
+    const cautions = [GENERAL_CAUTION, TOTAL_COST_CAUTION];
+    if (p.sensitiveData) cautions.push(LOCAL_DATA_CAUTION);
+    return cautions;
+  }
+
+  function evaluateNeed(p) {
+    const cautions = collectCautions(p);
+
+    if (p.providerCount < MIN_PROVIDERS_FOR_GATEWAY) {
+      const reason = "Tek sağlayıcı kullanılıyor; birden fazla sağlayıcıyı tek noktadan karşılaştırma/yönlendirme ihtiyacı henüz yok.";
+      const recommendation = p.plansToAdd
+        ? "İkinci bir sağlayıcı eklenmesi planlanıyor; gateway'i şimdi değil, ikinci sağlayıcı devreye girdiğinde yeniden değerlendirin."
+        : "Sağlayıcı sayısı artmadan gateway kurmak, gecikme ekleyen bir ara katmanı erken devreye sokar; ihtiyaç doğduğunda tekrar değerlendirin.";
+      return { verdict: "dogrudan_api_yeterli", signalCount: 0, reasons: [reason], cautions, recommendation };
+    }
+
+    const signals = collectSignals(p);
+    const reasons = [`${p.providerCount} farklı sağlayıcı/model kullanılıyor (eşik: ${MIN_PROVIDERS_FOR_GATEWAY}+).`, ...signals];
+
+    let verdict, recommendation;
+    if (signals.length >= STRONG_SIGNAL_THRESHOLD) {
+      verdict = "gateway_onerilir";
+      recommendation = "Birden fazla sağlayıcı zaten kullanılıyor ve maliyet/yönlendirme/yedekleme boşluğu birikmiş; bir gateway bu takibi tek noktaya taşır ve sağlayıcı değişikliğinde üst katmanın büyük ölçüde aynı kalmasını sağlar.";
+    } else if (signals.length >= 1) {
+      verdict = "gateway_degerlendirilebilir";
+      recommendation = "Birden fazla sağlayıcı var ama eksik yalnızca bir-iki noktada; önce bu boşluğu (maliyet izleme, yönlendirme veya yedekleme) tek başına kapatmak yeterli olabilir, gateway kurmak şimdilik zorunlu değil.";
+    } else {
+      verdict = "dogrudan_api_yeterli";
+      recommendation = "Birden fazla sağlayıcı kullanılsa da maliyet izleme, yönlendirme ve yedekleme zaten elde tutuluyor; gateway katmanı şu an için ek karmaşıklık ekleyebilir.";
+    }
+
+    return { verdict, signalCount: signals.length, reasons, cautions, recommendation };
+  }
+
+  const VERDICT_LABELS = {
+    dogrudan_api_yeterli: "Doğrudan sağlayıcı API'si yeterli",
+    gateway_degerlendirilebilir: "Gateway değerlendirilebilir (henüz zorunlu değil)",
+    gateway_onerilir: "Gateway önerilir",
+  };
+
+  function listItems(items) {
+    return `<ul class="plain">${items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+  }
+
+  function render() {
+    const p = {
+      providerCount: parseInt(document.getElementById('providerCount').value, 10),
+      costTracking: document.getElementById('costTracking').checked,
+      fallbackProvider: document.getElementById('fallbackProvider').checked,
+      centralRouting: document.getElementById('centralRouting').checked,
+      switchesByTask: document.getElementById('switchesByTask').checked,
+      sensitiveData: document.getElementById('sensitiveData').checked,
+      plansToAdd: document.getElementById('plansToAdd').checked,
+    };
+
+    document.getElementById('providerCountVal').textContent = String(p.providerCount);
+
+    const result = evaluateNeed(p);
+    const tagClass = result.verdict === 'gateway_onerilir' ? 'verdict-onerilir'
+      : result.verdict === 'gateway_degerlendirilebilir' ? 'verdict-degerlendirilebilir' : '';
+
+    const out = document.getElementById('decisionOut');
+    out.innerHTML = `
+      <dt>Sonuç</dt><dd><span class="tag ${tagClass}">${VERDICT_LABELS[result.verdict]}</span></dd>
+      <dt>Sinyal sayısı</dt><dd>${result.signalCount}</dd>
+      <dt>Gerekçe</dt><dd>${listItems(result.reasons)}</dd>
+      <dt>Dikkat</dt><dd>${listItems(result.cautions)}</dd>
+      <dt>Öneri</dt><dd>${result.recommendation}</dd>
+    `;
+  }
+
+  document.querySelectorAll('input[type=range], input[type=checkbox]').forEach(el =>
+    el.addEventListener('input', render));
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    document.getElementById('providerCount').value = 2;
+    document.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = false);
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>

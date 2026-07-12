@@ -43,6 +43,14 @@ Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltle
 Her klasörün kendi README'i, o klasörün amacını ve (doldurulduğunda) hızlı başlangıç
 adımlarını taşır.
 
+`cilt-1-prompting/` içindeki dolu lab klasörleri (her biri README + saf-Python lab +
+kurulumsuz HTML + pytest testi içerir): `parameter-matrix/`, `prompt-patterns/`,
+`structured-outputs/`, `model-selection/`, `instruction-hierarchy/`, `prompt-log/`,
+`task-templates/`, `reliability-check/`, `model-gateway-framework/`,
+`exercises/impact-effort-matrix/`, `exercises/data-sensitivity-classifier/`,
+`exercises/tool-permission-audit/`, `exercises/guardrail-chain-check/`,
+`exercises/competency-matrix/`.
+
 ---
 
 ## Hızlı Başlangıç (Cilt Bazlı)

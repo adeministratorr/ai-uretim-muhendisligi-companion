@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Güvenilirlik Piramidi Denetleyicisi — Cilt 1, Bölüm 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #d64545; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; --muted: #9fb0c3; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 880px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: var(--muted); margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .claim-card {
+    border: 1px solid var(--gray); border-radius: 10px; padding: 14px 16px;
+    margin-bottom: 14px; background: var(--bg);
+  }
+  .claim-card label { display: block; font-weight: 700; font-size: .82rem; margin-bottom: 4px; color: var(--muted); }
+  .claim-card input[type=text], .claim-card select {
+    width: 100%; padding: 7px 9px; border-radius: 6px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .92rem; margin-bottom: 10px;
+  }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .check-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .check-row input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--teal); }
+  .check-row label { margin: 0; font-weight: 600; color: var(--text); font-size: .9rem; }
+  .claim-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .claim-head strong { color: var(--navy); }
+  @media (prefers-color-scheme: dark) { .claim-head strong { color: #bfe9e4; } }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .88rem; cursor: pointer; margin-right: 8px; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  button.danger { background: transparent; color: var(--red); border: 1.5px solid var(--red); padding: 4px 10px; font-size: .8rem; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+    button.danger { color: #ff9c9c; border-color: #ff9c9c; }
+  }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .78rem;
+           font-weight: 700; color: #fff; }
+  .badge.hazir { background: #1f9d55; }
+  .badge.uyari { background: var(--orange); color: #3a2600; }
+  .badge.hata { background: var(--red); }
+  .audit-item { border-left: 4px solid var(--gray); padding: 8px 12px; margin-bottom: 10px; background: var(--panel); border-radius: 0 8px 8px 0; }
+  .audit-item.hazir { border-color: #1f9d55; }
+  .audit-item.uyari { border-color: var(--orange); }
+  .audit-item.hata { border-color: var(--red); }
+  .audit-item ul { margin: 6px 0 0; padding-left: 18px; font-size: .88rem; color: var(--muted); }
+  .summary-bar {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px;
+    padding: 12px 16px; border-radius: 10px; font-weight: 700; font-size: .95rem;
+  }
+  .summary-bar.ready { background: rgba(31,157,85,.15); color: #1f9d55; }
+  .summary-bar.blocked { background: rgba(214,69,69,.12); color: var(--red); }
+  .note { font-size: .85rem; color: var(--muted); margin-top: 10px; }
+  .tier-help { font-size: .82rem; color: var(--muted); margin: -4px 0 10px; }
+</style>
+</head>
+<body>
+  <h1>Güvenilirlik Piramidi Denetleyicisi</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 11 — AI Çıktısını Değerlendirmek, 11.5-11.8.
+  Bir AI çıktısındaki her iddiayı (claim) aşağıya ekleyin; her iddia için kritik olup
+  olmadığını, hangi kanıt kademesinde bulunduğunu ve kaynağın kullanıcı tarafından
+  doğrulanıp doğrulanmadığını işaretleyin. Sonuç anında güncellenir. Kurulum gerekmez,
+  sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <h2>İddialar</h2>
+    <div id="claims"></div>
+    <button id="addBtn" type="button">+ İddia Ekle</button>
+    <button id="exampleBtn" class="secondary" type="button">Kitaptaki örneği yükle (11.11)</button>
+    <button id="clearBtn" class="secondary" type="button">Temizle</button>
+  </div>
+
+  <div class="panel">
+    <h2>Denetim Sonucu</h2>
+    <div id="summaryBar" class="summary-bar"></div>
+    <div id="audits"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Dört kanıt kademesi ne anlama gelir?</h2>
+    <p><strong>Kendi bilgin</strong>, modelin eğitim verisinden ezberinden hatırladığını
+    iddia ettiği, hiçbir kaynağa dayanmayan bilgidir; halüsinasyon riski en yüksek
+    kademedir (11.1, 11.2).</p>
+    <p><strong>Genel bilgi</strong>, tartışmasız ve yaygın olarak bilinen, ayrıca
+    kaynak gösterilmesi genellikle beklenmeyen bilgidir (örn. suyun kaynama sıcaklığı).</p>
+    <p><strong>Doğrulanabilir kaynak</strong>, bir haber sitesi özeti, ikinci elden bir
+    aktarım gibi bağımsız biçimde kontrol edilebilen ama birincil kaynak olmayan
+    kaynaktır (11.8'deki "ikincil kaynak").</p>
+    <p><strong>Birincil kaynak</strong>, olayı veya bilgiyi doğrudan üreten kaynaktır:
+    kurumun kendi raporu, kişinin kendi açıklaması, resmî istatistik, mahkeme kararının
+    kendisi (11.8).</p>
+    <p>Bir iddia <strong>kritik</strong> işaretlendiğinde (piramidin tepesi — 11.5, 11.13),
+    yalnızca "kendi bilgin" veya "genel bilgi" kademesinde bırakılması bir <strong>uyarı</strong>
+    üretir; kaynak adı olmadan "doğrulanabilir kaynak" veya "birincil kaynak" seçmek ise
+    bir <strong>hata</strong>dır çünkü kaynağın adı olmadan bu kademe anlamsızdır (11.7).
+    Kritik bir iddiada kaynak adı var ama kullanıcı doğrulaması işaretlenmemişse, bu da
+    ayrı bir uyarı üretir — "bir kaynak var" ile "bu kaynak bu cümleyi destekliyor" aynı
+    şey değildir (11.8).</p>
+  </div>
+
+  <p class="note">Bu araç bir iddianın gerçekten doğru olup olmadığını denetlemez;
+  yalnızca doğrulama disiplininin (11.6 fact-checking adımları) uygulanıp
+  uygulanmadığını, biçimsel olarak görünür kılar. Aynı laboratuvarın test edilmiş Python
+  sürümü <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/reliability-check/reliability_check_lab.py">reliability_check_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/reliability-check">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const TIERS = [
+    { value: "kendi_bilgin", label: "Kendi bilgin (kaynaksız ezber)" },
+    { value: "genel_bilgi", label: "Genel bilgi (yaygın, tartışmasız)" },
+    { value: "dogrulanabilir_kaynak", label: "Doğrulanabilir kaynak (ikincil kaynak)" },
+    { value: "birincil_kaynak", label: "Birincil kaynak" },
+  ];
+  const TIER_RANK = Object.fromEntries(TIERS.map((t, i) => [t.value, i]));
+  const TIERS_REQUIRING_NAME = new Set(["dogrulanabilir_kaynak", "birincil_kaynak"]);
+  const MIN_TIER_FOR_CRITICAL_RANK = TIER_RANK["dogrulanabilir_kaynak"];
+
+  const EXAMPLE_CLAIMS = [
+    { text: "İlçede son iki yılda küçük işletme sayısı arttı", critical: false,
+      tier: "dogrulanabilir_kaynak", sourceName: "İlgili resmî kayıt/oda verisi", verified: true },
+    { text: "Bir yetkili bu artışın teşvik programından kaynaklandığını söyledi", critical: true,
+      tier: "kendi_bilgin", sourceName: "", verified: false },
+    { text: "Artış oranı yaklaşık yüzde 18", critical: true,
+      tier: "genel_bilgi", sourceName: "", verified: false },
+    { text: "İlçenin nüfusu resmî kayıtlara göre yaklaşık 42 bin", critical: false,
+      tier: "birincil_kaynak", sourceName: "İlgili kamu kurumunun resmî web sayfası", verified: true },
+  ];
+
+  let claims = [];
+  let nextId = 1;
+
+  function newClaim(prefill) {
+    const base = { id: nextId++, text: "", critical: false, tier: "kendi_bilgin", sourceName: "", verified: false };
+    return prefill ? Object.assign(base, prefill) : base;
+  }
+
+  function auditClaim(claim) {
+    const messages = [];
+    let status = "hazir";
+    const needsName = TIERS_REQUIRING_NAME.has(claim.tier);
+    const hasName = claim.sourceName.trim().length > 0;
+
+    if (needsName && !hasName) {
+      status = "hata";
+      messages.push("Bu kademe (doğrulanabilir kaynak / birincil kaynak) için kaynağı adıyla belirtmek zorunludur (11.7).");
+    }
+
+    if (claim.critical && TIER_RANK[claim.tier] < MIN_TIER_FOR_CRITICAL_RANK) {
+      if (status !== "hata") status = "uyari";
+      messages.push("Kaynaksız kritik iddia: piramidin tepesindeki bu iddia yalnızca kendi bilgiye/genel bilgiye dayanıyor; en az doğrulanabilir bir kaynak gerekir (11.5, 11.13).");
+    }
+
+    if (claim.critical && needsName && hasName && !claim.verified) {
+      if (status !== "hata") status = "uyari";
+      messages.push("Kaynak adı var ama kullanıcı doğrulaması eksik: 'bir kaynak var' ile 'bu kaynak bu cümleyi destekliyor' aynı şey değildir (11.8).");
+    }
+
+    if (messages.length === 0) {
+      messages.push("İddia, işaretlenen kanıt kademesine uygun biçimde belgelendirilmiş.");
+    }
+
+    return { status, messages };
+  }
+
+  const claimsEl = document.getElementById('claims');
+  const auditsEl = document.getElementById('audits');
+  const summaryEl = document.getElementById('summaryBar');
+
+  function renderClaimCard(claim) {
+    const card = document.createElement('div');
+    card.className = 'claim-card';
+    const needsName = TIERS_REQUIRING_NAME.has(claim.tier);
+    card.innerHTML = `
+      <div class="claim-head">
+        <strong>İddia #${claim.id}</strong>
+        <button class="danger" type="button" data-remove="${claim.id}">Sil</button>
+      </div>
+      <label>İddia metni</label>
+      <input type="text" data-field="text" data-id="${claim.id}" value="${claim.text.replace(/"/g, '&quot;')}" placeholder="Örn: Artış oranı yaklaşık yüzde 18">
+      <div class="row2">
+        <div>
+          <label>Kanıt kademesi</label>
+          <select data-field="tier" data-id="${claim.id}">
+            ${TIERS.map(t => `<option value="${t.value}" ${t.value === claim.tier ? 'selected' : ''}>${t.label}</option>`).join('')}
+          </select>
+        </div>
+        <div>
+          <label>Kaynak adı ${needsName ? '(zorunlu)' : '(opsiyonel)'}</label>
+          <input type="text" data-field="sourceName" data-id="${claim.id}" value="${claim.sourceName.replace(/"/g, '&quot;')}" placeholder="Örn: Kurumun resmî raporu">
+        </div>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" data-field="critical" data-id="${claim.id}" ${claim.critical ? 'checked' : ''}>
+        <label>Kritik iddia (piramidin tepesi — hukuki/tıbbi/finansal sonuç, itibar riski, karar temeli)</label>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" data-field="verified" data-id="${claim.id}" ${claim.verified ? 'checked' : ''}>
+        <label>Kaynağı bizzat kontrol ettim, iddiayı destekliyor (11.8 kullanıcı doğrulaması)</label>
+      </div>
+    `;
+    return card;
+  }
+
+  function render() {
+    claimsEl.innerHTML = '';
+    if (claims.length === 0) {
+      claimsEl.innerHTML = '<p class="tier-help">Henüz iddia eklenmedi. "+ İddia Ekle" ile başlayın veya kitaptaki örneği yükleyin.</p>';
+    }
+    claims.forEach(c => claimsEl.appendChild(renderClaimCard(c)));
+
+    auditsEl.innerHTML = '';
+    const audits = claims.map(c => ({ claim: c, ...auditClaim(c) }));
+    audits.forEach(a => {
+      const item = document.createElement('div');
+      item.className = `audit-item ${a.status}`;
+      item.innerHTML = `
+        <span class="badge ${a.status}">${a.status.toUpperCase()}</span>
+        <strong style="margin-left:8px;">${a.claim.text || '(iddia metni boş)'}</strong>
+        <ul>${a.messages.map(m => `<li>${m}</li>`).join('')}</ul>
+      `;
+      auditsEl.appendChild(item);
+    });
+
+    const errorCount = audits.filter(a => a.status === 'hata').length;
+    const warningCount = audits.filter(a => a.status === 'uyari').length;
+    const ready = claims.length > 0 && errorCount === 0 && warningCount === 0;
+    summaryEl.className = 'summary-bar ' + (claims.length === 0 ? '' : (ready ? 'ready' : 'blocked'));
+    summaryEl.textContent = claims.length === 0
+      ? 'Henüz iddia yok.'
+      : `İddia: ${claims.length} | Hata: ${errorCount} | Uyarı: ${warningCount} | Durum: ${ready ? 'yayına hazır' : 'ek doğrulama gerekli'}`;
+  }
+
+  claimsEl.addEventListener('input', (event) => {
+    const { field, id } = event.target.dataset;
+    if (!field) return;
+    const claim = claims.find(c => c.id === Number(id));
+    if (!claim) return;
+    if (event.target.type === 'checkbox') {
+      claim[field] = event.target.checked;
+    } else {
+      claim[field] = event.target.value;
+    }
+    render();
+  });
+
+  claimsEl.addEventListener('click', (event) => {
+    const removeId = event.target.dataset.remove;
+    if (removeId) {
+      claims = claims.filter(c => c.id !== Number(removeId));
+      render();
+    }
+  });
+
+  document.getElementById('addBtn').addEventListener('click', () => {
+    claims.push(newClaim());
+    render();
+  });
+
+  document.getElementById('exampleBtn').addEventListener('click', () => {
+    claims = EXAMPLE_CLAIMS.map(ex => newClaim(ex));
+    render();
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    claims = [];
+    render();
+  });
+
+  render();
+</script>
+</body>
+</html>

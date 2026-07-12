@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Veri Hassasiyeti Sınıflandırıcı Laboratuvarı — Cilt 1, Bölüm 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #d64550; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 4px; margin-top: 14px; }
+  label:first-child { margin-top: 0; }
+  textarea {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .9rem; font-family: inherit;
+    resize: vertical; min-height: 70px;
+  }
+  .hint { font-weight: 400; font-size: .8rem; color: #5a6472; }
+  .presets { margin-bottom: 10px; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .9rem; cursor: pointer; margin: 4px 8px 4px 0; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  dl.result { display: grid; grid-template-columns: 170px 1fr; row-gap: 8px; column-gap: 12px; margin: 0 0 10px 0; }
+  dl.result dt { font-weight: 700; }
+  dl.result dd { margin: 0; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 10px; font-size: .85rem; font-weight: 700; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  .tag.block { background: var(--red); color: #fff; }
+  ul.suggestions { margin: 6px 0 0 0; padding-left: 18px; font-size: .88rem; }
+  ul.suggestions li { margin-bottom: 4px; }
+  .warning-box {
+    margin-top: 10px; padding: 10px 14px; border-radius: 8px; font-size: .88rem;
+    background: rgba(255, 159, 28, .15); border: 1px solid var(--orange);
+  }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  table.matches { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: 6px; }
+  table.matches th, table.matches td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--gray); }
+</style>
+</head>
+<body>
+  <h1>Veri Hassasiyeti Sınıflandırıcı Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 12 — Sorumlu ve Etik Kullanım, 12.1-12.5.
+  Bir veri açıklaması yazın; laboratuvar 12.1-12.2'deki üçlü ayrıma (doğrudan
+  gönderilebilir / anonimleştirilerek gönderilebilir / hiç gönderilemez) göre canlı
+  sınıflandırır ve gerekliyse 12.5'teki maskeleme tekniğine uygun bir öneri üretir.
+  Kurulum gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <div class="presets">
+      <button type="button" class="secondary" id="case0">Örnek: genel bilgi</button>
+      <button type="button" class="secondary" id="case1">Örnek: hassas veri</button>
+      <button type="button" class="secondary" id="case2">Örnek: kişisel veri</button>
+      <button type="button" class="secondary" id="case3">Örnek: yeniden kimliklendirme riski</button>
+      <button type="button" class="secondary" id="case4">Örnek: kurum içi bilgi</button>
+    </div>
+
+    <label for="description">Veri açıklaması<span class="hint"> — yapay zekâ aracına göndermeyi düşündüğünüz metni buraya yazın</span></label>
+    <textarea id="description" placeholder="Örn: Öğrencinin adı, soyadı ve bu dönemki matematik notu."></textarea>
+
+    <div class="panel" id="resultPanel" style="margin-top:16px;">
+      <dl class="result" id="resultOut"></dl>
+      <div id="matchesOut"></div>
+      <ul class="suggestions" id="suggestionsOut"></ul>
+      <div id="warningOut"></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Sınıflandırma neye bakıyor?</h2>
+    <p>Karar 12.2'deki tabloyla aynı öncelik sırasını izler: metinde <strong>hassas
+    veri</strong> (sağlık, disiplin/ceza kaydı, rehberlik görüşme notu gibi) veya
+    <strong>kurum içi bilgi</strong> (bütçe taslağı, personel değerlendirmesi,
+    yayımlanmamış sınav, gizli kaynak kodu gibi) işareti varsa sonuç her zaman
+    "hiç gönderilemez" olur — bu iki kategori anonimleştirmeyle bile gönderilmez.
+    Yalnızca <strong>kişisel veri</strong> (ad, T.C. kimlik, adres, telefon, doğum
+    tarihi gibi) işareti varsa sonuç "anonimleştirilerek gönderilebilir" olur ve
+    12.5'teki maskeleme tablosuna uygun somut öneriler listelenir. Hiçbiri
+    bulunmazsa metin 12.1'deki "genel/herkese açık bilgi" sayılır.</p>
+    <p>Kişisel veri metinde ayrıca "tek öğrenci", "yalnızca bir" gibi kendine özgü
+    bir ayrıntıyla birlikte geçiyorsa, laboratuvar 12.5'teki DİKKAT kutusundaki
+    yeniden kimliklendirme (re-identification) uyarısını da gösterir.</p>
+  </div>
+
+  <p class="note">Bu araç gerçek bir veri sınıflandırma/DLP sistemi değildir; yalnızca
+  önceden tanımlı anahtar sözcükleri arar, gerçek adları veya bağlamı anlamaz. Aynı
+  laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/exercises/data-sensitivity-classifier/data_sensitivity_classifier.py">data_sensitivity_classifier.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/exercises/data-sensitivity-classifier">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const SENSITIVE_PERSONAL_HINTS = ["sağlık raporu", "sağlık bilgisi", "sağlık durumu", "disiplin dosyası", "disiplin kaydı", "disiplin soruşturması", "ceza kaydı", "adli sicil", "din", "mezhep", "etnik köken", "cinsel yönelim", "cinsel yaşam", "rehberlik görüşme notu", "rehberlik notu", "aile içi sorun", "psikolojik değerlendirme"];
+  const INSTITUTIONAL_HINTS = ["bütçe taslağı", "personel değerlendirme", "yayımlanmamış sınav", "henüz yayımlanmamış sınav", "gizli kaynak kodu", "kaynak kodu", "ticari sır"];
+  const PERSONAL_HINTS = ["ad soyad", "adı soyadı", "isim", "t.c. kimlik", "tc kimlik", "kimlik numarası", "öğrenci numarası", "adres", "telefon numarası", "veli telefon", "doğum tarihi", "e-posta"];
+  const REIDENTIFICATION_HINTS = ["tek öğrenci", "yalnızca bir", "tek kişi", "kazanan tek", "tek bilinen"];
+
+  const MASKING_SUGGESTIONS = {
+    "ad soyad": "İsimleri 'Öğrenci 1', 'Öğrenci 2' gibi geçici kodlarla değiştirin; kod-isim eşleşmesini yapay zekâ aracına hiç gönderilmeyen ayrı bir dosyada tutun.",
+    "adı soyadı": "İsimleri 'Öğrenci 1', 'Öğrenci 2' gibi geçici kodlarla değiştirin; kod-isim eşleşmesini yapay zekâ aracına hiç gönderilmeyen ayrı bir dosyada tutun.",
+    "isim": "İsimleri 'Öğrenci 1', 'Öğrenci 2' gibi geçici kodlarla değiştirin; kod-isim eşleşmesini yapay zekâ aracına hiç gönderilmeyen ayrı bir dosyada tutun.",
+    "t.c. kimlik": "T.C. kimlik numarasını tamamen çıkarın (maskelemeyin, tamamen kaldırın).",
+    "tc kimlik": "T.C. kimlik numarasını tamamen çıkarın (maskelemeyin, tamamen kaldırın).",
+    "kimlik numarası": "Kimlik numarasını tamamen çıkarın (maskelemeyin, tamamen kaldırın).",
+    "öğrenci numarası": "Öğrenci numarasını tamamen çıkarın (maskelemeyin, tamamen kaldırın).",
+    "adres": "Ev adresi yerine yalnızca mahalle düzeyinde genel bir bölge belirtin.",
+    "telefon numarası": "Telefon numarasını tamamen çıkarın; gerekirse kurumun ilgili biriminde ayrı ve güvenli saklayın.",
+    "veli telefon": "Veli telefon numarasını tamamen çıkarın; gerekirse kurumun ilgili biriminde ayrı ve güvenli saklayın.",
+    "doğum tarihi": "Doğum tarihi yerine yalnızca sınıf seviyesini veya yaş grubunu yazın.",
+    "e-posta": "E-posta adresini tamamen çıkarın veya kurum içi bir kodla değiştirin.",
+  };
+
+  const CATEGORY_LABELS = {
+    dogrudan: "Doğrudan gönderilebilir",
+    anonimlestirerek: "Anonimleştirilerek gönderilebilir",
+    hic_gonderilemez: "Hiç gönderilemez",
+  };
+
+  function findMatches(text, hints) {
+    const lowered = text.toLowerCase();
+    return hints.filter(h => lowered.includes(h));
+  }
+
+  function classifyData(description) {
+    const sensitive = findMatches(description, SENSITIVE_PERSONAL_HINTS);
+    const institutional = findMatches(description, INSTITUTIONAL_HINTS);
+    const personal = findMatches(description, PERSONAL_HINTS);
+
+    if (sensitive.length || institutional.length) {
+      let gerekce;
+      if (sensitive.length && institutional.length) {
+        gerekce = `Metinde hem hassas veri (${sensitive.join(", ")}) hem kurum içi bilgi (${institutional.join(", ")}) işareti bulundu; 12.2'ye göre bu iki kategori anonimleştirmeyle bile yapay zekâ aracına gönderilmez.`;
+      } else if (sensitive.length) {
+        gerekce = `Metinde hassas veri işareti bulundu (${sensitive.join(", ")}); 12.2'ye göre hassas veri kişisel veriden daha sıkı korunur ve çoğu kurumda hiçbir şekilde gönderilmez.`;
+      } else {
+        gerekce = `Metinde kurum içi bilgi işareti bulundu (${institutional.join(", ")}); 12.2'ye göre bu kategori aksi açıkça izinli olmadıkça gönderilmez.`;
+      }
+      return { category: "hic_gonderilemez", gerekce, sensitive, institutional, personal, maskingSuggestions: [], reidentificationWarning: null };
+    }
+
+    if (personal.length) {
+      const gerekce = `Metinde kişisel veri işareti bulundu (${personal.join(", ")}); 12.1-12.2'ye göre bu veri, kimliklendirici bilgi çıkarılıp maskelendikten sonra gönderilebilir.`;
+      const seen = new Set();
+      const maskingSuggestions = [];
+      for (const hint of personal) {
+        const suggestion = MASKING_SUGGESTIONS[hint];
+        if (suggestion && !seen.has(suggestion)) { seen.add(suggestion); maskingSuggestions.push(suggestion); }
+      }
+      const reidHits = findMatches(description, REIDENTIFICATION_HINTS);
+      const reidentificationWarning = reidHits.length
+        ? `DİKKAT (12.5): Metin '${reidHits.join(", ")}' gibi kendine özgü bir ayrıntı içeriyor; isim çıkarılsa bile bu ayrıntı kişiyi yeniden tanımlanabilir kılabilir (yeniden kimliklendirme riski). Yalnızca ismi değil, kişiyi tekilleştiren tüm ayrıntıları gözden geçirin.`
+        : null;
+      return { category: "anonimlestirerek", gerekce, sensitive, institutional, personal, maskingSuggestions, reidentificationWarning };
+    }
+
+    const gerekce = "Metinde kişisel veri, hassas veri veya kurum içi bilgi işareti bulunamadı; 12.1'e göre genel/herkese açık bilgi doğrudan gönderilebilir.";
+    return { category: "dogrudan", gerekce, sensitive, institutional, personal, maskingSuggestions: [], reidentificationWarning: null };
+  }
+
+  function tagClass(category) {
+    if (category === "dogrudan") return "ok";
+    if (category === "anonimlestirerek") return "warn";
+    return "block";
+  }
+
+  function render() {
+    const description = document.getElementById("description").value.trim();
+    const resultOut = document.getElementById("resultOut");
+    const matchesOut = document.getElementById("matchesOut");
+    const suggestionsOut = document.getElementById("suggestionsOut");
+    const warningOut = document.getElementById("warningOut");
+
+    if (!description) {
+      resultOut.innerHTML = `<dt>Karar</dt><dd><span class="tag warn">bekleniyor</span></dd>`;
+      matchesOut.innerHTML = "";
+      suggestionsOut.innerHTML = "<li>Yukarıya bir veri açıklaması yazın.</li>";
+      warningOut.innerHTML = "";
+      return;
+    }
+
+    const result = classifyData(description);
+    const label = CATEGORY_LABELS[result.category];
+
+    resultOut.innerHTML = `
+      <dt>Karar</dt><dd><span class="tag ${tagClass(result.category)}">${label}</span></dd>
+      <dt>Gerekçe</dt><dd>${result.gerekce}</dd>
+    `;
+
+    const rows = [];
+    if (result.sensitive.length) rows.push(`<tr><th>Hassas veri</th><td>${result.sensitive.join(", ")}</td></tr>`);
+    if (result.institutional.length) rows.push(`<tr><th>Kurum içi bilgi</th><td>${result.institutional.join(", ")}</td></tr>`);
+    if (result.personal.length) rows.push(`<tr><th>Kişisel veri</th><td>${result.personal.join(", ")}</td></tr>`);
+    matchesOut.innerHTML = rows.length ? `<table class="matches">${rows.join("")}</table>` : "";
+
+    suggestionsOut.innerHTML = result.maskingSuggestions.length
+      ? result.maskingSuggestions.map(s => `<li>${s}</li>`).join("")
+      : (result.category === "dogrudan" ? "<li>Maskeleme gerekmez.</li>" : "");
+
+    warningOut.innerHTML = result.reidentificationWarning
+      ? `<div class="warning-box">${result.reidentificationWarning}</div>`
+      : "";
+  }
+
+  const CASES = [
+    "7. sınıf fen bilgisi müfredatının bu haftaki konusu fotosentez.",
+    "Öğrencinin rehberlik görüşme notu: ailede boşanma süreci yaşanıyor.",
+    "Ayşe Yılmaz'ın bu dönem matematik notu 72; veli telefon numarası 0532 xxx xx xx.",
+    "Öğrencinin ad soyad bilgisi ve son sınav notu birlikte paylaşılacak; üstelik bu öğrenci geçen ay bölgesel bir yarışmayı kazanan tek öğrenci.",
+    "Okulun bir sonraki dönem bütçe taslağı ve öğretmenlerin performans değerlendirme notları.",
+  ];
+
+  CASES.forEach((text, i) => {
+    document.getElementById(`case${i}`).addEventListener("click", () => {
+      document.getElementById("description").value = text;
+      render();
+    });
+  });
+
+  document.getElementById("description").addEventListener("input", render);
+  document.getElementById("description").value = CASES[2];
+  render();
+</script>
+</body>
+</html>

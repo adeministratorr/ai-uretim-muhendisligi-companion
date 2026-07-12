@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Şablon Doğrulayıcı Laboratuvarı — Cilt 1, Bölüm 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --red: #E4572E; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 820px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: #5a6472; margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  select, textarea {
+    width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--gray);
+    background: var(--bg); color: var(--text); font-size: .92rem; font-family: inherit;
+  }
+  textarea { resize: vertical; min-height: 130px; margin-bottom: 4px; }
+  select { margin-bottom: 14px; }
+  .btn-row { display: flex; gap: 8px; margin: 10px 0 4px 0; flex-wrap: wrap; }
+  button { background: var(--navy); color: #fff; border: none; border-radius: 8px;
+           padding: 8px 14px; font-size: .85rem; cursor: pointer; }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  dl.result { display: grid; grid-template-columns: 140px 1fr; row-gap: 10px; column-gap: 12px; margin: 0; }
+  dl.result dt { font-weight: 700; padding-top: 2px; }
+  dl.result dd { margin: 0; }
+  .tag { display: inline-block; border-radius: 6px; padding: 2px 8px; font-size: .82rem;
+         font-weight: 700; margin: 2px 4px 2px 0; }
+  .tag.ok { background: var(--teal); color: #05221f; }
+  .tag.warn { background: var(--orange); color: #3a2400; }
+  .tag.bad { background: var(--red); color: #fff; }
+  .banner { border-radius: 8px; padding: 10px 14px; font-weight: 700; margin-bottom: 14px; }
+  .banner.ok { background: var(--teal); color: #05221f; }
+  .banner.bad { background: var(--red); color: #fff; }
+  .note { font-size: .85rem; color: #5a6472; margin-top: 10px; }
+  code { background: var(--gray); border-radius: 4px; padding: 1px 5px; }
+</style>
+</head>
+<body>
+  <h1>Şablon Doğrulayıcı Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 1, Bölüm 8 — 8.2 (beş alanlı iskelet: Amaç,
+  Hedef Kitle, Kaynak, Format, Sınır) ve Ek C (Prompt Şablon Kütüphanesi). Aşağıya Ek
+  C'den bir persona şablonu yükleyin veya kendi doldurduğunuz şablonu yapıştırın;
+  laboratuvar hangi <code>[DEĞİŞKEN]</code> alanlarının hâlâ boş kaldığını ve hangi
+  zorunlu alanın eksik/boş bırakıldığını canlı olarak gösterir. Kurulum gerekmez,
+  sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <label for="preset">Örnek yükle (Ek C persona şablonları)</label>
+    <select id="preset">
+      <option value="ogretmen-ham">Öğretmen — ham şablon (hiç doldurulmamış)</option>
+      <option value="ogretmen-eksik" selected>Öğretmen — kullanıcı doldurmuş, eksikli</option>
+      <option value="ogretmen-tam">Öğretmen — kullanıcı doldurmuş, tam</option>
+      <option value="analist-ham">Analist — ham şablon (hiç doldurulmamış)</option>
+      <option value="analist-eksik">Analist — kullanıcı doldurmuş, eksikli</option>
+      <option value="analist-tam">Analist — kullanıcı doldurmuş, tam</option>
+      <option value="gelistirici-eksik">Geliştirici — kullanıcı doldurmuş, eksikli</option>
+      <option value="gelistirici-tam">Geliştirici — kullanıcı doldurmuş, tam</option>
+    </select>
+
+    <label for="tpl">Doldurulmuş şablon metni</label>
+    <textarea id="tpl"></textarea>
+    <div class="btn-row">
+      <button id="clearBtn" class="secondary" type="button">Temizle</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Doğrulama sonucu</h2>
+    <div id="banner" class="banner"></div>
+    <dl class="result" id="fieldsOut"></dl>
+  </div>
+
+  <div class="panel">
+    <h2>Doğrulayıcı ne kontrol ediyor?</h2>
+    <p>Bölüm 8.2'deki beş alan (Amaç, Hedef Kitle, Kaynak, Format, Sınır) her şablonda
+    sabittir; boş bırakılan bir alanı model kendi varsayımıyla doldurur (8.2, 8.14 —
+    Bağlam Eksikliği). Bu laboratuvar üç şeyi ayrı ayrı işaretler: bir alan etiketi
+    metinde hiç <strong>geçmiyorsa</strong> ("eksik"), etiket var ama içerik boşsa
+    ("boş"), içerikte hâlâ köşeli parantezli bir <code>[DEĞİŞKEN]</code> kalmışsa
+    ("doldurulmamış değişken"). Üçü de olmadığında şablon "HAZIR" sayılır — ama bu,
+    içeriğin doğru olduğu anlamına gelmez; doğruluk, gizlilik ve telif kontrolü ayrı
+    bir adımdır (8.14).</p>
+  </div>
+
+  <p class="note">Bu laboratuvar gerçek model çıktısını değerlendirmez; yalnızca beş
+  alanın eksiksiz doldurulup doldurulmadığını yerel metin işlemeyle denetler. Aynı
+  laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-1-prompting/task-templates/template_validator_lab.py">template_validator_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-1-prompting/task-templates">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const REQUIRED_FIELDS = ["Amaç", "Hedef Kitle", "Kaynak", "Format", "Sınır"];
+  const OPTIONAL_FIELDS = ["Başarı Kriteri"];
+  const CANONICAL_LABELS = {
+    "amaç": "Amaç", "hedef kitle": "Hedef Kitle", "kaynak": "Kaynak",
+    "format": "Format", "sınır": "Sınır", "başarı kriteri": "Başarı Kriteri",
+  };
+  const FIELD_LABEL_RE = /(Amaç|Hedef\s+[Kk]itle|Kaynak|Format|Sınır|Başarı\s+[Kk]riteri)\s*:\s*/gi;
+  const VARIABLE_RE = /\[([^\[\]]+)\]/g;
+
+  function canonicalLabel(raw) {
+    const normalized = raw.trim().replace(/\s+/g, ' ');
+    return CANONICAL_LABELS[normalized.toLowerCase()] || normalized;
+  }
+
+  function findVariables(text) {
+    return [...text.matchAll(VARIABLE_RE)].map(m => m[1]);
+  }
+
+  function parseFields(text) {
+    const matches = [...text.matchAll(FIELD_LABEL_RE)];
+    const fields = {};
+    matches.forEach((m, i) => {
+      const name = canonicalLabel(m[1]);
+      const start = m.index + m[0].length;
+      const end = i + 1 < matches.length ? matches[i + 1].index : text.length;
+      let content = text.slice(start, end).trim();
+      if (content.endsWith('.')) content = content.slice(0, -1).trim();
+      fields[name] = content;
+    });
+    return fields;
+  }
+
+  function validateTemplate(text) {
+    const fieldsFound = parseFields(text);
+    const fields = [];
+    const missing = [];
+    const empty = [];
+    const allVariables = [];
+
+    REQUIRED_FIELDS.forEach(name => {
+      if (!(name in fieldsFound)) {
+        missing.push(name);
+        fields.push({ name, present: false, isEmpty: true, variables: [] });
+        return;
+      }
+      const content = fieldsFound[name];
+      const variables = findVariables(content);
+      const isEmpty = content === '';
+      if (isEmpty) empty.push(name);
+      fields.push({ name, present: true, isEmpty, variables });
+      allVariables.push(...variables);
+    });
+
+    OPTIONAL_FIELDS.forEach(name => {
+      if (name in fieldsFound) {
+        const content = fieldsFound[name];
+        const variables = findVariables(content);
+        fields.push({ name, present: true, isEmpty: content === '', variables });
+        allVariables.push(...variables);
+      }
+    });
+
+    const isReady = missing.length === 0 && empty.length === 0 && allVariables.length === 0;
+    return { fields, missing, empty, unfilledVariables: allVariables, isReady };
+  }
+
+  const PRESETS = {
+    'ogretmen-ham': "Amaç: [konu] hakkındaki bu metni [sınıf seviyesi] öğrencisinin anlayacağı dile indirge. Hedef kitle: [yaş grubu], [ön bilgi düzeyi]. Kaynak: yalnızca [orijinal_metin]. Format: beş paragraf, her paragrafta tek bir alt kavram, paragraf sonunda tek soruluk bir anlama kontrolü. Sınır: [orijinal_metin] dışından bilgi ekleme, teknik terimi tamamen kaldırma yerine parantez içinde bir cümlelik açıklama ekle.",
+    'ogretmen-eksik': "Amaç: hücre bölünmesi hakkındaki bu metni 7. sınıf öğrencisinin anlayacağı dile indirge. Hedef kitle: [yaş grubu], ön bilgiye sahip olmayan öğrenciler. Kaynak: yalnızca fen bilimleri ders kitabı 3. ünite metni. Format: beş paragraf, her paragrafta tek bir alt kavram, paragraf sonunda tek soruluk bir anlama kontrolü. Sınır:",
+    'ogretmen-tam': "Amaç: hücre bölünmesi hakkındaki bu metni 7. sınıf öğrencisinin anlayacağı dile indirge. Hedef kitle: 12-13 yaş, ön bilgiye sahip olmayan öğrenciler. Kaynak: yalnızca fen bilimleri ders kitabı 3. ünite metni. Format: beş paragraf, her paragrafta tek bir alt kavram, paragraf sonunda tek soruluk bir anlama kontrolü. Sınır: ders kitabı 3. ünite metni dışından bilgi ekleme, teknik terimi tamamen kaldırma yerine parantez içinde bir cümlelik açıklama ekle.",
+    'analist-ham': 'Amaç: [veri_dosyasi] içindeki eğilimi özetleyen bir yorum hazırla. Hedef kitle: sayısal ayrıntıdan çok sonuca bakan karar vericiler. Kaynak: yalnızca [veri_dosyasi]. Format: kısa bir yorum paragrafı + üç maddelik bulgu listesi + ayrı bir "Varsayımlar" listesi. Sınır: veri dışında sayı üretme, veride olmayan bir kategori veya dönem adı verme.',
+    'analist-eksik': 'Amaç: üçüncü çeyrek bağış verisindeki eğilimi özetleyen bir yorum hazırla. Hedef kitle: sayısal ayrıntıdan çok sonuca bakan karar vericiler. Kaynak: yalnızca [veri_dosyasi]. Format: kısa bir yorum paragrafı + üç maddelik bulgu listesi + ayrı bir "Varsayımlar" listesi.',
+    'analist-tam': 'Amaç: üçüncü çeyrek bağış verisindeki eğilimi özetleyen bir yorum hazırla. Hedef kitle: sayısal ayrıntıdan çok sonuca bakan karar vericiler. Kaynak: yalnızca ekli bağış_2026_q3.csv dosyası. Format: kısa bir yorum paragrafı + üç maddelik bulgu listesi + ayrı bir "Varsayımlar" listesi. Sınır: veri dışında sayı üretme, veride olmayan bir kategori veya dönem adı verme.',
+    'gelistirici-eksik': "Amaç: KeyError: 'kanal' hatasının olası nedenini açıkla. Hedef kitle: kodu yazan geliştirici (sen). Kaynak: yalnızca hata mesajı metni ve [ilgili_kod_parcasi]. Format: önce olası neden (tek paragraf), sonra doğrulanacak iki hipotez, sonra önerilen ilk adım. Sınır:",
+    'gelistirici-tam': "Amaç: KeyError: 'kanal' hatasının olası nedenini açıkla. Hedef kitle: kodu yazan geliştirici (sen). Kaynak: yalnızca hata mesajı metni ve etiketleme betiğinin ilgili satırları. Format: önce olası neden (tek paragraf), sonra doğrulanacak iki hipotez, sonra önerilen ilk adım. Sınır: doğrudan \"düzelt\" deme, kesin teşhis koymadan önce hangi ek bilginin (log, ortam, sürüm) gerektiğini belirt.",
+  };
+
+  const tplEl = document.getElementById('tpl');
+  const presetEl = document.getElementById('preset');
+  const bannerEl = document.getElementById('banner');
+  const fieldsOutEl = document.getElementById('fieldsOut');
+
+  function fieldRowHtml(field) {
+    if (!field.present) {
+      return `<dt>${field.name}</dt><dd><span class="tag bad">eksik</span> Bu alan hiç yazılmamış.</dd>`;
+    }
+    if (field.isEmpty) {
+      return `<dt>${field.name}</dt><dd><span class="tag bad">boş</span> Etiket var ama içerik boş bırakılmış.</dd>`;
+    }
+    if (field.variables.length) {
+      const vars = field.variables.map(v => `<code>[${v}]</code>`).join(', ');
+      return `<dt>${field.name}</dt><dd><span class="tag warn">doldurulmamış değişken</span> ${vars}</dd>`;
+    }
+    return `<dt>${field.name}</dt><dd><span class="tag ok">tamam</span></dd>`;
+  }
+
+  function render() {
+    const text = tplEl.value;
+    const report = validateTemplate(text);
+
+    bannerEl.className = 'banner ' + (report.isReady ? 'ok' : 'bad');
+    bannerEl.textContent = report.isReady
+      ? 'HAZIR — beş zorunlu alan da dolu, doldurulmamış değişken kalmadı.'
+      : `HAZIR DEĞİL — ${report.missing.length} eksik alan, ${report.empty.length} boş alan, ${report.unfilledVariables.length} doldurulmamış değişken.`;
+
+    fieldsOutEl.innerHTML = report.fields.map(fieldRowHtml).join('');
+  }
+
+  presetEl.addEventListener('change', () => {
+    tplEl.value = PRESETS[presetEl.value] || '';
+    render();
+  });
+  document.getElementById('clearBtn').addEventListener('click', () => {
+    tplEl.value = '';
+    render();
+  });
+  tplEl.addEventListener('input', render);
+
+  tplEl.value = PRESETS[presetEl.value];
+  render();
+</script>
+</body>
+</html>
