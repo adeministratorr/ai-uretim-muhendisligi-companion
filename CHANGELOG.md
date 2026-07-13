@@ -4,6 +4,19 @@ Bu dosya, kitap/web/repo güncellemelerini sürüm bazlı kaydeder.
 
 ## [Yayınlanmadı]
 
+### Prompt Kütüphanesi eklendi (2026-07-13)
+
+- `prompt-kutuphanesi/`: seriyi destekleyen, alan alan düzenlenmiş prompt
+  koleksiyonu (README + 13 kategori dosyası): yazılım geliştirme, yazma ve
+  içerik, iş ve verimlilik, eğitim ve öğrenme, veri analizi, görsel üretim
+  (Midjourney/gpt-image-2/Nano Banana/Flux + üretim modları), video üretim
+  (Veo 3.1/Kling/Runway/Pika/Luma + dudak senkronu), JSON/yapılandırılmış
+  promptlar, sosyal medya trend promptları, kurumsal şablonlar, sosyal
+  medya yönetimi, günlük hayat, strateji ve pazarlama.
+- Kaynak ve lisans notları dosya sonlarında; prompts.chat içerikleri CC0,
+  resmî model rehberleri atıflı. Hızla eskiyen bilgiler `Son doğrulama:
+  2026-07` notu taşır.
+
 ### Eklendi
 
 - Repo iskeleti oluşturuldu: `AGENTS.md`, `CLAUDE.md`, `SPEC_TEMPLATE.md`, `CONTRIBUTING.md`,
