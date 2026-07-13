@@ -136,7 +136,7 @@ değil **aradaki hareketi** tarif eder.
 
 ---
 
-## 2. Kling, Runway, Pika, Luma
+## 2. Kling, Runway, Seedance, Pika, Luma
 
 **Kling (2.1/3.0):** Resmî formül: özne + özne hareketi + mekân +
 (kamera dili + ışık + atmosfer). 60-100 kelime ideal; ayrı negatif prompt
@@ -167,6 +167,25 @@ reveal, studio lighting with soft reflections, shallow depth of field,
 smooth dolly-in camera move.
 ```
 
+**Seedance (ByteDance, 2.0):** Dreamina/CapCut ve API'ler (BytePlus, fal)
+üzerinden erişilir; ayırt edici gücü **tek prompttan çok planlı anlatı**
+kurması ve zaman çizelgeli prompt tekniğidir. Resmî formül: özne + eylem +
+kamera + sahne/ışık + stil (50-150 kelime). Referanslar "@" ile anılır
+(`@image1 as main character`, `@video1`'daki hareketi kopyala); gerçek
+insan yüzü referansı politika gereği engellidir. Native ses (diyalog,
+efekt, dudak senkronu) üretir. Seedance 2.5 duyuruldu ancak 2026-07
+itibarıyla genel erişimde değildir.
+
+```text
+0-3s: extreme close-up on eyes widening; 3-7s: quick dolly out to medium
+revealing rooftop standoff; 7-12s: orbiting arc around both characters.
+```
+
+```text
+Use the stylized ronin from @image1 as protagonist, strictly preserve
+facial structure, hair strands, clothing folds, accessory placement.
+```
+
 **Luma Dream Machine (Ray2/Ray3):** Sıra: özne → eylem → detay → mekân →
 stil → kamera. Kamera anahtar kelimelerini en öngörülebilir uygulayan
 modellerden. İlginç ayrıntı: "vibrant", "whimsical", "hyper-realistic"
@@ -180,7 +199,41 @@ window, cinematic look.
 
 ---
 
-## 3. OpenAI Sora 2 — Tarihî Not
+## 3. Avatar Video Platformları (HeyGen, Synthesia, Hedra)
+
+Avatar platformlarında "prompt" iki parçaya ayrılır: **senaryo metni**
+(avatarın söyleyeceği söz — TTS'e gider) ve **sahne/davranış talimatı**
+(avatar seçimi, ton, jest, arka plan). Video modellerinden farkı: sahneyi
+siz kurmazsınız, konuşmayı yönetirsiniz.
+
+Senaryo metni kuralları:
+
+- Konuşma dili yazın; yazı dili cümleleri seste robotik durur. Metni
+  yüksek sesle okuyun — takıldığınız yerde avatar da takılır.
+- Duraklamaları noktalama ile yönetin; vurgu için kısa cümle kullanın.
+- Türkçe senaryolarda kısaltmaları açık yazın ("vb." değil "ve benzeri")
+  — TTS kısaltmaları yanlış seslendirebilir.
+
+**Senaryo + davranış talimatı örneği (eğitim videosu):**
+
+```text
+[Avatar: profesyonel, orta yaş, samimi gülümseme; ton: sıcak-öğretici;
+tempo: orta; arka plan: sade ofis, hafif bulanık]
+
+Merhaba! Bu kısa videoda, yapay zekâ araçlarına neden açık talimat
+vermemiz gerektiğini göreceğiz. Bir örnekle başlayalım. ...
+[duraklat] Şimdi aynı isteği bir de şöyle soralım. ...
+```
+
+**Fotoğraftan konuşan avatar (photo-to-avatar / Hedra, HeyGen Avatar IV
+türü):** tek fotoğraf + ses/replik → konuşan video. Fotoğraf kuralları
+görsel modlarla aynıdır: net, önden, iyi ışıklı yüz. Kimlik ve rıza
+uyarısı geçerlidir — yalnız kendi fotoğrafınız veya yazılı izinli yüzler.
+Son doğrulama: 2026-07.
+
+---
+
+## 4. OpenAI Sora 2 — Tarihî Not
 
 Sora 2 (2025 sonu), "beat" tabanlı eylem yazımı (eylemi saniyelere bölerek
 tarif etme), tek seferde tek değişken değiştiren remix yaklaşımı ve
@@ -228,3 +281,5 @@ JSON biçimli video promptları için bkz.
   fal.ai Kling 3.0 rehberi: blog.fal.ai/kling-3-0-prompting-guide/
 - Luma öğrenme merkezi: lumalabs.ai/learning-hub/
 - Pika rehberleri: pikalabsai.org/pika-labs-prompting-guide/
+- Seedance resmî prompt rehberleri (BytePlus ModelArk):
+  docs.byteplus.com/en/docs/ModelArk/2222480 (2.0) ve fal.ai/seedance-2.0

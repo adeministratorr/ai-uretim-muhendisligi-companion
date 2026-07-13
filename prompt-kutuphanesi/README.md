@@ -29,6 +29,7 @@ Prompt anatomisinin çalışan denetim örneği için bkz.
 | 11 | [sosyal-medya-yonetimi.md](11-sosyal-medya-yonetimi.md) | İçerik takvimi, platforma özel gönderi, rakip analizi, topluluk yönetimi, performans |
 | 12 | [gunluk-hayat.md](12-gunluk-hayat.md) | Uçak bileti/seyahat, satın alma araştırması, ürün karşılaştırma, sözleşme anlama, hak arama |
 | 13 | [strateji-ve-pazarlama.md](13-strateji-ve-pazarlama.md) | SWOT, rakip/pazar analizi, persona, konumlandırma, kampanya planı |
+| 14 | [muzik-ve-ses.md](14-muzik-ve-ses.md) | Suno stil/metatag promptları, şarkı düzenleme, TTS, ses klonlama etiği |
 
 ---
 
