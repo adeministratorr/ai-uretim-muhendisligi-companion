@@ -133,7 +133,63 @@ kullanırken stil alanından cinsiyet tanımlayıcılarını çıkarın (çeliş
 
 ---
 
-## 4. Konuşma Sesi: TTS ve Ses Klonlama
+## 4. ElevenLabs: Konuşma, Ses Tasarımı ve Efekt
+
+ElevenLabs üç ayrı üretim yüzeyi sunar ve promptlama her birinde farklıdır
+(Son doğrulama: 2026-07 — etiket seti modele göre değişir, güncel
+dokümandan kontrol edin: elevenlabs.io/docs).
+
+**a) Konuşma (TTS) — köşeli parantezli ses etiketleri.** Güncel konuşma
+modelleri, metnin İÇİNE yazılan duygu/eylem etiketlerini yorumlar:
+
+```text
+[warmly] Hoş geldiniz! Bu eğitimde üç adımı birlikte geçeceğiz.
+[pause] İlk adım en önemlisi... [whispers] ve çoğu kişi bunu atlıyor.
+[laughs] Merak etmeyin, biz atlamayacağız.
+```
+
+Yaygın etiketler: `[whispers] [laughs] [sighs] [excited] [sad] [angry]
+[pause] [curious] [sarcastic]`. Kurallar:
+
+- Etiketi cümlenin başına, etkilemesini istediğiniz yere koyun; aşırı
+  etiket doğallığı bozar (paragraf başına 1-3 yeterli).
+- Vurgu için BÜYÜK HARF, doğal duraklama için üç nokta işe yarar.
+- Sayı, tarih ve kısaltmaları Türkçe okunuşuyla açık yazın ("1923'te"
+  yerine "bin dokuz yüz yirmi üçte") — TTS normalizasyonu dile göre
+  değişkendir.
+- Ses ayarları (stability/similarity) prompt değil parametredir: düşük
+  stability daha duygusal/değişken, yüksek stability daha tekdüze-tutarlı
+  okuma verir.
+
+**b) Ses tasarımı (Voice Design) — metinden yeni ses.** Var olmayan bir
+sesi tarifle üretirsiniz; tarif yaş + cinsiyet + aksan/dil + ton + tempo +
+kullanım bağlamı içermelidir:
+
+```text
+A warm, confident Turkish female voice in her mid-30s. Clear diction,
+moderate pace, friendly but professional — suitable for corporate
+e-learning narration. Slight smile in the voice.
+```
+
+**c) Ses efekti (SFX) üretimi.** Kısa, somut, fizik tarifli yazın:
+
+```text
+Heavy wooden door creaking open slowly in a large echoing hall,
+followed by two slow footsteps on stone.
+```
+
+**d) Eleven Music.** Lisanslı müzik üretimi (YouTube para kazanımı için
+temizlenmiş ilk büyük üreticilerden). Stil promptu Suno mantığıyla aynıdır:
+tür + ruh hali + enstrümantasyon + tempo + vokal; sözlü/sözsüz seçimi
+belirtin.
+
+**Dublaj/çeviri notu:** ElevenLabs dublajı (bir videoyu başka dile aynı
+ses karakteriyle çevirme) prompt değil iş akışıdır; kaynak videonun temiz
+sesi, sonucun kalitesini prompttan çok belirler.
+
+---
+
+## 5. Konuşma Sesi: Genel TTS ve Ses Klonlama
 
 Metinden ses (text-to-speech) promptlarında üç bileşen belirtin: **kim**
 (ses karakteri: yaş, cinsiyet, enerji), **nasıl** (ton: sakin/coşkulu,
@@ -156,7 +212,7 @@ ister ve klonu yükleyene özel tutar.
 
 ---
 
-## 5. Telif ve Ticari Kullanım (Suno, 2026-07)
+## 6. Telif ve Ticari Kullanım (Suno, 2026-07)
 
 - **Ücretsiz katman:** ticari kullanım YOK; çıktının sahibi Suno;
   sonradan abone olmak geçmiş üretimlere ticari hak kazandırmaz.
@@ -184,3 +240,5 @@ ister ve klonu yükleyene özel tutar.
   anlaşmaları)
 - Udio'nun platform değişikliği: billboard.com — UMG-Udio anlaşması
   haberleri
+- ElevenLabs resmî dokümantasyonu (ses etiketleri, voice design, SFX,
+  Eleven Music): elevenlabs.io/docs
