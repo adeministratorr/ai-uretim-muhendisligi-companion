@@ -18,6 +18,8 @@ Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltle
 - Model ve araç ekosistemi değiştikçe güncellenen bir alan olarak çalışır.
 - Etkileşimli HTML laboratuvarlarını <https://lab.ademyuce.tr> adresinde kurulumsuz sunar
   (örnek: [temperature/top-p/top-k laboratuvarı](https://lab.ademyuce.tr/cilt-1-prompting/parameter-matrix/sampling_lab.html)).
+- `prompt-kutuphanesi/` klasöründe, yazılımdan görsel/video üretimine ve günlük hayata
+  uzanan alan alan bir prompt koleksiyonu sunar.
 
 **Temel ilke:** Bu repo hem insan okur hem de coding agent tarafından okunabilir olmalıdır.
 
@@ -34,6 +36,7 @@ Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltle
 ├── CHANGELOG.md             ← Kitap/web/repo güncelleme notları
 ├── docs/
 │   └── model-watch/         ← Aylık model/araç uyumluluk takibi
+├── prompt-kutuphanesi/      ← Alan alan prompt koleksiyonu (yazılım, iş, görsel, video, JSON, trend...)
 ├── cilt-1-prompting/        ← Prompt mühendisliği ve structured output örnekleri
 ├── cilt-2-loops/            ← Vibe coding, checkpoint, debug loop, mutation test örnekleri
 ├── cilt-3-agents/           ← Tool schema, MCP, ACI/poka-yoke, multi-agent örnekleri
