@@ -233,6 +233,77 @@ düşürmeye başlar.
 
 ---
 
+## Alan Sözlüğü: JSON Promptlarda Kullanılabilecek Alanlar
+
+Önce dürüst bir hatırlatma: **standart bir şema yoktur.** Model (FLUX.2'nin
+resmî JSON desteği hariç) alan adlarını doğal dil gibi okur; aşağıdaki
+adlar topluluk pratiğinde yerleşmiş, modellerin iyi anladığı adlardır.
+Alan adlarını İngilizce tutun (eğitim verisiyle uyum), değerleri istediğiniz
+dilde yazın. Her alanı doldurmak zorunda değilsiniz — boş bıraktığınızı
+model kendi doldurur; kritik olan, kontrol etmek istediğiniz her boyuta
+bir alan ayırmaktır.
+
+### Görsel üretim alanları
+
+| Alan | Ne kontrol eder | Örnek değer |
+|---|---|---|
+| `subject` | ana özne (tek nesne veya liste) | "matte black ceramic mug" |
+| `subject_details` / `wardrobe_props` | öznenin ayrıntıları, kıyafet, aksesuar | ["white camisole", "controller"] |
+| `arrangement` / `pose` | öznenin duruşu/yerleşimi | "sits cross-legged on couch" |
+| `environment` / `background` / `setting` | mekân ve arka plan | "dimly lit retro room" |
+| `foreground` / `midground` / `background` | katmanlı kompozisyon (ayrı ayrı) | — |
+| `lighting` | ışık türü, yönü, sertliği | "soft window light from left, rim light" |
+| `camera` (iç içe nesne) | `type`, `lens`, `aperture`, `angle`, `distance`, `flash` | {"lens": "85mm", "aperture": "f/2.8"} |
+| `composition` | kadraj kuralı, negatif alan | "rule of thirds, negative space left" |
+| `style` / `output_style` / `medium` | mecra ve estetik | "photorealistic snapshot, film grain" |
+| `mood` / `atmosphere` | duygu/atmosfer | "intimate, nostalgic" |
+| `color_palette` / `color_restriction` | renkler (HEX desteği: FLUX.2, kısmen Nano Banana Pro) | ["#111111", "cream"] |
+| `aspect_ratio` / `format` / `resolution` | oran ve boyut (bazı araçlarda API parametresidir, prompta yazmak işe yaramaz) | "4:5", "2K" |
+| `text` / `title_text` / `headline` | görsel İÇİNDE görünecek yazı | "YAPAY ZEKA ZİRVESİ 2026" |
+| `typography` / `font` | yazının biçimi | "bold geometric sans-serif, white" |
+| `layout` | metin/öğe yerleşim planı | "title top-left, illustration right half" |
+| `references` / `reference_images` | kimlik/stil çıpaları (destekleyen araçlarda) | ["@image1 as main character"] |
+| `restrictions` / `negative` / `exclude` | istenmeyenler (alan desteklemeyen modelde olumlu ifadeye çevirin) | "no watermark, no extra text" |
+| `label` / `tags` | insan için etiket — model için anlamı yoktur, şablon arşivinizi düzenler | "direct-flash-90s" |
+
+### Video üretim alanları (görsel alanlarına ek olarak)
+
+| Alan | Ne kontrol eder | Örnek değer |
+|---|---|---|
+| `shot` (iç içe) | `type` (çekim ölçeği), `lens`, `framing`, `movement`/`camera_motion` | {"type": "medium shot", "movement": "slow dolly-in"} |
+| `action` | öznenin tek plandaki eylemi | "she turns a page and pauses" |
+| `characters` | çok karakterli sahnede her karakterin tarifi (liste) | ["a weary detective...", "a woman in red..."] |
+| `scene` (iç içe) | `location`, `time_of_day`, `weather` | {"location": "rooftop", "time_of_day": "dawn"} |
+| `audio` (iç içe) | `dialogue` (tırnaklı replik), `sfx`, `ambient`, `music` | {"dialogue": "She whispers: '...'"} |
+| `timeline` (liste) | saniye aralığı bazlı beat'ler: `{time, action}` | [{"time": "0-3s", "action": "..."}] |
+| `technical` (iç içe) | `aspect_ratio`, `duration`, `resolution`, `fps` | {"duration": "8 seconds"} |
+| `style` / `film_stock` / `color_grade` | sinematik görünüm | "film noir, teal-and-orange grade" |
+| `transition` | ilk kare-son kare modunda geçiş tarifi | "smooth 180-degree arc" |
+| `physics` / `motion_quality` | hareket gerçekçiliği vurgusu | "natural cloth movement, no warping" |
+
+### Metin görevi alanları (LLM'ler için)
+
+| Alan | Ne kontrol eder | Örnek değer |
+|---|---|---|
+| `role` / `persona` | modelin kimliği | "kıdemli veri analisti" |
+| `task` / `gorev` | yapılacak iş (tek cümle) | "blog_yazisi_ozeti" |
+| `context` / `baglam` | işin arka planı | "teknik olmayan yönetici okuyacak" |
+| `input` / `girdi` | işlenecek veri (veya ayrı sınırlayıcıda) | "..." |
+| `constraints` / `kurallar` (liste) | kısıtlar, yasaklılar | ["pazarlama dili yok"] |
+| `output_format` / `cikti_bicimi` | çıktının yapısı | "3 madde + 1 cümle sonuç" |
+| `examples` (liste) | few-shot örnekleri: `{input, output}` | [{"input": "...", "output": "..."}] |
+| `variables` | şablondaki değişkenlerin tanımı | {"urun": "ürün adı"} |
+| `success_criteria` / `basari_kriteri` | kabul ölçütü | "her madde rakam içermeli" |
+| `reasoning` | (çıktı şemasında) modele düşünme alanı açar — katı şemalarda kalite korur | — |
+| `tone` / `uslup`, `audience` / `hedef_kitle`, `length` / `uzunluk` | üslup-kitle-hacim üçlüsü | "resmî", "KOBİ sahibi", "≤150 kelime" |
+
+İç içe nesne (`camera.lens`) ile düz alan (`camera_lens`) arasında model
+açısından anlamlı fark yoktur; iç içe yapı insana okunaklıdır. Alan sayısı
+arttıkça toplam kelime bütçesini unutmayın: JSON da olsa ~175 kelime
+üstünde video modelleri talimat düşürmeye başlar.
+
+---
+
 ## Kaynaklar
 
 - OpenAI — Structured Outputs rehberi:

@@ -133,59 +133,117 @@ kullanırken stil alanından cinsiyet tanımlayıcılarını çıkarın (çeliş
 
 ---
 
-## 4. ElevenLabs: Konuşma, Ses Tasarımı ve Efekt
+## 4. ElevenLabs: Konuşma, Ses Tasarımı, Efekt ve Ötesi
 
-ElevenLabs üç ayrı üretim yüzeyi sunar ve promptlama her birinde farklıdır
-(Son doğrulama: 2026-07 — etiket seti modele göre değişir, güncel
-dokümandan kontrol edin: elevenlabs.io/docs).
+2026 ortasında ElevenLabs üç ürün şemsiyesine ayrıldı: **ElevenCreative**
+(stüdyo/yaratıcı araçlar), **ElevenAgents** (sesli ajan platformu) ve
+**ElevenAPI**. Amiral gemisi konuşma modeli **Eleven v3**'tür (70+ dil,
+Türkçe dahil); düşük gecikme için Flash v2.5, klasik iş yükleri için
+Multilingual v2 sürer. Son doğrulama: 2026-07 — elevenlabs.io/docs.
 
-**a) Konuşma (TTS) — köşeli parantezli ses etiketleri.** Güncel konuşma
-modelleri, metnin İÇİNE yazılan duygu/eylem etiketlerini yorumlar:
-
-```text
-[warmly] Hoş geldiniz! Bu eğitimde üç adımı birlikte geçeceğiz.
-[pause] İlk adım en önemlisi... [whispers] ve çoğu kişi bunu atlıyor.
-[laughs] Merak etmeyin, biz atlamayacağız.
-```
-
-Yaygın etiketler: `[whispers] [laughs] [sighs] [excited] [sad] [angry]
-[pause] [curious] [sarcastic]`. Kurallar:
-
-- Etiketi cümlenin başına, etkilemesini istediğiniz yere koyun; aşırı
-  etiket doğallığı bozar (paragraf başına 1-3 yeterli).
-- Vurgu için BÜYÜK HARF, doğal duraklama için üç nokta işe yarar.
-- Sayı, tarih ve kısaltmaları Türkçe okunuşuyla açık yazın ("1923'te"
-  yerine "bin dokuz yüz yirmi üçte") — TTS normalizasyonu dile göre
-  değişkendir.
-- Ses ayarları (stability/similarity) prompt değil parametredir: düşük
-  stability daha duygusal/değişken, yüksek stability daha tekdüze-tutarlı
-  okuma verir.
-
-**b) Ses tasarımı (Voice Design) — metinden yeni ses.** Var olmayan bir
-sesi tarifle üretirsiniz; tarif yaş + cinsiyet + aksan/dil + ton + tempo +
-kullanım bağlamı içermelidir:
+**a) Konuşma (TTS, v3) — köşeli parantezli ses etiketleri.** Etiketler
+İngilizce yazılır, metin Türkçe olabilir:
 
 ```text
-A warm, confident Turkish female voice in her mid-30s. Clear diction,
-moderate pace, friendly but professional — suitable for corporate
-e-learning narration. Slight smile in the voice.
+[curious] Peki bu yöntem gerçekten işe yarıyor mu? [pause]
+[excited] Sonuçlar geldi... ve HARIKA görünüyor! [laughs]
+[whispers] Ama kimseye söylemeyin, henüz üretimde test etmedik.
 ```
 
-**c) Ses efekti (SFX) üretimi.** Kısa, somut, fizik tarifli yazın:
+Resmî etiket dağarcığından örnekler — duygu/ses: `[laughs] [whispers]
+[sighs] [exhales] [sarcastic] [curious] [excited] [crying]
+[mischievously]`; efekt: `[applause] [explosion] [gunshot]`; deneysel:
+`[strong French accent] [sings]`. Liste açık uçludur; etiketin işlemesi
+seçilen sese bağlıdır (sakin bir ses `[shouting]`'ı iyi oynamaz). Kurallar:
+
+- 250 karakterden uzun metinler daha tutarlı sonuç verir; üç nokta
+  duraklama, BÜYÜK HARF vurgu üretir.
+- v3'te stability üç kiptir: **Creative** (en duygusal, halüsinasyona
+  açık), **Natural** (dengeli), **Robust** (çok kararlı ama etiketlere
+  duyarsız). Etiket kullanacaksanız Creative/Natural seçin.
+- `<break time="1.5s" />` SSML duraklaması yalnız v2 ailesindedir; v3
+  desteklemez (v3'te eğik çizgi içinde IPA telaffuz verilebilir).
+- Sayı, tarih ve kısaltmaları okunuşuyla açık yazın ("14:30" değil
+  "on dört otuz"); API'de sunucu taraflı normalizasyon da açılabilir.
+
+**Çok konuşmacılı diyalog (Text to Dialogue, v3):** her konuşmacı ayrı
+satırda, etiketler satır içinde:
+
+```text
+Speaker 1: [excitedly] Yeni sürümü denedin mi?
+Speaker 2: [curiously] Az önce kurdum. Netlik inanılmaz — [whispers]
+artık fısıldayabiliyorum bile.
+```
+
+**b) Ses tasarımı (Voice Design) — metinden yeni ses.** Resmî tarif kalıbı:
+dil + cinsiyet + yaş aralığı + kayıt kalitesi + persona + duygu + tını/tempo:
+
+```text
+Native Turkish. Female, mid-30s. Perfect audio quality.
+Persona: corporate e-learning narrator. Emotion: warm, confident, calm.
+Clear diction, moderate pace, a slight smile in the voice.
+```
+
+Guidance Scale yüksek = tarife sıkı bağlılık (aksan isabeti), düşük =
+daha doğal ses; önizleme metni tarif edilen personayla uyumlu olmalıdır.
+
+**c) Ses klonlama.** İki yol: **Instant Voice Clone** (kısa örnekten,
+eğitimsiz) ve **Professional Voice Clone** (özel model eğitimi, 3-6 saat;
+temiz oda + iyi mikrofon ister — "model sesinizle ilgili her şeyi
+klonlamaya çalışır"). PVC rıza doğrulaması ister: konuşmacı ekrandaki
+metni sesli okuyarak sesin sahibi olduğunu kanıtlar. PVC henüz v3 için
+tam optimize değildir; v3 projelerinde IVC veya tasarlanmış ses önerilir.
+
+**d) Ses efekti (SFX).** 0,1-30 saniye; döngü (loop) seçeneği ve "prompt
+influence" kaydırıcısı (yüksek = birebir, düşük = yaratıcı) vardır. Tek
+vuruşlar için kısa somut tarif, olay dizileri için sıralı tarif:
+
+```text
+Glass shattering on concrete
+```
 
 ```text
 Heavy wooden door creaking open slowly in a large echoing hall,
 followed by two slow footsteps on stone.
 ```
 
-**d) Eleven Music.** Lisanslı müzik üretimi (YouTube para kazanımı için
-temizlenmiş ilk büyük üreticilerden). Stil promptu Suno mantığıyla aynıdır:
-tür + ruh hali + enstrümantasyon + tempo + vokal; sözlü/sözsüz seçimi
-belirtin.
+```text
+Cinematic braam, deep brassy hit with long reverb tail, trailer style
+```
 
-**Dublaj/çeviri notu:** ElevenLabs dublajı (bir videoyu başka dile aynı
-ses karakteriyle çevirme) prompt değil iş akışıdır; kaynak videonun temiz
-sesi, sonucun kalitesini prompttan çok belirler.
+**e) Eleven Music (v2).** Etiketlerle/yayıncılarla anlaşmalı — çıktılar
+film, TV, podcast, reklam ve oyun dahil ticari kullanım için
+temizlenmiştir (plan koşulları: elevenlabs.io/music-terms). Bölüm bazlı
+yeniden üretim (inpainting) ve parça ortasında tür değişimi destekler.
+Kısa, çağrışımlı promptlar çoğu zaman uzun teknik tariflerden iyi çalışır;
+ton/BPM/enstrüman/vokal ve zamanlama ("lyrics begin at 15 seconds")
+verilebilir:
+
+```text
+Dark synthwave, 110 BPM in A minor, analog synth arpeggios, driving
+bass, retro drums, instrumental only, builds to an intense final
+chorus. 90 seconds.
+```
+
+Türkçe şarkı sözü desteği resmî listede doğrulanmamıştır; yayın öncesi
+deneyin.
+
+**f) Dublaj.** Otomatik dublaj (tek tık, 90+ dil, duygu/zamanlama korunur)
+veya Dubbing Studio (transkript/çeviri düzenleme, konuşmacı atama, klip
+bazlı yeniden üretim). Prompt değil iş akışıdır; kaynak videonun temiz
+sesi sonucu prompttan çok belirler. Ücretsiz katman çıktısı filigranlıdır.
+
+**g) Sesli ajanlar (ElevenAgents).** Sesli ajan sistem promptunun resmî
+iskeleti altı bloktur: `# Personality`, `# Environment`, `# Tone`,
+`# Goal`, `# Guardrails`, `# Tools`. Sesli yanıtlar 2-3 cümlede tutulur;
+2.000 token'ı aşan promptlar uzman ajanlara bölünür.
+
+**h) 2026'nın diğer yüzeyleri (tek satırlık envanter):** Scribe v2
+(konuşmadan metne, 90+ dil, gerçek zamanlı ~150 ms), Voice Changer
+(kayıtlı sesi başka sesle yeniden seslendirme), Voice Isolator (gürültülü
+kayıttan temiz konuşma), Image & Video (üçüncü taraf modellerle görsel/
+video + dudak senkronu), Avatars (konuşan kafa videoları), Ads Engine.
+Bunların çoğu prompt değil iş akışı araçlarıdır.
 
 ---
 
