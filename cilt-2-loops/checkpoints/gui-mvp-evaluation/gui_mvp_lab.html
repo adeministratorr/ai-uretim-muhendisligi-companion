@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>GUI Araçla MVP Deneyi Laboratuvarı — Cilt 2, Bölüm 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 05
+book_section: "5.8 GUI Araç Seçim Matrisi"
+concepts:
+  - GUI coding agent
+  - MVP prototipleme
+  - müdahale noktası
+  - teknik borç
+objectives:
+  - "LO-5.1"
+  - "LO-5.2"
+  - "LO-5.3"
+  - "LO-5.4"
+  - "LO-5.5"
+  - "LO-5.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 980px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .full { grid-column: 1 / -1; }
+  label { display: block; font-size: .82rem; color: var(--muted); font-weight: 700; }
+  input[type=text], input[type=number], select, textarea {
+    width: 100%; margin-top: 4px; padding: 9px; border: 1px solid var(--gray);
+    border-radius: 7px; background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { min-height: 108px; resize: vertical; line-height: 1.45; }
+  input:focus, select:focus, textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  .checkbox-row {
+    display: flex; align-items: center; gap: 8px; margin-top: 12px;
+    color: var(--text); font-size: .9rem; font-weight: 400;
+  }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 0 8px 16px 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  .summary-table th, .summary-table td {
+    border-bottom: 1px solid var(--gray); padding: 8px; text-align: left;
+  }
+  .summary-table th { color: var(--muted); font-size: .8rem; width: 38%; }
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; }
+    .full { grid-column: auto; }
+  }
+</style>
+</head>
+<body>
+  <h1>GUI Araçla MVP Deneyi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 5 — 5.8, Lab 5.
+  Bir GUI coding agent ile 45 dakikalık bir MVP denemesi yürütün. Otomatik tamamlanan
+  adımları, müdahale gereken noktaları ve kodun denetlenebilirliğini aynı kayıtta
+  değerlendirin.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Zaman Kutusu ve Müdahale Kaydı</h2>
+    <p>Zaman kutusu, aracın bütün ürünü bitirmesini beklemek için değil, belirli bir sürede
+    ne kadar ilerlediğini gözlemek için kullanılır. Deney 45 dakikada durur. Ücretsiz
+    katmandaki kota daha erken biterse o ana kadarki gözlemler geçerlidir; erken bitişin
+    nedeni kayda yazılır.</p>
+    <p>Çalışan önizleme tek başına yeterli değildir. Hangi adımların otomatik ilerlediği,
+    nerede insan müdahalesi gerektiği ve kodun açılıp açılamadığı ayrı alanlarda tutulur.
+    Böylece hız ile denetlenebilirlik aynı ölçü sanılmaz.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="experiment-title">
+    <h2 id="experiment-title">Deney Kaydı</h2>
+    <div class="grid">
+      <label>Araç adı
+        <input id="toolName" type="text" autocomplete="off" value="Örnek Araç">
+      </label>
+      <label>Geçen süre (dakika)
+        <input id="elapsedMinutes" type="number" min="1" max="45" step="1" value="45">
+        <span class="checkbox-row">
+          <input id="quotaReached" type="checkbox">
+          Kota dolduğu için erken bitti
+        </span>
+      </label>
+
+      <label class="full">MVP tarifi (her satıra bir cümle, toplam 3-4 cümle)
+        <textarea id="ideaSentences">Küçük bir işletme ürünlerini tek ekranda izlemek istiyor.
+Kullanıcı ürün adı, adet ve fiyat girebilmeli.
+Her hesap yalnızca kendi ürünlerini görebilmeli.
+İlk sürümde ödeme ve fatura özelliği bulunmamalı.</textarea>
+      </label>
+
+      <label>Otomatik tamamlanan adımlar (her satıra bir adım)
+        <textarea id="automaticSteps">Giriş ve ürün listesi ekranlarını oluşturdu
+Ürün ekleme formunu önizlemede çalıştırdı</textarea>
+      </label>
+      <label>Müdahale gereken noktalar (her satıra bir nokta)
+        <textarea id="interventionPoints">Negatif stok adedini engelleyen doğrulama ayrıca istendi</textarea>
+      </label>
+
+      <label>Küçük değişiklik isteği (tek cümle)
+        <textarea id="changeRequest">Ürün formuna negatif adet kontrolü ekle.</textarea>
+      </label>
+      <label>Değişiklik sonucu
+        <select id="changeResult">
+          <option value="uygulandı">Uygulandı</option>
+          <option value="kısmen uygulandı">Kısmen uygulandı</option>
+          <option value="uygulanmadı">Uygulanmadı</option>
+        </select>
+      </label>
+
+      <label>Kod inceleme durumu
+        <select id="codeReviewStatus">
+          <option value="incelendi">İncelendi</option>
+          <option value="erişilemedi">Koda erişilemedi</option>
+          <option value="incelenmedi">İncelenmedi</option>
+        </select>
+      </label>
+      <label>Kod inceleme notu (tek cümle)
+        <textarea id="reviewNote">Üretilen dosyalarda hesap ayrımı ve gizli anahtar kullanımı gözden geçirildi.</textarea>
+      </label>
+
+      <label class="full">Dikkat noktası (tek cümle)
+        <textarea id="attentionPoint">Hesap ayrımını yalnızca önizlemeden değil, kod ve veri kurallarından da doğrulamak gerekir.</textarea>
+      </label>
+    </div>
+  </section>
+
+  <div>
+    <button id="validateBtn" type="button">Deney Kaydını Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Başlangıçta görünen Örnek Araç kaydı yalnızca alanların nasıl doldurulacağını
+    gösterir. Gerçek bir ürün denemesi, performans ölçümü veya benchmark değildir.
+    Deneye başlamadan önce araç adını ve bütün örnek gözlemleri kendi kaydınızla değiştirin.</p>
+    <p>Kodun incelendiğini belirtmek güvenlik denetiminin tamamlandığını kanıtlamaz.
+    Kimlik doğrulama, hesaplar arası veri ayrımı, gizli anahtarlar ve bağımlılıklar ayrıca
+    sınanmalıdır. Gerçek kişisel veri veya gizli anahtar kullanmayın.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/gui-mvp-evaluation/gui_mvp_lab.py">gui_mvp_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/gui-mvp-evaluation">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const REPRESENTATIVE = {
+    toolName: 'Örnek Araç',
+    elapsedMinutes: 45,
+    quotaReached: false,
+    ideaSentences: [
+      'Küçük bir işletme ürünlerini tek ekranda izlemek istiyor.',
+      'Kullanıcı ürün adı, adet ve fiyat girebilmeli.',
+      'Her hesap yalnızca kendi ürünlerini görebilmeli.',
+      'İlk sürümde ödeme ve fatura özelliği bulunmamalı.'
+    ],
+    automaticSteps: [
+      'Giriş ve ürün listesi ekranlarını oluşturdu',
+      'Ürün ekleme formunu önizlemede çalıştırdı'
+    ],
+    interventionPoints: [
+      'Negatif stok adedini engelleyen doğrulama ayrıca istendi'
+    ],
+    changeRequest: 'Ürün formuna negatif adet kontrolü ekle.',
+    changeResult: 'uygulandı',
+    codeReviewStatus: 'incelendi',
+    reviewNote: 'Üretilen dosyalarda hesap ayrımı ve gizli anahtar kullanımı gözden geçirildi.',
+    attentionPoint:
+      'Hesap ayrımını yalnızca önizlemeden değil, kod ve veri kurallarından da doğrulamak gerekir.'
+  };
+
+  const result = document.getElementById('result');
+
+  function splitLines(value) {
+    return value.split('\n').map(item => item.trim()).filter(Boolean);
+  }
+
+  function isSingleSentence(text) {
+    const stripped = text.trim();
+    if (!stripped || !'.?!'.includes(stripped.at(-1))) return false;
+    return [...stripped].filter(character => '.?!'.includes(character)).length === 1;
+  }
+
+  function appendTextElement(parent, tagName, text) {
+    const element = document.createElement(tagName);
+    element.textContent = text;
+    parent.appendChild(element);
+    return element;
+  }
+
+  function readRecord() {
+    const elapsedText = document.getElementById('elapsedMinutes').value;
+    return {
+      toolName: document.getElementById('toolName').value.trim(),
+      elapsedText,
+      elapsedMinutes: Number(elapsedText),
+      quotaReached: document.getElementById('quotaReached').checked,
+      ideaSentences: splitLines(document.getElementById('ideaSentences').value),
+      automaticSteps: splitLines(document.getElementById('automaticSteps').value),
+      interventionPoints: splitLines(document.getElementById('interventionPoints').value),
+      changeRequest: document.getElementById('changeRequest').value.trim(),
+      changeResult: document.getElementById('changeResult').value,
+      codeReviewStatus: document.getElementById('codeReviewStatus').value,
+      reviewNote: document.getElementById('reviewNote').value.trim(),
+      attentionPoint: document.getElementById('attentionPoint').value.trim()
+    };
+  }
+
+  function duplicateExists(items) {
+    const folded = items.map(item => item.toLocaleLowerCase('tr-TR'));
+    return new Set(folded).size !== folded.length;
+  }
+
+  function validateRecord(record) {
+    const errors = [];
+    if (!record.toolName) errors.push('Araç adı boş bırakılamaz.');
+    if (record.ideaSentences.length < 3 || record.ideaSentences.length > 4) {
+      errors.push('MVP fikri 3 veya 4 cümleyle tarif edilmelidir.');
+    } else if (record.ideaSentences.some(sentence => !isSingleSentence(sentence))) {
+      errors.push('MVP tarifindeki her satır tek ve tamamlanmış bir cümle olmalıdır.');
+    }
+
+    if (
+      record.elapsedText === '' || !Number.isInteger(record.elapsedMinutes) ||
+      record.elapsedMinutes < 1 || record.elapsedMinutes > 45
+    ) {
+      errors.push('Geçen süre 1-45 dakika aralığında tam sayı olmalıdır.');
+    } else if (record.elapsedMinutes < 45 && !record.quotaReached) {
+      errors.push('45 dakikadan önce biten deneyde kota sınırı işaretlenmelidir.');
+    }
+
+    if (!record.automaticSteps.length) {
+      errors.push('En az bir otomatik tamamlanan adım yazılmalıdır.');
+    } else if (duplicateExists(record.automaticSteps)) {
+      errors.push('Otomatik tamamlanan adımlar yinelenmemelidir.');
+    }
+    if (!record.interventionPoints.length) {
+      errors.push('En az bir müdahale noktası yazılmalıdır.');
+    } else if (duplicateExists(record.interventionPoints)) {
+      errors.push('Müdahale noktaları yinelenmemelidir.');
+    }
+
+    const automatic = new Set(
+      record.automaticSteps.map(item => item.toLocaleLowerCase('tr-TR'))
+    );
+    const overlaps = record.interventionPoints.some(
+      item => automatic.has(item.toLocaleLowerCase('tr-TR'))
+    );
+    if (overlaps) {
+      errors.push('Aynı gözlem hem otomatik adım hem müdahale noktası olamaz.');
+    }
+
+    if (!isSingleSentence(record.changeRequest)) {
+      errors.push('Küçük değişiklik isteği tek ve tamamlanmış bir cümle olmalıdır.');
+    }
+    if (!isSingleSentence(record.reviewNote)) {
+      errors.push('Kod inceleme notu tek ve tamamlanmış bir cümle olmalıdır.');
+    }
+    if (!isSingleSentence(record.attentionPoint)) {
+      errors.push('Dikkat noktası tek ve tamamlanmış bir cümle olmalıdır.');
+    }
+    return errors;
+  }
+
+  function renderResult(errors, record) {
+    result.replaceChildren();
+    if (errors.length) {
+      result.className = 'panel error';
+      appendTextElement(result, 'h2', 'Kabul Kriteri Karşılanmadı');
+      const list = document.createElement('ul');
+      errors.forEach(error => appendTextElement(list, 'li', error));
+      result.appendChild(list);
+      return;
+    }
+
+    result.className = 'panel success';
+    appendTextElement(result, 'h2', 'Deney Kaydı Tamam');
+    const table = document.createElement('table');
+    table.className = 'summary-table';
+    const rows = [
+      ['Araç', record.toolName],
+      ['Geçen süre', `${record.elapsedMinutes} dakika`],
+      ['Otomatik tamamlanan adım', String(record.automaticSteps.length)],
+      ['Müdahale gereken nokta', String(record.interventionPoints.length)],
+      ['Küçük değişiklik sonucu', record.changeResult],
+      ['Kod inceleme durumu', record.codeReviewStatus],
+      ['Dikkat noktası', record.attentionPoint]
+    ];
+    const body = document.createElement('tbody');
+    rows.forEach(([label, value]) => {
+      const row = document.createElement('tr');
+      appendTextElement(row, 'th', label);
+      appendTextElement(row, 'td', value);
+      body.appendChild(row);
+    });
+    table.appendChild(body);
+    result.appendChild(table);
+    if (record.quotaReached && record.elapsedMinutes < 45) {
+      appendTextElement(
+        result,
+        'p',
+        'Deney kota nedeniyle erken bitti; o ana kadarki gözlemler kayda alındı.'
+      );
+    }
+  }
+
+  function validate() {
+    const record = readRecord();
+    renderResult(validateRecord(record), record);
+  }
+
+  function resetRepresentativeData() {
+    document.getElementById('toolName').value = REPRESENTATIVE.toolName;
+    document.getElementById('elapsedMinutes').value = REPRESENTATIVE.elapsedMinutes;
+    document.getElementById('quotaReached').checked = REPRESENTATIVE.quotaReached;
+    document.getElementById('ideaSentences').value = REPRESENTATIVE.ideaSentences.join('\n');
+    document.getElementById('automaticSteps').value = REPRESENTATIVE.automaticSteps.join('\n');
+    document.getElementById('interventionPoints').value =
+      REPRESENTATIVE.interventionPoints.join('\n');
+    document.getElementById('changeRequest').value = REPRESENTATIVE.changeRequest;
+    document.getElementById('changeResult').value = REPRESENTATIVE.changeResult;
+    document.getElementById('codeReviewStatus').value = REPRESENTATIVE.codeReviewStatus;
+    document.getElementById('reviewNote').value = REPRESENTATIVE.reviewNote;
+    document.getElementById('attentionPoint').value = REPRESENTATIVE.attentionPoint;
+    result.className = 'panel';
+    result.replaceChildren();
+  }
+
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('resetBtn').addEventListener('click', resetRepresentativeData);
+</script>
+</body>
+</html>
