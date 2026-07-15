@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<!--
+volume: 2
+chapter: 13
+book_section: "13.3 Loop Specification ve 13.12-13.15 Doğrulama, Durdurma ve İz"
+concepts:
+  - loop specification
+  - verification ladder
+  - terminal state
+  - bütçe
+  - trace
+objectives:
+  - "LO-13.2"
+  - "LO-13.3"
+  - "LO-13.4"
+  - "LO-13.5"
+  - "LO-13.6"
+  - "LO-13.7"
+last_verified: "2026-07"
+-->
+<title>Bakım Loop'u Tasarım Laboratuvarı — Cilt 2, Bölüm 13</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --danger: #b23a48; --success: #18794e; --review: #8a5a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b5c0cf; --danger: #ff9aa7; --success: #73d6a7; --review: #ffd27a;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 780px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .94rem; margin: 0 0 6px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: var(--muted); margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .spec-grid, .state-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+  }
+  .spec-item, .state-item {
+    border: 1px solid var(--gray); border-radius: 9px; padding: 12px;
+  }
+  .spec-item p, .state-item p { margin: 4px 0 0; font-size: .88rem; }
+  label { display: block; font-weight: 700; margin-bottom: 6px; }
+  select {
+    width: 100%; background: var(--bg); color: var(--text); border: 1px solid var(--gray);
+    border-radius: 8px; padding: 9px 10px; margin-bottom: 12px; font-size: .92rem;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer;
+  }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .ladder { display: grid; gap: 8px; margin: 14px 0; }
+  .step { display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; align-items: center; }
+  .step-number {
+    display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--navy); color: #fff; font-weight: 700; font-size: .8rem;
+  }
+  .step-result { font-weight: 700; font-size: .85rem; }
+  .step-result.pass { color: var(--success); }
+  .step-result.fail { color: var(--danger); }
+  .result {
+    border-left: 4px solid var(--orange); padding: 12px 14px;
+    background: color-mix(in srgb, var(--orange) 9%, transparent);
+  }
+  .state { font-weight: 800; margin-bottom: 4px; }
+  .state.done { color: var(--success); }
+  .state.blocked, .state.budget-exceeded { color: var(--review); }
+  .state.needs-review, .state.unsafe { color: var(--danger); }
+  .trace {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .8rem;
+    overflow-wrap: anywhere; margin-top: 8px;
+  }
+  .note { font-size: .85rem; color: var(--muted); margin-top: 10px; }
+  @media (max-width: 580px) {
+    .spec-grid, .state-grid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 28px 1fr; }
+    .step-result { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+  <h1>Bakım Loop'u Tasarım Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 13 — 13.3, 13.12-13.15 ve
+  13.24-13.26. Vardiya'nın haftalık test sağlığı taraması için yazılmış loop
+  specification'ı inceleyin. Bir çalışma koşulu seçerek doğrulama merdiveninin hangi
+  terminal state'te durduğunu görün. Kurulum gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Loop Specification</h2>
+    <p>Loop specification, tekrarlanan bir işin yalnızca adımlarını değil, ne zaman
+    başlayacağını ve ne zaman duracağını da tanımlar. Beş bileşen birlikte yazılır;
+    biri eksikse döngünün neden ilerlediği veya durduğu açıklanamaz.</p>
+    <div class="spec-grid">
+      <div class="spec-item">
+        <h3>Trigger — Tetikleyici</h3>
+        <p>Her pazartesi saat 09.00'da elle onaylanan zamanlayıcı.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Goal — Hedef</h3>
+        <p>Test paketi sıfır hatayla tamamlansın ve hedef davranış korunsun.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Verification — Doğrulama</h3>
+        <p>Lint, birim testi, ardından davranış ve diff incelemesi.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Stopping rule — Durdurma kuralı</h3>
+        <p>Beş terminal state ile 3 deneme ve 30 dakika bütçesi.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Memory — Hafıza</h3>
+        <p>Önceki başarısız deneme, hata özeti ve son checkpoint kaydı.</p>
+      </div>
+      <div class="spec-item">
+        <h3>İnsan onayı</h3>
+        <p><code>needs-review</code> ve <code>unsafe</code> otomatik geçilmez.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Koşulu değerlendir</h2>
+    <label for="scenario">Çalışma koşulu</label>
+    <select id="scenario">
+      <option value="done">Bütün kontroller ve hedef davranış geçti</option>
+      <option value="blocked">Paket kayıt defterine erişilemiyor</option>
+      <option value="needs-review">İş mantığı yorumu gerekiyor</option>
+      <option value="unsafe">Yetkilendirme dosyasına dokunuldu</option>
+      <option value="budget-exceeded">Deneme ve süre bütçesi aşıldı</option>
+    </select>
+    <div class="actions">
+      <button id="evaluateBtn" type="button">Koşulu Değerlendir</button>
+      <button id="resetBtn" class="secondary" type="button">Sıfırla</button>
+    </div>
+
+    <div class="ladder" id="ladder" aria-label="Doğrulama merdiveni"></div>
+    <div class="result" id="result" aria-live="polite">
+      <div class="state">Henüz değerlendirilmedi</div>
+      <div>Bir koşul seçip değerlendirmeyi başlatın.</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Terminal state ne anlatır?</h2>
+    <div class="state-grid">
+      <div class="state-item"><h3>done</h3><p>Hedefe ulaşıldı ve kanıtlandı.</p></div>
+      <div class="state-item"><h3>blocked</h3><p>Dış engel çözülmeden ilerlenemez.</p></div>
+      <div class="state-item"><h3>needs-review</h3><p>İnsan yorumu olmadan karar verilemez.</p></div>
+      <div class="state-item"><h3>unsafe</h3><p>Hassas alanda otomatik işlem durur.</p></div>
+      <div class="state-item"><h3>budget-exceeded</h3><p>Deneme veya süre sınırı dolmuştur.</p></div>
+    </div>
+    <p class="note">Bir kontrol bütçe dolmadan başarısız olursa loop henüz terminal
+    state'e ulaşmaz; yeni bir tur için <code>running</code> durumunda kalır. Bütçe
+    sınırı bu tekrarın sonsuza uzamasını engeller.</p>
+  </div>
+
+  <p class="note"><strong>Temsilîlik Notu:</strong> Senaryo, koşullar ve 3 deneme/30 dakika
+  eşikleri temsilîdir. Gerçek projede doğrulama sonuçları test komutlarından alınmalı,
+  bütçe işin kapsamına göre belirlenmeli ve insan onay noktaları korunmalıdır. Aynı
+  laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/debug-loops/maintenance-loop/maintenance_loop.py">maintenance_loop.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/debug-loops/maintenance-loop">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const steps = [
+    'Sözdizimi ve lint kontrolü',
+    'Birim testleri',
+    'Davranış ve diff incelemesi'
+  ];
+  const scenarios = {
+    'done': {
+      checks: [true, true, true], attempt: 1, elapsed: 8,
+      reason: 'test paketi ve davranış kontrolü geçti.', human: false
+    },
+    'blocked': {
+      checks: [true, false, false], attempt: 1, elapsed: 4,
+      reason: 'paket kayıt defterine erişilemiyor.', human: true
+    },
+    'needs-review': {
+      checks: [true, true, true], attempt: 1, elapsed: 9,
+      reason: 'teknik kontroller geçti; iş mantığı yorumu gerekiyor.', human: true
+    },
+    'unsafe': {
+      checks: [true, true, true], attempt: 1, elapsed: 2,
+      reason: 'yetkilendirme dosyasına dokunuldu; otomatik işlem durdu.', human: true
+    },
+    'budget-exceeded': {
+      checks: [true, false, false], attempt: 4, elapsed: 31,
+      reason: '3 deneme veya 30 dakika sınırı aşıldı.', human: true
+    }
+  };
+
+  const ladder = document.getElementById('ladder');
+  const result = document.getElementById('result');
+  const scenario = document.getElementById('scenario');
+
+  function renderLadder(checks = null) {
+    ladder.innerHTML = '';
+    steps.forEach((step, index) => {
+      const row = document.createElement('div');
+      row.className = 'step';
+      let status = 'bekliyor';
+      let statusClass = '';
+      if (checks) {
+        status = checks[index] ? 'geçti' : 'geçmedi';
+        statusClass = checks[index] ? 'pass' : 'fail';
+      }
+      row.innerHTML = `
+        <span class="step-number">${index + 1}</span>
+        <span>${step}</span>
+        <span class="step-result ${statusClass}">${status}</span>`;
+      ladder.appendChild(row);
+    });
+  }
+
+  function evaluate() {
+    const state = scenario.value;
+    const data = scenarios[state];
+    const passed = data.checks.filter(Boolean).length;
+    renderLadder(data.checks);
+    result.innerHTML = `
+      <div class="state ${state}">${state}</div>
+      <div>${data.reason}</div>
+      <div>İnsan müdahalesi: ${data.human ? 'gerekli' : 'bu koşulda gerekmiyor'}</div>
+      <div class="trace">tur=${data.attempt}; süre=${data.elapsed}dk; doğrulama=${passed}/3;
+      state=${state}; gerekçe=${data.reason}</div>`;
+  }
+
+  document.getElementById('evaluateBtn').addEventListener('click', evaluate);
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    scenario.value = 'done';
+    renderLadder();
+    result.innerHTML = `
+      <div class="state">Henüz değerlendirilmedi</div>
+      <div>Bir koşul seçip değerlendirmeyi başlatın.</div>`;
+  });
+
+  renderLadder();
+</script>
+</body>
+</html>
