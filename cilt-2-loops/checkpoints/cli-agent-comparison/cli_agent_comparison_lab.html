@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>CLI Ajan Karşılaştırma Laboratuvarı — Cilt 2, Bölüm 6</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 06
+book_section: "6.9 CLI Ajan Seçim Matrisi"
+concepts:
+  - CLI ajan
+  - ortak görev tarifi
+  - onay modu
+  - diff karşılaştırması
+objectives:
+  - "LO-6.1"
+  - "LO-6.2"
+  - "LO-6.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1160px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: 1rem; margin: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .setup-grid, .tool-grid, .details-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+  }
+  .tool-card, .detail-card { min-width: 0; }
+  .tool-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  label { display: block; font-size: .8rem; color: var(--muted); font-weight: 700; }
+  input[type=text], select, textarea {
+    width: 100%; margin-top: 4px; padding: 9px; border: 1px solid var(--gray);
+    border-radius: 7px; background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { min-height: 96px; resize: vertical; line-height: 1.45; }
+  textarea.diff { min-height: 150px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .tool-card label { margin-top: 11px; }
+  input:focus, select:focus, textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  pre {
+    margin: 0; padding: 12px; border-radius: 8px; overflow-x: auto;
+    background: var(--code-bg); border: 1px solid var(--gray); white-space: pre-wrap;
+  }
+  ul { padding-left: 1.25rem; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 12px 8px 0 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  button.remove {
+    background: transparent; color: var(--error); border: 1px solid var(--gray);
+    padding: 7px 9px; margin: 0;
+  }
+  button:disabled { cursor: not-allowed; opacity: .55; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  .table-wrap { overflow-x: auto; }
+  .summary-table th, .summary-table td {
+    border-bottom: 1px solid var(--gray); padding: 8px; text-align: left;
+  }
+  .summary-table th { color: var(--muted); font-size: .8rem; }
+  .metric-summary {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+    margin: 14px 0;
+  }
+  .metric-summary div { border-top: 1px solid var(--gray); padding-top: 8px; }
+  .detail-card { border-top: 3px solid var(--teal); }
+  .detail-card p { margin-bottom: 0; }
+  .detail-card pre { margin-top: 10px; }
+  @media (max-width: 820px) {
+    .setup-grid, .tool-grid, .details-grid, .field-pair, .metric-summary {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>CLI Ajan Karşılaştırma Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 6 — 6.9, Uygulama 6.
+  Aynı küçük hata düzeltmesini erişebildiğiniz CLI ajanlarda deneyin. Önerilen diff'i,
+  gerekçeyi, test gözlemini ve aracın onay davranışını ortak bir kayıtta karşılaştırın.
+  Tek araç yeterlidir; ikinci ve üçüncü kayıt karşılaştırmayı genişletir.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Aynı Görev, Farklı Onay Davranışı</h2>
+    <p>Karşılaştırılacak araçlara aynı başlangıç kodu ve aynı görev tarifi verilmelidir.
+    Aksi durumda farkın araçtan mı, görevden mi kaynaklandığı anlaşılamaz. Aşağıdaki görev
+    bu nedenle sabittir; araç kartları yalnızca gözlenen çıktıyı kaydeder.</p>
+    <p>Diff'in doğru görünmesi yeterli değildir. Aracın dosyayı ne zaman değiştirdiği,
+    değişiklik öncesi onay isteyip istemediği ve test sonucunun ne olduğu ayrı bilgilerdir.
+    Laboratuvar bunları tek puanda birleştirmez.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="setup-title">
+    <h2 id="setup-title">1. Ortak Deney Zemini</h2>
+    <div class="setup-grid">
+      <div>
+        <h3>Başlangıç kodu</h3>
+        <pre>def get_user_city(user):
+    return user["address"]["city"]</pre>
+      </div>
+      <div>
+        <h3>Kabul ölçütleri</h3>
+        <ul>
+          <li>Adres varsa şehir değeri döner.</li>
+          <li><code>address</code> anahtarı yoksa <code>None</code> döner.</li>
+          <li><code>address</code> değeri <code>None</code> ise <code>None</code> döner.</li>
+          <li>Yalnızca <code>get_user_city</code> fonksiyonu değişir.</li>
+        </ul>
+      </div>
+    </div>
+    <h3>Ortak görev tarifi</h3>
+    <p id="taskPrompt">get_user_city fonksiyonunda, user sözlüğünde address anahtarı
+    yoksa veya değeri boşsa (None) oluşan hatayı düzelt. Fonksiyon bu durumda None
+    döndürmeli; mevcut davranış (adres varsa şehri döndürmek) değişmemeli. Yalnızca
+    ilgili fonksiyona dokun.</p>
+    <p class="note">Her araçta aynı dosyayı, aynı görev tarifini ve aynı davranış
+    testlerini kullanın.</p>
+  </section>
+
+  <section aria-labelledby="tools-title">
+    <h2 id="tools-title">2. Araç Kayıtları</h2>
+    <div class="tool-grid" id="toolGrid"></div>
+    <button id="addToolBtn" class="secondary" type="button">Araç Ekle</button>
+  </section>
+
+  <section class="panel" aria-labelledby="approval-title">
+    <h2 id="approval-title">3. Onay Modu Gözlemi</h2>
+    <label>Gözlemin onay modu kavramıyla ilişkisi
+      <textarea id="approvalNote">Araç A değişiklik öncesinde onay istedi; Araç B yalnızca diff sunduğu için dosya yazma onayı gerektirmedi.</textarea>
+    </label>
+    <p class="note">Hangi aracın ne zaman onay istediğini veya neden onay istemediğini
+    açık bir cümleyle yazın.</p>
+  </section>
+
+  <div>
+    <button id="validateBtn" type="button">Karşılaştırmayı Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Bu sayfada başlangıçta görünen Araç A ve Araç B kayıtları yalnızca formun nasıl
+    doldurulacağını gösterir. Gerçek bir ürün denemesi, performans ölçümü veya benchmark
+    değildir. Kendi denemenizde örnek kayıtları gözlemlerinizle değiştirin.</p>
+    <p>Sayfa yapıştırdığınız diff'i çalıştırmaz. Değişikliği ayrı bir çalışma dalında
+    uygulayın, davranış testlerini çalıştırın ve sonucu forma kendiniz kaydedin. Hassas
+    kodu, kişisel veriyi veya gizli anahtarı bu forma ya da bir araca yapıştırmayın.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/cli-agent-comparison/cli_agent_comparison_lab.py">cli_agent_comparison_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/cli-agent-comparison">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const APPROVAL_BEHAVIORS = [
+    'değişiklik öncesi onay istedi',
+    'onay almadan değiştirdi',
+    'yalnızca diff sundu'
+  ];
+  const TEST_RESULTS = ['geçti', 'geçmedi', 'çalıştırılmadı'];
+  const REPRESENTATIVE_TOOLS = [
+    {
+      name: 'Araç A',
+      diff: `@@
+ def get_user_city(user):
+-    return user["address"]["city"]
++    address = user.get("address")
++    return address.get("city") if address else None`,
+      rationale: 'Adres bulunmadığında iç içe sözlük erişimini durdurur ve beklenen None değerini döndürür.',
+      suggestedTest: 'address anahtarı olmayan ve address değeri None olan iki durum sınanmalıdır.',
+      testResult: 'geçti',
+      approval: 'değişiklik öncesi onay istedi',
+      scopeMet: true
+    },
+    {
+      name: 'Araç B',
+      diff: `@@
+ def get_user_city(user):
+-    return user["address"]["city"]
++    return (user.get("address") or {}).get("city")`,
+      rationale: 'Eksik veya None olan adresi boş sözlüğe çevirerek şehir erişimini güvenli tutar.',
+      suggestedTest: 'Geçerli adres, eksik address ve None address durumları birlikte sınanmalıdır.',
+      testResult: 'geçti',
+      approval: 'yalnızca diff sundu',
+      scopeMet: true
+    }
+  ];
+
+  const toolGrid = document.getElementById('toolGrid');
+  const result = document.getElementById('result');
+  const addToolBtn = document.getElementById('addToolBtn');
+
+  function createToolCard(data = {}) {
+    const card = document.createElement('article');
+    card.className = 'panel tool-card';
+    card.innerHTML = `
+      <div class="tool-head">
+        <h3 class="tool-title"></h3>
+        <button class="remove" type="button">Kaldır</button>
+      </div>
+      <label>Araç adı
+        <input class="tool-name" type="text" autocomplete="off">
+      </label>
+      <label>Önerilen diff
+        <textarea class="diff" spellcheck="false"></textarea>
+      </label>
+      <label>Aracın gerekçesi
+        <textarea class="rationale"></textarea>
+      </label>
+      <label>Önerilen test (önerilmediyse boş bırakın)
+        <textarea class="suggested-test"></textarea>
+      </label>
+      <div class="field-pair">
+        <label>Gözlenen test sonucu
+          <select class="test-result">
+            <option value="geçti">Geçti</option>
+            <option value="geçmedi">Geçmedi</option>
+            <option value="çalıştırılmadı">Çalıştırılmadı</option>
+          </select>
+        </label>
+        <label>Hedef fonksiyonla sınırlı mı?
+          <select class="scope-met">
+            <option value="true">Evet</option>
+            <option value="false">Hayır</option>
+          </select>
+        </label>
+      </div>
+      <label>Onay davranışı
+        <select class="approval-behavior">
+          <option value="değişiklik öncesi onay istedi">Değişiklik öncesi onay istedi</option>
+          <option value="onay almadan değiştirdi">Onay almadan değiştirdi</option>
+          <option value="yalnızca diff sundu">Yalnızca diff sundu</option>
+        </select>
+      </label>`;
+
+    card.querySelector('.tool-name').value = data.name ?? '';
+    card.querySelector('.diff').value = data.diff ?? '';
+    card.querySelector('.rationale').value = data.rationale ?? '';
+    card.querySelector('.suggested-test').value = data.suggestedTest ?? '';
+    card.querySelector('.test-result').value = data.testResult ?? 'çalıştırılmadı';
+    card.querySelector('.approval-behavior').value = data.approval ?? APPROVAL_BEHAVIORS[0];
+    card.querySelector('.scope-met').value = String(data.scopeMet ?? true);
+    card.querySelector('.remove').addEventListener('click', () => {
+      if (toolGrid.children.length > 1) {
+        card.remove();
+        refreshCards();
+      }
+    });
+    toolGrid.appendChild(card);
+    refreshCards();
+  }
+
+  function refreshCards() {
+    [...toolGrid.children].forEach((card, index) => {
+      card.querySelector('.tool-title').textContent = `${index + 1}. Araç`;
+      card.querySelector('.remove').disabled = toolGrid.children.length <= 1;
+    });
+    addToolBtn.disabled = toolGrid.children.length >= 3;
+  }
+
+  function isCompleteText(text, minimumWords = 4) {
+    const stripped = text.trim();
+    return stripped.split(/\s+/).filter(Boolean).length >= minimumWords &&
+      '.?!'.includes(stripped.at(-1) ?? '');
+  }
+
+  function looksLikeTargetDiff(diff) {
+    const lines = diff.split('\n').filter(line => line.trim());
+    const hasAddition = lines.some(line => line.startsWith('+') && !line.startsWith('+++'));
+    return lines.length >= 2 && diff.includes('get_user_city') && hasAddition;
+  }
+
+  function collectTools() {
+    return [...toolGrid.children].map(card => ({
+      name: card.querySelector('.tool-name').value.trim(),
+      diff: card.querySelector('.diff').value,
+      rationale: card.querySelector('.rationale').value.trim(),
+      suggestedTest: card.querySelector('.suggested-test').value.trim(),
+      testResult: card.querySelector('.test-result').value,
+      approval: card.querySelector('.approval-behavior').value,
+      scopeMet: card.querySelector('.scope-met').value === 'true'
+    }));
+  }
+
+  function validate() {
+    const errors = [];
+    const tools = collectTools();
+    const approvalNote = document.getElementById('approvalNote').value.trim();
+
+    if (tools.length < 1 || tools.length > 3) {
+      errors.push('Karşılaştırma 1-3 araç içermelidir.');
+    }
+
+    const seenNames = new Set();
+    tools.forEach((tool, index) => {
+      const label = `${index + 1}. araç`;
+      const foldedName = tool.name.toLocaleLowerCase('tr-TR');
+      if (!tool.name) errors.push(`${label} adı boş bırakılamaz.`);
+      else if (seenNames.has(foldedName)) errors.push(`${label} adı “${tool.name}” yineleniyor.`);
+      else seenNames.add(foldedName);
+
+      if (!looksLikeTargetDiff(tool.diff)) {
+        errors.push(`${label} diff'i get_user_city fonksiyonunu ve bir ekleme satırını göstermelidir.`);
+      }
+      if (!isCompleteText(tool.rationale)) {
+        errors.push(`${label} gerekçesi tamamlanmış bir cümle olmalıdır.`);
+      }
+      if (tool.suggestedTest && !isCompleteText(tool.suggestedTest)) {
+        errors.push(`${label} test önerisi yazıldıysa tamamlanmış bir cümle olmalıdır.`);
+      }
+      if (!TEST_RESULTS.includes(tool.testResult)) {
+        errors.push(`${label} test sonucu geçerli seçeneklerden biri olmalıdır.`);
+      }
+      if (!APPROVAL_BEHAVIORS.includes(tool.approval)) {
+        errors.push(`${label} onay davranışı geçerli seçeneklerden biri olmalıdır.`);
+      }
+    });
+
+    if (!approvalNote.toLocaleLowerCase('tr-TR').includes('onay') ||
+        !isCompleteText(approvalNote, 6)) {
+      errors.push('Onay modu notu, gözlemin onay kavramıyla ilişkisini tamamlanmış bir cümleyle açıklamalıdır.');
+    }
+    renderResult(errors, tools, approvalNote);
+  }
+
+  function appendTextElement(parent, tagName, text) {
+    const element = document.createElement(tagName);
+    element.textContent = text;
+    parent.appendChild(element);
+    return element;
+  }
+
+  function renderResult(errors, tools, approvalNote) {
+    result.replaceChildren();
+    if (errors.length) {
+      result.className = 'panel error';
+      appendTextElement(result, 'h2', 'Kabul Kriteri Karşılanmadı');
+      const list = document.createElement('ul');
+      errors.forEach(error => appendTextElement(list, 'li', error));
+      result.appendChild(list);
+      return;
+    }
+
+    result.className = 'panel success';
+    appendTextElement(result, 'h2', 'Karşılaştırma Kaydı Tamam');
+    appendTextElement(result, 'p', `${tools.length} araç aynı görev tarifiyle kaydedildi.`);
+
+    const table = document.createElement('table');
+    table.className = 'summary-table';
+    const header = document.createElement('tr');
+    ['Araç', 'Test', 'Kapsam', 'Onay davranışı', 'Test önerisi'].forEach(text => {
+      appendTextElement(header, 'th', text);
+    });
+    const head = document.createElement('thead');
+    head.appendChild(header);
+    table.appendChild(head);
+    const body = document.createElement('tbody');
+    tools.forEach(tool => {
+      const row = document.createElement('tr');
+      [
+        tool.name,
+        tool.testResult,
+        tool.scopeMet ? 'Uygun' : 'Aşıldı',
+        tool.approval,
+        tool.suggestedTest ? 'Var' : 'Yok'
+      ].forEach(text => appendTextElement(row, 'td', text));
+      body.appendChild(row);
+    });
+    table.appendChild(body);
+    const tableWrap = document.createElement('div');
+    tableWrap.className = 'table-wrap';
+    tableWrap.appendChild(table);
+    result.appendChild(tableWrap);
+
+    const suggestedCount = tools.filter(tool => tool.suggestedTest).length;
+    const scopeCount = tools.filter(tool => tool.scopeMet).length;
+    const metricSummary = document.createElement('div');
+    metricSummary.className = 'metric-summary';
+    appendTextElement(metricSummary, 'div', `Test öneren araç: ${suggestedCount}/${tools.length}`);
+    appendTextElement(
+      metricSummary,
+      'div',
+      `Hedef fonksiyonla sınırlı kalan diff: ${scopeCount}/${tools.length}`
+    );
+    result.appendChild(metricSummary);
+
+    const details = document.createElement('div');
+    details.className = 'details-grid';
+    tools.forEach(tool => {
+      const card = document.createElement('article');
+      card.className = 'panel detail-card';
+      appendTextElement(card, 'h3', tool.name);
+      const diff = appendTextElement(card, 'pre', tool.diff);
+      diff.setAttribute('aria-label', `${tool.name} diff'i`);
+      appendTextElement(card, 'p', `Gerekçe: ${tool.rationale}`);
+      appendTextElement(
+        card,
+        'p',
+        `Test önerisi: ${tool.suggestedTest || 'Araç bir test önermedi.'}`
+      );
+      details.appendChild(card);
+    });
+    result.appendChild(details);
+    appendTextElement(result, 'p', `Onay modu notu: ${approvalNote}`);
+    appendTextElement(
+      result,
+      'p',
+      'Bu kayıt genel bir kazanan üretmez; diff, test ve onay davranışı birlikte incelenmelidir.'
+    );
+  }
+
+  function resetRepresentativeData() {
+    toolGrid.replaceChildren();
+    REPRESENTATIVE_TOOLS.forEach(createToolCard);
+    document.getElementById('approvalNote').value =
+      'Araç A değişiklik öncesinde onay istedi; Araç B yalnızca diff sunduğu için ' +
+      'dosya yazma onayı gerektirmedi.';
+    result.className = 'panel';
+    result.replaceChildren();
+  }
+
+  addToolBtn.addEventListener('click', () => createToolCard());
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('resetBtn').addEventListener('click', resetRepresentativeData);
+  resetRepresentativeData();
+</script>
+</body>
+</html>
