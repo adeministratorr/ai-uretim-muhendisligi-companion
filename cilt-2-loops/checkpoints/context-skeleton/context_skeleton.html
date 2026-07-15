@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Context İskeleti Laboratuvarı — Cilt 2, Bölüm 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 03
+book_section: "3.11-3.17 Context'i Yazılı Hâle Getirme ve Proje Hafızası"
+concepts:
+  - codified context
+  - PRD
+  - TASKS.md
+  - hot memory
+  - cold memory
+objectives:
+  - "LO-3.4"
+  - "LO-3.5"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1120px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: 1rem; margin: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .document-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+    margin-bottom: 16px;
+  }
+  .document-card { margin: 0; min-width: 0; }
+  .document-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    margin-bottom: 10px;
+  }
+  textarea, input[type=text], select {
+    width: 100%; border: 1px solid var(--gray); border-radius: 7px;
+    background: var(--bg); color: var(--text); font: inherit; padding: 9px;
+  }
+  textarea { min-height: 142px; resize: vertical; line-height: 1.45; }
+  textarea:focus, input:focus, select:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--gray); }
+  th { font-size: .8rem; color: var(--muted); }
+  td:nth-child(1) { width: 33%; }
+  td:nth-child(2) { width: 110px; }
+  td:nth-child(3) { width: 46%; }
+  td:nth-child(4) { width: 76px; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 12px 8px 0 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  button.remove {
+    background: transparent; color: var(--error); border: 1px solid var(--gray);
+    padding: 7px 9px; margin: 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  @media (max-width: 780px) {
+    .document-grid { grid-template-columns: 1fr; }
+    table, thead, tbody, tr, th, td { display: block; }
+    thead { position: absolute; left: -9999px; }
+    tr { border-bottom: 1px solid var(--gray); padding: 10px 0; }
+    td { width: auto !important; border: 0; padding: 5px 0; }
+    td::before { display: block; color: var(--muted); font-size: .75rem; font-weight: 700; }
+    td:nth-child(1)::before { content: 'Bilgi'; }
+    td:nth-child(2)::before { content: 'Katman'; }
+    td:nth-child(3)::before { content: 'Gerekçe'; }
+  }
+</style>
+</head>
+<body>
+  <h1>Context İskeleti Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 3 — 3.11-3.17, Lab 3.
+  Laravel backend ve Flutter mobil istemciden oluşan kurgusal bir proje için dört
+  başlangıç dosyasını düzenleyin. Her satıra tek bir madde yazın; ardından hangi
+  bilgilerin hot, hangilerinin cold katmanda tutulacağını gerekçelendirin.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Codified Context ve Hot/Cold Memory</h2>
+    <p>Codified context, proje bilgisini eski bir sohbette bırakmak yerine projeyle
+    birlikte saklanan dosyalara yazar. `PRD.md` hedefi, `TASKS.md` aktif işleri,
+    `CLAUDE.md` kalıcı proje gerçeklerini, `rules.md` ise davranış sınırlarını tutar.</p>
+    <p>Her bilgi aynı sıklıkta gerekli değildir. Her görevde kullanılan kısa bilgi hot
+    memory'de kalır. Ayrıntılı karar geçmişi gibi yalnız belirli bir konu açıldığında
+    gereken bilgi cold memory'de tutulur. Cold, önemsiz demek değildir; gerektiğinde
+    çağrılan bilgi demektir.</p>
+  </div>
+
+  <div class="document-grid" id="documentGrid"></div>
+
+  <section class="panel">
+    <h2>Hot/Cold Etiketleme</h2>
+    <p class="note">En az dört bilgi seçin. Her satırda katmanı işaretleyin ve seçiminizi
+    tek cümleyle gerekçelendirin.</p>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr><th>Bilgi</th><th>Katman</th><th>Gerekçe</th><th></th></tr>
+        </thead>
+        <tbody id="memoryRows"></tbody>
+      </table>
+    </div>
+    <button class="secondary" id="addMemory" type="button">Hafıza Maddesi Ekle</button>
+  </section>
+
+  <div class="panel">
+    <p class="note">Kabul kriteri: Dört dosyanın her birinde en az üç madde; en az dört
+    gerekçeli hot/cold etiketi. Metinde e-posta adresi veya açıkça yazılmış gizli bilgi
+    bulunmamalıdır.</p>
+    <button id="validateBtn" type="button">İskeleti Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <div class="panel" id="result" role="status" aria-live="polite"></div>
+
+  <p class="note"><strong>Temsilîlik notu:</strong> Başlangıç projesi ve bütün maddeler
+  örnektir; gerçek bir klinik, ekip veya kullanıcı verisi içermez. Bu denetim serbest
+  metindeki bütün kişisel verileri bulamaz. Kendi proje dosyalarınızı paylaşmadan önce
+  insan incelemesi yapın. İskelet, tam PRD veya kural dosyası tasarımının yerine geçmez.</p>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/context-skeleton/context_skeleton.py">context_skeleton.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/context-skeleton">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const REQUIRED_DOCUMENTS = ["PRD.md", "TASKS.md", "CLAUDE.md", "rules.md"];
+  const DOCUMENT_TITLES = {
+    "PRD.md": "PRD Taslağı",
+    "TASKS.md": "Görevler",
+    "CLAUDE.md": "Proje Context'i",
+    "rules.md": "Proje Kuralları"
+  };
+  const SAMPLE_DOCUMENTS = {
+    "PRD.md": [
+      "Amaç: Küçük kliniklerde randevu oluşturma ve iptal akışını tek yerde toplamak.",
+      "Hedef kullanıcı: Randevu takibini yürüten klinik çalışanları.",
+      "Kapsam: Randevu oluşturma, listeleme ve iptal etme.",
+      "Kapsam dışı: Ödeme ve sigorta işlemleri."
+    ],
+    "TASKS.md": [
+      "Randevu oluşturma API uç noktasını yaz (Laravel).",
+      "Randevu listesi ekranını oluştur (Flutter).",
+      "Geçerli ve geçersiz tarih girişleri için test yaz.",
+      "İptal akışını insan incelemesinden geçir."
+    ],
+    "CLAUDE.md": [
+      "Backend Laravel, mobil istemci Flutter ile yazılır.",
+      "Veritabanı PostgreSQL'dir.",
+      "Test komutları: php artisan test ve flutter test.",
+      "Değişken ve fonksiyon adları İngilizce, kullanıcı metinleri Türkçedir."
+    ],
+    "rules.md": [
+      "Yeni bir doğrulama kütüphanesi ekleme; mevcut kuralları kullan.",
+      "İş mantığını controller içine yerleştirme.",
+      "Test silme veya assertion zayıflatma.",
+      "Görev kapsamı dışındaki dosyaları değiştirme."
+    ]
+  };
+  const SAMPLE_MEMORY = [
+    ["Backend Laravel, mobil istemci Flutter ile yazılır.", "hot", "Teknoloji yığını her geliştirme görevinde doğrudan kullanılır."],
+    ["Test komutları", "hot", "Doğrulama komutları her kod değişikliğinde gerekir."],
+    ["Randevu oluşturma API görevi", "hot", "Aktif görev yeni oturumun başlangıç noktasını belirler."],
+    ["Yeni doğrulama kütüphanesi eklememe kuralı", "hot", "Kural her ilgili değişiklikte mimari sapmayı önler."],
+    ["Ödeme akışının neden kapsam dışı bırakıldığına ilişkin ayrıntılı karar notu", "cold", "Karar geçmişi yalnız kapsam yeniden tartışıldığında gerekir."]
+  ];
+
+  const documentGrid = document.getElementById('documentGrid');
+  const memoryRows = document.getElementById('memoryRows');
+  const result = document.getElementById('result');
+
+  function renderDocuments() {
+    documentGrid.textContent = '';
+    REQUIRED_DOCUMENTS.forEach(name => {
+      const section = document.createElement('section');
+      section.className = 'panel document-card';
+      section.dataset.document = name;
+
+      const head = document.createElement('div');
+      head.className = 'document-head';
+      const title = document.createElement('h2');
+      title.textContent = name;
+      const purpose = document.createElement('span');
+      purpose.className = 'note';
+      purpose.textContent = DOCUMENT_TITLES[name];
+      head.append(title, purpose);
+
+      const textarea = document.createElement('textarea');
+      textarea.setAttribute('aria-label', `${name} maddeleri`);
+      textarea.value = SAMPLE_DOCUMENTS[name].join('\n');
+      section.append(head, textarea);
+      documentGrid.appendChild(section);
+    });
+  }
+
+  function addMemoryRow(values = ["", "hot", ""]) {
+    const [statement, layer, reason] = values;
+    const row = document.createElement('tr');
+
+    const statementCell = document.createElement('td');
+    const statementInput = document.createElement('input');
+    statementInput.type = 'text';
+    statementInput.value = statement;
+    statementInput.setAttribute('aria-label', 'Hafıza bilgisi');
+    statementCell.appendChild(statementInput);
+
+    const layerCell = document.createElement('td');
+    const layerSelect = document.createElement('select');
+    layerSelect.setAttribute('aria-label', 'Hafıza katmanı');
+    ['hot', 'cold'].forEach(value => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = value;
+      option.selected = value === layer;
+      layerSelect.appendChild(option);
+    });
+    layerCell.appendChild(layerSelect);
+
+    const reasonCell = document.createElement('td');
+    const reasonInput = document.createElement('input');
+    reasonInput.type = 'text';
+    reasonInput.value = reason;
+    reasonInput.setAttribute('aria-label', 'Hafıza gerekçesi');
+    reasonCell.appendChild(reasonInput);
+
+    const actionCell = document.createElement('td');
+    const removeButton = document.createElement('button');
+    removeButton.type = 'button';
+    removeButton.className = 'remove';
+    removeButton.textContent = 'Sil';
+    removeButton.addEventListener('click', () => row.remove());
+    actionCell.appendChild(removeButton);
+
+    row.append(statementCell, layerCell, reasonCell, actionCell);
+    memoryRows.appendChild(row);
+  }
+
+  function resetExample() {
+    renderDocuments();
+    memoryRows.textContent = '';
+    SAMPLE_MEMORY.forEach(addMemoryRow);
+    result.className = 'panel';
+    result.textContent = '';
+  }
+
+  function documentItems(name) {
+    const textarea = documentGrid.querySelector(`[data-document="${name}"] textarea`);
+    return textarea.value.split('\n').map(item => item.trim()).filter(Boolean);
+  }
+
+  function readMemoryRows() {
+    return [...memoryRows.querySelectorAll('tr')].map(row => ({
+      statement: row.querySelector('input[aria-label="Hafıza bilgisi"]').value.trim(),
+      layer: row.querySelector('select').value,
+      reason: row.querySelector('input[aria-label="Hafıza gerekçesi"]').value.trim()
+    }));
+  }
+
+  function sensitiveKind(text) {
+    if (/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/.test(text)) return 'e-posta adresi';
+    const credential = /\b(api[_ -]?key|secret|token|password|şifre|parola)\b\s*[:=]\s*[`'"]?[^\s`'"]{4,}/i;
+    if (credential.test(text)) return 'gizli bilgi ataması';
+    return null;
+  }
+
+  function showErrors(errors) {
+    result.className = 'panel error';
+    result.textContent = '';
+    const heading = document.createElement('strong');
+    heading.textContent = 'Kabul kriteri karşılanmadı.';
+    const list = document.createElement('ul');
+    errors.forEach(error => {
+      const item = document.createElement('li');
+      item.textContent = error;
+      list.appendChild(item);
+    });
+    result.append(heading, list);
+  }
+
+  function validate() {
+    const errors = [];
+    const allText = [];
+    let documentItemCount = 0;
+
+    REQUIRED_DOCUMENTS.forEach(name => {
+      const items = documentItems(name);
+      documentItemCount += items.length;
+      if (items.length < 3) errors.push(`${name} en az 3 madde içermelidir.`);
+      items.forEach(item => allText.push([name, item]));
+    });
+
+    const labels = readMemoryRows();
+    if (labels.length < 4) errors.push('En az 4 madde hot/cold olarak etiketlenmelidir.');
+    const seen = new Set();
+    labels.forEach((label, index) => {
+      const number = index + 1;
+      const key = label.statement.toLocaleLowerCase('tr-TR');
+      if (!label.statement) errors.push(`${number}. hafıza maddesi boş bırakılamaz.`);
+      if (key && seen.has(key)) errors.push(`${number}. hafıza maddesi yineleniyor.`);
+      if (key) seen.add(key);
+      if (!['hot', 'cold'].includes(label.layer)) {
+        errors.push(`${number}. hafıza maddesi hot veya cold olarak etiketlenmelidir.`);
+      }
+      if (label.reason.split(/\s+/).filter(Boolean).length < 4 || !/[.!?]$/.test(label.reason)) {
+        errors.push(`${number}. hafıza maddesi kısa bir gerekçe cümlesi taşımalıdır.`);
+      }
+      allText.push([`${number}. hafıza maddesi`, label.statement]);
+      allText.push([`${number}. hafıza gerekçesi`, label.reason]);
+    });
+
+    allText.forEach(([source, text]) => {
+      const kind = sensitiveKind(text);
+      if (kind) errors.push(`${source} ${kind} içeriyor; örnek veri kullanın.`);
+    });
+
+    if (errors.length) {
+      showErrors(errors);
+      return;
+    }
+
+    const counts = labels.reduce((total, label) => {
+      total[label.layer] += 1;
+      return total;
+    }, { hot: 0, cold: 0 });
+    result.className = 'panel success';
+    result.textContent = [
+      `Context İskeleti — 4 dosya / ${documentItemCount} madde`,
+      `Hafıza Etiketleri — ${labels.length} madde (hot=${counts.hot}, cold=${counts.cold})`,
+      'Kabul kriteri karşılandı: Context iskeleti doğrulandı.'
+    ].join('\n');
+    result.style.whiteSpace = 'pre-line';
+  }
+
+  document.getElementById('addMemory').addEventListener('click', () => addMemoryRow());
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('resetBtn').addEventListener('click', resetExample);
+  resetExample();
+</script>
+</body>
+</html>
