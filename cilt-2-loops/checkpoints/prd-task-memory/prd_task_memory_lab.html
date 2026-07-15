@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>PRD ve Proje Hafızası Laboratuvarı — Cilt 2, Bölüm 8</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 08
+book_section: "8.2-8.6 PRD, 8.10 Kabul Kriterleri, 8.11-8.13 TASKS.md ve 8.15 Decision Log"
+concepts:
+  - PRD
+  - EARS benzeri kabul kriteri
+  - görev parçalama
+  - decision log
+objectives:
+  - "LO-8.2"
+  - "LO-8.4"
+  - "LO-8.5"
+  - "LO-8.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1100px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .98rem; margin-bottom: 6px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .documents { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .document-card { min-width: 0; }
+  label { display: block; font-size: .82rem; color: var(--muted); font-weight: 700; }
+  textarea {
+    width: 100%; min-height: 420px; margin-top: 6px; padding: 10px;
+    border: 1px solid var(--gray); border-radius: 7px; resize: vertical;
+    background: var(--bg); color: var(--text);
+    font: .82rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  code {
+    background: var(--code-bg); border-radius: 4px; padding: 1px 4px;
+  }
+  ul { padding-left: 1.25rem; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 0 8px 16px 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  .metrics {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;
+    margin-top: 14px;
+  }
+  .metric { border-top: 2px solid var(--teal); padding-top: 8px; }
+  .metric strong { display: block; font-size: 1.15rem; }
+  .criteria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 860px) {
+    .documents, .metrics, .criteria-grid { grid-template-columns: 1fr; }
+    textarea { min-height: 310px; }
+  }
+</style>
+</head>
+<body>
+  <h1>PRD ve Proje Hafızası Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 8 — 8.2-8.6, 8.10-8.13 ve 8.15,
+  Lab 8. Bir özelliğin niyetini, güncel görevlerini ve karar gerekçelerini üç ayrı
+  dosyada kurun; ardından belgeleri ortak kabul kriterleriyle denetleyin.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Yazılı Niyet ve Proje Hafızası</h2>
+    <p>PRD, özelliğin neden var olduğunu ve sınırını yazar. TASKS.md, sıradaki işi ve
+    tamamlanan adımı gösterir. DECISIONS.md, yeniden gündeme gelebilecek kararın
+    gerekçesini saklar. Bunlar aynı belgenin üç kopyası değildir; her biri başka bir
+    soruya cevap verir.</p>
+    <p>Bir görev tamamlandı diye işaretlendiğinde doğrulama notu da yazılmalıdır.
+    Ancak test adının kaydedilmesi, testin gerçekten çalıştığını kanıtlamaz. Çıktı ve
+    diff ayrıca insan tarafından incelenmelidir.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="criteria-title">
+    <h2 id="criteria-title">Kabul Kapısı</h2>
+    <div class="criteria-grid">
+      <div>
+        <h3>PRD.md</h3>
+        <ul>
+          <li>Altı zorunlu bölüm dolu olmalı.</li>
+          <li>Kapsam en az iki user story içermeli.</li>
+          <li>Out-of-Scope en az bir açık madde taşımalı.</li>
+          <li>En az bir EARS benzeri kabul kriteri yazılmalı.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>TASKS.md ve DECISIONS.md</h3>
+        <ul>
+          <li>En az beş görev <code>[ ]</code>, <code>[~]</code> veya <code>[x]</code> durumuyla yazılmalı.</li>
+          <li>Tamamlanan görev doğrulama notu taşımalı.</li>
+          <li>En az iki karar tarih, karar ve gerekçeyle kaydedilmeli.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="documents-title">
+    <h2 id="documents-title">Belgeler</h2>
+    <div class="documents">
+      <article class="panel document-card">
+        <label for="prdText">PRD.md</label>
+        <textarea id="prdText" spellcheck="true" aria-describedby="prd-note"></textarea>
+        <p class="note" id="prd-note">Başlıkları <code>## Başlık</code> biçiminde koruyun.</p>
+      </article>
+      <article class="panel document-card">
+        <label for="tasksText">TASKS.md</label>
+        <textarea id="tasksText" spellcheck="true" aria-describedby="tasks-note"></textarea>
+        <p class="note" id="tasks-note"><code>[~]</code> bu laboratuvarda “devam ediyor” demektir.</p>
+      </article>
+      <article class="panel document-card">
+        <label for="decisionsText">DECISIONS.md</label>
+        <textarea id="decisionsText" spellcheck="true" aria-describedby="decisions-note"></textarea>
+        <p class="note" id="decisions-note">Tarihleri <code>YYYY-AA-GG</code> biçiminde yazın.</p>
+      </article>
+    </div>
+  </section>
+
+  <div>
+    <button id="validateBtn" type="button">Belgeleri Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Başlangıçta görünen Vardiya belgeleri kurgusaldır. Yalnızca dosya yapısını ve
+    kabul kapısını göstermek için hazırlanmıştır; gerçek bir işletmenin gereksinimi,
+    görevi veya karar kaydı değildir.</p>
+    <p>Bu sayfa metnin yapısını denetler. User story'nin değerini, görevin yeterince
+    küçük olup olmadığını veya kararın teknik doğruluğunu ölçemez. Gerçek kişi verisini,
+    gizli anahtarı ve kurum içi hassas bilgiyi forma yazmayın.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/prd-task-memory/prd_task_memory_lab.py">prd_task_memory_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/prd-task-memory">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const REQUIRED_SECTIONS = [
+    'Amaç',
+    'Hedef Kullanıcı',
+    'Kapsam',
+    'Teknik Kısıtlar',
+    'Out-of-Scope',
+    'Başarı Kriterleri'
+  ];
+
+  const REPRESENTATIVE_PRD = `# Vardiya — İzin Talebi PRD
+
+## Amaç
+
+Çalışanın izin talebini kayıt altına alarak vardiya planındaki çakışmaları görünür kılmak.
+
+## Hedef Kullanıcı
+
+Vardiyalı çalışan ve izin taleplerini görüntüleyen küçük işletme sahibi.
+
+## Kapsam
+
+- Vardiyalı çalışan olarak, belirli bir tarih için izin talebi oluşturabilmek istiyorum ki işletme sahibi planlamayı buna göre yapabilsin.
+- Küçük işletme sahibi olarak, açık izin taleplerini listeleyebilmek istiyorum ki vardiya planındaki çakışmaları görebileyim.
+
+## Teknik Kısıtlar
+
+- Mevcut kimlik doğrulama sistemi kullanılacak.
+- Yeni paket veya mikroservis eklenmeyecek.
+
+## Out-of-Scope
+
+- İzin talebini onaylama veya reddetme akışı bu çalışmaya dahil değildir.
+
+## Başarı Kriterleri
+
+- Ne zaman bir çalışan geçmiş bir tarih için talep oluşturursa, sistem hata göstermeli ve talebi kaydetmemelidir.
+- Ne zaman geçerli bir talep kaydedilirse, sistem bu talebi işletme sahibinin listesinde göstermelidir.`;
+
+  const REPRESENTATIVE_TASKS = `# TASKS.md
+
+- [x] İzin talebi veri modelini tanımla — doğrulama: test_leave_request_schema
+- [x] Talep oluşturma uç noktasını ekle — doğrulama: test_create_leave_request
+- [~] Talep listeleme uç noktasını ekle
+- [ ] Geçmiş tarih denetimini uygula
+- [ ] API davranış testlerini tamamla`;
+
+  const REPRESENTATIVE_DECISIONS = `# DECISIONS.md
+
+| Tarih | Karar | Gerekçe |
+|---|---|---|
+| 2026-06-24 | Bildirimler yalnızca e-posta ile gönderilecek | Push bildirimi altyapısı bu aşamada gereksiz maliyet getiriyor. |
+| 2026-07-02 | İzin onayı ayrı bir modülde ele alınacak | Onay süreci farklı roller gerektiriyor ve bu özelliğin kapsamını büyütüyor. |`;
+
+  const prdText = document.getElementById('prdText');
+  const tasksText = document.getElementById('tasksText');
+  const decisionsText = document.getElementById('decisionsText');
+  const result = document.getElementById('result');
+
+  function normalize(text) {
+    return text.toLocaleLowerCase('tr-TR');
+  }
+
+  function extractSections(markdown) {
+    const pattern = /^##\s+(.+?)\s*$/gm;
+    const matches = [...markdown.matchAll(pattern)];
+    const sections = new Map();
+    matches.forEach((match, index) => {
+      const start = match.index + match[0].length;
+      const end = index + 1 < matches.length ? matches[index + 1].index : markdown.length;
+      sections.set(normalize(match[1].trim()), markdown.slice(start, end).trim());
+    });
+    return sections;
+  }
+
+  function bulletLines(text) {
+    return text.split('\n')
+      .map(line => line.trim())
+      .filter(line => line.startsWith('- ') && line.slice(2).trim())
+      .map(line => line.slice(2).trim());
+  }
+
+  function validatePrd(markdown) {
+    const errors = [];
+    const sections = extractSections(markdown);
+    let sectionCount = 0;
+    REQUIRED_SECTIONS.forEach(heading => {
+      const key = normalize(heading);
+      if (!sections.has(key)) {
+        errors.push(`PRD bölümünde "${heading}" başlığı eksik.`);
+      } else if (!sections.get(key).trim()) {
+        errors.push(`PRD bölümünde "${heading}" başlığı boş bırakılamaz.`);
+      } else {
+        sectionCount += 1;
+      }
+    });
+
+    const stories = bulletLines(sections.get(normalize('Kapsam')) || '')
+      .filter(item => normalize(item).includes(' olarak') && normalize(item).includes('istiyorum ki'));
+    if (stories.length < 2) {
+      errors.push('PRD Kapsam bölümü, rolü ve sonucu yazılmış en az iki user story içermelidir.');
+    }
+
+    if (!bulletLines(sections.get(normalize('Out-of-Scope')) || '').length) {
+      errors.push('PRD Out-of-Scope bölümü en az bir açık liste maddesi içermelidir.');
+    }
+
+    const acceptanceItems = bulletLines(sections.get(normalize('Başarı Kriterleri')) || '');
+    const earsPattern = /(malı|meli|malıdır|melidir)\b/i;
+    const hasEars = acceptanceItems.some(item => {
+      const normalized = normalize(item);
+      return (normalized.startsWith('ne zaman ') || normalized.startsWith('eğer ')) &&
+        normalized.includes('sistem') && earsPattern.test(normalized);
+    });
+    if (!hasEars) {
+      errors.push('Başarı Kriterleri, koşulu ve sistem davranışını yazan en az bir EARS benzeri madde içermelidir.');
+    }
+    return { errors, sectionCount, storyCount: stories.length };
+  }
+
+  function validateTasks(markdown) {
+    const errors = [];
+    const parsed = [];
+    let malformed = false;
+    markdown.split('\n').forEach(line => {
+      const stripped = line.trim();
+      if (!stripped.startsWith('- [')) return;
+      const match = line.match(/^\s*-\s+\[([ xX~])\]\s+(.+?)\s*$/);
+      if (!match) {
+        malformed = true;
+      } else {
+        parsed.push({ status: normalize(match[1]), description: match[2].trim() });
+      }
+    });
+
+    if (malformed) {
+      errors.push('TASKS.md yalnızca [ ], [~] veya [x] durum işaretlerini kullanmalıdır.');
+    }
+    if (parsed.length < 5) {
+      errors.push('TASKS.md en az beş durumlu görev içermelidir.');
+    }
+
+    const descriptions = parsed.map(item => normalize(item.description));
+    if (new Set(descriptions).size !== descriptions.length) {
+      errors.push('TASKS.md aynı görev satırını birden fazla kez içermemelidir.');
+    }
+
+    const completed = parsed.filter(item => item.status === 'x');
+    completed.forEach(item => {
+      const parts = normalize(item.description).split('doğrulama:');
+      if (parts.length < 2 || !parts.slice(1).join('doğrulama:').trim()) {
+        errors.push(`Tamamlanan görev doğrulama notu taşımalıdır: "${item.description}"`);
+      }
+    });
+    return { errors, taskCount: parsed.length, completedCount: completed.length };
+  }
+
+  function tableCells(line) {
+    return line.trim().replace(/^\||\|$/g, '').split('|').map(cell => cell.trim());
+  }
+
+  function isValidIsoDate(text) {
+    const match = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) return false;
+    const year = Number(match[1]);
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    const parsed = new Date(Date.UTC(year, month - 1, day));
+    return parsed.getUTCFullYear() === year &&
+      parsed.getUTCMonth() === month - 1 && parsed.getUTCDate() === day;
+  }
+
+  function validateDecisions(markdown) {
+    const errors = [];
+    const tableLines = markdown.split('\n').filter(line => line.trim().startsWith('|'));
+    const headerIndex = tableLines.findIndex(line => {
+      const cells = tableCells(line).map(normalize);
+      return JSON.stringify(cells) === JSON.stringify(['tarih', 'karar', 'gerekçe']);
+    });
+    if (headerIndex < 0) {
+      errors.push('DECISIONS.md, Tarih | Karar | Gerekçe başlıklı bir tablo içermelidir.');
+      return { errors, decisionCount: 0 };
+    }
+
+    const rows = tableLines.slice(headerIndex + 1)
+      .map(tableCells)
+      .filter(cells => !(cells.length && cells.every(cell => /^[-:]+$/.test(cell))))
+      .filter(cells => cells.length === 3);
+
+    if (rows.length < 2) {
+      errors.push('DECISIONS.md en az iki karar kaydı içermelidir.');
+    }
+    rows.forEach((row, index) => {
+      const [dateText, decision, reason] = row;
+      if (!isValidIsoDate(dateText)) {
+        errors.push(`DECISIONS.md ${index + 1}. karar tarihi YYYY-AA-GG biçiminde olmalıdır.`);
+      }
+      if (decision.split(/\s+/).filter(Boolean).length < 3) {
+        errors.push(`DECISIONS.md ${index + 1}. karar açıklaması çok kısa.`);
+      }
+      if (reason.split(/\s+/).filter(Boolean).length < 5) {
+        errors.push(`DECISIONS.md ${index + 1}. karar gerekçesi çok kısa.`);
+      }
+    });
+    return { errors, decisionCount: rows.length };
+  }
+
+  function appendTextElement(parent, tagName, text) {
+    const element = document.createElement(tagName);
+    element.textContent = text;
+    parent.appendChild(element);
+    return element;
+  }
+
+  function appendMetric(parent, value, label) {
+    const metric = document.createElement('div');
+    metric.className = 'metric';
+    appendTextElement(metric, 'strong', value);
+    appendTextElement(metric, 'span', label);
+    parent.appendChild(metric);
+  }
+
+  function renderResult(prdReport, taskReport, decisionReport) {
+    const errors = [
+      ...prdReport.errors,
+      ...taskReport.errors,
+      ...decisionReport.errors
+    ];
+    result.replaceChildren();
+    result.className = errors.length ? 'panel error' : 'panel success';
+    appendTextElement(
+      result,
+      'h2',
+      errors.length ? 'Kabul Kriteri Karşılanmadı' : 'Belge Üçlüsü Yapısal Denetimden Geçti'
+    );
+
+    const metrics = document.createElement('div');
+    metrics.className = 'metrics';
+    appendMetric(metrics, `${prdReport.sectionCount}/6`, 'PRD bölümü');
+    appendMetric(metrics, String(prdReport.storyCount), 'User story');
+    appendMetric(metrics, String(taskReport.taskCount), 'TASKS.md görevi');
+    appendMetric(metrics, String(decisionReport.decisionCount), 'Karar kaydı');
+    result.appendChild(metrics);
+
+    if (errors.length) {
+      const list = document.createElement('ul');
+      errors.forEach(error => appendTextElement(list, 'li', error));
+      result.appendChild(list);
+    } else {
+      appendTextElement(
+        result,
+        'p',
+        `${taskReport.completedCount} tamamlanmış görev doğrulama notu taşıyor. Yapısal denetim, insan incelemesinin yerine geçmez.`
+      );
+    }
+  }
+
+  function validate() {
+    renderResult(
+      validatePrd(prdText.value),
+      validateTasks(tasksText.value),
+      validateDecisions(decisionsText.value)
+    );
+  }
+
+  function resetRepresentativeData() {
+    prdText.value = REPRESENTATIVE_PRD;
+    tasksText.value = REPRESENTATIVE_TASKS;
+    decisionsText.value = REPRESENTATIVE_DECISIONS;
+    result.className = 'panel';
+    result.replaceChildren();
+  }
+
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('resetBtn').addEventListener('click', resetRepresentativeData);
+  resetRepresentativeData();
+</script>
+</body>
+</html>
