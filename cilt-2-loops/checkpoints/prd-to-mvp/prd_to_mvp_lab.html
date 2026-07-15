@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>PRD'den MVP'ye Araç Zincirleme Laboratuvarı — Cilt 2, Bölüm 11</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 11
+book_section: "11.1 Sıfırdan MVP Geliştirme"
+concepts:
+  - araç zincirleme
+  - kabul kriteri
+  - insan denetimi
+  - yapılandırılmış hata
+objectives:
+  - "LO-11.1"
+  - "LO-11.3"
+  - "LO-11.5"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 980px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .96rem; margin: 0 0 6px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .stage-card { border-top: 3px solid var(--teal); }
+  .form-grid, .metrics, .shift-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+  }
+  .metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 14px; }
+  .metric { border-top: 2px solid var(--teal); padding-top: 8px; }
+  .metric strong { display: block; font-size: 1.12rem; }
+  label { display: block; font-size: .86rem; color: var(--muted); font-weight: 700; }
+  input[type=text], input[type=number], input[type=time], textarea, select {
+    width: 100%; margin-top: 6px; padding: 9px 10px;
+    border: 1px solid var(--gray); border-radius: 7px;
+    background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { min-height: 82px; resize: vertical; }
+  input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--teal) 55%, transparent);
+    outline-offset: 2px;
+  }
+  .check-label { color: var(--text); font-weight: 400; margin: 14px 0; }
+  input[type=checkbox] { accent-color: var(--teal); margin-right: 6px; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 0 8px 12px 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  button:hover { filter: brightness(1.12); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .result { display: none; border-left: 4px solid var(--gray); }
+  .result.success { display: block; border-left-color: var(--success); }
+  .result.error { display: block; border-left-color: var(--error); }
+  .result ul { margin-bottom: 0; }
+  pre {
+    background: var(--code-bg); border-radius: 8px; padding: 12px;
+    overflow-x: auto; white-space: pre-wrap;
+  }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  th, td { border-bottom: 1px solid var(--gray); padding: 8px; text-align: left; }
+  th { font-size: .84rem; color: var(--muted); }
+  .pass { color: var(--success); font-weight: 700; }
+  .fail { color: var(--error); font-weight: 700; }
+  code { background: var(--code-bg); border-radius: 4px; padding: 1px 4px; }
+  @media (max-width: 700px) {
+    .form-grid, .metrics, .shift-grid { grid-template-columns: 1fr; }
+    .table-wrap { overflow-x: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto; transition: none; }
+  }
+</style>
+</head>
+<body>
+  <h1>PRD'den MVP'ye Araç Zincirleme Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 11 — 11.1 ve 11.4,
+  Lab 11. Bir PRD kabul kriterini iskelet, derinleştirme ve test aşamalarından
+  geçirip her aşamadaki insan kararını kaydedin.</p>
+
+  <section class="panel concept" aria-labelledby="concept-title">
+    <h2 id="concept-title">Kavram — Araç Zincirleme</h2>
+    <p>Araç zincirleme (tool chaining), aynı görevi araçlar arasında rastgele
+    dolaştırmak değildir. Her aşamayı o aşamanın çıktısıyla birlikte kaydetmektir.
+    GUI aracı iskeleti kurar, AI IDE kabul kriterini derinleştirir, CLI ajan testleri
+    çalıştırır. Bir kategoriye erişiminiz varsa aynı üç aşamayı tek araçla da
+    yürütebilirsiniz.</p>
+    <p>Bu laboratuvar araçları çalıştırmaz. Gerçek denemeden sonra görev, süre, gözlem
+    ve insan kararını siz yazarsınız. Kayıt, en az bir çıktının düzeltildiğini veya
+    reddedildiğini ve testler geçmeden işin tamamlanmadığını göstermelidir.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="prd-title">
+    <h2 id="prd-title">PRD Kriterinin Somut Karşılığı</h2>
+    <p><strong>Kabul kriteri:</strong> Aynı çalışana çakışan iki vardiya atanamaz.</p>
+    <p class="note">Mevcut vardiya: <code>calisan-01 / 09.00-12.00</code>. Yeni
+    vardiyanın başlangıç ve bitişini değiştirerek kuralı deneyin.</p>
+    <div class="shift-grid">
+      <label for="shiftStart">Yeni vardiya başlangıcı
+        <input id="shiftStart" type="time" value="11:00">
+      </label>
+      <label for="shiftEnd">Yeni vardiya bitişi
+        <input id="shiftEnd" type="time" value="13:00">
+      </label>
+    </div>
+    <p>
+      <button id="checkShift" type="button">Vardiyayı Dene</button>
+      <button id="runTests" class="secondary" type="button">Kabul Testlerini Çalıştır</button>
+    </p>
+    <div id="shiftResult" class="panel result" role="status" aria-live="polite"></div>
+    <div id="testResult" class="panel result" role="status" aria-live="polite"></div>
+  </section>
+
+  <form id="workflowForm" novalidate>
+    <section class="panel stage-card" data-stage="iskelet" aria-labelledby="stage-1-title">
+      <h2 id="stage-1-title">1. İskelet</h2>
+      <div class="form-grid">
+        <label for="category-1">Araç kategorisi
+          <select id="category-1" class="category">
+            <option selected>GUI aracı</option><option>AI IDE</option><option>CLI ajan</option>
+          </select>
+        </label>
+        <label for="tool-1">Kullandığınız araç
+          <input id="tool-1" class="tool-name" type="text" value="Kullanılan GUI aracı">
+        </label>
+        <label for="duration-1">Süre (dakika)
+          <input id="duration-1" class="duration" type="number" min="1" max="240" value="18">
+        </label>
+        <label for="decision-1">İnsan kararı
+          <select id="decision-1" class="decision">
+            <option>Kabul edildi</option><option selected>Düzeltildi</option><option>Reddedildi</option>
+          </select>
+        </label>
+      </div>
+      <label for="task-1">Görev
+        <textarea id="task-1" class="task">Vardiya ekleme formunu ve haftalık liste iskeletini kurmak</textarea>
+      </label>
+      <label for="observation-1">Gözlem
+        <textarea id="observation-1" class="observation">İskelet çalıştı ancak çakışan iki vardiyayı kabul etti.</textarea>
+      </label>
+      <label class="check-label"><input class="verified" type="checkbox" checked>Aşama çıktısını inceleyip doğruladım.</label>
+    </section>
+
+    <section class="panel stage-card" data-stage="derinleştirme" aria-labelledby="stage-2-title">
+      <h2 id="stage-2-title">2. Derinleştirme</h2>
+      <div class="form-grid">
+        <label for="category-2">Araç kategorisi
+          <select id="category-2" class="category">
+            <option>GUI aracı</option><option selected>AI IDE</option><option>CLI ajan</option>
+          </select>
+        </label>
+        <label for="tool-2">Kullandığınız araç
+          <input id="tool-2" class="tool-name" type="text" value="Kullanılan AI IDE">
+        </label>
+        <label for="duration-2">Süre (dakika)
+          <input id="duration-2" class="duration" type="number" min="1" max="240" value="22">
+        </label>
+        <label for="decision-2">İnsan kararı
+          <select id="decision-2" class="decision">
+            <option selected>Kabul edildi</option><option>Düzeltildi</option><option>Reddedildi</option>
+          </select>
+        </label>
+      </div>
+      <label for="task-2">Görev
+        <textarea id="task-2" class="task">PRD'deki vardiya çakışması kuralını uygulamak</textarea>
+      </label>
+      <label for="observation-2">Gözlem
+        <textarea id="observation-2" class="observation">Kısmi örtüşme reddedildi, uç uca vardiyalar kabul edildi.</textarea>
+      </label>
+      <label class="check-label"><input class="verified" type="checkbox" checked>Aşama çıktısını inceleyip doğruladım.</label>
+    </section>
+
+    <section class="panel stage-card" data-stage="test" aria-labelledby="stage-3-title">
+      <h2 id="stage-3-title">3. Test</h2>
+      <div class="form-grid">
+        <label for="category-3">Araç kategorisi
+          <select id="category-3" class="category">
+            <option>GUI aracı</option><option>AI IDE</option><option selected>CLI ajan</option>
+          </select>
+        </label>
+        <label for="tool-3">Kullandığınız araç
+          <input id="tool-3" class="tool-name" type="text" value="Kullanılan CLI ajan">
+        </label>
+        <label for="duration-3">Süre (dakika)
+          <input id="duration-3" class="duration" type="number" min="1" max="240" value="7">
+        </label>
+        <label for="decision-3">İnsan kararı
+          <select id="decision-3" class="decision">
+            <option selected>Kabul edildi</option><option>Düzeltildi</option><option>Reddedildi</option>
+          </select>
+        </label>
+        <label for="test-count">Çalıştırılan test sayısı
+          <input id="test-count" class="test-count" type="number" min="0" value="3">
+        </label>
+        <label for="tests-passed">Test sonucu
+          <select id="tests-passed" class="tests-passed">
+            <option value="evet" selected>Hepsi geçti</option><option value="hayir">En az biri geçmedi</option>
+          </select>
+        </label>
+      </div>
+      <label for="task-3">Görev
+        <textarea id="task-3" class="task">Geçerli, çakışan ve sınır vardiya senaryolarını sınamak</textarea>
+      </label>
+      <label for="observation-3">Gözlem
+        <textarea id="observation-3" class="observation">Üç kabul senaryosu çalıştı ve üçü de geçti.</textarea>
+      </label>
+      <label class="check-label"><input class="verified" type="checkbox" checked>Aşama çıktısını inceleyip doğruladım.</label>
+    </section>
+
+    <p>
+      <button id="validateWorkflow" type="submit">Kaydı Doğrula</button>
+      <button id="resetWorkflow" class="secondary" type="reset">Temsilî Kayda Dön</button>
+    </p>
+  </form>
+
+  <div id="workflowResult" class="panel result" role="status" aria-live="polite"></div>
+
+  <section class="panel" aria-labelledby="representative-title">
+    <h2 id="representative-title">Temsilîlik Notu</h2>
+    <p>Formdaki araç adları, süreler ve sonuçlar temsilîdir; herhangi bir ürünün
+    performansını göstermez. Gerçek denemenizde kendi aracınızın adını, görevi ve
+    gözlemi yazın. "Çıktı doğrulandı" seçimi mekanik bir güvenlik kontrolü değildir;
+    diff'i, ekranı ve test çıktısını insan incelemelidir.</p>
+    <p>Vardiya örneği yalnızca tek gün içindeki dakika aralıklarını işler. Gece yarısını
+    aşan vardiyalar, saat dilimleri, kimlik doğrulama ve veri tabanı eşzamanlılığı bu
+    küçük laboratuvarın kapsamı dışındadır.</p>
+  </section>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/prd-to-mvp/prd_to_mvp_lab.py">prd_to_mvp_lab.py</a>,
+  kabul ve ret senaryoları
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/prd-to-mvp/test_prd_to_mvp_lab.py">test_prd_to_mvp_lab.py</a>
+  dosyasındadır. Çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/prd-to-mvp">laboratuvarın README sayfasına</a>,
+  diğer örnekler için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const BASE_SHIFT = { start: 9 * 60, end: 12 * 60 };
+  const EXPECTED_CATEGORY = {
+    'iskelet': 'GUI aracı',
+    'derinleştirme': 'AI IDE',
+    'test': 'CLI ajan'
+  };
+
+  function parseTime(value) {
+    const parts = value.split(':').map(Number);
+    return parts.length === 2 && parts.every(Number.isFinite)
+      ? parts[0] * 60 + parts[1]
+      : NaN;
+  }
+
+  function evaluateShift(start, end) {
+    if (!Number.isFinite(start) || !Number.isFinite(end) || start < 0 || end > 1440) {
+      return {
+        accepted: false,
+        detail: {
+          error: 'invalid_field', field: 'start_minute,end_minute',
+          message: 'Başlangıç ve bitiş saatlerini gün sınırları içinde yazın.',
+          expected: '00.00 ile 24.00 arasında geçerli saat'
+        }
+      };
+    }
+    if (start >= end) {
+      return {
+        accepted: false,
+        detail: {
+          error: 'invalid_interval', field: 'end_minute',
+          message: 'Bitiş, başlangıçtan sonra olmalıdır.',
+          expected: 'end_minute > start_minute'
+        }
+      };
+    }
+    if (start < BASE_SHIFT.end && BASE_SHIFT.start < end) {
+      return {
+        accepted: false,
+        detail: {
+          error: 'shift_overlap', field: 'start_minute,end_minute',
+          message: 'Aynı çalışana çakışan iki vardiya atanamaz; başlangıç veya bitiş saatini değiştirin.',
+          expected: 'Mevcut vardiyalarla örtüşmeyen zaman aralığı'
+        }
+      };
+    }
+    return { accepted: true };
+  }
+
+  function showResult(element, success, content) {
+    element.className = `panel result ${success ? 'success' : 'error'}`;
+    element.innerHTML = content;
+  }
+
+  document.getElementById('checkShift').addEventListener('click', () => {
+    const start = parseTime(document.getElementById('shiftStart').value);
+    const end = parseTime(document.getElementById('shiftEnd').value);
+    const result = evaluateShift(start, end);
+    const target = document.getElementById('shiftResult');
+    if (result.accepted) {
+      showResult(target, true, '<h3>Vardiya kabul edildi</h3><p>Yeni aralık mevcut vardiyayla çakışmıyor.</p>');
+    } else {
+      showResult(
+        target,
+        false,
+        `<h3>Vardiya reddedildi</h3><pre>${JSON.stringify(result.detail, null, 2)}</pre>`
+      );
+    }
+  });
+
+  function acceptanceScenarios() {
+    return [
+      { name: 'Çakışmayan vardiya', passed: evaluateShift(13 * 60, 15 * 60).accepted },
+      { name: 'Kısmi çakışma', passed: evaluateShift(11 * 60, 13 * 60).detail?.error === 'shift_overlap' },
+      { name: 'Sınır değeri', passed: evaluateShift(12 * 60, 14 * 60).accepted }
+    ];
+  }
+
+  document.getElementById('runTests').addEventListener('click', () => {
+    const scenarios = acceptanceScenarios();
+    const passed = scenarios.filter(item => item.passed).length;
+    const rows = scenarios.map(item =>
+      `<tr><td>${item.name}</td><td class="${item.passed ? 'pass' : 'fail'}">${item.passed ? 'Geçti' : 'Geçmedi'}</td></tr>`
+    ).join('');
+    showResult(
+      document.getElementById('testResult'),
+      passed === scenarios.length,
+      `<h3>Kabul Testleri — ${passed}/${scenarios.length}</h3><div class="table-wrap"><table><thead><tr><th>Senaryo</th><th>Sonuç</th></tr></thead><tbody>${rows}</tbody></table></div>`
+    );
+  });
+
+  function readRecords() {
+    return [...document.querySelectorAll('.stage-card')].map(card => ({
+      stage: card.dataset.stage,
+      category: card.querySelector('.category').value,
+      toolName: card.querySelector('.tool-name').value.trim(),
+      task: card.querySelector('.task').value.trim(),
+      duration: Number(card.querySelector('.duration').value),
+      observation: card.querySelector('.observation').value.trim(),
+      decision: card.querySelector('.decision').value.toLocaleLowerCase('tr-TR'),
+      verified: card.querySelector('.verified').checked,
+      testCount: card.querySelector('.test-count') ? Number(card.querySelector('.test-count').value) : 0,
+      testsPassed: card.querySelector('.tests-passed') ? card.querySelector('.tests-passed').value === 'evet' : null
+    }));
+  }
+
+  function validateRecords(records) {
+    const errors = [];
+    records.forEach(record => {
+      const label = record.stage;
+      if (!record.toolName) errors.push(`${label}: araç adı boş bırakılamaz.`);
+      if (!record.task) errors.push(`${label}: görev boş bırakılamaz.`);
+      if (!record.observation) errors.push(`${label}: gözlem boş bırakılamaz.`);
+      if (record.observation && record.observation.split(/\s+/).length < 5) {
+        errors.push(`${label}: gözlem, sonucu somut biçimde açıklamalıdır.`);
+      }
+      if (!Number.isInteger(record.duration) || record.duration < 1 || record.duration > 240) {
+        errors.push(`${label}: süre 1-240 dakika arasında olmalıdır.`);
+      }
+      if (!record.verified) errors.push(`${label}: aşama çıktısı incelenip doğrulanmalıdır.`);
+      if (record.stage === 'test' && record.testCount < 2) {
+        errors.push('Test aşamasında en az iki test çalıştırılmalıdır.');
+      }
+      if (record.stage === 'test' && !record.testsPassed) {
+        errors.push('Testler geçmeden MVP tamamlandı sayılamaz.');
+      }
+    });
+
+    const categories = new Set(records.map(record => record.category));
+    let pathLabel = 'eksik araç yolu';
+    if (categories.size === 1) {
+      pathLabel = 'tek kategoriyle üç aşama';
+    } else if (categories.size === 3) {
+      pathLabel = 'GUI aracı → AI IDE → CLI ajan';
+      records.forEach(record => {
+        if (record.category !== EXPECTED_CATEGORY[record.stage]) {
+          errors.push(`${record.stage} aşaması üç kategorili yolda ${EXPECTED_CATEGORY[record.stage]} ile yürütülmelidir.`);
+        }
+      });
+    } else {
+      errors.push('Araç yolu ya tek kategoriyle üç aşamayı ya da üç kategorinin tamamını içermelidir.');
+    }
+
+    const corrections = records.filter(record =>
+      record.decision === 'düzeltildi' || record.decision === 'reddedildi'
+    ).length;
+    if (!corrections) errors.push('En az bir araç çıktısı düzeltilmeli veya reddedilmelidir.');
+
+    const scenarios = acceptanceScenarios();
+    const passingTests = scenarios.filter(item => item.passed).length;
+    if (passingTests !== scenarios.length) errors.push('Kabul senaryolarının tamamı geçmelidir.');
+
+    return { errors: [...new Set(errors)], pathLabel, corrections, passingTests, totalTests: scenarios.length };
+  }
+
+  document.getElementById('workflowForm').addEventListener('submit', event => {
+    event.preventDefault();
+    const report = validateRecords(readRecords());
+    const target = document.getElementById('workflowResult');
+    const metrics = `<div class="metrics">
+      <div class="metric"><strong>3/3</strong>Aşama</div>
+      <div class="metric"><strong>${report.pathLabel}</strong>Araç yolu</div>
+      <div class="metric"><strong>${report.corrections}</strong>Düzeltme/ret</div>
+      <div class="metric"><strong>${report.passingTests}/${report.totalTests}</strong>Kabul testi</div>
+    </div>`;
+    if (!report.errors.length) {
+      showResult(
+        target,
+        true,
+        `<h2>Kabul kriteri karşılandı</h2><p>Üç aşama kaydedildi, en az bir çıktı düzeltildi veya reddedildi ve testler geçti.</p>${metrics}`
+      );
+    } else {
+      const items = report.errors.map(error => `<li>${error}</li>`).join('');
+      showResult(target, false, `<h2>Kabul kriteri karşılanmadı</h2><ul>${items}</ul>${metrics}`);
+    }
+  });
+
+  document.getElementById('workflowForm').addEventListener('reset', () => {
+    window.setTimeout(() => {
+      document.getElementById('workflowResult').className = 'panel result';
+      document.getElementById('workflowResult').innerHTML = '';
+    }, 0);
+  });
+</script>
+</body>
+</html>
