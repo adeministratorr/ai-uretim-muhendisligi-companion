@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Plan Karşılaştırma Laboratuvarı — Cilt 2, Bölüm 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 02
+book_section: "2.9 İterasyon Döngüsü"
+concepts:
+  - vibe coding
+  - mise en place
+  - insan onay noktası
+  - verification-driven development
+objectives:
+  - "LO-2.3"
+  - "LO-2.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1180px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: 1rem; margin: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .plan { min-width: 0; }
+  .plan-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .step {
+    background: var(--bg); border: 1px solid var(--gray); border-radius: 9px;
+    padding: 12px; margin-top: 10px;
+  }
+  .fields { display: grid; grid-template-columns: 1fr 92px 118px; gap: 8px; }
+  label { display: block; font-size: .78rem; color: var(--muted); font-weight: 700; }
+  input[type=text], input[type=number], select {
+    width: 100%; margin-top: 4px; padding: 8px; border: 1px solid var(--gray);
+    border-radius: 6px; background: var(--bg); color: var(--text); font: inherit;
+  }
+  input:focus, select:focus { outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent); }
+  .markers { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 9px; }
+  .markers label { color: var(--text); font-weight: 400; font-size: .82rem; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 12px 8px 0 0;
+  }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  button.remove { background: transparent; color: var(--error); border: 1px solid var(--gray); margin: 9px 0 0; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  .summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+  .summary div { border-top: 1px solid var(--gray); padding-top: 8px; }
+  @media (max-width: 820px) {
+    .plan-grid, .summary { grid-template-columns: 1fr; }
+    .fields { grid-template-columns: 1fr 88px; }
+    .fields label:first-child { grid-column: 1 / -1; }
+  }
+</style>
+</head>
+<body>
+  <h1>Plan Karşılaştırma Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 2 — 2.9 ve 2.15-2.20, Lab 2.
+  Aynı geliştirme görevini iki ayrı planla kurun. Her adım için süre ve belirsizlik
+  tahmini girin; vibe coding planında bağlam hazırlığını, doğrulamayı ve insan onayını
+  ayrıca işaretleyin.</p>
+
+  <div class="panel">
+    <h2>Kavram — İterasyon Döngüsü ve Denetim Noktaları</h2>
+    <p>Geleneksel planda geliştirici, araştırmadan teste kadar bütün adımları kendisi
+    yürütür. Vibe coding planında görev ajana tarif edilir; ancak hazırlık, doğrulama ve
+    kabul kararı ortadan kalkmaz. Bu işler planın açık adımlarına dönüşür.</p>
+    <p>Mise en place, gerekli dosya ve kısıtları işe başlamadan önce hazırlar.
+    Doğrulama, “üretildi” ile “çalıştığı gösterildi” arasındaki farkı korur. İnsan onay
+    noktası ise ajanın çıktısının hangi aşamada kabul ya da ret edileceğini belirtir.</p>
+  </div>
+
+  <div class="plan-grid">
+    <section class="panel plan">
+      <div class="plan-head">
+        <h2>Geleneksel Plan</h2>
+        <span class="note" id="traditionalCount"></span>
+      </div>
+      <div id="traditionalSteps"></div>
+      <button class="secondary" id="addTraditional" type="button">Adım Ekle</button>
+    </section>
+
+    <section class="panel plan">
+      <div class="plan-head">
+        <h2>Vibe Coding Planı</h2>
+        <span class="note" id="vibeCount"></span>
+      </div>
+      <div id="vibeSteps"></div>
+      <button class="secondary" id="addVibe" type="button">Adım Ekle</button>
+    </section>
+  </div>
+
+  <div class="panel">
+    <p class="note">Kabul kriteri: Her planda 5-8 benzersiz adım; her adımda pozitif
+    süre tahmini ve 1-3 arasında belirsizlik düzeyi. Vibe coding planında en az birer
+    mise en place, doğrulama ve insan onayı işareti bulunmalıdır.</p>
+    <button id="validateBtn" type="button">Planları Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <div class="panel" id="result" role="status" aria-live="polite"></div>
+
+  <p class="note"><strong>Temsilîlik notu:</strong> Başlangıç adımları, süreler ve
+  belirsizlik düzeyleri örnektir; gerçek bir ekip ölçümü veya verimlilik karşılaştırması
+  değildir. Düşük süre tahmini daha güvenli sonuç anlamına gelmez. Üretime gidecek kodda
+  test, diff incelemesi ve insan onayı ayrıca uygulanmalıdır.</p>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/vibe-coding-plan/plan_comparison.py">plan_comparison.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/vibe-coding-plan">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const MIN_STEPS = 5;
+  const MAX_STEPS = 8;
+  const MARKERS = [
+    ["mise_en_place", "Mise en place"],
+    ["verification", "Doğrulama"],
+    ["human_approval", "İnsan onayı"]
+  ];
+  const SAMPLE = {
+    traditional: [
+      ["Form kütüphanesinin doğrulama arayüzünü incele.", 15, 2, []],
+      ["Telefon kurallarını ve regex kalıbını yaz.", 25, 3, []],
+      ["Hata mesajlarını forma ekle.", 15, 1, []],
+      ["Doğrulamayı kayıt akışına bağla.", 20, 2, []],
+      ["Geçerli ve geçersiz numaraları tarayıcıda dene.", 20, 2, []]
+    ],
+    vibe: [
+      ["Dosyayı, desteklenen biçimleri ve kısıtları hazırla.", 10, 2, ["mise_en_place"]],
+      ["Görevi ve kabul ölçütlerini ajana tarif et.", 5, 2, []],
+      ["Üretilen diff'i ve ajanın varsayımlarını incele.", 10, 2, ["human_approval"]],
+      ["Geçerli ve geçersiz numaralarla testleri çalıştır.", 15, 1, ["verification"]],
+      ["Eksik kenar durumunu düzelttir ve kararı belgeye işle.", 10, 1, []]
+    ]
+  };
+
+  const traditionalContainer = document.getElementById('traditionalSteps');
+  const vibeContainer = document.getElementById('vibeSteps');
+  const result = document.getElementById('result');
+
+  function addStep(kind, values = ["", 10, 2, []]) {
+    const container = kind === 'traditional' ? traditionalContainer : vibeContainer;
+    if (container.children.length >= MAX_STEPS) return;
+
+    const [description, minutes, uncertainty, selectedMarkers] = values;
+    const step = document.createElement('div');
+    step.className = 'step';
+
+    const fields = document.createElement('div');
+    fields.className = 'fields';
+
+    const descriptionLabel = document.createElement('label');
+    descriptionLabel.textContent = 'Adım';
+    const descriptionInput = document.createElement('input');
+    descriptionInput.type = 'text';
+    descriptionInput.value = description;
+    descriptionLabel.appendChild(descriptionInput);
+
+    const minutesLabel = document.createElement('label');
+    minutesLabel.textContent = 'Dakika';
+    const minutesInput = document.createElement('input');
+    minutesInput.type = 'number';
+    minutesInput.min = '1';
+    minutesInput.value = minutes;
+    minutesLabel.appendChild(minutesInput);
+
+    const uncertaintyLabel = document.createElement('label');
+    uncertaintyLabel.textContent = 'Belirsizlik';
+    const uncertaintySelect = document.createElement('select');
+    [[1, '1 — düşük'], [2, '2 — orta'], [3, '3 — yüksek']].forEach(([value, label]) => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = label;
+      option.selected = value === uncertainty;
+      uncertaintySelect.appendChild(option);
+    });
+    uncertaintyLabel.appendChild(uncertaintySelect);
+    fields.append(descriptionLabel, minutesLabel, uncertaintyLabel);
+    step.appendChild(fields);
+
+    if (kind === 'vibe') {
+      const markerArea = document.createElement('div');
+      markerArea.className = 'markers';
+      MARKERS.forEach(([value, label]) => {
+        const markerLabel = document.createElement('label');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.dataset.marker = value;
+        checkbox.checked = selectedMarkers.includes(value);
+        markerLabel.append(checkbox, ` ${label}`);
+        markerArea.appendChild(markerLabel);
+      });
+      step.appendChild(markerArea);
+    }
+
+    const removeButton = document.createElement('button');
+    removeButton.type = 'button';
+    removeButton.className = 'remove';
+    removeButton.textContent = 'Adımı Sil';
+    removeButton.addEventListener('click', () => {
+      step.remove();
+      updateCounts();
+    });
+    step.appendChild(removeButton);
+    container.appendChild(step);
+    updateCounts();
+  }
+
+  function updateCounts() {
+    document.getElementById('traditionalCount').textContent = `${traditionalContainer.children.length} adım`;
+    document.getElementById('vibeCount').textContent = `${vibeContainer.children.length} adım`;
+  }
+
+  function readPlan(kind) {
+    const container = kind === 'traditional' ? traditionalContainer : vibeContainer;
+    return [...container.children].map(step => ({
+      description: step.querySelector('input[type=text]').value.trim(),
+      minutes: Number(step.querySelector('input[type=number]').value),
+      uncertainty: Number(step.querySelector('select').value),
+      markers: [...step.querySelectorAll('input[type=checkbox]:checked')].map(input => input.dataset.marker)
+    }));
+  }
+
+  function validatePlan(label, steps, requireMarkers) {
+    const errors = [];
+    if (steps.length < MIN_STEPS || steps.length > MAX_STEPS) {
+      errors.push(`${label} planı ${MIN_STEPS}-${MAX_STEPS} adım içermelidir.`);
+    }
+
+    const seen = new Set();
+    const presentMarkers = new Set();
+    steps.forEach((step, index) => {
+      if (!step.description) errors.push(`${label} planının ${index + 1}. adımı boş bırakılamaz.`);
+      const key = step.description.toLocaleLowerCase('tr-TR');
+      if (key && seen.has(key)) errors.push(`${label} planının ${index + 1}. adım açıklaması yineleniyor.`);
+      if (key) seen.add(key);
+      if (!Number.isFinite(step.minutes) || step.minutes <= 0) {
+        errors.push(`${label} planının ${index + 1}. adımında süre 0'dan büyük olmalıdır.`);
+      }
+      if (![1, 2, 3].includes(step.uncertainty)) {
+        errors.push(`${label} planının ${index + 1}. adımında belirsizlik 1, 2 veya 3 olmalıdır.`);
+      }
+      step.markers.forEach(marker => presentMarkers.add(marker));
+    });
+
+    if (requireMarkers) {
+      MARKERS.forEach(([marker, markerLabel]) => {
+        if (!presentMarkers.has(marker)) {
+          errors.push(`${label} planında en az bir ${markerLabel.toLocaleLowerCase('tr-TR')} adımı olmalıdır.`);
+        }
+      });
+    }
+    return errors;
+  }
+
+  function showErrors(errors) {
+    result.className = 'panel error';
+    result.textContent = '';
+    const heading = document.createElement('strong');
+    heading.textContent = 'Kabul kriteri karşılanmadı.';
+    const list = document.createElement('ul');
+    errors.forEach(error => {
+      const item = document.createElement('li');
+      item.textContent = error;
+      list.appendChild(item);
+    });
+    result.append(heading, list);
+  }
+
+  function summarizePlan(steps) {
+    const minutes = steps.reduce((total, step) => total + step.minutes, 0);
+    const uncertainty = steps.reduce((total, step) => total + step.uncertainty, 0) / steps.length;
+    return { minutes, uncertainty: uncertainty.toFixed(1) };
+  }
+
+  function validate() {
+    const traditional = readPlan('traditional');
+    const vibe = readPlan('vibe');
+    const errors = [
+      ...validatePlan('Geleneksel', traditional, false),
+      ...validatePlan('Vibe coding', vibe, true)
+    ];
+    if (errors.length) {
+      showErrors(errors);
+      return;
+    }
+
+    const traditionalSummary = summarizePlan(traditional);
+    const vibeSummary = summarizePlan(vibe);
+    const markerCounts = Object.fromEntries(MARKERS.map(([marker]) => [marker, 0]));
+    vibe.forEach(step => step.markers.forEach(marker => { markerCounts[marker] += 1; }));
+
+    result.className = 'panel success';
+    result.textContent = '';
+    const heading = document.createElement('strong');
+    heading.textContent = 'Kabul kriteri karşılandı. İki plan da karşılaştırmaya hazır.';
+    const summary = document.createElement('div');
+    summary.className = 'summary';
+    const traditionalText = document.createElement('div');
+    traditionalText.textContent = `Geleneksel plan: ${traditional.length} adım, ${traditionalSummary.minutes} dakika, ortalama belirsizlik ${traditionalSummary.uncertainty}.`;
+    const vibeText = document.createElement('div');
+    vibeText.textContent = `Vibe coding planı: ${vibe.length} adım, ${vibeSummary.minutes} dakika, ortalama belirsizlik ${vibeSummary.uncertainty}. Mise en place: ${markerCounts.mise_en_place}; doğrulama: ${markerCounts.verification}; insan onayı: ${markerCounts.human_approval}.`;
+    summary.append(traditionalText, vibeText);
+    result.append(heading, summary);
+  }
+
+  function loadSample() {
+    traditionalContainer.textContent = '';
+    vibeContainer.textContent = '';
+    SAMPLE.traditional.forEach(step => addStep('traditional', step));
+    SAMPLE.vibe.forEach(step => addStep('vibe', step));
+    result.className = 'panel';
+    result.textContent = '';
+  }
+
+  document.getElementById('addTraditional').addEventListener('click', () => addStep('traditional'));
+  document.getElementById('addVibe').addEventListener('click', () => addStep('vibe'));
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('resetBtn').addEventListener('click', loadSample);
+  loadSample();
+</script>
+</body>
+</html>
