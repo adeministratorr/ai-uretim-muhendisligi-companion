@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Rule Dosyası Denetimi Laboratuvarı — Cilt 2, Bölüm 9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 09
+book_section: "9.12-9.15 İzin Kuralları, Compiled Enforcement ve Takım Kuralları"
+concepts:
+  - rule dosyası
+  - permission rule
+  - compiled enforcement
+  - PR devre kesici
+objectives:
+  - "LO-9.4"
+  - "LO-9.5"
+  - "LO-9.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 980px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .96rem; margin: 0 0 6px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .criteria-grid, .tag-grid, .metrics {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+  }
+  .tag-card { border-top: 2px solid var(--teal); padding-top: 9px; }
+  code, .tag {
+    background: var(--code-bg); border-radius: 4px; padding: 1px 4px;
+  }
+  .tag { font: .84rem ui-monospace, SFMono-Regular, Menlo, monospace; }
+  ul { padding-left: 1.25rem; }
+  label { display: block; font-size: .86rem; color: var(--muted); font-weight: 700; }
+  textarea {
+    width: 100%; min-height: 520px; margin-top: 7px; padding: 12px;
+    border: 1px solid var(--gray); border-radius: 7px; resize: vertical;
+    background: var(--bg); color: var(--text);
+    font: .84rem/1.48 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 0 8px 16px 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  .metrics { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 14px; }
+  .metric { border-top: 2px solid var(--teal); padding-top: 8px; }
+  .metric strong { display: block; font-size: 1.12rem; }
+  @media (max-width: 760px) {
+    .criteria-grid, .tag-grid, .metrics { grid-template-columns: 1fr; }
+    textarea { min-height: 440px; }
+  }
+</style>
+</head>
+<body>
+  <h1>Rule Dosyası Denetimi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 9 — 9.12-9.15, Lab 9.
+  Bir proje rule dosyasını yazın; yasak işlemleri, doğrulama adımlarını ve PR devre
+  kesiciyi ayrı bölümlerde tanımlayıp ortak kabul kapısından geçirin.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Yönergeden Otomatik Denetime</h2>
+    <p>Rule dosyasındaki bir cümle önce yazılı yönergedir. Araç bu cümleyi yanlış
+    yorumlayabilir veya atlayabilir. Aynı kural bir izin ayarına, teste, linter'a ya da
+    zorunlu CI kontrolüne bağlandığında makine tarafından denetlenebilir hâle gelir.
+    Bölüm 9 bu ikinci katmanı <em>compiled enforcement</em> olarak adlandırır.</p>
+    <p>Bu laboratuvarda <span class="tag">[directive]</span> yazılı yönergeyi,
+    <span class="tag">[deny]</span> izin kuralına bağlanacak yasağı,
+    <span class="tag">[compiled]</span> otomatik denetime bağlanacak adımı gösterir.
+    <span class="tag">[pr-stop]</span> ise PR'ın hangi koşulda duracağını yazar.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="criteria-title">
+    <h2 id="criteria-title">Kabul Kapısı</h2>
+    <div class="criteria-grid">
+      <div>
+        <h3>Dosya Yapısı</h3>
+        <ul>
+          <li>Proje Özeti 2-3 madde içermeli.</li>
+          <li>Teknoloji yığını ve temel mimari karar yazılmalı.</li>
+          <li>En az üç yasak işlem tanımlanmalı.</li>
+          <li>En az üç zorunlu doğrulama adımı bulunmalı.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Denetim Katmanları</h3>
+        <ul>
+          <li>En az bir yasak işlem <code>[deny]</code> olmalı.</li>
+          <li>En az bir doğrulama adımı <code>[compiled]</code> olmalı.</li>
+          <li>En az bir <code>[pr-stop]</code> maddesi koşulu ve durma sonucunu yazmalı.</li>
+          <li>Kurallar yinelenmemeli; hassas veri kullanılmamalı.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="tags-title">
+    <h2 id="tags-title">Etiketlerin Sınırı</h2>
+    <div class="tag-grid">
+      <div class="tag-card">
+        <h3><code>[directive]</code></h3>
+        <p>Dosyada yazılıdır. Tek başına mekanik bir engel oluşturmaz.</p>
+      </div>
+      <div class="tag-card">
+        <h3><code>[deny]</code></h3>
+        <p>Kullanılan aracın gerçek izin kuralı (permission rule) ayarında ayrıca tanımlanmalıdır.</p>
+      </div>
+      <div class="tag-card">
+        <h3><code>[compiled]</code></h3>
+        <p>Gerçek test, linter veya CI komutuyla karşılık bulmalıdır.</p>
+      </div>
+      <div class="tag-card">
+        <h3><code>[pr-stop]</code></h3>
+        <p>Koşulu ve PR'ın duracağı sonucu birlikte yazmalıdır.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="editor-title">
+    <h2 id="editor-title">Rule Dosyası</h2>
+    <label for="ruleText">AGENTS.md / CLAUDE.md / rules dosyası taslağı</label>
+    <textarea id="ruleText" spellcheck="true" aria-describedby="editor-note"></textarea>
+    <p class="note" id="editor-note">İkinci düzey başlıkları ve köşeli parantez içindeki
+    katman etiketlerini koruyun. Kendi projenize ait gizli bilgi veya kişisel veri yazmayın.</p>
+  </section>
+
+  <div>
+    <button id="validateBtn" type="button">Rule Dosyasını Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Başlangıçta görünen Vardiya rule dosyası kurgusaldır. Yalnızca Bölüm 9'daki
+    dosya yapısını ve denetim katmanlarını göstermek için hazırlanmıştır; gerçek bir
+    ürün ayarı veya kurum politikası değildir.</p>
+    <p>Bu sayfa başlıkları, madde sayılarını ve etiketleri denetler. Bir
+    <code>[deny]</code> maddesinin aracın izin ayarına gerçekten bağlandığını ya da
+    <code>[compiled]</code> komutunun CI içinde zorunlu çalıştığını ölçemez. Bu ayarlar
+    ayrıca incelenmelidir.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/rule-enforcement/rule_enforcement_lab.py">rule_enforcement_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/rule-enforcement">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const REQUIRED_SECTIONS = [
+    'Proje Özeti',
+    'Yasak İşlemler',
+    'Zorunlu Doğrulama Adımları',
+    'PR Devre Kesici'
+  ];
+  const ALLOWED_TAGS = {
+    'Yasak İşlemler': new Set(['directive', 'deny']),
+    'Zorunlu Doğrulama Adımları': new Set(['directive', 'compiled']),
+    'PR Devre Kesici': new Set(['pr-stop'])
+  };
+  const CONDITION_WORDS = ['eğer ', 'değişirse', 'olursa', 'başarısızsa', 'içeriyorsa'];
+
+  const REPRESENTATIVE_RULE_FILE = `# AGENTS.md — Vardiya
+
+## Proje Özeti
+
+- Yığın: Laravel API ve React admin paneli kullanılır.
+- Mimari: Bildirimler mevcut EmailService üzerinden gönderilir; iş mantığı servis katmanında tutulur.
+
+## Yasak İşlemler
+
+- [deny] \`.env\` dosyasını okuma veya içeriğini çıktıya yazma.
+- [directive] Yeni bir e-posta sağlayıcısı ya da bildirim paketi ekleme.
+- [directive] Test silme, assertion zayıflatma veya güvenlik denetimini kapatma.
+
+## Zorunlu Doğrulama Adımları
+
+- [compiled] Backend değişikliğinden sonra \`php artisan test\` komutunu çalıştır.
+- [compiled] Admin paneli değişikliğinden sonra \`npm test\` komutunu çalıştır.
+- [directive] Sonucu sunmadan önce diff'i kapsam ve hassas veri açısından incele.
+
+## PR Devre Kesici
+
+- [pr-stop] Eğer \`auth/\` altındaki bir dosya değişirse ve PR açıklaması gerekçe içermiyorsa PR durur.`;
+
+  const ruleText = document.getElementById('ruleText');
+  const result = document.getElementById('result');
+
+  function normalize(text) {
+    return text.toLocaleLowerCase('tr-TR');
+  }
+
+  function extractSections(markdown) {
+    const pattern = /^##\s+(.+?)\s*$/gm;
+    const matches = [...markdown.matchAll(pattern)];
+    const sections = new Map();
+    matches.forEach((match, index) => {
+      const start = match.index + match[0].length;
+      const end = index + 1 < matches.length ? matches[index + 1].index : markdown.length;
+      sections.set(normalize(match[1].trim()), markdown.slice(start, end).trim());
+    });
+    return sections;
+  }
+
+  function bulletItems(text) {
+    return text.split('\n')
+      .map(line => line.match(/^\s*-\s+(.+?)\s*$/))
+      .filter(Boolean)
+      .map(match => match[1].trim())
+      .filter(Boolean);
+  }
+
+  function parseTaggedRules(sectionName, items) {
+    const errors = [];
+    const parsed = [];
+    const allowed = ALLOWED_TAGS[sectionName];
+    items.forEach((item, index) => {
+      const match = item.match(/^\[([a-z-]+)\]\s+(.+)$/i);
+      if (!match) {
+        errors.push(`${sectionName} ${index + 1}. maddesi katman etiketiyle başlamalıdır.`);
+        return;
+      }
+      const tag = normalize(match[1]);
+      const text = match[2].trim();
+      if (!allowed.has(tag)) {
+        const expected = [...allowed].sort().map(value => `[${value}]`).join(', ');
+        errors.push(`${sectionName} ${index + 1}. maddesi şu etiketlerden birini kullanmalıdır: ${expected}.`);
+      }
+      if (text.split(/\s+/).length < 5) {
+        errors.push(`${sectionName} ${index + 1}. maddesi somut bir davranış yazmalıdır.`);
+      }
+      parsed.push({ tag, text });
+    });
+    return { parsed, errors };
+  }
+
+  function validateRuleFile(markdown) {
+    const errors = [];
+    const sections = extractSections(markdown);
+    REQUIRED_SECTIONS.forEach(heading => {
+      const key = normalize(heading);
+      if (!sections.has(key)) {
+        errors.push(`"${heading}" başlığı eksik.`);
+      } else if (!sections.get(key).trim()) {
+        errors.push(`"${heading}" bölümü boş bırakılamaz.`);
+      }
+    });
+
+    const summaryItems = bulletItems(sections.get(normalize('Proje Özeti')) || '');
+    if (summaryItems.length < 2 || summaryItems.length > 3) {
+      errors.push('Proje Özeti, 2-3 dolu liste maddesi içermelidir.');
+    }
+    const summaryText = normalize(summaryItems.join(' '));
+    if (summaryItems.length && !summaryText.includes('yığın') && !summaryText.includes('teknoloji')) {
+      errors.push('Proje Özeti teknoloji yığınını açıkça belirtmelidir.');
+    }
+    if (summaryItems.length && !summaryText.includes('mimari')) {
+      errors.push('Proje Özeti temel mimari kararı açıkça belirtmelidir.');
+    }
+
+    const forbiddenItems = bulletItems(sections.get(normalize('Yasak İşlemler')) || '');
+    const validationItems = bulletItems(sections.get(normalize('Zorunlu Doğrulama Adımları')) || '');
+    const breakerItems = bulletItems(sections.get(normalize('PR Devre Kesici')) || '');
+
+    if (forbiddenItems.length < 3) errors.push('Yasak İşlemler en az 3 madde içermelidir.');
+    if (validationItems.length < 3) errors.push('Zorunlu Doğrulama Adımları en az 3 madde içermelidir.');
+    if (breakerItems.length < 1) errors.push('PR Devre Kesici en az 1 madde içermelidir.');
+
+    const forbiddenResult = parseTaggedRules('Yasak İşlemler', forbiddenItems);
+    const validationResult = parseTaggedRules('Zorunlu Doğrulama Adımları', validationItems);
+    const breakerResult = parseTaggedRules('PR Devre Kesici', breakerItems);
+    errors.push(...forbiddenResult.errors, ...validationResult.errors, ...breakerResult.errors);
+
+    const denyCount = forbiddenResult.parsed.filter(rule => rule.tag === 'deny').length;
+    const compiledCount = validationResult.parsed.filter(rule => rule.tag === 'compiled').length;
+    if (forbiddenItems.length && !denyCount) {
+      errors.push('En az bir yasak işlem [deny] katmanına bağlanmalıdır.');
+    }
+    if (validationItems.length && !compiledCount) {
+      errors.push('En az bir doğrulama adımı [compiled] katmanına bağlanmalıdır.');
+    }
+
+    breakerResult.parsed.forEach((rule, index) => {
+      const text = normalize(rule.text);
+      if (!CONDITION_WORDS.some(word => text.includes(word))) {
+        errors.push(`PR Devre Kesici ${index + 1}. maddesi durma koşulunu açıkça yazmalıdır.`);
+      }
+      if (!text.includes('dur')) {
+        errors.push(`PR Devre Kesici ${index + 1}. maddesi PR'ın duracağını belirtmelidir.`);
+      }
+    });
+
+    const allRules = [
+      ...forbiddenResult.parsed,
+      ...validationResult.parsed,
+      ...breakerResult.parsed
+    ];
+    const normalizedRules = allRules.map(rule => normalize(rule.text).replace(/\s+/g, ' ').trim());
+    if (new Set(normalizedRules).size !== normalizedRules.length) {
+      errors.push('Aynı davranış kuralı birden fazla bölümde yinelenmemelidir.');
+    }
+
+    const sensitiveText = [...summaryItems, ...allRules.map(rule => rule.text)].join('\n');
+    const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/;
+    const credentialPattern = /(api[_ -]?key|secret|token|password|şifre|parola)\s*[:=]\s*[\x60'\"]?[^\s\x60'\"]{4,}/i;
+    if (emailPattern.test(sensitiveText) || credentialPattern.test(sensitiveText)) {
+      errors.push('Rule dosyası hassas veri örüntüsü içeriyor; örnek veri kullanın.');
+    }
+
+    return {
+      errors,
+      summaryCount: summaryItems.length,
+      forbiddenCount: forbiddenItems.length,
+      validationCount: validationItems.length,
+      breakerCount: breakerItems.length,
+      denyCount,
+      compiledCount
+    };
+  }
+
+  function renderReport(report) {
+    const success = report.errors.length === 0;
+    result.className = `panel ${success ? 'success' : 'error'}`;
+    const heading = success ? 'Kabul kriteri karşılandı' : 'Kabul kriteri karşılanmadı';
+    const detail = success
+      ? '<p>Rule dosyası yapısal denetimden geçti.</p>'
+      : `<ul>${report.errors.map(error => `<li>${escapeHtml(error)}</li>`).join('')}</ul>`;
+    result.innerHTML = `
+      <h2>${heading}</h2>
+      ${detail}
+      <div class="metrics">
+        <div class="metric"><strong>${report.summaryCount}</strong>özet maddesi</div>
+        <div class="metric"><strong>${report.forbiddenCount}</strong>yasak işlem</div>
+        <div class="metric"><strong>${report.validationCount}</strong>doğrulama adımı</div>
+        <div class="metric"><strong>${report.denyCount} / ${report.compiledCount}</strong>deny / compiled</div>
+        <div class="metric"><strong>${report.breakerCount}</strong>PR devre kesici</div>
+      </div>`;
+  }
+
+  function escapeHtml(text) {
+    return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+  }
+
+  function resetExample() {
+    ruleText.value = REPRESENTATIVE_RULE_FILE;
+    result.className = 'panel';
+    result.innerHTML = '';
+  }
+
+  document.getElementById('validateBtn').addEventListener('click', () => {
+    renderReport(validateRuleFile(ruleText.value));
+  });
+  document.getElementById('resetBtn').addEventListener('click', resetExample);
+
+  resetExample();
+</script>
+</body>
+</html>
