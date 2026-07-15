@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<!--
+volume: 2
+chapter: 12
+book_section: "12.5 Minimal Repro Hazırlama ve 12.9 Testle Doğrulama"
+concepts:
+  - minimal repro
+  - açıkla-hipotez kur-kanıt göster
+  - failing test
+  - fix
+  - regression
+objectives:
+  - "LO-12.2"
+  - "LO-12.3"
+  - "LO-12.4"
+last_verified: "2026-07"
+-->
+<title>Minimal Repro'dan Düzeltmeye Hata Ayıklama Laboratuvarı — Cilt 2, Bölüm 12</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --danger: #b23a48; --success: #18794e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b5c0cf; --danger: #ff9aa7; --success: #73d6a7;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 780px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.3rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .95rem; margin: 0 0 8px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  p.lead { color: var(--muted); margin-bottom: 24px; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer;
+  }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .plan { border: 1px solid var(--gray); border-radius: 10px; padding: 14px; }
+  .shift-list { min-height: 28px; font-weight: 700; color: var(--navy); }
+  @media (prefers-color-scheme: dark) { .shift-list { color: #bfe9e4; } }
+  .evidence {
+    border-left: 4px solid var(--orange); padding: 10px 12px; margin-top: 14px;
+    background: color-mix(in srgb, var(--orange) 9%, transparent);
+  }
+  .status { font-weight: 700; margin-bottom: 4px; }
+  .status.bad { color: var(--danger); }
+  .status.good { color: var(--success); }
+  .steps { display: grid; gap: 10px; }
+  .step { border-left: 3px solid var(--teal); padding-left: 12px; }
+  .step p { margin: 4px 0; }
+  code {
+    background: color-mix(in srgb, var(--gray) 36%, transparent); border-radius: 4px;
+    padding: 2px 5px;
+  }
+  pre {
+    overflow-x: auto; background: #111827; color: #edf2f7; border-radius: 8px;
+    padding: 12px 14px; font-size: .82rem;
+  }
+  .commit { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .note { font-size: .85rem; color: var(--muted); margin-top: 10px; }
+  @media (max-width: 560px) { .plans { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <h1>Minimal Repro'dan Düzeltmeye Hata Ayıklama Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 12 — 12.5 ve 12.9. İki ayrı plana
+  birer vardiya ekleyin. Önce değişebilir varsayılan listenin planlar arasında nasıl
+  sızdığını görün; ardından güvenli <code>assigned=None</code> düzeltmesini aynı girdilerle
+  doğrulayın. Kurulum gerekmez, sayfa tek başına çalışır.</p>
+
+  <div class="panel">
+    <h2>Minimal repro</h2>
+    <div class="actions">
+      <button id="bugBtn" type="button">Hatayı Yeniden Üret</button>
+      <button id="fixBtn" type="button">Düzeltmeyi Doğrula</button>
+      <button id="resetBtn" class="secondary" type="button">Sıfırla</button>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Birinci plan</h3>
+        <div class="shift-list" id="firstPlan">Henüz çalıştırılmadı</div>
+      </div>
+      <div class="plan">
+        <h3>İkinci plan</h3>
+        <div class="shift-list" id="secondPlan">Henüz çalıştırılmadı</div>
+      </div>
+    </div>
+
+    <div class="evidence" id="evidence" aria-live="polite">
+      <div class="status">Beklenen davranış: ikinci planda yalnızca B vardiyası bulunur.</div>
+      <div>Bir sürüm seçtiğinizde gerçek davranış ve hata izi burada görünecek.</div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Açıkla, hipotez kur, kanıt göster</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Açıkla</h3>
+        <p>Bozuk fonksiyon, <code>assigned=[]</code> listesini fonksiyon tanımlanırken bir
+        kez oluşturur. Parametre verilmeden yapılan sonraki çağrılar aynı listeyi kullanır.</p>
+      </div>
+      <div class="step">
+        <h3>2. Hipotez kur</h3>
+        <p>İkinci planın A vardiyasını taşımasının nedeni plan nesnesi değildir; iki çağrı
+        arasında paylaşılan değişebilir varsayılan listedir.</p>
+      </div>
+      <div class="step">
+        <h3>3. Kanıt göster</h3>
+        <p>Minimal repro, iki planın vardiya listelerini kimlik karşılaştırmasıyla denetler.
+        Bozuk sürümde <code>birinci.shifts === ikinci.shifts</code> sonucu doğrudur.</p>
+      </div>
+    </div>
+    <pre>def add_shift_to_schedule(schedule, shift, assigned=None):
+    if assigned is None:
+        assigned = []
+    assigned.append(shift)
+    schedule.shifts = assigned
+    return schedule</pre>
+    <p class="note"><code>assigned = assigned or []</code> kullanılmaz. Çağıran taraf
+    bilerek boş bir liste verdiğinde bu liste korunmalıdır.</p>
+  </div>
+
+  <div class="panel">
+    <h2>Git kaydı</h2>
+    <p>Önce hatayı kanıtlayan testi, sonra düzeltmeyi kaydedin. Her adım tek başına
+    incelenebilmeli ve geri alınabilmelidir.</p>
+    <p class="commit"><strong>Commit 1:</strong> test: ayrı planların vardiya listesini paylaşmadığını kanıtla</p>
+    <p class="commit"><strong>Commit 2:</strong> fix: varsayılan vardiya listesini her çağrıda oluştur</p>
+    <p class="note">Regression ayrı bir commit değildir. İlgili testlerin tamamını yeniden
+    çalıştırın ve sonucu PR açıklamasına doğrulama notu olarak ekleyin.</p>
+  </div>
+
+  <p class="note">Senaryo temsilîdir; gerçek projelerde paylaşılan durum başka kaynaklardan
+  da doğabilir. Bu laboratuvar kök nedenin yalnızca kanıtla belirlendiğini gösterir. Aynı
+  laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/debug-loops/debug_loop_lab.py">debug_loop_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/debug-loops">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const firstPlan = document.getElementById('firstPlan');
+  const secondPlan = document.getElementById('secondPlan');
+  const evidence = document.getElementById('evidence');
+
+  function showScenario(useFix) {
+    const first = { name: 'Birinci plan', shifts: [] };
+    const second = { name: 'İkinci plan', shifts: [] };
+    const sharedDefault = [];
+
+    function addBuggy(schedule, shift, assigned = sharedDefault) {
+      assigned.push(shift);
+      schedule.shifts = assigned;
+    }
+
+    function addFixed(schedule, shift, assigned = null) {
+      if (assigned === null) assigned = [];
+      assigned.push(shift);
+      schedule.shifts = assigned;
+    }
+
+    const addShift = useFix ? addFixed : addBuggy;
+    addShift(first, 'A');
+    addShift(second, 'B');
+
+    firstPlan.textContent = first.shifts.join(', ') || 'boş';
+    secondPlan.textContent = second.shifts.join(', ') || 'boş';
+
+    const sharesList = first.shifts === second.shifts;
+    const correct = second.shifts.length === 1 && second.shifts[0] === 'B' && !sharesList;
+    evidence.innerHTML = `
+      <div class="status ${correct ? 'good' : 'bad'}">
+        ${correct ? 'Düzeltme doğrulandı.' : 'Failing test: ikinci plan beklenen değeri taşımıyor.'}
+      </div>
+      <div>Beklenen ikinci plan: B</div>
+      <div>Gerçek ikinci plan: ${second.shifts.join(', ')}</div>
+      <div>Hata izi — iki plan aynı listeyi kullanıyor: ${sharesList ? 'evet' : 'hayır'}</div>`;
+  }
+
+  document.getElementById('bugBtn').addEventListener('click', () => showScenario(false));
+  document.getElementById('fixBtn').addEventListener('click', () => showScenario(true));
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    firstPlan.textContent = 'Henüz çalıştırılmadı';
+    secondPlan.textContent = 'Henüz çalıştırılmadı';
+    evidence.innerHTML = `
+      <div class="status">Beklenen davranış: ikinci planda yalnızca B vardiyası bulunur.</div>
+      <div>Bir sürüm seçtiğinizde gerçek davranış ve hata izi burada görünecek.</div>`;
+  });
+</script>
+</body>
+</html>
