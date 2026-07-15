@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Güvenlik Sözleşmesi Laboratuvarı — Cilt 2, Bölüm 14</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 14
+book_section: "14.2-14.13 Güvenlik Sözleşmesi"
+concepts:
+  - veri sınıflandırması
+  - secret yönetimi
+  - tool permission yönetimi
+  - korumalı dosya
+  - loop güvenliği
+objectives:
+  - "LO-14.1"
+  - "LO-14.2"
+  - "LO-14.3"
+  - "LO-14.4"
+  - "LO-14.5"
+  - "LO-14.6"
+  - "LO-14.7"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1040px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .96rem; margin: 0 0 10px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .section-number {
+    display: inline-block; min-width: 1.7rem; color: var(--navy); font-weight: 800;
+  }
+  .entry-grid, .loop-grid, .metrics {
+    display: grid; gap: 12px; margin-top: 12px;
+  }
+  .entry-grid { grid-template-columns: minmax(150px, 1.1fr) 170px minmax(240px, 2fr); }
+  .loop-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .entry-grid.header {
+    margin-top: 0; color: var(--muted); font-size: .82rem; font-weight: 700;
+  }
+  .field-label { display: none; }
+  label { display: block; font-size: .86rem; color: var(--muted); font-weight: 700; }
+  input, select, textarea {
+    width: 100%; margin-top: 6px; padding: 9px 10px; border: 1px solid var(--gray);
+    border-radius: 7px; background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { min-height: 84px; resize: vertical; }
+  input:focus, select:focus, textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  code {
+    background: var(--code-bg); border-radius: 4px; padding: 1px 4px;
+  }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 0 8px 16px 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; padding-left: 1.25rem; }
+  .metrics { grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 14px; }
+  .metric { border-top: 2px solid var(--teal); padding-top: 8px; }
+  .metric strong { display: block; font-size: 1.12rem; }
+  .subgroup { border-top: 1px solid var(--gray); padding-top: 14px; margin-top: 16px; }
+  @media (max-width: 780px) {
+    .entry-grid, .entry-grid.header, .loop-grid, .metrics { grid-template-columns: 1fr; }
+    .entry-grid.header { display: none; }
+    .field-label { display: block; }
+    .entry-grid { border-top: 1px solid var(--gray); padding-top: 12px; }
+  }
+</style>
+</head>
+<body>
+  <h1>Güvenlik Sözleşmesi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 14 — 14.2-14.13, Lab 14.
+  Bir yapay zekâ destekli geliştirme sürecinin veri, secret, izin, korumalı yol ve
+  loop sınırlarını tek sözleşmede yazıp ortak kabul kapısından geçirin.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Güvenlik Sözleşmesi</h2>
+    <p>Güvenlik sözleşmesi bir niyet beyanı değildir; hangi verinin dışarı çıkacağını,
+    hangi işlemin onay isteyeceğini ve döngünün nerede duracağını göreve başlamadan
+    önce belirleyen karar kaydıdır. Bölüm 14 bu kaydı beş parçaya ayırır: veri
+    sınıflandırması, secret yönetimi, izin listesi, korumalı dosyalar ve loop sınırları.</p>
+    <p>Yazılı karar ile teknik engel aynı şey değildir. <code>deny</code> olarak işaretlenen
+    bir işlem, kullanılan aracın izin ayarında da kapatılmalıdır. Bu laboratuvar sözleşmenin
+    eksiklerini gösterir; gerçek izin mekanizmasının yerine geçmez.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="data-title">
+    <h2 id="data-title"><span class="section-number">1.</span> Veri Sınıflandırması</h2>
+    <p class="note">Üç kararın her birini en az bir kez kullanın. Gerçek kişisel veri
+    yazmayın; veri türünü ve kararın gerekçesini belirtin.</p>
+    <div class="entry-grid header" aria-hidden="true">
+      <span>Veri türü</span><span>Karar</span><span>Gerekçe</span>
+    </div>
+    <div class="entry-grid data-row">
+      <label><span class="field-label">Veri türü</span><input class="data-name" type="text"></label>
+      <label><span class="field-label">Karar</span><select class="data-decision">
+        <option value="gönderilebilir">gönderilebilir</option>
+        <option value="anonimleştirilerek">anonimleştirilerek</option>
+        <option value="asla">asla</option>
+      </select></label>
+      <label><span class="field-label">Gerekçe</span><input class="data-reason" type="text"></label>
+    </div>
+    <div class="entry-grid data-row">
+      <label><span class="field-label">Veri türü</span><input class="data-name" type="text"></label>
+      <label><span class="field-label">Karar</span><select class="data-decision">
+        <option value="gönderilebilir">gönderilebilir</option>
+        <option value="anonimleştirilerek">anonimleştirilerek</option>
+        <option value="asla">asla</option>
+      </select></label>
+      <label><span class="field-label">Gerekçe</span><input class="data-reason" type="text"></label>
+    </div>
+    <div class="entry-grid data-row">
+      <label><span class="field-label">Veri türü</span><input class="data-name" type="text"></label>
+      <label><span class="field-label">Karar</span><select class="data-decision">
+        <option value="gönderilebilir">gönderilebilir</option>
+        <option value="anonimleştirilerek">anonimleştirilerek</option>
+        <option value="asla">asla</option>
+      </select></label>
+      <label><span class="field-label">Gerekçe</span><input class="data-reason" type="text"></label>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="secret-title">
+    <h2 id="secret-title"><span class="section-number">2.</span> Secret Yönetimi</h2>
+    <div class="loop-grid">
+      <label>Yok sayılan dosyalar (satır başına bir yol)
+        <textarea id="ignoredPaths"></textarea>
+      </label>
+      <label>Secret taramasının çalıştığı nokta
+        <textarea id="scanningStep"></textarea>
+      </label>
+      <label>Bölüm 14 alt başlık referansı
+        <textarea id="referenceNote"></textarea>
+      </label>
+    </div>
+    <div class="subgroup">
+      <h3>Sızıntı Sonrası İlk Üç Adım</h3>
+      <div class="entry-grid header" aria-hidden="true">
+        <span>Sıra</span><span></span><span>Somut adım</span>
+      </div>
+      <div class="entry-grid">
+        <strong>1. adım</strong><span></span><label><span class="field-label">Somut adım</span><input class="incident-step" type="text"></label>
+      </div>
+      <div class="entry-grid">
+        <strong>2. adım</strong><span></span><label><span class="field-label">Somut adım</span><input class="incident-step" type="text"></label>
+      </div>
+      <div class="entry-grid">
+        <strong>3. adım</strong><span></span><label><span class="field-label">Somut adım</span><input class="incident-step" type="text"></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="permission-title">
+    <h2 id="permission-title"><span class="section-number">3.</span> İzin Listesi</h2>
+    <p class="note">En az birer <code>allow</code>, <code>ask</code> ve
+    <code>deny</code> kararı kullanın. Her kararın görevle ilişkisini açıklayın.</p>
+    <div class="entry-grid header" aria-hidden="true">
+      <span>İşlem</span><span>Karar</span><span>Gerekçe</span>
+    </div>
+    <div id="permissionRows"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="protected-title">
+    <h2 id="protected-title"><span class="section-number">4.</span> Korumalı Dosyalar</h2>
+    <p class="note">Korumalı bir alan onaysız değiştirilemez. Bu yüzden yalnızca
+    <code>ask</code> veya <code>deny</code> kararı kullanılabilir.</p>
+    <div class="entry-grid header" aria-hidden="true">
+      <span>Dosya veya yol</span><span>Karar</span><span>Gerekçe</span>
+    </div>
+    <div id="protectedRows"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="loop-title">
+    <h2 id="loop-title"><span class="section-number">5.</span> Loop Sınırları</h2>
+    <div class="loop-grid">
+      <label>Yetki sınırı
+        <textarea id="authorityLimit"></textarea>
+      </label>
+      <label>Maliyet sınırı (sayısal tavanla)
+        <textarea id="costLimit"></textarea>
+      </label>
+      <label>Veri sınırı
+        <textarea id="dataLimit"></textarea>
+      </label>
+    </div>
+  </section>
+
+  <div>
+    <button id="validateBtn" type="button">Sözleşmeyi Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Başlangıçta görünen Vardiya sözleşmesi kurgusaldır. Gerçek bir ürün ayarı,
+    kurum politikası veya üretim sistemi yapılandırması değildir. Eşikler ve yollar,
+    beş bölümlü sözleşmenin nasıl yazılacağını göstermek için seçilmiştir.</p>
+    <p>Sayfa karar sayısını, gerekçeleri ve açık hassas veri örüntülerini denetler.
+    Yazılı bir kuralın araç, işletim sistemi veya CI düzeyinde gerçekten uygulandığını
+    ölçemez. Bu bağlantılar ayrıca incelenmelidir.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/security-contract/security_contract_lab.py">security_contract_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/security-contract">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const DATA_DECISIONS = new Set(['gönderilebilir', 'anonimleştirilerek', 'asla']);
+  const PERMISSION_DECISIONS = new Set(['allow', 'ask', 'deny']);
+  const SCANNER_LOCATIONS = ['ci', 'pre-commit', 'commit öncesi', 'sunucu'];
+  const ROTATION_WORDS = ['iptal', 'rotasyon', 'rotate', 'geçersiz'];
+
+  const EXAMPLE = {
+    dataRules: [
+      ['Sentetik vardiya kuralı', 'gönderilebilir', 'Gerçek kullanıcı veya kuruma ait kayıt içermez.'],
+      ['Maskelenmiş hata kaydı', 'anonimleştirilerek', 'Ad, e-posta, IP adresi ve sipariş numarası çıkarılmalıdır.'],
+      ['Üretim veritabanı kaydı ve .env dosyası', 'asla', 'Gerçek müşteri verisi ile erişim bilgileri dışarı gönderilemez.']
+    ],
+    ignoredPaths: '.env\n.env.local',
+    scanningStep: 'Secret taraması commit öncesi denetimde ve CI hattında çalışır.',
+    referenceNote: "Secret sızıntısında 14.11'deki rotasyon adımı geçmiş temizliğinden önce gelir.",
+    incidentSteps: [
+      'Sızan anahtarı sağlayıcı panelinden hemen iptal et ve yenisini üret.',
+      'Erişim kayıtlarını incele, olayı kaydet ve güvenlik sorumlusuna bildir.',
+      "14.11'deki sırayı izleyerek ekibi bilgilendir ve git geçmişini koordineli biçimde temizle."
+    ],
+    permissionRules: [
+      ['Kaynak kodu okuma', 'allow', 'Görevin kapsamındaki kodu anlamak için gereklidir.'],
+      ['Yerel testleri çalıştırma', 'allow', 'Değişikliği dış sisteme dokunmadan doğrular.'],
+      ['Migration çalıştırma', 'ask', 'Veri yapısını değiştirdiği için insan onayı gerekir.'],
+      ['Yeni bağımlılık kurma', 'ask', 'Paket kaydı ve bakımcı geçmişi kurulmadan önce doğrulanmalıdır.'],
+      ['.env dosyasını okuma', 'deny', 'Dosya erişim bilgisi içerebilir ve görev için gerekli değildir.'],
+      ['Üretim veritabanına yazma', 'deny', 'Geri dönüşü zor ve kapsam dışı bir üretim işlemidir.']
+    ],
+    protectedPaths: [
+      ['auth/', 'deny', 'Yetkilendirme değişikliği ek güvenlik incelemesi gerektirir.'],
+      ['payments/', 'deny', 'Finansal yan etki riski taşıyan işlemleri içerir.'],
+      ['.github/workflows/', 'ask', 'CI davranışını değiştirdiği için insan onayı gerekir.']
+    ],
+    authorityLimit: 'Döngü yalnızca test dosyalarını okuyabilir ve test çalıştırabilir.',
+    costLimit: 'Bir çalışma en çok 3 deneme ve 15 dakika sürebilir.',
+    dataLimit: 'Döngü yalnızca sentetik vardiya kayıtlarına erişebilir.'
+  };
+
+  const result = document.getElementById('result');
+
+  function normalize(text) {
+    return text.toLocaleLowerCase('tr-TR').replace(/\s+/g, ' ').trim();
+  }
+
+  function wordCount(text) {
+    const value = text.trim();
+    return value ? value.split(/\s+/).length : 0;
+  }
+
+  function hasDuplicates(values) {
+    const normalized = values.map(normalize).filter(Boolean);
+    return new Set(normalized).size !== normalized.length;
+  }
+
+  function makeDecisionRow(values, kind) {
+    const row = document.createElement('div');
+    row.className = `entry-grid ${kind}-row`;
+
+    const nameLabel = document.createElement('label');
+    nameLabel.innerHTML = `<span class="field-label">${kind === 'permission' ? 'İşlem' : 'Dosya veya yol'}</span>`;
+    const name = document.createElement('input');
+    name.type = 'text';
+    name.className = `${kind}-name`;
+    name.value = values[0];
+    nameLabel.appendChild(name);
+
+    const decisionLabel = document.createElement('label');
+    decisionLabel.innerHTML = '<span class="field-label">Karar</span>';
+    const decision = document.createElement('select');
+    decision.className = `${kind}-decision`;
+    const choices = kind === 'permission' ? ['allow', 'ask', 'deny'] : ['ask', 'deny'];
+    choices.forEach(choice => {
+      const option = document.createElement('option');
+      option.value = choice;
+      option.textContent = choice;
+      option.selected = choice === values[1];
+      decision.appendChild(option);
+    });
+    decisionLabel.appendChild(decision);
+
+    const reasonLabel = document.createElement('label');
+    reasonLabel.innerHTML = '<span class="field-label">Gerekçe</span>';
+    const reason = document.createElement('input');
+    reason.type = 'text';
+    reason.className = `${kind}-reason`;
+    reason.value = values[2];
+    reasonLabel.appendChild(reason);
+
+    row.append(nameLabel, decisionLabel, reasonLabel);
+    return row;
+  }
+
+  function loadExample() {
+    document.querySelectorAll('.data-row').forEach((row, index) => {
+      const values = EXAMPLE.dataRules[index];
+      row.querySelector('.data-name').value = values[0];
+      row.querySelector('.data-decision').value = values[1];
+      row.querySelector('.data-reason').value = values[2];
+    });
+
+    document.getElementById('ignoredPaths').value = EXAMPLE.ignoredPaths;
+    document.getElementById('scanningStep').value = EXAMPLE.scanningStep;
+    document.getElementById('referenceNote').value = EXAMPLE.referenceNote;
+    document.querySelectorAll('.incident-step').forEach((input, index) => {
+      input.value = EXAMPLE.incidentSteps[index];
+    });
+
+    const permissionRows = document.getElementById('permissionRows');
+    permissionRows.replaceChildren(...EXAMPLE.permissionRules.map(values => makeDecisionRow(values, 'permission')));
+    const protectedRows = document.getElementById('protectedRows');
+    protectedRows.replaceChildren(...EXAMPLE.protectedPaths.map(values => makeDecisionRow(values, 'protected')));
+
+    document.getElementById('authorityLimit').value = EXAMPLE.authorityLimit;
+    document.getElementById('costLimit').value = EXAMPLE.costLimit;
+    document.getElementById('dataLimit').value = EXAMPLE.dataLimit;
+    result.className = 'panel';
+    result.replaceChildren();
+  }
+
+  function collectRows(kind) {
+    return [...document.querySelectorAll(`.${kind}-row`)].map(row => ({
+      name: row.querySelector(`.${kind}-name`).value.trim(),
+      decision: row.querySelector(`.${kind}-decision`).value,
+      reason: row.querySelector(`.${kind}-reason`).value.trim()
+    }));
+  }
+
+  function validateContract() {
+    const errors = [];
+    const dataRules = collectRows('data');
+    const dataDecisions = new Set();
+    dataRules.forEach((rule, index) => {
+      if (!rule.name) errors.push(`Veri kuralı ${index + 1} veri türünü belirtmelidir.`);
+      if (DATA_DECISIONS.has(rule.decision)) dataDecisions.add(rule.decision);
+      if (wordCount(rule.reason) < 4) errors.push(`Veri kuralı ${index + 1} somut bir gerekçe içermelidir.`);
+    });
+    const missingData = [...DATA_DECISIONS].filter(value => !dataDecisions.has(value));
+    if (missingData.length) errors.push(`Veri sınıflandırmasında şu kararlar eksik: ${missingData.join(', ')}.`);
+    if (hasDuplicates(dataRules.map(rule => rule.name))) errors.push('Aynı veri türü birden fazla kez sınıflandırılmamalıdır.');
+
+    const ignoredPaths = document.getElementById('ignoredPaths').value.split('\n').map(value => value.trim()).filter(Boolean);
+    if (!ignoredPaths.length) errors.push('Secret yönetimi en az bir yok sayılan dosya veya yol içermelidir.');
+    else if (!ignoredPaths.some(path => path === '.env' || path.startsWith('.env.'))) {
+      errors.push('Yok sayılan yollar en az bir .env dosyasını açıkça belirtmelidir.');
+    }
+    if (hasDuplicates(ignoredPaths)) errors.push('Aynı yok sayılan yol birden fazla kez yazılmamalıdır.');
+
+    const scanningStep = normalize(document.getElementById('scanningStep').value);
+    if (wordCount(scanningStep) < 5) errors.push('Secret taramasının nerede çalıştığı somut biçimde yazılmalıdır.');
+    else if (!SCANNER_LOCATIONS.some(location => scanningStep.includes(location))) {
+      errors.push('Secret taraması CI, pre-commit veya commit öncesi denetim noktasına bağlanmalıdır.');
+    }
+
+    const incidentSteps = [...document.querySelectorAll('.incident-step')].map(input => input.value.trim()).filter(Boolean);
+    if (incidentSteps.length < 3) errors.push('Secret sızıntısı için en az 3 sıralı müdahale adımı yazılmalıdır.');
+    if (incidentSteps.length && !ROTATION_WORDS.some(word => normalize(incidentSteps[0]).includes(word))) {
+      errors.push('Secret sızıntısının ilk adımı anahtarı iptal etmek olmalıdır.');
+    }
+    incidentSteps.forEach((step, index) => {
+      if (wordCount(step) < 5) errors.push(`Secret müdahalesinin ${index + 1}. adımı somut yazılmalıdır.`);
+    });
+
+    const permissionRules = collectRows('permission');
+    const permissionCounts = { allow: 0, ask: 0, deny: 0 };
+    permissionRules.forEach((rule, index) => {
+      if (!rule.name) errors.push(`İzin kuralı ${index + 1} işlemi belirtmelidir.`);
+      if (!PERMISSION_DECISIONS.has(rule.decision)) errors.push(`İzin kuralı ${index + 1} allow, ask veya deny kararı kullanmalıdır.`);
+      else permissionCounts[rule.decision] += 1;
+      if (wordCount(rule.reason) < 4) errors.push(`İzin kuralı ${index + 1} somut bir gerekçe içermelidir.`);
+    });
+    if (permissionRules.length < 5) errors.push('İzin listesi en az 5 işlem içermelidir.');
+    const missingPermissions = Object.entries(permissionCounts).filter(([, count]) => count === 0).map(([decision]) => decision);
+    if (missingPermissions.length) errors.push(`İzin listesinde şu kararlar eksik: ${missingPermissions.join(', ')}.`);
+    if (hasDuplicates(permissionRules.map(rule => rule.name))) errors.push('Aynı işlem izin listesinde birden fazla kez yazılmamalıdır.');
+
+    const protectedPaths = collectRows('protected');
+    if (protectedPaths.length < 3) errors.push('Korumalı dosyalar en az 3 yol içermelidir.');
+    protectedPaths.forEach((item, index) => {
+      if (!item.name) errors.push(`Korumalı alan ${index + 1} dosya veya yolu belirtmelidir.`);
+      if (!['ask', 'deny'].includes(item.decision)) errors.push(`Korumalı alan ${index + 1} yalnızca ask veya deny kararı kullanmalıdır.`);
+      if (wordCount(item.reason) < 4) errors.push(`Korumalı alan ${index + 1} somut bir gerekçe içermelidir.`);
+    });
+    if (hasDuplicates(protectedPaths.map(item => item.name))) errors.push('Aynı korumalı yol birden fazla kez yazılmamalıdır.');
+
+    const limits = [
+      ['yetki', document.getElementById('authorityLimit').value],
+      ['maliyet', document.getElementById('costLimit').value],
+      ['veri', document.getElementById('dataLimit').value]
+    ];
+    let loopLimitCount = 0;
+    limits.forEach(([name, value]) => {
+      if (wordCount(value) < 5) errors.push(`Loop ${name} sınırı somut bir cümleyle yazılmalıdır.`);
+      else loopLimitCount += 1;
+    });
+    if (!/\d/.test(limits[1][1])) errors.push('Loop maliyet sınırı sayısal bir tavan içermelidir.');
+
+    const referenceNote = document.getElementById('referenceNote').value;
+    if (!/\b14\.(?:[1-9]|1[0-3])\b/.test(referenceNote)) {
+      errors.push("Sözleşme Bölüm 14'teki en az bir alt başlığa başvurmalıdır.");
+    }
+
+    const allText = [
+      ...dataRules.flatMap(rule => [rule.name, rule.reason]),
+      ...ignoredPaths, scanningStep, ...incidentSteps,
+      ...permissionRules.flatMap(rule => [rule.name, rule.reason]),
+      ...protectedPaths.flatMap(item => [item.name, item.reason]),
+      ...limits.map(([, value]) => value), referenceNote
+    ].join('\n');
+    const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/;
+    const credentialPattern = /(api[_ -]?key|secret|token|password|şifre|parola)\s*[:=]\s*[\x60'"]?[^\s\x60'"]{4,}/i;
+    if (emailPattern.test(allText) || credentialPattern.test(allText)) {
+      errors.push('Sözleşme hassas veri örüntüsü içeriyor; yalnızca temsilî veri kullanın.');
+    }
+
+    return {
+      errors,
+      dataCount: dataRules.length,
+      dataDecisionCount: dataDecisions.size,
+      permissionCount: permissionRules.length,
+      permissionCounts,
+      protectedPathCount: protectedPaths.length,
+      loopLimitCount
+    };
+  }
+
+  function renderReport(report) {
+    const success = report.errors.length === 0;
+    result.className = `panel ${success ? 'success' : 'error'}`;
+
+    const heading = document.createElement('h2');
+    heading.textContent = success ? 'Kabul kriteri karşılandı' : 'Kabul kriteri karşılanmadı';
+    result.replaceChildren(heading);
+
+    if (success) {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'Beş bölüm ve karar gerekçeleri tamam.';
+      result.appendChild(paragraph);
+    } else {
+      const list = document.createElement('ul');
+      report.errors.forEach(error => {
+        const item = document.createElement('li');
+        item.textContent = error;
+        list.appendChild(item);
+      });
+      result.appendChild(list);
+    }
+
+    const metrics = document.createElement('div');
+    metrics.className = 'metrics';
+    const values = [
+      [`${report.dataDecisionCount}/3`, 'veri kararı'],
+      [report.permissionCount, 'izin kuralı'],
+      [report.permissionCounts.deny, 'deny kararı'],
+      [report.protectedPathCount, 'korumalı alan'],
+      [`${report.loopLimitCount}/3`, 'loop sınırı']
+    ];
+    values.forEach(([value, label]) => {
+      const metric = document.createElement('div');
+      metric.className = 'metric';
+      const strong = document.createElement('strong');
+      strong.textContent = String(value);
+      metric.append(strong, document.createTextNode(label));
+      metrics.appendChild(metric);
+    });
+    result.appendChild(metrics);
+  }
+
+  document.getElementById('validateBtn').addEventListener('click', () => {
+    renderReport(validateContract());
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+  document.getElementById('resetBtn').addEventListener('click', loadExample);
+
+  loadExample();
+</script>
+</body>
+</html>
