@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Model Çıktısı Karşılaştırma Laboratuvarı — Cilt 2, Bölüm 7</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 07
+book_section: "7.10 Kod Benchmark'larının Sınırları"
+concepts:
+  - ortak görev tarifi
+  - model karşılaştırması
+  - bağlam penceresi
+  - insan denetimi
+objectives:
+  - "LO-7.1"
+  - "LO-7.2"
+  - "LO-7.3"
+  - "LO-7.5"
+  - "LO-7.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1160px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: 1rem; margin: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .setup-grid, .run-grid, .metric-grid, .detail-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+  }
+  .run-card, .detail-card { min-width: 0; }
+  .run-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .field-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  label { display: block; font-size: .8rem; color: var(--muted); font-weight: 700; }
+  input[type=text], input[type=number], select, textarea {
+    width: 100%; margin-top: 4px; padding: 9px; border: 1px solid var(--gray);
+    border-radius: 7px; background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { min-height: 92px; resize: vertical; line-height: 1.45; }
+  textarea.diff { min-height: 190px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .run-card label { margin-top: 11px; }
+  input:focus, select:focus, textarea:focus {
+    outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent);
+  }
+  pre {
+    margin: 0; padding: 12px; border-radius: 8px; overflow-x: auto;
+    background: var(--code-bg); border: 1px solid var(--gray); white-space: pre-wrap;
+  }
+  ul { padding-left: 1.25rem; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 12px 8px 0 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  button.remove {
+    background: transparent; color: var(--error); border: 1px solid var(--gray);
+    padding: 7px 9px; margin: 0;
+  }
+  button:disabled { cursor: not-allowed; opacity: .55; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  .summary-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+  .table-wrap { overflow-x: auto; }
+  .summary-table th, .summary-table td {
+    border-bottom: 1px solid var(--gray); padding: 8px; text-align: left;
+  }
+  .summary-table th { color: var(--muted); font-size: .8rem; }
+  .metric-grid { margin: 14px 0; }
+  .metric-grid div { border-top: 1px solid var(--gray); padding-top: 8px; }
+  .detail-card { border-top: 3px solid var(--teal); }
+  .detail-card p { margin-bottom: 0; }
+  .detail-card pre { margin-top: 10px; }
+  @media (max-width: 820px) {
+    .setup-grid, .run-grid, .metric-grid, .detail-grid, .field-pair {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Model Çıktısı Karşılaştırma Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 7 — 7.10, Lab 7.
+  Aynı küçük refactor görevini iki veya üç model ya da model katmanıyla deneyin.
+  Diff'i, test sonucunu, kısıt uyumunu ve Bölüm 7.7'deki seçim ölçütlerini ortak bir
+  kayıtta karşılaştırın.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Aynı Görev, Ortak Ölçüt</h2>
+    <p>Karşılaştırılacak denemelere aynı başlangıç kodu, görev tarifi ve test seti
+    verilmelidir. Prompt veya kabul ölçütü denemeden denemeye değişirse farkın modelden
+    mi, görev tanımından mı kaynaklandığı anlaşılamaz.</p>
+    <p>Test sonucu tek başına karar vermez. Dışa açık arayüzün korunması, diff'in kaç
+    dosyaya yayıldığı, okunabilirlik, çağrı sayısı ve bağlamın yeterliliği ayrı
+    gözlemlerdir. Laboratuvar bu ölçütleri tek bir puanda birleştirmez.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="setup-title">
+    <h2 id="setup-title">1. Ortak Deney Zemini</h2>
+    <div class="setup-grid">
+      <div>
+        <h3>Başlangıç kodu</h3>
+        <pre>def normalize_labels(labels):
+    normalized = []
+    for label in labels:
+        cleaned = label.strip().casefold()
+        if cleaned:
+            if cleaned not in normalized:
+                normalized.append(cleaned)
+    return normalized</pre>
+      </div>
+      <div>
+        <h3>Kabul ölçütleri</h3>
+        <ul>
+          <li>Boşluklar temizlenir ve etiketler küçük harfe çevrilir.</li>
+          <li>Boş ve yinelenen etiketler sonuçtan çıkarılır.</li>
+          <li>İlk görülme sırası korunur.</li>
+          <li><code>normalize_labels(labels)</code> arayüzü değişmez.</li>
+          <li>Yeni bağımlılık eklenmez ve yalnızca hedef fonksiyon değişir.</li>
+        </ul>
+      </div>
+    </div>
+    <h3>Ortak görev tarifi</h3>
+    <p id="taskPrompt">normalize_labels fonksiyonunu okunabilirliği artıracak biçimde
+    yeniden düzenle. Fonksiyonun adı ve parametresi değişmeyecek; mevcut davranış
+    testleri geçecek, yeni bağımlılık eklenmeyecek ve yalnızca ilgili fonksiyona
+    dokunulacak.</p>
+    <p class="note">Her denemede aynı dosyayı, görev tarifini ve davranış testlerini
+    kullanın.</p>
+  </section>
+
+  <section aria-labelledby="runs-title">
+    <h2 id="runs-title">2. Deneme Kayıtları</h2>
+    <div class="run-grid" id="runGrid"></div>
+    <button id="addRunBtn" class="secondary" type="button">Deneme Ekle</button>
+  </section>
+
+  <section class="panel" aria-labelledby="decision-title">
+    <h2 id="decision-title">3. Tercih Gerekçesi</h2>
+    <label>Karar notu
+      <textarea id="decisionNote">Deneme B'yi seçtim; testler geçti, dışa açık arayüz korundu ve okunabilirlik notu daha güçlüydü. İki denemede de bağlam yeterliydi; Deneme A daha az çağrı kullansa da bu fark tek başına kararı belirlemedi.</textarea>
+    </label>
+    <p class="note">Tercih ettiğiniz deneme etiketini yazın; test, arayüz,
+    okunabilirlik, çağrı ve bağlam gözlemlerinin karardaki yerini açıklayın.</p>
+  </section>
+
+  <div>
+    <button id="validateBtn" type="button">Karşılaştırmayı Doğrula</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Bu sayfada başlangıçta görünen Deneme A ve Deneme B kayıtları yalnızca formun
+    nasıl doldurulacağını gösterir. Gerçek bir model denemesi, performans ölçümü veya
+    benchmark değildir. Kendi denemenizde diff'leri ve ölçümleri gözlemlerinizle
+    değiştirin.</p>
+    <p>Sayfa yapıştırdığınız diff'i çalıştırmaz. Değişikliği ayrı bir çalışma dalında
+    uygulayın, davranış testlerini çalıştırın ve sonucu forma kendiniz kaydedin.
+    Hassas kodu, kişisel veriyi veya gizli anahtarı bu forma ya da bir modele
+    yapıştırmayın.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/model-comparison/model_comparison_lab.py">model_comparison_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/model-comparison">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const TEST_RESULTS = ['geçti', 'geçmedi', 'çalıştırılmadı'];
+  const REPRESENTATIVE_RUNS = [
+    {
+      label: 'Deneme A',
+      diff: `@@
+ def normalize_labels(labels):
+-    normalized = []
+-    for label in labels:
+-        cleaned = label.strip().casefold()
+-        if cleaned:
+-            if cleaned not in normalized:
+-                normalized.append(cleaned)
+-    return normalized
++    cleaned = (label.strip().casefold() for label in labels)
++    return list(dict.fromkeys(label for label in cleaned if label))`,
+      testResult: 'geçti',
+      changedFiles: 1,
+      interfacePreserved: true,
+      readability: 4,
+      readabilityNote: 'Tekrarlanan koşulları kaldırıyor; iç içe üreteç ifadesi ilk okumada dikkat gerektiriyor.',
+      callCount: 2,
+      contextFit: true,
+      observation: 'Çözüm kısa ve testleri geçiyor; ancak üreteç ifadesi ekipteki yeni geliştiriciler için açıklama gerektirebilir.'
+    },
+    {
+      label: 'Deneme B',
+      diff: `@@
+ def normalize_labels(labels):
+     normalized = []
++    seen = set()
+     for label in labels:
+         cleaned = label.strip().casefold()
+-        if cleaned:
+-            if cleaned not in normalized:
+-                normalized.append(cleaned)
++        if cleaned and cleaned not in seen:
++            seen.add(cleaned)
++            normalized.append(cleaned)
+     return normalized`,
+      testResult: 'geçti',
+      changedFiles: 1,
+      interfacePreserved: true,
+      readability: 5,
+      readabilityNote: 'Tek koşul ve açık bir seen kümesi kullandığı için veri akışı kolay izleniyor.',
+      callCount: 3,
+      contextFit: true,
+      observation: 'Çözüm birkaç satır daha uzun; buna karşılık yinelenen etiket denetimini açıkça gösteriyor.'
+    }
+  ];
+
+  const DEFAULT_DECISION =
+    "Deneme B'yi seçtim; testler geçti, dışa açık arayüz korundu ve okunabilirlik " +
+    'notu daha güçlüydü. İki denemede de bağlam yeterliydi; Deneme A daha az çağrı ' +
+    'kullansa da bu fark tek başına kararı belirlemedi.';
+
+  const runGrid = document.getElementById('runGrid');
+  const result = document.getElementById('result');
+  const addRunBtn = document.getElementById('addRunBtn');
+
+  function createRunCard(data = {}) {
+    const card = document.createElement('article');
+    card.className = 'panel run-card';
+    card.innerHTML = `
+      <div class="run-head">
+        <h3 class="run-title"></h3>
+        <button class="remove" type="button">Kaldır</button>
+      </div>
+      <label>Deneme etiketi
+        <input class="run-label" type="text" autocomplete="off">
+      </label>
+      <label>Önerilen diff
+        <textarea class="diff" spellcheck="false"></textarea>
+      </label>
+      <div class="field-pair">
+        <label>Gözlenen test sonucu
+          <select class="test-result">
+            <option value="geçti">Geçti</option>
+            <option value="geçmedi">Geçmedi</option>
+            <option value="çalıştırılmadı">Çalıştırılmadı</option>
+          </select>
+        </label>
+        <label>Değişen dosya sayısı
+          <input class="changed-files" type="number" min="1" max="20" step="1">
+        </label>
+      </div>
+      <div class="field-pair">
+        <label>Dışa açık arayüz korundu mu?
+          <select class="interface-preserved">
+            <option value="true">Evet</option>
+            <option value="false">Hayır</option>
+          </select>
+        </label>
+        <label>Okunabilirlik puanı (1-5)
+          <input class="readability" type="number" min="1" max="5" step="1">
+        </label>
+      </div>
+      <label>Okunabilirlik gerekçesi
+        <textarea class="readability-note"></textarea>
+      </label>
+      <div class="field-pair">
+        <label>Toplam çağrı sayısı
+          <input class="call-count" type="number" min="1" max="100" step="1">
+        </label>
+        <label>Bağlam yeterli miydi?
+          <select class="context-fit">
+            <option value="true">Evet</option>
+            <option value="false">Hayır</option>
+          </select>
+        </label>
+      </div>
+      <label>Ek gözlem
+        <textarea class="observation"></textarea>
+      </label>`;
+
+    card.querySelector('.run-label').value = data.label ?? '';
+    card.querySelector('.diff').value = data.diff ?? '';
+    card.querySelector('.test-result').value = data.testResult ?? 'çalıştırılmadı';
+    card.querySelector('.changed-files').value = data.changedFiles ?? 1;
+    card.querySelector('.interface-preserved').value = String(data.interfacePreserved ?? true);
+    card.querySelector('.readability').value = data.readability ?? 3;
+    card.querySelector('.readability-note').value = data.readabilityNote ?? '';
+    card.querySelector('.call-count').value = data.callCount ?? 1;
+    card.querySelector('.context-fit').value = String(data.contextFit ?? true);
+    card.querySelector('.observation').value = data.observation ?? '';
+    card.querySelector('.remove').addEventListener('click', () => {
+      if (runGrid.children.length > 2) {
+        card.remove();
+        refreshCards();
+      }
+    });
+    runGrid.appendChild(card);
+    refreshCards();
+  }
+
+  function refreshCards() {
+    [...runGrid.children].forEach((card, index) => {
+      card.querySelector('.run-title').textContent = `${index + 1}. Deneme`;
+      card.querySelector('.remove').disabled = runGrid.children.length <= 2;
+    });
+    addRunBtn.disabled = runGrid.children.length >= 3;
+  }
+
+  function isCompleteText(text, minimumWords = 5) {
+    const stripped = text.trim();
+    return stripped.split(/\s+/).filter(Boolean).length >= minimumWords &&
+      '.?!'.includes(stripped.at(-1) ?? '');
+  }
+
+  function looksLikeTargetDiff(diff) {
+    const lines = diff.split('\n').filter(line => line.trim());
+    const hasAddition = lines.some(line => line.startsWith('+') && !line.startsWith('+++'));
+    return lines.length >= 3 && diff.includes('normalize_labels') && hasAddition;
+  }
+
+  function collectRuns() {
+    return [...runGrid.children].map(card => ({
+      label: card.querySelector('.run-label').value.trim(),
+      diff: card.querySelector('.diff').value,
+      testResult: card.querySelector('.test-result').value,
+      changedFiles: Number(card.querySelector('.changed-files').value),
+      interfacePreserved: card.querySelector('.interface-preserved').value === 'true',
+      readability: Number(card.querySelector('.readability').value),
+      readabilityNote: card.querySelector('.readability-note').value.trim(),
+      callCount: Number(card.querySelector('.call-count').value),
+      contextFit: card.querySelector('.context-fit').value === 'true',
+      observation: card.querySelector('.observation').value.trim()
+    }));
+  }
+
+  function validate() {
+    const errors = [];
+    const runs = collectRuns();
+    const decisionNote = document.getElementById('decisionNote').value.trim();
+
+    if (runs.length < 2 || runs.length > 3) {
+      errors.push('Karşılaştırma 2-3 deneme içermelidir.');
+    }
+
+    const seenLabels = new Set();
+    runs.forEach((run, index) => {
+      const label = `${index + 1}. deneme`;
+      const foldedLabel = run.label.toLocaleLowerCase('tr-TR');
+      if (!run.label) errors.push(`${label} etiketi boş bırakılamaz.`);
+      else if (seenLabels.has(foldedLabel)) {
+        errors.push(`${label} etiketi “${run.label}” yineleniyor.`);
+      } else seenLabels.add(foldedLabel);
+
+      if (!looksLikeTargetDiff(run.diff)) {
+        errors.push(`${label} diff'i normalize_labels fonksiyonunu ve bir ekleme satırını göstermelidir.`);
+      }
+      if (!TEST_RESULTS.includes(run.testResult)) {
+        errors.push(`${label} test sonucu geçerli seçeneklerden biri olmalıdır.`);
+      }
+      if (!Number.isInteger(run.changedFiles) || run.changedFiles < 1 || run.changedFiles > 20) {
+        errors.push(`${label} değişen dosya sayısı 1-20 arasında olmalıdır.`);
+      }
+      if (!Number.isInteger(run.readability) || run.readability < 1 || run.readability > 5) {
+        errors.push(`${label} okunabilirlik puanı 1-5 arasında olmalıdır.`);
+      }
+      if (!isCompleteText(run.readabilityNote)) {
+        errors.push(`${label} okunabilirlik notu tamamlanmış bir cümle olmalıdır.`);
+      }
+      if (!Number.isInteger(run.callCount) || run.callCount < 1 || run.callCount > 100) {
+        errors.push(`${label} çağrı sayısı 1-100 arasında olmalıdır.`);
+      }
+      if (!isCompleteText(run.observation, 6)) {
+        errors.push(`${label} gözlemi tamamlanmış bir cümle olmalıdır.`);
+      }
+    });
+
+    const normalizedNote = decisionNote.toLocaleLowerCase('tr-TR');
+    const requiredTerms = ['test', 'arayüz', 'okunabilir', 'çağrı', 'bağlam'];
+    if (!isCompleteText(decisionNote, 18) ||
+        requiredTerms.some(term => !normalizedNote.includes(term))) {
+      errors.push('Karar notu test, arayüz, okunabilirlik, çağrı ve bağlam gözlemlerini tamamlanmış cümlelerle açıklamalıdır.');
+    } else if (!runs.some(run =>
+      normalizedNote.startsWith(run.label.toLocaleLowerCase('tr-TR')))) {
+      errors.push('Karar notu tercih edilen deneme etiketini belirtmelidir.');
+    }
+    renderResult(errors, runs, decisionNote);
+  }
+
+  function appendTextElement(parent, tagName, text) {
+    const element = document.createElement(tagName);
+    element.textContent = text;
+    parent.appendChild(element);
+    return element;
+  }
+
+  function renderResult(errors, runs, decisionNote) {
+    result.replaceChildren();
+    if (errors.length) {
+      result.className = 'panel error';
+      appendTextElement(result, 'h2', 'Kabul Kriteri Karşılanmadı');
+      const list = document.createElement('ul');
+      errors.forEach(error => appendTextElement(list, 'li', error));
+      result.appendChild(list);
+      return;
+    }
+
+    result.className = 'panel success';
+    appendTextElement(result, 'h2', 'Karşılaştırma Kaydı Tamam');
+    appendTextElement(result, 'p', `${runs.length} deneme aynı görev tarifiyle kaydedildi.`);
+
+    const table = document.createElement('table');
+    table.className = 'summary-table';
+    const header = document.createElement('tr');
+    ['Deneme', 'Test', 'Dosya', 'Arayüz', 'Okunabilirlik', 'Çağrı', 'Bağlam'].forEach(text => {
+      appendTextElement(header, 'th', text);
+    });
+    const head = document.createElement('thead');
+    head.appendChild(header);
+    table.appendChild(head);
+    const body = document.createElement('tbody');
+    runs.forEach(run => {
+      const row = document.createElement('tr');
+      [
+        run.label,
+        run.testResult,
+        String(run.changedFiles),
+        run.interfacePreserved ? 'Korundu' : 'Değişti',
+        `${run.readability}/5`,
+        String(run.callCount),
+        run.contextFit ? 'Yeterli' : 'Yetersiz'
+      ].forEach(text => appendTextElement(row, 'td', text));
+      body.appendChild(row);
+    });
+    table.appendChild(body);
+    const tableWrap = document.createElement('div');
+    tableWrap.className = 'table-wrap';
+    tableWrap.appendChild(table);
+    result.appendChild(tableWrap);
+
+    const metrics = document.createElement('div');
+    metrics.className = 'metric-grid';
+    appendTextElement(
+      metrics,
+      'div',
+      `Testleri geçen deneme: ${runs.filter(run => run.testResult === 'geçti').length}/${runs.length}`
+    );
+    appendTextElement(
+      metrics,
+      'div',
+      `Arayüzü koruyan deneme: ${runs.filter(run => run.interfacePreserved).length}/${runs.length}`
+    );
+    appendTextElement(
+      metrics,
+      'div',
+      `Bağlamı yeterli deneme: ${runs.filter(run => run.contextFit).length}/${runs.length}`
+    );
+    result.appendChild(metrics);
+
+    const details = document.createElement('div');
+    details.className = 'detail-grid';
+    runs.forEach(run => {
+      const card = document.createElement('article');
+      card.className = 'panel detail-card';
+      appendTextElement(card, 'h3', run.label);
+      const diff = appendTextElement(card, 'pre', run.diff);
+      diff.setAttribute('aria-label', `${run.label} diff'i`);
+      appendTextElement(card, 'p', `Okunabilirlik: ${run.readabilityNote}`);
+      appendTextElement(card, 'p', `Gözlem: ${run.observation}`);
+      details.appendChild(card);
+    });
+    result.appendChild(details);
+    appendTextElement(result, 'p', `Karar notu: ${decisionNote}`);
+    appendTextElement(
+      result,
+      'p',
+      'Bu kayıt genel bir kazanan üretmez; karar yalnızca bu görevdeki gözlemlere dayanır.'
+    );
+  }
+
+  function resetRepresentativeData() {
+    runGrid.replaceChildren();
+    REPRESENTATIVE_RUNS.forEach(createRunCard);
+    document.getElementById('decisionNote').value = DEFAULT_DECISION;
+    result.className = 'panel';
+    result.replaceChildren();
+  }
+
+  addRunBtn.addEventListener('click', () => createRunCard());
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('resetBtn').addEventListener('click', resetRepresentativeData);
+  resetRepresentativeData();
+</script>
+</body>
+</html>
