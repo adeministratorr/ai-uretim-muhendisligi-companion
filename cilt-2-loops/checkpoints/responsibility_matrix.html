@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Sorumluluk Matrisi Laboratuvarı — Cilt 2, Bölüm 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 01
+book_section: "1.9 Bu Kitabın Kullanım Yöntemi"
+concepts:
+  - Sorumluluk Matrisi
+  - insan denetimi
+  - onay noktası
+objectives:
+  - "LO-1.6"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 1100px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 980px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--gray); }
+  th { font-size: .82rem; color: var(--muted); }
+  input {
+    width: 100%; min-width: 150px; padding: 8px; border: 1px solid var(--gray);
+    border-radius: 6px; background: var(--bg); color: var(--text); font: inherit;
+  }
+  input:focus { outline: 3px solid color-mix(in srgb, var(--teal) 35%, transparent); }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 12px 8px 0 0;
+  }
+  button.secondary { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+  button.remove { background: transparent; color: var(--error); border: 1px solid var(--gray); margin: 0; }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+</style>
+</head>
+<body>
+  <h1>Sorumluluk Matrisi Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 1 — 1.9, Uygulama 1. Her görevde
+  yapay zekâya devredilen işi, geliştiricide kalan sorumluluğu ve birlikte yürütülen işi
+  yazın. Ardından insan denetimini neden koruduğunuzu bir cümleyle açıklayın.</p>
+
+  <div class="panel">
+    <h2>Kavram — Sorumluluk Matrisi</h2>
+    <p>Sorumluluk matrisi, bir geliştirme sürecindeki görevleri satırlara; yapay zekâya
+    devredilen, geliştiricide kalan ve birlikte yürütülen işleri sütunlara yerleştirir.
+    Amaç işi bütünüyle araca bırakmak değildir. Kabul veya ret kararının kimde kaldığını
+    görünür kılmaktır.</p>
+    <p>Her satır bir onay noktasıdır. Örneğin yapay zekâ test taslağı önerebilir; kritik
+    senaryoyu seçmek ve test sonucunu yorumlamak geliştiricide kalabilir.</p>
+  </div>
+
+  <div class="panel">
+    <h2>Matrisinizi Doldurun</h2>
+    <p class="note">Kabul kriteri: 5-8 benzersiz görev, her satırda üç sorumluluk alanı
+    ve insan denetimi için en az üç kelimelik bir gerekçe cümlesi.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Görev</th>
+            <th>Yapay zekâya devredilen</th>
+            <th>Geliştiricide kalan</th>
+            <th>Birlikte yürütülen</th>
+            <th>İnsan denetiminin gerekçesi</th>
+            <th>Satır</th>
+          </tr>
+        </thead>
+        <tbody id="matrixBody"></tbody>
+      </table>
+    </div>
+    <button id="validateBtn" type="button">Matrisi Doğrula</button>
+    <button id="addBtn" class="secondary" type="button">Görev Ekle</button>
+    <button id="resetBtn" class="secondary" type="button">Örneği Geri Yükle</button>
+  </div>
+
+  <div class="panel" id="result" role="status" aria-live="polite"></div>
+
+  <p class="note"><strong>Temsilîlik notu:</strong> Başlangıç satırları örnektir; gerçek
+  bir ekip, proje veya üretim verisi anlatmaz. Kendi matrisinizi veri hassasiyetine, yetki
+  sınırlarına ve değişikliğin etkisine göre doldurun. Matris bir güvenlik denetimi değildir;
+  diff incelemesi, test ve insan onayı ayrıca uygulanmalıdır.</p>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/responsibility_matrix.py">responsibility_matrix.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz.</p>
+
+<script>
+  const SAMPLE_ROWS = [
+    ["Özellik geliştirme", "İlk kod taslağını oluşturur.", "Mimari kararı verir.", "Kabul kriterlerini netleştirir.", "Mimari karar ürünün sonraki değişikliklerini doğrudan etkiler."],
+    ["Kod inceleme", "Olası riskli satırları işaretler.", "Diff'i okuyup onaylar.", "Değişiklik gerekçesini değerlendirir.", "Kodun son sorumluluğu değişikliği onaylayan geliştiricide kalır."],
+    ["Test yazımı", "Test taslağı önerir.", "Kritik senaryoları seçer.", "Kapsam boşluklarını gözden geçirir.", "Kritik senaryolar iş kurallarını ve hata etkisini bilmeyi gerektirir."],
+    ["Hata ayıklama", "Hata nedenleri için hipotez üretir.", "Kanıtı doğrular.", "En küçük yeniden üretim adımını kurar.", "Bir hipotezin ikna edici görünmesi doğru olduğunu kanıtlamaz."],
+    ["Dokümantasyon", "İlk açıklama taslağını yazar.", "İçerik doğruluğunu denetler.", "Terimleri ve örnekleri gözden geçirir.", "Yanlış bir açıklama doğru kodun hatalı kullanılmasına yol açabilir."],
+    ["Üretime alma kararı", "Kontrol listesindeki bulguları özetler.", "Son onayı verir.", "Test ve diff sonuçlarını inceler.", "Üretim etkisi geri alma maliyeti ve kullanıcı riski taşır."]
+  ];
+
+  const body = document.getElementById('matrixBody');
+  const result = document.getElementById('result');
+
+  function addRow(values = ["", "", "", "", ""]) {
+    if (body.rows.length >= 8) return;
+    const row = document.createElement('tr');
+    const labels = ["Görev", "Yapay zekâya devredilen", "Geliştiricide kalan", "Birlikte yürütülen", "İnsan denetiminin gerekçesi"];
+    values.forEach((value, index) => {
+      const cell = document.createElement('td');
+      const input = document.createElement('input');
+      input.value = value;
+      input.setAttribute('aria-label', `${body.rows.length + 1}. satır — ${labels[index]}`);
+      cell.appendChild(input);
+      row.appendChild(cell);
+    });
+    const actionCell = document.createElement('td');
+    const removeButton = document.createElement('button');
+    removeButton.type = 'button';
+    removeButton.className = 'remove';
+    removeButton.textContent = 'Sil';
+    removeButton.setAttribute('aria-label', `${body.rows.length + 1}. satırı sil`);
+    removeButton.addEventListener('click', () => row.remove());
+    actionCell.appendChild(removeButton);
+    row.appendChild(actionCell);
+    body.appendChild(row);
+  }
+
+  function loadSample() {
+    body.innerHTML = '';
+    SAMPLE_ROWS.forEach(row => addRow(row));
+    result.className = 'panel';
+    result.innerHTML = '';
+  }
+
+  function isSentence(value) {
+    const words = value.trim().split(/\s+/).filter(Boolean);
+    return words.length >= 3 && /[.!?]$/.test(value.trim());
+  }
+
+  function validate() {
+    const rows = [...body.rows].map(row => [...row.querySelectorAll('input')].map(input => input.value.trim()));
+    const errors = [];
+    if (rows.length < 5 || rows.length > 8) errors.push('Matris 5-8 görev içermelidir.');
+
+    const seen = new Set();
+    const labels = ['Görev', 'Yapay zekâya devredilen', 'Geliştiricide kalan', 'Birlikte yürütülen'];
+    rows.forEach((values, rowIndex) => {
+      values.slice(0, 4).forEach((value, fieldIndex) => {
+        if (!value) errors.push(`${rowIndex + 1}. satırda “${labels[fieldIndex]}” alanı boş bırakılamaz.`);
+      });
+      const taskKey = values[0].toLocaleLowerCase('tr-TR');
+      if (taskKey && seen.has(taskKey)) errors.push(`${rowIndex + 1}. satırdaki “${values[0]}” görevi yineleniyor.`);
+      if (taskKey) seen.add(taskKey);
+      if (!isSentence(values[4])) errors.push(`${rowIndex + 1}. satırdaki gerekçe en az üç kelimelik bir cümle olmalıdır.`);
+    });
+
+    if (errors.length) {
+      result.className = 'panel error';
+      result.textContent = '';
+      const heading = document.createElement('strong');
+      heading.textContent = 'Kabul kriteri karşılanmadı.';
+      const list = document.createElement('ul');
+      errors.forEach(error => {
+        const item = document.createElement('li');
+        item.textContent = error;
+        list.appendChild(item);
+      });
+      result.append(heading, list);
+    } else {
+      result.className = 'panel success';
+      result.textContent = '';
+      const heading = document.createElement('strong');
+      heading.textContent = 'Kabul kriteri karşılandı.';
+      result.append(heading, ` ${rows.length} görevin sorumluluk alanları ve gerekçeleri tamam.`);
+    }
+  }
+
+  document.getElementById('validateBtn').addEventListener('click', validate);
+  document.getElementById('addBtn').addEventListener('click', () => addRow());
+  document.getElementById('resetBtn').addEventListener('click', loadSample);
+  loadSample();
+</script>
+</body>
+</html>
