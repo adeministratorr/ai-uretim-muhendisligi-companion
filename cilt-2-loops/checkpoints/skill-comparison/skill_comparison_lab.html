@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Üç Skill'i Karşılaştır Laboratuvarı — Cilt 2, Bölüm 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+volume: 2
+chapter: 10
+book_section: "10.3-10.10 Skill Anatomisi, Hazır Skill Kullanımı ve Doğrulama"
+concepts:
+  - Skill
+  - trigger koşulu
+  - örnek girdi/çıktı
+  - yasaklar
+objectives:
+  - "LO-10.1"
+  - "LO-10.2"
+  - "LO-10.4"
+last_verified: "2026-07"
+-->
+<style>
+  :root {
+    --navy: #1B2A4A; --teal: #2EC4B6; --orange: #FF9F1C; --gray: #c9d4e4;
+    --bg: #ffffff; --panel: #f7fbfb; --text: #1c1c1c; --muted: #5a6472;
+    --error: #9f2d2d; --success: #176b5c; --code-bg: #eef3f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12181f; --panel: #1a2230; --text: #e8edf3; --gray: #33415a;
+      --muted: #b6c0ce; --error: #ffaaaa; --success: #8ee6d7;
+      --code-bg: #111822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg); color: var(--text); margin: 0; padding: 24px;
+    max-width: 980px; margin-inline: auto; line-height: 1.5;
+  }
+  h1 { font-size: 1.35rem; color: var(--navy); }
+  h2 { font-size: 1.05rem; color: var(--navy); margin-top: 0; }
+  h3 { font-size: .96rem; margin: 0 0 6px; }
+  a { color: #16697a; }
+  @media (prefers-color-scheme: dark) {
+    h1, h2 { color: #bfe9e4; }
+    a { color: #7fd8ce; }
+  }
+  .lead, .note { color: var(--muted); }
+  .lead { margin-bottom: 24px; }
+  .note { font-size: .88rem; }
+  .panel {
+    background: var(--panel); border: 1px solid var(--gray); border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 16px;
+  }
+  .concept { border-left: 4px solid var(--teal); }
+  .trial-card { border-top: 3px solid var(--teal); }
+  .form-grid, .observation-grid, .metrics {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+  }
+  .observation-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .metrics { grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 14px; }
+  .metric { border-top: 2px solid var(--teal); padding-top: 8px; }
+  .metric strong { display: block; font-size: 1.12rem; }
+  label, legend { font-size: .86rem; color: var(--muted); font-weight: 700; }
+  label { display: block; }
+  input[type=text], textarea, select {
+    width: 100%; margin-top: 6px; padding: 9px 10px;
+    border: 1px solid var(--gray); border-radius: 7px;
+    background: var(--bg); color: var(--text); font: inherit;
+  }
+  textarea { min-height: 92px; resize: vertical; }
+  input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--teal) 55%, transparent);
+    outline-offset: 2px;
+  }
+  fieldset {
+    border: 1px solid var(--gray); border-radius: 8px; margin: 16px 0;
+    padding: 12px 14px;
+  }
+  legend { padding: 0 5px; }
+  .check-grid {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px;
+  }
+  .check-grid label { color: var(--text); font-weight: 400; }
+  input[type=checkbox] { accent-color: var(--teal); margin-right: 5px; }
+  button {
+    background: var(--navy); color: #fff; border: none; border-radius: 8px;
+    padding: 9px 14px; font-size: .9rem; cursor: pointer; margin: 0 8px 16px 0;
+  }
+  button.secondary {
+    background: transparent; color: var(--navy); border: 1.5px solid var(--navy);
+  }
+  button:hover { filter: brightness(1.12); }
+  @media (prefers-color-scheme: dark) {
+    button.secondary { color: #bfe9e4; border-color: #bfe9e4; }
+  }
+  #result { display: none; border-left: 4px solid var(--gray); }
+  #result.success { display: block; border-left-color: var(--success); }
+  #result.error { display: block; border-left-color: var(--error); }
+  #result ul { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  th, td { border-bottom: 1px solid var(--gray); padding: 8px; text-align: left; }
+  th { font-size: .84rem; color: var(--muted); }
+  .yes { color: var(--success); font-weight: 700; }
+  .no { color: var(--error); font-weight: 700; }
+  code { background: var(--code-bg); border-radius: 4px; padding: 1px 4px; }
+  @media (max-width: 760px) {
+    .form-grid, .observation-grid, .metrics, .check-grid { grid-template-columns: 1fr; }
+    .table-wrap { overflow-x: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto; transition: none; }
+  }
+</style>
+</head>
+<body>
+  <h1>Üç Skill'i Karşılaştır Laboratuvarı</h1>
+  <p class="lead">Kitap bağlantısı: Cilt 2, Bölüm 10 — 10.3-10.10 ve 10.12,
+  Uygulama 10. Kod inceleme, test yazma ve commit mesajı yazma skill'lerini gerçek
+  aracınızda birer kez deneyin; gözlemlerinizi aynı kayıt biçiminde karşılaştırın.</p>
+
+  <div class="panel concept">
+    <h2>Kavram — Gözlem Kaydı</h2>
+    <p>Bir skill dosyasının varlığı, doğru tetikleneceğini veya talimatı eksiksiz
+    uygulayacağını kanıtlamaz. Önce front matter, talimat, örnek girdi/çıktı ve
+    yasaklar bölümlerini okuyun. Sonra trigger koşuluna uygun küçük bir istekle
+    skill'i gerçek aracınızda deneyin.</p>
+    <p>Bu sayfa aracı taklit etmez ve skill çalıştırmaz. Denemeden sonra üç soruya
+    verdiğiniz cevabı kaydeder: Skill tetiklendi mi, talimatlar uygulandı mı,
+    yasaklara uyuldu mu? Bir cevap <em>hayır</em> olabilir. Kabul kapısı başarıyı
+    değil, üç denemenin eksiksiz kaydedilmesini ölçer.</p>
+  </div>
+
+  <section class="panel" aria-labelledby="steps-title">
+    <h2 id="steps-title">Deneme Sırası</h2>
+    <ol>
+      <li>Skill'in kaynağını ve klasördeki bütün dosyaları inceleyin.</li>
+      <li>Dört anatomi parçasını okuyup aşağıdaki kutuları işaretleyin.</li>
+      <li>Deneme isteğini kendi aracınızda çalıştırın.</li>
+      <li>Üç gözlemi çıktıdan okuyup evet veya hayır olarak kaydedin.</li>
+      <li>Olumsuz sonucu saklamayın; kısa notta nedenini ve sonraki adımı yazın.</li>
+    </ol>
+  </section>
+
+  <form id="comparisonForm" novalidate>
+    <section class="panel trial-card" data-task="kod inceleme" aria-labelledby="trial-1-title">
+      <h2 id="trial-1-title">1. Kod İnceleme</h2>
+      <div class="form-grid">
+        <label for="name-1">Skill adı
+          <input id="name-1" class="skill-name" type="text" value="pr-guvenlik-kontrolu">
+        </label>
+        <label for="source-1">Kaynak
+          <input id="source-1" class="source" type="text" value="Ekip kütüphanesi / güvenlik inceleme paketi">
+        </label>
+        <label for="trigger-1">Trigger koşulu
+          <input id="trigger-1" class="trigger" type="text" value="Kod incele, PR kontrol et veya benzer bir inceleme isteği">
+        </label>
+        <label for="request-1">Deneme isteği
+          <input id="request-1" class="request" type="text" value="Şu pull request diff'ini güvenlik ve test kapsamı açısından incele.">
+        </label>
+      </div>
+      <fieldset>
+        <legend>İncelenen anatomi parçaları</legend>
+        <div class="check-grid anatomy">
+          <label><input type="checkbox" value="front matter" checked>Front matter</label>
+          <label><input type="checkbox" value="talimat" checked>Talimat</label>
+          <label><input type="checkbox" value="örnek girdi/çıktı" checked>Örnek girdi/çıktı</label>
+          <label><input type="checkbox" value="yasaklar" checked>Yasaklar</label>
+        </div>
+      </fieldset>
+      <div class="observation-grid">
+        <label for="triggered-1">Skill tetiklendi mi?
+          <select id="triggered-1" class="triggered">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+        <label for="instructions-1">Talimatlar uygulandı mı?
+          <select id="instructions-1" class="instructions">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+        <label for="prohibitions-1">Yasaklara uyuldu mu?
+          <select id="prohibitions-1" class="prohibitions">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+      </div>
+      <label for="note-1">Karşılaştırma notu
+        <textarea id="note-1" class="comparison-note">Skill üç kontrolü raporladı; onay ya da dosya değişikliği yapmadı.</textarea>
+      </label>
+    </section>
+
+    <section class="panel trial-card" data-task="test yazma" aria-labelledby="trial-2-title">
+      <h2 id="trial-2-title">2. Test Yazma</h2>
+      <div class="form-grid">
+        <label for="name-2">Skill adı
+          <input id="name-2" class="skill-name" type="text" value="test-kapsami-hazirla">
+        </label>
+        <label for="source-2">Kaynak
+          <input id="source-2" class="source" type="text" value="Araç kütüphanesi / test destek paketi">
+        </label>
+        <label for="trigger-2">Trigger koşulu
+          <input id="trigger-2" class="trigger" type="text" value="Yalnızca test yaz ifadesi geçtiğinde devreye girer">
+        </label>
+        <label for="request-2">Deneme isteği
+          <input id="request-2" class="request" type="text" value="Bu hata için bir regresyon senaryosu ekle.">
+        </label>
+      </div>
+      <fieldset>
+        <legend>İncelenen anatomi parçaları</legend>
+        <div class="check-grid anatomy">
+          <label><input type="checkbox" value="front matter" checked>Front matter</label>
+          <label><input type="checkbox" value="talimat" checked>Talimat</label>
+          <label><input type="checkbox" value="örnek girdi/çıktı" checked>Örnek girdi/çıktı</label>
+          <label><input type="checkbox" value="yasaklar" checked>Yasaklar</label>
+        </div>
+      </fieldset>
+      <div class="observation-grid">
+        <label for="triggered-2">Skill tetiklendi mi?
+          <select id="triggered-2" class="triggered">
+            <option value="">Seçin</option><option value="evet">Evet</option><option value="hayir" selected>Hayır</option>
+          </select>
+        </label>
+        <label for="instructions-2">Talimatlar uygulandı mı?
+          <select id="instructions-2" class="instructions">
+            <option value="">Seçin</option><option value="evet">Evet</option><option value="hayir" selected>Hayır</option>
+          </select>
+        </label>
+        <label for="prohibitions-2">Yasaklara uyuldu mu?
+          <select id="prohibitions-2" class="prohibitions">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+      </div>
+      <label for="note-2">Karşılaştırma notu
+        <textarea id="note-2" class="comparison-note">Trigger koşulu dar kaldı; istek açık çağrıyla yeniden denenecek.</textarea>
+      </label>
+    </section>
+
+    <section class="panel trial-card" data-task="commit mesajı yazma" aria-labelledby="trial-3-title">
+      <h2 id="trial-3-title">3. Commit Mesajı Yazma</h2>
+      <div class="form-grid">
+        <label for="name-3">Skill adı
+          <input id="name-3" class="skill-name" type="text" value="commit-mesaji-oner">
+        </label>
+        <label for="source-3">Kaynak
+          <input id="source-3" class="source" type="text" value="Ekip kütüphanesi / Git çalışma paketi">
+        </label>
+        <label for="trigger-3">Trigger koşulu
+          <input id="trigger-3" class="trigger" type="text" value="Commit mesajı yazma veya önerme isteklerinde devreye girer">
+        </label>
+        <label for="request-3">Deneme isteği
+          <input id="request-3" class="request" type="text" value="Bu diff için kısa bir conventional commit mesajı öner.">
+        </label>
+      </div>
+      <fieldset>
+        <legend>İncelenen anatomi parçaları</legend>
+        <div class="check-grid anatomy">
+          <label><input type="checkbox" value="front matter" checked>Front matter</label>
+          <label><input type="checkbox" value="talimat" checked>Talimat</label>
+          <label><input type="checkbox" value="örnek girdi/çıktı" checked>Örnek girdi/çıktı</label>
+          <label><input type="checkbox" value="yasaklar" checked>Yasaklar</label>
+        </div>
+      </fieldset>
+      <div class="observation-grid">
+        <label for="triggered-3">Skill tetiklendi mi?
+          <select id="triggered-3" class="triggered">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+        <label for="instructions-3">Talimatlar uygulandı mı?
+          <select id="instructions-3" class="instructions">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+        <label for="prohibitions-3">Yasaklara uyuldu mu?
+          <select id="prohibitions-3" class="prohibitions">
+            <option value="">Seçin</option><option value="evet" selected>Evet</option><option value="hayir">Hayır</option>
+          </select>
+        </label>
+      </div>
+      <label for="note-3">Karşılaştırma notu
+        <textarea id="note-3" class="comparison-note">Skill yalnızca mesaj önerdi; commit atmadı ve diff'i değiştirmedi.</textarea>
+      </label>
+    </section>
+
+    <button type="submit">Karşılaştırmayı Doğrula</button>
+    <button id="resetBtn" class="secondary" type="reset">Örneği Geri Yükle</button>
+  </form>
+
+  <section class="panel" id="result" aria-live="polite"></section>
+
+  <div class="panel">
+    <h2>Temsilîlik Notu</h2>
+    <p>Başlangıçta görünen skill adları, kaynaklar ve deneme sonuçları kurgusaldır.
+    Yalnızca Bölüm 10'daki karşılaştırma yöntemini göstermek için hazırlanmıştır;
+    gerçek bir ekip kütüphanesi, ürün davranışı veya güvenlik denetimi değildir.</p>
+    <p>Bu sayfa bir skill'i yükleyemez ve ajanın bağlamını göremez. Seçtiğiniz
+    cevapları yapısal olarak denetler. Trigger'ın gerçekten çalıştığını, talimatın
+    eksiksiz uygulandığını ve yasakların mekanik olarak engellendiğini insan ayrıca
+    doğrulamalıdır.</p>
+  </div>
+
+  <p class="note">Aynı laboratuvarın test edilmiş Python sürümü
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/blob/main/cilt-2-loops/checkpoints/skill-comparison/skill_comparison_lab.py">skill_comparison_lab.py</a>
+  dosyasındadır; çalıştırma adımları için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion/tree/main/cilt-2-loops/checkpoints/skill-comparison">laboratuvarın README sayfasına</a>,
+  öteki laboratuvarlar için
+  <a href="https://github.com/adeministratorr/ai-uretim-muhendisligi-companion">Kitap Destek Deposu ana sayfasına</a>
+  bakabilirsiniz. Son doğrulama: 2026-07.</p>
+
+<script>
+  const REQUIRED_ANATOMY = ['front matter', 'talimat', 'örnek girdi/çıktı', 'yasaklar'];
+  const EMAIL_PATTERN = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/;
+  const CREDENTIAL_PATTERN = /(api[_ -]?key|secret|token|password|şifre|parola)\s*[:=]\s*[\x60'"]?[^\s\x60'"]{4,}/i;
+  const form = document.getElementById('comparisonForm');
+  const result = document.getElementById('result');
+
+  function normalized(text) {
+    return text.trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr-TR');
+  }
+
+  function readTrials() {
+    return [...document.querySelectorAll('.trial-card')].map(card => ({
+      task: card.dataset.task,
+      skillName: card.querySelector('.skill-name').value.trim(),
+      source: card.querySelector('.source').value.trim(),
+      triggerCondition: card.querySelector('.trigger').value.trim(),
+      anatomyParts: [...card.querySelectorAll('.anatomy input:checked')].map(input => input.value),
+      testRequest: card.querySelector('.request').value.trim(),
+      triggered: card.querySelector('.triggered').value,
+      instructionsApplied: card.querySelector('.instructions').value,
+      prohibitionsRespected: card.querySelector('.prohibitions').value,
+      comparisonNote: card.querySelector('.comparison-note').value.trim()
+    }));
+  }
+
+  function validateTrials(trials) {
+    const errors = [];
+    const names = trials.map(trial => normalized(trial.skillName)).filter(Boolean);
+    const requests = trials.map(trial => normalized(trial.testRequest)).filter(Boolean);
+    if (new Set(names).size !== names.length) errors.push('Skill adları yinelenmemelidir.');
+    if (new Set(requests).size !== requests.length) errors.push('Her skill farklı bir deneme isteğiyle sınanmalıdır.');
+
+    trials.forEach((trial, index) => {
+      const label = trial.skillName || `${index + 1}. kayıt`;
+      const fields = {
+        'skill adı': trial.skillName,
+        'kaynak': trial.source,
+        'trigger koşulu': trial.triggerCondition,
+        'deneme isteği': trial.testRequest,
+        'karşılaştırma notu': trial.comparisonNote
+      };
+      Object.entries(fields).forEach(([name, value]) => {
+        if (!value) errors.push(`${label}: ${name} boş bırakılamaz.`);
+      });
+      if (trial.comparisonNote && trial.comparisonNote.split(/\s+/).length < 4) {
+        errors.push(`${label}: karşılaştırma notu sonucu açıklamalıdır.`);
+      }
+
+      const anatomy = new Set(trial.anatomyParts.map(normalized));
+      const missing = REQUIRED_ANATOMY.filter(part => !anatomy.has(normalized(part)));
+      if (missing.length) errors.push(`${label}: incelenmeyen anatomi parçası: ${missing.join(', ')}.`);
+
+      const observations = {
+        'trigger gözlemi': trial.triggered,
+        'talimat gözlemi': trial.instructionsApplied,
+        'yasaklar gözlemi': trial.prohibitionsRespected
+      };
+      Object.entries(observations).forEach(([name, value]) => {
+        if (!value) errors.push(`${label}: ${name} evet veya hayır olmalıdır.`);
+      });
+
+      const combined = [trial.skillName, trial.source, trial.triggerCondition,
+        trial.testRequest, trial.comparisonNote].join('\n');
+      if (EMAIL_PATTERN.test(combined) || CREDENTIAL_PATTERN.test(combined)) {
+        errors.push(`${label}: kayıt hassas veri örüntüsü içeriyor; örnek veri kullanın.`);
+      }
+    });
+
+    return { errors, trials };
+  }
+
+  function answerLabel(value) {
+    return value === 'evet'
+      ? '<span class="yes">Evet</span>'
+      : '<span class="no">Hayır</span>';
+  }
+
+  function escapeHtml(text) {
+    return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+  }
+
+  function renderReport(report) {
+    const success = report.errors.length === 0;
+    result.className = `panel ${success ? 'success' : 'error'}`;
+    if (!success) {
+      result.innerHTML = `<h2>Kabul kriteri karşılanmadı</h2><ul>${report.errors
+        .map(error => `<li>${escapeHtml(error)}</li>`).join('')}</ul>`;
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    const triggerCount = report.trials.filter(trial => trial.triggered === 'evet').length;
+    const instructionCount = report.trials.filter(trial => trial.instructionsApplied === 'evet').length;
+    const prohibitionCount = report.trials.filter(trial => trial.prohibitionsRespected === 'evet').length;
+    const anatomyCount = report.trials.filter(trial => trial.anatomyParts.length === 4).length;
+    const attentionCount = report.trials.filter(trial =>
+      [trial.triggered, trial.instructionsApplied, trial.prohibitionsRespected].includes('hayir')
+    ).length;
+    const rows = report.trials.map(trial => `
+      <tr>
+        <td>${escapeHtml(trial.task)}</td>
+        <td>${escapeHtml(trial.skillName)}</td>
+        <td>${answerLabel(trial.triggered)}</td>
+        <td>${answerLabel(trial.instructionsApplied)}</td>
+        <td>${answerLabel(trial.prohibitionsRespected)}</td>
+      </tr>`).join('');
+
+    result.innerHTML = `
+      <h2>Kabul kriteri karşılandı</h2>
+      <p>Üç skill denendi ve karşılaştırma kaydı tamamlandı. Olumsuz gözlemler
+      incelenecek skill sayısına yansıtıldı.</p>
+      <div class="metrics">
+        <div class="metric"><strong>3/3</strong>görev</div>
+        <div class="metric"><strong>${anatomyCount}/3</strong>anatomi</div>
+        <div class="metric"><strong>${triggerCount}/3</strong>trigger</div>
+        <div class="metric"><strong>${instructionCount}/3</strong>talimat</div>
+        <div class="metric"><strong>${prohibitionCount}/3</strong>yasaklar</div>
+        <div class="metric"><strong>${attentionCount}</strong>incelenecek</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Görev</th><th>Skill</th><th>Trigger</th><th>Talimat</th><th>Yasaklar</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    renderReport(validateTrials(readTrials()));
+  });
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    result.className = 'panel';
+    result.innerHTML = '';
+  });
+</script>
+</body>
+</html>
