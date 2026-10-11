@@ -34,3 +34,7 @@ Yeni bir örnek, lab, tool, MCP server, eval veya production akışı eklemeden 
 
 Bu repoda çalışan insan katkıları ve coding agent'lar `AGENTS.md` dosyasındaki kurallara
 tabidir (özellikle Bölüm 3 "Yasaklı Davranışlar" ve Bölüm 6 "Tool Permission Kuralı").
+
+## Model Watch bakımı
+
+Yayın kapsamı, iki dilli güncelleme düzeni ve doğrulama komutları: [Türkçe bakım rehberi](docs/model-watch/MAINTENANCE.md) · [English maintenance guide](docs/model-watch/MAINTENANCE.en.md). Bu rehberler ve destek dosyaları siteye yayımlanmaz.

@@ -17,8 +17,7 @@ The purpose is not to crown a new champion every month. A model being **announce
 | [Global model ecosystem](kuresel-modeller.md) | OpenAI, Claude, Gemini/Gemma, Grok, Meta/Llama, Mistral, and others | Readers comparing a broad set of options |
 | [Model selection and evaluation](model-secimi-ve-olcum.md) | Task-based selection, cost, Turkish-language quality, test matrices, and benchmark literacy | Project builders and educators |
 | [Migration and API compatibility](gecis-ve-uyumluluk.md) | Aging model identifiers, alias risks, regression tests | People maintaining working systems |
-| [Sources and update principles](kaynaklar-ve-guncelleme.md) | Primary sources, evidence labels, update and contribution rules | Contributors and coding agents |
-| [Shared model data](../data/README.en.md) | 29 model records, the JSON data layer, and the validator | Developers working on bilingual publishing and automation |
+| [Sources and evidence levels](kaynaklar-ve-guncelleme.md) | Primary sources, evidence labels, and uncertainties | Readers checking the evidence |
 
 ## Essential distinctions
 
@@ -38,21 +37,6 @@ The purpose is not to crown a new champion every month. A model being **announce
 | **3 — Agent Engineering** | Tool calls, permission boundaries, long tasks, MCP, memory, and rollback |
 | **4 — AI-Native Production** | Gateways, cost, routing, observability, regression tests, and safe upgrades |
 
-## Update schedule
+## When citing these pages
 
-| Frequency | What to check |
-|---|---|
-| Weekly (priority events) | API availability of new models, retirement dates, pricing/license changes, breaking changes |
-| Monthly | Provider/model tables, official identifiers, access regions, token windows, open weights, and licenses |
-| Quarterly | Task-based tests, Turkish quality, long context, agent reliability, DORA, and industry data |
-| Every book/lab update | Whether example model identifiers and parameters match current documentation |
-
-## Bilingual publishing layout
-
-**Turkish is the source edition:** `docs/model-watch/tr/`. The English edition is in `docs/model-watch/en/`. Paired guides retain their filenames, section order, table columns, and source links. Each English document carries its own translation-review date, separately from the source-review date. A translation review does not mean the technical information was reverified. Both editions use the same `data/models.json` catalog. The parent README provides language selection.
-
-## For readers and contributors
-
-When citing these pages, distinguish the **document date** from the **model release date**. When reporting an error or a new version, include the official source link, the changed field, and the review date. [CONTRIBUTING.md](../../../CONTRIBUTING.md) governs contributions; [AGENTS.md](../../../AGENTS.md) defines coding-agent boundaries. These repository policies are currently in Turkish.
-
-**Working principle:** Model names can change; verification, testing, and the ability to roll back should remain.
+Distinguish the **document date** from the **model release date**. A source review does not imply live API or independent performance testing.

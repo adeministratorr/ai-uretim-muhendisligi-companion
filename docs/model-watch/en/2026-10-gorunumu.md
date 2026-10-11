@@ -20,23 +20,34 @@
 10. **Moonshot — Kimi K3:** Announced on **July 22**, with available model weights. The **Kimi K3 license** includes additional conditions, particularly for large commercial services. API subscriptions and consumer memberships are different forms of access. [Announcements](https://forum.moonshot.ai/c/announcement/5) · [Weights and license](https://huggingface.co/moonshotai/Kimi-K3)
 11. **MiniMax — M3:** Model weights, an API, and plans advertised with 1M context are available. The **MiniMax Community License** includes visible attribution/notice requirements for commercial applications and permission requirements above certain thresholds; do not label it Apache or MIT. [Model](https://huggingface.co/MiniMaxAI/MiniMax-M3) · [Plans](https://platform.minimax.io/subscribe/token-plan)
 
-## Quick reference: why consider each model family?
+## Quick reference: API access and weight releases
 
-| Family / representative | Area of interest | Access / status | Important note |
+**Status as of October 11, 2026.** API access and downloadable weights have separate columns. “Listed in API catalog” means documented catalog membership; it does not establish a successful call from our account or GA status. “—” means a weight release for that version was not verified in this review. **B** marks uncertainty between sources. Region, account, and quota requirements still apply.
+
+| Model / version and source | API access / status | Weight release | Important note |
 |---|---|---|---|
-| OpenAI GPT-6.1 Sol / Astra / Luna | Coding, agents, intensive production work, lightweight classification | API | Product plans and API capabilities differ |
-| Claude Opus/Sonnet/Haiku 5.5, Fable 5.1 | Long tasks, coding and agents, cost balance | API / product | Measure pricing and token consumption |
-| Gemini 3.8 Flash / 3.1 Pro Preview | Multimodal input, long context, tools | Flash GA / Pro preview | Keep a migration plan for previews |
-| Grok 4.7 | Coding, tool calling, general tasks | API | Live data requires web/X tools |
-| Meta Muse Spark 1.1 / Llama 4 | Application API / open-weight evaluation | Separate product lines | Do not confuse Muse with Llama weights |
-| Mistral Large 4 / Large 3 | Europe-focused API and self-hosting strategy | L4 preview / L3 open weights | Track L4 weight releases through announcements |
-| Qwen 3.8 | Chinese and global APIs, capable local options | API + selected open weights | Licenses vary by model size |
-| DeepSeek V4.1-Flash / V4-Pro | Cost sensitivity, long context, coding | API + weights | Test alias routing |
-| GLM 5.3 / Flash | Coding, long agent tasks, self-hosting | API + weights | Custom license / infrastructure |
-| Kimi K3 | Multimodal and long-context agents | API + weights | Separate commercial license conditions |
-| MiniMax M3 | Coding, multimodal input, long context | API + weights | Read the Community license |
-| Doubao Seed 2.1 | Chinese cloud ecosystem, multiple latency tiers | Volcengine API | Regional access and version identifiers |
-| ERNIE 5.1 / Hunyuan / MiMo 2.5 | Alternative Chinese cloud/local models | Provider-dependent | Verify distribution and release status separately |
+| [OpenAI GPT-6.1 Sol / GPT-6 Astra / GPT-6 Luna](https://developers.openai.com/api/docs/models/all) | Listed in API catalog | — | Product subscriptions do not establish API access |
+| [Claude Opus / Sonnet / Haiku 5.5, Fable 5.1](https://platform.claude.com/docs/en/models/overview) | Listed in Claude API catalog | — | Chat products and API access are separate |
+| [Gemini 3.8 Flash](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash) | Gemini API; stable release (GA) | — | `gemini-3.8-flash` |
+| [Gemini 3.1 Pro Preview](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview) | Gemini API; preview | — | `gemini-3.1-pro-preview` |
+| [Grok 4.7](https://docs.x.ai/developers/models) | Listed in xAI API catalog | — | Live information requires a search tool |
+| [Meta Muse Spark 1.1](https://ai.meta.com/blog/introducing-muse-spark-meta-model-api) | Meta Model API; public preview | — | Separate from Llama weight releases |
+| [Meta Llama 4 Scout / Maverick](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) | Depends on hosting provider | Released | Downloads and use are subject to the Llama license |
+| [Mistral Large 4](https://mistral.ai/news/mistral-large-4/) | Mistral API; public preview | Not yet released | Weights planned for late October |
+| [Mistral Large 3](https://docs.mistral.ai/models/mistral-large-3-25-12) | Mistral API; GA | Released | Distinct from Large 4 |
+| [Qwen3.8 Max / Flash](https://www.alibabacloud.com/help/en/model-studio/models) | Listed in Model Studio API catalog | Exact match to API IDs not verified | Select region and snapshot separately |
+| [Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) | This row covers the weight release | Released | Not treated as the Max/Flash API entry |
+| [Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) | This row covers the weight release | Released | Different license from 27B |
+| [DeepSeek V4.1-Flash](https://api-docs.deepseek.com/news/news260910/) | API available; `deepseek-flash` | [Released](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash) | Legacy V4-Flash IDs route to this version |
+| [DeepSeek V4-Pro](https://api-docs.deepseek.com/quick_start/pricing-details-cny/) | ID listed; routing uncertain (B) | [Released](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) | Actual serving version not verified via API |
+| [GLM-5.3](https://huggingface.co/zai-org/GLM-5.3) | [Z.ai API](https://github.com/zai-org/GLM-5) | Released | Custom GLM-5.3 license |
+| [GLM-5.3-Flash](https://github.com/zai-org/GLM-5) | Z.ai API | Released | Do not assume the same license as 5.3 |
+| [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3) | Kimi API; `kimi-k3` | Released | Kimi K3 license; membership and API differ |
+| [MiniMax M3](https://huggingface.co/MiniMaxAI/MiniMax-M3) | MiniMax API | Released | Community license; separate plan terms |
+| [Doubao Seed 2.1 Pro](https://docs.volcengine.com/docs/ark/model-list?lang=en) | Listed in Volcengine API catalog | — | `doubao-seed-2-1-pro-260915` |
+| [ERNIE 5.1](https://ai.baidu.com/ai-doc/AISTUDIO/Mmhslv9lf) | Listed in AI Studio API catalog | — | Thinking section is labeled preview |
+| [Tencent HY3 Preview](https://cloud.tencent.com/document/product/1729/131925) | TokenHub migration target; preview | — | `hy3-preview`; does not represent all Hunyuan models |
+| [Xiaomi MiMo V2.5](https://github.com/XiaomiMiMo) | Not verified for this version | Not verified for this version | Watch entry; the older MiMo repository is not V2.5 evidence |
 
 ## Making a decision
 

@@ -20,23 +20,34 @@
 10. **Moonshot — Kimi K3:** **22 Temmuz** duyuruldu; model ağırlıkları mevcut ve **Kimi K3 lisansının** özellikle büyük ölçekli ticari hizmetler için ek koşulları var. API aboneliği ile tüketici üyeliği aynı erişim biçimi değildir. [Duyurular](https://forum.moonshot.ai/c/announcement/5) · [Ağırlıklar ve lisans](https://huggingface.co/moonshotai/Kimi-K3)
 11. **MiniMax — M3:** Model ağırlıkları, API ve 1M bağlamla pazarlanan planlar mevcut. **MiniMax Community License** ticari uygulamalar için görünür atıf/bildirim ve belirli ölçekte izin şartları içeriyor; Apache/MIT gibi yazılmamalı. [Model](https://huggingface.co/MiniMaxAI/MiniMax-M3) · [Planlar](https://platform.minimax.io/subscribe/token-plan)
 
-## Hızlı referans: Hangi model ailesine neden bakıyoruz?
+## Hızlı referans: API erişimi ve ağırlık yayını
 
-| Aile / temsilci | İlgi alanı | Erişim / durum | Önemli kayıt |
+**Durum tarihi: 11 Ekim 2026.** API erişimi ile indirilebilir ağırlıklar ayrı sütunlardadır. “API kataloğunda”, modelin belgelerde listelendiğini belirtir; hesabımızla çağrı yapıldığını veya GA durumunu kanıtlamaz. “—”, bu incelemede o sürüm için ağırlık yayınının doğrulanmadığı anlamına gelir. **B**, kaynaklar arasında belirsizlik bulunduğunu gösterir. Bölge, hesap ve kota koşulları ayrıca geçerlidir.
+
+| Model / sürüm ve kaynak | API erişimi / durumu | Ağırlık yayını | Önemli kayıt |
 |---|---|---|---|
-| OpenAI GPT-6.1 Sol / Astra / Luna | Kod, ajan, yoğun üretim, hafif sınıflandırma | API | Ürün planı ve API yetenekleri farklı |
-| Claude Opus/Sonnet/Haiku 5.5, Fable 5.1 | Uzun görev, kod ve ajan, maliyet dengesi | API / ürün | Fiyatı ve token tüketimini ölç |
-| Gemini 3.8 Flash / 3.1 Pro Preview | Çok biçimli girdi, uzun bağlam, araçlar | Flash GA / Pro önizleme | Preview için geçiş planı tut |
-| Grok 4.7 | Kod, araç çağrısı, genel görevler | API | Canlı veri için web/X araçları şart |
-| Meta Muse Spark 1.1 / Llama 4 | Uygulama API'si / açık ağırlık değerlendirmesi | Ayrı ürün hatları | Muse ağırlıklarını Llama sanma |
-| Mistral Large 4 / Large 3 | Avrupa odaklı API ve self-host stratejisi | L4 önizleme / L3 açık ağırlık | L4 ağırlıklarını duyuruya göre izle |
-| Qwen 3.8 | Çin ve küresel API, güçlü yerel seçenekler | API + seçili açık ağırlıklar | Model boyutuna göre lisans farklı |
-| DeepSeek V4.1-Flash / V4-Pro | Maliyet duyarlılığı, uzun bağlam, kod | API + ağırlıklar | Alias yönlendirmesini test et |
-| GLM 5.3 / Flash | Kodlama, uzun ajan görevleri, self-host | API + ağırlıklar | Özel lisans / altyapı |
-| Kimi K3 | Multimodal ve uzun bağlam ajanları | API + ağırlıklar | Ayrı ticari lisans koşulları |
-| MiniMax M3 | Kod, çok biçimli girdi, uzun bağlam | API + ağırlıklar | Community lisansına bak |
-| Doubao Seed 2.1 | Çin bulut ekosistemi, çeşitli gecikme katmanları | Volcengine API | Bölgesel erişim ve sürüm kimliği |
-| ERNIE 5.1 / Hunyuan / MiMo 2.5 | Alternatif Çin bulut/yerel modelleri | Sağlayıcıya bağlı | Dağıtım ve sürüm durumu ayrı doğrulanmalı |
+| [OpenAI GPT-6.1 Sol / GPT-6 Astra / GPT-6 Luna](https://developers.openai.com/api/docs/models/all) | API kataloğunda | — | Ürün üyeliği API erişimi sağlamaz |
+| [Claude Opus / Sonnet / Haiku 5.5, Fable 5.1](https://platform.claude.com/docs/en/models/overview) | Claude API kataloğunda | — | Sohbet ürünü ve API ayrı erişimlerdir |
+| [Gemini 3.8 Flash](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash) | Gemini API; kararlı sürüm (GA) | — | `gemini-3.8-flash` |
+| [Gemini 3.1 Pro Preview](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-pro-preview) | Gemini API; önizleme | — | `gemini-3.1-pro-preview` |
+| [Grok 4.7](https://docs.x.ai/developers/models) | xAI API kataloğunda | — | Canlı bilgi için arama aracı gerekir |
+| [Meta Muse Spark 1.1](https://ai.meta.com/blog/introducing-muse-spark-meta-model-api) | Meta Model API; herkese açık önizleme | — | Llama ağırlıklarından ayrı model |
+| [Meta Llama 4 Scout / Maverick](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) | Barındırıcıya göre değişir | Yayımlandı | İndirme ve kullanım Llama lisansına bağlı |
+| [Mistral Large 4](https://mistral.ai/news/mistral-large-4/) | Mistral API; herkese açık önizleme | Henüz yayımlanmadı | Ağırlıklar ekim sonu için planlanıyor |
+| [Mistral Large 3](https://docs.mistral.ai/models/mistral-large-3-25-12) | Mistral API; GA | Yayımlandı | Large 4 ile karıştırılmamalı |
+| [Qwen3.8 Max / Flash](https://www.alibabacloud.com/help/en/model-studio/models) | Model Studio API kataloğunda | API kimliğiyle birebir eşlik doğrulanmadı | Bölge ve snapshot ayrıca seçilir |
+| [Qwen3.8-27B](https://huggingface.co/Qwen/Qwen3.8-27B) | Bu satır ağırlık dağıtımına ait | Yayımlandı | API Max/Flash kaydıyla aynı sayılmaz |
+| [Qwen3.8-2.4T-A95B](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) | Bu satır ağırlık dağıtımına ait | Yayımlandı | 27B ile lisansı aynı değil |
+| [DeepSeek V4.1-Flash](https://api-docs.deepseek.com/news/news260910/) | API açık; `deepseek-flash` | [Yayımlandı](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash) | Eski V4-Flash kimlikleri bu sürüme yönleniyor |
+| [DeepSeek V4-Pro](https://api-docs.deepseek.com/quick_start/pricing-details-cny/) | Kimlik listeleniyor; yönlendirme belirsiz (B) | [Yayımlandı](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) | API yanıtında gerçek sürüm doğrulanmadı |
+| [GLM-5.3](https://huggingface.co/zai-org/GLM-5.3) | [Z.ai API](https://github.com/zai-org/GLM-5) | Yayımlandı | GLM-5.3 özel lisansı |
+| [GLM-5.3-Flash](https://github.com/zai-org/GLM-5) | Z.ai API | Yayımlandı | 5.3 ile aynı lisans varsayılmaz |
+| [Kimi K3](https://huggingface.co/moonshotai/Kimi-K3) | Kimi API; `kimi-k3` | Yayımlandı | Kimi K3 lisansı; üyelik/API ayrımı |
+| [MiniMax M3](https://huggingface.co/MiniMaxAI/MiniMax-M3) | MiniMax API | Yayımlandı | Community lisansı; plan şartları ayrı |
+| [Doubao Seed 2.1 Pro](https://docs.volcengine.com/docs/ark/model-list?lang=en) | Volcengine API kataloğunda | — | `doubao-seed-2-1-pro-260915` |
+| [ERNIE 5.1](https://ai.baidu.com/ai-doc/AISTUDIO/Mmhslv9lf) | AI Studio API kataloğunda | — | Thinking bölümü önizleme olarak etiketli |
+| [Tencent HY3 Preview](https://cloud.tencent.com/document/product/1729/131925) | TokenHub geçiş hedefi; önizleme | — | `hy3-preview`; tüm Hunyuan ailesini temsil etmez |
+| [Xiaomi MiMo V2.5](https://github.com/XiaomiMiMo) | Bu sürüm için doğrulanmadı | Bu sürüm için doğrulanmadı | İzleme kaydı; eski MiMo deposu V2.5 kanıtı sayılmaz |
 
 ## Karar verirken
 

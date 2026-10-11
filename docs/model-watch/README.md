@@ -20,21 +20,4 @@ A current companion to the four-volume book series for model selection, API comp
 | [Küresel model ekosistemi](tr/kuresel-modeller.md) | [Global model ecosystem](en/kuresel-modeller.md) |
 | [Model seçimi ve ölçüm](tr/model-secimi-ve-olcum.md) | [Model selection and measurement](en/model-secimi-ve-olcum.md) |
 | [Geçiş ve API uyumluluğu](tr/gecis-ve-uyumluluk.md) | [Migration and API compatibility](en/gecis-ve-uyumluluk.md) |
-| [Kaynaklar ve güncelleme ilkeleri](tr/kaynaklar-ve-guncelleme.md) | [Sources and update standards](en/kaynaklar-ve-guncelleme.md) |
-| [Ortak veri sözlüğü](data/README.md) | [Shared data reference](data/README.en.md) |
-
-## Ortak katalog / Shared catalog
-
-[models.json](data/models.json): **29 model kaydı / model records · 16 sağlayıcı / providers**.
-
-Depo kökünde doğrulama / Validate from the repository root:
-
-```bash
-python3 docs/model-watch/scripts/validate.py
-```
-
-Bu komut JSON yapısını ve her iki dilin yerel Markdown bağlantılarını kontrol eder; dış kaynakları, fiyatları ve API davranışını doğrulamaz.
-
-This command checks JSON structure and local Markdown links in both languages; it does not verify external sources, prices, or API behavior.
-
-[Katkı rehberi / Contribution guide](../../CONTRIBUTING.md) · [Ajan kuralları / Agent rules](../../AGENTS.md) — depo politikaları Türkçedir / repository policies are in Turkish.
+| [Kaynaklar ve kanıt düzeyleri](tr/kaynaklar-ve-guncelleme.md) | [Sources and evidence levels](en/kaynaklar-ve-guncelleme.md) |
