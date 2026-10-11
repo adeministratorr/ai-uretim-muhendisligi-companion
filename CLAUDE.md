@@ -20,6 +20,7 @@ Ana cilt klasörleri:
 ## Çalışma Standardı
 
 - Önce ilgili bölümü ve README dosyasını oku.
+- Commit mesajlarına veya PR açıklamalarına Claude/Anthropic için otomatik ortak yazarlık (`Co-Authored-By`) ya da araç imzası ekleme.
 - Kapsam dışı refactor yapma.
 - Türkçe açıklama yaz; teknik terimleri ilk kullanımda İngilizce karşılığıyla ver. Terim çevirilerinde seri sözlüğüne bağlı kal; aynı kavrama iki farklı Türkçe karşılık kullanma.
 - Kod örneği öğretici ama oyuncak problem düzeyinde kalmayacak kadar gerçekçi olmalı.

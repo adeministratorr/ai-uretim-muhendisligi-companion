@@ -4,6 +4,26 @@ Bu dosya, kitap/web/repo güncellemelerini sürüm bazlı kaydeder.
 
 ## [Yayınlanmadı]
 
+### Model Watch İngilizce sürümleri (2026-10-11)
+
+- Altı rehberin ve giriş sayfasının İngilizce karşılıkları `docs/model-watch/en/`
+  altına eklendi; veri sözlüğü `data/README.en.md` dosyasında açıklandı.
+- Ana README iki dilli belge dizinine dönüştü; Türkçe giriş `tr/README.md`
+  dosyasına taşındı. Belge çiftlerine karşılıklı dil bağlantıları eklendi.
+- Kaynak inceleme ve çeviri kontrol tarihleri ayrıldı. Kaynak URL'leri, model
+  kimlikleri, sayısal değerler, tablo yapıları ve örnekler korundu; JSON katalog
+  tek kopya olarak bırakıldı. Çeviri yeni bir teknik/API doğrulaması sayılmaz.
+
+### Model Watch Ekim 2026 güncellemesi (2026-10-11)
+
+- Temmuz model tablosu yerine Türkçe giriş ve altı kaynaklı rehber eklendi:
+  aylık görünüm, Çinli ve küresel modeller, model seçimi, API geçişleri ve kaynak ilkeleri.
+- 16 sağlayıcıdan 29 kayıt içeren ortak JSON katalog ve bağımlılıksız yerel
+  doğrulama komutu eklendi: `python3 docs/model-watch/scripts/validate.py`.
+- Bilgiler 11 Ekim tarihli belge incelemesine dayanır; canlı API ve performans
+  testi yapılmadı. DeepSeek V4-Pro yönlendirmesi ve Mistral Large 4 ağırlık
+  yayını takipte; İngilizce uyarlama aynı tarihli çeviri güncellemesinde eklendi.
+
 ### Prompt Kütüphanesi eklendi (2026-07-13)
 
 - `prompt-kutuphanesi/`: seriyi destekleyen, alan alan düzenlenmiş prompt

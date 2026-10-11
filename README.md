@@ -5,7 +5,21 @@ Engineering · Agent Engineering · AI-Native Production) **companion (destek) d
 Yalnızca örnek kod deposu değildir; kitabın uygulama laboratuvarı, güncel araç/model izleme
 alanı ve web yayınının teknik tamamlayıcısıdır.
 
-Kitap: *Yapay Zekâ Okuryazarlığı ve Prompt Mühendisliği* ve devamı ciltler.
+## Kitaptan Uygulamaya
+
+[**Yapay Zekâ ile Üretim Mühendisliği kitaplığında**](https://kitap.ademyuce.tr/),
+istem hazırlamadan kod geliştirmeye, ajanlarla çalışmaktan üretim sistemleri kurmaya
+uzanan seriyi inceleyebilir, yayımlanan ciltlerden seçili bölümleri okuyabilirsiniz.
+
+Bu depodaki örnekler, okuduklarınızı denemeniz için hazırlandı. Kitapta bir kavramı
+öğrendikten sonra ilgili laboratuvarı açın, girdileri değiştirin ve sonuçları
+karşılaştırın. Kendi projenize geçerken şablonlardan yararlanabilir; model seçimi ve
+API değişiklikleri için Türkçe ve İngilizce hazırlanan Model Watch rehberlerine
+başvurabilirsiniz.
+
+[Kitaplığı ziyaret edin](https://kitap.ademyuce.tr/) ·
+[Tarayıcıda laboratuvarları deneyin](https://lab.ademyuce.tr/) ·
+[Model Watch rehberlerini okuyun](docs/model-watch/README.md)
 
 ---
 
