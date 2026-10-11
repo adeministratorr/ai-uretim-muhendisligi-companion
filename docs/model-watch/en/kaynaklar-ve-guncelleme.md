@@ -1,4 +1,4 @@
-# Model Watch | Sources, evidence levels, and update standards
+# Model Watch | Sources and evidence levels
 
 **[Türkçe](../tr/kaynaklar-ve-guncelleme.md) · [English](../en/kaynaklar-ve-guncelleme.md)** · [Model Watch](../README.md)
 
@@ -49,7 +49,7 @@ The links below support tracking model families and version information; they do
 | Kimi K3 | [Model card + license](https://huggingface.co/moonshotai/Kimi-K3) | Commercial usage terms |
 | MiniMax | [Token/API plans](https://platform.minimax.io/subscribe/token-plan) | Differences between caching, tokens, and subscriptions |
 | MiniMax M3 | [Model card + license](https://huggingface.co/MiniMaxAI/MiniMax-M3) | Community license |
-| ByteDance | [Volcengine API documentation](https://docs.volcengine.com/docs/82379/1359497?lang=en) | Seed 2.1 identifiers |
+| ByteDance | [Volcengine API documentation](https://docs.volcengine.com/docs/ark/model-list?lang=en) | Seed 2.1 identifiers |
 | Baidu | [AI Studio model list](https://ai.baidu.com/ai-doc/AISTUDIO/Mmhslv9lf) | ERNIE model and context data |
 | Tencent | [Hunyuan migration notes](https://cloud.tencent.com/document/product/1729/131925) | TokenHub migration / legacy model retirement |
 | Xiaomi | [XiaomiMiMo](https://github.com/XiaomiMiMo) | MiMo model code and hosting |
@@ -60,43 +60,6 @@ The links below support tracking model families and version information; they do
 - [Artificial Analysis](https://artificialanalysis.ai/) — Pricing, speed, and multidimensional model data; capture a dated snapshot.
 - [DORA](https://dora.dev/research/) — Software delivery productivity; do not use it to prove one model's superiority.
 - [Hugging Face model cards](https://huggingface.co/models) — Weights, licensing, and usage information; confirm that the publishing account belongs to the official developer.
-
-## How to record an update
-
-Where possible, include the following in each proposed change:
-
-```yaml
-model_watch_record:
-  checked_at: "2026-10-11"
-  provider: "<provider>"
-  product_family: "<family>"
-  model_id: "<API-id-or-weight-repo>"
-  snapshot: "<exact-version-or-unknown>"
-  claim: "<what-has-changed>"
-  status: "ga | preview | limited | retired | unknown"
-  evidence: "R1 | R2 | R3 | R4 | B | T"
-  sources:
-    - url: "https://<official-source>"
-      checked_at: "2026-10-11"
-  api_test: "not-run"
-  last_verified: "2026-10"
-  reviewer: "pending"
-```
-
-## Contribution and verification workflow
-
-1. **Research:** Find the official announcement, API model list, and model card where available.
-2. **Separate:** Distinguish model identifiers, product names, API access, dated snapshots, licenses, and regions.
-3. **Compare:** Produce a diff against the previous record. Check the **dates** of conflicting sources.
-4. **Limit claims:** Without independent tests, do not draw conclusions from marketing benchmarks; write “according to the company's own measurements.”
-5. **Verify:** Review Markdown links, relative paths, date notes, claims, and the model-watch table.
-6. **Test:** Run relevant lab regressions when live API access and explicit permission are available. Otherwise record `not-run`.
-7. **Review:** The AGENTS.md terminal-state and human-review rules apply.
-8. **Publish:** Add the date, scope, and remaining uncertainties to the changelog.
-
-## English edition standard
-
-The English edition is in `docs/model-watch/en/`; the Turkish edition is in `docs/model-watch/tr/`. Paired guides retain the same filename, section order, and table structure. Source URLs, API model identifiers, numerical values, and executable examples remain unchanged in translation. Each English document records its source-review date and a separate translation-review date; reviewing a translation does not constitute a new source review or live API test. A model added to Turkish is not automatically considered added to English. Keep one shared catalog in `data/models.json`, with field documentation in both languages. Language switches link to the corresponding document. Before publication, check local links, source URL parity, section/table structure, and examples.
 
 ## Priority follow-up items
 

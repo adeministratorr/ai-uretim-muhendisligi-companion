@@ -1,0 +1,32 @@
+# GitHub Pages yalnızca okura yönelik içerikleri yayımlar.
+# Geliştirme yönergeleri ve bakım dosyaları GitHub deposunda kalır.
+exclude:
+  - AGENTS.md
+  - "**/AGENTS.md"
+  - CLAUDE.md
+  - "**/CLAUDE.md"
+  - SPEC_TEMPLATE.md
+  - "**/SPEC_TEMPLATE.md"
+  - CONTRIBUTING.md
+  - CHANGELOG.md
+  - SECURITY.md
+  - docs/model-watch/data
+  - docs/model-watch/scripts
+  - docs/model-watch/MAINTENANCE.md
+  - docs/model-watch/MAINTENANCE.en.md
+  - scripts
+  - tools
+  - tests
+  - tmp
+  - "**/test_*.py"
+  - "**/__pycache__"
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby

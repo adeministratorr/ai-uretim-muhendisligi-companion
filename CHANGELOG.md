@@ -4,6 +4,16 @@ Bu dosya, kitap/web/repo güncellemelerini sürüm bazlı kaydeder.
 
 ## [Yayınlanmadı]
 
+### Model Watch erişim tablosu ve site yayını (2026-10-11)
+
+- Türkçe ve İngilizce hızlı referans tablolarında API erişimi ile ağırlık yayını
+  ayrıldı; farklı sürümler ayrı satırlara taşındı ve satırlara resmî kaynak eklendi.
+- DeepSeek V4-Pro kataloğundaki kesin GA etiketi `listed` olarak düzeltildi;
+  kaynak çelişkisi korundu. Volcengine bağlantısı güncel model listesine yöneltildi.
+- Bakım, çeviri ve katkı talimatları depo içindeki iki bakım rehberine taşındı.
+  Ajan talimatları, bakım belgeleri, veri kataloğu ve doğrulama betikleri GitHub
+  Pages dışında bırakıldı; okur sayfalarının bağlantıları buna göre düzenlendi.
+
 ### Model Watch İngilizce sürümleri (2026-10-11)
 
 - Altı rehberin ve giriş sayfasının İngilizce karşılıkları `docs/model-watch/en/`

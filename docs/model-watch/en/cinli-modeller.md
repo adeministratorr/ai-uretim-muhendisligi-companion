@@ -86,7 +86,7 @@ Volcengine documents **Doubao Seed 2.1** in Pro, Lite, and Turbo versions, with 
 
 Example dated identifiers: `doubao-seed-2-1-pro-260915`, `doubao-seed-2-1-lite-260915`, `doubao-seed-2-1-turbo-260628`. Provider documentation states that the older 2.0 Pro and Code versions were retired as of August 8, 2026, with migration to the 2.1 family recommended.
 
-**Sources:** [Volcengine model/API options](https://docs.volcengine.com/docs/82379/1359497?lang=en), [pricing and migration note](https://docs.volcengine.com/docs/aidap/Billing_items_and_prices_of_large_model_access?lang=en).
+**Sources:** [Volcengine model/API options](https://docs.volcengine.com/docs/ark/model-list?lang=en), [pricing and migration note](https://docs.volcengine.com/docs/aidap/Billing_items_and_prices_of_large_model_access?lang=en).
 
 ## 7. Baidu — ERNIE
 

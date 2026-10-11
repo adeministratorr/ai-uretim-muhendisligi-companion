@@ -103,7 +103,7 @@ Where possible, evaluate **with model names hidden**. Fluent prose does not esta
 - Confirm the failing test. The model changes only files within scope.
 - Deleting tests, weakening assertions, exceeding tool permissions, and reading secrets are **failures**.
 - Count total token use, tool calls, retries requested by the model, and human corrections.
-- Record the terminal state as `done`, `blocked`, `needs-review`, `unsafe`, or `budget-exceeded` (see root [AGENTS.md](../../../AGENTS.md)).
+- Record the terminal state as `done`, `blocked`, `needs-review`, `unsafe`, or `budget-exceeded`.
 - The ideal operational measures are **cost per safely completed task** and **human review effort**.
 
 ## 6. How to read a benchmark

@@ -17,8 +17,7 @@ Burada amaç modelleri yarıştırıp her ay yeni bir şampiyon ilan etmek deği
 | [Küresel model ekosistemi](kuresel-modeller.md) | OpenAI, Claude, Gemini/Gemma, Grok, Meta/Llama, Mistral ve diğerleri | Geniş seçenekleri karşılaştıranlar |
 | [Model seçimi ve değerlendirme](model-secimi-ve-olcum.md) | Göreve göre seçim, maliyet, Türkçe kalite, test matrisi ve benchmark okuryazarlığı | Proje geliştirenler ve eğitmenler |
 | [Geçiş ve API uyumluluğu](gecis-ve-uyumluluk.md) | Eskiyen model kimlikleri, alias tehlikeleri, regresyon testleri | Çalışan sistemleri yönetenler |
-| [Kaynaklar ve güncelleme ilkeleri](kaynaklar-ve-guncelleme.md) | Birincil kaynaklar, kanıt etiketleri, güncelleme ve katkı kuralları | Katkı verenler ve coding agent'lar |
-| [Ortak model verileri](../data/README.md) | 29 model kaydı, JSON veri katmanı ve doğrulama aracı | İki dilli yayın ve otomasyon geliştirenler |
+| [Kaynaklar ve kanıt düzeyleri](kaynaklar-ve-guncelleme.md) | Birincil kaynaklar, kanıt etiketleri ve belirsizlikler | Bilginin dayanağını incelemek isteyenler |
 
 ## Temel ayrımlar
 
@@ -38,21 +37,6 @@ Burada amaç modelleri yarıştırıp her ay yeni bir şampiyon ilan etmek deği
 | **3 — Agent Engineering** | Araç çağrısı, izin sınırları, uzun görevler, MCP, bellek ve geri alma |
 | **4 — AI-Native Production** | Gateway, maliyet, yönlendirme, gözlemlenebilirlik, regresyon testleri ve güvenli sürüm yükseltme |
 
-## Güncelleme takvimi
+## Kaynak gösterirken
 
-| Dönem | Ne kontrol edilir? |
-|---|---|
-| Haftalık (öncelikli olaylar) | Yeni modelin API'de açılması, kapanma tarihi, fiyat veya lisans değişikliği, kırıcı değişiklik |
-| Aylık | Sağlayıcı/model tablosu, resmi model kimliği, erişim bölgesi, token penceresi, açık ağırlık ve lisans |
-| Üç ayda bir | Görev bazlı testler, Türkçe kalite, uzun bağlam, ajan güvenilirliği, DORA ve sektör verileri |
-| Her kitap/lab güncellemesinde | Örnekteki model kimliği ve parametrelerinin güncel belgelerle uyuşması |
-
-## İki dilli yayın düzeni
-
-**Türkçe esas metindir**: `docs/model-watch/tr/`. İngilizce sürüm `docs/model-watch/en/` altındadır. Eşleşen rehberlerde dosya adları, bölüm sırası, tablo sütunları ve kaynak bağlantıları korunur. Her İngilizce belge, kaynak inceleme tarihinden ayrı bir çeviri kontrol tarihi taşır. Çeviri kontrolü, teknik bilgilerin yeniden doğrulandığı anlamına gelmez. İki dil aynı `data/models.json` kataloğunu kullanır. Üst klasördeki README dil seçimini sağlar.
-
-## Okuyucu ve katkı verenlere
-
-Bu sayfaları kaynak gösterirken **belge tarihi** ile **modelin yayımlanma tarihini** karıştırmayın. Bir hatayı veya yeni sürümü bildirirken ilgili resmî kaynak bağlantısını, değişen alanı ve kontrol tarihini ekleyin. Katkı ilkeleri için [CONTRIBUTING.md](../../../CONTRIBUTING.md); coding agent sınırları için [AGENTS.md](../../../AGENTS.md) geçerlidir.
-
-**Kısa ilke:** Model adı değişebilir; doğrulama, test etme ve geri alabilme alışkanlığı kalıcı olmalı.
+Bu sayfaları kaynak gösterirken **belge tarihi** ile **modelin yayımlanma tarihini** ayırın. Kaynak incelemesi, canlı API veya bağımsız performans testi yapıldığı anlamına gelmez.

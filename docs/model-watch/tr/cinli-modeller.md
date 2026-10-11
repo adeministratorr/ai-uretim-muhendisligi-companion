@@ -86,7 +86,7 @@ Volcengine belgelerinde **Doubao Seed 2.1** (Pro, Lite, Turbo sürümleri) ve ta
 
 Örnek tarihli kimlikler: `doubao-seed-2-1-pro-260915`, `doubao-seed-2-1-lite-260915`, `doubao-seed-2-1-turbo-260628`. Eski 2.0 Pro ve Code sürümlerinin 8 Ağustos 2026 itibarıyla servis dışı kaldığı ve 2.1 ailesine geçiş önerildiği sağlayıcı belgelerinde bulunuyor.
 
-**Kaynak:** [Volcengine model/API seçenekleri](https://docs.volcengine.com/docs/82379/1359497?lang=en), [fiyat ve geçiş notu](https://docs.volcengine.com/docs/aidap/Billing_items_and_prices_of_large_model_access?lang=en).
+**Kaynak:** [Volcengine model/API seçenekleri](https://docs.volcengine.com/docs/ark/model-list?lang=en), [fiyat ve geçiş notu](https://docs.volcengine.com/docs/aidap/Billing_items_and_prices_of_large_model_access?lang=en).
 
 ## 7. Baidu — ERNIE
 

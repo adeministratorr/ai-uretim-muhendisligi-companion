@@ -1,4 +1,4 @@
-# Model Watch | Kaynaklar, kanıt düzeyleri ve güncelleme standardı
+# Model Watch | Kaynaklar ve kanıt düzeyleri
 
 **[Türkçe](../tr/kaynaklar-ve-guncelleme.md) · [English](../en/kaynaklar-ve-guncelleme.md)** · [Model Watch](../README.md)
 
@@ -49,7 +49,7 @@ Aşağıdaki bağlantılar model ailesinin ve ilgili sürüm bilgisinin izlenmes
 | Kimi K3 | [Model kartı + lisans](https://huggingface.co/moonshotai/Kimi-K3) | Ticari kullanım şartları |
 | MiniMax | [Token/API planları](https://platform.minimax.io/subscribe/token-plan) | Önbellek, token ve abonelik farkı |
 | MiniMax M3 | [Model kartı + lisans](https://huggingface.co/MiniMaxAI/MiniMax-M3) | Community lisansı |
-| ByteDance | [Volcengine API belgeleri](https://docs.volcengine.com/docs/82379/1359497?lang=en) | Seed 2.1 kimlikleri |
+| ByteDance | [Volcengine API belgeleri](https://docs.volcengine.com/docs/ark/model-list?lang=en) | Seed 2.1 kimlikleri |
 | Baidu | [AI Studio model listesi](https://ai.baidu.com/ai-doc/AISTUDIO/Mmhslv9lf) | ERNIE model ve bağlam verileri |
 | Tencent | [Hunyuan geçiş notları](https://cloud.tencent.com/document/product/1729/131925) | TokenHub geçişi / eski model kapanışı |
 | Xiaomi | [XiaomiMiMo](https://github.com/XiaomiMiMo) | MiMo model kodu ve barındırma |
@@ -60,43 +60,6 @@ Aşağıdaki bağlantılar model ailesinin ve ilgili sürüm bilgisinin izlenmes
 - [Artificial Analysis](https://artificialanalysis.ai/) — Fiyat, hız ve çok boyutlu model verileri; tarihli snapshot alınır.
 - [DORA](https://dora.dev/research/) — Yazılım geliştirme verimliliği; tek bir modelin üstünlüğünü ispatlamak için kullanılmaz.
 - [Hugging Face model kartları](https://huggingface.co/models) — Ağırlık, lisans ve kullanım bilgisi; yükleyen hesabın resmî geliştiriciye ait olduğundan emin olunur.
-
-## Güncelleme kaydı nasıl tutulur?
-
-Her değişiklik önerisinde mümkünse aşağıdakiler yer almalı:
-
-```yaml
-model_watch_record:
-  checked_at: "2026-10-11"
-  provider: "<provider>"
-  product_family: "<family>"
-  model_id: "<API-id-or-weight-repo>"
-  snapshot: "<exact-version-or-unknown>"
-  claim: "<what-has-changed>"
-  status: "ga | preview | limited | retired | unknown"
-  evidence: "R1 | R2 | R3 | R4 | B | T"
-  sources:
-    - url: "https://<official-source>"
-      checked_at: "2026-10-11"
-  api_test: "not-run"
-  last_verified: "2026-10"
-  reviewer: "pending"
-```
-
-## Katkı ve doğrulama akışı
-
-1. **Araştır:** Resmî duyuruyu, API model listesini ve varsa model kartını bul.
-2. **Ayır:** Model kimliği, ürün adı, API erişimi, tarihli snapshot, lisans ve bölgeleri birbirine karıştırma.
-3. **Karşılaştır:** Önceki kayıtla diff oluştur. Birbiriyle çelişen kaynakların **tarihini** kontrol et.
-4. **Sınırla:** Bağımsız test yoksa pazarlama benchmark'ından sonuç türetme; “şirketin kendi ölçümüne göre” yaz.
-5. **Doğrula:** Tüm Markdown bağlantıları, göreli yollar, tarih notları, iddialar ve gözlemevi tablosu incelensin.
-6. **Test et:** Canlı API erişimi ve açık izin varsa ilgili lab regresyon testleri. Erişim yoksa `not-run` olarak yaz.
-7. **İnceleme:** AGENTS.md terminal state ve insan review kuralı geçerlidir.
-8. **Yayımla:** Değişiklik günlüğüne tarih, kapsam ve takipte kalan belirsizlikler ekle.
-
-## İngilizce sürüm standardı
-
-İngilizce sürüm `docs/model-watch/en/` altında, Türkçe sürüm `docs/model-watch/tr/` altındadır. Eşleşen rehberler aynı dosya adını, bölüm sırasını ve tablo yapısını korur. Kaynak URL'leri, API model kimlikleri, sayısal veriler ve çalıştırılabilir örnekler çeviride değişmez. Her İngilizce belge kaynak inceleme tarihini ve ayrı çeviri kontrol tarihini taşır; çeviri kontrolü yeni bir kaynak veya canlı API doğrulaması sayılmaz. Türkçeye eklenen model İngilizce sürüme otomatik eklenmiş kabul edilmez. Ortak katalog `data/models.json` içinde tek kopya tutulur; veri alanlarının iki dilde açıklaması bulunur. Dil geçişleri karşılık gelen belgeye bağlanır. Yayın öncesinde yerel bağlantılar, kaynak URL eşliği, bölüm/tablo yapısı ve örnekler kontrol edilir.
 
 ## Öncelikli takip işleri
 
