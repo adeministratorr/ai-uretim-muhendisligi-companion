@@ -1,5 +1,7 @@
 # Model seçimi ve ölçüm | En iyi model hangisi değil, hangi işte daha iyi?
 
+**[Türkçe](../tr/model-secimi-ve-olcum.md) · [English](../en/model-secimi-ve-olcum.md)** · [Model Watch](../README.md)
+
 **Yöntem sürümü:** 2026-10 · **Bu repo için durum:** Değerlendirme şablonu; aşağıdaki puanlar örnektir, gerçek benchmark sonucu değildir.
 
 Bir modeli seçerken yalnızca en yüksek puanlı modeli ararsak iki sorun yaşarız: ölçmediğimiz bir başarıya para öderiz, ayrıca sonuç kötüleştiğinde neyi geri alacağımızı bilemeyiz. Bu bölüm, kitap serisinin **istem → çıktı → doğrulama → geri bildirim → iyileştirme** yaklaşımını somut bir model seçme yöntemine bağlar.

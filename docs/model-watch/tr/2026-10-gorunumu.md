@@ -1,5 +1,7 @@
 # Ekim 2026 | Yapay zekâ modellerinde güncel görünüm
 
+**[Türkçe](../tr/2026-10-gorunumu.md) · [English](../en/2026-10-gorunumu.md)** · [Model Watch](../README.md)
+
 **Kaynak kontrolü:** 11.10.2026 · **Kapsam:** Resmî model listeleri, ürün duyuruları ve model kartları · **Doğrulama türü:** Masa başı kaynak incelemesi; API çalıştırma, hız ve maliyet ölçümü yapılmadı.
 
 > **Bu sayfa bir liderlik tablosu değildir.** Marka tanıtımı veya laboratuvar benchmark'ı, bizim projelerimizde ölçülmüş başarı anlamına gelmez. Her satır bir başlangıç noktasıdır; seçim için [değerlendirme yöntemi](model-secimi-ve-olcum.md) kullanılır.

@@ -1,6 +1,8 @@
 # Ortak model veri kayıtları
 
-`models.json`, Model Watch'un **dilden bağımsız veri katmanıdır**. Türkçe metin `tr/` altındadır; İngilizce sürüm eklendiğinde `en/` bu bilgileri kullanabilecek. JSON kataloğu uygulamada doğrudan çalıştırma ayarı olarak kullanılmamalıdır: `listed`, `preview`, `released`, `watch` gibi statüler, yetenek ve erişim garantisi değildir.
+**[Türkçe](README.md) · [English](README.en.md)** · [Model Watch](../README.md)
+
+`models.json`, Model Watch'un **dilden bağımsız veri katmanıdır**. Türkçe metin `tr/`, İngilizce metin `en/` altındadır; iki dil aynı kataloğu kullanır. Serbest metin içeren isteğe bağlı `note` değerleri şimdilik Türkçedir; alan adları, model kimlikleri ve durum kodları ortaktır. JSON kataloğu uygulamada doğrudan çalıştırma ayarı olarak kullanılmamalıdır: `listed`, `preview`, `released`, `watch` gibi statüler, yetenek ve erişim garantisi değildir.
 
 ## Alanlar
 

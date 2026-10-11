@@ -1,5 +1,7 @@
 # Model geçişleri ve API uyumluluğu | Sessiz değişiklikleri yakalamak
 
+**[Türkçe](../tr/gecis-ve-uyumluluk.md) · [English](../en/gecis-ve-uyumluluk.md)** · [Model Watch](../README.md)
+
 **Kaynak kontrolü:** 11 Ekim 2026 · **Kapsam:** Doğrudan resmî sağlayıcı belgelerindeki geçiş örnekleri ve önerilen denetim yöntemi. Canlı hesap/istek testi yapılmadı.
 
 Bir API isteğinin `200 OK` dönmesi, uygulamanın hâlâ **aynı modeli** çalıştırdığı anlamına gelmez. Sağlayıcı eski model adını yeni sürüme yönlendirebilir, önizlemeyi kapatabilir, çağrıyı farklı ücretlendirebilir veya `tool_calls` davranışını değiştirebilir. Bu yüzden güncellemeyi yalnızca paket sürümü değişikliği olarak görmeyiz.

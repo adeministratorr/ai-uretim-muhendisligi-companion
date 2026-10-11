@@ -1,5 +1,7 @@
 # Model Watch | Kaynaklar, kanıt düzeyleri ve güncelleme standardı
 
+**[Türkçe](../tr/kaynaklar-ve-guncelleme.md) · [English](../en/kaynaklar-ve-guncelleme.md)** · [Model Watch](../README.md)
+
 **Sürüm:** 2026-10 · **İlk kapsamlı doğrulama:** 11 Ekim 2026 · **Denetim:** Belge ve model kartı incelemesi. **Canlı API ile çağrı gönderilip sürüm/fiyat/hız ölçülmedi.**
 
 ## Neyi “doğrulandı” sayarız?
@@ -94,7 +96,7 @@ model_watch_record:
 
 ## İngilizce sürüm standardı
 
-İleride eklenecek `docs/model-watch/en/`, Türkçe dosyaların **tarih ve kaynak kontrollü bir uyarlaması** olacak. Kaynak URL'leri, API model kimlikleri ve sayısal veriler çeviride değişmeyecek. İngilizce metin kendi `last_verified` tarihini taşıyacak; Türkçeye eklenen model İngilizce sürüme otomatik eklenmiş sayılmayacak.
+İngilizce sürüm `docs/model-watch/en/` altında, Türkçe sürüm `docs/model-watch/tr/` altındadır. Eşleşen rehberler aynı dosya adını, bölüm sırasını ve tablo yapısını korur. Kaynak URL'leri, API model kimlikleri, sayısal veriler ve çalıştırılabilir örnekler çeviride değişmez. Her İngilizce belge kaynak inceleme tarihini ve ayrı çeviri kontrol tarihini taşır; çeviri kontrolü yeni bir kaynak veya canlı API doğrulaması sayılmaz. Türkçeye eklenen model İngilizce sürüme otomatik eklenmiş kabul edilmez. Ortak katalog `data/models.json` içinde tek kopya tutulur; veri alanlarının iki dilde açıklaması bulunur. Dil geçişleri karşılık gelen belgeye bağlanır. Yayın öncesinde yerel bağlantılar, kaynak URL eşliği, bölüm/tablo yapısı ve örnekler kontrol edilir.
 
 ## Öncelikli takip işleri
 

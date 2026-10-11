@@ -1,5 +1,7 @@
 # Çinli yapay zekâ modelleri | Tek bir listeye sığmayan ekosistem
 
+**[Türkçe](../tr/cinli-modeller.md) · [English](../en/cinli-modeller.md)** · [Model Watch](../README.md)
+
 **Kaynak kontrolü:** 11 Ekim 2026 · **Not:** Çinli şirketlerin sunduğu modeller tek bir erişim, lisans veya performans standardına sahip değildir. Aynı şirketin açık ağırlıklı bir modeli ile kapalı bulut API'si yan yana bulunabilir. Bölge, kota, ödeme ve veri işleme şartları ayrıca denetlenir.
 
 Çinli modelleri yalnızca “daha ucuz alternatifler” diye görmek eksik olur. Qwen, DeepSeek, GLM, Kimi ve MiniMax uzun görevler, kodlama, çok biçimli girdiler ve büyük bağlam alanlarında ciddi seçenekler sunuyor. Öte yandan büyük model ağırlığını indirmek, sıradan bir dizüstü bilgisayarda sorunsuz çalıştırmak anlamına gelmez. **Toplam parametre**, **etkin parametre**, **bellek gereksinimi** ve **çıkarım altyapısı** birlikte değerlendirilir.

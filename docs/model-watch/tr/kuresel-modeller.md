@@ -1,5 +1,7 @@
 # Küresel model ekosistemi | Model adının ötesine bakmak
 
+**[Türkçe](../tr/kuresel-modeller.md) · [English](../en/kuresel-modeller.md)** · [Model Watch](../README.md)
+
 **Kaynak kontrolü:** 11 Ekim 2026. Aşağıdaki bilgiler sağlayıcı duyuruları ve model kartlarına dayanır; bağımsız performans ölçümü değildir. Fiyatlar, erişim ve hizmet bölgeleri değişebilir.
 
 ## 1. OpenAI — GPT-6, Codex ve çok biçimli servisler
