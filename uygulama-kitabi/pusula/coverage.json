@@ -2,7 +2,7 @@
   "snapshot_date": "2026-10-26",
   "level": "chapter",
   "full_text_audit_complete": false,
-  "note": "Başlık ve seçili örnek incelemesine dayalı editoryal eşleme. Alt başlık/öğrenme hedefi ve uygulama sonucu kapsamı henüz tamamlanmadı. SHA-256 yalnız kullanılan dosya sürümünü tanımlar.",
+  "note": "Bölüm eşlemeleri ilk editoryal plandır. U01–U08e bağlı31 kaynak tam okundu; alt başlık, hedef, vaka ve açıklar editorial/ içinde ayrı kaydedildi. Kalan69 bölüm tam okunmadı. sha256 başlangıç özeti olarak korundu; current_sha256 güncel dosya revizyonudur. Öğretim eşlemesi çalışma başarısı değildir.",
   "chapters": [
     {
       "id": "C1-B01",
@@ -16,7 +16,10 @@
         "U01",
         "U09"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C1-B02",
@@ -31,7 +34,10 @@
         "U04",
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C1-B03",
@@ -45,7 +51,10 @@
         "U02",
         "U09"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C1-B04",
@@ -58,7 +67,10 @@
       "lessons": [
         "U09"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "d8a4e915708bb322af1b4929c426441809e4c678d8d3eb3f7e1f734c071213c1",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C1-B05",
@@ -73,7 +85,10 @@
         "U09",
         "U13"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C1-B06",
@@ -87,7 +102,10 @@
         "U09",
         "U10"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "b2603422a89e60dbab2d365063cad1fe820fec3723de1883ebb27b832c72acdd",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C1-B07",
@@ -102,7 +120,10 @@
         "U10",
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "5eb388bf6fe08b61f0e222bcd15473802269ea73b694348bf897d35ee3992622",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C1-B08",
@@ -117,7 +138,10 @@
         "U26",
         "U36"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "b73e19699740e36019e83869c99f1217c5f9bc0ed01623aa69fb2027199a8bd6",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C1-B09",
@@ -130,7 +154,10 @@
       "lessons": [
         "U26"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "ff2071757ea79cd90b5382c170ec453cc330dd81ac4e10defb4f1534af6341c7",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C1-B10",
@@ -144,7 +171,10 @@
         "U09",
         "U27"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "412de71b2a56d285be2a226546ddc7f3f3fa76ea426c9bc096f290ec8aa50e03",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C1-B11",
@@ -158,7 +188,10 @@
         "U10",
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "09038ef3cb8a76fbce7cb2da3a7078477099ccf27da914b1cdd8a81b8e94e3d7",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C1-B12",
@@ -172,7 +205,10 @@
         "U25",
         "U32"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "8398d9c467bf4fcbd6944f2ee0e39e2cb00578c82858a0dd08ac370e91287c72",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C1-B13",
@@ -186,7 +222,10 @@
         "U17",
         "U20"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "523d7f63692c2f337a9c25d0d3b105ed18f79c1d8b704a4256fc672a1b369948",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C1-B14",
@@ -200,7 +239,10 @@
         "U17",
         "U25"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "f48684e9d7095b6ccfe51e3a4c812ca69252fd6c0451cce0e3612752720416f5",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C1-B15",
@@ -214,7 +256,10 @@
         "U34",
         "U35"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "b354fc7279da1366b3bb6b2b55c34fd76bd5d62b9fa736fba16de37d42a04f4d",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U33-U36"
     },
     {
       "id": "C1-B16",
@@ -228,7 +273,10 @@
         "U32",
         "U36"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "5f9c233122d1216122ba0f15ef00f0354d13d5f3857350e74723e4108540024d",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C1-B17",
@@ -242,7 +290,10 @@
         "U34",
         "U35"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "58fdbfa5768712dc66624d0f06bd7668308419f27c6e9b9957e08f8098c51134",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U33-U36"
     },
     {
       "id": "C2-B01",
@@ -256,7 +307,10 @@
         "U01",
         "U34"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B02",
@@ -270,7 +324,10 @@
         "U02",
         "U11"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "1f36e0c33a17fd7e9da5325279d1ddee628963344ae184a46c519ea71c2d21a3",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B03",
@@ -284,7 +341,10 @@
         "U07",
         "U13"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "ca46f67a21ac8159d2de410297f0d56361fcb787bedfe7699d17a1a70ed40d6f",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B04",
@@ -299,7 +359,10 @@
         "U11",
         "U12"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "59f1101b1689214500d51a26f9c8e4b34259a4fd376f65e9f110cbaba4a7cab4",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B05",
@@ -314,7 +377,10 @@
         "U11",
         "U26"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "d70035c898fe16d2abd763eb1c30f0765aea89367d69a151ee9e33ac349b29b6",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B06",
@@ -329,7 +395,10 @@
         "U07",
         "U11"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "bb5427e77e33b1c9669bd2f2cf3ab4763b8b6a1e67ee9024711b74a728915407",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B07",
@@ -343,7 +412,10 @@
         "U04",
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "dfe8259d2395b46a753a1f21c62dc5742a32a3a8d76e455ac8dd306680e1f797",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B08",
@@ -357,7 +429,10 @@
         "U02",
         "U06"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B09",
@@ -370,7 +445,10 @@
       "lessons": [
         "U07"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "8a1cf79cf101ded7d599961920b1d60e3a64b87048062d1eac501e31ef55d07b",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B10",
@@ -384,7 +462,10 @@
         "U08",
         "U33"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "debad72c498654bf8f86e2609780854475ac595348d1c05bb563ec3c58d792a8",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C2-B11",
@@ -398,7 +479,10 @@
         "U11",
         "U12"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "50c59b0b509425be826e1f26e096535a0fb8ee0e7e832c40befda9c22766129b",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C2-B12",
@@ -411,7 +495,10 @@
       "lessons": [
         "U12"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "63656ffc45b434a77ede70fdd3634937e3f409d68ce9985d23738246b80ef02c",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C2-B13",
@@ -428,7 +515,10 @@
         "U23",
         "U27"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "749e72daf233efc08e6fc01b59546a8fb40b741628280228da72dc1c1e584ff4",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C2-B14",
@@ -442,7 +532,10 @@
         "U25",
         "U32"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "e978bc8c8d5e2f13c185ab5db9888d7a7529dd33b812009bd365c0c9c0223ead",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C3-B01",
@@ -456,7 +549,10 @@
         "U17",
         "U20"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "5bf4af297e989bc0c281c3f3ad8677cf090731033b8907780ed4d2416fb8bbc4",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B02",
@@ -469,7 +565,10 @@
       "lessons": [
         "U17"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "3919a9fe8e361fd36bf5cb6c053824092b4a3c74733679a38fe02dca405d13e5",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B03",
@@ -483,7 +582,10 @@
         "U17",
         "U25"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "1b8153a03cc258ed2b7f0eba7978481281642bb826eb1e8f54029986b1a20dea",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B04",
@@ -496,7 +598,10 @@
       "lessons": [
         "U18"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "73cbfebbfa6024cf27d2e3f99689e7e8fbfea8b144a7a0d853b49874fb143289",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B05",
@@ -510,7 +615,10 @@
         "U15",
         "U16"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "edc46253164bab57950cd8d11552a4bfdfbe9fc21b0e666fdb51642611e683bb",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C3-B06",
@@ -523,7 +631,10 @@
       "lessons": [
         "U14"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "6075173d7e4b8af612fee336bab6962950f558a640e21f0d6c1f9a703c5646f5",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C3-B07",
@@ -537,7 +648,10 @@
         "U08",
         "U33"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C3-B08",
@@ -552,7 +666,10 @@
         "U21",
         "U34"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "2e88eb146535e727089200b5d9eeee8f9123fd3552a8f0ffbcaf3596b62ddfc8",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B09",
@@ -565,7 +682,10 @@
       "lessons": [
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "2001d66cee086f8bf4f0d3a29a94037a9da594ba4f88d2f2dc5291daa80d592e",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C3-B10",
@@ -579,7 +699,10 @@
         "U22",
         "U23"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "1fe1602b0dafb6c97c577168d850ea11692adaadfe14142c151cfb9e92543102",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B11",
@@ -592,7 +715,10 @@
       "lessons": [
         "U28"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "2a5a3bf71f5a1ea6ae040378f4d06a7ec01d39b9deba3b287970a4830284df19",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C3-B12",
@@ -605,7 +731,10 @@
       "lessons": [
         "U28"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "19c40cdfed5064a500783ac2058794b1a43723330031d23b6f71ebefff5ff1f0",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C3-B13",
@@ -618,7 +747,10 @@
       "lessons": [
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "70e458648600eeaf2b53ee04a5c14130695fff2d9fa5c058810f5772d2077065",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C3-B14",
@@ -633,7 +765,10 @@
         "U30",
         "U31"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "125cad4a70544bd5de830ee30aaa99e56571b56e8c7bd29ca06e5730f25d4ef2",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B01",
@@ -648,7 +783,10 @@
         "U24",
         "U36"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "bfcf29118332a8767f6256d272f7fae4b0df12f8d74f58b134f9e21e487425d4",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C4-B02",
@@ -663,7 +801,10 @@
         "U05",
         "U20"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "205bf98300796a6521b5253111dcde5e759b73970115de9d044597268795dce8",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C4-B03",
@@ -676,7 +817,10 @@
       "lessons": [
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "a86d83dab3a3f88d7dcf194571b87321047e8b552d553f0310cc48f107b3bc51",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B04",
@@ -691,7 +835,10 @@
         "U12",
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "6fe0f1367edc2b7996bbd357db244a63e6a410011a47c4d15c0bde4ded542c74",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C4-B05",
@@ -704,7 +851,10 @@
       "lessons": [
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "ff05f4344eab24316c84a58f7e2254d0a68a87c2917e5789a6769dfd76ca5943",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C4-B06",
@@ -718,7 +868,10 @@
         "U05",
         "U20"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "C4-B07",
@@ -731,7 +884,10 @@
       "lessons": [
         "U12"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "e92db207d16278ebd2ab92bbad43f2bd25234c40d2c2300d31932c95df338f4f",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C4-B08",
@@ -744,7 +900,10 @@
       "lessons": [
         "U25"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "de90da8955a529e474ade3932da5fd2700eafd6438a99523d8930c523492d2b4",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B09",
@@ -758,7 +917,10 @@
         "U14",
         "U25"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "0f462dc7e00c6d5885306f60ba607b870ca71f2ffcd2a73be8c3c49c863735fe",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "C4-B10",
@@ -771,7 +933,10 @@
       "lessons": [
         "U32"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "7b5b8787085e7bd73bbd55ad6c0e2147f1236814cfdb708faf011ea8a24063e0",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B11",
@@ -784,7 +949,10 @@
       "lessons": [
         "U32"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "4b2d00d6a30b0ebef02355692b7e0acc77d9bf96fe4b17687dcad12543bfb688",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B12",
@@ -797,7 +965,10 @@
       "lessons": [
         "U30"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "73a32ec14386dc39202b33861675d22a9356e6f05284f59f482742f2603ff1c9",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B13",
@@ -811,7 +982,10 @@
         "U29",
         "U30"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "75e9c5777f39dded31cba2d9c2d7bae86f26e243da89dd4280406cac7109d6e2",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "C4-B14",
@@ -825,7 +999,10 @@
         "U21",
         "U31"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "0207ea314dae2955fe1b60ad5bb4a8911f2a91fafebeaa059e7dffa446d09576",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "C4-B15",
@@ -839,7 +1016,10 @@
         "U32",
         "U36"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "6f4f44cde680169a81b9f332c46d5c2e8d650318c085b95acfc022d78558b2da",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "CC-B01",
@@ -852,7 +1032,10 @@
       "lessons": [
         "U01"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B02",
@@ -867,7 +1050,10 @@
         "U04",
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "c434294385f084657574702f77792b1df97439d5e0a3e79bd8f4d2f994a67f2c",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B03",
@@ -880,7 +1066,10 @@
       "lessons": [
         "U01"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B04",
@@ -894,7 +1083,10 @@
         "U01",
         "U07"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B05",
@@ -908,7 +1100,10 @@
         "U11",
         "U19"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "bb3e171a502d42547e3ecc012e70427898020740906f0e4d137612f47747f9ab",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B06",
@@ -921,7 +1116,10 @@
       "lessons": [
         "U13"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "0460489fff1d31b91359763cf3207d3aae5957a879efaeb7e260aacb38b316c9",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B07",
@@ -935,7 +1133,10 @@
         "U02",
         "U06"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B08",
@@ -949,7 +1150,10 @@
         "U11",
         "U12"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "3923d04055110ee44c22ad0bf98121c7eb5da1c8e4f5e9068dae6aaa3479f44d",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B09",
@@ -963,7 +1167,10 @@
         "U12",
         "U13"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "61a4254def64bf6d334b2c89204203e7f5169e35b3273e3df71f3bb18d454a22",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B10",
@@ -977,7 +1184,10 @@
         "U06",
         "U07"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B11",
@@ -991,7 +1201,10 @@
         "U17",
         "U25"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "1939f9a7696dc8464fd2e00d505ec6cdc13c10987f17abc9948a57d576ce3a52",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B12",
@@ -1004,7 +1217,10 @@
       "lessons": [
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "109b4af8a987c5f5cf38544175b93be1cfbb209b028726227403b2efe41f38ca",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "CC-B13",
@@ -1017,7 +1233,10 @@
       "lessons": [
         "U07"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "93dfbe37c5d54fb87734eafc1d878b58defb2dcecfb521f6beb7c6b27a465a23",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B14",
@@ -1031,7 +1250,10 @@
         "U07",
         "U14"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B15",
@@ -1044,7 +1266,10 @@
       "lessons": [
         "U07"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B16",
@@ -1057,7 +1282,10 @@
       "lessons": [
         "U08"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "f756b7c39c4fce409d2d845b538e782e90de7ca38910117d562066dbd866fba9",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B17",
@@ -1072,7 +1300,10 @@
         "U24",
         "U33"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B18",
@@ -1085,7 +1316,10 @@
       "lessons": [
         "U22"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "dc5f5bce24e69516ab1b52de90d903e2bdd53d7acb92343bb38c45849bf1c2d5",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B19",
@@ -1098,7 +1332,10 @@
       "lessons": [
         "U22"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "00a06d271447a730ec6ff5407f5a8cbf56a2d154235830d5a972eb4d5df88592",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B20",
@@ -1112,7 +1349,10 @@
         "U22",
         "U23"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "a80836d522a321a6c6eec1bf9f818a76973a74c2e6a252d8a3181fb2d18f38c4",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B21",
@@ -1127,7 +1367,10 @@
         "U19",
         "U20"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B22",
@@ -1140,7 +1383,10 @@
       "lessons": [
         "U20"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "a19f44a4dd0db4ddaf7106d93c8c58836984b58046eeb0de05eb59a1e237d811",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B23",
@@ -1155,7 +1401,10 @@
         "U20",
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "5633f3c4c9e0a67281c8c5c5411002baac64e1fd61308deb0730343ae857838b",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B24",
@@ -1168,7 +1417,10 @@
       "lessons": [
         "U19"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "792ac9e68f0e88dc0441f88c39f176aed897a5109d2f106da5b8d5559d4a6574",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B25",
@@ -1182,7 +1434,10 @@
         "U19",
         "U24"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "35c364df25773c26ef9a6ba7d0c50ad05acb390025c4a510d0ee59286e84bdaa",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B26",
@@ -1196,7 +1451,10 @@
         "U19",
         "U27"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "6c87a0f07501bf3e5ff5a5459d870a4a6a53f7cc7807a03f4ab45812e8ed06a1",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B27",
@@ -1209,7 +1467,10 @@
       "lessons": [
         "U18"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "4485930d549714a988626e32424507f333b8777768f56fa7498464de6e90e32e",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B28",
@@ -1222,7 +1483,10 @@
       "lessons": [
         "U33"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "2cbdf3e292d6b9dfcee0ae20e1baf8960af1f38e9a2a11f6a0ff071c16e96feb",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U33-U36"
     },
     {
       "id": "CC-B29",
@@ -1237,7 +1501,10 @@
         "U11",
         "U26"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "editorial_review_status": "full_read",
+      "planned_audit_group": "U01-U08"
     },
     {
       "id": "CC-B30",
@@ -1250,7 +1517,10 @@
       "lessons": [
         "U13"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "ffa3785871066285b9e1c97eaa6f9ceccf6a374f30e32dda1f7fa4c091cd0731",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B31",
@@ -1264,7 +1534,10 @@
         "U19",
         "U34"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "80bb43dfd562187a6dc2ff1d08b91a7c8094d9703b0017c62dc9ed1db6b7fbe9",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B32",
@@ -1278,7 +1551,10 @@
         "U23",
         "U34"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "af0932ea21ef80b5b90b981a5db3b612da90422da024dbaf4b20325f1e3a8225",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B33",
@@ -1291,7 +1567,10 @@
       "lessons": [
         "U23"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "a08da77fcc749e6632f9df062be8d18db9191062e1d1729c5896a8ae76a7c5d2",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U17-U24"
     },
     {
       "id": "CC-B34",
@@ -1306,7 +1585,10 @@
         "U30",
         "U31"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "7a90fb51cf2b3e0b683fa144aa70390b3e107886007e77bb958be48f835832ec",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "CC-B35",
@@ -1319,7 +1601,10 @@
       "lessons": [
         "U25"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "0d64f28f18254b9c856e6965e7bb2584d9004bae164ad8c9f52e7ed49b48267d",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "CC-B36",
@@ -1333,7 +1618,10 @@
         "U13",
         "U29"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "d8d42a46ce68728bee4bb32fe7411369c44c28664271ced1dae6a3c93b081cd0",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B37",
@@ -1347,7 +1635,10 @@
         "U32",
         "U33"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "a322839917c77997a4b72bf588d8f090cfe59cd60145992339c2e507d2f6d5ae",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "CC-B38",
@@ -1360,7 +1651,10 @@
       "lessons": [
         "U12"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "d88c55909d8b213121586359ae32d9856d783416357b920d668fdb7688d2bf09",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U09-U16"
     },
     {
       "id": "CC-B39",
@@ -1374,7 +1668,10 @@
         "U32",
         "U34"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "19f672e6aeefd424f3089a7213db72b7129f53b4e6ac5a7b0c2769a321f3de0f",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U25-U32"
     },
     {
       "id": "CC-B40",
@@ -1389,7 +1686,21 @@
         "U35",
         "U36"
       ],
-      "coverage_status": "planned_chapter_mapping"
+      "coverage_status": "planned_chapter_mapping",
+      "current_sha256": "19026ae45ee74728ae83ea46cc7d494da5d199cd21af0dc38ad2fc22f5ee4bff",
+      "editorial_review_status": "pending_full_read",
+      "planned_audit_group": "U33-U36"
     }
-  ]
+  ],
+  "editorial_audit": {
+    "source_map": "editorial/source-map.json",
+    "objectives": "editorial/learning-objectives.json",
+    "reading_log": "editorial/pilot-reading-log.json",
+    "audit_status": "audit_complete",
+    "audit_scope": "100 kaynak revizyon envanteri ve U01–U08e bağlı31 tam kaynak okuması",
+    "pilot_gate_status": "pilot_gap_resolution_pending",
+    "pilot_sources_full_read": 31,
+    "remaining_sources_pending_full_read": 69,
+    "runtime_status": "not_run"
+  }
 }

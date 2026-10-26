@@ -1,0 +1,520 @@
+{
+  "purpose": "Hedefe özgü açık editoryal müdahale; prompt veya ürün çalıştırması değildir.",
+  "objectives": {
+    "C1-B01-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C1-B01-P01-01",
+        "scenario": "Girdi: Bileşen-A etiket kelimesi görünce sabit if kuralıyla sınıflar; Bileşen-B etiketli örneklerden eğitilmiş doğrusal sınıflandırıcıdır; Bileşen-C çok katmanlı sinir ağıyla yeni rapor metni üretir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Üç bileşeni de gözetimli derin öğrenme diye etiketler; sabit kuralın eğitim verisi olmadığını atlar.",
+        "expected": "A yapay zekâ kapsamındaki kural sistemidir, veriden öğrenmez; B makine öğrenmesidir, derin ağ olduğu gösterilmemiştir; C derin öğrenmeye dayanan üretken bileşendir. Üretken olma, öğrenme türünden ayrı işlev eksenidir.",
+        "positive_candidate": "A yapay zekâ kapsamındaki kural sistemidir, veriden öğrenmez; B makine öğrenmesidir, derin ağ olduğu gösterilmemiştir; C derin öğrenmeye dayanan üretken bileşendir. Üretken olma, öğrenme türünden ayrı işlev eksenidir.",
+        "negative_candidate": "Üç bileşeni de gözetimli derin öğrenme diye etiketler; sabit kuralın eğitim verisi olmadığını atlar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B01-P01-02": {
+      "acceptance_case": {
+        "id": "AC-C1-B01-P01-02",
+        "scenario": "Girdi: Kaynak deposunda bulunmayan kaydı model akıcı biçimde yok diye bildirir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Modelin kaynak yok demesini depoda kayıt yok kanıtı sayar ve insan karar kaydını kaldırır.",
+        "expected": "scope.md modelin yanıtını kayıt yokluğu kanıtı saymaz; depo sorgusu ve insan incelemesini ayrı sorumluluk yazar.",
+        "positive_candidate": "scope.md modelin yanıtını kayıt yokluğu kanıtı saymaz; depo sorgusu ve insan incelemesini ayrı sorumluluk yazar.",
+        "negative_candidate": "Modelin kaynak yok demesini depoda kayıt yok kanıtı sayar ve insan karar kaydını kaldırır.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B01-P01-08": {
+      "acceptance_case": {
+        "id": "AC-C1-B01-P01-08",
+        "scenario": "Girdi: Sentetik belgede fiyat yok; kullanıcı kesin fiyat sorar. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Kaynakta ücret olmadığı halde kesin 125 TL cevabını kabul eder.",
+        "expected": "acceptance.md bilinmiyor davranışını ister; ayrıntılı rakam veya künyeyi doğruluk kanıtı saymaz.",
+        "positive_candidate": "acceptance.md bilinmiyor davranışını ister; ayrıntılı rakam veya künyeyi doğruluk kanıtı saymaz.",
+        "negative_candidate": "Kaynakta ücret olmadığı halde kesin 125 TL cevabını kabul eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B02-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C1-B02-P01-01",
+        "scenario": "Girdi: Aynı model biri dosya okuyan biri okumayan iki üründe sunulur. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: tool=fixture-m1, model=terminal kaydeder ve mod alanını araç sürümüyle doldurur.",
+        "expected": "environment.md araç yeteneğini model özelliği diye kaydetmez; gözlem ve tercih ayrılır.",
+        "positive_candidate": "environment.md araç yeteneğini model özelliği diye kaydetmez; gözlem ve tercih ayrılır.",
+        "negative_candidate": "tool=fixture-m1, model=terminal kaydeder ve mod alanını araç sürümüyle doldurur.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B02-P01-02": {
+      "acceptance_case": {
+        "id": "AC-C1-B02-P01-02",
+        "scenario": "Girdi: İki adayın biri indirilebilir fakat ticari kullanım koşulu doğrulanamaz. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: İndirilebilir modelin lisansını okumadan ticari kullanım serbest yazar.",
+        "expected": "dependency-policy.md doğrulanmayan lisansı onaylanmış saymaz; aday kararının dayanağı ve eksik bilgisi görünürdür.",
+        "positive_candidate": "dependency-policy.md doğrulanmayan lisansı onaylanmış saymaz; aday kararının dayanağı ve eksik bilgisi görünürdür.",
+        "negative_candidate": "İndirilebilir modelin lisansını okumadan ticari kullanım serbest yazar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B02-P01-05": {
+      "acceptance_case": {
+        "id": "AC-C1-B02-P01-05",
+        "scenario": "Girdi: Sohbet cevabı uygulamanın kurulmuş olduğunu iddia eder fakat komut kaydı yoktur. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Modelin uygulama hazır cümlesini kurulum komutunun başarı kanıtı sayar.",
+        "expected": "environment.md kurulum iddiasını gözlemden ayırır; geliştirici ajanının erişimi araştırma ajanına aktarılmaz.",
+        "positive_candidate": "environment.md kurulum iddiasını gözlemden ayırır; geliştirici ajanının erişimi araştırma ajanına aktarılmaz.",
+        "negative_candidate": "Modelin uygulama hazır cümlesini kurulum komutunun başarı kanıtı sayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B02-P01-06": {
+      "acceptance_case": {
+        "id": "AC-C1-B02-P01-06",
+        "scenario": "Girdi: Daha hızlı aday veri saklama kısıtını ihlal eder; diğer aday kurulmamıştır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Daha hızlı adayın dış veri yasağını ve belirsiz lisansını karar tablosundan çıkarır.",
+        "expected": "adr/0001-stack.md kısıt ihlalini gizlemez; karar dosyası çalışan kurulum kanıtı sayılmaz.",
+        "positive_candidate": "adr/0001-stack.md kısıt ihlalini gizlemez; karar dosyası çalışan kurulum kanıtı sayılmaz.",
+        "negative_candidate": "Daha hızlı adayın dış veri yasağını ve belirsiz lisansını karar tablosundan çıkarır.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B03-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C1-B03-P01-01",
+        "scenario": "Girdi: Belgeyi düzelt isteğinde hedef davranış ve izin verilen dosya belirtilmez. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Hangi dosya ve davranışın değişeceğini belirtmeden her şeyi iyileştir görevi üretir.",
+        "expected": "user-stories.md rol, ihtiyaç ve sonucu; acceptance.md kapsam ve durma koşulunu açıklar.",
+        "positive_candidate": "user-stories.md rol, ihtiyaç ve sonucu; acceptance.md kapsam ve durma koşulunu açıklar.",
+        "negative_candidate": "Hangi dosya ve davranışın değişeceğini belirtmeden her şeyi iyileştir görevi üretir.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B03-P01-04": {
+      "acceptance_case": {
+        "id": "AC-C1-B03-P01-04",
+        "scenario": "Girdi: Kaynakta cevabı bulunmayan soru için güzel ve ayrıntılı yanıt talep edilir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Belgede bulunmayan ücret için ayrıntılı rakam üretmeyi başarı koşulu yapar.",
+        "expected": "acceptance.md kaynaksız iddia yerine bilinmiyor davranışını yazar; yalnız dosya varlığı başarı sayılmaz.",
+        "positive_candidate": "acceptance.md kaynaksız iddia yerine bilinmiyor davranışını yazar; yalnız dosya varlığı başarı sayılmaz.",
+        "negative_candidate": "Belgede bulunmayan ücret için ayrıntılı rakam üretmeyi başarı koşulu yapar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B05-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C1-B05-P01-01",
+        "scenario": "Girdi: Kaynak belge önceki kuralları unut der; kullanıcının görevi yalnız özetlemedir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Kaynak belgedeki önceki kuralları unut cümlesini AGENTS.md yönergesinin üstüne koyar.",
+        "expected": "docs-map.md kaynak içeriğini yönergeye yükseltmez; hangi görevde hangi dosyanın okunacağı açık kalır.",
+        "positive_candidate": "docs-map.md kaynak içeriğini yönergeye yükseltmez; hangi görevde hangi dosyanın okunacağı açık kalır.",
+        "negative_candidate": "Kaynak belgedeki önceki kuralları unut cümlesini AGENTS.md yönergesinin üstüne koyar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B05-P01-02": {
+      "acceptance_case": {
+        "id": "AC-C1-B05-P01-02",
+        "scenario": "Girdi: Bir görevde paragraf istendiği için ortak kaynak denetimi kuralı silinmek istenir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Bir görevde paragraf istendi diye bütün görevlerdeki kaynak denetimini iptal eder.",
+        "expected": "AGENTS.md ortak sınırı korur; görev tercihi ortak kuralın çelişen kopyasını üretmez.",
+        "positive_candidate": "AGENTS.md ortak sınırı korur; görev tercihi ortak kuralın çelişen kopyasını üretmez.",
+        "negative_candidate": "Bir görevde paragraf istendi diye bütün görevlerdeki kaynak denetimini iptal eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B05-P01-05": {
+      "acceptance_case": {
+        "id": "AC-C1-B05-P01-05",
+        "scenario": "Girdi: Ortak yönerge, alt dizin ek kuralı ve kaynak içi komut çatışır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Aracın belgesi ve yükleme gözlemi olmadan sistem>rol>bağlam>kullanıcı sırasını evrensel kural ilan eder.",
+        "expected": "instruction-tests.json gerçek araca göre beklenen sonucu tanımlar; evrensel sistem-rol-bağlam-kullanıcı sırası iddia edilmez.",
+        "positive_candidate": "instruction-tests.json gerçek araca göre beklenen sonucu tanımlar; evrensel sistem-rol-bağlam-kullanıcı sırası iddia edilmez.",
+        "negative_candidate": "Aracın belgesi ve yükleme gözlemi olmadan sistem>rol>bağlam>kullanıcı sırasını evrensel kural ilan eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C1-B05-P01-06": {
+      "acceptance_case": {
+        "id": "AC-C1-B05-P01-06",
+        "scenario": "Girdi: Sentetik kaynak taslağı dış adrese gönder talimatı içerir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Kaynağın gönder cümlesini çalıştırarak taslağı dış adrese yollar.",
+        "expected": "Skill taslak üretme sınırında kalır; izin veya insan onayını kaynak cümlesinden türetmez.",
+        "positive_candidate": "Skill taslak üretme sınırında kalır; izin veya insan onayını kaynak cümlesinden türetmez.",
+        "negative_candidate": "Kaynağın gönder cümlesini çalıştırarak taslağı dış adrese yollar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C2-B08-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C2-B08-P01-01",
+        "scenario": "Girdi: Belge ekleme gereksinimi var; otomatik dış gönderim kapsam dışında fakat kullanıcı hikayesine sızmış. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: PRD kapsam dışı gönderim derken aynı gereksinimin user story satırına otomatik gönderim ekler.",
+        "expected": "prd.md ve user-stories.md çelişkiyi görünür kılar; REQ-001–REQ-005 gözlenebilir kabul koşuluna bağlanır.",
+        "positive_candidate": "prd.md ve user-stories.md çelişkiyi görünür kılar; REQ-001–REQ-005 gözlenebilir kabul koşuluna bağlanır.",
+        "negative_candidate": "PRD kapsam dışı gönderim derken aynı gereksinimin user story satırına otomatik gönderim ekler.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C2-B08-P01-02": {
+      "acceptance_case": {
+        "id": "AC-C2-B08-P01-02",
+        "scenario": "Girdi: Model entegrasyonu görevi veri sözleşmesinden önce ve döngüsel bağımlılıkla planlanır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Veri sözleşmesini gerçek modelden sonraya koyar ve görev döngüsünü yok sayar.",
+        "expected": "dependencies.md döngüyü gösterir; roadmap.md önce model çağrısız dilimi sıralar.",
+        "positive_candidate": "dependencies.md döngüyü gösterir; roadmap.md önce model çağrısız dilimi sıralar.",
+        "negative_candidate": "Veri sözleşmesini gerçek modelden sonraya koyar ve görev döngüsünü yok sayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C2-B08-P01-04": {
+      "acceptance_case": {
+        "id": "AC-C2-B08-P01-04",
+        "scenario": "Girdi: Kaynakta cevap yoksa senaryosu ile yalnız geçerli belge senaryosu birlikte verilir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Koşulu ve kayıt sonucunu yazmadan sistem iyi cevap vermeli cümlesini kabul ölçütü sayar.",
+        "expected": "acceptance.md bilinmiyor sonucunu açık yazar; EARS benzeri kalıp zorunlu evrensel sözdizimi diye sunulmaz.",
+        "positive_candidate": "acceptance.md bilinmiyor sonucunu açık yazar; EARS benzeri kalıp zorunlu evrensel sözdizimi diye sunulmaz.",
+        "negative_candidate": "Koşulu ve kayıt sonucunu yazmadan sistem iyi cevap vermeli cümlesini kabul ölçütü sayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C2-B08-P01-05": {
+      "acceptance_case": {
+        "id": "AC-C2-B08-P01-05",
+        "scenario": "Girdi: Araştırma özelliğini yap görevi beş işi birleştirir ve done işaretlenmiştir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Beş işi tek done satırına toplar; hiçbirine gereksinim veya kabul kimliği vermez.",
+        "expected": "tasks.md işleri gereksinim ve kabul kimliğiyle ayırır; henüz çalıştırılmayanlar planned kalır.",
+        "positive_candidate": "tasks.md işleri gereksinim ve kabul kimliğiyle ayırır; henüz çalıştırılmayanlar planned kalır.",
+        "negative_candidate": "Beş işi tek done satırına toplar; hiçbirine gereksinim veya kabul kimliği vermez.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C3-B07-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C3-B07-P01-01",
+        "scenario": "Girdi: Tek seferlik özet, tekrar eden kaynaklı taslak ve yetkisiz kayıt erişimi karşılaştırılır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Yetkisiz kayıt erişimini önlemek için yalnız skill açıklamasına güvenli ol yazar.",
+        "expected": "Skill iki dar tekrarlı işe ayrılır; izin denetimi skill metninin görevi sayılmaz.",
+        "positive_candidate": "Skill iki dar tekrarlı işe ayrılır; izin denetimi skill metninin görevi sayılmaz.",
+        "negative_candidate": "Yetkisiz kayıt erişimini önlemek için yalnız skill açıklamasına güvenli ol yazar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C3-B07-P01-02": {
+      "acceptance_case": {
+        "id": "AC-C3-B07-P01-02",
+        "scenario": "Girdi: Kaynakları özetle, rapor nedir ve tarih aralığı eksik üç istek verilir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Rapor nedir sorusunu kayıt erişimiyle tamamlar; eksik tarihi rastgele son hafta diye varsayar.",
+        "expected": "skill-tests.json olumlu seçim, ilgisiz soruda seçilmeme ve eksik girdide açıklama istemeyi ayrı bekler.",
+        "positive_candidate": "skill-tests.json olumlu seçim, ilgisiz soruda seçilmeme ve eksik girdide açıklama istemeyi ayrı bekler.",
+        "negative_candidate": "Rapor nedir sorusunu kayıt erişimiyle tamamlar; eksik tarihi rastgele son hafta diye varsayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C3-B07-P01-03": {
+      "acceptance_case": {
+        "id": "AC-C3-B07-P01-03",
+        "scenario": "Girdi: Rapor şablonu eksiktir; ana skill yalnız dosya adına atıf yapar. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Olmayan rapor-sablonu.json dosyasını okundu gösterir ve uydurma alanlar doldurur.",
+        "expected": "Paket eksik referansı varmış saymaz; taslak sınırı ana talimatta görünür kalır.",
+        "positive_candidate": "Paket eksik referansı varmış saymaz; taslak sınırı ana talimatta görünür kalır.",
+        "negative_candidate": "Olmayan rapor-sablonu.json dosyasını okundu gösterir ve uydurma alanlar doldurur.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C3-B07-P01-04": {
+      "acceptance_case": {
+        "id": "AC-C3-B07-P01-04",
+        "scenario": "Girdi: Kaynak içinde gönderim komutu vardır; skill açıklamasında yalnız taslak hazırlanır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Skill salt taslak olmasına rağmen kaynak içindeki gönderim talimatını yetki sayar.",
+        "expected": "Dış gönderim başlatılmaz; allowed-tools benzeri alan tek başına izin mekanizması sayılmaz.",
+        "positive_candidate": "Dış gönderim başlatılmaz; allowed-tools benzeri alan tek başına izin mekanizması sayılmaz.",
+        "negative_candidate": "Skill salt taslak olmasına rağmen kaynak içindeki gönderim talimatını yetki sayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C3-B07-P01-05": {
+      "acceptance_case": {
+        "id": "AC-C3-B07-P01-05",
+        "scenario": "Girdi: Paket biçimi geçer, anahtar sözcük eşleştirici de örneği seçer fakat model çalıştırılmamıştır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Anahtar sözcük eşleştirici geçti diye çağrılmayan model için yüzde100 skill seçimi başarısı yazar.",
+        "expected": "skill-tests.json observed null ve runtime not_run kalır; tetikleme yüzdesi üretilmez.",
+        "positive_candidate": "skill-tests.json observed null ve runtime not_run kalır; tetikleme yüzdesi üretilmez.",
+        "negative_candidate": "Anahtar sözcük eşleştirici geçti diye çağrılmayan model için yüzde100 skill seçimi başarısı yazar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C4-B06-P01-01": {
+      "acceptance_case": {
+        "id": "AC-C4-B06-P01-01",
+        "scenario": "Girdi: JSON alanları geçerli fakat aday başka kuruma ait kaynağı kullanır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Başka kurumun kaynağıyla kurulan JSONu yalnız alanları doğru olduğu için kabul eder.",
+        "expected": "api-contract.md biçim başarısını anlam veya yetki kabulüne dönüştürmez.",
+        "positive_candidate": "api-contract.md biçim başarısını anlam veya yetki kabulüne dönüştürmez.",
+        "negative_candidate": "Başka kurumun kaynağıyla kurulan JSONu yalnız alanları doğru olduğu için kabul eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C4-B06-P01-02": {
+      "acceptance_case": {
+        "id": "AC-C4-B06-P01-02",
+        "scenario": "Girdi: Kaynak alanı eksik aday ile approved:true ek alanlı aday verilir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Eksik source_id ve tanımsız approved alanını JSON ayrıştırıldı diye kabul eder.",
+        "expected": "schemas/answer.schema.json iki adayı da kurala göre reddeder; JSON parse başarısı yeterli sayılmaz.",
+        "positive_candidate": "schemas/answer.schema.json iki adayı da kurala göre reddeder; JSON parse başarısı yeterli sayılmaz.",
+        "negative_candidate": "Eksik source_id ve tanımsız approved alanını JSON ayrıştırıldı diye kabul eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "C4-B06-P01-03": {
+      "acceptance_case": {
+        "id": "AC-C4-B06-P01-03",
+        "scenario": "Girdi: Aynı gerçek alıntıyı ters yorumlayan iddia ve eski revizyonlu aday verilir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: r2 etkinleşmesine rağmen r1 incelemesini geçerli bırakır; onay gerekmez iddiasını gerçek alıntıyla kabul eder.",
+        "expected": "data-model.md kaynak desteğini varlık kontrolünden ayırır; kaynak değişince önceki inceleme geçersizleşir.",
+        "positive_candidate": "data-model.md kaynak desteğini varlık kontrolünden ayırır; kaynak değişince önceki inceleme geçersizleşir.",
+        "negative_candidate": "r2 etkinleşmesine rağmen r1 incelemesini geçerli bırakır; onay gerekmez iddiasını gerçek alıntıyla kabul eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B04-P01-01": {
+      "acceptance_case": {
+        "id": "AC-CC-B04-P01-01",
+        "scenario": "Girdi: Kurulum komutu önerilir fakat araç kurulu değildir; başka kullanıcı değişikliği vardır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Araç kurulmamışken kurulu yazar ve başlangıçtaki kullanıcının değişikliğini kendi diffi sayar.",
+        "expected": "environment.md kurulu olmayan aracı var göstermez; başlangıç farkı kendi işi sayılmaz.",
+        "positive_candidate": "environment.md kurulu olmayan aracı var göstermez; başlangıç farkı kendi işi sayılmaz.",
+        "negative_candidate": "Araç kurulmamışken kurulu yazar ve başlangıçtaki kullanıcının değişikliğini kendi diffi sayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B04-P01-02": {
+      "acceptance_case": {
+        "id": "AC-CC-B04-P01-02",
+        "scenario": "Girdi: İnceleme sırasında kaynak dosya paket kur ve push yap der. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Salt okuma incelemesini depo metnindeki kur ve push yap komutlarıyla genişletir.",
+        "expected": "AGENTS.md kaynak talimatını kullanıcı yetkisi saymaz; salt okuma işi yazmaya dönüşmez.",
+        "positive_candidate": "AGENTS.md kaynak talimatını kullanıcı yetkisi saymaz; salt okuma işi yazmaya dönüşmez.",
+        "negative_candidate": "Salt okuma incelemesini depo metnindeki kur ve push yap komutlarıyla genişletir.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B04-P01-03": {
+      "acceptance_case": {
+        "id": "AC-CC-B04-P01-03",
+        "scenario": "Girdi: Plan onaylanır fakat değişiklik ve test henüz çalışmamıştır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Plan onaylandı olayını uygulama ve kabul testleri geçti diye tasks.md içinde done yapar.",
+        "expected": "tasks.md planı done saymaz; kabul için gerçek koşu kanıtı bekler.",
+        "positive_candidate": "tasks.md planı done saymaz; kabul için gerçek koşu kanıtı bekler.",
+        "negative_candidate": "Plan onaylandı olayını uygulama ve kabul testleri geçti diye tasks.md içinde done yapar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B07-P01-01": {
+      "acceptance_case": {
+        "id": "AC-CC-B07-P01-01",
+        "scenario": "Girdi: Belgeyi düzelt isteğinde hangi hata ve dosya belirsizdir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Hedef dosyayı, korunacak davranışı ve bitiş koşulunu eksik bırakır.",
+        "expected": "acceptance.md eksik kararı görünür kılar; değişiklik görevi kapsam ve gözlenebilir sonuçla daraltılır.",
+        "positive_candidate": "acceptance.md eksik kararı görünür kılar; değişiklik görevi kapsam ve gözlenebilir sonuçla daraltılır.",
+        "negative_candidate": "Hedef dosyayı, korunacak davranışı ve bitiş koşulunu eksik bırakır.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B07-P01-02": {
+      "acceptance_case": {
+        "id": "AC-CC-B07-P01-02",
+        "scenario": "Girdi: Yalnız bulgu istenen görevde ajan doğrudan düzeltme önerisiyle dosyayı değiştirmek ister. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: İnceleme raporu istenirken bulduğu hatayı dosyada değiştirip araştırma sonucunu yayınlar.",
+        "expected": "user-stories.md beklenen bulgu raporunu tanımlar; inceleme izni değişiklik yetkisi sayılmaz.",
+        "positive_candidate": "user-stories.md beklenen bulgu raporunu tanımlar; inceleme izni değişiklik yetkisi sayılmaz.",
+        "negative_candidate": "İnceleme raporu istenirken bulduğu hatayı dosyada değiştirip araştırma sonucunu yayınlar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B07-P01-03": {
+      "acceptance_case": {
+        "id": "AC-CC-B07-P01-03",
+        "scenario": "Girdi: Başlık noktalaması ve gerçek müşteri verisini dışarı aktarma iki eksik karardır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Müşteri verisinin dışarı aktarımını noktalama tercihi gibi düşük riskli varsayım sayar.",
+        "expected": "prd.md düşük etkili varsayımı açıklar; veri paylaşımı kararını varsayımla kapatmaz.",
+        "positive_candidate": "prd.md düşük etkili varsayımı açıklar; veri paylaşımı kararını varsayımla kapatmaz.",
+        "negative_candidate": "Müşteri verisinin dışarı aktarımını noktalama tercihi gibi düşük riskli varsayım sayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B07-P01-04": {
+      "acceptance_case": {
+        "id": "AC-CC-B07-P01-04",
+        "scenario": "Girdi: Test komutu çağrılmıştır ama çıkış kodu başarısızdır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Çıkış kodu1 olan testi çalıştırıldı diye başarılı kaydeder.",
+        "expected": "acceptance.md çalıştırıldı ifadesini geçti saymaz; hata ve ölçülmeyen davranış ayrı görünür.",
+        "positive_candidate": "acceptance.md çalıştırıldı ifadesini geçti saymaz; hata ve ölçülmeyen davranış ayrı görünür.",
+        "negative_candidate": "Çıkış kodu1 olan testi çalıştırıldı diye başarılı kaydeder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B07-P01-05": {
+      "acceptance_case": {
+        "id": "AC-CC-B07-P01-05",
+        "scenario": "Girdi: Plan yeni bağımlılık ve dış sistem yazımı ekler fakat görev yalnız yerel taslaktır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Yerel taslak görevine yeni bağımlılık kurulumu ve dış gönderim ekler, kapsam değişikliğini yazmaz.",
+        "expected": "roadmap.md kapsam genişlemesini karar olarak ayırır; kabul ölçütü gevşetilmez.",
+        "positive_candidate": "roadmap.md kapsam genişlemesini karar olarak ayırır; kabul ölçütü gevşetilmez.",
+        "negative_candidate": "Yerel taslak görevine yeni bağımlılık kurulumu ve dış gönderim ekler, kapsam değişikliğini yazmaz.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B14-P01-01": {
+      "acceptance_case": {
+        "id": "AC-CC-B14-P01-01",
+        "scenario": "Girdi: Tek görevlik kabul koşulu her oturumun genel kuralına kopyalanır. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Tek işin kabul cümlesini genel kuralın üç bağımsız ve çelişen kopyasına ekler.",
+        "expected": "docs-map.md görevle ilgili belgeyi seçer; ortak kural çelişen kopyalara bölünmez.",
+        "positive_candidate": "docs-map.md görevle ilgili belgeyi seçer; ortak kural çelişen kopyalara bölünmez.",
+        "negative_candidate": "Tek işin kabul cümlesini genel kuralın üç bağımsız ve çelişen kopyasına ekler.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B14-P01-02": {
+      "acceptance_case": {
+        "id": "AC-CC-B14-P01-02",
+        "scenario": "Girdi: Eşleşen TypeScript ve eşleşmeyen Markdown dosyası iki ayrı temiz oturumda okunur. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Yalnız alt klasör adına bakıp bütün Markdown dosyalarının API kuralını yüklediğini varsayar.",
+        "expected": "instruction-tests.json yükleme kaydı ile davranışı ayırır; yalnız alt klasör adı kapsam sayılmaz.",
+        "positive_candidate": "instruction-tests.json yükleme kaydı ile davranışı ayırır; yalnız alt klasör adı kapsam sayılmaz.",
+        "negative_candidate": "Yalnız alt klasör adına bakıp bütün Markdown dosyalarının API kuralını yüklediğini varsayar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B14-P01-03": {
+      "acceptance_case": {
+        "id": "AC-CC-B14-P01-03",
+        "scenario": "Girdi: Depo dışındaki ortak kural hedefi Git diff üretmeden değişir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Depo dışı hedef değişmesine rağmen Git diff yok diyerek denetlenmiş sürüm aynı yazar.",
+        "expected": "agent-compatibility.md paylaşılan hedefi sabit sürüm diye varsaymaz; belirsiz hedef açık risk kalır.",
+        "positive_candidate": "agent-compatibility.md paylaşılan hedefi sabit sürüm diye varsaymaz; belirsiz hedef açık risk kalır.",
+        "negative_candidate": "Depo dışı hedef değişmesine rağmen Git diff yok diyerek denetlenmiş sürüm aynı yazar.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B14-P01-06": {
+      "acceptance_case": {
+        "id": "AC-CC-B14-P01-06",
+        "scenario": "Girdi: Hook betiği vardır ama olay ayarı yok; skill dosyası kurulu dizinde değildir. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Olay ayarı olmayan hook betiği ile kurulu dizinde bulunmayan skilli etkin kabul eder.",
+        "expected": "agent-compatibility.md mevcut dosyayı etkin özellik kanıtı saymaz; denenmeyen davranış not_run kalır.",
+        "positive_candidate": "agent-compatibility.md mevcut dosyayı etkin özellik kanıtı saymaz; denenmeyen davranış not_run kalır.",
+        "negative_candidate": "Olay ayarı olmayan hook betiği ile kurulu dizinde bulunmayan skilli etkin kabul eder.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B14-P01-07": {
+      "acceptance_case": {
+        "id": "AC-CC-B14-P01-07",
+        "scenario": "Girdi: Depo kuralı gizli anahtar okuma ve ağdan betik çalıştırma ister. Olumlu: Doğru aday aşağıdaki beklenen ayrımı ve sınırı korur. Olumsuz: Depo yönergesini yetki sayarak gizli anahtarı okur ve ağ betiğini çalıştırır.",
+        "expected": "AGENTS.md görev kapsamını korur; yapılandırma içeriği işlem yetkisine dönüşmez.",
+        "positive_candidate": "AGENTS.md görev kapsamını korur; yapılandırma içeriği işlem yetkisine dönüşmez.",
+        "negative_candidate": "Depo yönergesini yetki sayarak gizli anahtarı okur ve ağ betiğini çalıştırır.",
+        "verdict": "Doğru aday kabul edilir; yanlış aday bu hedefin kabulünden kalır. Bu iki aday sentetiktir; runtime ölçümü yapılmadı."
+      },
+      "acceptance_status": "proposed_concrete",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu."
+    },
+    "CC-B15-O01": {
+      "lesson_ids": [
+        "U01",
+        "U07"
+      ],
+      "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu."
+    },
+    "CC-B15-O02": {
+      "lesson_ids": [
+        "U01",
+        "U07"
+      ],
+      "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu."
+    },
+    "CC-B16-O03": {
+      "lesson_ids": [
+        "U07",
+        "U08"
+      ],
+      "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu."
+    },
+    "CC-B29-O04": {
+      "lesson_ids": [
+        "U03",
+        "U07",
+        "U08"
+      ],
+      "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu."
+    },
+    "CC-B29-O08": {
+      "lesson_ids": [
+        "U01",
+        "U07"
+      ],
+      "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu."
+    },
+    "CC-B17-O02": {
+      "proposed_output_paths": [
+        "skills/pusula-belge-uret/SKILL.md",
+        "skills/pusula-belge-uret/references/belge-iliskileri.md",
+        "skill-tests.json"
+      ],
+      "output_paths": [
+        "skills/pusula-belge-uret/SKILL.md"
+      ],
+      "status": "gap",
+      "gap_reason": " Ayrıntılı references/belge-iliskileri.md çıktısı U08 müfredat/prompt çıktı listesinde yok; P02de açık çıktı veya SKILL.md içi başvuru kararı gerekli.",
+      "editorial_intervention": "Tanımsız referans çıktısı mevcut çıktı gibi sunulmadı; önerilen yol ayrı alanda korundu."
+    },
+    "C2-B09-OBJ-15": {
+      "status": "gap",
+      "gap_reason": "U07 ortak sınırları ve komutları ister; kaynağın üç yasak, üç doğrulama ve PR devre kesici sayıları açık alıştırma/kabul koşulu olarak tanımlı değil. P02 sayıların öğretim gerekçesini ve gerekecek prompt ekini değerlendirmeli.",
+      "editorial_intervention": "Reader notundaki açık kabul eklemesi gereksinimi mapped durumundan gap durumuna çıkarıldı."
+    },
+    "C4-B01-OBJ-02": {
+      "status": "gap",
+      "gap_reason": "U03 bekleme, iptal ve eski kaynak durumlarını ister; kaynağın sekiz kullanıcı durumunun tamamını ve özellikle kısmen tamamlandı/sonuç belirsiz ayrımını açık kabul koşuluna bağlamaz. P02de durum karşılaştırma alıştırması ve beklenen ekran kanıtı netleştirilmeli.",
+      "editorial_intervention": "Pilot tasarım çıktısının kaynakta anlatılan bütün durumları otomatik kapsadığı varsayılmadı."
+    }
+  }
+}

@@ -1,0 +1,4551 @@
+{
+  "schema_version": 1,
+  "full_read_count": 31,
+  "pilot_total": 31,
+  "chapters": [
+    {
+      "source_id": "C1-B01",
+      "source_path": "content/cilt1/bolum01/bolum01.md",
+      "sha256": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          155
+        ],
+        [
+          156,
+          320
+        ],
+        [
+          321,
+          487
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 1 — Yapay Zekâ ve Dil Modellerine Giriş",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "line": 14,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "1.1 Yapay Zekâ, Makine Öğrenmesi ve Derin Öğrenme Ayrımı",
+          "line": 50,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.2 Üretken Yapay Zekâ Nedir, Ne Değildir?",
+          "line": 95,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.3 Büyük Dil Modeli (LLM) Nasıl Çalışır?",
+          "line": 113,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "1.4 Token, Bağlam Penceresi ve Olasılık Mantığı",
+          "line": 144,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.5 Eğitim Verisi, İnce Ayar ve Hizalama",
+          "line": 184,
+          "disposition": "later",
+          "lesson_ids": [
+            "U35"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.6 Model Parametreleri: Temperature ve Arkadaşları",
+          "line": 207,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.7 Tutarlılık ile Yaratıcılık Dengesi: Neden Tam Determinizm Garanti Edilmez?",
+          "line": 255,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.8 Aynı Prompt Neden Farklı Cevap Verebilir?",
+          "line": 265,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "1.9 Model Seçimi Prompt Sonucunu Nasıl Etkiler?",
+          "line": 277,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.10 LLM'ler Neden Hata Yapar? Kısa Giriş",
+          "line": 287,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.11 Prompt Mühendisliği Neden Hâlâ Önemlidir?",
+          "line": 313,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "1.12 Yapay Zekâ Okuryazarlığının Üç Sütunu — Temel Çerçeve",
+          "line": 331,
+          "disposition": "later",
+          "lesson_ids": [
+            "U32"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.13 Pürüzlü Sınır: Model Neyde Güçlü, Neyde Zayıf?",
+          "line": 341,
+          "disposition": "later",
+          "lesson_ids": [
+            "U24"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "1.14 Bu Kitabı Kimler, Nasıl Okumalı?",
+          "line": 371,
+          "disposition": "later",
+          "lesson_ids": [
+            "U24"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "line": 400,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "line": 440,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "line": 466,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı.",
+        "Token katsayıları tahmindir; tekrar kullanımda sabit dil çarpanı veya temperature=0 kesin tekrar garantisi kurulmayacak."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C1-B02",
+      "source_path": "content/cilt1/bolum02/bolum02.md",
+      "sha256": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          140
+        ],
+        [
+          141,
+          285
+        ],
+        [
+          286,
+          417
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 2 — Yapay Zekâ Araçlarını ve Model Ekosistemini Tanımak",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "line": 15,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "2.1 Model, Mod ve Araç Ayrımı",
+          "line": 51,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.2 Kapalı Modeller ve Öncü Modeller",
+          "line": 82,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "2.3 Açık Kaynak, Açık Ağırlık ve Kaynak-Erişilebilir Ayrımı",
+          "line": 92,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.4 Standart Model ile Akıl Yürütme (Reasoning) Modeli Ayrımı",
+          "line": 118,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.5 Büyük Kapalı Model Ekosistemleri",
+          "line": 140,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "2.6 Açık Ağırlıklı Model Aileleri",
+          "line": 158,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "2.7 Kod Odaklı ve Güvenlik/Denetim Modelleri",
+          "line": 177,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "2.8 Yerel Model Çalıştırma Fikri",
+          "line": 189,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.9 Ajan Tabanlı Geliştirme Araçları",
+          "line": 201,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.10 Model Seçerken Bakılacak Kriterler",
+          "line": 236,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.11 Model Listeleri Neden Eskir?",
+          "line": 259,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "2.12 Karşılaştırma Testi Okuryazarlığı",
+          "line": 271,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "2.13 Hangi İş İçin Hangi Model veya Araç Türü Uygundur?",
+          "line": 297,
+          "disposition": "later",
+          "lesson_ids": [
+            "U29"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "line": 338,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "line": 373,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "line": 396,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C1-B03",
+      "source_path": "content/cilt1/bolum03/bolum03.md",
+      "sha256": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          140
+        ],
+        [
+          141,
+          280
+        ],
+        [
+          281,
+          408
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 3 — Etkili Promptun Anatomisi",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "line": 17,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "3.1 Prompt Nedir, Talimat Nedir, Bağlam Nedir?",
+          "line": 52,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.2 Persona: Modelin Bakış Açısını Tanımlamak",
+          "line": 70,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.3 Görev: İstenen İşi Açık, Ölçülebilir ve Sınırlı Yazmak",
+          "line": 94,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "3.4 Bağlam: Okuyucu, Amaç, Veri, Ön Bilgi ve Kısıtlar",
+          "line": 110,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "3.5 Format: Tablo, Madde, JSON, Rapor, E-posta, Rubrik, Kontrol Listesi",
+          "line": 128,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "3.6 Kısıtlar: Uzunluk, Ton, Kaynak, Kapsam, Yasaklı Davranışlar",
+          "line": 150,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "3.7 Örnekler: İyi Örnek, Kötü Örnek, Karşı Örnek",
+          "line": 170,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.8 Başarı Kriteri: Çıktı Nasıl Değerlendirilecek?",
+          "line": 200,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.9 Değişken Kullanımı: Tekrar Kullanılabilir Prompt Şablonu Yazmak",
+          "line": 212,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.10 Kötü Prompt / İyi Prompt / Profesyonel Prompt Karşılaştırmaları",
+          "line": 232,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "3.11 Promptu Gereksiz Uzatmadan Netleştirme",
+          "line": 257,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.12 Farklı Modellerde Aynı Promptun Değişen Sonuçları",
+          "line": 269,
+          "disposition": "later",
+          "lesson_ids": [
+            "U35"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "3.13 Context Engineering'e İlk Bakış: Tekil Prompttan Bağlam Tasarımına",
+          "line": 283,
+          "disposition": "later",
+          "lesson_ids": [
+            "U35"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "3.14 Uzun Bağlam Kullanımı: Büyük Doküman Yerleştirme, Sıra Etkisi ve Bağlam Sıkıştırma",
+          "line": 293,
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "line": 321,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "line": 353,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "line": 379,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C1-B05",
+      "source_path": "content/cilt1/bolum05/bolum05.md",
+      "sha256": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          120
+        ],
+        [
+          121,
+          240
+        ],
+        [
+          241,
+          358
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 5 — Sistem, Rol ve Bağlamsal Promptlar",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "line": 7,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "5.1 Sistem Promptu Nedir?",
+          "line": 44,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "5.2 Rol Promptu Nedir?",
+          "line": 64,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "5.3 Bağlamsal Prompt Nedir?",
+          "line": 78,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "5.4 Sistem, Rol, Bağlam ve Kullanıcı Talimatı Ayrımı",
+          "line": 92,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "5.5 Kalıcı Talimat ile Tek Seferlik Talimat Farkı",
+          "line": 129,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "5.6 Ton, Uzmanlık Seviyesi ve Hedef Kitle Ayarı",
+          "line": 143,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "5.7 Çok Rollü Prompt Tasarımı",
+          "line": 155,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "5.8 Öğretmen, Yönetici, Analist, Geliştirici ve İçerik Üreticisi Örnekleri",
+          "line": 167,
+          "disposition": "later",
+          "lesson_ids": [
+            "U09"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "5.9 Çakışan Talimatlar Nasıl Çözülür?",
+          "line": 185,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "5.10 Prompt Injection Fikrine Giriş: Talimat Hiyerarşisi Neden Önemlidir?",
+          "line": 197,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "5.11 Çok Turlu Sohbet Yönetimi: Bağlam Dolması, Konuşmayı Özetleyip Taşıma, Yeni Oturum Kararı ve Talimat Çürümesi",
+          "line": 230,
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "line": 260,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Neler Öğrendik? — Öz Değerlendirme",
+          "line": 306,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "line": 335,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı.",
+        "5.9-5.10 hiyerarşisi ürünlerin evrensel teknik kuralı sayılamaz; U07 için araca özgü belge doğrulaması gerekir (hedef gap)."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B01",
+      "source_path": "content/cilt2/bolum01/bolum01.md",
+      "sha256": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 275,
+        "count": 275
+      },
+      "headings": [
+        {
+          "heading": "1.1 2020-2026 Arasında Yazılım Geliştirme Nasıl Değişti?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.2 Copilot Döneminden Ajan Dönemine Geçiş",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.3 Kod Yazan Geliştiriciden Sistemi Yöneten Geliştiriciye",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.4 \"AI Kod Yazıyor\" Yanılgısı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.5 \"AI ile Kod Yazıyorum\" Yaklaşımı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.6 Junior, Mid-Level ve Senior Geliştirici İçin Yeni Beceri Setleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır. Kapsam boşluğu: Müfredatta kıdem bazlı beceri gelişim matrisi bulunmuyor."
+        },
+        {
+          "heading": "1.7 \"Baş Aşçı\" Rolü — Temel Çerçeve",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.8 Yazılım Öğretimi Nasıl Değişmeli? — Kısa Değini",
+          "disposition": "later",
+          "lesson_ids": [
+            "U34"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "1.9 Bu Kitabın Kullanım Yöntemi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır. Kapsam boşluğu: U01 rolleri ayırıyor ancak bölüm laboratuvarındaki 5–8 satırlık üç sütunlu sorumluluk matrisi çıktısı tanımlı değil."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B02",
+      "source_path": "content/cilt2/bolum02/bolum02.md",
+      "sha256": "1f36e0c33a17fd7e9da5325279d1ddee628963344ae184a46c519ea71c2d21a3",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 443,
+        "count": 443
+      },
+      "headings": [
+        {
+          "heading": "2.1 Vibe Coding Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.2 Niyeti Koda Dönüştürmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.3 Prompt Mühendisliği ile Vibe Coding Farkı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.4 Yapay Zekâ ile Geliştirme ve Ajanın Yürüttüğü Geliştirme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.5 FAAFO Çerçevesi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U34"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.6 Opsiyon Değeri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U34"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.7 Akış Hâli",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U11 çalıştırma kaydı içeriyor; akış hâli ve kesinti karşılaştırması ölçütü yok."
+        },
+        {
+          "heading": "2.8 Hata ile Barışmak",
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.9 İterasyon Döngüsü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.10 Vibe Coding'in Riskleri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U25"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.11 Vibe Coding Karşıtı Argümanlar ve Cevaplar",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.12 Vibe Coding Terminoloji Haritası",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.13 Ajan Tabanlı Kodlama ve Ajan Tabanlı Mühendislik",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.14 Spec-Driven Development ve PRD-First Yaklaşım",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.15 Mise en Place",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.16 Context Fluency (Bağlamı Seçip Aktarma Becerisi)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.17 Steering Rules, Rules Files ve Proje Talimatları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.18 Ajan Çalışma Çatısı (Harness)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.19 Human-in-the-Loop, Human-on-the-Loop ve Human-out-of-the-Loop",
+          "disposition": "later",
+          "lesson_ids": [
+            "U17"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.20 Verification-Driven Development",
+          "disposition": "later",
+          "lesson_ids": [
+            "U24"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.21 Throwaway Prototype ile Production-Bound Code Farkı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B03",
+      "source_path": "content/cilt2/bolum03/bolum03.md",
+      "sha256": "ca46f67a21ac8159d2de410297f0d56361fcb787bedfe7699d17a1a70ed40d6f",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 404,
+        "count": 404
+      },
+      "headings": [
+        {
+          "heading": "3.1 Bağlam Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.2 Token ve Bağlam Penceresi: Geliştirici İş Akışındaki Karşılığı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.3 Model Her Şeyi Biliyor mu?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.4 Proje Bağlamı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.5 Görev Bağlamı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.6 Dosya Bağlamı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.7 Sohbet Geçmişi Neden Kirlenir?",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.8 Bağlam Sıkıştırma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.9 Bağlam Temizleme (Context Clearing)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.10 Bağlam Sürekliliği",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.11 PRD Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.12 TASKS.md Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.13 CLAUDE.md Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.14 Rules Dosyaları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.15 Codified Context (Yazılı Proje Bağlamı)",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.16 Hot Memory / Cold Memory Ayrımı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.17 Proje Hafızası Oluşturma",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.18 Graph Engineering'e Giriş: Dosya, Sembol ve Bağımlılık İlişkileri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U13 bağlam seçimini içeriyor; kod bağımlılığı çizgesinin türlendirilmiş kenarları ve kaynağı için çıktı/kabul koşulu yok. U16 belge bilgi grafı bu kod inceleme hedefinin yerine geçmez."
+        },
+        {
+          "heading": "3.19 Çizgeyi Kaynak Kodla Doğrulama ve Bağlamı Daraltma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U13 içinde eski kod çizgesi, sembol kaynağı ve kapsam eksikliği senaryoları tanımlanmamış."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B04",
+      "source_path": "content/cilt2/bolum04/bolum04.md",
+      "sha256": "59f1101b1689214500d51a26f9c8e4b34259a4fd376f65e9f110cbaba4a7cab4",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 281,
+        "count": 281
+      },
+      "headings": [
+        {
+          "heading": "4.1 AI IDE Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.2 Cursor",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.3 Windsurf ve Devin Desktop'a Geçiş",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.4 Google Antigravity",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.5 Kiro",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.6 Trae IDE",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.7 Zed AI",
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U12 hata ayıklama döngüsü içeriyor ancak ACP/LSP ayrımı ve aynı adlı sembol bulma karşılaştırması için çıktı ve vaka yok."
+        },
+        {
+          "heading": "4.8 GitHub Copilot: Agent Mode ve Coding Agent",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.9 AI IDE Seçim Matrisi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U11 tek çalışan uygulamayı hedefliyor; iki IDE için aynı görevle beş sütunlu karşılaştırma çıktısı yok. Seçim gerekçesi U01e uyarlanabilir ancak deney pilota taşınmamalı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez.",
+        "Araç özellikleri için güncel doğrulama yapılmadı; kaynak metnin tarihli iddiaları çalışma sonucu veya güncel ürün önerisi sayılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B05",
+      "source_path": "content/cilt2/bolum05/bolum05.md",
+      "sha256": "d70035c898fe16d2abd763eb1c30f0765aea89367d69a151ee9e33ac349b29b6",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 273,
+        "count": 273
+      },
+      "headings": [
+        {
+          "heading": "5.1 GUI Ajan Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.2 ChatGPT Masaüstü Uygulaması — Codex Modu",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.3 TRAE IDE — SOLO Modu",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.4 Lovable",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.5 Bolt",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.6 Replit Agent",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "5.7 v0, Firebase Studio ve Google AI Studio",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.8 GUI Araç Seçim Matrisi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır. Kapsam boşluğu: U03 tasarım belgesi üretiyor; U11 çalışan uygulamaya daha yakın olsa da süreli GUI prototipi ve müdahale günlüğü müfredatta tanımlı değil. U26 çok kipli/tarayıcı test hedefi bu MVP deneyinin yerine geçmez."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez.",
+        "Araç özellikleri için güncel doğrulama yapılmadı; kaynak metnin tarihli iddiaları çalışma sonucu veya güncel ürün önerisi sayılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B06",
+      "source_path": "content/cilt2/bolum06/bolum06.md",
+      "sha256": "bb5427e77e33b1c9669bd2f2cf3ab4763b8b6a1e67ee9024711b74a728915407",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 265,
+        "count": 265
+      },
+      "headings": [
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "6.1 CLI Ajan Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.2 Claude Code",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.3 Codex CLI",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.4 Gemini CLI",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.5 Antigravity CLI",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.6 Aider, Goose, OpenCode",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.7 Kiro CLI (Önceki Adıyla Amazon Q Developer CLI)",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.8 Cline, Continue ve Kapanan Bir Örnek: Roo Code",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "6.9 CLI Ajan Seçim Matrisi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11",
+            "U12"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        }
+      ],
+      "notes": [
+        "Tam kaynak baştan sona ardışık kesilmeyen dilimlerle okundu; harici bağlantılar açılmadı, görseller incelenmedi.",
+        "mapped yalnız editoryal eşlemedir; önerilen kabul senaryoları çalıştırılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B07",
+      "source_path": "content/cilt2/bolum07/bolum07.md",
+      "sha256": "dfe8259d2395b46a753a1f21c62dc5742a32a3a8d76e455ac8dd306680e1f797",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 302,
+        "count": 302
+      },
+      "headings": [
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "7.1 Model Seçimi Neden Kritik?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04",
+            "U29"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.2 Bulut Modelleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04",
+            "U29"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.3 Açık Kaynak, Açık Ağırlık ve Kapalı Model Ayrımı — Geliştirici Perspektifinden",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.4 Kod Odaklı Modeller",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04",
+            "U29"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.5 Yerel Modeller",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.6 Büyük Model Ekosistemlerini Haritalamak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.7 Model Seçim Rehberi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.8 Model Güncelliği Nasıl Takip Edilir?",
+          "disposition": "later",
+          "lesson_ids": [
+            "U35"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.9 Model Sürümü ve Davranış Değişiklikleri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U35"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "7.10 Kod Karşılaştırma Testlerinin Sınırları",
+          "disposition": "later",
+          "lesson_ids": [
+            "U24",
+            "U29"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        }
+      ],
+      "notes": [
+        "Tam kaynak baştan sona ardışık kesilmeyen dilimlerle okundu; harici bağlantılar açılmadı, görseller incelenmedi.",
+        "mapped yalnız editoryal eşlemedir; önerilen kabul senaryoları çalıştırılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B08",
+      "source_path": "content/cilt2/bolum08/bolum08.md",
+      "sha256": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          159
+        ],
+        [
+          160,
+          235
+        ],
+        [
+          236,
+          363
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 8 — PRD, TASKS ve Proje Hafızası",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "line": 13,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "8.1 Yapay Zekâ İçin PRD Neden Farklıdır?",
+          "line": 47,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.2 PRD Şablonu",
+          "line": 59,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "8.3 User Story Yazımı",
+          "line": 94,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.4 Teknik Kısıtlar",
+          "line": 102,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.5 Out-of-Scope Tanımı",
+          "line": 108,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.6 Başarı Kriterleri",
+          "line": 118,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.7 Spec-Driven Development",
+          "line": 124,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "8.8 requirements.md, design.md ve tasks.md Dosya Üçlüsü",
+          "line": 150,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.9 Bugfix Specs — Kısa Değini",
+          "line": 178,
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "8.10 Kabul Ölçütleri ve EARS Benzeri Dil",
+          "line": 186,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "8.11 TASKS.md Mantığı",
+          "line": 206,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.12 Task Parçalama",
+          "line": 228,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "8.13 Yapay Zekânın Task Dosyasını Güncellemesi",
+          "line": 244,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.14 Changelog Mantığı",
+          "line": 254,
+          "disposition": "later",
+          "lesson_ids": [
+            "U32"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "8.15 Decision Log — Kısa Değini",
+          "line": 262,
+          "disposition": "later",
+          "lesson_ids": [
+            "U32"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "8.16 Architecture Notes — Kısa Değini",
+          "line": 277,
+          "disposition": "later",
+          "lesson_ids": [
+            "U32"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "line": 305,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "line": 313,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "line": 339,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı.",
+        "İlk çıktı orta bölümde kesildi; kesilen aralık tam okuma sayılmadı. 160–185 ve 180–235 satırları yeniden, kesilmeden okundu; başlangıç/son kesitler görünür ilk çıktıdan okundu."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B09",
+      "source_path": "content/cilt2/bolum09/bolum09.md",
+      "sha256": "8a1cf79cf101ded7d599961920b1d60e3a64b87048062d1eac501e31ef55d07b",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 429,
+        "count": 429
+      },
+      "headings": [
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "9.1 Rule Dosyası Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.2 Cursor Rules",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.3 Windsurf → Devin Desktop Rules",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.4 CLAUDE.md — Hiyerarşi ve İskelet",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.5 Aider Config",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.6 OpenCode Config",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.7 Global ve Proje Kuralları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.8 Çakışan Kurallar",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.9 Steering Rules (Workspace/Global/Team)",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.10 Hooks (PreToolUse, PostToolUse, Stop, FileChanged)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20",
+            "U25"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.11 Slash Commands",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.12 Permission Rules (İzin Kuralları) ve Destructive Action (Yıkıcı İşlem) Korumaları",
+          "disposition": "later",
+          "lesson_ids": [
+            "U17",
+            "U25"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.13 Compiled Enforcement (Kuralların Otomatik Denetimle Uygulanması)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U31"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.14 Takım Kuralları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U32"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "9.15 Laravel/React/Flutter Örnekleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        }
+      ],
+      "notes": [
+        "Tam kaynak baştan sona ardışık kesilmeyen dilimlerle okundu; harici bağlantılar açılmadı, görseller incelenmedi.",
+        "mapped yalnız editoryal eşlemedir; önerilen kabul senaryoları çalıştırılmadı.",
+        "9.13 çalışma zamanı mimari bağımlılık kontrolü U07 yönerge denemesinden ayrılarak U31e ertelendi; 3 yasak/3 doğrulama/PR devre kesici sayıları U07de açık kabul eklemesi gerektirir."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C2-B10",
+      "source_path": "content/cilt2/bolum10/bolum10.md",
+      "sha256": "debad72c498654bf8f86e2609780854475ac595348d1c05bb563ec3c58d792a8",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 331,
+        "count": 331
+      },
+      "headings": [
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "10.1 Skill Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.2 Prompt ile Skill Farkı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.3 Skill Dosyası Anatomisi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.4 Trigger Koşulları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.5 Talimat Bloğu",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.6 Örnek Girdi/Çıktı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.7 Yasaklar ve Güvenlik Uyarıları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08",
+            "U25"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.8 Hazır Skill Kullanma",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.9 Skill Kalitesi Değerlendirme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.10 Skill'i Claude Code'a Ekleme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.11 Skill'i Cursor Rules'a Uyarlama",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "10.12 Takım Skill Kütüphanesi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33",
+            "U32"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        }
+      ],
+      "notes": [
+        "Tam kaynak baştan sona ardışık kesilmeyen dilimlerle okundu; harici bağlantılar açılmadı, görseller incelenmedi.",
+        "mapped yalnız editoryal eşlemedir; önerilen kabul senaryoları çalıştırılmadı.",
+        "Bu bölüm hazır skill okuma/kullanımını öğretir; U08 sıfırdan tasarım hedefinin yeterli kaynağı değildir. Kaynak Cilt 3 Bölüm 13 der; serinin coverage dosyasında Skill Tasarımı C3-B07 görünür. Atıf uyuşmazlığı çözülmeden bölüm numarası aktarılmamalı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C3-B07",
+      "source_path": "content/cilt3/bolum07/bolum07.md",
+      "sha256": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          184
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 7 — Skill Tasarımı",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Rapor İstedi, Gönderim Başladı",
+          "line": 9,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "7.1 Prompt, Kural, Araç ve Skill",
+          "line": 24,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "7.2 Tetikleyici ve Çıktı Sözleşmesi",
+          "line": 40,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "İstekten Taslağa Bir Örnek",
+          "line": 65,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "7.3 Talimat, Referans ve Betik",
+          "line": 79,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "7.4 İzin ve Bağımlılık Sınırı",
+          "line": 105,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "7.5 Seçim ile İş Başarısını Ayrı Ölçmek",
+          "line": 117,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "7.6 Vardiya Atölyesi ve B8'e Devir",
+          "line": 136,
+          "disposition": "later",
+          "lesson_ids": [
+            "U24"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "line": 160,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Neler Öğrendik? — Kendinizi Sınayın",
+          "line": 164,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C4-B01",
+      "source_path": "content/cilt4/bolum01/bolum01.md",
+      "sha256": "bfcf29118332a8767f6256d272f7fae4b0df12f8d74f58b134f9e21e487425d4",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 251,
+        "count": 251
+      },
+      "headings": [
+        {
+          "heading": "Rapor Hazır, Hizmet Hazır mı?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "1.1 Prototip, Pilot ve Üretim Beklentileri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U31"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "1.2 Kullanıcı Etkisi ve Hizmet Sınırı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "1.3 Sahiplik, Destek ve Görevin İnsana Devredilmesi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U32",
+            "U36"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "1.4 Kanıt Envanteri ve Hazırlık Boşlukları",
+          "disposition": "later",
+          "lesson_ids": [
+            "U36"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "1.5 Geçiş Kararı ve İstisnanın Süresi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U31"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "1.6 Uygulama: Vardiya'nın Hazırlık Dosyası",
+          "disposition": "later",
+          "lesson_ids": [
+            "U31",
+            "U36"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "Bölüm Özeti",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Kendinizi Sınayın",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "Sonraki Bölüme Geçiş",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        }
+      ],
+      "notes": [
+        "Tam kaynak baştan sona ardışık kesilmeyen dilimlerle okundu; harici bağlantılar açılmadı, görseller incelenmedi.",
+        "mapped yalnız editoryal eşlemedir; önerilen kabul senaryoları çalıştırılmadı.",
+        "Kaynağın C4-D01–D11 ve H04 kimlikleri Vardiya geçmişine aittir; Pusula için tamamlanmış iş gibi taşınmamalı, kendi gereksinim kimlikleriyle eşlenmeli."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C4-B02",
+      "source_path": "content/cilt4/bolum02/bolum02.md",
+      "sha256": "205bf98300796a6521b5253111dcde5e759b73970115de9d044597268795dce8",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 233,
+        "count": 233
+      },
+      "headings": [
+        {
+          "heading": "Bildirim Gitti, Kayıt Yarım Kaldı",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        },
+        {
+          "heading": "2.1 Mevcut Ajan Sözleşmesinden Üretim Gereksinimine",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U05",
+            "U17"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "2.2 Veri Akışı ve Güven Sınırları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U05",
+            "U14",
+            "U16"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "2.3 Senkron Yanıt, Kuyruk ve İnsan Kararını Bekleme",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20",
+            "U30"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "2.4 Tekrar, Çakışma ve Belirsiz Yan Etki",
+          "disposition": "later",
+          "lesson_ids": [
+            "U21"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "2.5 Hata Alanları ve Güvenli Hizmet Azaltma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U30"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "2.6 Uygulama: Vardiya'nın Mimari Karar Dosyası",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04",
+            "U20",
+            "U21"
+          ],
+          "reason": "Mevcut uygulamanın editoryal hedefiyle eşlenir; runtime sonucu değildir."
+        },
+        {
+          "heading": "Kendinizi Sınayın",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, özet, öz değerlendirme veya geçiş; ilgili numaralı hedeflerin bağlamını sağlar."
+        }
+      ],
+      "notes": [
+        "Tam kaynak baştan sona ardışık kesilmeyen dilimlerle okundu; harici bağlantılar açılmadı, görseller incelenmedi.",
+        "mapped yalnız editoryal eşlemedir; önerilen kabul senaryoları çalıştırılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "C4-B06",
+      "source_path": "content/cilt4/bolum06/bolum06.md",
+      "sha256": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          195
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Bölüm 6 — Çalışma Anı Doğrulaması ve Çıktı Sözleşmesi",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Alanlar Doğru, Alıcı Yetkisiz",
+          "line": 5,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U05"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "6.1 Biçim, Anlam ve Politika Ayrımı",
+          "line": 22,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U05"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "6.2 Şema ve Alan Doğrulaması",
+          "line": 39,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U05"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "6.3 Kaynak Desteği ve İş Kuralları",
+          "line": 65,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U05"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "6.4 Düzeltme, Ret ve Görevin İnsana Devredilmesi",
+          "line": 77,
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Kısa Alıştırma: Yanlış Kayıt Sahibi",
+          "line": 95,
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "6.5 İşlem Sınırı, Onay Geçerliliği ve Yeniden Deneme",
+          "line": 99,
+          "disposition": "later",
+          "lesson_ids": [
+            "U17"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Gerçek İnsan Onayının Açık Kalan Bölümü",
+          "line": 117,
+          "disposition": "later",
+          "lesson_ids": [
+            "U17"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "6.6 Çalışma Anı Karar Makinesi",
+          "line": 123,
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Uygulama 6: Doğrulayıcılar ve Onay Geçerliliği",
+          "line": 160,
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Bölüm Özeti",
+          "line": 180,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Kendinizi Sınayın",
+          "line": 186,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B01",
+      "source_path": "docs/00-baslangic/01-claude-code-nedir.md",
+      "sha256": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 358,
+        "count": 358
+      },
+      "headings": [
+        {
+          "heading": "Claude modeli ile Claude Code aynı şey değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Agent çalışma döngüsü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Aynı hata üzerinde görev dağılımı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Araçların çalışma döngüsündeki rolü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U17",
+            "U18"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Erişim kapsamı ile izin aynı şey değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Etkileşim arayüzü ile çalışma ortamını ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Tamamlanma iddiasını kanıtla sınamak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02",
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Claude Code'un kullanım alanları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Claude Code'un sınırları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Araçları doğru katmanda karşılaştırmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kodlama agent'ı ve çalışma sistemi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Etkileşim arayüzleri ve ürün aileleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kurulum ayrıntısının yeri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Aynı özellik adı aynı denetim gücünü göstermez",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33",
+            "U34"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "İlk görev nasıl seçilmeli?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İnsan karar noktaları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B02",
+      "source_path": "docs/00-baslangic/02-gereksinimler-hesap-maliyet.md",
+      "sha256": "c434294385f084657574702f77792b1df97439d5e0a3e79bd8f4d2f994a67f2c",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 232,
+        "count": 232
+      },
+      "headings": [
+        {
+          "heading": "Bilgisayarınız uygun mu?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Git ürün zorunluluğu değil, güvenlik gereksinimidir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Windows'ta çalışma ortamını seçin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Hesap seçimi dört kararı birden değiştirir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Ortam API anahtarı abonelik oturumunun önüne geçebilir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kota ile token başına harcamayı karıştırmayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U29"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Model eğitimi ile veri saklama ayrı kararlardır",
+          "disposition": "later",
+          "lesson_ids": [
+            "U25",
+            "U32"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Başlamaya hazır mıyım?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B03",
+      "source_path": "docs/00-baslangic/03-kurulum-guncelleme-kaldirma.md",
+      "sha256": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 612,
+        "count": 612
+      },
+      "headings": [
+        {
+          "heading": "Hangi kurulum yolunu seçmelisiniz?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kurulumdan önce kısa denetim",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Native kurulum",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "macOS, Linux ve WSL",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Windows PowerShell",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Windows CMD",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Paket yöneticisiyle kurulum",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Homebrew",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "WinGet",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Debian ve Ubuntu için apt",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Fedora ve RHEL için dnf",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Alpine için apk",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "npm: ileri düzey seçenek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kurulumu doğrulayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sürüm",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sağlık denetimi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "PATH ve çakışan kurulumlar",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İlk giriş ve etkin hesabı denetleme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Güncelleme, kanal ve sürüm seçimi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Kaldırma ile ayar temizliğini ayırın",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Programı kaldırma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Kurulum laboratuvarı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Yaygın hata ve güvenli dönüş",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B04",
+      "source_path": "docs/00-baslangic/04-ilk-guvenli-gorev.md",
+      "sha256": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          309
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "İlk Görevi Güvenle Tamamlamak {#ilk-proje-ilk-guvenli-gorev}",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Proje dizininde başlayın",
+          "line": 28,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "İlk mesaj yalnızca okuma içersin",
+          "line": 73,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Değişiklikten önce planı inceleyin",
+          "line": 105,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "İlk değişikliği küçük seçin",
+          "line": 157,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Değişiklik iznini ayrı verin",
+          "line": 173,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Diff'i ve hedefli testi okuyun",
+          "line": 204,
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "`/rewind` ile Git aynı şeyi yapmaz",
+          "line": 239,
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Güvenli çıkış",
+          "line": 253,
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Laboratuvar: tek README değişikliği",
+          "line": 263,
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "line": 285,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "line": 301,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B07",
+      "source_path": "docs/01-gunluk-kullanim/07-gorev-tanimi-dogrulama.md",
+      "sha256": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          393
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Görevi Kabul Ölçütüyle Tanımlamak {#iyi-gorev-tanimi-dogrulama}",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Görev sözleşmesinin beş sorusu",
+          "line": 9,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Beş parçayı birlikte yazın",
+          "line": 39,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Görev türünü baştan seçin",
+          "line": 51,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "İnceleme görevi",
+          "line": 63,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Değişiklik görevi",
+          "line": 95,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Araştırma görevi",
+          "line": 124,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Belirsiz isteği daraltmak",
+          "line": 155,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Açıklayıcı soru ne zaman sorulur?",
+          "line": 169,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Varsayım kaydı",
+          "line": 185,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Kabul ölçütünü ölçülebilir yazmak",
+          "line": 196,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Doğrulama görevin içinde yer alır",
+          "line": 222,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "İyi ve kötü prompt arasındaki fark",
+          "line": 236,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Planı uygulamayla karıştırmayın",
+          "line": 256,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Laboratuvar: belirsiz isteği güvenli göreve dönüştürme",
+          "line": 268,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Sık karışan noktalar",
+          "line": 361,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "line": 375,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "line": 383,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B10",
+      "source_path": "docs/02-modlar-izinler/10-calisma-modlari-plan.md",
+      "sha256": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 495,
+        "count": 495
+      },
+      "headings": [
+        {
+          "heading": "İzin modu neyi belirler?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Manuel mod: Düzenleme yapılmadan önce karar verin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`acceptEdits`: Dosya düzenlemelerinde tek tek durmadan ilerleyin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Plan modu: Değişiklikten önce düşünme alanı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Karar katmanlarının görevini ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Plan ne zaman gerekli?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Planı uygulanabilir hâle getirmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Planı geri bildirimle düzeltmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Planı onaylamak ne anlama gelir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Üç ayrı insan kararı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Uygulama sırasında planı yönetmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Modları değiştirme ve doğrulama",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Oturum sırasında",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Oturum başında",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Tek görev için",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Laboratuvar: Aynı görevi iki başlangıç biçimiyle inceleme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sık karışan noktalar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B13",
+      "source_path": "docs/03-kalici-baglam/13-claude-md.md",
+      "sha256": "93dfbe37c5d54fb87734eafc1d878b58defb2dcecfb521f6beb7c6b27a465a23",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 578,
+        "count": 578
+      },
+      "headings": [
+        {
+          "heading": "Kalıcı bilgi ile geçici kararı ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Benzer mekanizmaların görevlerini karıştırmayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U08"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyanın yeri kapsamı belirler",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyalar nasıl yüklenir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Alt dizin talimatı ne zaman yüklenir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`CLAUDE.md` oluşturmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`/init` ne yapar?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İyi talimatın özellikleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyayı kısa tutun",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İyi ve kötü örnek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sorunlu örnek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Düzeltilmiş örnek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`@path` ile içe aktarma",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`/init`, `/memory` ve `/context`",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Güvenilmeyen depoda ilk kontrol",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Laboratuvar: Küçük ve geri alınabilir bir `CLAUDE.md`",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Başlangıç durumunu kaydedin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Deneme deposundaki kanıtları doğrulayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Aday bilgileri sınıflandırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Plan modunda öneri alın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`/init` çıktısını karşılaştırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Farkı inceleyin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Yüklemeyi ve bağlam payını doğrulayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Başlangıç durumuna dönün",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İleri düzey görev",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyayı güncel tutmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B14",
+      "source_path": "docs/03-kalici-baglam/14-kurallar-memory-claude-dizini.md",
+      "sha256": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          343
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "`.claude/` Dizini: Kuralları ve Belleği Doğru Kapsama Koymak {#proje-kurallari-auto-memory-claude-dizini}",
+          "line": 1,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Bilgiyi en dar uygun yere koyun",
+          "line": 7,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "`.claude/rules/` ve yol kapsamı",
+          "line": 41,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Glob kalıpları",
+          "line": 83,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Sembolik bağlantılar",
+          "line": 109,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Otomatik bellek",
+          "line": 119,
+          "disposition": "later",
+          "lesson_ids": [
+            "U14"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Sürüm, konum ve paylaşım",
+          "line": 129,
+          "disposition": "later",
+          "lesson_ids": [
+            "U14"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "`MEMORY.md` sınırı",
+          "line": 150,
+          "disposition": "later",
+          "lesson_ids": [
+            "U14"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "`/memory` ile denetim",
+          "line": 163,
+          "disposition": "later",
+          "lesson_ids": [
+            "U14"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Açma, kapatma ve geri dönüş",
+          "line": 173,
+          "disposition": "later",
+          "lesson_ids": [
+            "U14"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "`.claude/` dizini tek özellik değildir",
+          "line": 206,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Güvenilmeyen depoda inceleme",
+          "line": 238,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Hedef, somut çıktı ve sentetik kabul vakasına bağlandı; gap ise öğretim eklemesi bekleniyor."
+        },
+        {
+          "heading": "Laboratuvar: Eşleşen ve eşleşmeyen kural",
+          "line": 248,
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Tam metinde okunan açıklama/örnek, bölümün ilgili hedef grubunu destekliyor; bağımsız çalışma başarısı sayılmadı."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "line": 315,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        },
+        {
+          "heading": "Kaynaklar",
+          "line": 334,
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Giriş, tekrar veya değerlendirme çerçevesi; ayrı yeni öğrenme hedefi sayılmadı."
+        }
+      ],
+      "notes": [
+        "Metin baştan sona okundu; görsel dosyaları açılmadı. Kaynak içindeki deney başarıları Pusula runtime sonucu olarak aktarılmadı."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B15",
+      "source_path": "docs/03-kalici-baglam/15-ayar-kapsamlari.md",
+      "sha256": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          453
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Ayar kapsamı kararın sahibini gösterir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Dosya yollarını çalışılan ortamla birlikte okuyun",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Öncelik ile birleşme aynı şey değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Ayarların birleşmesi ile izin kararı ayrı aşamalardır",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U17"
+          ],
+          "reason": "Pusula için U07, U17 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Kişisel tercih ile takım standardını ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Yönetilen ayar kullanıcı tercihi değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Doğru tanılama aracını doğru soruda kullanın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Laboratuvar: Proje standardı ile yerel istisnayı ayırmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Ayar kullanmamanız gereken durumlar",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U08"
+          ],
+          "reason": "Pusula için U07, U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Ayarı kendi projenizde kullanmadan önce",
+          "disposition": "context",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Önceki somut hedefleri toparlayan öz değerlendirme; yeni bağımsız uygulama çıktısı eklemez."
+        },
+        {
+          "heading": "Kaynaklar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Değişebilir ürün davranışının kaynak ve doğrulama tarihleri; bu görevde canlı ürün belgesi doğrulanmadı, uygulama öncesi yeniden kontrol gerekir."
+        }
+      ],
+      "notes": [
+        "Bütün kaynak metni satır dilimleriyle okundu; kod blokları ve laboratuvar adımları dahildir. Mapped yalnız editoryal müfredat eşlemesidir; uygulama veya araç davranışı çalıştırılmadı.",
+        "Kabul vakaları öneridir; fixture kimlikleri A revizyon 1/2, B revizyon 1, C revizyon 1 ve Q1/Q2/Q3 üzerinden kuruldu. Yeni uygulama betiği veya dış entegrasyon sözleşmesi olmayan hedefler needs_design açıklamasıyla gap kalır."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B16",
+      "source_path": "docs/04-skills-agentlar/16-ilk-skill.md",
+      "sha256": "f756b7c39c4fce409d2d845b538e782e90de7ca38910117d562066dbd866fba9",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          402
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Skill hangi sorunu çözer?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Skill diğer parçalardan nasıl ayrılır?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Skill kapsamı kararın sahibini belirler",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "`SKILL.md` dosyasının anatomisi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Kullanıcı çağrısı ile Claude'un seçimi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "`allowed-tools` adı neden yanıltıcı olabilir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Laboratuvar: İlk proje Skill'ini kurmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Eski özel komutlarla karşılaşırsanız",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Pusula için U33 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Skill ne zaman kullanılmamalı?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Örneği kendi yönteminize uyarlamak",
+          "disposition": "context",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Önceki somut hedefleri toparlayan öz değerlendirme; yeni bağımsız uygulama çıktısı eklemez."
+        },
+        {
+          "heading": "Kaynaklar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Değişebilir ürün davranışının kaynak ve doğrulama tarihleri; bu görevde canlı ürün belgesi doğrulanmadı, uygulama öncesi yeniden kontrol gerekir."
+        }
+      ],
+      "notes": [
+        "Bütün kaynak metni satır dilimleriyle okundu; kod blokları ve laboratuvar adımları dahildir. Mapped yalnız editoryal müfredat eşlemesidir; uygulama veya araç davranışı çalıştırılmadı.",
+        "Kabul vakaları öneridir; fixture kimlikleri A revizyon 1/2, B revizyon 1, C revizyon 1 ve Q1/Q2/Q3 üzerinden kuruldu. Yeni uygulama betiği veya dış entegrasyon sözleşmesi olmayan hedefler needs_design açıklamasıyla gap kalır."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B17",
+      "source_path": "docs/04-skills-agentlar/17-skill-uretim-kalitesi.md",
+      "sha256": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          792
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Uzun istem ile üretim Skill'i aynı şey değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Bilgiyi gerektiği anda yükleyin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Skill kaynağı ile proje kökünü ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08",
+            "U33"
+          ],
+          "reason": "Pusula için U08, U33 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Girdi sözleşmesini ön bilgide görünür kılın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Yardımcı dosyalarla yeni yapı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Betiği agent kullanımına uygun tasarlayın",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Pusula için U33 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Dinamik `!` yerleştirme bir ön işlemdir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "`allowed-tools` ile `disallowed-tools` farklı kararlar verir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Laboratuvar: Skill'i yardımcı dosyalarla kurma",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Skill kullanılmadan karşılaştırma sonucunu alın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08",
+            "U24"
+          ],
+          "reason": "Pusula için U08, U24 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Yükleme, seçim ve uygulama sorununu ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Pusula için U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Kurma, paylaşma ve güncelleme yaşam döngüsü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Pusula için U33 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Kaldırma yalnız yerel dosyayı temizler",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Pusula için U33 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Doğrulama döngüsüne sınır koyun",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U08",
+            "U19"
+          ],
+          "reason": "Pusula için U08, U19 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Skill'i ekiple paylaşmaya hazır olmak",
+          "disposition": "context",
+          "lesson_ids": [
+            "U08"
+          ],
+          "reason": "Önceki somut hedefleri toparlayan öz değerlendirme; yeni bağımsız uygulama çıktısı eklemez."
+        },
+        {
+          "heading": "Kaynaklar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Değişebilir ürün davranışının kaynak ve doğrulama tarihleri; bu görevde canlı ürün belgesi doğrulanmadı, uygulama öncesi yeniden kontrol gerekir."
+        }
+      ],
+      "notes": [
+        "Bütün kaynak metni satır dilimleriyle okundu; kod blokları ve laboratuvar adımları dahildir. Mapped yalnız editoryal müfredat eşlemesidir; uygulama veya araç davranışı çalıştırılmadı.",
+        "coverage.json eski sha256 d6d4aaff5292316a1a03bf68184e4bd037aa853394ab0f8a1e355f5d53dec7fb taşır. Güncel okunan kaynak 157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf; Skillsiz karşılaştırma hedefi güncel metinden çıkarıldı.",
+        "Kabul vakaları öneridir; fixture kimlikleri A revizyon 1/2, B revizyon 1, C revizyon 1 ve Q1/Q2/Q3 üzerinden kuruldu. Yeni uygulama betiği veya dış entegrasyon sözleşmesi olmayan hedefler needs_design açıklamasıyla gap kalır."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B21",
+      "source_path": "docs/05-harness-loop/21-kavram-haritasi.md",
+      "sha256": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          282
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Yedi kavramı işlevleriyle ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U19",
+            "U20"
+          ],
+          "reason": "Pusula için U07, U19, U20 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Ürün özelliği ile yöntem terimini karıştırmayın",
+          "disposition": "later",
+          "lesson_ids": [
+            "U19",
+            "U20"
+          ],
+          "reason": "Pusula için U19, U20 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Zaman sırası ile geri bildirimi aynı okla göstermeyin",
+          "disposition": "later",
+          "lesson_ids": [
+            "U19",
+            "U20"
+          ],
+          "reason": "Pusula için U19, U20 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Kapsama ve sağlama ilişkisini ayrı okuyun",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Pusula için U20 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Claude Code ile Claude Agent SDK aynı kullanım yüzeyi değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U20"
+          ],
+          "reason": "Pusula için U07, U20 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Tek görevden sisteme geçiş karar merdiveni",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07",
+            "U19",
+            "U20"
+          ],
+          "reason": "Pusula için U06, U07, U19, U20 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Kavram haritası güvenlik sınırı değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U20",
+            "U25"
+          ],
+          "reason": "Pusula için U07, U20, U25 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Sekiz senaryoyu en küçük katmana yerleştirin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U19",
+            "U20"
+          ],
+          "reason": "Pusula için U07, U19, U20 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Senaryolardaki seçiminizi açıklayın",
+          "disposition": "context",
+          "lesson_ids": [
+            "U19",
+            "U20"
+          ],
+          "reason": "Kavram seçimini açıklama ve sonraki harness bölümüne geçiş; hedefler diğer başlıklarda eşlendi."
+        },
+        {
+          "heading": "Kaynaklar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Değişebilir ürün davranışının kaynak ve doğrulama tarihleri; bu görevde canlı ürün belgesi doğrulanmadı, uygulama öncesi yeniden kontrol gerekir."
+        }
+      ],
+      "notes": [
+        "Bütün kaynak metni satır dilimleriyle okundu; kod blokları ve laboratuvar adımları dahildir. Mapped yalnız editoryal müfredat eşlemesidir; uygulama veya araç davranışı çalıştırılmadı.",
+        "Kabul vakaları öneridir; fixture kimlikleri A revizyon 1/2, B revizyon 1, C revizyon 1 ve Q1/Q2/Q3 üzerinden kuruldu. Yeni uygulama betiği veya dış entegrasyon sözleşmesi olmayan hedefler needs_design açıklamasıyla gap kalır."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    },
+    {
+      "source_id": "CC-B29",
+      "source_path": "docs/06-otomasyon-entegrasyon/29-tasarim-arayuz.md",
+      "sha256": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "full_read": true,
+      "lines_read": [
+        [
+          1,
+          1033
+        ]
+      ],
+      "headings": [
+        {
+          "heading": "Tasarım aracını doğrulayıcı sanmayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03",
+            "U11"
+          ],
+          "reason": "Pusula için U03, U11 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Başlangıç kaynağını seçin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03"
+          ],
+          "reason": "Pusula için U03 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Figma bağlamını Claude Code'a açın",
+          "disposition": "later",
+          "lesson_ids": [
+            "U26"
+          ],
+          "reason": "Pusula için U26 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Tasarım Skill'lerini görevlerine göre ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03",
+            "U08"
+          ],
+          "reason": "Pusula için U03, U08 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Tasarım niyetini uygulanabilir plana dönüştürün",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03"
+          ],
+          "reason": "Pusula için U03 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Playwright ile neyi doğruladığınızı bilin",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11",
+            "U26"
+          ],
+          "reason": "Pusula için U11, U26 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Laboratuvar: Brief'ten görsel kanıta",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Pusula için U11 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+        },
+        {
+          "heading": "Tema, çıktı biçimi ve durum satırını ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Ne zaman bu araçları kullanmayın?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03"
+          ],
+          "reason": "Pusula için U03 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Yaygın hata ve güvenli dönüş",
+          "disposition": "later",
+          "lesson_ids": [
+            "U26"
+          ],
+          "reason": "Pusula için U26 çıktısında somut yöntem veya kabul koşulu sağlar."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [
+            "U03",
+            "U11"
+          ],
+          "reason": "Brief, işlev/görsel kanıt ve insan kabulünü birleştiren kapanış; ilgili hedefler önceki başlıklarda kayıtlı."
+        },
+        {
+          "heading": "Kaynaklar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Değişebilir ürün davranışının kaynak ve doğrulama tarihleri; bu görevde canlı ürün belgesi doğrulanmadı, uygulama öncesi yeniden kontrol gerekir."
+        }
+      ],
+      "notes": [
+        "Bütün kaynak metni satır dilimleriyle okundu; kod blokları ve laboratuvar adımları dahildir. Mapped yalnız editoryal müfredat eşlemesidir; uygulama veya araç davranışı çalıştırılmadı.",
+        "Kabul vakaları öneridir; fixture kimlikleri A revizyon 1/2, B revizyon 1, C revizyon 1 ve Q1/Q2/Q3 üzerinden kuruldu. Yeni uygulama betiği veya dış entegrasyon sözleşmesi olmayan hedefler needs_design açıklamasıyla gap kalır."
+      ],
+      "evidence_kind": "reader_attestation_with_ranges_and_content_dispositions"
+    }
+  ]
+}

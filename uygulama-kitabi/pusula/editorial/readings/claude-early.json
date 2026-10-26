@@ -1,0 +1,2276 @@
+{
+  "chapters": [
+    {
+      "source_id": "CC-B01",
+      "source_path": "docs/00-baslangic/01-claude-code-nedir.md",
+      "sha256": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 358,
+        "count": 358
+      },
+      "headings": [
+        {
+          "heading": "Claude modeli ile Claude Code aynı şey değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Agent çalışma döngüsü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Aynı hata üzerinde görev dağılımı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Araçların çalışma döngüsündeki rolü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U17",
+            "U18"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Erişim kapsamı ile izin aynı şey değildir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Etkileşim arayüzü ile çalışma ortamını ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Tamamlanma iddiasını kanıtla sınamak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02",
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Claude Code'un kullanım alanları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Claude Code'un sınırları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Araçları doğru katmanda karşılaştırmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kodlama agent'ı ve çalışma sistemi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Etkileşim arayüzleri ve ürün aileleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kurulum ayrıntısının yeri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Aynı özellik adı aynı denetim gücünü göstermez",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33",
+            "U34"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "İlk görev nasıl seçilmeli?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İnsan karar noktaları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "CC-B01-O01",
+          "source_id": "CC-B01",
+          "heading": "Claude modeli ile Claude Code aynı şey değildir",
+          "objective": "Modeli, ajan aracını, arayüzü ve sürümü ayrı alanlarda kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O01-AC",
+            "fixture": "Ortam fişi: Claude modeli M-demo, ajan Claude Code 2.1.220, arayüz CLI, yerel Zsh.",
+            "positive_candidate": "environment.md dört alanı ayrı kaydeder.",
+            "negative_candidate": "Ajan aracı=M-demo; sürüm=CLI yazılır.",
+            "verdict": "Model adıyla yürütücü ve sürümün karıştığı kayıt düzeltilmeden ortam tanımı kabul edilmez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O02",
+          "source_id": "CC-B01",
+          "heading": "Agent çalışma döngüsü",
+          "objective": "Pusula görevinde bağlam, araç eylemi, gözlem ve insan kararını ayrı adımlar olarak göster.",
+          "lesson_ids": [
+            "U20"
+          ],
+          "output_paths": [
+            "harness-design.md",
+            "harness-manifest.json",
+            "app/harness/"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O02-AC",
+            "scenario": "Olumlu: Pusula görevinde bağlam, araç eylemi, gözlem ve insan kararını ayrı adımlar olarak göster. Pusula sentetik belge-soru-taslak akışı üzerinde, seçilen ajan ve doğrulanmış proje kaynaklarıyla uygulanmış olsun. Olumsuz: Pusula ilk sürümüne kaynak göstermeden otomatik karar ve dış gönderim eklenmesi istenir; ajan kurulu olmadığı hâlde kurulu varsayılır.",
+            "expected": "Olumlu: Pusula görevinde bağlam, araç eylemi, gözlem ve insan kararını ayrı adımlar olarak göster. Karar ve dayanak harness-design.md, harness-manifest.json, app/harness/ içinde izlenebilir; yürütme varsa gözlem, yoksa not_run açık yazılır. Olumsuz: scope.md dış gönderimi kapsam dışı bırakır; environment.md kurulum gözlemi olmayan aracı doğrulanmadı gösterir. Model kararı test ve insan kabulünün yerine konmaz."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O03",
+          "source_id": "CC-B01",
+          "heading": "Araçların çalışma döngüsündeki rolü",
+          "objective": "Araç envanterini gözlenen erişimle sınırla ve dış araç çıktısını doğrulanmamış veri olarak ele al.",
+          "lesson_ids": [
+            "U17",
+            "U18"
+          ],
+          "output_paths": [
+            "tool-contracts.json",
+            "permissions.md",
+            "mcp-design.md",
+            "mcp-tests.json",
+            "app/mcp/"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O03-AC",
+            "scenario": "Olumlu: Araç envanterini gözlenen erişimle sınırla ve dış araç çıktısını doğrulanmamış veri olarak ele al. Pusula sentetik belge-soru-taslak akışı üzerinde, seçilen ajan ve doğrulanmış proje kaynaklarıyla uygulanmış olsun. Olumsuz: Pusula ilk sürümüne kaynak göstermeden otomatik karar ve dış gönderim eklenmesi istenir; ajan kurulu olmadığı hâlde kurulu varsayılır.",
+            "expected": "Olumlu: Araç envanterini gözlenen erişimle sınırla ve dış araç çıktısını doğrulanmamış veri olarak ele al. Karar ve dayanak tool-contracts.json, permissions.md, mcp-design.md, mcp-tests.json, app/mcp/ içinde izlenebilir; yürütme varsa gözlem, yoksa not_run açık yazılır. Olumsuz: scope.md dış gönderimi kapsam dışı bırakır; environment.md kurulum gözlemi olmayan aracı doğrulanmadı gösterir. Model kararı test ve insan kabulünün yerine konmaz."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O04",
+          "source_id": "CC-B01",
+          "heading": "Erişim kapsamı ile izin aynı şey değildir",
+          "objective": "Çalışma alanını, izin kararını ve sandbox sınırını birbirinden ayırarak ilk sürümün dış etki sınırını yaz.",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O04-AC",
+            "fixture": "Görev yalnız fixtures/a.txt okumaya izin verir; teknik araç ayrıca dış dizin okuyabilir.",
+            "positive_candidate": "AGENTS.md görev kapsamını fixtures/a.txt ile sınırlar; erişilebilirliği yetki saymaz.",
+            "negative_candidate": "Araç okuyabildiği için fixtures dışındaki özel not da okunabilir denir.",
+            "verdict": "İlk aday kapsamı doğru açıklar; ikinci aday teknik erişimden görev yetkisi türettiği için reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O05",
+          "source_id": "CC-B01",
+          "heading": "Etkileşim arayüzü ile çalışma ortamını ayırın",
+          "objective": "Kullanılan arayüz ile kodun yürütüldüğü makineyi ayrı kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O05-AC",
+            "fixture": "Tarayıcı arayüzü yerel makinedeki açık CLI sürecini uzaktan yönetiyor.",
+            "positive_candidate": "environment.md arayüz=tarayıcı, yürütme=yerel makine yazar.",
+            "negative_candidate": "Tarayıcı kullanıldığı için kodun bulutta yürüdüğü yazılır.",
+            "verdict": "Yerel süreç kaydıyla uyuşan aday kabul edilir; arayüzden yürütme yeri çıkaran aday reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O06",
+          "source_id": "CC-B01",
+          "heading": "Tamamlanma iddiasını kanıtla sınamak",
+          "objective": "Her tamamlanma iddiasını gözlenen kabul davranışıyla ilişkilendir; planı kanıt sayma.",
+          "lesson_ids": [
+            "U02",
+            "U06"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md",
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O06-AC",
+            "fixture": "REQ-003 kaynaklı taslak ister; aday dosya vardır fakat alıntı source_revision alanını içermez.",
+            "positive_candidate": "acceptance.md dosya varlığından ayrı olarak kaynak kimliği ve revizyon desteğini kontrol eder.",
+            "negative_candidate": "Dosya üretildiği için REQ-003 geçti yazılır.",
+            "verdict": "Birinci ölçüt eksik revizyonu yakalamalı; ikinci tamamlanma iddiası kabul edilmemelidir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O07",
+          "source_id": "CC-B01",
+          "heading": "Claude Code'un kullanım alanları",
+          "objective": "İlk görevi mevcut araç ve doğrulayıcıların yapabildiği işe göre daralt.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O07-AC",
+            "fixture": "Seçilen ortamda dosya okuma vardır; ağ aracı ve tarayıcı doğrulaması yoktur.",
+            "positive_candidate": "scope.md ilk işi yerel sentetik belge envanteriyle sınırlar; web doğrulamasını not_run bırakır.",
+            "negative_candidate": "Ajan mevcut sürümleri internetten doğruladığını bildirir.",
+            "verdict": "Yerel envanter görevi yürütülebilir kabul edilir; bulunmayan araçla yapılan doğrulama iddiası reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O08",
+          "source_id": "CC-B01",
+          "heading": "Claude Code'un sınırları",
+          "objective": "Modelin sınırlarını ve insanın ürün kabul sorumluluğunu kapsam belgesine yaz.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O08-AC",
+            "fixture": "Sentetik teklif belgesinde iki farklı fiyat var; ürün sahibinin tercih kararı yok.",
+            "positive_candidate": "vision.md çelişkiyi gösterip inceleyenin kararını bekler.",
+            "negative_candidate": "scope.md ajanın en ucuz teklifi otomatik kabul edip göndereceğini söyler.",
+            "verdict": "Çelişkiyi insan incelemesine taşıyan kapsam kabul edilir; ürün kararını ajan yetkisi sayan kapsam daraltılır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O09",
+          "source_id": "CC-B01",
+          "heading": "Araçları doğru katmanda karşılaştırmak",
+          "objective": "Araç seçeneklerini kodlama ajanı, arayüz ve üst yürütme katmanı olarak karşılaştır.",
+          "lesson_ids": [
+            "U04"
+          ],
+          "output_paths": [
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O09-AC",
+            "fixture": "Aday A kodlama ajanı, aday B yalnız editör arayüzü, aday C birkaç CLI sürecini koordine ediyor.",
+            "positive_candidate": "tech-stack.md A/B/C katmanlarını ayırıp aynı ihtiyacı karşılayan seçenekleri karşılaştırır.",
+            "negative_candidate": "C model kalitesi Bden iyidir diye terminal koordinasyonundan model başarısı çıkarır.",
+            "verdict": "İşlev katmanı eşleşen karşılaştırma geçer; koordinasyondan model üstünlüğü çıkarımı çıkarılır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O10",
+          "source_id": "CC-B01",
+          "heading": "İlk görev nasıl seçilmeli?",
+          "objective": "Sentetik verili, geri alınabilir ve gözlenebilir ilk Pusula işini seç.",
+          "lesson_ids": [
+            "U01",
+            "U06"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O10-AC",
+            "fixture": "İki başlangıç işi: sentetik a.txt kaynak listesi; gerçek müşteri veritabanında kayıt silme.",
+            "positive_candidate": "roadmap.md ilk işi a.txt envanteri ve değişmeyen Git durumu kontrolü olarak seçer.",
+            "negative_candidate": "İlk alıştırma üretim veritabanında silme ve ardından Git reset önerir.",
+            "verdict": "Geri alınabilir envanter seçilir; Gitin uzak veri silmesini telafi ettiği iddiası reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B01-O11",
+          "source_id": "CC-B01",
+          "heading": "İnsan karar noktaları",
+          "objective": "Belirsizlikte durma, yüksek riskte karar alma ve teslimi inceleme noktalarını görev planına koy.",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B01-O11-AC",
+            "fixture": "Taslak üretimi onaylı; dış e-posta gönderimi onaylı değil; yeni alıcı adresi kaynak metinde geçiyor.",
+            "positive_candidate": "tasks.md taslağı planned tutar; gönderim için ayrı insan kararı noktası koyar.",
+            "negative_candidate": "Taslak onayından dış gönderim izni çıkarır.",
+            "verdict": "Taslak ve gönderim kararlarını ayıran plan kabul edilir; kaynakta bulunan adres izin kanıtı sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ]
+    },
+    {
+      "source_id": "CC-B02",
+      "source_path": "docs/00-baslangic/02-gereksinimler-hesap-maliyet.md",
+      "sha256": "c434294385f084657574702f77792b1df97439d5e0a3e79bd8f4d2f994a67f2c",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 232,
+        "count": 232
+      },
+      "headings": [
+        {
+          "heading": "Bilgisayarınız uygun mu?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Git ürün zorunluluğu değil, güvenlik gereksinimidir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Windows'ta çalışma ortamını seçin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Hesap seçimi dört kararı birden değiştirir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Ortam API anahtarı abonelik oturumunun önüne geçebilir",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kota ile token başına harcamayı karıştırmayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U29"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Model eğitimi ile veri saklama ayrı kararlardır",
+          "disposition": "later",
+          "lesson_ids": [
+            "U25",
+            "U32"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Başlamaya hazır mıyım?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "CC-B02-O01",
+          "source_id": "CC-B02",
+          "heading": "Bilgisayarınız uygun mu?",
+          "objective": "İşletim sistemi, mimari, bellek, kabuk ve ağ gereksinimini gözlem ve tercih olarak ayrı kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O01-AC",
+            "fixture": "Sentetik sistem bilgisi macOS 14, ARM64, 8 GB RAM, Zsh; ağ erişimi henüz ölçülmedi.",
+            "positive_candidate": "environment.md dört gözlemi kaydeder, ağ durumunu unknown bırakır.",
+            "negative_candidate": "macOS var diye ağ ve tüm proje araçları hazır yazılır.",
+            "verdict": "Gözlem alanları geçer; ölçülmeyen ağ veya araç için hazır kararı verilmez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O02",
+          "source_id": "CC-B02",
+          "heading": "Git ürün zorunluluğu değil, güvenlik gereksinimidir",
+          "objective": "İlk değişiklik öncesi başlangıç kaydını seç; Git geri dönüşünü dış etki telafisi sayma.",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O02-AC",
+            "fixture": "Deneme deposunda başlangıç commit demo-a mevcut; dış hizmete ücretli çağrı bütçesi 5 birim.",
+            "positive_candidate": "environment.md dosya dönüşünü demo-a, harcanan ücretin geri alınamazlığını ayrı kaydeder.",
+            "negative_candidate": "Git dönüşü hem dosyayı hem harcanan 5 birimi geri getirir denir.",
+            "verdict": "Dosya ve ücret etkilerini ayıran kayıt kabul edilir; bütçe iadesi iddiası çıkarılır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O03",
+          "source_id": "CC-B02",
+          "heading": "Windows'ta çalışma ortamını seçin",
+          "objective": "Windows veya WSL tercihini araç zinciri ve sandbox ihtiyacına göre gerekçelendir.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O03-AC",
+            "fixture": "Okur Windows 11 PowerShell kullanıyor; görev işletim sistemi düzeyinde komut sandboxı gerektiriyor.",
+            "positive_candidate": "environment.md WSL2 adayını gerekçelendirir ve kurulum durumunu doğrulanmadı bırakır.",
+            "negative_candidate": "WSL1 sandbox bakımından WSL2yle aynı kabul edilir.",
+            "verdict": "WSL2 gerekçesi kaynakla eşleşir; WSL1 eşdeğerliği reddedilir, WSL2 kurulmuş sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O04",
+          "source_id": "CC-B02",
+          "heading": "Hesap seçimi dört kararı birden değiştirir",
+          "objective": "Giriş yolunu, faturalama hesabını, kullanım sınırını ve veri koşullarını ayrı kaydet.",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O04-AC",
+            "fixture": "Tercih Pro OAuth; auth gözlemi Console hesabı demo-workspace gösteriyor.",
+            "positive_candidate": "environment.md tercih ve etkin yolu farklı kaydedip faturalama kararını açık bırakır.",
+            "negative_candidate": "Pro tercihi bulunduğu için etkin kullanım abonelik kotasına yazılır denir.",
+            "verdict": "Gözlenen Console yolu esas alınır; tercih etkin hesap kanıtının yerine geçmez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O05",
+          "source_id": "CC-B02",
+          "heading": "Ortam API anahtarı abonelik oturumunun önüne geçebilir",
+          "objective": "Etkileşimli ve -p girişlerinde API anahtarı önceliğini değerini açığa çıkarmadan doğrulama adımı tasarla.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O05-AC",
+            "fixture": "Sentetik -p koşusunda ANTHROPIC_API_KEY değişkeni mevcut=true; anahtar değeri verilmemiş.",
+            "positive_candidate": "environment.md anahtar varlığını ve API yolunu kaydeder; gizli değeri istemez.",
+            "negative_candidate": "API anahtarını ekrana dökerek doğrulamayı veya abonelik oturumunu koşulsuz kullanmayı önerir.",
+            "verdict": "Değer açığa çıkmadan yol kaydı geçer; sır dökümü ve gözleme aykırı abonelik varsayımı reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O06",
+          "source_id": "CC-B02",
+          "heading": "Kota ile token başına harcamayı karıştırmayın",
+          "objective": "Abonelik kotasını API bütçesinden ayır; bilinmeyen harcamayı bilinmiyor olarak kaydet.",
+          "lesson_ids": [
+            "U01",
+            "U29"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "model-policy.md",
+            "budget.md",
+            "model-results.json"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O06-AC",
+            "fixture": "Abonelik kotası yüzde 30 kullanılmış; ayrı API koşusunun faturası henüz alınmamış.",
+            "positive_candidate": "environment.md kota_used_pct=30 ve api_cost=null tutar.",
+            "negative_candidate": "API maliyetini 0 veya kotanın yüzde 30u olarak yazar.",
+            "verdict": "Bilinmeyen parasal maliyet null kalır; yüzdeyle para arasında dönüşüm yapılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O07",
+          "source_id": "CC-B02",
+          "heading": "Model eğitimi ile veri saklama ayrı kararlardır",
+          "objective": "Model eğitimi, saklama ve silme koşullarını ayrı kararlar olarak veri politikasına bağla.",
+          "lesson_ids": [
+            "U25",
+            "U32"
+          ],
+          "output_paths": [
+            "threat-model.md",
+            "data-lifecycle.md",
+            "security-cases.json",
+            "governance.md",
+            "licenses.md",
+            "ownership.md",
+            "adoption.md",
+            "SECURITY.md",
+            "CONTRIBUTING.md",
+            "CHANGELOG.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O07-AC",
+            "scenario": "Olumlu: Model eğitimi, saklama ve silme koşullarını ayrı kararlar olarak veri politikasına bağla. Pusula sentetik belge-soru-taslak akışı üzerinde, seçilen ajan ve doğrulanmış proje kaynaklarıyla uygulanmış olsun. Olumsuz: Abonelik seçilmiş görünürken ortam API anahtarının hangi hesabı kullandığı belirsizdir; kota ile API bütçesi aynı alanla tutulur.",
+            "expected": "Olumlu: Model eğitimi, saklama ve silme koşullarını ayrı kararlar olarak veri politikasına bağla. Karar ve dayanak threat-model.md, data-lifecycle.md, security-cases.json, governance.md, licenses.md, ownership.md, adoption.md, SECURITY.md, CONTRIBUTING.md, CHANGELOG.md içinde izlenebilir; yürütme varsa gözlem, yoksa not_run açık yazılır. Olumsuz: environment.md kimlik bilgisi değerini içermez; belirsiz etkin hesap ve harcama ayrı açık karar olarak kalır. Bilinmeyen maliyet sıfır yazılmaz; gerçek veriyle görev başlatılmaz."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B02-O08",
+          "source_id": "CC-B02",
+          "heading": "Başlamaya hazır mıyım?",
+          "objective": "Eksik ortam veya hesap bilgisini hazır diye işaretlemeden ilk çalışma önkoşullarını denetle.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B02-O08-AC",
+            "fixture": "Hazırlık fişinde OS ve kabuk belli; etkin hesap ve maliyet tavanı boş.",
+            "positive_candidate": "environment.md ilk sentetik incelemeyi ayırır; ücretli model işi için iki açık karar yazar.",
+            "negative_candidate": "Tüm kontrol kutularını hazır işaretleyip ücretli çağrıyı başlatılabilir gösterir.",
+            "verdict": "Ücretli çalışma hazır sayılmaz; boş alanlar somut açık karara dönüşmelidir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ]
+    },
+    {
+      "source_id": "CC-B03",
+      "source_path": "docs/00-baslangic/03-kurulum-guncelleme-kaldirma.md",
+      "sha256": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 612,
+        "count": 612
+      },
+      "headings": [
+        {
+          "heading": "Hangi kurulum yolunu seçmelisiniz?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kurulumdan önce kısa denetim",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Native kurulum",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "macOS, Linux ve WSL",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Windows PowerShell",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Windows CMD",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Paket yöneticisiyle kurulum",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Homebrew",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "WinGet",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Debian ve Ubuntu için apt",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Fedora ve RHEL için dnf",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Alpine için apk",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "npm: ileri düzey seçenek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Kurulumu doğrulayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sürüm",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sağlık denetimi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "PATH ve çakışan kurulumlar",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İlk giriş ve etkin hesabı denetleme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Güncelleme, kanal ve sürüm seçimi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Kaldırma ile ayar temizliğini ayırın",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Programı kaldırma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U33"
+          ],
+          "reason": "Ajan yürütme, entegrasyon, veri yönetişimi veya dağıtım aşamasına aittir; pilota taşınmaz."
+        },
+        {
+          "heading": "Kurulum laboratuvarı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Yaygın hata ve güvenli dönüş",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "CC-B03-O01",
+          "source_id": "CC-B03",
+          "heading": "Hangi kurulum yolunu seçmelisiniz?",
+          "objective": "Seçilen ajan için tek kurulum yöntemini ortam ve bakım sorumluluğuyla gerekçelendir.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O01-AC",
+            "fixture": "macOS deneme makinesinde Homebrew ekip standardı; kurulu ajan gözlemi yok.",
+            "positive_candidate": "environment.md tek Homebrew yolunu seçer, sürümü unknown bırakır.",
+            "negative_candidate": "Native ve Homebrew aynı anda zorunlu kurulacak, sürüm 2.1.220 hazır yazar.",
+            "verdict": "Tek yöntem kararı geçer; olmayan binary ve çift kurulum tamamlanmış sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B03-O02",
+          "source_id": "CC-B03",
+          "heading": "Kurulumdan önce kısa denetim",
+          "objective": "Kabuk, hesap ve kaynak doğrulanmadan kurulum adımını hazır sayma.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O02-AC",
+            "fixture": "Kabuk PowerShell; giriş hesabı bilinmiyor; indirilen komutun kaynak alan adı kayıtsız.",
+            "positive_candidate": "environment.md hesap ve resmî kaynak doğrulamasını kurulum önkoşulu yazar.",
+            "negative_candidate": "Bash kurulum borusunu PowerShellde çalıştırılabilir ve tüm hazırlığı tamamlanmış sunar.",
+            "verdict": "Eksik hesap/kaynak nedeniyle hazır durumu verilmez; kabuğa aykırı komut reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B03-O03",
+          "source_id": "CC-B03",
+          "heading": "Native kurulum",
+          "objective": "Yalnız seçilen işletim sistemi ve kabuğa uygun native komutun güncel resmî kaynağını denetle.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O03-AC",
+            "fixture": "Linux Bash senaryosu; resmî belge tarihli komut içeriyor; kurum uzak betik yürütmeyi yasaklıyor.",
+            "positive_candidate": "Aday kurum politikasına uyan imzalı paket yolunu değerlendirmeye yönelir.",
+            "negative_candidate": "claude.ai alan adı olduğu için kurum yasağını atlayıp betik çalıştırılabilir der.",
+            "verdict": "Resmî kaynak tek başına çalıştırma izni değildir; yasağı atlayan aday reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        },
+        {
+          "id": "CC-B03-O04",
+          "source_id": "CC-B03",
+          "heading": "Paket yöneticisiyle kurulum",
+          "objective": "Paket yöneticisi, imza doğrulaması ve güncelleme yolunu seçilen ortama göre kaydet.",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O04-AC",
+            "fixture": "Alpine sentetik ortam; anahtar özeti resmî aday özetinden farklı; ripgrep eksik.",
+            "positive_candidate": "Kurulum adayı anahtar uyuşmazlığında durur, eksik bağımlılığı ayrıca kaydeder.",
+            "negative_candidate": "Depoyu ekleyip paketi kurar; ripgrep varmış gibi doğrular.",
+            "verdict": "İmza/özet uyuşmazlığı çözülmeden depo güvenilir ve kurulum hazır sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        },
+        {
+          "id": "CC-B03-O05",
+          "source_id": "CC-B03",
+          "heading": "Kurulumu doğrulayın",
+          "objective": "Sürüm, sağlık ve PATH gözlemlerini kurulu araç kanıtı olarak ayrı sakla.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O05-AC",
+            "fixture": "version=2.1.220; which iki binary gösterir; doctor PATH çakışması bildirir.",
+            "positive_candidate": "environment.md sürümü kaydeder ama aktif binary belirsizliğini açık tutar.",
+            "negative_candidate": "version çıktı verdiği için kurulum tümüyle sağlıklı yazar.",
+            "verdict": "Sürüm gözlemi kabul edilir; PATH sorunu çözülmeden sağlık kabulü verilmez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B03-O06",
+          "source_id": "CC-B03",
+          "heading": "İlk giriş ve etkin hesabı denetleme",
+          "objective": "Programın açılmasıyla doğru hesabın etkin olmasını ayrı doğrulamalarla kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O06-AC",
+            "fixture": "Login successful ekranı var; auth status Console demo-team; okur Pro OAuth bekliyor.",
+            "positive_candidate": "environment.md giriş başarılı ile beklenen hesap uyuşmazlığını ayrı yazar.",
+            "negative_candidate": "Login successful görüldüğü için Pro hesabı doğrulandı der.",
+            "verdict": "Kimlik doğrulama başarısı geçer, beklenen faturalama hesabı kontrolü başarısız kalır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B03-O07",
+          "source_id": "CC-B03",
+          "heading": "Güncelleme, kanal ve sürüm seçimi",
+          "objective": "Kurulum yöntemine uygun kanal ve güncelleme sonrası sürüm doğrulaması planla.",
+          "lesson_ids": [
+            "U33"
+          ],
+          "output_paths": [
+            "plugin-plan.md",
+            "compatibility.md",
+            "distribution.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O07-AC",
+            "scenario": "Olumlu: Kurulum yöntemine uygun kanal ve güncelleme sonrası sürüm doğrulaması planla. Pusula sentetik belge-soru-taslak akışı üzerinde, seçilen ajan ve doğrulanmış proje kaynaklarıyla uygulanmış olsun. Olumsuz: Seçilen kabuğa başka işletim sisteminin komutu verilir; version başarılı olsa da auth durumu veya PATH farklı binary gösterir.",
+            "expected": "Olumlu: Kurulum yöntemine uygun kanal ve güncelleme sonrası sürüm doğrulaması planla. Karar ve dayanak plugin-plan.md, compatibility.md, distribution.md içinde izlenebilir; yürütme varsa gözlem, yoksa not_run açık yazılır. Olumsuz: environment.md komut, sürüm, binary yolu ve hesap gözlemlerini ayırır; yalnız indirme veya version çıktısıyla tüm kurulum başarılı sayılmaz. Mevcut ayarlar silinmez."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B03-O08",
+          "source_id": "CC-B03",
+          "heading": "Kaldırma ile ayar temizliğini ayırın",
+          "objective": "Program kaldırma ile ayar, geçmiş ve kimlik bilgisi temizliğini ayrı yedek/onay kararları yap.",
+          "lesson_ids": [
+            "U33"
+          ],
+          "output_paths": [
+            "plugin-plan.md",
+            "compatibility.md",
+            "distribution.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O08-AC",
+            "scenario": "Olumlu: Program kaldırma ile ayar, geçmiş ve kimlik bilgisi temizliğini ayrı yedek/onay kararları yap. Pusula sentetik belge-soru-taslak akışı üzerinde, seçilen ajan ve doğrulanmış proje kaynaklarıyla uygulanmış olsun. Olumsuz: Seçilen kabuğa başka işletim sisteminin komutu verilir; version başarılı olsa da auth durumu veya PATH farklı binary gösterir.",
+            "expected": "Olumlu: Program kaldırma ile ayar, geçmiş ve kimlik bilgisi temizliğini ayrı yedek/onay kararları yap. Karar ve dayanak plugin-plan.md, compatibility.md, distribution.md içinde izlenebilir; yürütme varsa gözlem, yoksa not_run açık yazılır. Olumsuz: environment.md komut, sürüm, binary yolu ve hesap gözlemlerini ayırır; yalnız indirme veya version çıktısıyla tüm kurulum başarılı sayılmaz. Mevcut ayarlar silinmez."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B03-O09",
+          "source_id": "CC-B03",
+          "heading": "Kurulum laboratuvarı",
+          "objective": "Seçilen Claude aracını boş deneme alanında dosya değiştirmeden kurulum ve hesap kanıtıyla doğrula.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O09-AC",
+            "fixture": "Boş sentetik klasörde version ve doctor gözlemi var; auth status ölçülmemiş; klasör diffi boş.",
+            "positive_candidate": "Laboratuvar kaydı kurulum ve değişmeyen klasörü doğrular, hesap kontrolünü not_run bırakır.",
+            "negative_candidate": "Dört başarı ölçütünün tamamını geçti işaretler.",
+            "verdict": "Hesap gözlemi eksik olduğundan laboratuvar tamamlandı kararı verilmez; gap durumu korunur.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        },
+        {
+          "id": "CC-B03-O10",
+          "source_id": "CC-B03",
+          "heading": "Yaygın hata ve güvenli dönüş",
+          "objective": "Kurulum hatasını belirti, kabuk ve kullanılan binary ile teşhis et; rastgele dosya silme.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B03-O10-AC",
+            "fixture": "Terminal command not found diyor; .local/bin altında binary mevcut; PATH bu dizini içermiyor.",
+            "positive_candidate": "Hata kaydı PATH incelemesini ve terminali yeniden açmayı önerir.",
+            "negative_candidate": "Tüm .claude ayarları silinip yeniden kurulum tek çözüm gösterilir.",
+            "verdict": "PATH kanıtıyla dar teşhis kabul edilir; ayar temizliği gerekçesiz ve bu belirtiyi çözmeyen işlem sayılır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ]
+    },
+    {
+      "source_id": "CC-B10",
+      "source_path": "docs/02-modlar-izinler/10-calisma-modlari-plan.md",
+      "sha256": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 495,
+        "count": 495
+      },
+      "headings": [
+        {
+          "heading": "İzin modu neyi belirler?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Manuel mod: Düzenleme yapılmadan önce karar verin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`acceptEdits`: Dosya düzenlemelerinde tek tek durmadan ilerleyin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Plan modu: Değişiklikten önce düşünme alanı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Karar katmanlarının görevini ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Plan ne zaman gerekli?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Planı uygulanabilir hâle getirmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Planı geri bildirimle düzeltmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Planı onaylamak ne anlama gelir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Üç ayrı insan kararı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Uygulama sırasında planı yönetmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Modları değiştirme ve doğrulama",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Oturum sırasında",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Oturum başında",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Tek görev için",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Laboratuvar: Aynı görevi iki başlangıç biçimiyle inceleme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sık karışan noktalar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "CC-B10-O01",
+          "source_id": "CC-B10",
+          "heading": "İzin modu neyi belirler?",
+          "objective": "İzin modu davranışını araç izinlerinden ve işletim sistemi sınırından ayır.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O01-AC",
+            "fixture": "Plan modu etkin; teknik izin kuralı read-only; ayrı sandbox ağ erişimini engelliyor.",
+            "positive_candidate": "agent-compatibility.md üç katmanı ayrı kayıtlar.",
+            "negative_candidate": "Plan etiketini tüm ağ işlemlerini teknik olarak engelleyen tek kontrol sayar.",
+            "verdict": "Katmanların ayrı etkisi kabul edilir; moddan sandbox garantisi çıkarılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O02",
+          "source_id": "CC-B10",
+          "heading": "Manuel mod: Düzenleme yapılmadan önce karar verin",
+          "objective": "Manual oturumunda düzenleme isteğinin durduğunu göstergeden ve değişmeyen diff üzerinden sına.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O02-AC",
+            "fixture": "Manual durum rozeti var; düzenleme onay isteği gösterilmiş; başlangıç ve son diff aynı.",
+            "positive_candidate": "Deneme adayı düzenleme öncesi durulduğunu bu üç artefaktla kaydeder.",
+            "negative_candidate": "Yalnız ajan sana sordum dediği için Manual doğrulandı yazar.",
+            "verdict": "Görünür mod ve onay/diff kanıtı olan aday geçer; yalnız özbildirim yetersiz kalır.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        },
+        {
+          "id": "CC-B10-O03",
+          "source_id": "CC-B10",
+          "heading": "`acceptEdits`: Dosya düzenlemelerinde tek tek durmadan ilerleyin",
+          "objective": "acceptEdits kapsamındaki dosya işlemlerini ve kapsam dışı izinleri seçilen sürümde sına.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O03-AC",
+            "fixture": "acceptEdits oturumunda çalışma alanı içi düzenleme izinli; dış dizin yazımı ayrı onay istiyor.",
+            "positive_candidate": "Aday iç düzenleme ve dış yol onayını iki ayrı gözlem olarak tutar.",
+            "negative_candidate": "acceptEdits bütün yolları ve komutları serbest bırakır der.",
+            "verdict": "Gözlenen kapsam ayrımı geçer; bütün izinleri kaldırma iddiası reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        },
+        {
+          "id": "CC-B10-O04",
+          "source_id": "CC-B10",
+          "heading": "Plan modu: Değişiklikten önce düşünme alanı",
+          "objective": "Plan görevini kaynak değişmeden keşif bulguları ve uygulanabilir adımlarla hazırla.",
+          "lesson_ids": [
+            "U06"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O04-AC",
+            "fixture": "Pusula kaynağı revizyon değişince taslak eski kalıyor; yalnız keşif isteniyor.",
+            "positive_candidate": "roadmap.md bulguyu ve ilgili dosyayı, sonra revizyon doğrulama adımını yazar; kaynak diffi boş kalır.",
+            "negative_candidate": "Plan hazırlarken uygulama dosyasını değiştirip plan tamamlandı der.",
+            "verdict": "Araştırma+plan kabul edilir; salt keşif görevinde kaynak düzenleyen aday kapsamı ihlal eder.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O05",
+          "source_id": "CC-B10",
+          "heading": "Karar katmanlarının görevini ayırın",
+          "objective": "Mod, kural, sandbox, Git geri dönüşü ve insan kabulünün farklı görevlerini yaz.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O05-AC",
+            "fixture": "Bir talimat üretime yazma diyor; izin sistemi yazmayı engellemiyor; Git yalnız yerel dosyayı izliyor.",
+            "positive_candidate": "AGENTS.md talimatı davranış kuralı, teknik engeli ayrıca eksik kontrol olarak yazar.",
+            "negative_candidate": "AGENTS.md ve Git birlikte uzak üretim yazımını kesin engeller der.",
+            "verdict": "Eksik teknik denetimi gösteren aday geçer; doğal dil ve Gitten erişim engeli türetilemez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O06",
+          "source_id": "CC-B10",
+          "heading": "Plan ne zaman gerekli?",
+          "objective": "Planlama gereğini dosya sayısıyla değil belirsizlik, etki ve doğrulama ihtiyacıyla gerekçelendir.",
+          "lesson_ids": [
+            "U06"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O06-AC",
+            "fixture": "İş A tek belgede açık yazım hatası; iş B küçük auth dosyasında belirsiz erişim değişikliği.",
+            "positive_candidate": "roadmap.md A için kısa sözleşme, B için kanıtlı plan seçer.",
+            "negative_candidate": "Her iki iş tek dosya olduğu için planı gereksiz sayar.",
+            "verdict": "Belirsizlik ve etkiyi esas alan karar kabul edilir; dosya sayısını tek ölçüt yapan karar reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O07",
+          "source_id": "CC-B10",
+          "heading": "Planı uygulanabilir hâle getirmek",
+          "objective": "Her plan adımını gerçek girdi, çıktı, önkoşul, kapsam ve doğrulamaya bağla.",
+          "lesson_ids": [
+            "U06"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O07-AC",
+            "fixture": "REQ-004 çelişki gösterimi; kaynakta iki farklı tarih; model çağrısı henüz yok.",
+            "positive_candidate": "tasks.md önce sabit verili çelişki ekranı, sonra model bağlantısı; her adımda girdi/çıktı/test bağı belirtir.",
+            "negative_candidate": "Önce modeli kur, kalan dosyaları güncelle, test et diye kaynaksız genel liste verir.",
+            "verdict": "REQ ve doğrulamaya izlenen bağımlı adımlar geçer; ölçütsüz görev listesi düzeltilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O08",
+          "source_id": "CC-B10",
+          "heading": "Planı onaylamak ne anlama gelir?",
+          "objective": "Plan kabulünü uygulama modu ve sonuç kabulünden ayrı kaydet.",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O08-AC",
+            "fixture": "Plan uygulaması onaylı; test sonucu başarısız; dış yayın kararı yok.",
+            "positive_candidate": "tasks.md uygulama iznini kaydeder, sonuç kabulünü bekler ve yayın için ayrı karar bırakır.",
+            "negative_candidate": "Plan onayını sonuç geçti ve yayınlanabilir olarak işler.",
+            "verdict": "Uygulama izni korunur; başarısız testle sonuç kabulü ve yayın yetkisi verilmez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O09",
+          "source_id": "CC-B10",
+          "heading": "Uygulama sırasında planı yönetmek",
+          "objective": "Plandan sapma veya geçersiz varsayım oluşunca yeni etki üretmeden yeniden planla.",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O09-AC",
+            "fixture": "Plan a.txt okuyacak; keşif sırasında yeni bağımlılık ve veri tabanı göçü gereksinimi ortaya çıktı.",
+            "positive_candidate": "tasks.md mevcut adımı durdurup yeni bulgu ve yeniden plan gereğini yazar.",
+            "negative_candidate": "Kapsamı sessizce genişletip göçü done işaretler.",
+            "verdict": "Yeni kanıt görünür açık karar olur; plansız göç ve yapılmamış done reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B10-O10",
+          "source_id": "CC-B10",
+          "heading": "Modları değiştirme ve doğrulama",
+          "objective": "Gerçek mod geçişini durum göstergesiyle doğrula; geçişin eski diffi geri almadığını sına.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O10-AC",
+            "fixture": "Önce acceptEdits ile oluşmuş demo.diff var; sonra Plan rozeti görünmüş.",
+            "positive_candidate": "Aday mod geçişini doğrular ve demo.diffin hâlâ mevcut olduğunu kaydeder.",
+            "negative_candidate": "Plan moduna geçince tüm eski değişiklikler geri alındı der.",
+            "verdict": "Mod değişimi geçer; geri alma iddiası diffle çeliştiği için reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        },
+        {
+          "id": "CC-B10-O11",
+          "source_id": "CC-B10",
+          "heading": "Laboratuvar: Aynı görevi iki başlangıç biçimiyle inceleme",
+          "objective": "Aynı küçük işi Manual ve Plan oturumlarında düzenlemeye izin vermeden karşılaştır.",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B10-O11-AC",
+            "fixture": "docs/deneme.md kurulmu içeriyor; iki koşuda da düzenleme onayı verilmemiş.",
+            "positive_candidate": "Manual ve Plan kayıtları mod/görev/öneri farkını ve aynı başlangıç-bitiş diffini içerir.",
+            "negative_candidate": "İlk koşuda sözcüğü değiştirip ikinci koşuyla bunu eşit koşul karşılaştırması sayar.",
+            "verdict": "Düzenlemesiz eşit girdili karşılaştırma geçer; değişmiş girdiyle karşılaştırma sonuç çıkaramaz; gap korunur.",
+            "execution_status": "not_run"
+          },
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil."
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ]
+    },
+    {
+      "source_id": "CC-B13",
+      "source_path": "docs/03-kalici-baglam/13-claude-md.md",
+      "sha256": "93dfbe37c5d54fb87734eafc1d878b58defb2dcecfb521f6beb7c6b27a465a23",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 578,
+        "count": 578
+      },
+      "headings": [
+        {
+          "heading": "Kalıcı bilgi ile geçici kararı ayırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Benzer mekanizmaların görevlerini karıştırmayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07",
+            "U08"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyanın yeri kapsamı belirler",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyalar nasıl yüklenir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Alt dizin talimatı ne zaman yüklenir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`CLAUDE.md` oluşturmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`/init` ne yapar?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İyi talimatın özellikleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyayı kısa tutun",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İyi ve kötü örnek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Sorunlu örnek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Düzeltilmiş örnek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`@path` ile içe aktarma",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`/init`, `/memory` ve `/context`",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Güvenilmeyen depoda ilk kontrol",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Laboratuvar: Küçük ve geri alınabilir bir `CLAUDE.md`",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Başlangıç durumunu kaydedin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Deneme deposundaki kanıtları doğrulayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Aday bilgileri sınıflandırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Plan modunda öneri alın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "`/init` çıktısını karşılaştırın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Farkı inceleyin",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Yüklemeyi ve bağlam payını doğrulayın",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Başlangıç durumuna dönün",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "İleri düzey görev",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Dosyayı güncel tutmak",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "İlk sekiz uygulamanın ortam, plan veya ortak yönerge çıktısına editoryal eşleme."
+        },
+        {
+          "heading": "Bölüm sonu kontrolü",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        },
+        {
+          "heading": "Kaynaklar ve doğrulama",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün özet/kanıt bağlamı; ayrı ürün işlevi veya runtime başarısı değildir."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "CC-B13-O01",
+          "source_id": "CC-B13",
+          "heading": "Kalıcı bilgi ile geçici kararı ayırın",
+          "objective": "Çoğu oturuma yarayan doğrulanabilir proje bilgisiyle günlük görev ve model tercihini ayır.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O01-AC",
+            "fixture": "Adaylar: kilit dosyası pnpm; bugün #142; UTC kararı sürümlü belgede; yüksek effort bu görev için.",
+            "positive_candidate": "AGENTS.md kalıcı pnpm ve UTC bilgisini dayanakla tutar; #142 ve effort tasks bağlamında kalır.",
+            "negative_candidate": "Dört maddeyi de kalıcı CLAUDE.md içine koyar.",
+            "verdict": "Doğrulanmış kalıcı kararlar seçilir; geçici iş/model tercihi ana talimattan çıkarılır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O02",
+          "source_id": "CC-B13",
+          "heading": "Benzer mekanizmaların görevlerini karıştırmayın",
+          "objective": "Kalıcı talimat, skill, yol kuralı, otomatik bellek ve teknik ayarı ihtiyaçlarına göre ayır.",
+          "lesson_ids": [
+            "U07",
+            "U08"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore",
+            "skills/pusula-belge-uret/SKILL.md",
+            "skills/pusula-kaynak-denetle/SKILL.md",
+            "skill-tests.json"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O02-AC",
+            "fixture": "Ortak UTC kuralı, gerektiğinde çalışan kaynak denetim yöntemi ve teknik ağ yasağı var.",
+            "positive_candidate": "Aday UTCyi ortak yönergeye, yöntemi SKILL.mdye, ağ yasağını teknik ayara eşler.",
+            "negative_candidate": "Üçünü CLAUDE.mdye yazar ve ağ artık teknik olarak engelli der.",
+            "verdict": "Mekanizmaya göre ayrım kabul edilir; yöntem ve teknik engeli doğal dil kopyasına indirgeyen aday reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O03",
+          "source_id": "CC-B13",
+          "heading": "Dosyanın yeri kapsamı belirler",
+          "objective": "Ortak kuralları kopyalamadan seçilen Claude adaptörünün hedefini ve yerel dosya dışlamasını belirle.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O03-AC",
+            "fixture": "Okur Claude Code seçmiş; ortak AGENTS.md var; kişisel not yalnız bu worktreeye ait.",
+            "positive_candidate": "agent-adapters/CLAUDE.md ortak kaynağa belgelenmiş köprü kurar; yerel not Git dışı ayrı tutulur.",
+            "negative_candidate": "AGENTS.md kurallarını iki farklı CLAUDE.md konumuna bağımsız kopyalar.",
+            "verdict": "Tek ortak kaynaklı uyarlama geçer; çoğaltılmış çelişebilir kopyalar kaldırılır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O04",
+          "source_id": "CC-B13",
+          "heading": "Dosyalar nasıl yüklenir?",
+          "objective": "Kök, üst ve alt dizin talimatlarının gerçek yüklenmesini yeni oturum gözlemiyle doğrula.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O04-AC",
+            "fixture": "Kök oturum context Memory files kökü listeler; backend okunduktan sonra backend/CLAUDE.md de görünür.",
+            "positive_candidate": "instruction-tests.json önce/sonra yükleme artefaktlarını ve backend küçük görev sonucunu ayırır.",
+            "negative_candidate": "backend dosyası depoda mevcut diye başlangıçta yüklendi işaretler.",
+            "verdict": "Gözlenen koşullu yükleme kabul edilir; varlık yükleme kanıtı sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O05",
+          "source_id": "CC-B13",
+          "heading": "`CLAUDE.md` oluşturmak",
+          "objective": "init önerisini gerçek komut ve proje dosyalarıyla karşılaştırarak adaptör taslağını oluştur.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O05-AC",
+            "fixture": "init önerisi pnpm test der; gerçek package.json yalnız pnpm check tanımlar.",
+            "positive_candidate": "CLAUDE.md taslağı check komutunu proje kaynağıyla doğrular; test önerisini çıkarır.",
+            "negative_candidate": "init doğru bulmuştur diyerek olmayan test komutunu doğrulanmış yazar.",
+            "verdict": "Gerçek komut kaynağı esas alınır; init önerisi çalışma kanıtı sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O06",
+          "source_id": "CC-B13",
+          "heading": "İyi talimatın özellikleri",
+          "objective": "Kısa, koşulu ve kanıtı belli yönergeler yaz; 200 satırı teknik kesme sınırı sayma.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O06-AC",
+            "fixture": "203 satırlık talimat dosyasında 202. satır UTC kararı var; içe aktarma yok.",
+            "positive_candidate": "Aday tüm dosyanın yüklenebileceğini belirtir; gereksiz satırları editoryal amaçla budar.",
+            "negative_candidate": "İlk 200 satır yüklenir diyerek UTC kuralını uygulanamaz sayar.",
+            "verdict": "200 satırı öneri olarak ele alan aday geçer; yapay yükleme kesme varsayımı reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O07",
+          "source_id": "CC-B13",
+          "heading": "İyi ve kötü örnek",
+          "objective": "Geçici, muğlak veya gizli bilgi içeren maddeleri somut ve doğrulanmış kurallarla değiştir.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O07-AC",
+            "fixture": "Taslakta Kodları düzgün yaz, bugün #142 ve sahte anahtar yer alıyor; lockfile pnpm gösteriyor.",
+            "positive_candidate": "Aday geçici/sır benzeri maddeleri çıkarır; pnpm kararını lockfile dayanağıyla somutlaştırır.",
+            "negative_candidate": "Gizli anahtar Git dışı CLAUDE.local.mdye taşınırsa güvenli der.",
+            "verdict": "Somut kaynaklı kural kabul edilir; yerel talimat gizli bilgi kasası sayılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O08",
+          "source_id": "CC-B13",
+          "heading": "`@path` ile içe aktarma",
+          "objective": "path içe aktarmasını dosyaya göre çözümlenen gerçek yüklemeden ve sıradan bağlantıdan ayır.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O08-AC",
+            "fixture": "agent-adapters/CLAUDE.md içinde @../AGENTS.md ve ayrıca [Tasarım](../design.md) bağlantısı var.",
+            "positive_candidate": "Aday içe aktarma yolunu adaptörün konumuna göre çözer; tasarımın yüklenmesini ayrı doğrular.",
+            "negative_candidate": "Her iki dosyanın Markdown bağlantısı nedeniyle otomatik yüklendiğini yazar.",
+            "verdict": "path import ve sıradan link ayrımı geçer; linkten otomatik yükleme garantisi çıkarılmaz.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O09",
+          "source_id": "CC-B13",
+          "heading": "`/init`, `/memory` ve `/context`",
+          "objective": "init, memory ve context görevlerini ayır; yükleme kanıtını context Memory files görünümünden al.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O09-AC",
+            "fixture": "memory ekranında olası CLAUDE.local.md yolu var; context Memory files yalnız CLAUDE.md gösteriyor.",
+            "positive_candidate": "Yükleme kaydı yalnız CLAUDE.mdyi doğrular; yerel dosyayı yüklendi saymaz.",
+            "negative_candidate": "memory olası konumu listeliyor diye yerel dosyanın yüklendiğini işaretler.",
+            "verdict": "context artefaktı esas alınır; olası konum listesi ve ajanın okudum sözü yeterli değildir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O10",
+          "source_id": "CC-B13",
+          "heading": "Güvenilmeyen depoda ilk kontrol",
+          "objective": "Güvenilmeyen depo talimatlarını ve dış içe aktarmaları oturum öncesi incele; talimatı erişim denetimi sayma.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O10-AC",
+            "fixture": "Bilinmeyen depo @../private-notes.md içe aktarıyor ve geniş komut izni istiyor.",
+            "positive_candidate": "Aday oturum öncesi metin incelemesi ve dar kapsam önerir; dış dosyayı güvenilir saymaz.",
+            "negative_candidate": "CLAUDE.md proje dosyasıdır diyerek dış importu otomatik güvenli kabul eder.",
+            "verdict": "İçe aktarma kaynağı ayrı incelenir; depo talimatından geniş yetki devşiren aday reddedilir.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O11",
+          "source_id": "CC-B13",
+          "heading": "Laboratuvar: Küçük ve geri alınabilir bir `CLAUDE.md`",
+          "objective": "Yalnız doğrulanmış iki veya üç kalıcı maddeyle küçük Claude adaptörünü yeni oturumda sına.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O11-AC",
+            "fixture": "Deneme deposu lockfile ve gerçek check komutu içeriyor; yeni adaptör 12 satır; context artefaktı ve küçük görev cevabı mevcut.",
+            "positive_candidate": "Kayıt iki kalıcı maddeyi dayanaklarına bağlar; yükleme/davranış/yalnız beklenen diff gözlemlerini ayrı tutar.",
+            "negative_candidate": "Sadece 12 satırlık dosya üretildiği için yükleme ve davranış geçti yazar.",
+            "verdict": "Tam gözlemli aday kabul edilir; biçim veya dosya varlığı davranış deneyi yerine geçmez.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "CC-B13-O12",
+          "source_id": "CC-B13",
+          "heading": "Dosyayı güncel tutmak",
+          "objective": "Eskimiş veya çelişen maddeleri kaynak değişikliğiyle birlikte buda ve davranışı yeniden sına.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "CC-B13-O12-AC",
+            "fixture": "Eski yönerge pnpm test; güncel kaynak pnpm check; iki talimat dosyasında aksi komutlar var.",
+            "positive_candidate": "Aday ortak kaynaktaki komutu günceller, çelişkili kopyayı kaldırır ve yeni oturum davranışını bekler.",
+            "negative_candidate": "Yeni cümleyi ekler ama eski çelişkili komutu bırakıp güncelleme doğrulandı yazar.",
+            "verdict": "Çelişki giderilir; yeni oturum denenmeden yalnız editoryal değişim tamamlandı, davranış not_run kalır.",
+            "execution_status": "not_run"
+          },
+          "status": "mapped",
+          "gap_reason": null
+        }
+      ],
+      "notes": [
+        "Tam metin kesilmesiz okundu; eşleme editoryaldir, hiçbir kurulum veya model deneyi yürütülmedi.",
+        "Kaynakta tarihli ürün, komut ve fiyat/veri koşulu iddiaları bulunur; bugünkü geçerlilikleri bu okumayla doğrulanmış sayılmaz.",
+        "Claude uyarlaması yalnız Claude Code seçen okur içindir; bütün okurlara CLAUDE.md veya tüm kurulum yolları zorunlu tutulmaz."
+      ]
+    }
+  ]
+}

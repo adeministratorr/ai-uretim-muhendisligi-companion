@@ -1,0 +1,35 @@
+{
+  "issues": [
+    {
+      "id": "SRC-ISSUE-01",
+      "source_id": "C1-B05",
+      "heading": "5.9 Çakışan Talimatlar Nasıl Çözülür?",
+      "issue": "Sistem, rol, bağlam ve kullanıcı için verilen sıra bir tasarım çerçevesidir; kullanılan ajanların ve APIlerin evrensel teknik öncelik kuralı olarak aktarılamaz. 5.10 kutusunda aynı sıra tekrarlanır.",
+      "required_action": "P02 U07 öğretiminde seçilen araç için belgelenmiş yükleme ve öncelik koşulunu ayrı doğrula; kaynak kitap düzeltmesini yazar incelemesine sun.",
+      "status": "open",
+      "source_modified": false
+    },
+    {
+      "id": "SRC-ISSUE-02",
+      "source_id": "C2-B10",
+      "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+      "issue": "Skill tasarımı için Cilt 3 Bölüm 13e yapılan yönlendirme mevcut bölüm kimlikleriyle uyuşmuyor: Skill Tasarımı C3-B07, değerlendirme C3-B13.",
+      "required_action": "P02 book-updates kaydında yazar incelemesine sun; hatalı bölüm numarasını Pusula kaynak yönlendirmesine aktarma.",
+      "status": "open",
+      "source_modified": false,
+      "lines": [
+        25,
+        330
+      ]
+    },
+    {
+      "id": "SRC-ISSUE-03",
+      "source_id": "C1-B02",
+      "heading": "2.13 Hangi İş İçin Hangi Model veya Araç Türü Uygundur?",
+      "issue": "Numaralı karar çerçevesi hassas veriyi ilk veto sorusu yapıyor; hemen sonraki muhasebe örneği aynı hassasiyet sorusunu son adımda ele alıyor.",
+      "required_action": "Yazar incelemesine sun; Pusula teknoloji kararı örneğinde veri hassasiyetini aday karşılaştırmasından önce sınır olarak kaydet.",
+      "status": "open",
+      "source_modified": false
+    }
+  ]
+}

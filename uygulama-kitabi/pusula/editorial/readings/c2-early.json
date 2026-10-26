@@ -1,0 +1,2170 @@
+{
+  "chapters": [
+    {
+      "source_id": "C2-B01",
+      "source_path": "content/cilt2/bolum01/bolum01.md",
+      "sha256": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 275,
+        "count": 275
+      },
+      "headings": [
+        {
+          "heading": "1.1 2020-2026 Arasında Yazılım Geliştirme Nasıl Değişti?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.2 Copilot Döneminden Ajan Dönemine Geçiş",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.3 Kod Yazan Geliştiriciden Sistemi Yöneten Geliştiriciye",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.4 \"AI Kod Yazıyor\" Yanılgısı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.5 \"AI ile Kod Yazıyorum\" Yaklaşımı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.6 Junior, Mid-Level ve Senior Geliştirici İçin Yeni Beceri Setleri",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır. Kapsam boşluğu: Müfredatta kıdem bazlı beceri gelişim matrisi bulunmuyor."
+        },
+        {
+          "heading": "1.7 \"Baş Aşçı\" Rolü — Temel Çerçeve",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "1.8 Yazılım Öğretimi Nasıl Değişmeli? — Kısa Değini",
+          "disposition": "later",
+          "lesson_ids": [
+            "U34"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "1.9 Bu Kitabın Kullanım Yöntemi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır. Kapsam boşluğu: U01 rolleri ayırıyor ancak bölüm laboratuvarındaki 5–8 satırlık üç sütunlu sorumluluk matrisi çıktısı tanımlı değil."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "C2-B01-O01",
+          "source_id": "C2-B01",
+          "heading": "1.1 2020-2026 Arasında Yazılım Geliştirme Nasıl Değişti?",
+          "objective": "Son haftadaki kodlama, inceleme, test, hata ayıklama ve belge işlerini insan ile ajan arasında ayır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O01-AC",
+            "scenario": "Fixture (sentetik): Pusula haftasında ajan taslak kodu, test taslağı ve README taslağı üretmiş; insan diffi okumuş, eski revizyon hatasını yeniden üretmiş ve teslim kararını vermiştir. Doğru aday: Kod/test/belge taslağı ajan; diff, hata doğrulama ve teslim kararı insan; test kapsamının genişletilmesi ortak yazılır.",
+            "expected": "Verdict: Beş işin tamamını ajan yaptı diye yazan aday reddedilir; taslak üretimiyle doğrulama kararı ayrı kalır."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O02",
+          "source_id": "C2-B01",
+          "heading": "1.2 Copilot Döneminden Ajan Dönemine Geçiş",
+          "objective": "Öneri asistanı ile çok adımlı ajanı dosya ve komut etkilerine göre sınıflandır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O02-AC",
+            "scenario": "Fixture (sentetik): Araç A yalnız answer.py satırını tamamlar. Araç B answer.py ve test_answer.py dosyalarını değiştirip pytest çağırır. Doğru aday: A öneri asistanı; B çok adımlı ajan olarak kaydedilir.",
+            "expected": "Verdict: B sadece satır tamamlama, A komut çalıştırabilen ajan diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O03",
+          "source_id": "C2-B01",
+          "heading": "1.3 Kod Yazan Geliştiriciden Sistemi Yöneten Geliştiriciye",
+          "objective": "Görev tarifi, diff incelemesi, doğrulama ve son kararın sahibini belirle.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O03-AC",
+            "scenario": "Fixture (sentetik): REQ-005 taslağında source-A rev2 incelemeden sonra rev3 olmuştur; ajan test geçti ve kabul et raporu verir. Doğru aday: Görev kapsamını araştırmacı, diff ve revizyon doğrulamasını inceleyen üstlenir; rev3 için yeni inceleme beklenir.",
+            "expected": "Verdict: Son kararı test geçti diyen ajana veren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O04",
+          "source_id": "C2-B01",
+          "heading": "1.4 \"AI Kod Yazıyor\" Yanılgısı",
+          "objective": "Ajanın ürettiği değişikliğin sorumluluğunu insan inceleyende tutan kapsam sınırını yaz.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O04-AC",
+            "scenario": "Fixture (sentetik): Ajan REQ-005 revizyon denetimini kaldıran bir diff önerir; mevcut testler bu yolu kapsamamaktadır. Doğru aday: scope.md insan inceleyenin revizyon denetimini koruma ve kabulü reddetme sorumluluğunu belirtir.",
+            "expected": "Verdict: Testler yeşil olduğu için sorumluluğu ajana bırakan kapsam cümlesi reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O05",
+          "source_id": "C2-B01",
+          "heading": "1.5 \"AI ile Kod Yazıyorum\" Yaklaşımı",
+          "objective": "Belirsiz düzeltme isteğini dosya, korunacak davranış ve kabul koşullarıyla yeniden yaz.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O05-AC",
+            "scenario": "Fixture (sentetik): İstek: eski taslak sorununu düzelt. Bilinen davranış: source-A rev2 taslağı rev3 sonrasında kabul edilemez; kaynak ekleme akışı korunmalıdır. Doğru aday: Tarif yalnız eski revizyon kabulünü hedefler, kaynak eklemeyi korur; rev2→rev3 ret ve değişmeyen rev2 kabul senaryolarını içerir.",
+            "expected": "Verdict: Tüm incelemeleri otomatik kabul et veya kaynak eklemeyi kaldır diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O06",
+          "source_id": "C2-B01",
+          "heading": "1.6 Junior, Mid-Level ve Senior Geliştirici İçin Yeni Beceri Setleri",
+          "objective": "Kıdeme göre öğrenilmesi gereken görev tarifi ve kod inceleme becerilerini gerekçelendir.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O06-AC",
+            "scenario": "Fixture (sentetik): Kurgusal üç okur: başlangıç düzeyindeki Ada diffte kaldırılan revizyon kontrolünü açıklayamıyor; orta düzeydeki Bora belirsiz görev veriyor; ileri düzeydeki Cem ekip onay sınırını tanımlamamış. Doğru aday: Ada için kod okuma, Bora için görev/kabul tarifi, Cem için ortak denetim düzeni çalışma ihtiyacı gerekçelendirilir.",
+            "expected": "Verdict: Üçüne yalnız daha hızlı prompt yazmayı öneren aday hedefi karşılamaz; kıdem matrisi için müfredat boşluğu sürer."
+          },
+          "status": "gap",
+          "gap_reason": "Müfredatta kıdem bazlı beceri gelişim matrisi bulunmuyor."
+        },
+        {
+          "id": "C2-B01-O07",
+          "source_id": "C2-B01",
+          "heading": "1.7 \"Baş Aşçı\" Rolü — Temel Çerçeve",
+          "objective": "Üretime alma kararından önce test ve diff incelemesinin insan sahibini belirle.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O07-AC",
+            "scenario": "Fixture (sentetik): Ajan kullanılmıyor sandığı citation_revision kontrolünü silmiş; mutlu yol testi yeşildir. Doğru aday: İnsan inceleyen silinen kontrolü diffte fark edip revizyon değişimi senaryosunu ister; teslim bekler.",
+            "expected": "Verdict: Yeşil test nedeniyle diff okunmadan teslim kararı veren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O08",
+          "source_id": "C2-B01",
+          "heading": "1.8 Yazılım Öğretimi Nasıl Değişmeli? — Kısa Değini",
+          "objective": "Elle yazılan çözüm ile ajan çözümünü aynı görevde karşılaştırarak mantık farklarını açıkla.",
+          "lesson_ids": [
+            "U34"
+          ],
+          "output_paths": [
+            "approach-watch.md",
+            "experiments/approach-comparison.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O08-AC",
+            "scenario": "Olumlu: Elle yazılan çözüm ile ajan çözümünü aynı görevde karşılaştırarak mantık farklarını açıkla. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B01-O09",
+          "source_id": "C2-B01",
+          "heading": "1.9 Bu Kitabın Kullanım Yöntemi",
+          "objective": "En az beş görev için devredilen, insanda tutulan ve ortak yürütülen sorumlulukları gerekçeli matrise işle.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B01-O09-AC",
+            "scenario": "Fixture (sentetik): Pusula için beş iş: belge ekleme kodu, kaynaklı taslak üretimi, atıf denetimi, eski revizyon testi, teslim kararı. Doğru aday: Matriste kod ve taslak ajana; atıf denetimi ve test kapsamı ortak; son teslim insana ayrılır. Her işte devredilmeyen kısmın gerekçesi vardır.",
+            "expected": "Verdict: Atıf doğruluğunu ve son teslimi koşulsuz ajana bırakan veya beş satırı gerekçesiz dolduran aday reddedilir; özel matris çıktısı boşluğu kapanmış sayılmaz."
+          },
+          "status": "gap",
+          "gap_reason": "U01 rolleri ayırıyor ancak bölüm laboratuvarındaki 5–8 satırlık üç sütunlu sorumluluk matrisi çıktısı tanımlı değil."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez."
+      ]
+    },
+    {
+      "source_id": "C2-B02",
+      "source_path": "content/cilt2/bolum02/bolum02.md",
+      "sha256": "1f36e0c33a17fd7e9da5325279d1ddee628963344ae184a46c519ea71c2d21a3",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 443,
+        "count": 443
+      },
+      "headings": [
+        {
+          "heading": "2.1 Vibe Coding Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.2 Niyeti Koda Dönüştürmek",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.3 Prompt Mühendisliği ile Vibe Coding Farkı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.4 Yapay Zekâ ile Geliştirme ve Ajanın Yürüttüğü Geliştirme",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.5 FAAFO Çerçevesi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U34"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.6 Opsiyon Değeri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U34"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.7 Akış Hâli",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U11 çalıştırma kaydı içeriyor; akış hâli ve kesinti karşılaştırması ölçütü yok."
+        },
+        {
+          "heading": "2.8 Hata ile Barışmak",
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.9 İterasyon Döngüsü",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.10 Vibe Coding'in Riskleri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U25"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.11 Vibe Coding Karşıtı Argümanlar ve Cevaplar",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.12 Vibe Coding Terminoloji Haritası",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.13 Ajan Tabanlı Kodlama ve Ajan Tabanlı Mühendislik",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.14 Spec-Driven Development ve PRD-First Yaklaşım",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.15 Mise en Place",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.16 Context Fluency (Bağlamı Seçip Aktarma Becerisi)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.17 Steering Rules, Rules Files ve Proje Talimatları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "2.18 Ajan Çalışma Çatısı (Harness)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U20"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.19 Human-in-the-Loop, Human-on-the-Loop ve Human-out-of-the-Loop",
+          "disposition": "later",
+          "lesson_ids": [
+            "U17"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.20 Verification-Driven Development",
+          "disposition": "later",
+          "lesson_ids": [
+            "U24"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "2.21 Throwaway Prototype ile Production-Bound Code Farkı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "C2-B02-O01",
+          "source_id": "C2-B02",
+          "heading": "2.1 Vibe Coding Nedir?",
+          "objective": "İstenen davranışı ve denetimi birlikte tarif ederek kitapta kullanılan vibe coding çerçevesini uygula.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O01-AC",
+            "scenario": "Fixture (sentetik): İstek: source-A rev2 bilgisinden kaynaklı taslak hazırla. Ajan kaynak göstermeyen taslak verir. Doğru aday: Plan iste, üret, atıfı ve revizyonu incele, eksikliği düzelt, kararı belgeye işle adımlarını içerir.",
+            "expected": "Verdict: Yalnız iyi prompt yazıp ilk taslağı kabul eden aday kitap çerçevesine uymaz."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O02",
+          "source_id": "C2-B02",
+          "heading": "2.2 Niyeti Koda Dönüştürmek",
+          "objective": "Bir kullanıcı niyetini geçerli ve geçersiz giriş davranışlarına dönüştür.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O02-AC",
+            "scenario": "Fixture (sentetik): REQ-003 için source-A rev2 metni Atölye salı 10:00; Soru 1 atölye saati, Soru 2 eğitmen ücreti. Doğru aday: İlk soru 10:00 iddiasına kaynak bağlar; ücret sorusu kaynakta yok/bilinmiyor sonucuna bağlanır.",
+            "expected": "Verdict: Ücret 500 TLdir diye uyduran ya da iki soruyu da boş geçerli yanıt sayan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O03",
+          "source_id": "C2-B02",
+          "heading": "2.3 Prompt Mühendisliği ile Vibe Coding Farkı",
+          "objective": "İstek yazmayı üretim, test, düzeltme ve karar kaydı adımlarına bağla.",
+          "lesson_ids": [
+            "U11"
+          ],
+          "output_paths": [
+            "app/",
+            "tests/",
+            "runbook.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O03-AC",
+            "scenario": "Olumlu: İstek yazmayı üretim, test, düzeltme ve karar kaydı adımlarına bağla. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O04",
+          "source_id": "C2-B02",
+          "heading": "2.4 Yapay Zekâ ile Geliştirme ve Ajanın Yürüttüğü Geliştirme",
+          "objective": "Yardımcı asistan ile ajan yürütmesi için kontrol ve onay sorumluluğunu ayır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O04-AC",
+            "scenario": "Fixture (sentetik): Akış A: insan answer.py kodunu yazıp tek fonksiyon açıklatır. Akış B: ajan dosyaları bulur, değiştirir ve test başlatır; kabul insanındır. Doğru aday: A yardımcı kullanım, B ajan yürütmesi; ikisinde de son kabul insanda kaydedilir.",
+            "expected": "Verdict: Bde insan her tuşa basıyor veya A bağımsız çok dosyalı yürütme diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O05",
+          "source_id": "C2-B02",
+          "heading": "2.5 FAAFO Çerçevesi",
+          "objective": "Bir fikri küçük ve geri alınabilir deneyle sınayıp öğrenilecek bilgiyi önceden yaz.",
+          "lesson_ids": [
+            "U34"
+          ],
+          "output_paths": [
+            "approach-watch.md",
+            "experiments/approach-comparison.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O05-AC",
+            "scenario": "Olumlu: Bir fikri küçük ve geri alınabilir deneyle sınayıp öğrenilecek bilgiyi önceden yaz. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O06",
+          "source_id": "C2-B02",
+          "heading": "2.6 Opsiyon Değeri",
+          "objective": "Alternatif sayısı, belirsizlik ve deneme maliyetini kullanarak kaç çözümün denenmesini gerekçelendir.",
+          "lesson_ids": [
+            "U34"
+          ],
+          "output_paths": [
+            "approach-watch.md",
+            "experiments/approach-comparison.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O06-AC",
+            "scenario": "Olumlu: Alternatif sayısı, belirsizlik ve deneme maliyetini kullanarak kaç çözümün denenmesini gerekçelendir. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O07",
+          "source_id": "C2-B02",
+          "heading": "2.7 Akış Hâli",
+          "objective": "Kesintileri ve onay beklemelerini kaydederek geliştirme akışının odak kaybını değerlendir.",
+          "lesson_ids": [
+            "U11"
+          ],
+          "output_paths": [
+            "app/",
+            "tests/",
+            "runbook.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O07-AC",
+            "scenario": "Olumlu: Kesintileri ve onay beklemelerini kaydederek geliştirme akışının odak kaybını değerlendir. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "gap",
+          "gap_reason": "U11 çalıştırma kaydı içeriyor; akış hâli ve kesinti karşılaştırması ölçütü yok."
+        },
+        {
+          "id": "C2-B02-O08",
+          "source_id": "C2-B02",
+          "heading": "2.8 Hata ile Barışmak",
+          "objective": "Hatanın gereksinim eksikliğinden mi koddan mı geldiğini aynı senaryo ile ayır.",
+          "lesson_ids": [
+            "U12"
+          ],
+          "output_paths": [
+            "debugging.md",
+            "review.md",
+            "checkpoints.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O08-AC",
+            "scenario": "Olumlu: Hatanın gereksinim eksikliğinden mi koddan mı geldiğini aynı senaryo ile ayır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O09",
+          "source_id": "C2-B02",
+          "heading": "2.9 İterasyon Döngüsü",
+          "objective": "İste, üret, test et, düzelt ve belgeye işle adımlarını tek dikey iş diliminde izlenebilir kaydet.",
+          "lesson_ids": [
+            "U11"
+          ],
+          "output_paths": [
+            "app/",
+            "tests/",
+            "runbook.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O09-AC",
+            "scenario": "Olumlu: İste, üret, test et, düzelt ve belgeye işle adımlarını tek dikey iş diliminde izlenebilir kaydet. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O10",
+          "source_id": "C2-B02",
+          "heading": "2.10 Vibe Coding'in Riskleri",
+          "objective": "Yanlış varsayım, görünmeyen bozulma, sahiplenme ve güvenlik risklerine denetim belirle.",
+          "lesson_ids": [
+            "U25"
+          ],
+          "output_paths": [
+            "threat-model.md",
+            "data-lifecycle.md",
+            "security-cases.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O10-AC",
+            "scenario": "Olumlu: Yanlış varsayım, görünmeyen bozulma, sahiplenme ve güvenlik risklerine denetim belirle. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O11",
+          "source_id": "C2-B02",
+          "heading": "2.11 Vibe Coding Karşıtı Argümanlar ve Cevaplar",
+          "objective": "Görevin hata maliyetini değerlendirip uygun ajan otonomisini gerekçelendir.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O11-AC",
+            "scenario": "Fixture (sentetik): İki görev: sentetik Pusula taslak ekranında metin düzeltmesi ve rev3 sonrası eski inceleme kararının geçersizleşmesini değiştirme. Doğru aday: İlki dar ve geri alınabilir ajan görevi; ikincisi kabul güvenilirliğini etkilediği için açık test ve insan incelemesi gerektirir.",
+            "expected": "Verdict: İki göreve de kontrolsüz otomatik kabul veren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O12",
+          "source_id": "C2-B02",
+          "heading": "2.12 Vibe Coding Terminoloji Haritası",
+          "objective": "Yardımcı kullanım, ajan kodlaması ve mühendislik denetimini ayrı sorumluluklarla tanımla.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O12-AC",
+            "scenario": "Fixture (sentetik): Pusula ajana kaynak aratır; ajan kodu değiştirir; uygulama yazma iznini ve inceleme kapısını denetler. Doğru aday: Arama/açıklama yardımcı kullanım, çok adımlı kod değişimi ajan kodlaması, izin ve kapı tasarımı mühendislik düzeni olarak ayrılır.",
+            "expected": "Verdict: İzin denetimini modelin iyi promptuna eşitleyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O13",
+          "source_id": "C2-B02",
+          "heading": "2.13 Ajan Tabanlı Kodlama ve Ajan Tabanlı Mühendislik",
+          "objective": "Ajanın kod üretimiyle araç, izin, onay ve doğrulama düzenini ayrı bileşenler olarak göster.",
+          "lesson_ids": [
+            "U20"
+          ],
+          "output_paths": [
+            "harness-design.md",
+            "harness-manifest.json",
+            "app/harness/"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O13-AC",
+            "scenario": "Olumlu: Ajanın kod üretimiyle araç, izin, onay ve doğrulama düzenini ayrı bileşenler olarak göster. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O14",
+          "source_id": "C2-B02",
+          "heading": "2.14 Spec-Driven Development ve PRD-First Yaklaşım",
+          "objective": "Kodu üretmeden önce gereksinimi ve kabul koşullarını yazılı PRD ile sabitle.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O14-AC",
+            "scenario": "Fixture (sentetik): Pusula brifi belge ekleme, soru açma, kaynaklı taslak, çelişki gösterimi ve insan incelemesi istiyor; ücret alanı belirtilmiyor. Doğru aday: prd.md REQ-001–005 ve gözlenebilir kabul koşullarını kodlamadan önce yazar; ücret alanını gereksinim diye eklemez.",
+            "expected": "Verdict: Kod hazırlandı diye sonradan varsayılan ücret gereksinimini onaylanmış gösteren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O15",
+          "source_id": "C2-B02",
+          "heading": "2.15 Mise en Place",
+          "objective": "Göreve başlamadan okunacak belge, ilgili dosya ve kısıt listesini hazırla.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O15-AC",
+            "scenario": "Fixture (sentetik): Görev REQ-005 eski taslağı engellemek. Elde prd.md, data-model.md, acceptance.md ve ilgisiz reklam notu vardır. Doğru aday: Okuma planı revizyon ve inceleme durumunu açıklayan ilk üç belgeyi seçer, reklam notunu dışlar; henüz olmayan test komutunu doğrulanmış sunmaz.",
+            "expected": "Verdict: Yalnız reklam notunu okuyup kaynak revizyonunu tahmin eden aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O16",
+          "source_id": "C2-B02",
+          "heading": "2.16 Context Fluency (Bağlamı Seçip Aktarma Becerisi)",
+          "objective": "Gerekli dosya ve geçmiş kararları seçip ilgisiz bağlamı dışarıda bırakmanın etkisini karşılaştır.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O16-AC",
+            "scenario": "Olumlu: Gerekli dosya ve geçmiş kararları seçip ilgisiz bağlamı dışarıda bırakmanın etkisini karşılaştır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O17",
+          "source_id": "C2-B02",
+          "heading": "2.17 Steering Rules, Rules Files ve Proje Talimatları",
+          "objective": "Tekrar eden kararı ortak yönergeye aktar ve seçilen araçta yüklenme kapsamını dene.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O17-AC",
+            "scenario": "Fixture (sentetik): Tekrar eden karar: kaynak değişince eski inceleme kabul edilmez. Seçilmiş araç ortak AGENTS.md okuyabilir; alt dizin için çelişen deneme kuralı var. Doğru aday: Ortak kural tek kaynakta yazılır; yeni oturumda yükleme ve alt dizin çelişkisi için ayrı gözlem vakası bulunur.",
+            "expected": "Verdict: Aynı kuralı çelişen iki giriş dosyasına kopyalayıp dosya varlığını yüklenme başarısı sayan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O18",
+          "source_id": "C2-B02",
+          "heading": "2.18 Ajan Çalışma Çatısı (Harness)",
+          "objective": "Model, talimat, araç, bellek ve kontrol akışını bir çalışma çatısı içinde ayır.",
+          "lesson_ids": [
+            "U20"
+          ],
+          "output_paths": [
+            "harness-design.md",
+            "harness-manifest.json",
+            "app/harness/"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O18-AC",
+            "scenario": "Olumlu: Model, talimat, araç, bellek ve kontrol akışını bir çalışma çatısı içinde ayır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O19",
+          "source_id": "C2-B02",
+          "heading": "2.19 Human-in-the-Loop, Human-on-the-Loop ve Human-out-of-the-Loop",
+          "objective": "Onay bekleyen, müdahaleyle durdurulan ve insansız yürüyen eylemleri ayrı izin koşullarıyla tanımla.",
+          "lesson_ids": [
+            "U17"
+          ],
+          "output_paths": [
+            "tool-contracts.json",
+            "permissions.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O19-AC",
+            "scenario": "Olumlu: Onay bekleyen, müdahaleyle durdurulan ve insansız yürüyen eylemleri ayrı izin koşullarıyla tanımla. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O20",
+          "source_id": "C2-B02",
+          "heading": "2.20 Verification-Driven Development",
+          "objective": "Üretilmiş çıktıyı test, değerlendirme ve insan incelemesi kanıtlarından ayır.",
+          "lesson_ids": [
+            "U24"
+          ],
+          "output_paths": [
+            "eval-plan.md",
+            "evals/release-cases.json",
+            "evals/rubric.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O20-AC",
+            "scenario": "Olumlu: Üretilmiş çıktıyı test, değerlendirme ve insan incelemesi kanıtlarından ayır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B02-O21",
+          "source_id": "C2-B02",
+          "heading": "2.21 Throwaway Prototype ile Production-Bound Code Farkı",
+          "objective": "Atılabilir deneme ile kalıcı ürün hedefini ayırıp kabul ve inceleme kapsamını belirt.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B02-O21-AC",
+            "scenario": "Fixture (sentetik): A prototipi sabit öğretim yanıtını gösterir; B aday sürümü gerçek kaynaklı taslağı kalıcı kullanıma sunacaktır. Doğru aday: Ada sabit yanıt örnek veri diye belirtilir; B için atıf, revizyon ve insan incelemesi kabul koşulları zorunludur.",
+            "expected": "Verdict: A çalışıyor diye gerçek model doğruluğu veya Bye doğrudan yayın izni çıkaran aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez."
+      ]
+    },
+    {
+      "source_id": "C2-B03",
+      "source_path": "content/cilt2/bolum03/bolum03.md",
+      "sha256": "ca46f67a21ac8159d2de410297f0d56361fcb787bedfe7699d17a1a70ed40d6f",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 404,
+        "count": 404
+      },
+      "headings": [
+        {
+          "heading": "3.1 Bağlam Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.2 Token ve Bağlam Penceresi: Geliştirici İş Akışındaki Karşılığı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.3 Model Her Şeyi Biliyor mu?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.4 Proje Bağlamı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.5 Görev Bağlamı",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.6 Dosya Bağlamı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.7 Sohbet Geçmişi Neden Kirlenir?",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.8 Bağlam Sıkıştırma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.9 Bağlam Temizleme (Context Clearing)",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.10 Bağlam Sürekliliği",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.11 PRD Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.12 TASKS.md Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U06"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.13 CLAUDE.md Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.14 Rules Dosyaları",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.15 Codified Context (Yazılı Proje Bağlamı)",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.16 Hot Memory / Cold Memory Ayrımı",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "3.17 Proje Hafızası Oluşturma",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U07"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "3.18 Graph Engineering'e Giriş: Dosya, Sembol ve Bağımlılık İlişkileri",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U13 bağlam seçimini içeriyor; kod bağımlılığı çizgesinin türlendirilmiş kenarları ve kaynağı için çıktı/kabul koşulu yok. U16 belge bilgi grafı bu kod inceleme hedefinin yerine geçmez."
+        },
+        {
+          "heading": "3.19 Çizgeyi Kaynak Kodla Doğrulama ve Bağlamı Daraltma",
+          "disposition": "later",
+          "lesson_ids": [
+            "U13"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U13 içinde eski kod çizgesi, sembol kaynağı ve kapsam eksikliği senaryoları tanımlanmamış."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "C2-B03-O01",
+          "source_id": "C2-B03",
+          "heading": "3.1 Bağlam Nedir?",
+          "objective": "Proje, görev, dosya ve geçmiş bilgilerini belge okuma planında ayrı işaretle.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O01-AC",
+            "scenario": "Fixture (sentetik): Pusula bağlamında SQLite seçimi, REQ-005 görevi, review.py imzası ve reddedilmiş eski sohbet kararı vardır. Doğru aday: Sırasıyla proje, görev, dosya ve geçmiş katmanlarına ayrılır; güncel teknoloji kararıyla reddedilen karar karıştırılmaz.",
+            "expected": "Verdict: Dört kaydı güncel görev talimatı sayan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O02",
+          "source_id": "C2-B03",
+          "heading": "3.2 Token ve Bağlam Penceresi: Geliştirici İş Akışındaki Karşılığı",
+          "objective": "Aynı görevde bağlam hacmi ile kabul edilen sonucu ayrı ölç.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O02-AC",
+            "scenario": "Olumlu: Aynı görevde bağlam hacmi ile kabul edilen sonucu ayrı ölç. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O03",
+          "source_id": "C2-B03",
+          "heading": "3.3 Model Her Şeyi Biliyor mu?",
+          "objective": "Genel model bilgisi yerine projeye özgü kararın okunacağı dosyayı göster.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O03-AC",
+            "scenario": "Fixture (sentetik): Model genel olarak Redis öneriyor; Pusula adr/0001-stack.md dosyası yerel tek çalışma alanı için SQLite seçmiştir. Doğru aday: docs-map.md teknoloji sorusunda ADRyi açtırır; yeni bağımlılık genel model bilgisiyle eklenmez.",
+            "expected": "Verdict: Redis daha yaygın diyerek proje kararını okumadan değiştiren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O04",
+          "source_id": "C2-B03",
+          "heading": "3.4 Proje Bağlamı",
+          "objective": "Teknoloji, dizin ve kod standartlarını ortak proje yönergesinde kaydet.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O04-AC",
+            "scenario": "Fixture (sentetik): Doğrulanmış Pusula kararları Python/FastAPI, app/ dizini, kullanıcı metinleri Türkçe; test komutu henüz doğrulanmamıştır. Doğru aday: AGENTS.md bu üç kararı somut yazar ve test komutunu doğrulanmamış olarak bırakır.",
+            "expected": "Verdict: Genel temiz kod yaz cümlesiyle yetinen veya pytest geçti diye kanıt uyduran aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O05",
+          "source_id": "C2-B03",
+          "heading": "3.5 Görev Bağlamı",
+          "objective": "Görevin kapsamı, korunacak davranışı ve kabul koşulunu açık yaz.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O05-AC",
+            "scenario": "Fixture (sentetik): Görev REQ-005: source-A rev2 inceleme kararını rev3te kullanmayı engelle; belge ekleme davranışı korunacak. Doğru aday: acceptance.md değişmeyen rev2de geçerli kabulü ve rev3te eski kararın reddini ayrı yazar.",
+            "expected": "Verdict: Tüm kararları daima reddetmek veya belge eklemeyi silmek doğru düzeltme sayılmaz."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O06",
+          "source_id": "C2-B03",
+          "heading": "3.6 Dosya Bağlamı",
+          "objective": "Gerçek fonksiyon imzalarını ve ilgili dosyaları seçim gerekçeleriyle bağlama al.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O06-AC",
+            "scenario": "Olumlu: Gerçek fonksiyon imzalarını ve ilgili dosyaları seçim gerekçeleriyle bağlama al. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O07",
+          "source_id": "C2-B03",
+          "heading": "3.7 Sohbet Geçmişi Neden Kirlenir?",
+          "objective": "Çelişen talimatları ve geçersiz denemeleri teşhis ederek güncel kararları ayır.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O07-AC",
+            "scenario": "Olumlu: Çelişen talimatları ve geçersiz denemeleri teşhis ederek güncel kararları ayır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O08",
+          "source_id": "C2-B03",
+          "heading": "3.8 Bağlam Sıkıştırma",
+          "objective": "Özet çıkarırken reddedilen seçenek, açık iş ve kaynak revizyonunu koru.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O08-AC",
+            "scenario": "Olumlu: Özet çıkarırken reddedilen seçenek, açık iş ve kaynak revizyonunu koru. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O09",
+          "source_id": "C2-B03",
+          "heading": "3.9 Bağlam Temizleme (Context Clearing)",
+          "objective": "Yeni bağımsız görev için temiz oturum ile devam eden görev için özet seçimini gerekçelendir.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O09-AC",
+            "scenario": "Olumlu: Yeni bağımsız görev için temiz oturum ile devam eden görev için özet seçimini gerekçelendir. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O10",
+          "source_id": "C2-B03",
+          "heading": "3.10 Bağlam Sürekliliği",
+          "objective": "Yeni oturumun göreve gerekli belgeleri okuyarak devam etmesini sınayacak vaka yaz.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O10-AC",
+            "scenario": "Fixture (sentetik): Yeni oturumda önceki sohbet yok; tasks.md T05 planned, ADR SQLite, acceptance.md rev3 eski kararı reddeder diyor. Doğru aday: Başlangıç vakası bu belgeler okunarak T05in beklediğini ve revizyon kuralını koruyarak devam etmeyi ister.",
+            "expected": "Verdict: Önceki ajan bitti demiş olabilir diye T05i done yazan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O11",
+          "source_id": "C2-B03",
+          "heading": "3.11 PRD Nedir?",
+          "objective": "Amaç, kullanıcı, kapsam ve başarı ölçütünü PRD içinde ayır.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O11-AC",
+            "scenario": "Fixture (sentetik): Pusula kullanıcısı araştırmacı; hedef sentetik kaynaklardan incelenecek taslak; ilk sürüm yerel ve tek çalışma alanlıdır. Doğru aday: PRD amaç, kullanıcı, kapsam ve kaynak yoksa bilinmiyor kabulünü ayrı bölümlerde belirtir.",
+            "expected": "Verdict: Genel webden otomatik karar yayımlamayı mevcut kapsam sayan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O12",
+          "source_id": "C2-B03",
+          "heading": "3.12 TASKS.md Nedir?",
+          "objective": "Görev durumlarını ve önkoşullarını henüz yapılmamış işi tamamlandı göstermeden yaz.",
+          "lesson_ids": [
+            "U06"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O12-AC",
+            "scenario": "Fixture (sentetik): T01 veri sözleşmesi planned, T02 taslak ekranı T01e bağlı, T03 kabul kontrolü T02ye bağlı; hiçbiri yürütülmemiştir. Doğru aday: tasks.md üç işi planned tutar ve T01→T02→T03 önkoşul sırasını gösterir.",
+            "expected": "Verdict: Sadece dosyalar oluştu diye T03ü done veya T02yi önkoşulsuz yazan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O13",
+          "source_id": "C2-B03",
+          "heading": "3.13 CLAUDE.md Nedir?",
+          "objective": "Seçilen araca uygun giriş dosyasını ve alt dizin yüklenme koşullarını kaydet.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O13-AC",
+            "scenario": "Fixture (sentetik): Sentetik environment.md seçilmiş araç Codex CLI, arayüz terminal, sürüm kaydı mevcut; resmî belge kontrolü AGENTS.md kapsamını doğrulamıştır. Doğru aday: AGENTS.md ortak giriş kalır; yeni oturum ve alt dizin kapsamı için gözlem planlanır; CLAUDE.md gereksiz yere zorunlu üretilmez.",
+            "expected": "Verdict: Araç Codex iken Claude girişini otomatik okunacak ortak dosya diye sunan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O14",
+          "source_id": "C2-B03",
+          "heading": "3.14 Rules Dosyaları",
+          "objective": "Çelişen ve kapsama bağlı kuralları dene; sırları paylaşılan dosyalardan dışla.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O14-AC",
+            "scenario": "Fixture (sentetik): Kök kural kaynak değişince eski kararı reddet diyor; app/ kuralı tüm taslakları otomatik kabul et diyor; taslakta SECRET-DEMO yer tutucusunu gerçek anahtar yerine kullanma notu var. Doğru aday: Çelişki vakası iki kuralı birlikte yerine getiremeyeceğini gösterir; ortak dosyada gerçek sır bulunmaz, yer tutucu veri diye etiketlenir.",
+            "expected": "Verdict: Alt dizin kuralıyla revizyon kapısını kaldıran veya örnek için gerçek anahtar isteyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O15",
+          "source_id": "C2-B03",
+          "heading": "3.15 Codified Context (Yazılı Proje Bağlamı)",
+          "objective": "Karar ve kuralları tek ortak kaynaktan belge haritasıyla erişilebilir tut.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O15-AC",
+            "scenario": "Fixture (sentetik): Kaynak revizyonu kuralı AGENTS.mdde; veri ayrıntısı data-model.mdde; docs-map.md inceleme görevini bu belgeye yönlendiriyor. Doğru aday: Ortak kural kopyalanmadan ayrıntı haritasıyla erişilir; veri kararı değiştiğinde ilgili tek kaynak güncellenir.",
+            "expected": "Verdict: Aynı kuralı üç belgede bağımsız ve çelişen sürümlerle tutan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O16",
+          "source_id": "C2-B03",
+          "heading": "3.16 Hot Memory / Cold Memory Ayrımı",
+          "objective": "Sık kullanılan bilgi ile gerektiğinde açılan ayrıntıyı yükleme gerekçeleriyle ayır.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O16-AC",
+            "scenario": "Olumlu: Sık kullanılan bilgi ile gerektiğinde açılan ayrıntıyı yükleme gerekçeleriyle ayır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O17",
+          "source_id": "C2-B03",
+          "heading": "3.17 Proje Hafızası Oluşturma",
+          "objective": "Görev-belge yönlendirme tablosu kur; bozuk bağlantıda eksik kararı tahmin etmek yerine beklet.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O17-AC",
+            "scenario": "Fixture (sentetik): Görev A hata metni için docs/hata-mesajlari.md mevcut; Görev B source revision alanı için docs/veri-sozlesmesi.md bağlantısı bozuktur. Doğru aday: A ilgili mesaj kuralını kullanır; Bde alanın geçerli değerleri bilinmediği açık yazılır ve alan değişikliği bekler.",
+            "expected": "Verdict: Bozuk belgeye rağmen revision alanını isteğe bağlı varsayıp ilerleyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B03-O18",
+          "source_id": "C2-B03",
+          "heading": "3.18 Graph Engineering'e Giriş: Dosya, Sembol ve Bağımlılık İlişkileri",
+          "objective": "Dosya, sembol, çağrı ve test ilişkilerinden gerekçeli bağlam listesi çıkar.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O18-AC",
+            "scenario": "Olumlu: Dosya, sembol, çağrı ve test ilişkilerinden gerekçeli bağlam listesi çıkar. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "gap",
+          "gap_reason": "U13 bağlam seçimini içeriyor; kod bağımlılığı çizgesinin türlendirilmiş kenarları ve kaynağı için çıktı/kabul koşulu yok. U16 belge bilgi grafı bu kod inceleme hedefinin yerine geçmez."
+        },
+        {
+          "id": "C2-B03-O19",
+          "source_id": "C2-B03",
+          "heading": "3.19 Çizgeyi Kaynak Kodla Doğrulama ve Bağlamı Daraltma",
+          "objective": "Çizgedeki ilişkiyi güncel kod konumuyla doğrula; eski veya eksik kenardan yokluk sonucu çıkarma.",
+          "lesson_ids": [
+            "U13"
+          ],
+          "output_paths": [
+            "context-policy.md",
+            "context-index.json",
+            "evals/context-results.json"
+          ],
+          "acceptance_case": {
+            "id": "C2-B03-O19-AC",
+            "scenario": "Olumlu: Çizgedeki ilişkiyi güncel kod konumuyla doğrula; eski veya eksik kenardan yokluk sonucu çıkarma. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "gap",
+          "gap_reason": "U13 içinde eski kod çizgesi, sembol kaynağı ve kapsam eksikliği senaryoları tanımlanmamış."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez."
+      ]
+    },
+    {
+      "source_id": "C2-B04",
+      "source_path": "content/cilt2/bolum04/bolum04.md",
+      "sha256": "59f1101b1689214500d51a26f9c8e4b34259a4fd376f65e9f110cbaba4a7cab4",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 281,
+        "count": 281
+      },
+      "headings": [
+        {
+          "heading": "4.1 AI IDE Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.2 Cursor",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.3 Windsurf ve Devin Desktop'a Geçiş",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.4 Google Antigravity",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.5 Kiro",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U02"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.6 Trae IDE",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.7 Zed AI",
+          "disposition": "later",
+          "lesson_ids": [
+            "U12"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U12 hata ayıklama döngüsü içeriyor ancak ACP/LSP ayrımı ve aynı adlı sembol bulma karşılaştırması için çıktı ve vaka yok."
+        },
+        {
+          "heading": "4.8 GitHub Copilot: Agent Mode ve Coding Agent",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "4.9 AI IDE Seçim Matrisi",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir. Kapsam boşluğu: U11 tek çalışan uygulamayı hedefliyor; iki IDE için aynı görevle beş sütunlu karşılaştırma çıktısı yok. Seçim gerekçesi U01e uyarlanabilir ancak deney pilota taşınmamalı."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "C2-B04-O01",
+          "source_id": "C2-B04",
+          "heading": "4.1 AI IDE Nedir?",
+          "objective": "Editör, ajan eklentisi ve bağımsız CLI aracını çalışma arayüzüne göre ayır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O01-AC",
+            "scenario": "Fixture (sentetik): A editörde satır önerisi; B editör eklentisinde üç dosya ve terminal görevi; C bağımsız terminalde aynı görevi yürütüyor. Doğru aday: A öneri modu, B IDEye eklenen ajan, C CLI ajanıdır; B yeni bağımsız editör diye yazılmaz.",
+            "expected": "Verdict: Bnin eklenti olmasını ajan yeteneği yok sayan veya Cyi IDE diye kaydeden aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O02",
+          "source_id": "C2-B04",
+          "heading": "4.2 Cursor",
+          "objective": "Cursor örneğinde model, ajan aracı, IDE ve çalışma ortamını ayrı kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O02-AC",
+            "scenario": "Fixture (sentetik): Sentetik erişim kaydı: IDE Cursor, ajan modu yerel, model sağlayıcısı M/model-x, çalışma kopyası pusula-demo. Doğru aday: environment.md dört alanı ayrı tutar; model-x IDE adı olarak kullanılmaz.",
+            "expected": "Verdict: Model ve aracı Cursor modeli diye tek alanla birleştiren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O03",
+          "source_id": "C2-B04",
+          "heading": "4.3 Windsurf ve Devin Desktop'a Geçiş",
+          "objective": "Eski ve yeni ürün adlarını tarihli erişim kaydında ayır; duyuruyu yerel deneme sayma.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O03-AC",
+            "scenario": "Fixture (sentetik): Kayıt A tarihli Windsurf→Devin Desktop duyurusu; kayıt B yerel kurulum yok ve execution not_run. Doğru aday: environment.md ad geçişini duyuru kanıtı, yerel çalıştırmayı denenmedi olarak ayırır.",
+            "expected": "Verdict: Duyuru var diye Devin Desktop kurulu ve Pusula testini geçti yazan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O04",
+          "source_id": "C2-B04",
+          "heading": "4.4 Google Antigravity",
+          "objective": "Bağımsız ajan yöneticisi ile isteğe bağlı IDEyi ve yerel/bulut yürütmeyi ayır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O04-AC",
+            "scenario": "Fixture (sentetik): Aday ortamda bağımsız Antigravity yöneticisi açık; isteğe bağlı IDE kurulu değil; Pusula görevinin yerel mi uzak mı yürüdüğü bilinmiyor. Doğru aday: Yönetici, IDE kurulum durumu ve yürütme yeri ayrı; bilinmeyen yer null/karar bekliyor kalır.",
+            "expected": "Verdict: Yönetici açık olduğundan VS Code IDE kurulu ve görev bulutta diye çıkaran aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O05",
+          "source_id": "C2-B04",
+          "heading": "4.5 Kiro",
+          "objective": "Spec planlama ve onay kapılarını görevin belirsizliğine göre gerekçelendir.",
+          "lesson_ids": [
+            "U02"
+          ],
+          "output_paths": [
+            "prd.md",
+            "acceptance.md",
+            "user-stories.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O05-AC",
+            "scenario": "Fixture (sentetik): İş A düğme yazım hatası; İş B REQ-004 çelişki görünümünün iki kaynak revizyonunu nasıl göstereceği belirsiz. Doğru aday: B için PRD/kabul netleştirme ve insan onay kapısı gerekçelendirilir; A için dar görev tarifi yeterli bulunabilir.",
+            "expected": "Verdict: Bde çelişki kararını ajanın kodla sessizce belirlemesini uygun gören aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O06",
+          "source_id": "C2-B04",
+          "heading": "4.6 Trae IDE",
+          "objective": "IDE içindeki Builder/SOLO modlarını araç erişimi ve veri sınırıyla kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O06-AC",
+            "scenario": "Fixture (sentetik): Sentetik TRAE IDE Builder denemesi yalnız pusula-demo dosyalarına erişiyor; dış servise veri aktarım koşulu doğrulanmamış. Doğru aday: environment.md modu ve yerel kapsamı kaydeder, veri aktarımını bilinmiyor bırakır; gerçek kurum kaynağı denemeye verilmez.",
+            "expected": "Verdict: IDEde çalıştığı için kod kesinlikle dışarı gitmez diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O07",
+          "source_id": "C2-B04",
+          "heading": "4.7 Zed AI",
+          "objective": "Aynı adlı iki sembolü metin araması ve tanım/başvuru sorgusuyla ayır; boş LSP sonucunu yokluk kanıtı sayma.",
+          "lesson_ids": [
+            "U12"
+          ],
+          "output_paths": [
+            "debugging.md",
+            "review.md",
+            "checkpoints.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O07-AC",
+            "scenario": "Olumlu: Aynı adlı iki sembolü metin araması ve tanım/başvuru sorgusuyla ayır; boş LSP sonucunu yokluk kanıtı sayma. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "gap",
+          "gap_reason": "U12 hata ayıklama döngüsü içeriyor ancak ACP/LSP ayrımı ve aynı adlı sembol bulma karşılaştırması için çıktı ve vaka yok."
+        },
+        {
+          "id": "C2-B04-O08",
+          "source_id": "C2-B04",
+          "heading": "4.8 GitHub Copilot: Agent Mode ve Coding Agent",
+          "objective": "IDE içi ajan ile bulut kodlama ajanının ara gözetim ve son inceleme noktalarını ayır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O08-AC",
+            "scenario": "Fixture (sentetik): A IDE Agent Mode canlı diff gösteriyor; B bulut Coding Agent taslak PR ve oturum kaydı sunuyor; ikisi de REQ-005i değiştiriyor. Doğru aday: A için oturum içi inceleme, B için erişilebilir ara kayıt gözetimi ve PR öncesi son insan incelemesi belirlenir.",
+            "expected": "Verdict: Bulut ajanında yalnız iş sonunda denetim mümkündür veya taslak PR otomatik birleşir diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B04-O09",
+          "source_id": "C2-B04",
+          "heading": "4.9 AI IDE Seçim Matrisi",
+          "objective": "Aynı görevi iki IDEde çalıştırıp ilk test, düzeltme turu, diff okunabilirliği ve sürprizleri karşılaştır.",
+          "lesson_ids": [
+            "U11"
+          ],
+          "output_paths": [
+            "app/",
+            "tests/",
+            "runbook.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B04-O09-AC",
+            "scenario": "Olumlu: Aynı görevi iki IDEde çalıştırıp ilk test, düzeltme turu, diff okunabilirliği ve sürprizleri karşılaştır. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "gap",
+          "gap_reason": "U11 tek çalışan uygulamayı hedefliyor; iki IDE için aynı görevle beş sütunlu karşılaştırma çıktısı yok. Seçim gerekçesi U01e uyarlanabilir ancak deney pilota taşınmamalı."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez.",
+        "Araç özellikleri için güncel doğrulama yapılmadı; kaynak metnin tarihli iddiaları çalışma sonucu veya güncel ürün önerisi sayılmadı."
+      ]
+    },
+    {
+      "source_id": "C2-B05",
+      "source_path": "content/cilt2/bolum05/bolum05.md",
+      "sha256": "d70035c898fe16d2abd763eb1c30f0765aea89367d69a151ee9e33ac349b29b6",
+      "full_read": true,
+      "lines_read": {
+        "start": 1,
+        "end": 273,
+        "count": 273
+      },
+      "headings": [
+        {
+          "heading": "5.1 GUI Ajan Nedir?",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.2 ChatGPT Masaüstü Uygulaması — Codex Modu",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.3 TRAE IDE — SOLO Modu",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U01"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.4 Lovable",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.5 Bolt",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.6 Replit Agent",
+          "disposition": "later",
+          "lesson_ids": [
+            "U11"
+          ],
+          "reason": "Çalışan kod veya ileri deney gerektirir; ilk sekiz uygulamaya eklenmemelidir."
+        },
+        {
+          "heading": "5.7 v0, Firebase Studio ve Google AI Studio",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U04"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır."
+        },
+        {
+          "heading": "5.8 GUI Araç Seçim Matrisi",
+          "disposition": "pilot",
+          "lesson_ids": [
+            "U03"
+          ],
+          "reason": "Pilot belge ve ortam hazırlığına doğrudan uygulanır. Kapsam boşluğu: U03 tasarım belgesi üretiyor; U11 çalışan uygulamaya daha yakın olsa da süreli GUI prototipi ve müdahale günlüğü müfredatta tanımlı değil. U26 çok kipli/tarayıcı test hedefi bu MVP deneyinin yerine geçmez."
+        },
+        {
+          "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Kısa Tekrar",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Neler Öğrendik? — Self-Check",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        },
+        {
+          "heading": "Bölüm Kontrol Listesi",
+          "disposition": "context",
+          "lesson_ids": [],
+          "reason": "Bölümün hedef, tekrar veya öz değerlendirme çerçevesi; numaralı alt başlık hedefleriyle birlikte okunur."
+        }
+      ],
+      "objectives": [
+        {
+          "id": "C2-B05-O01",
+          "source_id": "C2-B05",
+          "heading": "5.1 GUI Ajan Nedir?",
+          "objective": "GUI, CLI ve IDE ağırlıklı etkileşimi kod görünürlüğü ile görev yönetimine göre ayır.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O01-AC",
+            "scenario": "Fixture (sentetik): A sohbet ve önizlemeyle Pusula ekranı üretir; B terminal görevinde dosya değiştirir; C editör diffi ve dosya ağacıyla ilerler. Doğru aday: A GUI ağırlıklı, B CLI ağırlıklı, C IDE ağırlıklı kaydedilir; Anın terminal paneli olması kategori örtüşmesi olarak açıklanır.",
+            "expected": "Verdict: Terminal paneli bulunan A artık GUI olamaz diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O02",
+          "source_id": "C2-B05",
+          "heading": "5.2 ChatGPT Masaüstü Uygulaması — Codex Modu",
+          "objective": "Masaüstü ajan görünümü ve computer use yetkilerini ortam kaydında ayrı göster.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O02-AC",
+            "scenario": "Fixture (sentetik): Pusula masaüstü görevinde dosya paneli açık, computer use kapalı; ajan tarayıcıdaki formu göndermeyi teklif ediyor. Doğru aday: Dosya erişimi bilgisayar kontrolü yetkisi sayılmaz; form gönderme erişimi ve onayı ayrıca değerlendirilir.",
+            "expected": "Verdict: Dosya okuyabiliyor diye diğer uygulamada gönderim yapabilir diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O03",
+          "source_id": "C2-B05",
+          "heading": "5.3 TRAE IDE — SOLO Modu",
+          "objective": "IDE içindeki SOLO Mode ile bağımsız ürün kimliğini ayrı kaydet.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O03-AC",
+            "scenario": "Fixture (sentetik): Sentetik kurulum kaydı TRAE IDE içinde SOLO Mode açık, bağımsız TRAE Work kurulmamış gösteriyor. Doğru aday: Araç IDE, mod SOLO; bağımsız ürün kurulu değil olarak ayrı tutulur.",
+            "expected": "Verdict: SOLO Mode gözlemini TRAE Work çalıştırma kanıtı sayan aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O04",
+          "source_id": "C2-B05",
+          "heading": "5.4 Lovable",
+          "objective": "Kod aktarımı ile veri, kimlik doğrulama ve arka uç taşımayı ayrı bağımlılıklar olarak karşılaştır.",
+          "lesson_ids": [
+            "U04"
+          ],
+          "output_paths": [
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O04-AC",
+            "scenario": "Fixture (sentetik): A GUI adayı Pusula kodunu GitHuba aktarabiliyor; kullanıcı oturumları ve kaynak verisi yönetilen arka uçta kalıyor. Doğru aday: tech-stack karşılaştırması kod aktarımı, veri taşıma, oturum/kimlik taşıma ve bağlantı ayarlarını ayrı işler olarak listeler.",
+            "expected": "Verdict: GitHub eşitlendi diye veri ve kimlik taşındı diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O05",
+          "source_id": "C2-B05",
+          "heading": "5.5 Bolt",
+          "objective": "Tarayıcı çalışma ortamını kurulum ve token maliyeti sınırıyla değerlendir.",
+          "lesson_ids": [
+            "U04"
+          ],
+          "output_paths": [
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O05-AC",
+            "scenario": "Fixture (sentetik): Pusula denemesinde tarayıcı Node ortamı kurulum istemiyor; kota 100 kredi, ilk üretim 60, düzeltme 30, kalan 10; sonraki iş maliyeti bilinmiyor. Doğru aday: Kurulum avantajı ve gözlenen 90 kredi tüketimi ayrı yazılır; bilinmeyen sonraki maliyet sıfır sayılmaz.",
+            "expected": "Verdict: Kurulum yok diye maliyet yok veya kalan 10 kredi kesin yeter diyen aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O06",
+          "source_id": "C2-B05",
+          "heading": "5.6 Replit Agent",
+          "objective": "Ajanın yaptığı testleri inceleyip eksik davranış senaryolarını insan denetimine ekle.",
+          "lesson_ids": [
+            "U11"
+          ],
+          "output_paths": [
+            "app/",
+            "tests/",
+            "runbook.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O06-AC",
+            "scenario": "Olumlu: Ajanın yaptığı testleri inceleyip eksik davranış senaryolarını insan denetimine ekle. Olumsuz: gerekli dayanak, kapsam veya insan denetimi eksik bırakılmış karşı örneği incele.",
+            "expected": "Olumlu örnekte karar ve gerekçe ilgili çıktıda izlenebilir olmalı; olumsuz örnek eksik bilgi/ret veya bekleme olarak işaretlenmeli, başarı iddiası üretilmemeli."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O07",
+          "source_id": "C2-B05",
+          "heading": "5.7 v0, Firebase Studio ve Google AI Studio",
+          "objective": "Platforma bağlı servisler için kod, veri, kimlik ve dağıtım geçişini ayrı gerekçelendir.",
+          "lesson_ids": [
+            "U04"
+          ],
+          "output_paths": [
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O07-AC",
+            "scenario": "Fixture (sentetik): Aday Pusula arayüzü v0dan kod olarak çıkabiliyor; veri Vercel bağlantılı serviste, kimlik ayrı sağlayıcıda; hedef yerel çalışma. Doğru aday: Karar kod, veri, kimlik ve dağıtım bağımlılıklarını ayırır; yalnız kodu dışarı alma yerel çalışma kanıtı değildir.",
+            "expected": "Verdict: Kod arşivi var diye yerel kurulum tamamlandı sonucunu veren aday reddedilir."
+          },
+          "status": "mapped",
+          "gap_reason": null
+        },
+        {
+          "id": "C2-B05-O08",
+          "source_id": "C2-B05",
+          "heading": "5.8 GUI Araç Seçim Matrisi",
+          "objective": "45 dakikalık prototipte otomatik adımlar, müdahale noktası ve gözleme dayalı risk cümlesini kaydet.",
+          "lesson_ids": [
+            "U03"
+          ],
+          "output_paths": [
+            "design.md",
+            "accessibility.md"
+          ],
+          "acceptance_case": {
+            "id": "C2-B05-O08-AC",
+            "scenario": "Fixture (sentetik): 45 dakikalık sentetik Pusula GUI denemesinde kaynak listesi otomatik oluştu; source-A rev2 taslağı rev3ten sonra kabul edilmiş görünmeye devam etti; kota 40. dakikada bitti. Doğru aday: Tasarım günlüğü otomatik listeyi, revizyon/inceleme müdahalesini ve kota nedeniyle durmayı ayırır; rev3 taslağı kabul edilmiş göstermez.",
+            "expected": "Verdict: Prototip açıldı diye REQ-005 geçti veya eksik son beş dakikayı yapılmış yazan aday reddedilir; süreli GUI deneyi müfredat boşluğu sürer."
+          },
+          "status": "gap",
+          "gap_reason": "U03 tasarım belgesi üretiyor; U11 çalışan uygulamaya daha yakın olsa da süreli GUI prototipi ve müdahale günlüğü müfredatta tanımlı değil. U26 çok kipli/tarayıcı test hedefi bu MVP deneyinin yerine geçmez."
+        }
+      ],
+      "notes": [
+        "Kaynak bütün satırlarıyla okundu. mapped yalnız editoryal eşlemedir; hiçbir uygulama veya kabul senaryosu çalıştırılmadı.",
+        "output_paths müfredattaki göreli hedef dosyalardır; gap satırında bunlar yalnız en yakın uygulamayı gösterir ve kapsamın karşılandığı anlamına gelmez.",
+        "Araç özellikleri için güncel doğrulama yapılmadı; kaynak metnin tarihli iddiaları çalışma sonucu veya güncel ürün önerisi sayılmadı."
+      ]
+    }
+  ]
+}
