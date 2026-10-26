@@ -1,0 +1,694 @@
+{
+  "edition": "0.1.0",
+  "date": "2026-10-26",
+  "status": "editorial_draft",
+  "lessons": [
+    {
+      "id": "U01",
+      "title": "Ürünü ve okurun ortamını tanımlamak",
+      "inputs": [
+        "brief.md"
+      ],
+      "outputs": [
+        "vision.md",
+        "scope.md",
+        "environment.md"
+      ],
+      "task": "Pusula kullanıcısının belge yığınından hangi karara ulaşacağını anlat. Araştırmacı ve inceleyen rollerini ayır. İlk sürümde tek çalışma alanı, sentetik metinler ve yerel taslak kullan. İşletim sistemi, araç sürümü, model erişimi ve maliyet sınırı için gözlem ile kullanıcı tercihini ayrı kaydet.",
+      "acceptance": "Kaynağı olmayan otomatik karar veya dış gönderim ilk sürüm kapsamına girmemeli. Kurulu olmayan araç kurulu gösterilmemeli.",
+      "prompt": "prompts/01.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U02",
+      "title": "Gereksinimleri kabul ölçütüne çevirmek",
+      "inputs": [
+        "vision.md",
+        "scope.md",
+        "fixtures/atolye-kaynaklari.json"
+      ],
+      "outputs": [
+        "prd.md",
+        "acceptance.md",
+        "user-stories.md"
+      ],
+      "task": "Belge ekleme, araştırma sorusu açma, kaynaklı taslak, çelişki gösterimi ve insan incelemesi için REQ-001–REQ-005 kimliklerini kullan. Her gereksinime gözlenebilir olumlu ve olumsuz kabul koşulu yaz. Eksik bilgiyi kullanıcı kararı veya tasarım varsayımı olarak işaretle.",
+      "acceptance": "Kaynakta cevabı bulunmayan soru için doğru davranış bilinmiyor demek olmalı. Kabul ölçütü yalnız dosyanın varlığına dayanmamalı.",
+      "prompt": "prompts/02.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U03",
+      "title": "Ekranları ve etkileşimi tasarlamak",
+      "inputs": [
+        "prd.md",
+        "acceptance.md"
+      ],
+      "outputs": [
+        "design.md",
+        "accessibility.md"
+      ],
+      "task": "Kaynak listesi, soru formu, iddia-kaynak görünümü ve inceleme ekranının akışını tasarla. Yükleniyor, boş, hata, iptal, eski kaynak ve inceleme bekliyor durumlarını ayrı göster. Klavye kullanımı ve odak dönüşünü tasarım kararlarına bağla.",
+      "acceptance": "İptal edilmiş veya kaynağı değişmiş taslak arayüzde kabul edilmiş görünmemeli. Üretilen tasarımın tarayıcıda denenmediğini belirt.",
+      "prompt": "prompts/03.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U04",
+      "title": "Teknoloji seçimini gerekçelendirmek",
+      "inputs": [
+        "prd.md",
+        "design.md",
+        "environment.md"
+      ],
+      "outputs": [
+        "tech-stack.md",
+        "dependency-policy.md",
+        "adr/0001-stack.md"
+      ],
+      "task": "İki uygulanabilir teknoloji seçeneğini kurulum, bakım, test ve model bağlantısı açısından karşılaştır. Öğretim adayı Python, FastAPI, HTML şablonları ve SQLite; alternatif TypeScript tabanlı tek dil yaklaşımıdır. Birini seçip gerekçeyi yaz. Seçilecek paketlerin resmî belgelerini ve registry kayıtlarını doğrula; kurulumdan önce kesin sürümleri ve kilit dosyası yöntemini kaydet.",
+      "acceptance": "Güncel sürüm, lisans veya paket adı doğrulanamıyorsa bağımlılık ekleme. Karar dosyası kurulmuş uygulama kanıtı sayılmamalı.",
+      "prompt": "prompts/04.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U05",
+      "title": "Veri ve çıktı sözleşmesini kurmak",
+      "inputs": [
+        "prd.md",
+        "acceptance.md",
+        "tech-stack.md"
+      ],
+      "outputs": [
+        "data-model.md",
+        "api-contract.md",
+        "schemas/answer.schema.json"
+      ],
+      "task": "Workspace, SourceRevision, Question, Claim, Citation ve ReviewDecision varlıklarını tanımla. Atıfta source_id, revision ve alıntı metnini tut. Eksik yanıt ile boş yanıtı ayır. JSON Schema içine ek alan, geçersiz durum ve eksik kaynak için ret kuralları koy. Kaynak revizyonu değişince inceleme kararının geçersizleşmesini tasarla.",
+      "acceptance": "Geçerli JSON ile doğru iddia ayrı kontroller olmalı. Aynı alıntı farklı iddiayı destekliyormuş gibi kabul edilmemeli.",
+      "prompt": "prompts/05.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U06",
+      "title": "Yol haritasını yapılabilir işlere bölmek",
+      "inputs": [
+        "prd.md",
+        "design.md",
+        "tech-stack.md",
+        "data-model.md",
+        "acceptance.md"
+      ],
+      "outputs": [
+        "roadmap.md",
+        "tasks.md",
+        "dependencies.md"
+      ],
+      "task": "Önce model çağrısız tek belge-soru-taslak akışını, sonra gerçek modeli, ardından bilgi getirme ve ajan aşamalarını sırala. Her işe gereksinim kimliği, girdi, çıktı, önkoşul ve doğrulama ekle. Döngüsel bağımlılığı bul. Görev durumlarını planned olarak başlat; insan veya ajan henüz yapmadığı işi done yazmasın.",
+      "acceptance": "Her REQ en az bir işe ve kabul kontrolüne bağlanmalı. Bir görev sadece başka bir belgenin başlığını tekrarlamamalı.",
+      "prompt": "prompts/06.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U07",
+      "title": "Ajanın proje yönergelerini üretmek",
+      "inputs": [
+        "prd.md",
+        "tech-stack.md",
+        "tasks.md",
+        "acceptance.md"
+      ],
+      "outputs": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        "docs-map.md",
+        "README.md",
+        ".gitignore"
+      ],
+      "task": "AGENTS.md içine proje sınırlarını, gerçek kurulum ve test komutlarını, doğrulama kaydını ve durma koşullarını yaz. Henüz var olmayan komutu çalışır gibi sunma. CLAUDE.md, ortak kurallara başvursun; aynı kuralları bağımsız ikinci kopya olarak çoğaltmasın. docs-map.md hangi görevde hangi belgenin okunacağını göstersin. README.md içine doğrulanmış başlangıç yolunu, .gitignore içine yerel çıktı ve sır dosyası dışlamalarını yaz; mevcut kullanıcı kurallarını koru.",
+      "acceptance": "agent.md, design.md veya roadmap.md dosyasının her araçta kendiliğinden yükleneceğini iddia etme. Kullanılan aracın belge keşif davranışını doğrula.",
+      "prompt": "prompts/07.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U08",
+      "title": "Tekrarlanan yöntemi skill paketine dönüştürmek",
+      "inputs": [
+        "AGENTS.md",
+        "docs-map.md",
+        "acceptance.md"
+      ],
+      "outputs": [
+        "skills/pusula-belge-uret/SKILL.md",
+        "skills/pusula-kaynak-denetle/SKILL.md",
+        "skill-tests.json"
+      ],
+      "task": "Belge üretme ile iddia-kaynak denetimini iki dar skill olarak paketle. Açıklamaya kullanım anını yaz. Her skill için olumlu çağrı, ilgisiz soru ve eksik girdi örneği hazırla. Kaynak içindeki işlem talimatını veri olarak ele al. Paket biçimi ve modelin doğru skill seçmesi için ayrı sonuç alanları oluştur.",
+      "acceptance": "Skill bir izin mekanizması olarak sunulmamalı. Kurulum, tetiklenme ve davranış gözlemi ayrı kaydedilmeli.",
+      "prompt": "prompts/08.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U09",
+      "title": "Prompt engineering deneyini kurmak",
+      "inputs": [
+        "prd.md",
+        "schemas/answer.schema.json",
+        "fixtures/atolye-kaynaklari.json"
+      ],
+      "outputs": [
+        "prompts/answer-v1.md",
+        "prompts/answer-v2.md",
+        "prompts/answer-v3.md",
+        "evals/prompt-cases.json"
+      ],
+      "task": "Aynı araştırma sorusu için doğrudan görev, örnekli görev ve parçalanmış iş akışı hazırla. Rol, kaynak, sınır ve çıktı biçimi farkını tek değişkenli deneylerle ayır. Token, bağlam ve çıktı sınırını kullanılan modelden doğrula. Sonuç, kısa gerekçe ve atıf iste; özel düşünce zinciri talep etme.",
+      "acceptance": "Aynı kaynak ve soru setini koru. Temperature sıfırın her ortamda aynı çıktıyı garanti ettiğini veya Türkçenin sabit token çarpanı olduğunu yazma.",
+      "prompt": "prompts/09.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U10",
+      "title": "Promptları ölçüp iyileştirmek",
+      "inputs": [
+        "prompts/answer-v1.md",
+        "prompts/answer-v2.md",
+        "prompts/answer-v3.md",
+        "evals/prompt-cases.json"
+      ],
+      "outputs": [
+        "evals/prompt-results.json",
+        "optimization.md"
+      ],
+      "task": "Geliştirme ve değerlendirme örneklerini ayır. Şema uyumu, kaynak desteği, yanıtsız soruda çekilme, süre ve biliniyorsa maliyeti ölç. Tek değişkeni değiştirerek iyileştirme yap. DSPy benzeri programatik optimizasyonu isteğe bağlı karşılaştırma kolu olarak tanımla; ayrı deneme bütçesi kullan.",
+      "acceptance": "Aynı hazır çıktının tekrarını bağımsız model denemesi sayma. Çalıştırılmayan varyantın gözlemleri null kalmalı.",
+      "prompt": "prompts/10.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U11",
+      "title": "İlk çalışan uygulamayı üretmek",
+      "inputs": [
+        "tasks.md",
+        "design.md",
+        "data-model.md",
+        "api-contract.md",
+        "AGENTS.md"
+      ],
+      "outputs": [
+        "app/",
+        "tests/",
+        "runbook.md"
+      ],
+      "task": "Yol haritasındaki ilk dikey iş dilimini uygula: sentetik belgeyi ekle, soru aç, sabit öğretim yanıtıyla kaynaklı taslak göster, insan incelemesini bekle. Testi gerçek kabul koşulundan çıkar. Çalıştırılan komutları, çıkış kodlarını ve tarayıcı gözlemini ayrı kaydet. Sabit yanıtı ekranda örnek veri olarak belirt.",
+      "acceptance": "Model olmadan geçen akışa gerçek model sonucu deme. İlk sürüm, kaynak revizyonunu kaybetmeden belge-soru-taslak ilişkisini göstermeli.",
+      "prompt": "prompts/11.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U12",
+      "title": "Hata ayıklama ve Git döngüsünü kurmak",
+      "inputs": [
+        "app/",
+        "tests/",
+        "runbook.md"
+      ],
+      "outputs": [
+        "debugging.md",
+        "review.md",
+        "checkpoints.md"
+      ],
+      "task": "Bir kaynak güncellenmesine rağmen eski taslağın kabul edilmesi hatasını atılabilir kopyada yeniden üret. Önce başarısız kabul testini, sonra dar düzeltmeyi yap. Diff, regresyon, commit sınırı ve geri alma yolunu kaydet. Testi silme veya iddiasını gevşetme.",
+      "acceptance": "Hata öncesi ve düzeltme sonrası gözlem aynı senaryo üzerinden karşılaştırılmalı. Başkasının değişiklikleri geri alınmamalı.",
+      "prompt": "prompts/12.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U13",
+      "title": "Context engineering ile bağlamı seçmek",
+      "inputs": [
+        "docs-map.md",
+        "prd.md",
+        "app/"
+      ],
+      "outputs": [
+        "context-policy.md",
+        "context-index.json",
+        "evals/context-results.json"
+      ],
+      "task": "Aynı görev için tam belge yığını, seçilmiş parçalar ve gerektiğinde arama yöntemlerini karşılaştır. Kaynak kimliği ve revizyonu bağlamdan düşmesin. Oturum özeti kararları ve çözülmemiş soruları korusun. Bağlam boyutu ile kabul edilen sonucu ayrı ölç.",
+      "acceptance": "Daha kısa bağlam otomatik olarak daha doğru sayılmamalı. Özet, silinmiş kaynağı geçerli bilgiye dönüştürmemeli.",
+      "prompt": "prompts/13.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U14",
+      "title": "Belleğin yaşam döngüsünü yönetmek",
+      "inputs": [
+        "context-policy.md",
+        "data-model.md"
+      ],
+      "outputs": [
+        "memory-policy.md",
+        "memory-tests.json"
+      ],
+      "task": "Oturum notu, görev durumu ve kullanıcının açık tercihini ayrı sakla. Tercih kaynağı, revizyonu, süresi ve silme yolunu tanımla. Eski tercih, iptal edilmiş karar ve yeni oturumda devam örneklerini çalıştır.",
+      "acceptance": "Kaynak içeriği kullanıcı tercihi gibi belleğe yazılmamalı. Silme isteği türev özet ve önbelleğe de uygulanmalı.",
+      "prompt": "prompts/14.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U15",
+      "title": "Kaynaklı yanıt için RAG hattı kurmak",
+      "inputs": [
+        "data-model.md",
+        "schemas/answer.schema.json",
+        "context-policy.md",
+        "fixtures/atolye-kaynaklari.json"
+      ],
+      "outputs": [
+        "retrieval.md",
+        "rag-tests.json",
+        "app/retrieval/"
+      ],
+      "task": "Belge parçalama, metadata, basit sözcük araması, isteğe bağlı vektör ve karma arama kollarını kur. Yetki ve etkin revizyon filtresini getirmeden önce uygula. Bulunamayan bilgi, çelişki, güncelleme ve silme senaryolarını ekle. Getirme başarısı ile yanıt doğruluğunu ayrı değerlendir.",
+      "acceptance": "Yetkisiz parçanın sonradan metinden silinmesi yeterli sayılmamalı. Şema kontrolü anlam desteğinin yerine geçmemeli.",
+      "prompt": "prompts/15.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U16",
+      "title": "Bilgi grafını karşılaştırmalı denemek",
+      "inputs": [
+        "retrieval.md",
+        "rag-tests.json"
+      ],
+      "outputs": [
+        "graph-design.md",
+        "graph-results.json",
+        "app/graph/"
+      ],
+      "task": "Kaynak, iddia, kavram ve karar ilişkilerinden küçük bir graf kur. Elle verilmiş ilişkileri modelin çıkardığı ilişkilerden ayır. Düz aramayla aynı soruları kullan; ilişki dayanağı, revizyon, silme ve yanlış bağlantı senaryolarını değerlendir.",
+      "acceptance": "Her soruda graf kullanma zorunluluğu koyma. Graf eklemenin gözlenmiş yararı ve bakım maliyeti ayrı yazılmalı.",
+      "prompt": "prompts/16.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U17",
+      "title": "Araç ve izin sözleşmelerini yazmak",
+      "inputs": [
+        "api-contract.md",
+        "AGENTS.md"
+      ],
+      "outputs": [
+        "tool-contracts.json",
+        "permissions.md"
+      ],
+      "task": "Kaynak arama, taslak hazırlama ve inceleme kaydetme işlemlerini ayrı araçlar yap. Parametre, sonuç, hata ve yan etkiyi tanımla. Modelin kurum veya onay kimliği üretmesine izin verme; güvenilir uygulama bağlamını kullan. Yetkisiz ve süresi dolmuş onay örneklerini dene.",
+      "acceptance": "Araç açıklaması erişim kontrolünün yerine geçmemeli. Bir yazma isteği salt okunur görevden türetilmemeli.",
+      "prompt": "prompts/17.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U18",
+      "title": "MCP bağlantısını kurup sınamak",
+      "inputs": [
+        "tool-contracts.json",
+        "permissions.md"
+      ],
+      "outputs": [
+        "mcp-design.md",
+        "mcp-tests.json",
+        "app/mcp/"
+      ],
+      "task": "Önce salt okunur Pusula kaynak aramasını MCP üzerinden sun. Host, client ve server sorumluluklarını açıkla. Kullanılan protokol ve SDK sürümünü resmî kaynaktan sabitle. Bağlantı kesilmesi, erişim reddi ve araç çıktısındaki zararlı talimat örneklerini dene.",
+      "acceptance": "MCP uyumu görev yetkisi sağlamaz. Gerçek sunucu testi ile temsilî araç çağrısını ayrı kaydet.",
+      "prompt": "prompts/18.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U19",
+      "title": "Loop engineering ile çalışmayı sınırlamak",
+      "inputs": [
+        "tasks.md",
+        "acceptance.md",
+        "permissions.md"
+      ],
+      "outputs": [
+        "loop-spec.md",
+        "loop-state.json",
+        "loop-tests.json"
+      ],
+      "task": "Hedef, tetikleyici, bir çevrimin işi, doğrulayıcı, bütçe, yeniden deneme ve bitiş durumlarını tanımla. Öğretim sınırı olarak en çok üç deneme kullan; bu sayı evrensel standart değildir. Başarısızlıkta aynı promptu körlemesine yineleme. İptal, bütçe tükenmesi ve insan incelemesi durumlarında yeni etki üretme.",
+      "acceptance": "Sayaç ve durdurma koşulu uygulamada denetlenmeli. Ajanın bitti demesi kabul kanıtı sayılmamalı.",
+      "prompt": "prompts/19.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U20",
+      "title": "Harness engineering ile yürütmeyi kurmak",
+      "inputs": [
+        "loop-spec.md",
+        "tool-contracts.json",
+        "permissions.md",
+        "memory-policy.md"
+      ],
+      "outputs": [
+        "harness-design.md",
+        "harness-manifest.json",
+        "app/harness/"
+      ],
+      "task": "Model çağrısı, araç yürütme, durum deposu, değerlendirme ve teslim kapısını ayır. Her bileşenin giriş ve çıkışını tanımla. Geliştirme ajanının çalışma çatısıyla Pusula içindeki çalışma çatısını ayrı göster. Durum geçişleri ve yan etkiler için uygulama denetimi kur.",
+      "acceptance": "Bir Markdown manifesti kendi başına yürütücü değildir. Kodun hangi alanı gerçekten okuduğunu göster.",
+      "prompt": "prompts/20.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U21",
+      "title": "Uzun görevleri kesintiden sürdürmek",
+      "inputs": [
+        "harness-design.md",
+        "app/harness/"
+      ],
+      "outputs": [
+        "resume-protocol.md",
+        "recovery-tests.json"
+      ],
+      "task": "Checkpoint, görev kimliği, kaynak revizyonu ve teslim kaydını kalıcı tut. Ayrı süreçte başlat, durdur ve devam ettir. Yeniden başlatmada yetkiyi ve kaynağı tekrar denetle. Çift teslim ve sonucu belirsiz dış işlem senaryosunu ele al.",
+      "acceptance": "Yerel dosya başarısını ağda tam bir kez teslim garantisi sayma. Eski onay yeni revizyona taşınmamalı.",
+      "prompt": "prompts/21.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U22",
+      "title": "Alt ajanlara görev vermek",
+      "inputs": [
+        "harness-design.md",
+        "permissions.md"
+      ],
+      "outputs": [
+        "agents.md",
+        "delegation-contracts.json",
+        "agents/"
+      ],
+      "task": "Araştırmacı, uygulayıcı ve kaynak denetçisi rollerini görev gerektiğinde ayır. Her role girdi, izin, çıktı ve kabul ölçütü ver. Sonucun sahibi üst görevde kalsın. İnceleme bulgusunu uygulama kararıyla eşle; iki modelin aynı görüşünü bağımsız doğruluk kanıtı sayma.",
+      "acceptance": "Alt ajan yeni yetki veya dış gönderim kararı verememeli. Belirsiz sonuç üst göreve açık hata olarak dönmeli.",
+      "prompt": "prompts/22.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U23",
+      "title": "Çoklu ajanı tek ajanla karşılaştırmak",
+      "inputs": [
+        "delegation-contracts.json",
+        "evals/prompt-cases.json"
+      ],
+      "outputs": [
+        "parallel-work.md",
+        "evals/agent-comparison.json"
+      ],
+      "task": "Aynı görev, kaynak ve bütçeyle tek ajan ve görev paylaşan düzen kur. Dosya sahipliği ve worktree ayrımını tanımla; port, veri tabanı ve uzak hizmetlerin paylaşılabileceğini ayrıca kontrol et. Çakışma ve iptal durumunda kimin işi durduracağını yaz.",
+      "acceptance": "Ajan sayısı başarı ölçütü olmamalı. Kalite, toplam süre, çağrı maliyeti ve insan düzeltmesini birlikte karşılaştır.",
+      "prompt": "prompts/23.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U24",
+      "title": "Evals ile sürüm kabulünü ölçmek",
+      "inputs": [
+        "acceptance.md",
+        "rag-tests.json",
+        "loop-tests.json",
+        "recovery-tests.json"
+      ],
+      "outputs": [
+        "eval-plan.md",
+        "evals/release-cases.json",
+        "evals/rubric.md"
+      ],
+      "task": "Normal, sınır ve hata görevlerinden geliştirme seti ile ayrı değerlendirme seti kur. Deterministik doğrulayıcı, model hakem ve insan incelemesinin farklı yetkilerini yaz. Her denemeyi kaynak, prompt, model ve uygulama revizyonuna bağla. Yanlış olumlu sonuçları örnekleyerek hakemi kalibre et.",
+      "acceptance": "Başarı yüzdesi yalnız gerçekten yürütülmüş paydadan hesaplanmalı. Kritik yetki ihlali ortalama skorla gizlenmemeli.",
+      "prompt": "prompts/24.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U25",
+      "title": "Güvenlik ve veri sınırlarını denemek",
+      "inputs": [
+        "permissions.md",
+        "data-model.md",
+        "eval-plan.md"
+      ],
+      "outputs": [
+        "threat-model.md",
+        "data-lifecycle.md",
+        "security-cases.json"
+      ],
+      "task": "Sentetik prompt injection, kapsam dışı kaynak, yanlış alıntı, kimlik taklidi ve bağımlılık değişimi örnekleriyle çalış. Veri minimizasyonu, saklama, silme ve yedekten dönüşü tasarla. Kullanıcı onayı ile teknik erişim kontrolünü ayır.",
+      "acceptance": "Gerçek sır veya kişisel veri kullanma. Filtre başarısına dayanarak genel güvenlik garantisi verme.",
+      "prompt": "prompts/25.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U26",
+      "title": "Çok kipli girdiyi ve tarayıcı akışını eklemek",
+      "inputs": [
+        "design.md",
+        "data-lifecycle.md",
+        "schemas/answer.schema.json",
+        "fixtures/atolye-kaynaklari.json"
+      ],
+      "outputs": [
+        "multimodal.md",
+        "browser-acceptance.md",
+        "multimodal-cases.json"
+      ],
+      "task": "Sentetik tablo görüntüsü, PDF ve kısa ses dökümü için kaynak kimliği, belirsizlik ve insan doğrulama akışını tanımla. Görsel okuma hatasını yorum hatasından ayır. Tarayıcı ajanıyla arayüz testinde dosya indirme ve dış işlem sınırlarını tanımla.",
+      "acceptance": "Okunamayan hücre veya duyulamayan sözcük uydurulmamalı. Görsel örnek hazırlanmamışsa koşu not_run olmalı.",
+      "prompt": "prompts/26.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U27",
+      "title": "Olay ve zaman temelli otomasyon kurmak",
+      "inputs": [
+        "loop-spec.md",
+        "resume-protocol.md",
+        "permissions.md"
+      ],
+      "outputs": [
+        "automation.md",
+        "schedule-contracts.json"
+      ],
+      "task": "Belge revizyonu değiştiğinde taslağı yeniden inceleme kuyruğuna al. Elle, olayla ve zamanla başlayan işleri ayır. Yinelenen tetik, iptal, süresi geçmiş iş ve insan incelemesi bekleyen iş için davranış tanımla. Sessiz ve değişmemiş durumda bildirim üretme.",
+      "acceptance": "Açık oturumdaki döngü ile kalıcı arka plan işi aynı kabul edilmemeli. Otomatik genel yayın ekleme.",
+      "prompt": "prompts/27.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U28",
+      "title": "A2A ve ajanlara açık webi karşılaştırmak",
+      "inputs": [
+        "tool-contracts.json",
+        "delegation-contracts.json",
+        "permissions.md"
+      ],
+      "outputs": [
+        "interoperability.md",
+        "agent-card.json",
+        "agentic-web.md"
+      ],
+      "task": "MCP araç bağlantısı, A2A görev devri, NLWeb bilgi sunumu ve WebMCP yaklaşımını ayrı sorularla incele. Sürümlü resmî belgelerden keşif, kimlik, görev durumu ve hata davranışını çıkar. Pusula için gerekli tek entegrasyonu küçük pilotla sınamayı planla.",
+      "acceptance": "Adı benzer mekanizmaları aynı standart sayma. Önizleme duyurusu güncel genel erişim kanıtı olmamalı.",
+      "prompt": "prompts/28.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U29",
+      "title": "Model geçidi ve maliyet deneylerini kurmak",
+      "inputs": [
+        "tech-stack.md",
+        "eval-plan.md",
+        "data-lifecycle.md"
+      ],
+      "outputs": [
+        "model-policy.md",
+        "budget.md",
+        "model-results.json"
+      ],
+      "task": "Yerel ve bulut model yollarını aynı kabul setinde karşılaştır. Yetenek, veri sınırı, gecikme ve fiyat kaynağını tarihli kaydet. Önbellek, toplu işlem, yönlendirme ve yedek sağlayıcı için ayrı deney yap. Yeniden deneme ve inceleme maliyetini toplamdan düşürme.",
+      "acceptance": "Bilinmeyen maliyeti sıfır yazma. Yedek sağlayıcı veri ve yetki sınırını genişletmemeli.",
+      "prompt": "prompts/29.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U30",
+      "title": "Hizmeti izlemek ve kapasiteyi ölçmek",
+      "inputs": [
+        "harness-design.md",
+        "budget.md",
+        "eval-plan.md"
+      ],
+      "outputs": [
+        "observability.md",
+        "service-targets.md",
+        "capacity.md"
+      ],
+      "task": "Görev izi, model çağrısı, araç etkisi, kullanıcıya gösterilen durum ve insan kararını ilişkilendir. Hata, gecikme ve kabul edilen iş başına maliyet için ölçüm tanımla. Örnek hizmet hedefini gerçek kurum taahhüdünden ayır. Yük deneyinde kuyruk ve müşteri kotasını denetle.",
+      "acceptance": "Daha çok token veya daha çok görev üretkenlik kanıtı sayılmamalı. Sentetik süreler gerçek hizmet ölçümü olmamalı.",
+      "prompt": "prompts/30.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U31",
+      "title": "Dağıtım ve geri dönüşü prova etmek",
+      "inputs": [
+        "eval-plan.md",
+        "service-targets.md",
+        "recovery-tests.json"
+      ],
+      "outputs": [
+        "release.md",
+        "rollback.md",
+        "migration.md",
+        "ci-plan.md"
+      ],
+      "task": "Aday sürümü test ortamında değerlendir. Gölge deneme, aşamalı açılış, veri şeması göçü ve geri dönüş planını yaz. Sürüm, kaynak, onay, kuyruk ve teslim kayıtlarını kurtarma sonrasında uzlaştır. Canlı dağıtımı ayrı kullanıcı kararına bırak. CI işlerini test ve dağıtım olarak ayır; dağıtım yetkisi bulunmayan kontrolden canlıya çıkış başlatma.",
+      "acceptance": "Kodun geri alınması dış etkiyi kendiliğinden geri almış sayılmamalı. Yedekten silinmiş veri yeniden etkinleşmemeli.",
+      "prompt": "prompts/31.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U32",
+      "title": "Takım, lisans ve yönetişim dosyalarını üretmek",
+      "inputs": [
+        "scope.md",
+        "dependency-policy.md",
+        "data-lifecycle.md",
+        "release.md"
+      ],
+      "outputs": [
+        "governance.md",
+        "licenses.md",
+        "ownership.md",
+        "adoption.md",
+        "SECURITY.md",
+        "CONTRIBUTING.md",
+        "CHANGELOG.md"
+      ],
+      "task": "Bileşen sahibi, insan karar yetkisi, bakım sıklığı ve açık riskleri kaydet. Lisans ve tedarik koşullarını resmî kaynağa bağla; hukuk kararı uydurma. Ekip öğrenme planı ve mevcut yöntemle karşılaştırma hazırlayarak benimseme kararını ölçülebilir yap. Güvenlik bildirimi, katkı kabulü ve sürüm değişikliği kayıtlarını bu dosyalara bağla; yapılmamış sürümü yayımlanmış gösterme.",
+      "acceptance": "Gerçek sorumlu belli değilse kurgusal kişiyi atanmış gösterme. Planlanan eğitim gerçekleşmiş beceri ölçümü sayılmamalı.",
+      "prompt": "prompts/32.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U33",
+      "title": "Skill ve araçları dağıtım paketine çevirmek",
+      "inputs": [
+        "skills/",
+        "agents/",
+        "mcp-design.md",
+        "dependency-policy.md"
+      ],
+      "outputs": [
+        "plugin-plan.md",
+        "compatibility.md",
+        "distribution.md"
+      ],
+      "task": "Skill, ajan tanımı, hook ve MCP ayarlarının ürünlere göre paketlenmesini planla. Claude Code yolu ile diğer araçların kurulum yollarını güncel belgelerden ayrı doğrula. Temiz ortamda kurulum, güncelleme ve kaldırma deneyi tanımla. Uygulama verisini pakete katma.",
+      "acceptance": "Bir ürünün frontmatter alanını bütün araçlarda destekleniyor sayma. Yerel biçim denetimi kurulum ve davranış deneyi yerine geçmemeli.",
+      "prompt": "prompts/33.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U34",
+      "title": "Yeni yöntemleri aynı görevde karşılaştırmak",
+      "inputs": [
+        "eval-plan.md",
+        "loop-spec.md",
+        "harness-design.md"
+      ],
+      "outputs": [
+        "approach-watch.md",
+        "experiments/approach-comparison.json"
+      ],
+      "task": "Spec-driven development, değerlendirmeyle yönlendirilen geliştirme, yönetilen harness ve uzun bağlam yaklaşımları için Pusula sorusu kur. Spec Kit gibi araçları yöntemden ayır. Superpowers, Ralph Loop, Context Mode, Maestro, hazır ajan çatıları ve görsel iş akışı araçlarını yalnız tam proje kimliği ve birincil kaynak doğrulandıktan sonra deney adayı yap.",
+      "acceptance": "Benzer isimli araçları birleştirme. Popülerlik listesi üretme; tut, daralt veya çıkar kararını aynı kabul görevinin sonucu belirlesin.",
+      "prompt": "prompts/34.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U35",
+      "title": "Model değişince sistemi yeniden değerlendirmek",
+      "inputs": [
+        "eval-plan.md",
+        "model-policy.md",
+        "approach-watch.md"
+      ],
+      "outputs": [
+        "change-impact.md",
+        "experiments/ablation.json"
+      ],
+      "task": "Yeni model veya araç sürümünde aynı görev setini yeniden çalıştır. Gereksiz olduğu düşünülen bir prompt veya harness katmanını tek tek çıkararak karşılaştır. Otomatik prompt optimizasyonu ve ince ayarı yalnız veri, lisans, maliyet ve değerlendirme koşulları sağlanırsa ayrı deney yap.",
+      "acceptance": "Eski başarıyı yeni sürüme taşıma. Güvenlik ve yetki kontrollerini modelin daha iyi olduğu varsayımıyla kaldırma.",
+      "prompt": "prompts/35.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "U36",
+      "title": "Pusula projesini devretmek",
+      "inputs": [
+        "roadmap.md",
+        "tasks.md",
+        "eval-plan.md",
+        "release.md",
+        "ownership.md"
+      ],
+      "outputs": [
+        "handoff.md",
+        "portfolio.md",
+        "coverage.md"
+      ],
+      "task": "Başlangıç brifinden son sürüme belge, prompt, skill, kod ve kanıt bağlantısını çıkar. Çalışan özellikleri, çalıştırılmamış deneyleri ve açık kararları ayır. Kişisel çalışma rehberi, kullanım kılavuzu ve yeni ekip üyesi başlangıç adımlarını hazırla. Kabul kararını gerçek inceleyene sun.",
+      "acceptance": "Kapsam çizelgesindeki planned satırını ölçülmüş veya tamamlanmış gibi gösterme. Son durum, mevcut kanıtın izin verdiği kapsamı söylemeli.",
+      "prompt": "prompts/36.md",
+      "status": "prompt_draft",
+      "execution_status": "not_run"
+    }
+  ]
+}

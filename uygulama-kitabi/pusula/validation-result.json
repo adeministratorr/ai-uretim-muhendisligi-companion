@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-26",
+  "python": "3.12.3",
+  "platform": "Darwin",
+  "scope": "package_structure_only",
+  "inventory": {
+    "lessons": 36,
+    "source_chapters": 100,
+    "skills": 2,
+    "skill_cases": 6,
+    "sources": 14
+  },
+  "result": "pass",
+  "negative_checks": [
+    {
+      "case": "missing_chapter",
+      "expected": "rejected",
+      "observed": "rejected"
+    },
+    {
+      "case": "future_dependency",
+      "expected": "rejected",
+      "observed": "rejected"
+    },
+    {
+      "case": "broken_link",
+      "expected": "rejected",
+      "observed": "rejected"
+    }
+  ],
+  "model_runs": 0,
+  "product_runs": 0,
+  "human_acceptance": null
+}

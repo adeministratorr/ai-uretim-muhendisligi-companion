@@ -1,0 +1,185 @@
+{
+  "accessed_on": "2026-10-26",
+  "scope": "Belge incelemesi; ürün çalıştırma veya uyumluluk testi değil.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Context engineering",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "published_on": "2025-09-29",
+      "note": "Bağlam seçimi, sıkıştırma ve görev sürekliliği için yöntem kaynağı.",
+      "lessons": [
+        "U13"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S02",
+      "title": "Harness engineering",
+      "url": "https://openai.com/index/harness-engineering/",
+      "published_on": "2026-02-11",
+      "note": "Depo bilgisini, araçları ve doğrulamayı ajan çalışmasına bağlayan mühendislik örneği.",
+      "lessons": [
+        "U07",
+        "U20"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S03",
+      "title": "Uzun süren uygulama geliştirme",
+      "url": "https://www.anthropic.com/research/harness-design-long-running-apps",
+      "published_on": "2026-03-24",
+      "note": "Planlayıcı, üretici ve değerlendirici rollerini uzun görevde inceleyen deney.",
+      "lessons": [
+        "U20",
+        "U21",
+        "U23"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S04",
+      "title": "Agent Skills biçimi",
+      "url": "https://agentskills.io/specification",
+      "published_on": null,
+      "note": "SKILL.md giriş dosyası, gerekli name/description alanları ve isteğe bağlı destek kaynakları.",
+      "lessons": [
+        "U08",
+        "U33"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S05",
+      "title": "Spec-driven development",
+      "url": "https://github.com/github/spec-kit",
+      "published_on": null,
+      "note": "Gereksinim, plan ve görev belgelerine dayanan geliştirme aracı; bütün yöntemlerin standardı olarak sunulmaz.",
+      "lessons": [
+        "U02",
+        "U06",
+        "U34"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S06",
+      "title": "Ajan değerlendirmesi",
+      "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "published_on": "2026-01-09",
+      "note": "Görev, deneme, iz, değerlendirici ve sonuç ayrımı.",
+      "lessons": [
+        "U10",
+        "U24"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S07",
+      "title": "MCP mimarisi",
+      "url": "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture",
+      "published_on": null,
+      "note": "Araç ve veri bağlantısının protokol düzeyi; sürümlü belge.",
+      "lessons": [
+        "U18"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S08",
+      "title": "A2A",
+      "url": "https://a2a-protocol.org/latest/",
+      "published_on": null,
+      "note": "Ajanlar arasında görev ve yetenek etkileşimini inceleme kaynağı.",
+      "lessons": [
+        "U28"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S09",
+      "title": "AGENTS.md",
+      "url": "https://agents.md/",
+      "published_on": null,
+      "note": "Kodlama ajanına proje bağlamı ve çalışma yönergesi veren açık dosya biçimi.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S10",
+      "title": "Claude Code Skills",
+      "url": "https://code.claude.com/docs/en/skills",
+      "published_on": null,
+      "note": "Claude Code ürünündeki skill kullanımı; taşınabilir biçimden ayrılan ürün ayrıntıları burada doğrulanır.",
+      "lessons": [
+        "U08",
+        "U33"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S11",
+      "title": "Yönetilen ajan çalışma düzeni",
+      "url": "https://www.anthropic.com/research/managed-agents",
+      "published_on": "2026-04-08",
+      "note": "Model, oturum ve yürütme ortamı arayüzlerini ayırma yaklaşımı.",
+      "lessons": [
+        "U21",
+        "U34",
+        "U35"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S12",
+      "title": "DSPy",
+      "url": "https://dspy.ai/current/",
+      "published_on": null,
+      "note": "İmza, modül, ölçüt ve optimizasyonla model programları kurma yaklaşımı.",
+      "lessons": [
+        "U10",
+        "U35"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S13",
+      "title": "NLWeb",
+      "url": "https://github.com/nlweb-ai/NLWeb",
+      "published_on": null,
+      "note": "Bilgi içeriğini doğal dil sorgularına açan proje; MCP veya A2A ile aynı kapsamda sunulmaz.",
+      "lessons": [
+        "U28"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S14",
+      "title": "WebMCP önizleme duyurusu",
+      "url": "https://developer.chrome.com/blog/webmcp-epp",
+      "published_on": "2026-02-10",
+      "note": "Duyuru, tarayıcıda yapılandırılmış araç etkileşimi önerisini anlatır. Bugünkü genel erişim veya normatif standart statüsünü tek başına kanıtlamaz.",
+      "lessons": [
+        "U28"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "synthetic": true,
+  "workspace_id": "egitim-demo",
+  "sources": [
+    {
+      "id": "A",
+      "revision": 1,
+      "active": false,
+      "text": "Program A eski taslak: süre 6 saat; önkoşul yok."
+    },
+    {
+      "id": "A",
+      "revision": 2,
+      "active": true,
+      "text": "Program A güncel duyuru: süre 8 saat; temel Python bilgisi gerekir. Katılımcı sınırı 16 kişidir."
+    },
+    {
+      "id": "B",
+      "revision": 1,
+      "active": true,
+      "text": "Program B duyurusu: süre 4 saat; önkoşul yok. Katılımcı sınırı 20 kişidir."
+    },
+    {
+      "id": "C",
+      "revision": 1,
+      "active": true,
+      "text": "Toplantı notu: Program A için süre 10 saat olarak konuşuldu; duyuruyla fark henüz çözülmedi."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Önkoşulsuz program hangisi?",
+      "expected": "Program B; B revizyon 1 kaynak gösterilmeli."
+    },
+    {
+      "id": "Q2",
+      "text": "Program A kaç saat?",
+      "expected": "A revizyon 2 ile C revizyon 1 arasındaki çelişki gösterilmeli."
+    },
+    {
+      "id": "Q3",
+      "text": "Kayıt ücreti ne kadar?",
+      "expected": "Kaynaklarda ücret bilgisi yok; tutar üretilmemeli."
+    }
+  ]
+}

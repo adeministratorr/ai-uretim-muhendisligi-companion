@@ -1,6 +1,7 @@
 # GitHub Pages yalnızca okura yönelik içerikleri yayımlar.
 # Geliştirme yönergeleri ve bakım dosyaları GitHub deposunda kalır.
 exclude:
+  - uygulama-kitabi/pusula
   - AGENTS.md
   - "**/AGENTS.md"
   - CLAUDE.md

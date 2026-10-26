@@ -1,0 +1,20 @@
+{
+  "example_only": true,
+  "lesson_id": "U01",
+  "run_id": null,
+  "status": "not_run",
+  "input_hashes": {},
+  "prompt_path": "prompts/01.md",
+  "model": null,
+  "tool_version": null,
+  "started_at": null,
+  "commands": [],
+  "observations": null,
+  "raw_output_path": null,
+  "cost": null,
+  "human_review": {
+    "decision": null,
+    "reviewer": null,
+    "at": null
+  }
+}
