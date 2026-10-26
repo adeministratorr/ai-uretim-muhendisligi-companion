@@ -6,7 +6,7 @@ Bu başlangıç paketinin doğrulayıcısı dosya ve kayıt ilişkilerini incele
 python3 uygulama-kitabi/pusula/tools/validate_package.py
 ```
 
-Beklenen çıktı 36 uygulama, 100 kaynak bölüm, iki skill, altı skill vakası ve 35 birincil kaynak kaydıdır. Bunlar içerik envanterinin sayılarıdır; model başarısı veya çalışan özellik sayısı değildir. Araç Python 3.9 ve üzerindeki standart kitaplıkla yazılmıştır; kullanılan ortam ve gözlenen sonuç `validation-result.json` dosyasına kaydedilir.
+Beklenen çıktı 36 uygulama, 100 kaynak bölüm, iki skill, altı skill vakası ve 37 birincil kaynak kaydıdır. Bunlar içerik envanterinin sayılarıdır; model başarısı veya çalışan özellik sayısı değildir. Araç Python 3.9 ve üzerindeki standart kitaplıkla yazılmıştır; kullanılan ortam ve gözlenen sonuç `validation-result.json` dosyasına kaydedilir.
 
 Ajan uyarlaması güncellemesinde paket denetimi yeniden çalıştırıldı. Üretilmesi planlanan dosya adları harf büyüklüğünü ayırmadan karşılaştırıldı; çakışma kalmadı. Yedi genel yönerge vakası ile dört ZCode vakasının gözlemleri boş bırakıldı. Bu 11 vaka araçlarda henüz çalıştırılmadı. `validation-result.json` içindeki üç olumsuz paket deneyi ilk teslim commit'ine aittir; yeni güncellemede tekrarlanmış araç denemeleri değildir.
 

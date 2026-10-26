@@ -31,11 +31,12 @@ AGENTS.md ile özel alt ajan tanımı da ayrı şeylerdir. Örneğin Copilot'un 
 
 ## Diğer IDE ve CLI araçları
 
-İlk tabloyla birlikte 21 araç veya araç bileşeni kapsanır. Her satır yalnız belirtilen arayüz ve belge için geçerlidir. VS Code veya JetBrains bir barındırıcı olabilir; içinde seçilen Copilot, Junie, Continue ya da harici CLI ayrıca belirtilir. Kullanıcının söylediği Zcode burada Z.ai'nin **ZCode Agent** ürünü olarak incelendi; Zed ayrı üründür.
+İlk tabloyla birlikte 22 araç veya araç bileşeni kapsanır. Her satır yalnız belirtilen arayüz ve belge için geçerlidir. VS Code veya JetBrains bir barındırıcı olabilir; içinde seçilen Copilot, Junie, Continue ya da harici CLI ayrıca belirtilir. Kullanıcının söylediği Zcode burada Z.ai'nin **ZCode Agent** ürünü olarak incelendi; Zed ve Qoder ayrı ürünlerdir.
 
 | Araç / arayüz | Dosya veya bağlantı yöntemi | Denenecek fark |
 |---|---|---|
 | [ZCode Agent](https://zcode.z.ai/en/docs/agents) | `AGENTS.md`; kullanıcı genelinde `~/.zcode/AGENTS.md` | Çalışma alanı kökü esas alınır. Alt dizin birleştirme ve otomatik import desteği varsayılmaz. |
+| Qoder — [IDE](https://docs.qoder.com/user-guide/rules) / [CLI](https://docs.qoder.com/cli/memory) | `AGENTS.md`, `.qoder/rules/**/*.md`; CLI'da ayrıca kullanıcı ve yerel proje yönergeleri | IDE'de çelişen rules içeriği AGENTS içeriğinden önceliklidir. CLI'da kapsam, tetikleme ve yüklenen kaynaklar ayrıca denetlenir. |
 | [Zed Agent](https://zed.dev/docs/ai/instructions) | `AGENTS.md`; uyumlu eski dosyalar da tanınır | İlk eşleşen dosya kullanılır: örneğin `.rules`, AGENTS dosyasından önce gelir. Harici ajan kendi kurallarına göre değerlendirilir. |
 | [Google Antigravity](https://www.antigravity.google/docs/rules/) | `AGENTS.md`, `GEMINI.md`, `.agents/rules/*.md` | `.agents/rules/` içindeki modüler dosyalarda geçerli `trigger` gerekir; AGENTS/GEMINI düz Markdown kullanır. App/CLI/IDE ayarları ayrı kaydedilir. |
 | [Kiro](https://kiro.dev/docs/steering/) | `AGENTS.md`, `.kiro/steering/*.md` | IDE ve CLI sürümlerinin inclusion desteği ayrılır. Özel ajanın steering yüklemesi için `resources` ayarı denetlenir. |
@@ -54,6 +55,14 @@ AGENTS.md ile özel alt ajan tanımı da ayrı şeylerdir. Örneğin Copilot'un 
 ZCode'da yeni bir `ZCODE.md` dosyası gerekmiyor. Çalışma alanındaki ortak AGENTS dosyası kullanılır. Genel yönerge önce, çalışma alanı yönergesi sonra eklenir. `CLAUDE.md` yalnız ilk geçişte kaynak olabilir; sürekli yüklenen dosya olarak anlatılmamalı. Bu davranış [ZCode belgesinde](https://zcode.z.ai/en/docs/agents) açıklanır.
 
 Pusula'nın ZCode denemesinde [dört vakalı taslak](reference/zcode-instruction-tests.example.json) kullanılır. Geçici çalışma alanları hazırlanır; gerçek kullanıcı profilindeki yönergeler değiştirilmez. Otomatik yükleme ile ajanın görev sırasında açıkça dosya okuması ayrı kaydedilir. Belgelenen kapsamı aşan bir davranış beklenmez.
+
+### Qoder için uygulama
+
+Qoder IDE, proje dizinindeki `AGENTS.md` dosyasını ek ayar olmadan tanır. `.qoder/rules` içindeki kurallar elle çağrılabilir, model kararına bağlanabilir, sürekli uygulanabilir veya dosya kalıbıyla sınırlandırılabilir. AGENTS içeriğiyle çeliştiklerinde bu kurallar önceliklidir. Bu öncelik [IDE belgesinde](https://docs.qoder.com/user-guide/rules) belirtilir; CLI için ayrıca kontrol edilir.
+
+Qoder CLI'nın [bellek belgesi](https://docs.qoder.com/cli/memory), `~/.qoder/AGENTS.md`, proje `AGENTS.md`, `AGENTS.local.md` ve `.qoder/rules/**/*.md` konumlarını açıklar. Güvenilen çalışma alanında üst dizin araması varsayılan olarak `.git` sınırında durur. Alt dizin yönergeleri başlangıçta topluca yüklenmez; ilgili dosya okunduğunda eklenir. `@dosya` içe aktarması desteklenir; kod içinde yazılan atıflar içe aktarılmaz. `/memory`, yüklenen kaynakların incelenmesini sağlar. Yerel yönergeler ekip deposuna eklenmez.
+
+U07'de Qoder seçildiğinde [genel deneme taslağının](reference/instruction-tests.example.json) I03 ve I06 vakaları kullanılan arayüze uyarlanır. IDE için geçici kopyada çelişen AGENTS ve rules içeriği; CLI için dosya okunmadan önceki ve sonraki alt dizin bağlamı karşılaştırılır. Beklenen sonuç kaynakla, gözlenen sonuç koşu kaydıyla yazılır. Bu pakette Qoder koşusu yapılmadı.
 
 ### Kitapta ortaklaştırılmayacak davranışlar
 

@@ -432,6 +432,30 @@
       ],
       "status": "source_reviewed",
       "runtime_status": "not_run"
+    },
+    {
+      "id": "S36",
+      "title": "Qoder IDE — Rules",
+      "url": "https://docs.qoder.com/user-guide/rules",
+      "published_on": null,
+      "note": "AGENTS uyumluluğu, kural türleri ve rules önceliği.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S37",
+      "title": "Qoder CLI — Memory",
+      "url": "https://docs.qoder.com/cli/memory",
+      "published_on": null,
+      "note": "Statik yönergeler, kapsam, gerektiğinde yükleme ve içe aktarma. Resmî sayfanın /cli/memory.md sunumu okundu.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
     }
   ]
 }
