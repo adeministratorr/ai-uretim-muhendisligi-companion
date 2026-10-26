@@ -1,45 +1,42 @@
 # Pusula kitap ve uygulama üretim planı
 
-**Hedef:** Birbirine bağlı uygulamalarla kitap kaynaklarını çalışan ve doğrulanmış Pusula projesine dönüştürmek.
-**Mimari:** Kitap anlatımı, kopyalanabilir prompt, referans çıktı ve çalıştırma kanıtı ayrı tutulur. Her uygulama önceki uygulamanın kabul edilmiş çıktısını kullanır.
-**Teknoloji:** İlk paketin denetimi Python 3 standart kitaplığıyla yapılır. Uygulama teknoloji kararı U04'te resmî kaynak ve sürüm kaydıyla verilir.
-**Şartname:** [SPEC.md](SPEC.md).
+26 Ekim 2026. Bu dosya teslim sırasını özetler. Yapılacak dosya değişiklikleri, bağımlılıklar ve kabul koşulları [ayrıntılı iş planındadır](docs/superpowers/plans/2026-10-26-pusula-sonraki-isler.md).
 
-## Aşama 1: Kitap iskeleti ve başlangıç paketi
+Hedef, kaynak kitapların bilgisini promptlarla üretilen proje belgelerine, çalışan Pusula uygulamasına ve doğrulanmış kitap örneklerine dönüştürmektir. Kitap anlatımı her uygulama grubunun gerçek sonuçlarından sonra yazılır. Kaynakların öğrenme hedefi denetimi de ilgili grup başlamadan yapılır.
 
-- [x] Farklı örnek proje, uygulama sırası ve dosya bağımlılıkları yazıldı.
-- [x] 36 uygulama için üretim, kontrol ve düzeltme promptları hazırlandı.
-- [x] 100 kaynak bölüm için bölüm düzeyinde eşleme çıkarıldı.
-- [x] Örnek belge, skill ve sentetik veri paketi hazırlandı.
-- [ ] Yazarın kapsam ve proje adı incelemesi tamamlandı.
+## Tamamlanan başlangıç teslimi
 
-## Aşama 2: İlk uygulamaların gerçek koşuları
+- [x] Vardiya'dan farklı Pusula projesi ve 36 uygulamalık sıra hazırlandı.
+- [x] 108 üretim, kontrol ve düzeltme promptu taslak olarak yazıldı.
+- [x] 100 kaynak bölüm, uygulamalara bölüm düzeyinde eşlendi.
+- [x] Örnek proje belgeleri, iki skill ve sentetik veri hazırlandı.
+- [x] Qoder ve ZCode dahil 22 araç/bileşenin yönerge davranışı belgelerden incelendi; 37 birincil kaynak kaydedildi.
+- [x] Başlangıç paketi GitHub taslak PR #3'e gönderildi; paket denetimi geçti.
 
-- [ ] U01–U08 boş bir uygulama dizininde sırayla çalıştırılır.
-- [ ] Her koşunun promptu, girdi özeti, model/araç bilgisi, ham çıktısı ve doğrulama kaydı saklanır.
-- [ ] Referans belgeler gerçek çıktılarla karşılaştırılır; başarısız örnekler düzeltme dersine dönüştürülür.
-- [ ] Skill seçimi ve davranışı olumlu, ilgisiz ve eksik girdili vakalarda gözlenir.
+Bu maddeler çalışan ürün, sınanmış prompt veya tamamlanmış kitap anlamına gelmez. 11 yönerge vakası ve altı skill vakası henüz çalıştırılmadı. Yazarın kapsam ve çalışma adı incelemesi de tamamlanmış olarak kaydedilmedi.
 
-## Aşama 3: İlk çalışan Pusula
+## Sıradaki teslimler
 
-- [ ] U09–U12 ile model çağrısız uygulama ve kabul testleri hazırlanır.
-- [ ] Gerçek model bağlantısı için ayrı yetki, bütçe ve kayıt düzeni kurulur.
-- [ ] Aynı görevin sabit öğretim yanıtı ve gerçek model koşusu ayrı raporlanır.
-- [ ] Boş, hatalı, çelişkili ve eski kaynak senaryoları tarayıcıda doğrulanır.
+| Öncelik | İş grubu | Somut teslim | Tamamlanma koşulu |
+|---|---|---|---|
+| 1 | P01–P03: kapsam, yeni yaklaşımlar ve koşu düzeni | Öğrenme hedefi haritası, 12 yaklaşımın yerleşimi, gerçek koşu kayıt biçimi | Pilot hedefleri uygulama ve kabul deneyine bağlanır; kanıtsız başarı kaydı reddedilir |
+| 2 | P04–P06: U01–U08 pilotu ve örnek bölümler | Üretilmiş proje belgeleri, ajan/skill deneyleri, U01/U07/U08 kitap metinleri | Gereksinim–tasarım–görev ilişkisi ve seçilen araçtaki davranış gözlenir |
+| 3 | P07: U09–U12 | Prompt karşılaştırması ve ilk çalışan Pusula | Model deneyi ile sabit öğretim yanıtı ayrılır; yerel ürün akışı tekrarlanır |
+| 4 | P08–P09: U13–U21 | Bağlam, RAG, izin, loop, harness ve kurtarma | Kaynak desteği, durma koşulları ve kesintiden devam gerçek senaryolarla sınanır |
+| 5 | P10: U22–U28 | İş bölümü, değerlendirme, güvenlik, çok kipli kullanım ve birlikte çalışma | Yanıt kadar işlem izi ve yetki de değerlendirilir |
+| 6 | P11: U29–U35 | Maliyet, işletim, dağıtım ve ileri yöntem deneyleri | Karşılaştırmalar aynı görev seti ve kayıtlı bütçeyle yapılır |
+| 7 | P12: U36 ve bütünlük | Kitap taslağı, mevcut kitap ekleri ve sürümlü companion | Kaynak hedefleri, başlangıç/çözüm dosyaları ve gerçek koşular birbirine bağlanır |
 
-## Aşama 4: Ajan ve işletim uygulamaları
+## Önce yapılacak üç iş
 
-- [ ] U13–U33, bağımlılık sırasına göre ayrı teslimlerle yürütülür.
-- [ ] Her uygulamaya başlangıç ve çözüm sürümü eklenir; yalnız doğrulanmış commit kimlikleri kullanılır.
-- [ ] Normal sonuç kadar iptal, kesinti, ret ve belirsiz dış etki de sınanır.
-- [ ] Dış hizmet veya yeni paket kurulumu gerektiğinde kapsam ve gerçek maliyet kaydı korunur.
+1. U01–U08'e bağlanan kaynak bölümleri öğrenme hedefi düzeyinde incelemek; kalan bölümlerin denetim sırasını kaydetmek.
+2. İzlenebilirlik, ajan deneyimi ve skill taşınabilirliğini pilot promptlarına işlemek; diğer yeni yaklaşım önerilerini ilgili uygulamalara yerleştirmek.
+3. Prompt, girdi, araç/model, çıktı ve doğrulama kayıtlarını bağlayan koşu düzenini kurmak; ardından U01'i boş ürün dizininde çalıştırmak.
 
-## Aşama 5: Yeni yaklaşımlar ve kitap yazımı
+## Üretim boyunca uygulanacak düzen
 
-- [ ] U34–U36 için sürümlü kaynak incelemesi ve karşılaştırmalar tamamlanır.
-- [ ] Kaynakların tam metni okunur; alt başlık, hedef ve örnek düzeyindeki kapsam boşlukları kapatılır.
-- [ ] Her uygulama, gerçek koşu kayıtlarından yürüyen kitap bölümüne dönüştürülür.
-- [ ] Türkçe anlam, teknik doğruluk, öğretim sırası ve dosya uyumu birlikte denetlenir.
-- [ ] Son kitap ve uygulama paketi yazar incelemesine sunulur; yayın ayrıca kararlaştırılır.
+Her uygulama grubunda kaynak incelemesi, üretim, kabul deneyi, düzeltme ve bölüm yazımı tamamlanır. Mevcut kitaplara eklenecek anlatım aynı grubun sonuçlarına dayanır. Cilt/bölüm düzeyindeki ek önerisi ayrı kaydedilir; kitaplar arasındaki ortak kavramlar aynı anlamda kullanılır.
 
-Her aşama bağımsız incelenebilir bir teslimle kapanır. Sonraki aşamanın planlanmış olması öncekinin başarısını göstermez. Bu dosyada işaretlenen tamamlanma yalnız başlangıç paketindeki dosya üretimidir.
+Araç karşılaştırmasının ilk grubu Codex, Claude Code, Qoder IDE/CLI ve ZCode'dur. Koşular erişilebilir araçlarda yürütülür; erişilemeyen araç için belge incelemesi başarı deneyi sayılmaz. Diğer araçlar sonraki uyumluluk teslimlerinde ele alınır.
+
+Sonraki uygulamaya geçiş, gereken önceki çıktının kabulüne bağlıdır. Model erişimi, yeni kurulum veya yayın kararı gerektiren işler kendi yürütme aşamasında değerlendirilir. Bu plan, canlı yayın onayı veya yapılmamış deneylerin sonucu değildir.

@@ -31,7 +31,7 @@
   "model_runs": 0,
   "product_runs": 0,
   "human_acceptance": null,
-  "change_scope": "Qoder IDE and CLI instruction documentation; runtime not tested",
+  "change_scope": "Production roadmap and next-work acceptance criteria; no model or product run",
   "negative_checks_from_commit": "a14927a268aa2897eb23fe8e31bf22e4bc23f652",
   "instruction_behavior_cases": 11,
   "instruction_behavior_runs": 0,

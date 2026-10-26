@@ -24,6 +24,7 @@ Bu paket, Yapay Zekâ ile Üretim Mühendisliği serisinin dört cildi ile Claud
 - [Güncel yaklaşımlar ve birincil kaynaklar](YAKLASIMLAR.md)
 - [Skill kullanım ve deneme düzeni](SKILLS.md)
 - [Üretim aşamaları](URETIM_PLANI.md)
+- [Sıradaki işler, dosyalar ve kabul koşulları](docs/superpowers/plans/2026-10-26-pusula-sonraki-isler.md)
 - [Doğrulama kapsamı](DOGRULAMA.md)
 
 Depo kökünden yalnız paket yapısını denetlemek için:
