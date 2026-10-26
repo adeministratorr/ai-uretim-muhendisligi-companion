@@ -1,0 +1,45 @@
+{
+  "example_only": true,
+  "status": "not_run",
+  "tool": "ZCode Agent",
+  "tool_version": null,
+  "surface": null,
+  "model": null,
+  "source": "https://zcode.z.ai/en/docs/agents",
+  "source_reviewed_on": "2026-10-26",
+  "setup": "Geçici çalışma alanı kullan. Kullanıcının gerçek genel yönergesini değiştirme; global vaka için ayrı test profili yoksa vakayı çalıştırılmadı bırak.",
+  "cases": [
+    {
+      "id": "Z01",
+      "scenario": "Genel ve çalışma alanı yönergeleri",
+      "expected": "İki kaynak belgelenen sırayla alınır.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "Z02",
+      "scenario": "Yalnız alt dizinde bulunan yönerge",
+      "expected": "Alt dizin kuralı otomatik birleştirilmiş sayılmaz.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "Z03",
+      "scenario": "Yönergede import/include başvurusu",
+      "expected": "Otomatik genişletme beklenmez; açık dosya okuma ayrı kaydedilir.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "Z04",
+      "scenario": "CLAUDE dosyasıyla geçiş sonrası yeni görev",
+      "expected": "Tek seferlik geçiş ile sonraki görevin yüklediği dosya ayrılır.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    }
+  ]
+}

@@ -47,6 +47,25 @@
       "observed": null,
       "load_evidence": null,
       "behavior_evidence": null
+    },
+    {
+      "id": "I06",
+      "scenario": "Geçici kopyada aynı kapsam için birden fazla yönerge adayı",
+      "expected": "Seçilen aracın ilk eşleşme veya birleştirme kuralı önceden yazılır; yüklenen dosyalar bununla karşılaştırılır.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "I07",
+      "scenario": "Aynı IDE içinde yerleşik ajan ve harici ajan",
+      "expected": "Barındırıcı ve gerçek ajan ayrı kaydedilir; biri için görülen yönerge desteği diğerinde kanıt sayılmaz.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
     }
-  ]
+  ],
+  "host_ide": null,
+  "extension": null,
+  "agent_backend": null
 }

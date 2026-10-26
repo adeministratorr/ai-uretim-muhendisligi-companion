@@ -276,6 +276,162 @@
       ],
       "status": "source_reviewed",
       "runtime_status": "not_run"
+    },
+    {
+      "id": "S23",
+      "title": "ZCode Agent — yönergeler",
+      "url": "https://zcode.z.ai/en/docs/agents",
+      "published_on": null,
+      "note": "İki yönerge kaynağı; alt dizin birleştirme ve otomatik import yok.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S24",
+      "title": "Zed Agent — yönergeler",
+      "url": "https://zed.dev/docs/ai/instructions",
+      "published_on": null,
+      "note": "İlk eşleşen proje dosyası; harici ajan ayrı yükleyici kullanır.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S25",
+      "title": "Google Antigravity — yönergeler",
+      "url": "https://www.antigravity.google/docs/rules/",
+      "published_on": null,
+      "note": "Dizin kapsamı ve trigger alanlı kurallar; IDE/CLI ayarları ayrı.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S26",
+      "title": "Kiro — yönergeler",
+      "url": "https://kiro.dev/docs/steering/",
+      "published_on": null,
+      "note": "AGENTS ve steering; özel ajan resources ayarı ayrıca gerekir.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S27",
+      "title": "Junie CLI — yönergeler",
+      "url": "https://junie.jetbrains.com/docs/guidelines-and-memory.html",
+      "published_on": null,
+      "note": "Junie CLI yönerge keşfi ve eski biçimlerin önceliği.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S28",
+      "title": "JetBrains AI Assistant — yönergeler",
+      "url": "https://www.jetbrains.com/help/ai-assistant/configure-project-rules.html",
+      "published_on": null,
+      "note": "AI Assistant proje kuralları; Junie ile aynı yükleyici sayılmaz.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S29",
+      "title": "Continue IDE eklentisi — yönergeler",
+      "url": "https://docs.continue.dev/customize/deep-dives/rules",
+      "published_on": null,
+      "note": "IDE Agent/Chat/Edit kuralları; autocomplete ve apply kapsam dışı.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S30",
+      "title": "Roo Code — yönergeler",
+      "url": "https://roocodeinc.github.io/Roo-Code/features/custom-instructions/",
+      "published_on": null,
+      "note": "Kök AGENTS, useAgentRules ayarı ve moda özgü kural dizinleri.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S31",
+      "title": "Kilo Code — yönergeler",
+      "url": "https://kilo.ai/docs/customize/custom-instructions",
+      "published_on": null,
+      "note": "AGENTS merkezli güncel biçim; eski kurallardan geçiş ayrı.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S32",
+      "title": "Aider — yönergeler",
+      "url": "https://aider.chat/docs/usage/conventions.html",
+      "published_on": null,
+      "note": "Yönerge açık read seçeneğiyle bağlanır.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S33",
+      "title": "Qwen Code — yönergeler",
+      "url": "https://qwenlm.github.io/qwen-code-docs/en/users/configuration/settings/",
+      "published_on": null,
+      "note": "QWEN varsayılanı, context.fileName ve bellek görünümü.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S34",
+      "title": "Amp — yönergeler",
+      "url": "https://ampcode.com/docs/customize/agents-md",
+      "published_on": null,
+      "note": "AGENTS hiyerarşisi; alt dizin okumasıyla ek yönerge.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
+    },
+    {
+      "id": "S35",
+      "title": "Factory Droid — yönergeler",
+      "url": "https://docs.factory.com/harness/agents-md",
+      "published_on": null,
+      "note": "Kodlama ve tasarım yönergeleri ayrı keşfedilir.",
+      "lessons": [
+        "U07"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run"
     }
   ]
 }

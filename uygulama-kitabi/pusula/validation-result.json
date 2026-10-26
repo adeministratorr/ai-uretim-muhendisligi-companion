@@ -8,7 +8,7 @@
     "source_chapters": 100,
     "skills": 2,
     "skill_cases": 6,
-    "sources": 22
+    "sources": 35
   },
   "result": "pass",
   "negative_checks": [
@@ -31,10 +31,15 @@
   "model_runs": 0,
   "product_runs": 0,
   "human_acceptance": null,
-  "change_scope": "U07 common instructions, tool adapters and agent role filename",
+  "change_scope": "ZCode and additional IDE/CLI instruction documentation; runtime not tested",
   "negative_checks_from_commit": "a14927a268aa2897eb23fe8e31bf22e4bc23f652",
-  "instruction_behavior_cases": 5,
+  "instruction_behavior_cases": 11,
   "instruction_behavior_runs": 0,
   "terminal_state": "done",
-  "terminal_state_scope": "documentation_package_update_only"
+  "terminal_state_scope": "documentation_package_update_only",
+  "instruction_behavior_case_groups": {
+    "general": 7,
+    "zcode": 4
+  },
+  "reviewed_tool_entries": 21
 }
