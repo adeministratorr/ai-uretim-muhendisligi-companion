@@ -1,12 +1,42 @@
 #!/usr/bin/env python3
 """Check editorial links and evidence claims, without running the Pusula product."""
+import argparse
+import hashlib
 import json
 import re
 from collections import Counter
 from pathlib import Path
 
 
+def source_headings(text):
+    """Read real Markdown headings, excluding fenced examples and comments."""
+    result, fence, comment = [], None, False
+    for line in text.splitlines():
+        if '<!--' in line:
+            comment = True
+        if comment:
+            if '-->' in line:
+                comment = False
+            continue
+        marker = re.match(r'^\s*(`{3,}|~{3,})', line)
+        if marker:
+            if fence is None:
+                fence = marker[1][0]
+            elif fence == marker[1][0]:
+                fence = None
+            continue
+        match = re.match(r'^(#{1,6})\s+(.+?)\s*$', line)
+        if fence is None and match:
+            result.append({'level': len(match[1]), 'heading': match[2]})
+    return result
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--books-root', type=Path, required=True)
+    parser.add_argument('--guide-root', type=Path, required=True)
+    args = parser.parse_args()
+    source_roots = {'engineering-book': args.books_root, 'claude-guide': args.guide_root}
     package = Path(__file__).resolve().parents[1]
     editorial = package / 'editorial'
 
@@ -27,6 +57,7 @@ def main():
     assert len([s for s in sources.values() if s['pilot']]) == 31
     assert len([s for s in sources.values() if s['review_status'] == 'full_read']) == len(logs['chapters'])
     assert len({x['source_id'] for x in logs['chapters']}) == len(logs['chapters'])
+    live_headings = {}
     for s in sources.values():
         assert re.fullmatch('[a-f0-9]{64}', s['baseline_sha256'])
         assert re.fullmatch('[a-f0-9]{64}', s['current_sha256'])
@@ -37,6 +68,16 @@ def main():
         assert baseline['sha256'] == s['baseline_sha256'], 'Baseline overwritten'
         assert s['revisions'][0]['sha256'] == s['baseline_sha256']
         assert s['revisions'][-1]['sha256'] == s['current_sha256']
+        root = source_roots[s['source_repo']].resolve()
+        source = (root / s['source_path']).resolve()
+        assert source.is_relative_to(root), f'Source path escapes checkout: {s["source_id"]}'
+        raw = source.read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == s['current_sha256'], f'Source revision changed: {s["source_id"]}'
+        assert len(raw) == s['bytes'], f'Source size changed: {s["source_id"]}'
+        text = raw.decode('utf-8')
+        assert len(text.splitlines()) == s['line_count'], f'Source lines changed: {s["source_id"]}'
+        if s['review_status'] == 'full_read':
+            live_headings[s['source_id']] = source_headings(text)
     for log in logs['chapters']:
         s = sources[log['source_id']]
         assert log['full_read'] is True
@@ -49,9 +90,11 @@ def main():
             assert 1 <= start <= end <= s['line_count']
             reached.update(range(start, end + 1))
         assert len(reached) == s['line_count'], f'Incomplete line coverage: {s["source_id"]}'
-        h2 = {h['heading'] for h in s['headings'] if h['level'] == 2}
+        actual_headings = live_headings[s['source_id']]
+        h2 = {h['heading'] for h in actual_headings if h['level'] == 2}
         declared = {re.sub(r'^#+\s*', '', h['heading']) for h in log['headings']}
         assert h2 <= declared, f'Missing heading disposition: {s["source_id"]}'
+        assert declared <= {h['heading'] for h in actual_headings}, f'Unknown heading: {s["source_id"]}'
         for h in log['headings']:
             assert h['disposition'] in {'pilot', 'later', 'context'}
             assert set(h['lesson_ids']) <= set(lessons)
@@ -62,7 +105,7 @@ def main():
     for o in lo:
         s = sources[o['source_id']]
         assert s['review_status'] == 'full_read'
-        assert re.sub(r'^#+\s*', '', o['heading']) in {h['heading'] for h in s['headings']}, o['id']
+        assert re.sub(r'^#+\s*', '', o['heading']) in {h['heading'] for h in live_headings[o['source_id']]}, o['id']
         assert o['source_revision'] == s['current_sha256']
         assert o['runtime_status'] == 'not_run'
         assert o['status'] in {'mapped', 'gap', 'out_of_scope'}
@@ -98,6 +141,7 @@ def main():
         'objectives': len(lo), 'objective_status': dict(Counter(o['status'] for o in lo)),
         'acceptance_cases': len(cases), 'runtime': 'not_run',
         'pending_full_read': sum(s['review_status'] == 'pending_full_read' for s in sources.values()),
+        'fresh_source_hashes_checked': len(sources), 'live_pilot_headings_checked': len(live_headings),
     }
     print('PASS: ' + json.dumps(counts, ensure_ascii=False))
     print('Structural evidence check only; reader attestations and semantic judgments still require review.')

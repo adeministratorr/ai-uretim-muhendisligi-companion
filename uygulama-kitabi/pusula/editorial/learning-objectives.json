@@ -18,7 +18,7 @@
       "status": "gap",
       "gap_reason": "U01 görevinde AI/ML/DL karşılaştırması açık öğretilmiyor; vision.md içinde kısa karşılaştırma alıştırması eklenmeli.",
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B01-P01-01",
       "runtime_status": "not_run",
       "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
@@ -39,7 +39,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B01-P01-02",
       "runtime_status": "not_run",
       "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
@@ -157,7 +157,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B01-P01-08",
       "runtime_status": "not_run",
       "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
@@ -220,7 +220,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B02-P01-01",
       "runtime_status": "not_run",
       "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
@@ -241,7 +241,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B02-P01-02",
       "runtime_status": "not_run",
       "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
@@ -300,7 +300,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B02-P01-05",
       "runtime_status": "not_run",
       "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
@@ -321,7 +321,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B02-P01-06",
       "runtime_status": "not_run",
       "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
@@ -361,7 +361,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B03-P01-01",
       "runtime_status": "not_run",
       "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
@@ -422,7 +422,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B03-P01-04",
       "runtime_status": "not_run",
       "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
@@ -524,7 +524,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B05-P01-01",
       "runtime_status": "not_run",
       "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
@@ -549,7 +549,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B05-P01-02",
       "runtime_status": "not_run",
       "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
@@ -614,7 +614,7 @@
       "status": "gap",
       "gap_reason": "Kaynak 5.9-5.10 tasarım katmanlarını evrensel öncelik sırası gibi anlatıyor. U07 içinde araca özgü resmi belgeyle nitelendirilmeden doğrudan aktarılmamalı.",
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B05-P01-05",
       "runtime_status": "not_run",
       "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
@@ -635,7 +635,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B05-P01-06",
       "runtime_status": "not_run",
       "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
@@ -2537,7 +2537,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C2-B08-P01-01",
       "runtime_status": "not_run",
       "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5"
@@ -2558,7 +2558,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C2-B08-P01-02",
       "runtime_status": "not_run",
       "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5"
@@ -2598,7 +2598,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C2-B08-P01-04",
       "runtime_status": "not_run",
       "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5"
@@ -2619,7 +2619,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C2-B08-P01-05",
       "runtime_status": "not_run",
       "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5"
@@ -3332,7 +3332,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C3-B07-P01-01",
       "runtime_status": "not_run",
       "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa"
@@ -3353,7 +3353,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C3-B07-P01-02",
       "runtime_status": "not_run",
       "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa"
@@ -3374,7 +3374,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C3-B07-P01-03",
       "runtime_status": "not_run",
       "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa"
@@ -3395,7 +3395,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C3-B07-P01-04",
       "runtime_status": "not_run",
       "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa"
@@ -3416,7 +3416,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C3-B07-P01-05",
       "runtime_status": "not_run",
       "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa"
@@ -3813,7 +3813,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C4-B06-P01-01",
       "runtime_status": "not_run",
       "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf"
@@ -3834,7 +3834,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C4-B06-P01-02",
       "runtime_status": "not_run",
       "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf"
@@ -3855,7 +3855,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C4-B06-P01-03",
       "runtime_status": "not_run",
       "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf"
@@ -4562,7 +4562,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B04-P01-01",
       "runtime_status": "not_run",
       "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20"
@@ -4587,7 +4587,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B04-P01-02",
       "runtime_status": "not_run",
       "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20"
@@ -4608,7 +4608,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B04-P01-03",
       "runtime_status": "not_run",
       "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20"
@@ -4667,7 +4667,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B07-P01-01",
       "runtime_status": "not_run",
       "source_revision": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c"
@@ -4688,7 +4688,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B07-P01-02",
       "runtime_status": "not_run",
       "source_revision": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c"
@@ -4709,7 +4709,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B07-P01-03",
       "runtime_status": "not_run",
       "source_revision": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c"
@@ -4730,7 +4730,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B07-P01-04",
       "runtime_status": "not_run",
       "source_revision": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c"
@@ -4751,7 +4751,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B07-P01-05",
       "runtime_status": "not_run",
       "source_revision": "24246223b112fe7a85b09ee668f6aa147f18c2c48b2f287752a1f8f3120ce02c"
@@ -5332,7 +5332,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B14-P01-01",
       "runtime_status": "not_run",
       "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"
@@ -5357,7 +5357,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B14-P01-02",
       "runtime_status": "not_run",
       "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"
@@ -5382,7 +5382,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B14-P01-03",
       "runtime_status": "not_run",
       "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"
@@ -5443,7 +5443,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B14-P01-06",
       "runtime_status": "not_run",
       "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"
@@ -5468,7 +5468,7 @@
       "status": "mapped",
       "gap_reason": null,
       "acceptance_status": "proposed_concrete",
-      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi local-reader.json içinde korundu.",
+      "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-CC-B14-P01-07",
       "runtime_status": "not_run",
       "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"

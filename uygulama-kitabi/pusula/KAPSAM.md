@@ -109,7 +109,7 @@ Kitap yazımında her satıra alt başlık, öğrenme hedefi, alıştırma ve ka
 
 ## P01 editoryal denetim kaydı
 
-100 kaynak dosyanın başlangıç ve güncel SHA-256 değerleri karşılaştırıldı; 8 dosya değişmiş, 92 dosya aynı kalmıştır. Başlangıç özetleri ezilmedi. U01–U08e bağlı31 bölüm baştan sona okunarak başlıkları ve öğrenme hedefleri çıkarıldı; kalan69 kaynak yalnız revizyon/başlık envanteri düzeyindedir. `full_text_audit_complete` bu nedenle `false` kalır.
+100 kaynak dosyanın başlangıç ve güncel SHA-256 değerleri karşılaştırıldı; 8 dosya değişmiş, 92 dosya aynı kalmıştır. Başlangıç özetleri ezilmedi. U01–U08e bağlı31 bölüm baştan sona okunarak başlıkları ve öğrenme hedefleri çıkarıldı; kalan69 kaynak yalnız revizyon envanteri düzeyindedir. `full_text_audit_complete` bu nedenle `false` kalır.
 
 P01 durumu `audit_complete`, öğretim açığı geçidi `pilot_gap_resolution_pending`dir. Bu ayrım, kaynağın incelenmesiyle öğretim açığının kapanmasını ayırır. Pilot hedeflerinde27 açık kayıt P02ye aktarılacaktır. `mapped` satırlar öğretim eşlemesidir; ürün ve model koşuları `not_run` durumundadır. Kaynak kitap deneylerinin başarıları Pusula sonucu sayılmadı.
 

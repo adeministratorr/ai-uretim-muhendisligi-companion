@@ -2,7 +2,7 @@
 
 P01 kaynak denetimi `audit_complete`:100 kaynağın revizyon envanteri ve pilot31 kaynağın tam okuması tamamlandı. Öğretim geçidi `pilot_gap_resolution_pending`:pilot208 hedefin181i eşlendi,27si açık. İleri uygulamalara ayrılan91 hedefin41i somut eşleme,50si öğretim veya kabul tasarımı açığıdır. Toplam299 hedef ve299 önerilen sentetik vaka vardır. Bütün runtime alanları `not_run`, gözlemler `null`dır.
 
-`mapped` öğretim tasarımıdır; uygulama koşusu değildir. `needs_design` olan ileri vakalar o grup başlamadan somut girdiye ve yanlış adaya bağlanmalıdır. Tam okuma69 kaynak için hâlâ beklenir; başlık envanterini hedef denetimi saymadık. Kapsam dışı karar alınmadı.
+`mapped` öğretim tasarımıdır; uygulama koşusu değildir. `needs_design` olan ileri vakalar o grup başlamadan somut girdiye ve yanlış adaya bağlanmalıdır. Tam okuma69 kaynak için hâlâ beklenir; dosya envanterini hedef denetimi saymadık. Kapsam dışı karar alınmadı.
 
 ## Pilot: P02de kapatılacak öğretim açıkları
 
@@ -110,6 +110,6 @@ Yazar incelemesine ayrılan3 tutarsızlık [source-issues.json](source-issues.js
 
 ## Kanıt ve üretim sınırı
 
-Okuma araştırmacılarının özgün önerileri `readings/` ve `local-reader.json` içindedir. Birleştirme sırasında hedefe özgü kabul adayları somutlaştırıldı; çıktı üreticisi yanlış uygulamaya bağlanan yerler `acceptance-overrides.json` içinde açıkça düzeltildi. Tanımsız yeni referans dosyası mevcut çıktı gibi sunulmadı. Bunlar editörün müdahaleleridir; bir üretim promptunun tek başına gözlenmiş başarısı değildir.
+Okuma araştırmacılarının özgün önerileri ilk P01 commit geçmişinde ve yerel `.superpowers` scratch arşivinde korunur. Birleştirme sırasında hedefe özgü kabul adayları somutlaştırıldı; çıktı üreticisi yanlış uygulamaya bağlanan yerler hedeflerin `editorial_intervention` alanında açıkça kaydedildi; ara birleştirme girdileri yerel scratch arşivindedir. Tanımsız yeni referans dosyası mevcut çıktı gibi sunulmadı. Bunlar editörün müdahaleleridir; bir üretim promptunun tek başına gözlenmiş başarısı değildir.
 
 Paket yapısı ve editoryal bağ kontrolleri anlam incelemesinin yerine geçmez. Pilot31 kaynak metni tam okundu, hedefler kendi kısa cümlelerimizle yazıldı, pilot kabul örnekleri bağımsız ana ajan geri bildirimiyle hedefe özgü hâle getirildi. Araçların güncel resmî davranışını doğrulama ve gerçek oturum/model koşuları bu denetimin çalışma sonucu değildir.
