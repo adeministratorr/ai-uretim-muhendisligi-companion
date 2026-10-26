@@ -19,6 +19,7 @@ Bu paket, Yapay Zekâ ile Üretim Mühendisliği serisinin dört cildi ile Claud
 - [Kitap fikri ve bölüm düzeni](KITAP_PLANI.md)
 - [36 uygulama ve üretilecek dosyalar](UYGULAMALAR.md)
 - [Proje dosyalarının görevleri](DOSYA_MIMARISI.md)
+- [Ajan araçları, yönerge dosyaları ve yükleme deneyi](AJAN_UYUMLULUGU.md)
 - [Kaynak kitapların 100 bölümüne eşleme](KAPSAM.md)
 - [Güncel yaklaşımlar ve birincil kaynaklar](YAKLASIMLAR.md)
 - [Skill kullanım ve deneme düzeni](SKILLS.md)

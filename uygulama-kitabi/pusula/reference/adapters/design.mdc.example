@@ -1,0 +1,11 @@
+---
+description: Pusula arayüz dosyalarında tasarım kararlarını kullan.
+globs: app/ui/**
+alwaysApply: false
+---
+
+# Arayüz değişikliği
+
+Arayüzü değiştirmeden önce proje kökündeki design.md ve accessibility.md dosyalarının ilgili bölümlerini oku. Bunlar bulunmuyorsa eksik girdiyi bildir. Bu dosya atfı belgelerin otomatik olarak bağlama birleştirildiği anlamına gelmez.
+
+Değişikliğin hangi gereksinimi karşıladığını ve hangi arayüz kontrolünün gerçekten çalıştığını kaydet. Ortak çalışma kurallarını AGENTS.md içinde tut. app/ui/** örnek kapsamını, okurun gerçek arayüz dizinine göre güncelle.

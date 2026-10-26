@@ -1,0 +1,5 @@
+# Pusula için isteğe bağlı Gemini CLI girişi
+
+@./AGENTS.md
+
+Bu şablon uygulama kökünde GEMINI.md adıyla, AGENTS.md ile aynı dizinde kullanılmak içindir. Ortak proje yönergelerini ikinci kez yazma. Seçilen context.fileName ayarını kaydet; AGENTS.md doğrudan yükleniyorsa bu girişe ihtiyaç olup olmadığını kontrol et. Yüklenen bağlamı /memory show ile incele; gerçek görevde kuralların uygulanmasını ayrıca sına.

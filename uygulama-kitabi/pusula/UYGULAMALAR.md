@@ -10,7 +10,7 @@ Her satır ayrı bir uygulamadır. Girdi ve çıktı yolları okurun Pusula depo
 | [U04](prompts/04.md) | Teknoloji seçimini gerekçelendirmek | `tech-stack.md`, `dependency-policy.md`, `adr/0001-stack.md` |
 | [U05](prompts/05.md) | Veri ve çıktı sözleşmesini kurmak | `data-model.md`, `api-contract.md`, `schemas/answer.schema.json` |
 | [U06](prompts/06.md) | Yol haritasını yapılabilir işlere bölmek | `roadmap.md`, `tasks.md`, `dependencies.md` |
-| [U07](prompts/07.md) | Ajanın proje yönergelerini üretmek | `AGENTS.md`, `CLAUDE.md`, `docs-map.md`, `README.md`, `.gitignore` |
+| [U07](prompts/07.md) | Ortak proje yönergelerini ve ajan uyarlamalarını üretmek | `AGENTS.md`, `docs-map.md`, `agent-compatibility.md`, `instruction-tests.json`, `agent-adapters/`, `README.md`, `.gitignore` |
 | [U08](prompts/08.md) | Tekrarlanan yöntemi skill paketine dönüştürmek | `skills/pusula-belge-uret/SKILL.md`, `skills/pusula-kaynak-denetle/SKILL.md`, `skill-tests.json` |
 | [U09](prompts/09.md) | Prompt engineering deneyini kurmak | `prompts/answer-v1.md`, `prompts/answer-v2.md`, `prompts/answer-v3.md`, `evals/prompt-cases.json` |
 | [U10](prompts/10.md) | Promptları ölçüp iyileştirmek | `evals/prompt-results.json`, `optimization.md` |
@@ -25,7 +25,7 @@ Her satır ayrı bir uygulamadır. Girdi ve çıktı yolları okurun Pusula depo
 | [U19](prompts/19.md) | Loop engineering ile çalışmayı sınırlamak | `loop-spec.md`, `loop-state.json`, `loop-tests.json` |
 | [U20](prompts/20.md) | Harness engineering ile yürütmeyi kurmak | `harness-design.md`, `harness-manifest.json`, `app/harness/` |
 | [U21](prompts/21.md) | Uzun görevleri kesintiden sürdürmek | `resume-protocol.md`, `recovery-tests.json` |
-| [U22](prompts/22.md) | Alt ajanlara görev vermek | `agents.md`, `delegation-contracts.json`, `agents/` |
+| [U22](prompts/22.md) | Alt ajanlara görev vermek | `agent-roles.md`, `delegation-contracts.json`, `agents/` |
 | [U23](prompts/23.md) | Çoklu ajanı tek ajanla karşılaştırmak | `parallel-work.md`, `evals/agent-comparison.json` |
 | [U24](prompts/24.md) | Evals ile sürüm kabulünü ölçmek | `eval-plan.md`, `evals/release-cases.json`, `evals/rubric.md` |
 | [U25](prompts/25.md) | Güvenlik ve veri sınırlarını denemek | `threat-model.md`, `data-lifecycle.md`, `security-cases.json` |

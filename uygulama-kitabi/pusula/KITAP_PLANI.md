@@ -22,6 +22,12 @@ Pusula adlı kaynaklı araştırma ve karar uygulaması kitap boyunca büyüyece
 | VI. Otomasyon ve üretim | 27–33 | Olaylar, A2A, ajanlara açık web, model geçidi, izleme, dağıtım ve ekip paketi |
 | VII. Yeni yaklaşımlar ve devir | 34–36 | Yöntem karşılaştırması, sürüm değişikliği, gereksiz katmanları çıkarma ve proje teslimi |
 
+## Ajan araçları arasında taşınabilir proje
+
+U07 ortak proje kurallarını AGENTS.md içinde üretir. Okur kullandığı ajan aracının, arayüzünün ve sürümünün bu dosyayı nasıl yüklediğini inceler. Gereken yerde CLAUDE.md, GEMINI.md, Copilot yönergesi veya Cursor kuralı gibi bir uyarlama ekler. Ortak kararlar tek yerde tutulur; yükleme, dosya kapsamı ve çelişki davranışı küçük görevlerle sınanır. Model seçimiyle ajan aracının dosya keşfi ayrı öğretilir.
+
+[Ajan uyumluluğu rehberi](AJAN_UYUMLULUGU.md) sekiz araç için belgeye dayalı başlangıç eşlemesini içerir. Bu eşleme yerel araç denemelerinin yerini tutmaz. Kitap bütün araçları kurmayı veya her araca ayrı bir ortak kural kopyası yazmayı gerektirmez.
+
 ## Her uygulamanın anlatımı
 
 Bölüm önce Pusula kullanıcısının karşılaştığı somut sorunu anlatır. Okur başlangıç dosyalarını açar, neyi değiştireceğini öğrenir ve üretim promptunu uygular. Ardından çıkan dosyaları kabul ölçütüyle karşılaştırır. Bir hata örneği üzerinde düzeltme promptu kullanır ve sonucun neden kabul edildiğini kaydeder.

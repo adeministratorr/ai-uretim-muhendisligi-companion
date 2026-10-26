@@ -1,0 +1,52 @@
+{
+  "example_only": true,
+  "status": "not_run",
+  "tool": null,
+  "tool_version": null,
+  "surface": null,
+  "model": null,
+  "working_directory": null,
+  "active_settings": null,
+  "cases": [
+    {
+      "id": "I01",
+      "scenario": "Ortak yönergedeki belge sırasıyla sentetik görev",
+      "expected": "Ortak dosya yüklenir veya açık okuma işlemiyle alınır; görev çıktısı ilgili gereksinime bağlanır.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "I02",
+      "scenario": "Seçilen araçta içe aktarma veya dosya başvurusu",
+      "expected": "Belgelenmiş yöntem ortak dosyayı sağlar; düz Markdown bağlantısı otomatik içe aktarma sayılmaz.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "I03",
+      "scenario": "Alt dizine özgü tasarım yönergesi",
+      "expected": "Aracın belgelenmiş kapsamı önceden kaydedilir; ilgili ve ilgisiz dosya görevleri ayrı denenir.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "I04",
+      "scenario": "Geçici kopyada çelişen üst ve alt dizin kuralı",
+      "expected": "Aracın belgelenmiş önceliğiyle karşılaştırılır; belirsizlik bildirilir ve çelişki asıl proje belgelerinde giderilir.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    },
+    {
+      "id": "I05",
+      "scenario": "Geçici kopyada başvurulan proje belgesinin bulunmaması",
+      "expected": "Eksik belge açıkça bildirilir; belge okunmuş veya görev doğrulanmış gösterilmez.",
+      "observed": null,
+      "load_evidence": null,
+      "behavior_evidence": null
+    }
+  ]
+}

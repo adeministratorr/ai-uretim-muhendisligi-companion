@@ -117,22 +117,25 @@
     },
     {
       "id": "U07",
-      "title": "Ajanın proje yönergelerini üretmek",
+      "title": "Ortak proje yönergelerini ve ajan uyarlamalarını üretmek",
       "inputs": [
         "prd.md",
         "tech-stack.md",
         "tasks.md",
-        "acceptance.md"
+        "acceptance.md",
+        "environment.md"
       ],
       "outputs": [
         "AGENTS.md",
-        "CLAUDE.md",
         "docs-map.md",
+        "agent-compatibility.md",
+        "instruction-tests.json",
+        "agent-adapters/",
         "README.md",
         ".gitignore"
       ],
-      "task": "AGENTS.md içine proje sınırlarını, gerçek kurulum ve test komutlarını, doğrulama kaydını ve durma koşullarını yaz. Henüz var olmayan komutu çalışır gibi sunma. CLAUDE.md, ortak kurallara başvursun; aynı kuralları bağımsız ikinci kopya olarak çoğaltmasın. docs-map.md hangi görevde hangi belgenin okunacağını göstersin. README.md içine doğrulanmış başlangıç yolunu, .gitignore içine yerel çıktı ve sır dosyası dışlamalarını yaz; mevcut kullanıcı kurallarını koru.",
-      "acceptance": "agent.md, design.md veya roadmap.md dosyasının her araçta kendiliğinden yükleneceğini iddia etme. Kullanılan aracın belge keşif davranışını doğrula.",
+      "task": "Önce environment.md içinden kullanılan ajan aracını, arayüzünü ve sürümünü belirle. Model adı ile ajan aracını ayrı kaydet. AGENTS.md içine ortak proje sınırlarını, doğrulanmış kurulum ve test komutlarını, belge okuma sırasını ve durma koşullarını yaz. Henüz var olmayan komutu çalışır gibi sunma. docs-map.md hangi görevde hangi belgenin okunacağını göstersin.\n\nagent-compatibility.md içinde Codex, Claude Code, Gemini CLI, Cursor, GitHub Copilot, OpenCode, Cline ve Cascade için resmî belge kaynağını, kontrol tarihini, yükleme koşulunu ve yerel deneme durumunu ayrı kaydet. Tüm araçları kurma veya aynı anda etkinleştirme. Kullanılan araç için AGENTS.md yeterliyse başka giriş dosyası üretme. Gerekiyorsa agent-adapters/ içinde hedef konumu belirtilmiş şablon üret: Claude Code için CLAUDE.md, Gemini CLI için GEMINI.md, Copilot için .github/copilot-instructions.md, Cursor için kapsama bağlı .cursor/rules/*.mdc. Diğer araçlarda da yalnız belgelenmiş dosya ve ayarları kullan. Ortak kuralları bağımsız kopyalar olarak çoğaltma. Belge içe aktarma ile ajandan dosyayı okumasını istemeyi ayır; Markdown bağlantısını otomatik yükleme garantisi sayma.\n\ninstruction-tests.json içine ortak yönerge, araca özgü ek, alt dizin kapsamı, çelişen kural ve eksik dosya vakalarını yaz. Seçilen uyarlamayı yalnız okurun uygulama köküne yerleştirdikten sonra yeni oturumda hangi yönergenin yüklendiğini ve örnek göreve nasıl uygulandığını dene. Bağlam veya yükleme kaydı varsa sakla; yalnız ajanın okudum demesini yeterli sayma. Denenmeyen araçları not_run ve gözlemlerini null bırak. Ürün içindeki rol kataloğunu agent-roles.md diye adlandır; AGENTS.md ile yalnız harf büyüklüğü farklı ikinci dosya kullanma.\n\nREADME.md içine doğrulanmış başlangıç yolunu, .gitignore içine yerel çıktı ve sır dosyası dışlamalarını yaz; mevcut kullanıcı kurallarını koru.",
+      "acceptance": "Model, ajan aracı, sürüm ve arayüz ayrı kayıtlı olmalı. Seçilen araçta ortak yönergenin yüklenmesi ve örnek görevde uygulanması için gözlem bulunmalı; gözlenmeyen destek başarılı sayılmamalı. Alt dizin ve çelişki davranışı kullanılan aracın kurallarıyla karşılaştırılmalı. CLAUDE.md bütün okurlara zorunlu tutulmamalı; design.md ve roadmap.md dosyalarının her araçta kendiliğinden yüklendiği ileri sürülmemeli. Aynı ortak kuralın çelişen kopyaları veya AGENTS.md/agents.md ad çakışması kalmamalı. Yönerge dosyası teknik izin ayarı veya erişim kontrolü yerine geçmemeli.",
       "prompt": "prompts/07.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -408,7 +411,7 @@
         "permissions.md"
       ],
       "outputs": [
-        "agents.md",
+        "agent-roles.md",
         "delegation-contracts.json",
         "agents/"
       ],

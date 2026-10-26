@@ -1,5 +1,7 @@
-# Pusula için Claude Code girişi
+# Pusula için isteğe bağlı Claude Code girişi
 
-Ortak çalışma kuralları [AGENTS.md](AGENTS.md) dosyasındadır. Görev başlamadan onu oku. İlgili gereksinim için prd.md, çalışma sırası için tasks.md, tasarım için design.md dosyasını kullan.
+@AGENTS.md
 
-Bu örnekte Claude Code'a özgü izin veya hook ayarı kurulmadı. Bir Markdown talimatının araç yetkisini değiştirdiğini varsayma. Ürüne özgü yapılandırma ekleneceğinde kullanılan sürümün resmî belgesini doğrula.
+Bu öğretim örneğini yalnız kendi uygulama köküne, AGENTS.md ile aynı dizine yerleştir. Ortak yönergeyi Claude Code'un belgelenmiş içe aktarma biçimiyle alır. Aynı kuralları bu dosyada yeniden yazma.
+
+Güncel Claude Code sürümünde proje yönergesi ayarı doğrudan AGENTS.md yükleyebiliyorsa bu girişe ihtiyaç olmayabilir. Ayarı ve etkin dosyaları denemede kaydet. Bu örnekte izin veya hook yapılandırması kurulmadı; Markdown talimatı teknik erişim kontrolü değildir.
