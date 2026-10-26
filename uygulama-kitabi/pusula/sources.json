@@ -52,7 +52,14 @@
         "U33"
       ],
       "status": "source_reviewed",
-      "runtime_status": "not_run"
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Yaşayan açık biçim belirtimi; RFC değil",
+      "access": "opened",
+      "unverified_points": [
+        "allowed-tools deneysel; her uygulamanın aynı izin semantiği doğrulanmadı.",
+        "Çalışma ortamı ve doğru tetiklenme ayrıca denenmeli."
+      ]
     },
     {
       "id": "S05",
@@ -456,6 +463,358 @@
       ],
       "status": "source_reviewed",
       "runtime_status": "not_run"
+    },
+    {
+      "id": "S38",
+      "title": "Introducing the Agent Experience (AX) Practitioner Playbook",
+      "url": "https://developer.microsoft.com/blog/introducing-the-agent-experience-ax-practitioner-playbook/",
+      "published_on": null,
+      "note": "Kodlama ajanlarının teknoloji, doküman ve uzantıları kullanmasını görevlerle ölçen yöntem doğrulandı.",
+      "lessons": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Microsoft uygulayıcı yöntemi / 2026-10-09 duyurusu",
+      "access": "opened",
+      "unverified_points": [
+        "Her ajan arayüzü için tek resmî standart olduğu sonucu çıkmaz.",
+        "Pusula üzerinde deney veya başarı oranı doğrulanmadı."
+      ]
+    },
+    {
+      "id": "S39",
+      "title": "Donating Agent Skills to the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "published_on": null,
+      "note": "Anthropic, Agent Skills açık standardını AAIF’ye devrettiğini duyuruyor.",
+      "lessons": [
+        "U08",
+        "U33"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Anthropic birinci taraf duyurusu / 2026-10-22",
+      "access": "opened",
+      "unverified_points": [
+        "Duyuru bütün platformlarda aynı tetiklenme, izin ve başarı davranışını kanıtlamaz.",
+        "Benimsenme ve kurulum sayıları bağımsız denetlenmedi."
+      ]
+    },
+    {
+      "id": "S40",
+      "title": "Evaluating AI agents: moving past the vibe check",
+      "url": "https://developers.googleblog.com/evaluating-ai-agents-moving-past-the-vibe-check/",
+      "published_on": null,
+      "note": "Senaryolar, simülasyonlar ve araç argümanlarını içeren yürütme izlerinin birlikte değerlendirilmesi anlatılıyor.",
+      "lessons": [
+        "U24",
+        "U30"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Google uygulama yazısı / 2026-10-15",
+      "access": "opened",
+      "unverified_points": [
+        "Simülatörün gerçek kullanıcı davranışını temsil etmesi veya Pusula başarısı doğrulanmadı."
+      ]
+    },
+    {
+      "id": "S41",
+      "title": "Criteria — Agent Development Kit",
+      "url": "https://adk.dev/evaluate/criteria/",
+      "published_on": null,
+      "note": "Araç izlerinde EXACT, IN_ORDER ve ANY_ORDER eşleme seçenekleri belgeleniyor.",
+      "lessons": [
+        "U24",
+        "U30"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Yaşayan resmî SDK belgesi",
+      "access": "opened",
+      "unverified_points": [
+        "Her görevin tek doğru araç sırası olduğu çıkarılamaz.",
+        "Deney SDK sürümü sabitlenmedi."
+      ]
+    },
+    {
+      "id": "S42",
+      "title": "Agent Registry Protocol",
+      "url": "https://datatracker.ietf.org/doc/draft-sankarshan-agent-registry-protocol/04/",
+      "published_on": null,
+      "note": "Keşif sonuçlarının ajan çağırma izni veya yetkilendirme anlamına gelmediği açıkça yazılıyor.",
+      "lessons": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Active Internet-Draft (individual); IETF onayı veya standart sürecinde resmî statü yok",
+      "access": "opened",
+      "unverified_points": [
+        "Yayımlanmış RFC veya zorunlu protokol değildir.",
+        "Uygulama güvenliği ve birlikte çalışabilirlik denenmedi."
+      ]
+    },
+    {
+      "id": "S43",
+      "title": "Agent Identity Protocol (AIP): Decentralized Identity and Delegation for AI Agents",
+      "url": "https://datatracker.ietf.org/doc/draft-singla-agent-identity-protocol/03/",
+      "published_on": null,
+      "note": "Taslak kimlik, daralan yetki devri zincirleri ve principal bağlantısını birlikte tanımlıyor.",
+      "lessons": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Active Internet-Draft (individual); IETF onayı yok; I-D Exists",
+      "access": "opened",
+      "unverified_points": [
+        "RFC değildir; taslaktaki MUST ifadesi yaygın kabul görmüş standart yükümlülüğü sayılmaz.",
+        "Metin 10 Haziran, Datatracker güncellemesi 9 Haziran gösteriyor; bu kaynak için kesin yayımlanma günü iddiası kurulmadı."
+      ]
+    },
+    {
+      "id": "S44",
+      "title": "Autonomy Budgets: The Missing Control Surface for AI Agents",
+      "url": "https://www.computer.org/publications/tech-news/trends/autonomy-budgets-for-ai-agents",
+      "published_on": null,
+      "note": "Birincil alan adından arama ile alınan metin ortak eylem geçidinde ölçülebilir bütçe ve sınırda öneri modunu öneriyor.",
+      "lessons": [
+        "U19",
+        "U20",
+        "U25"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Kostakis Bouzoukas yazar görüşü / 2026-10-22; IEEE standardı değil",
+      "access": "direct-open-403; same-primary-url-search-text-retrieved",
+      "unverified_points": [
+        "Doğrudan açılış 403; tam sayfa erişimi doğrulanamadı.",
+        "Ekim yazısı Ocak 2026 yorum süresini açıkmış gibi anlatıyor; takvim iddiası kullanılmamalı.",
+        "Önerinin Pusula’da uygulanabilirliği veya risk hesabı deneyle doğrulanmadı."
+      ]
+    },
+    {
+      "id": "S45",
+      "title": "Actions — Restate",
+      "url": "https://docs.restate.dev/foundations/actions",
+      "published_on": null,
+      "note": "run ile belirlenimsiz işlemlerin sonucunun kaydedilmesi ve tekrar yürütme sırasında korunması belgeleniyor.",
+      "lessons": [
+        "U21",
+        "U31"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Yaşayan resmî ürün belgesi",
+      "access": "opened",
+      "unverified_points": [
+        "Dış sistemde belirsiz kalan yan etkinin ağ genelinde tam bir kez gerçekleşeceği garantisi bu kayıttan çıkarılamaz.",
+        "Pusula yerel tekrar güvenliği dağıtık exactly-once diye anlatılmamalı."
+      ]
+    },
+    {
+      "id": "S46",
+      "title": "Persistence — LangGraph",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "published_on": null,
+      "note": "Checkpointer ile thread durumu, store ile thread dışı verinin saklanması ayrılıyor.",
+      "lessons": [
+        "U21",
+        "U31"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Yaşayan resmî SDK belgesi",
+      "access": "opened",
+      "unverified_points": [
+        "Bellek saklamak, dış işlemin güvenli tekrarına eşit değildir.",
+        "Önceki durable-execution URL’si persistence sayfasına yönlendi.",
+        "Kalıcı depolama ve yeniden yetkilendirme Pusula’da test edilmedi."
+      ]
+    },
+    {
+      "id": "S47",
+      "title": "Introducing LangSmith Fine-Tuning",
+      "url": "https://www.langchain.com/blog/langsmith-fine-tuning",
+      "published_on": null,
+      "note": "smithtune ile LangSmith izlerinden veri hazırlama, desteklenen hizmetlerde SFT ve değerlendirme akışı doğrulandı.",
+      "lessons": [
+        "U24",
+        "U30",
+        "U35"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Birinci taraf ürün duyurusu / 2026-09-24",
+      "access": "opened",
+      "unverified_points": [
+        "Gizlilik temizliği, veri izni ve etiket kalitesi otomatik sağlanmış sayılmaz.",
+        "Veri seti hazırlamak model eğitildiği veya iyileştiği anlamına gelmez."
+      ]
+    },
+    {
+      "id": "S48",
+      "title": "AgentRouter: Heterogeneous Model Routing for Cost-Optimal Multi-Step Agentic Workflows",
+      "url": "https://arxiv.org/abs/2609.22951",
+      "published_on": null,
+      "note": "Özet farklı görev adımlarını model katmanlarına yönlendiren araştırma yöntemini açıklıyor.",
+      "lessons": [
+        "U29"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "arXiv ön baskı / ilk gönderim 2026-09-19",
+      "access": "opened",
+      "unverified_points": [
+        "Yazar performans ve tasarruf iddiaları yeniden üretilmedi.",
+        "Tam yöntem, yeniden üretilebilirlik ve Pusula aktarımı incelenmedi."
+      ]
+    },
+    {
+      "id": "S49",
+      "title": "Context compression — Agent Development Kit",
+      "url": "https://adk.dev/context/compaction/",
+      "published_on": null,
+      "note": "Token eşiği ve kayan tur penceresiyle tetiklenen sıkıştırma ve birlikte ayarlandığında token önceliği belgeleniyor.",
+      "lessons": [
+        "U13",
+        "U14"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Yaşayan resmî SDK belgesi",
+      "access": "opened",
+      "unverified_points": [
+        "Sıkıştırmanın güncel kaynak, açık işler ve yetki sınırlarını koruması deneyle doğrulanmalı.",
+        "SDK sürümü sabitlenmedi; uyarlanabilir politikanın üstünlüğü gösterilmedi."
+      ]
+    },
+    {
+      "id": "S50",
+      "title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+      "url": "https://arxiv.org/abs/2604.25850",
+      "published_on": null,
+      "note": "Özet gözlenebilir bileşenleri değiştirme, değişiklik beklentisini kaydetme ve görev sonuçlarıyla sınama döngüsünü açıklıyor.",
+      "lessons": [
+        "U34",
+        "U35"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "arXiv ön baskı; v1 2026-04-28, v4 2026-05-18",
+      "access": "opened",
+      "unverified_points": [
+        "Yazarların Terminal-Bench 2 sonuçları bağımsız yeniden üretilmedi.",
+        "Pusula için kazanç veya genel özerk kendini iyileştirme iddiası çıkarılmadı.",
+        "Tam metin ablation düzeni bu kaynak kontrolünde yeniden incelenmedi."
+      ]
+    },
+    {
+      "id": "S51",
+      "title": "GitHub Spec Kit",
+      "url": "https://github.github.com/spec-kit/",
+      "published_on": null,
+      "note": "Belirtim, niyet ve kanıtı uygulamadan önce yapılandıran geliştirme süreçleri sunuluyor.",
+      "lessons": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Resmî açık kaynak proje dokümantasyonu",
+      "access": "opened",
+      "unverified_points": [
+        "Pusula’daki design.md, tech-stack.md ve roadmap.md adları kaynağın zorunlu standardı değildir.",
+        "Kaynak gereksinim–dosya–test izlenebilirliğinin Pusula’da uygulandığını kanıtlamaz."
+      ]
+    },
+    {
+      "id": "S52",
+      "title": "Graph Engineering in the Era of LLM Agents: From Individual Intelligence to System Intelligence",
+      "url": "https://arxiv.org/abs/2608.21156",
+      "published_on": null,
+      "note": "Görev, ajan ve sistem durumlarının ilişkisel graf yapılarıyla düzenlenmesini ele alan araştırma çerçevesi doğrulandı.",
+      "lessons": [
+        "U16",
+        "U20",
+        "U23"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "arXiv araştırma ön baskısı; v1 2026-08-21, v2 2026-08-26",
+      "access": "opened",
+      "unverified_points": [
+        "GraphRAG ile eşanlamlı değildir.",
+        "Bilgi, yürütme ve kod bağımlılık graflarını ayırmak Pusula editoryal deney tasarımıdır.",
+        "Graf üstünlüğü ve maliyet sonucu Pusula’da ölçülmedi."
+      ]
+    },
+    {
+      "id": "S53",
+      "title": "Loop Engineering",
+      "url": "https://addyosmani.com/blog/loop-engineering/",
+      "published_on": null,
+      "note": "Yineleme, durum saklama ve bağımsız doğrulama üzerine kavram kullanımı doğrulandı.",
+      "lessons": [
+        "U19"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Yazar uygulama yazısı / 2026-06-07",
+      "access": "opened",
+      "unverified_points": [
+        "Terimin ilk icat tarihi veya resmî disiplin olduğu doğrulanmadı."
+      ]
+    },
+    {
+      "id": "S54",
+      "title": "Under the Hood: Universal Commerce Protocol (UCP)",
+      "url": "https://developers.googleblog.com/under-the-hood-universal-commerce-protocol-ucp/",
+      "published_on": null,
+      "note": "Ticaret akışını ve AP2 ile ilişkiyi anlatan birinci taraf açıklama doğrulandı.",
+      "lessons": [
+        "U28",
+        "U34"
+      ],
+      "status": "source_reviewed",
+      "runtime_status": "not_run",
+      "checked_on": "2026-10-26",
+      "document_status": "Google protokol tanıtımı / 2026-01-11",
+      "access": "opened",
+      "unverified_points": [
+        "UCP, ACP ve AP2 birbirinin yerine kullanılamaz.",
+        "Pusula çekirdeğine ticaret veya ödeme entegrasyonu yapılmış değildir."
+      ]
     }
   ]
 }

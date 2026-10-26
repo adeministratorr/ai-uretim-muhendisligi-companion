@@ -14,8 +14,8 @@
         "scope.md",
         "environment.md"
       ],
-      "task": "Pusula kullanıcısının belge yığınından hangi karara ulaşacağını anlat. Araştırmacı ve inceleyen rollerini ayır. İlk sürümde tek çalışma alanı, sentetik metinler ve yerel taslak kullan. İşletim sistemi, araç sürümü, model erişimi ve maliyet sınırı için gözlem ile kullanıcı tercihini ayrı kaydet.",
-      "acceptance": "Kaynağı olmayan otomatik karar veya dış gönderim ilk sürüm kapsamına girmemeli. Kurulu olmayan araç kurulu gösterilmemeli.",
+      "task": "Pusula kullanıcısının belge yığınından hangi karara ulaşacağını anlat. Araştırmacı ve inceleyen rollerini ayır. İlk sürümde tek çalışma alanı, sentetik metinler ve yerel taslak kullan. İşletim sistemi, araç sürümü, model erişimi ve maliyet sınırı için gözlem ile kullanıcı tercihini ayrı kaydet.\n\nvision.md içinde Pusula için kural tabanlı filtre, veriden öğrenen sınıflandırıcı ve derin sinir ağı kullanan dil modeli örneklerini karşılaştır; AI, ML ve DL ilişkisini açıklarken her bileşenin model kullanmak zorunda olmadığını göster. scope.md içinde 5–8 işi satırlara yerleştiren bir sorumluluk matrisi yaz. Üç sorumluluk sütunu yapay zekâya devredilen, insanda tutulan ve birlikte yürütülen işler olsun. Her insanda tutulan iş için bir gerekçe cümlesi ekle. environment.md içinde başlangıç/orta/ileri deneyim düzeyleri için bir sonraki öğrenme hedefini ve bunu gösterecek küçük görevi belirt; kişinin becerisini ölçmeden kazanılmış sayma.\n\nKurulum laboratuvarını environment.md altında ayrı kaydet. Mevcut kurulumu sürüm ve çalıştırılabilir dosya yoluyla gözle; native kurulum ile paket yöneticisi yolunu resmî belge, işletim sistemi, güncelleme ve kaldırma açısından karşılaştır. Kurum politikası uzak betiği yasaklıyorsa resmî alan adı bu yasağı kaldırmaz. Kurulum gerekli ve yetkiliyse yalnız bir yolu seç; kurulum öncesi/sonrası sürüm kontrolünü, hata çıktısını ve geri dönüşü kaydet. Kurulu ortamı sırf karşılaştırma için yeniden kurma. Diğer yolun gerçek deneyi not_run kalır. Claude Code bu laboratuvarın ürün örneğidir; başka ajan kullanan okur kendi aracının belgelenmiş yolunu ayrıca kaydeder.\n\nKurulum kontrolünü boş, atılabilir bir çalışma alanında yürüt. Başlangıç ve bitiş dosya envanteri veya Git diffi ile alanda dosya değişmediğini göster. Sürüm ve tanılama sonucu ile hesap bağlantısı durumunu ayrı kaydet; kimlik bilgilerini, anahtarı veya oturum belirtecini yazdırma. Hesap kontrolü çalıştırılamadıysa not_run bırak ve laboratuvarı bütünüyle tamamlandı sayma. Paket yöneticisi yolunda depo anahtarı, imza veya dağıtım özeti doğrulamasını resmî kaynakla karşılaştır; uyuşmazlıkta kurulumu durdur. Eksik bağımlılığı kurulu gibi kaydetme. Kıdem matrisi görev tarifi ve kod/diff inceleme becerileri için düzeye uygun gerekçe ve ölçülebilir küçük görev içersin.",
+      "acceptance": "Kaynağı olmayan otomatik karar veya dış gönderim ilk sürüm kapsamına girmemeli. Kurulu olmayan araç kurulu gösterilmemeli. AI/ML/DL karşılaştırması üç somut bileşeni doğru ayırmalı. Sorumluluk matrisi 5–8 iş ve üç sütun içermeli. Kurulum kaydı gözlem, öneri ve çalıştırılmayan alternatifi ayırmalı; başarısız komut kurulmuş araç sayılmamalı. İmza/özet uyuşmazlığı kuruluma devam eden adayı reddettirmeli. Boş çalışma alanı ve hesap bağlantısı için ayrı gözlem olmadan kurulum laboratuvarı tamamlandı sayılmamalı. Her sorumluluk satırında üç dağılım ve insanda kalan işin gerekçesi bulunmalı.",
       "prompt": "prompts/01.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -31,10 +31,11 @@
       "outputs": [
         "prd.md",
         "acceptance.md",
-        "user-stories.md"
+        "user-stories.md",
+        "docs/traceability.md"
       ],
-      "task": "Belge ekleme, araştırma sorusu açma, kaynaklı taslak, çelişki gösterimi ve insan incelemesi için REQ-001–REQ-005 kimliklerini kullan. Her gereksinime gözlenebilir olumlu ve olumsuz kabul koşulu yaz. Eksik bilgiyi kullanıcı kararı veya tasarım varsayımı olarak işaretle.",
-      "acceptance": "Kaynakta cevabı bulunmayan soru için doğru davranış bilinmiyor demek olmalı. Kabul ölçütü yalnız dosyanın varlığına dayanmamalı.",
+      "task": "Belge ekleme, araştırma sorusu açma, kaynaklı taslak, çelişki gösterimi ve insan incelemesi için REQ-001–REQ-005 kimliklerini kullan. Her gereksinime gözlenebilir olumlu ve olumsuz kabul koşulu yaz. Eksik bilgiyi kullanıcı kararı veya tasarım varsayımı olarak işaretle.\n\ndocs/traceability.md dosyasında REQ kimliği, kaynak karar, tasarım bölümü, veri/API alanı, görev, test ve kanıt sütunlarını oluştur. Henüz üretilmeyen dosya veya test için planned yaz; var olmayan satıra çalışır bağlantı uydurma. REQ-005 kaynak revizyonu değişikliği örneğinde hangi kararların yeniden inceleneceğini göster.",
+      "acceptance": "Kaynakta cevabı bulunmayan soru için doğru davranış bilinmiyor demek olmalı. Kabul ölçütü yalnız dosyanın varlığına dayanmamalı. Her gereksinimin kabul kimliği ve açık kalan bağı bulunmalı. Dosyanın adını yazmak testin çalıştığını göstermemeli.",
       "prompt": "prompts/02.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -44,14 +45,16 @@
       "title": "Ekranları ve etkileşimi tasarlamak",
       "inputs": [
         "prd.md",
-        "acceptance.md"
+        "acceptance.md",
+        "docs/traceability.md"
       ],
       "outputs": [
         "design.md",
-        "accessibility.md"
+        "accessibility.md",
+        "docs/traceability.md"
       ],
-      "task": "Kaynak listesi, soru formu, iddia-kaynak görünümü ve inceleme ekranının akışını tasarla. Yükleniyor, boş, hata, iptal, eski kaynak ve inceleme bekliyor durumlarını ayrı göster. Klavye kullanımı ve odak dönüşünü tasarım kararlarına bağla.",
-      "acceptance": "İptal edilmiş veya kaynağı değişmiş taslak arayüzde kabul edilmiş görünmemeli. Üretilen tasarımın tarayıcıda denenmediğini belirt.",
+      "task": "Kaynak listesi, soru formu, iddia-kaynak görünümü ve inceleme ekranının akışını tasarla. Yükleniyor, boş, hata, iptal, eski kaynak ve inceleme bekliyor durumlarını ayrı göster. Klavye kullanımı ve odak dönüşünü tasarım kararlarına bağla.\n\ndesign.md içinde iş alındı/onay bekliyor/çalışıyor/kısmen tamamlandı/sonuç belirsiz/iptal istendi/iptal edildi/tamamlandı durumlarını kullanıcı mesajı, yapılabilecek işlem ve teslim koşuluyla eşle. Boş ekran, hata ve eski kaynak durumlarını da koru. İptal isteği ile işlemin gerçekten durmasını aynı sonuç sayma. Kısmen tamamlanmış araştırmada bilinen eksik işi, sonucu belirsiz dış işlemde ise henüz doğrulanamayan etkiyi ayrı açıkla. Her durum için metin veya tel kafes örneği hazırla; çalışan ekran kanıtını U11’e bırak. docs/traceability.md içindeki gereksinim–ekran ilişkilerini güncelle.",
+      "acceptance": "İptal edilmiş veya kaynağı değişmiş taslak arayüzde kabul edilmiş görünmemeli. Üretilen tasarımın tarayıcıda denenmediğini belirt. Kısmen tamamlandı ile sonuç belirsiz aynı başarı mesajını kullanmamalı. Tasarım örneği tarayıcı gözlemi gibi sunulmamalı.",
       "prompt": "prompts/03.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -62,15 +65,17 @@
       "inputs": [
         "prd.md",
         "design.md",
-        "environment.md"
+        "environment.md",
+        "docs/traceability.md"
       ],
       "outputs": [
         "tech-stack.md",
         "dependency-policy.md",
-        "adr/0001-stack.md"
+        "adr/0001-stack.md",
+        "docs/traceability.md"
       ],
-      "task": "İki uygulanabilir teknoloji seçeneğini kurulum, bakım, test ve model bağlantısı açısından karşılaştır. Öğretim adayı Python, FastAPI, HTML şablonları ve SQLite; alternatif TypeScript tabanlı tek dil yaklaşımıdır. Birini seçip gerekçeyi yaz. Seçilecek paketlerin resmî belgelerini ve registry kayıtlarını doğrula; kurulumdan önce kesin sürümleri ve kilit dosyası yöntemini kaydet.",
-      "acceptance": "Güncel sürüm, lisans veya paket adı doğrulanamıyorsa bağımlılık ekleme. Karar dosyası kurulmuş uygulama kanıtı sayılmamalı.",
+      "task": "İki uygulanabilir teknoloji seçeneğini kurulum, bakım, test ve model bağlantısı açısından karşılaştır. Öğretim adayı Python, FastAPI, HTML şablonları ve SQLite; alternatif TypeScript tabanlı tek dil yaklaşımıdır. Birini seçip gerekçeyi yaz. Seçilecek paketlerin resmî belgelerini ve registry kayıtlarını doğrula; kurulumdan önce kesin sürümleri ve kilit dosyası yöntemini kaydet.\n\nVeri hassasiyetini ve kurum sınırını aday teknoloji karşılaştırmasından önce dependency-policy.md içinde belirle. İzin verilmeyen bir sağlayıcı düşük maliyetle seçilemez. docs/traceability.md içinde teknoloji kararını etkilenen gereksinimlere bağla.",
+      "acceptance": "Güncel sürüm, lisans veya paket adı doğrulanamıyorsa bağımlılık ekleme. Karar dosyası kurulmuş uygulama kanıtı sayılmamalı. Teknoloji kararı veri sınırını sonradan eklenen bir not gibi bırakmamalı.",
       "prompt": "prompts/04.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -81,15 +86,17 @@
       "inputs": [
         "prd.md",
         "acceptance.md",
-        "tech-stack.md"
+        "tech-stack.md",
+        "docs/traceability.md"
       ],
       "outputs": [
         "data-model.md",
         "api-contract.md",
-        "schemas/answer.schema.json"
+        "schemas/answer.schema.json",
+        "docs/traceability.md"
       ],
-      "task": "Workspace, SourceRevision, Question, Claim, Citation ve ReviewDecision varlıklarını tanımla. Atıfta source_id, revision ve alıntı metnini tut. Eksik yanıt ile boş yanıtı ayır. JSON Schema içine ek alan, geçersiz durum ve eksik kaynak için ret kuralları koy. Kaynak revizyonu değişince inceleme kararının geçersizleşmesini tasarla.",
-      "acceptance": "Geçerli JSON ile doğru iddia ayrı kontroller olmalı. Aynı alıntı farklı iddiayı destekliyormuş gibi kabul edilmemeli.",
+      "task": "Workspace, SourceRevision, Question, Claim, Citation ve ReviewDecision varlıklarını tanımla. Atıfta source_id, revision ve alıntı metnini tut. Eksik yanıt ile boş yanıtı ayır. JSON Schema içine ek alan, geçersiz durum ve eksik kaynak için ret kuralları koy. Kaynak revizyonu değişince inceleme kararının geçersizleşmesini tasarla.\n\ndocs/traceability.md içinde her gereksinimi veri/API alanı ve olumlu/olumsuz sözleşme kontrolüyle eşle. JSON şemasının kabul ettiği ama alıntının iddiayı desteklemediği örneği ayrı kontrol olarak koru.",
+      "acceptance": "Geçerli JSON ile doğru iddia ayrı kontroller olmalı. Aynı alıntı farklı iddiayı destekliyormuş gibi kabul edilmemeli. Şema geçişi kaynak desteği veya insan kabulü sütununu otomatik doldurmamalı.",
       "prompt": "prompts/05.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -102,15 +109,17 @@
         "design.md",
         "tech-stack.md",
         "data-model.md",
-        "acceptance.md"
+        "acceptance.md",
+        "docs/traceability.md"
       ],
       "outputs": [
         "roadmap.md",
         "tasks.md",
-        "dependencies.md"
+        "dependencies.md",
+        "docs/traceability.md"
       ],
-      "task": "Önce model çağrısız tek belge-soru-taslak akışını, sonra gerçek modeli, ardından bilgi getirme ve ajan aşamalarını sırala. Her işe gereksinim kimliği, girdi, çıktı, önkoşul ve doğrulama ekle. Döngüsel bağımlılığı bul. Görev durumlarını planned olarak başlat; insan veya ajan henüz yapmadığı işi done yazmasın.",
-      "acceptance": "Her REQ en az bir işe ve kabul kontrolüne bağlanmalı. Bir görev sadece başka bir belgenin başlığını tekrarlamamalı.",
+      "task": "Önce model çağrısız tek belge-soru-taslak akışını, sonra gerçek modeli, ardından bilgi getirme ve ajan aşamalarını sırala. Her işe gereksinim kimliği, girdi, çıktı, önkoşul ve doğrulama ekle. Döngüsel bağımlılığı bul. Görev durumlarını planned olarak başlat; insan veya ajan henüz yapmadığı işi done yazmasın.\n\ndocs/traceability.md içine görev kimliklerini ekle; henüz yazılmamış kod ve test bağlantıları planned kalsın. REQ-005 değişikliğinde tasarım, veri sözleşmesi ve görevlerin etkilendiği satırları birlikte güncelle. Aynı görev için yalnız plan hazırlama ile onaylı kapsamda düzenleme başlangıcını ayrı çalışma kayıtları olarak U07’ye devret.",
+      "acceptance": "Her REQ en az bir işe ve kabul kontrolüne bağlanmalı. Bir görev sadece başka bir belgenin başlığını tekrarlamamalı. Bir gereksinimin değişmesi ilgili görevleri ve kabul koşulunu izlenebilir biçimde etkilemeli; plan sonucu uygulama sonucu sayılmamalı.",
       "prompt": "prompts/06.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -123,7 +132,8 @@
         "tech-stack.md",
         "tasks.md",
         "acceptance.md",
-        "environment.md"
+        "environment.md",
+        "docs/traceability.md"
       ],
       "outputs": [
         "AGENTS.md",
@@ -132,10 +142,12 @@
         "instruction-tests.json",
         "agent-adapters/",
         "README.md",
-        ".gitignore"
+        ".gitignore",
+        "evals/ax-cases.json",
+        "docs/ax-review.md"
       ],
-      "task": "Önce environment.md içinden kullanılan ajan aracını, arayüzünü ve sürümünü belirle. Model adı ile ajan aracını ayrı kaydet. AGENTS.md içine ortak proje sınırlarını, doğrulanmış kurulum ve test komutlarını, belge okuma sırasını ve durma koşullarını yaz. Henüz var olmayan komutu çalışır gibi sunma. docs-map.md hangi görevde hangi belgenin okunacağını göstersin.\n\nagent-compatibility.md içinde companion paketinin AJAN_UYUMLULUGU.md rehberindeki araçlar için resmî belge kaynağını, kontrol tarihini, yükleme koşulunu ve yerel deneme durumunu ayrı kaydet. Tüm araçları kurma veya aynı anda etkinleştirme. Kullanılan araç için AGENTS.md yeterliyse başka giriş dosyası üretme. Gerekiyorsa agent-adapters/ içinde hedef konumu belirtilmiş şablon üret: Claude Code için CLAUDE.md, Gemini CLI için GEMINI.md, Copilot için .github/copilot-instructions.md, Cursor için kapsama bağlı .cursor/rules/*.mdc. ZCode, Qoder ve diğer araçlarda da yalnız belgelenmiş dosya ve ayarları kullan. Qoder seçildiğinde IDE ile CLI kayıtlarını ayır; genel deneme vakalarını rehberdeki Qoder açıklamasına göre uyarla. Barındırıcı IDE, eklenti ve harici CLI ayrımını kaydet. Dosyaları birleştirme, ilk eşleşeni seçme, elle okuma ve otomatik içe aktarma davranışlarını birbirine eşitleme. Seçilen araç belgesinin desteklemediği bir özelliği başarısız kurulum gibi gösterme. Ortak kuralları bağımsız kopyalar olarak çoğaltma. Belge içe aktarma ile ajandan dosyayı okumasını istemeyi ayır; Markdown bağlantısını otomatik yükleme garantisi sayma.\n\ninstruction-tests.json içine ortak yönerge, araca özgü ek, alt dizin kapsamı, çelişen kural ve eksik dosya, ilk eşleşen dosyanın seçimi ve IDE içindeki harici ajan vakalarını yaz. ZCode seçildiyse companion örneğindeki dört araca özgü vakayı da uyarlayarak ekle. Seçilen uyarlamayı yalnız okurun uygulama köküne yerleştirdikten sonra yeni oturumda hangi yönergenin yüklendiğini ve örnek göreve nasıl uygulandığını dene. Bağlam veya yükleme kaydı varsa sakla; yalnız ajanın okudum demesini yeterli sayma. Denenmeyen araçları not_run ve gözlemlerini null bırak. Ürün içindeki rol kataloğunu agent-roles.md diye adlandır; AGENTS.md ile yalnız harf büyüklüğü farklı ikinci dosya kullanma.\n\nREADME.md içine doğrulanmış başlangıç yolunu, .gitignore içine yerel çıktı ve sır dosyası dışlamalarını yaz; mevcut kullanıcı kurallarını koru.",
-      "acceptance": "Model, ajan aracı, sürüm ve arayüz ayrı kayıtlı olmalı. Seçilen araçta ortak yönergenin yüklenmesi ve örnek görevde uygulanması için gözlem bulunmalı; gözlenmeyen destek başarılı sayılmamalı. Alt dizin ve çelişki davranışı kullanılan aracın kurallarıyla karşılaştırılmalı. CLAUDE.md bütün okurlara zorunlu tutulmamalı; design.md ve roadmap.md dosyalarının her araçta kendiliğinden yüklendiği ileri sürülmemeli. Aynı ortak kuralın çelişen kopyaları veya AGENTS.md/agents.md ad çakışması kalmamalı. Yönerge dosyası teknik izin ayarı veya erişim kontrolü yerine geçmemeli.",
+      "task": "Önce environment.md içinden kullanılan ajan aracını, arayüzünü ve sürümünü belirle. Model adı ile ajan aracını ayrı kaydet. AGENTS.md içine ortak proje sınırlarını, doğrulanmış kurulum ve test komutlarını, belge okuma sırasını ve durma koşullarını yaz. Henüz var olmayan komutu çalışır gibi sunma. docs-map.md hangi görevde hangi belgenin okunacağını göstersin.\n\nagent-compatibility.md içinde companion paketinin AJAN_UYUMLULUGU.md rehberindeki araçlar için resmî belge kaynağını, kontrol tarihini, yükleme koşulunu ve yerel deneme durumunu ayrı kaydet. Tüm araçları kurma veya aynı anda etkinleştirme. Kullanılan araç için AGENTS.md yeterliyse başka giriş dosyası üretme. Gerekiyorsa agent-adapters/ içinde hedef konumu belirtilmiş şablon üret: Claude Code için CLAUDE.md, Gemini CLI için GEMINI.md, Copilot için .github/copilot-instructions.md, Cursor için kapsama bağlı .cursor/rules/*.mdc. ZCode, Qoder ve diğer araçlarda da yalnız belgelenmiş dosya ve ayarları kullan. Qoder seçildiğinde IDE ile CLI kayıtlarını ayır; genel deneme vakalarını rehberdeki Qoder açıklamasına göre uyarla. Barındırıcı IDE, eklenti ve harici CLI ayrımını kaydet. Dosyaları birleştirme, ilk eşleşeni seçme, elle okuma ve otomatik içe aktarma davranışlarını birbirine eşitleme. Seçilen araç belgesinin desteklemediği bir özelliği başarısız kurulum gibi gösterme. Ortak kuralları bağımsız kopyalar olarak çoğaltma. Belge içe aktarma ile ajandan dosyayı okumasını istemeyi ayır; Markdown bağlantısını otomatik yükleme garantisi sayma.\n\ninstruction-tests.json içine ortak yönerge, araca özgü ek, alt dizin kapsamı, çelişen kural ve eksik dosya, ilk eşleşen dosyanın seçimi ve IDE içindeki harici ajan vakalarını yaz. ZCode seçildiyse companion örneğindeki dört araca özgü vakayı da uyarlayarak ekle. Seçilen uyarlamayı yalnız okurun uygulama köküne yerleştirdikten sonra yeni oturumda hangi yönergenin yüklendiğini ve örnek göreve nasıl uygulandığını dene. Bağlam veya yükleme kaydı varsa sakla; yalnız ajanın okudum demesini yeterli sayma. Denenmeyen araçları not_run ve gözlemlerini null bırak. Ürün içindeki rol kataloğunu agent-roles.md diye adlandır; AGENTS.md ile yalnız harf büyüklüğü farklı ikinci dosya kullanma.\n\nREADME.md içine doğrulanmış başlangıç yolunu, .gitignore içine yerel çıktı ve sır dosyası dışlamalarını yaz; mevcut kullanıcı kurallarını koru.\n\nagent-compatibility.md içinde yönerge önceliği, ayar birleşmesi ve teknik izin kararını üç ayrı başlık yap. Kaynak kitaptaki sistem/rol/bağlam sırasını bütün ürünlerin teknik öncelik kuralı sayma. Her kullanılan arayüzün resmî belgesini ve sürümünü kaydet. Ayar kapsamı tablosunda kuruluş, kullanıcı, ortak proje ve yerel makine kararının sahibini, keşif yolunu, sürüm denetimine girip girmediğini ve geri dönüşünü göster. Tek değer çakışması ile izin dizilerinin birleşmesini instruction-tests.json içinde ayrı vakalar yap; deny/ask/allow sonucunu yalnız belge içeriğinden tahmin ederek gözlendi yazma.\n\nİsteğe bağlı temiz deneme deposunda manuel onay, düzenleme kabulü ve salt plan başlangıcını aynı küçük değişiklikle karşılaştır. Claude Code örneğinde güncel sürümün acceptEdits ve plan davranışını resmî kaynağa bağla; diğer araçlara aynı isimleri zorla taşıma. Başlangıç modu, sonradan mod değişimi, düzenleme öncesi/sonrası diff ve geri dönüş ayrı kayıt olsun. Yüklü kaynak, ayar biçimi ve etkin izin için farklı tanılama kanıtı ara. Kullanıcı veya kuruluş profilini değiştirme; erişilemeyen deneyi not_run bırak.\n\nPusula’ya özgü üç yasak, üç doğrulama ve bir PR durdurma kuralı yaz. Bu sayılar öğretim alıştırmasıdır, güvenlik standardı değildir. Sır sızdırma, eski revizyonu kabul etme ve kapsam dışı gönderim için teknik kontrolün nerede gerektiğini belirt. Sekiz kısa durumu en küçük yeterli katmana yerleştir: Türkçe çıktı tercihi, belge üretim yöntemi, biçim kontrolü, dosya okuma izni, tekrar bütçesi, checkpoint, görev devri ve insan teslim onayı. Yönerge, skill, ayar/izin, hook, loop ve harness seçimlerini gerekçelendir.\n\nevals/ax-cases.json içinde üç AX vakası tasarla: REQ-005 için doğru belgeyi bulma; salt kaynak sorgusunda yazma aracı yerine arama aracını seçme; kaynak revizyonu değişince eski onayı kullanmadan görevi tamamlama. docs/ax-review.md içinde keşif, seçim ve görev başarısını ayrı gözlem alanlarında tut. Otomatik yükleme kaydı ile görev sırasında açık dosya okumasını ayır. docs/traceability.md üzerinden ilgili kabul kimliğine bağla.\n\nMod deneyinde Manual ve Plan koşullarına aynı değişmemiş girdiyi ver; düzenlemeye izin verme ve her iki koşulda değişmeyen diffi kaydet. acceptEdits koşulunda yalnız kapsam içindeki dosya değişikliğini incele; kapsam dışı terminal/ağ işlemi izninin ayrıca değerlendirilmesi gerektiğini doğrula. Gerçek mod geçişini durum göstergesiyle kaydet. Önceden üretilmiş bir demo.diff varken Plan moduna geçmenin o değişiklikleri geri almadığını kontrol et. Üç yasak ve üç doğrulama kuralını etkilenen gerçek belge veya tasarlanmış ürün yolu ile bağla; henüz üretilmeyen kod yolunu planned göster.\n\nAyar laboratuvarını mod denemesinden ayrı, temiz ve atılabilir bir depo kopyasında yap. Başlangıç Git durumunu, commit ve araç sürümünü kaydet; mevcut kullanıcı/kuruluş ayarını ezme. Claude Code örneğinde seçilen sürümün resmî sözdizimine göre iki ask girdisi ve üç Read deny girdisiyle, tek değer önceliği ve izin dizisi birleşmesini ayrı dene. Başka araçta aynı sözdizimini varsayma. Deneme dosyalarını yalnız bu kopyadan kaldırdıktan sonra aynı commit ve temiz Git durumuna dönüldüğünü göster. Etkin izin sonucu gözlenemiyorsa bunu belge okumasıyla tamamlanmış sayma.",
+      "acceptance": "Model, ajan aracı, sürüm ve arayüz ayrı kayıtlı olmalı. Seçilen araçta ortak yönergenin yüklenmesi ve örnek görevde uygulanması için gözlem bulunmalı; gözlenmeyen destek başarılı sayılmamalı. Alt dizin ve çelişki davranışı kullanılan aracın kurallarıyla karşılaştırılmalı. CLAUDE.md bütün okurlara zorunlu tutulmamalı; design.md ve roadmap.md dosyalarının her araçta kendiliğinden yüklendiği ileri sürülmemeli. Aynı ortak kuralın çelişen kopyaları veya AGENTS.md/agents.md ad çakışması kalmamalı. Yönerge dosyası teknik izin ayarı veya erişim kontrolü yerine geçmemeli. Doğru dosyayı bulmuş olmak görevi tamamlamak sayılmamalı. Ayar birleşmesi testi yönerge önceliği testinin yerine geçmemeli. Üç yasak/üç doğrulama/PR durdurma alıştırması ve sekiz katman seçimi gerekçeli olmalı. Mod denemeleri yalnız gerçekten yürütüldüğünde sonuç taşımalı. Manual/Plan karşılaştırmasında girdi ve diff değişmemeli. Mod rozeti, önceki değişikliklerin geri alındığı anlamına gelmemeli. Ayar laboratuvarı ayrı başlangıç/son durum kanıtı ve mevcut ayarı koruma sınırı taşımalı; temizlenemeyen kopya hazır sayılmamalı.",
       "prompt": "prompts/07.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -146,15 +158,20 @@
       "inputs": [
         "AGENTS.md",
         "docs-map.md",
-        "acceptance.md"
+        "acceptance.md",
+        "docs/ax-review.md",
+        "evals/ax-cases.json"
       ],
       "outputs": [
         "skills/pusula-belge-uret/SKILL.md",
         "skills/pusula-kaynak-denetle/SKILL.md",
-        "skill-tests.json"
+        "skill-tests.json",
+        "skills/pusula-belge-uret/references/belge-iliskileri.md",
+        "docs/skill-compatibility.md",
+        "docs/ax-review.md"
       ],
-      "task": "Belge üretme ile iddia-kaynak denetimini iki dar skill olarak paketle. Açıklamaya kullanım anını yaz. Her skill için olumlu çağrı, ilgisiz soru ve eksik girdi örneği hazırla. Kaynak içindeki işlem talimatını veri olarak ele al. Paket biçimi ve modelin doğru skill seçmesi için ayrı sonuç alanları oluştur.",
-      "acceptance": "Skill bir izin mekanizması olarak sunulmamalı. Kurulum, tetiklenme ve davranış gözlemi ayrı kaydedilmeli.",
+      "task": "Belge üretme ile iddia-kaynak denetimini iki dar skill olarak paketle. Açıklamaya kullanım anını yaz. Her skill için olumlu çağrı, ilgisiz soru ve eksik girdi örneği hazırla. Kaynak içindeki işlem talimatını veri olarak ele al. Paket biçimi ve modelin doğru skill seçmesi için ayrı sonuç alanları oluştur.\n\nskills/pusula-belge-uret/references/belge-iliskileri.md dosyasında görev–gerekli girdi–çıktı ilişkisini yaz ve SKILL.md içinden yalnız ihtiyaç duyulan bölümün okunmasını iste. Skill kaynağının kökü ile Pusula çalışma kökünü ayrı belirt. docs/skill-compatibility.md içinde paket biçimi, kapsam/keşif, çağırma, davranış ve teknik izin sütunlarını ayır. Aynı adlı kullanıcı/proje skillinde hangi kapsamın seçildiğini kullanılan aracın belgesine ve varsa yükleme kaydına bağla. Taşınmış skill paketiyle temiz proje kökünde göreli başvuruları sınayacak vaka ekle.\n\nYardımcı dosyanın sözleşmesini amaç, girdi, çıktı, hata ve yan etkiyle tanımla. Yardımcı betik gerekmiyorsa bunu belirt; doğrulama adına gereksiz çalıştırılabilir dosya üretme. Dosya biçimi ile kaynak desteğini bağımsız denetle. Dinamik ünlem/kabuk yerleştirmesi destekleyen araçlarda bunun modelden önce çalışan bir ön işlem olduğunu açıkla; taşınabilir pakette bu özelliği kullanma ve başka üründe çalışacağı varsayımını reddet.\n\nskill-tests.json içine aynı model, kaynak revizyonu, görev ve izinlerle skill kapalı/açık karşılaştırmasını ekle. Her iki koşulun ham çıktısını ayrı sakla; sadece skill açık sonucu varsa katkı iddiası kurma. Paket biçimi, doğru keşif ve görevi doğru tamamlama ayrı sonuçlardır. En çok iki düzeltme denemesi kullan; bu pilot için seçilmiş sınırdır. Hata sürerse bulguyu açık bırak; sınırsız iyileştirme sözü verme. docs/ax-review.md içindeki keşif ve görev başarısı kayıtlarını skill vakalarıyla güncelle.\n\nCompaniondaki taşınabilir skills/ dizini ile seçilen aracın gerçekten keşfettiği kurulum dizinini tabloda ayrı göster. Paket içi başvuru paket kökünden, üretilen proje belgesi uygulama kökünden çözülmeli. Düzeltme sınırı yalnız bu görevde listelenen çıktı dosyaları ve iki denemedir; başka dosyaları değiştirerek veya deneme sayısını artırarak kabulü geçerli hâle getirme.",
+      "acceptance": "Skill bir izin mekanizması olarak sunulmamalı. Kurulum, tetiklenme ve davranış gözlemi ayrı kaydedilmeli. Taşınan paket başvurusunu çözmeli; kurulum başarılı diye davranış başarılı sayılmamalı. Skill kapalı/açık koşullarda karşılaştırılabilir girdiler korunmalı. Kabuk ön işlemi taşınabilir metin gibi sunulmamalı. İki düzeltme sonunda kapanmayan bulgu açık kalmalı. Taşınabilir paket dizini gerçek keşif dizini sanılmamalı; düzeltme hedef dosya kapsamını veya deneme bütçesini genişletmemeli.",
       "prompt": "prompts/08.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -206,15 +223,17 @@
         "design.md",
         "data-model.md",
         "api-contract.md",
-        "AGENTS.md"
+        "AGENTS.md",
+        "docs/traceability.md"
       ],
       "outputs": [
         "app/",
         "tests/",
-        "runbook.md"
+        "runbook.md",
+        "docs/traceability.md"
       ],
-      "task": "Yol haritasındaki ilk dikey iş dilimini uygula: sentetik belgeyi ekle, soru aç, sabit öğretim yanıtıyla kaynaklı taslak göster, insan incelemesini bekle. Testi gerçek kabul koşulundan çıkar. Çalıştırılan komutları, çıkış kodlarını ve tarayıcı gözlemini ayrı kaydet. Sabit yanıtı ekranda örnek veri olarak belirt.",
-      "acceptance": "Model olmadan geçen akışa gerçek model sonucu deme. İlk sürüm, kaynak revizyonunu kaybetmeden belge-soru-taslak ilişkisini göstermeli.",
+      "task": "Yol haritasındaki ilk dikey iş dilimini uygula: sentetik belgeyi ekle, soru aç, sabit öğretim yanıtıyla kaynaklı taslak göster, insan incelemesini bekle. Testi gerçek kabul koşulundan çıkar. Çalıştırılan komutları, çıkış kodlarını ve tarayıcı gözlemini ayrı kaydet. Sabit yanıtı ekranda örnek veri olarak belirt.\n\ndocs/traceability.md içindeki planned kod/test bağlarını yalnız üretilen dosyalar ve gerçekten çalışan kabul kontrolleriyle güncelle. İsteğe bağlı 45 dakikalık GUI prototip kolunu runbook.md içinde ayrı kaydet: otomatik adımlar, insan müdahalesi, kesinti/kota ve elde edilen ekranlar. Kaynak rev2 taslağı varken rev3 ekle; eski taslağın kabul edilmiş görünmesini reddet. Kota 40. dakikada biterse kalan süreyi yapılmış sayma. Bu karşılaştırma kolu erişim yoksa not_run kalır.\n\nSüreli GUI kolunun sonunda gözlenen bir duruma dayalı risk cümlesi yaz: örneğin revizyon değişince eski taslağın kabul edilmiş görünmesi hangi kullanıcı kararını bozabilir? Gözlenmeyen riskin gerçekleştiğini söyleme; varsayımı ayrı belirt.",
+      "acceptance": "Model olmadan geçen akışa gerçek model sonucu deme. İlk sürüm, kaynak revizyonunu kaybetmeden belge-soru-taslak ilişkisini göstermeli. GUI prototipinin açılması REQ-005 kabulü değildir; süre ve müdahale günlüğü ile revizyon davranışı birlikte incelenmeli. Risk cümlesi deneme günlüğündeki gözleme bağlanmalı; genel bir araç eleştirisi kabul kanıtı sayılmamalı.",
       "prompt": "prompts/11.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -251,8 +270,8 @@
         "context-index.json",
         "evals/context-results.json"
       ],
-      "task": "Aynı görev için tam belge yığını, seçilmiş parçalar ve gerektiğinde arama yöntemlerini karşılaştır. Kaynak kimliği ve revizyonu bağlamdan düşmesin. Oturum özeti kararları ve çözülmemiş soruları korusun. Bağlam boyutu ile kabul edilen sonucu ayrı ölç.",
-      "acceptance": "Daha kısa bağlam otomatik olarak daha doğru sayılmamalı. Özet, silinmiş kaynağı geçerli bilgiye dönüştürmemeli.",
+      "task": "Aynı görev için tam belge yığını, seçilmiş parçalar ve gerektiğinde arama yöntemlerini karşılaştır. Kaynak kimliği ve revizyonu bağlamdan düşmesin. Oturum özeti kararları ve çözülmemiş soruları korusun. Bağlam boyutu ile kabul edilen sonucu ayrı ölç.\n\nBağlam sıkıştırma kolunda karar, kaynak kimliği/revizyonu, açık soru ve yarım iş için kontrol listesi oluştur. Tam bağlam ve sıkıştırılmış bağlamla aynı görevi yürüt; token azalması ile bu dört bilginin korunmasını ayrı kaydet.",
+      "acceptance": "Daha kısa bağlam otomatik olarak daha doğru sayılmamalı. Özet, silinmiş kaynağı geçerli bilgiye dönüştürmemeli. Daha kısa özet, eski kaynağı etkinleştirmemeli; görev devamı için gereken açık soruyu silememeli.",
       "prompt": "prompts/13.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -262,14 +281,15 @@
       "title": "Belleğin yaşam döngüsünü yönetmek",
       "inputs": [
         "context-policy.md",
-        "data-model.md"
+        "data-model.md",
+        "context-index.json"
       ],
       "outputs": [
         "memory-policy.md",
         "memory-tests.json"
       ],
-      "task": "Oturum notu, görev durumu ve kullanıcının açık tercihini ayrı sakla. Tercih kaynağı, revizyonu, süresi ve silme yolunu tanımla. Eski tercih, iptal edilmiş karar ve yeni oturumda devam örneklerini çalıştır.",
-      "acceptance": "Kaynak içeriği kullanıcı tercihi gibi belleğe yazılmamalı. Silme isteği türev özet ve önbelleğe de uygulanmalı.",
+      "task": "Oturum notu, görev durumu ve kullanıcının açık tercihini ayrı sakla. Tercih kaynağı, revizyonu, süresi ve silme yolunu tanımla. Eski tercih, iptal edilmiş karar ve yeni oturumda devam örneklerini çalıştır.\n\nSıkıştırılmış oturum notuyla devam ederken kaynak revizyonunu yeniden doğrula. İptal edilmiş iş ve silinmiş tercih için özetten geri getirme vakası ekle.",
+      "acceptance": "Kaynak içeriği kullanıcı tercihi gibi belleğe yazılmamalı. Silme isteği türev özet ve önbelleğe de uygulanmalı. Özet veya checkpoint, iptal ve silme kararını geri çevirememeli.",
       "prompt": "prompts/14.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -306,8 +326,8 @@
         "graph-results.json",
         "app/graph/"
       ],
-      "task": "Kaynak, iddia, kavram ve karar ilişkilerinden küçük bir graf kur. Elle verilmiş ilişkileri modelin çıkardığı ilişkilerden ayır. Düz aramayla aynı soruları kullan; ilişki dayanağı, revizyon, silme ve yanlış bağlantı senaryolarını değerlendir.",
-      "acceptance": "Her soruda graf kullanma zorunluluğu koyma. Graf eklemenin gözlenmiş yararı ve bakım maliyeti ayrı yazılmalı.",
+      "task": "Kaynak, iddia, kavram ve karar ilişkilerinden küçük bir graf kur. Elle verilmiş ilişkileri modelin çıkardığı ilişkilerden ayır. Düz aramayla aynı soruları kullan; ilişki dayanağı, revizyon, silme ve yanlış bağlantı senaryolarını değerlendir.\n\nBilgi grafı, kod bağımlılık grafı ve yürütme grafını ayrı düğüm/kenar örnekleriyle graph-design.md içinde karşılaştır. Bilgi grafındaki kaynak–iddia bağlantısının dayanağını; kod grafında revizyon ve tarama kapsamını yaz. Yürütme grafının gerçek görev sırası U20’de üretilecektir.",
+      "acceptance": "Her soruda graf kullanma zorunluluğu koyma. Graf eklemenin gözlenmiş yararı ve bakım maliyeti ayrı yazılmalı. Türü açıklanmayan graf kenarı yetki veya kaynak desteği kanıtı sayılamaz.",
       "prompt": "prompts/16.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -321,10 +341,11 @@
       ],
       "outputs": [
         "tool-contracts.json",
-        "permissions.md"
+        "permissions.md",
+        "policies/delegation.yaml"
       ],
-      "task": "Kaynak arama, taslak hazırlama ve inceleme kaydetme işlemlerini ayrı araçlar yap. Parametre, sonuç, hata ve yan etkiyi tanımla. Modelin kurum veya onay kimliği üretmesine izin verme; güvenilir uygulama bağlamını kullan. Yetkisiz ve süresi dolmuş onay örneklerini dene.",
-      "acceptance": "Araç açıklaması erişim kontrolünün yerine geçmemeli. Bir yazma isteği salt okunur görevden türetilmemeli.",
+      "task": "Kaynak arama, taslak hazırlama ve inceleme kaydetme işlemlerini ayrı araçlar yap. Parametre, sonuç, hata ve yan etkiyi tanımla. Modelin kurum veya onay kimliği üretmesine izin verme; güvenilir uygulama bağlamını kullan. Yetkisiz ve süresi dolmuş onay örneklerini dene.\n\npolicies/delegation.yaml içinde kim, hangi görev/kaynak/işlem için, hangi süreyle yetki devredebilir sorularını yanıtla. Keşif kaydını, kimlik kanıtını ve işlem yetkisini ayrı tut. Kayıtta bulunan yetkisiz ajanı ve süresi dolmuş devri reddeden vakaları tool-contracts.json içinde tanımla.",
+      "acceptance": "Araç açıklaması erişim kontrolünün yerine geçmemeli. Bir yazma isteği salt okunur görevden türetilmemeli. Modelin ürettiği ajan kartı tek başına yetki sağlamamalı.",
       "prompt": "prompts/17.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -334,15 +355,18 @@
       "title": "MCP bağlantısını kurup sınamak",
       "inputs": [
         "tool-contracts.json",
-        "permissions.md"
+        "permissions.md",
+        "evals/ax-cases.json",
+        "docs/ax-review.md"
       ],
       "outputs": [
         "mcp-design.md",
         "mcp-tests.json",
-        "app/mcp/"
+        "app/mcp/",
+        "docs/ax-review.md"
       ],
-      "task": "Önce salt okunur Pusula kaynak aramasını MCP üzerinden sun. Host, client ve server sorumluluklarını açıkla. Kullanılan protokol ve SDK sürümünü resmî kaynaktan sabitle. Bağlantı kesilmesi, erişim reddi ve araç çıktısındaki zararlı talimat örneklerini dene.",
-      "acceptance": "MCP uyumu görev yetkisi sağlamaz. Gerçek sunucu testi ile temsilî araç çağrısını ayrı kaydet.",
+      "task": "Önce salt okunur Pusula kaynak aramasını MCP üzerinden sun. Host, client ve server sorumluluklarını açıkla. Kullanılan protokol ve SDK sürümünü resmî kaynaktan sabitle. Bağlantı kesilmesi, erişim reddi ve araç çıktısındaki zararlı talimat örneklerini dene.\n\nU07 AX vakalarını gerçek MCP araç keşfine uyarla; aracı bulma, salt okunur uygun aracı seçme ve kaynaklı görevi bitirme sonuçlarını docs/ax-review.md içine ayrı yaz.",
+      "acceptance": "MCP uyumu görev yetkisi sağlamaz. Gerçek sunucu testi ile temsilî araç çağrısını ayrı kaydet. MCP bağlantısı açıldı diye görev başarısı verilmemeli.",
       "prompt": "prompts/18.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -358,10 +382,11 @@
       "outputs": [
         "loop-spec.md",
         "loop-state.json",
-        "loop-tests.json"
+        "loop-tests.json",
+        "policies/autonomy-budget.yaml"
       ],
-      "task": "Hedef, tetikleyici, bir çevrimin işi, doğrulayıcı, bütçe, yeniden deneme ve bitiş durumlarını tanımla. Öğretim sınırı olarak en çok üç deneme kullan; bu sayı evrensel standart değildir. Başarısızlıkta aynı promptu körlemesine yineleme. İptal, bütçe tükenmesi ve insan incelemesi durumlarında yeni etki üretme.",
-      "acceptance": "Sayaç ve durdurma koşulu uygulamada denetlenmeli. Ajanın bitti demesi kabul kanıtı sayılmamalı.",
+      "task": "Hedef, tetikleyici, bir çevrimin işi, doğrulayıcı, bütçe, yeniden deneme ve bitiş durumlarını tanımla. Öğretim sınırı olarak en çok üç deneme kullan; bu sayı evrensel standart değildir. Başarısızlıkta aynı promptu körlemesine yineleme. İptal, bütçe tükenmesi ve insan incelemesi durumlarında yeni etki üretme.\n\npolicies/autonomy-budget.yaml içinde çağrı, süre, maliyet ve izin verilen işlem kapsamını tanımla. Öğretim için belirlenen üç deneme sınırı korunur; sınırlardan herhangi biri dolduğunda yeni etki başlatma. Sağlayıcı maliyeti ölçülemiyorsa null/gerekçe kaydet ve çağrı/süre gibi ölçülebilen bağımsız sınırı uygula.",
+      "acceptance": "Sayaç ve durdurma koşulu uygulamada denetlenmeli. Ajanın bitti demesi kabul kanıtı sayılmamalı. Bilinmeyen maliyet sıfır veya sınırsız izin sayılmaz; sınır koşulları loop-tests.json içinde sınanmalı.",
       "prompt": "prompts/19.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -373,15 +398,17 @@
         "loop-spec.md",
         "tool-contracts.json",
         "permissions.md",
-        "memory-policy.md"
+        "memory-policy.md",
+        "policies/autonomy-budget.yaml",
+        "graph-design.md"
       ],
       "outputs": [
         "harness-design.md",
         "harness-manifest.json",
         "app/harness/"
       ],
-      "task": "Model çağrısı, araç yürütme, durum deposu, değerlendirme ve teslim kapısını ayır. Her bileşenin giriş ve çıkışını tanımla. Geliştirme ajanının çalışma çatısıyla Pusula içindeki çalışma çatısını ayrı göster. Durum geçişleri ve yan etkiler için uygulama denetimi kur.",
-      "acceptance": "Bir Markdown manifesti kendi başına yürütücü değildir. Kodun hangi alanı gerçekten okuduğunu göster.",
+      "task": "Model çağrısı, araç yürütme, durum deposu, değerlendirme ve teslim kapısını ayır. Her bileşenin giriş ve çıkışını tanımla. Geliştirme ajanının çalışma çatısıyla Pusula içindeki çalışma çatısını ayrı göster. Durum geçişleri ve yan etkiler için uygulama denetimi kur.\n\nÖzerklik bütçesinin kodda nerede okunduğunu ve her araç etkisinden önce nasıl denetlendiğini göster. graph-design.md içindeki tür ayrımından yararlanarak yürütme grafının durum, olay ve geçişlerini tanımla; bilgi grafındaki ilişkilerden işlem yetkisi çıkarma.",
+      "acceptance": "Bir Markdown manifesti kendi başına yürütücü değildir. Kodun hangi alanı gerçekten okuduğunu göster. YAML dosyasının varlığı bütçenin uygulandığını göstermez; sınır aşımında yeni etki sayısı sıfır olmalı.",
       "prompt": "prompts/20.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -397,8 +424,8 @@
         "resume-protocol.md",
         "recovery-tests.json"
       ],
-      "task": "Checkpoint, görev kimliği, kaynak revizyonu ve teslim kaydını kalıcı tut. Ayrı süreçte başlat, durdur ve devam ettir. Yeniden başlatmada yetkiyi ve kaynağı tekrar denetle. Çift teslim ve sonucu belirsiz dış işlem senaryosunu ele al.",
-      "acceptance": "Yerel dosya başarısını ağda tam bir kez teslim garantisi sayma. Eski onay yeni revizyona taşınmamalı.",
+      "task": "Checkpoint, görev kimliği, kaynak revizyonu ve teslim kaydını kalıcı tut. Ayrı süreçte başlat, durdur ve devam ettir. Yeniden başlatmada yetkiyi ve kaynağı tekrar denetle. Çift teslim ve sonucu belirsiz dış işlem senaryosunu ele al.\n\nAtılabilir yerel alıcıda sabit işlem kimliği, içerik özeti ve makbuz tut. İşlem alıcıya yazıldıktan sonra yanıt kaybını enjekte et; yeniden başlatmada makbuzu sorgula ve aynı işlemi ikinci etki üretmeden uzlaştır. Makbuz alınamıyorsa sonuç belirsiz durumunda insan incelemesini bekle.",
+      "acceptance": "Yerel dosya başarısını ağda tam bir kez teslim garantisi sayma. Eski onay yeni revizyona taşınmamalı. Kurtarma testinde alıcıdaki etki sayısı da denetlenmeli; sadece istemcinin başarılı çıkışı yeterli değildir.",
       "prompt": "prompts/21.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -426,14 +453,15 @@
       "title": "Çoklu ajanı tek ajanla karşılaştırmak",
       "inputs": [
         "delegation-contracts.json",
-        "evals/prompt-cases.json"
+        "evals/prompt-cases.json",
+        "graph-design.md"
       ],
       "outputs": [
         "parallel-work.md",
         "evals/agent-comparison.json"
       ],
-      "task": "Aynı görev, kaynak ve bütçeyle tek ajan ve görev paylaşan düzen kur. Dosya sahipliği ve worktree ayrımını tanımla; port, veri tabanı ve uzak hizmetlerin paylaşılabileceğini ayrıca kontrol et. Çakışma ve iptal durumunda kimin işi durduracağını yaz.",
-      "acceptance": "Ajan sayısı başarı ölçütü olmamalı. Kalite, toplam süre, çağrı maliyeti ve insan düzeltmesini birlikte karşılaştır.",
+      "task": "Aynı görev, kaynak ve bütçeyle tek ajan ve görev paylaşan düzen kur. Dosya sahipliği ve worktree ayrımını tanımla; port, veri tabanı ve uzak hizmetlerin paylaşılabileceğini ayrıca kontrol et. Çakışma ve iptal durumunda kimin işi durduracağını yaz.\n\nİş bölümü grafını görev bağımlılıklarıyla çiz; bağımsız işler ile önceki sonucun kabulünü bekleyen işleri ayır. Bilgi veya kod bağımlılık grafını doğrudan görev dağıtım grafı gibi kullanma.",
+      "acceptance": "Ajan sayısı başarı ölçütü olmamalı. Kalite, toplam süre, çağrı maliyeti ve insan düzeltmesini birlikte karşılaştır. Görev önkoşulu tamamlanmadan tüketen ajanın başlaması hata olarak kaydedilmeli.",
       "prompt": "prompts/23.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -450,10 +478,12 @@
       "outputs": [
         "eval-plan.md",
         "evals/release-cases.json",
-        "evals/rubric.md"
+        "evals/rubric.md",
+        "evals/trajectory-cases.json",
+        "datasets/provenance.json"
       ],
-      "task": "Normal, sınır ve hata görevlerinden geliştirme seti ile ayrı değerlendirme seti kur. Deterministik doğrulayıcı, model hakem ve insan incelemesinin farklı yetkilerini yaz. Her denemeyi kaynak, prompt, model ve uygulama revizyonuna bağla. Yanlış olumlu sonuçları örnekleyerek hakemi kalibre et.",
-      "acceptance": "Başarı yüzdesi yalnız gerçekten yürütülmüş paydadan hesaplanmalı. Kritik yetki ihlali ortalama skorla gizlenmemeli.",
+      "task": "Normal, sınır ve hata görevlerinden geliştirme seti ile ayrı değerlendirme seti kur. Deterministik doğrulayıcı, model hakem ve insan incelemesinin farklı yetkilerini yaz. Her denemeyi kaynak, prompt, model ve uygulama revizyonuna bağla. Yanlış olumlu sonuçları örnekleyerek hakemi kalibre et.\n\nevals/trajectory-cases.json içinde eksik kullanıcı girdisi, servis gecikmesi, yetkisiz kestirme ve iki izinli alternatif araç yolu tasarla. Son yanıt ile işlem izini ayrı değerlendir. Simülasyonla üretilen izi gerçek kullanıcı oturumu diye raporlama. datasets/provenance.json içinde her aday izin kaynağını, kaynak revizyonunu, görev ailesini, dönüşümü ve geliştirme/değerlendirme ayrımını kaydet; eğitim verisi üretmek için henüz izin yoksa pending tut.",
+      "acceptance": "Başarı yüzdesi yalnız gerçekten yürütülmüş paydadan hesaplanmalı. Kritik yetki ihlali ortalama skorla gizlenmemeli. İzinli alternatif yol yalnız sıra farklı diye reddedilmemeli; doğru sonuca yetkisiz yoldan varan iz geçmemeli. Aynı kaynak/görev ailesinin türevleri değerlendirme setine sızmamalı.",
       "prompt": "prompts/24.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -464,15 +494,16 @@
       "inputs": [
         "permissions.md",
         "data-model.md",
-        "eval-plan.md"
+        "eval-plan.md",
+        "policies/autonomy-budget.yaml"
       ],
       "outputs": [
         "threat-model.md",
         "data-lifecycle.md",
         "security-cases.json"
       ],
-      "task": "Sentetik prompt injection, kapsam dışı kaynak, yanlış alıntı, kimlik taklidi ve bağımlılık değişimi örnekleriyle çalış. Veri minimizasyonu, saklama, silme ve yedekten dönüşü tasarla. Kullanıcı onayı ile teknik erişim kontrolünü ayır.",
-      "acceptance": "Gerçek sır veya kişisel veri kullanma. Filtre başarısına dayanarak genel güvenlik garantisi verme.",
+      "task": "Sentetik prompt injection, kapsam dışı kaynak, yanlış alıntı, kimlik taklidi ve bağımlılık değişimi örnekleriyle çalış. Veri minimizasyonu, saklama, silme ve yedekten dönüşü tasarla. Kullanıcı onayı ile teknik erişim kontrolünü ayır.\n\nÖzerklik bütçesi dolduktan sonraki araç çağrısını ve iptal sonrası işlem isteğini güvenlik vakalarına ekle; harness denetimini modelin reddetmesinden ayrı ölç.",
+      "acceptance": "Gerçek sır veya kişisel veri kullanma. Filtre başarısına dayanarak genel güvenlik garantisi verme. Durdurma mesajından sonra dış etki oluşması kritik ihlaldir.",
       "prompt": "prompts/25.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -521,15 +552,16 @@
       "inputs": [
         "tool-contracts.json",
         "delegation-contracts.json",
-        "permissions.md"
+        "permissions.md",
+        "policies/delegation.yaml"
       ],
       "outputs": [
         "interoperability.md",
         "agent-card.json",
         "agentic-web.md"
       ],
-      "task": "MCP araç bağlantısı, A2A görev devri, NLWeb bilgi sunumu ve WebMCP yaklaşımını ayrı sorularla incele. Sürümlü resmî belgelerden keşif, kimlik, görev durumu ve hata davranışını çıkar. Pusula için gerekli tek entegrasyonu küçük pilotla sınamayı planla.",
-      "acceptance": "Adı benzer mekanizmaları aynı standart sayma. Önizleme duyurusu güncel genel erişim kanıtı olmamalı.",
+      "task": "MCP araç bağlantısı, A2A görev devri, NLWeb bilgi sunumu ve WebMCP yaklaşımını ayrı sorularla incele. Sürümlü resmî belgelerden keşif, kimlik, görev durumu ve hata davranışını çıkar. Pusula için gerekli tek entegrasyonu küçük pilotla sınamayı planla.\n\npolicies/delegation.yaml üzerinden keşif, kimlik ve görev yetkisini üç ayrı aşamada doğrula. Agent Registry ve AIP kaynaklarını sürümlü Internet-Draft olarak incele; yayımlanmış RFC veya zorunlu A2A parçası diye sunma.",
+      "acceptance": "Adı benzer mekanizmaları aynı standart sayma. Önizleme duyurusu güncel genel erişim kanıtı olmamalı. Keşfedilen ajan otomatik yetkili sayılmamalı; kullanılmayan taslak protokol için uyum iddiası kurulamaz.",
       "prompt": "prompts/28.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -545,10 +577,11 @@
       "outputs": [
         "model-policy.md",
         "budget.md",
-        "model-results.json"
+        "model-results.json",
+        "evals/routing-comparison.json"
       ],
-      "task": "Yerel ve bulut model yollarını aynı kabul setinde karşılaştır. Yetenek, veri sınırı, gecikme ve fiyat kaynağını tarihli kaydet. Önbellek, toplu işlem, yönlendirme ve yedek sağlayıcı için ayrı deney yap. Yeniden deneme ve inceleme maliyetini toplamdan düşürme.",
-      "acceptance": "Bilinmeyen maliyeti sıfır yazma. Yedek sağlayıcı veri ve yetki sınırını genişletmemeli.",
+      "task": "Yerel ve bulut model yollarını aynı kabul setinde karşılaştır. Yetenek, veri sınırı, gecikme ve fiyat kaynağını tarihli kaydet. Önbellek, toplu işlem, yönlendirme ve yedek sağlayıcı için ayrı deney yap. Yeniden deneme ve inceleme maliyetini toplamdan düşürme.\n\nevals/routing-comparison.json içinde sabit model ve adım bazında yönlendirmeyi aynı görev setiyle karşılaştır. Yeniden deneme, yedek rota ve insan inceleme emeğini toplamdan düşürme. Kitap okuru API veya abonelik yolunu seçebilir; bu companion üretiminde yalnız mevcut abonelik kullanılır. Sağlayıcıdan gözlenemeyen model çağrı adedi veya ücret null ve gerekçe taşır; API eşdeğer tahmini gerçek fatura değildir.",
+      "acceptance": "Bilinmeyen maliyeti sıfır yazma. Yedek sağlayıcı veri ve yetki sınırını genişletmemeli. Yönlendirme ucuz görünse bile kalite veya veri sınırı bozulursa kabul edilmemeli.",
       "prompt": "prompts/29.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -559,15 +592,18 @@
       "inputs": [
         "harness-design.md",
         "budget.md",
-        "eval-plan.md"
+        "eval-plan.md",
+        "evals/trajectory-cases.json",
+        "datasets/provenance.json"
       ],
       "outputs": [
         "observability.md",
         "service-targets.md",
-        "capacity.md"
+        "capacity.md",
+        "datasets/provenance.json"
       ],
-      "task": "Görev izi, model çağrısı, araç etkisi, kullanıcıya gösterilen durum ve insan kararını ilişkilendir. Hata, gecikme ve kabul edilen iş başına maliyet için ölçüm tanımla. Örnek hizmet hedefini gerçek kurum taahhüdünden ayır. Yük deneyinde kuyruk ve müşteri kotasını denetle.",
-      "acceptance": "Daha çok token veya daha çok görev üretkenlik kanıtı sayılmamalı. Sentetik süreler gerçek hizmet ölçümü olmamalı.",
+      "task": "Görev izi, model çağrısı, araç etkisi, kullanıcıya gösterilen durum ve insan kararını ilişkilendir. Hata, gecikme ve kabul edilen iş başına maliyet için ölçüm tanımla. Örnek hizmet hedefini gerçek kurum taahhüdünden ayır. Yük deneyinde kuyruk ve müşteri kotasını denetle.\n\nİşlem izi vakalarındaki servis gecikmesini ve iptal bekleyişini yük deneyiyle ilişkilendir. datasets/provenance.json içinde hangi gözlemden hangi sentetik örneğin türediğini ve hangi verinin paylaşılabileceğini güncelle.",
+      "acceptance": "Daha çok token veya daha çok görev üretkenlik kanıtı sayılmamalı. Sentetik süreler gerçek hizmet ölçümü olmamalı. Simüle edilmiş süreler üretim hizmet ölçümü gibi verilmemeli; izlerin kökeni kaybolmamalı.",
       "prompt": "prompts/30.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -586,8 +622,8 @@
         "migration.md",
         "ci-plan.md"
       ],
-      "task": "Aday sürümü test ortamında değerlendir. Gölge deneme, aşamalı açılış, veri şeması göçü ve geri dönüş planını yaz. Sürüm, kaynak, onay, kuyruk ve teslim kayıtlarını kurtarma sonrasında uzlaştır. Canlı dağıtımı ayrı kullanıcı kararına bırak. CI işlerini test ve dağıtım olarak ayır; dağıtım yetkisi bulunmayan kontrolden canlıya çıkış başlatma.",
-      "acceptance": "Kodun geri alınması dış etkiyi kendiliğinden geri almış sayılmamalı. Yedekten silinmiş veri yeniden etkinleşmemeli.",
+      "task": "Aday sürümü test ortamında değerlendir. Gölge deneme, aşamalı açılış, veri şeması göçü ve geri dönüş planını yaz. Sürüm, kaynak, onay, kuyruk ve teslim kayıtlarını kurtarma sonrasında uzlaştır. Canlı dağıtımı ayrı kullanıcı kararına bırak. CI işlerini test ve dağıtım olarak ayır; dağıtım yetkisi bulunmayan kontrolden canlıya çıkış başlatma.\n\nGeri dönüş provasına, yanıtı kaybolan ama alıcıda etkisi bulunan işlem makbuzunu ekle. Kod ve kuyruk geri alınsa bile dış etkiyi kayıtla uzlaştır.",
+      "acceptance": "Kodun geri alınması dış etkiyi kendiliğinden geri almış sayılmamalı. Yedekten silinmiş veri yeniden etkinleşmemeli. Rollback işlemi makbuzsuz aynı dış işlemi yeniden başlatmamalı.",
       "prompt": "prompts/31.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -599,7 +635,8 @@
         "scope.md",
         "dependency-policy.md",
         "data-lifecycle.md",
-        "release.md"
+        "release.md",
+        "policies/delegation.yaml"
       ],
       "outputs": [
         "governance.md",
@@ -610,8 +647,8 @@
         "CONTRIBUTING.md",
         "CHANGELOG.md"
       ],
-      "task": "Bileşen sahibi, insan karar yetkisi, bakım sıklığı ve açık riskleri kaydet. Lisans ve tedarik koşullarını resmî kaynağa bağla; hukuk kararı uydurma. Ekip öğrenme planı ve mevcut yöntemle karşılaştırma hazırlayarak benimseme kararını ölçülebilir yap. Güvenlik bildirimi, katkı kabulü ve sürüm değişikliği kayıtlarını bu dosyalara bağla; yapılmamış sürümü yayımlanmış gösterme.",
-      "acceptance": "Gerçek sorumlu belli değilse kurgusal kişiyi atanmış gösterme. Planlanan eğitim gerçekleşmiş beceri ölçümü sayılmamalı.",
+      "task": "Bileşen sahibi, insan karar yetkisi, bakım sıklığı ve açık riskleri kaydet. Lisans ve tedarik koşullarını resmî kaynağa bağla; hukuk kararı uydurma. Ekip öğrenme planı ve mevcut yöntemle karşılaştırma hazırlayarak benimseme kararını ölçülebilir yap. Güvenlik bildirimi, katkı kabulü ve sürüm değişikliği kayıtlarını bu dosyalara bağla; yapılmamış sürümü yayımlanmış gösterme.\n\nYetki devri politikasının sahibini, iptal yetkisini ve inceleme sıklığını governance.md içinde belirt. Kurum rolü bilinmiyorsa atama bekliyor yaz.",
+      "acceptance": "Gerçek sorumlu belli değilse kurgusal kişiyi atanmış gösterme. Planlanan eğitim gerçekleşmiş beceri ölçümü sayılmamalı. Kimlik veya güven sicili tek başına görev yetkisi yerine geçmemeli.",
       "prompt": "prompts/32.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -623,15 +660,19 @@
         "skills/",
         "agents/",
         "mcp-design.md",
-        "dependency-policy.md"
+        "dependency-policy.md",
+        "docs/skill-compatibility.md",
+        "docs/ax-review.md"
       ],
       "outputs": [
         "plugin-plan.md",
         "compatibility.md",
-        "distribution.md"
+        "distribution.md",
+        "docs/skill-compatibility.md",
+        "docs/ax-review.md"
       ],
-      "task": "Skill, ajan tanımı, hook ve MCP ayarlarının ürünlere göre paketlenmesini planla. Claude Code yolu ile diğer araçların kurulum yollarını güncel belgelerden ayrı doğrula. Temiz ortamda kurulum, güncelleme ve kaldırma deneyi tanımla. Uygulama verisini pakete katma.",
-      "acceptance": "Bir ürünün frontmatter alanını bütün araçlarda destekleniyor sayma. Yerel biçim denetimi kurulum ve davranış deneyi yerine geçmemeli.",
+      "task": "Skill, ajan tanımı, hook ve MCP ayarlarının ürünlere göre paketlenmesini planla. Claude Code yolu ile diğer araçların kurulum yollarını güncel belgelerden ayrı doğrula. Temiz ortamda kurulum, güncelleme ve kaldırma deneyi tanımla. Uygulama verisini pakete katma.\n\ndocs/skill-compatibility.md tablosunu temiz ortam kurulum/güncelleme/kaldırma vakalarıyla genişlet. En az iki erişilebilir ürün varsa aynı görevin keşif, çağırma ve davranış sonuçlarını ayrı karşılaştır; yoksa ikinci ürün not_run kalır. Harici tasarım skillini görünür arayüz ihtiyacına göre seç: kaynak listesi düzeni için görsel tasarım, erişilebilirlik için ayrı denetim, tarayıcı davranışı için ayrı test gerekir. Gereksiz skill paketini kurma; lisans, kaynak ve izin incelemesi olmadan yükleme yapma. AX keşif/görev kayıtlarını güncelle.",
+      "acceptance": "Bir ürünün frontmatter alanını bütün araçlarda destekleniyor sayma. Yerel biçim denetimi kurulum ve davranış deneyi yerine geçmemeli. Bir tasarım skillinin çıktısı Playwright veya erişilebilirlik testi yerine geçmemeli. Paket taşınırken ürün verisi ve sırlar taşınmamalı.",
       "prompt": "prompts/33.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -648,8 +689,8 @@
         "approach-watch.md",
         "experiments/approach-comparison.json"
       ],
-      "task": "Spec-driven development, değerlendirmeyle yönlendirilen geliştirme, yönetilen harness ve uzun bağlam yaklaşımları için Pusula sorusu kur. Spec Kit gibi araçları yöntemden ayır. Superpowers, Ralph Loop, Context Mode, Maestro, hazır ajan çatıları ve görsel iş akışı araçlarını yalnız tam proje kimliği ve birincil kaynak doğrulandıktan sonra deney adayı yap.",
-      "acceptance": "Benzer isimli araçları birleştirme. Popülerlik listesi üretme; tut, daralt veya çıkar kararını aynı kabul görevinin sonucu belirlesin.",
+      "task": "Spec-driven development, değerlendirmeyle yönlendirilen geliştirme, yönetilen harness ve uzun bağlam yaklaşımları için Pusula sorusu kur. Spec Kit gibi araçları yöntemden ayır. Superpowers, Ralph Loop, Context Mode, Maestro, hazır ajan çatıları ve görsel iş akışı araçlarını yalnız tam proje kimliği ve birincil kaynak doğrulandıktan sonra deney adayı yap.\n\nHarness iyileştirme adayını tek bileşen değişikliğiyle incele; geliştirme setinde seçip saklı kabul setinde ölç. Kontrol sürümü, değişiklik, bütçe, geri dönüş koşulu ve gözlenmeyen sonuçlar approach-comparison kaydında açık olsun.",
+      "acceptance": "Benzer isimli araçları birleştirme. Popülerlik listesi üretme; tut, daralt veya çıkar kararını aynı kabul görevinin sonucu belirlesin. Kabul setini değiştirerek kazanç üretme; erişim yoksa deney not_run kalır.",
       "prompt": "prompts/34.md",
       "status": "prompt_draft",
       "execution_status": "not_run"
@@ -660,14 +701,15 @@
       "inputs": [
         "eval-plan.md",
         "model-policy.md",
-        "approach-watch.md"
+        "approach-watch.md",
+        "datasets/provenance.json"
       ],
       "outputs": [
         "change-impact.md",
         "experiments/ablation.json"
       ],
-      "task": "Yeni model veya araç sürümünde aynı görev setini yeniden çalıştır. Gereksiz olduğu düşünülen bir prompt veya harness katmanını tek tek çıkararak karşılaştır. Otomatik prompt optimizasyonu ve ince ayarı yalnız veri, lisans, maliyet ve değerlendirme koşulları sağlanırsa ayrı deney yap.",
-      "acceptance": "Eski başarıyı yeni sürüme taşıma. Güvenlik ve yetki kontrollerini modelin daha iyi olduğu varsayımıyla kaldırma.",
+      "task": "Yeni model veya araç sürümünde aynı görev setini yeniden çalıştır. Gereksiz olduğu düşünülen bir prompt veya harness katmanını tek tek çıkararak karşılaştır. Otomatik prompt optimizasyonu ve ince ayarı yalnız veri, lisans, maliyet ve değerlendirme koşulları sağlanırsa ayrı deney yap.\n\ndatasets/provenance.json üzerinden ince ayar adaylarını kaynak/görev ailesine göre ayır; kullanım izni, kişisel veri temizliği ve ayırma denetimi tamamlanmadan eğitim başlatma. Harness bileşeni çıkarma deneyini geri dönüş koşuluyla ölç; yetki kontrolünü optimizasyon değişkeni yapma.",
+      "acceptance": "Eski başarıyı yeni sürüme taşıma. Güvenlik ve yetki kontrollerini modelin daha iyi olduğu varsayımıyla kaldırma. Saklı kabul verisine bakarak yapılan değişiklik yeni ve bağımsız değerlendirme gerektirir; ön baskıdaki kazanç Pusula sonucu sayılmaz.",
       "prompt": "prompts/35.md",
       "status": "prompt_draft",
       "execution_status": "not_run"

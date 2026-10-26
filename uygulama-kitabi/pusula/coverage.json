@@ -2,7 +2,7 @@
   "snapshot_date": "2026-10-26",
   "level": "chapter",
   "full_text_audit_complete": false,
-  "note": "Bölüm eşlemeleri ilk editoryal plandır. U01–U08e bağlı31 kaynak tam okundu; alt başlık, hedef, vaka ve açıklar editorial/ içinde ayrı kaydedildi. Kalan69 bölüm tam okunmadı. sha256 başlangıç özeti olarak korundu; current_sha256 güncel dosya revizyonudur. Öğretim eşlemesi çalışma başarısı değildir.",
+  "note": "Bölüm eşlemeleri başlangıç planıdır. İlk sekiz uygulamayla ilişkili 31 kaynak tam okundu; 69 bölüm bekliyor. P02 öğretim tasarımındaki pilot açıklarını karşılar, gerçek deneyleri tamamlamaz. sha256 başlangıç özeti; current_sha256 güncel dosya revizyonudur.",
   "chapters": [
     {
       "id": "C1-B01",
@@ -1698,9 +1698,14 @@
     "reading_log": "editorial/pilot-reading-log.json",
     "audit_status": "audit_complete",
     "audit_scope": "100 kaynak revizyon envanteri ve U01–U08e bağlı31 tam kaynak okuması",
-    "pilot_gate_status": "pilot_gap_resolution_pending",
+    "pilot_gate_status": "teaching_design_mapped_runtime_pending",
     "pilot_sources_full_read": 31,
     "remaining_sources_pending_full_read": 69,
-    "runtime_status": "not_run"
+    "runtime_status": "not_run",
+    "pilot_gap_resolution": {
+      "prompt_extended": 25,
+      "moved_to_later_lesson": 2,
+      "runtime_status": "not_run"
+    }
   }
 }

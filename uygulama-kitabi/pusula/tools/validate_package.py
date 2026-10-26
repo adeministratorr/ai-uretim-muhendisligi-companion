@@ -47,6 +47,8 @@ def validate(root):
                 require(heading in body, f'{label}: {heading} eksik.')
             for path in lesson.get('inputs', []) + lesson.get('outputs', []):
                 require(path in body, f'{label}: kayıt/prompt yolu uyuşmuyor: {path}')
+            require(body.count(lesson['task']) == 1, f'{label}: üretim görevi müfredatla aynı değil.')
+            require(body.count(lesson['acceptance']) == 2, f'{label}: kontrol ve tamamlanma kabulü müfredatla aynı değil.')
         require(lesson.get('execution_status') == 'not_run', f'{label}: başlangıç paketinde koşu kanıtı yok.')
 
     chapters = coverage.get('chapters', [])

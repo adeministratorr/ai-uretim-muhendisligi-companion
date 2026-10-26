@@ -41,3 +41,7 @@ Bu başlıklar tek bir standart ailesi değildir. Protokol, dosya biçimi, ürü
 Önce mevcut uygulamada çözülemeyen sorunu yazın. Ardından birincil kaynak, yayın veya sürüm tarihi, kullanılan özellik ve karşılaştırma görevini belirleyin. Aynı veri ve kabul koşuluyla bir deney yapın. Sonuç yeterli değilse yöntemi kitaba zorunlu adım olarak eklemeyin; sınırı gösteren karşılaştırma olarak saklayın.
 
 Superpowers, Ralph Loop, Context Mode, Maestro ve hazır/görsel ajan araçları U34'te aday araştırma konularıdır. Bu pakette her birinin proje kimliği, sürümü ve ürün davranışı ayrı doğrulanmadığından kurulum talimatı verilmez. İlk uygulamaları hazırlarken resmî depo ve belgelerle doğrulanacaklardır. Bu kayıt, adayları denenmiş yöntem gibi göstermemek içindir.
+
+## Ek araştırmaların yerleşimi
+
+İki araştırma metnindeki 121 ad ve terim, 12 yeni öneri etrafında ve mevcut konularla ilişkili olarak değerlendirildi. [Yerleşim kararları](editorial/approach-decisions.md) her önerinin uygulamasını, çıktısını ve kabul sınırını gösterir. [Terim envanteri](editorial/approach-inventory.json) isteğe bağlı laboratuvarları ve henüz doğrulanmamış araştırma etiketlerini de korur. Kaynak sayısı 54 oldu; belge incelemesi gerçek çalışma sonucu sayılmadı.

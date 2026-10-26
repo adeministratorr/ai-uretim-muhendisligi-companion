@@ -378,7 +378,7 @@
     {
       "id": "C2-B01-O06-AC",
       "scenario": "Fixture (sentetik): Kurgusal üç okur: başlangıç düzeyindeki Ada diffte kaldırılan revizyon kontrolünü açıklayamıyor; orta düzeydeki Bora belirsiz görev veriyor; ileri düzeydeki Cem ekip onay sınırını tanımlamamış. Doğru aday: Ada için kod okuma, Bora için görev/kabul tarifi, Cem için ortak denetim düzeni çalışma ihtiyacı gerekçelendirilir.",
-      "expected": "Verdict: Üçüne yalnız daha hızlı prompt yazmayı öneren aday hedefi karşılamaz; kıdem matrisi için müfredat boşluğu sürer.",
+      "expected": "Verdict: Üçüne yalnız daha hızlı prompt yazmayı öneren aday hedefi karşılamaz; U01 kıdem matrisinin kabul koşulu karşılanmaz.",
       "objective_id": "C2-B01-O06",
       "design_status": "proposed_concrete",
       "runtime_status": "not_run",
@@ -405,7 +405,7 @@
     {
       "id": "C2-B01-O09-AC",
       "scenario": "Fixture (sentetik): Pusula için beş iş: belge ekleme kodu, kaynaklı taslak üretimi, atıf denetimi, eski revizyon testi, teslim kararı. Doğru aday: Matriste kod ve taslak ajana; atıf denetimi ve test kapsamı ortak; son teslim insana ayrılır. Her işte devredilmeyen kısmın gerekçesi vardır.",
-      "expected": "Verdict: Atıf doğruluğunu ve son teslimi koşulsuz ajana bırakan veya beş satırı gerekçesiz dolduran aday reddedilir; özel matris çıktısı boşluğu kapanmış sayılmaz.",
+      "expected": "Verdict: Atıf doğruluğunu ve son teslimi koşulsuz ajana bırakan veya beş satırı gerekçesiz dolduran aday reddedilir; U01 sorumluluk matrisinin kabul koşulu karşılanmaz.",
       "objective_id": "C2-B01-O09",
       "design_status": "proposed_concrete",
       "runtime_status": "not_run",
@@ -918,7 +918,7 @@
     {
       "id": "C2-B05-O08-AC",
       "scenario": "Fixture (sentetik): 45 dakikalık sentetik Pusula GUI denemesinde kaynak listesi otomatik oluştu; source-A rev2 taslağı rev3ten sonra kabul edilmiş görünmeye devam etti; kota 40. dakikada bitti. Doğru aday: Tasarım günlüğü otomatik listeyi, revizyon/inceleme müdahalesini ve kota nedeniyle durmayı ayırır; rev3 taslağı kabul edilmiş göstermez.",
-      "expected": "Verdict: Prototip açıldı diye REQ-005 geçti veya eksik son beş dakikayı yapılmış yazan aday reddedilir; süreli GUI deneyi müfredat boşluğu sürer.",
+      "expected": "Verdict: Prototip açıldı diye REQ-005 geçti diyen veya eksik son beş dakikayı yapılmış yazan aday reddedilir. U11 runbook kaydı süreyi, müdahaleyi ve revizyon davranışını ayrı göstermelidir.",
       "objective_id": "C2-B05-O08",
       "design_status": "proposed_concrete",
       "runtime_status": "not_run",
@@ -2713,7 +2713,7 @@
         "positive": "Laboratuvar kaydı kurulum ve değişmeyen klasörü doğrular, hesap kontrolünü not_run bırakır.",
         "negative": "Dört başarı ölçütünün tamamını geçti işaretler."
       },
-      "expected": "Hesap gözlemi eksik olduğundan laboratuvar tamamlandı kararı verilmez; gap durumu korunur.",
+      "expected": "Hesap gözlemi eksik olduğundan laboratuvar tamamlandı kararı verilmez; hesap kontrolünün çalışma sonucu not_run kalır.",
       "objective_id": "CC-B03-O09",
       "design_status": "proposed_concrete",
       "runtime_status": "not_run",
@@ -2995,7 +2995,7 @@
         "positive": "Manual ve Plan kayıtları mod/görev/öneri farkını ve aynı başlangıç-bitiş diffini içerir.",
         "negative": "İlk koşuda sözcüğü değiştirip ikinci koşuyla bunu eşit koşul karşılaştırması sayar."
       },
-      "expected": "Düzenlemesiz eşit girdili karşılaştırma geçer; değişmiş girdiyle karşılaştırma sonuç çıkaramaz; gap korunur.",
+      "expected": "Düzenlemesiz eşit girdili karşılaştırma geçer; değişmiş girdiyle karşılaştırma sonuç çıkaramaz; karşılaştırmanın kabul koşulu karşılanmaz.",
       "objective_id": "CC-B10-O11",
       "design_status": "proposed_concrete",
       "runtime_status": "not_run",

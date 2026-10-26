@@ -1,0 +1,3409 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "scope": "Terim envanteri; aynı öneriye bağlanan terimler otomatik olarak eşanlamlı değildir. Araştırma eklerinin tarihlerine ve standart iddialarına toplu doğruluk onayı verilmez.",
+  "attachments": [
+    {
+      "alias": "research-1",
+      "title": "Yapay zekâ mühendisliğinde yeni yaklaşımlar (2025–2026)",
+      "origin": "Kullanıcının paylaştığı araştırma metni"
+    },
+    {
+      "alias": "research-2",
+      "title": "Önceki araştırmaya ek yaklaşımlar",
+      "origin": "Kullanıcının paylaştığı ikinci araştırma metni"
+    }
+  ],
+  "terms": [
+    {
+      "id": "TERM-001",
+      "name": "Prompt Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U09",
+        "U10",
+        "U35"
+      ],
+      "rationale": "Görev, örnek, ölçüt ve optimizasyon değişkenleri ayrı karşılaştırılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 13,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-002",
+      "name": "Context Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U13",
+        "U14"
+      ],
+      "rationale": "Bağlam seçimi ile kalıcı bellek ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 14,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-003",
+      "name": "Harness Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 15,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-004",
+      "name": "Loop Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U19",
+        "U21"
+      ],
+      "rationale": "Tekrar, bütçe, durma ve kesintiden devam deneyleri kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 16,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-005",
+      "name": "Graph Engineering",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U16",
+        "U20",
+        "U23"
+      ],
+      "rationale": "Bilgi, yürütme ve kod bağımlılık graflarını düğüm/kenar anlamlarıyla ayırır.",
+      "acceptance_boundary": "Bilgi grafı kenarı yürütme yetkisi sayılmaz; eski kod grafının güncellik sınırı ve bakım maliyeti gösterilir.",
+      "proposal_id": "proposal-11",
+      "source_ids": [
+        "S52"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 17,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-006",
+      "name": "Runtime Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 18,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-007",
+      "name": "Intent Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 60,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-008",
+      "name": "Specification Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 61,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-009",
+      "name": "Spec-Driven Development (SDD)",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 62,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-010",
+      "name": "Contract-Driven Development",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 63,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-011",
+      "name": "Agent Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U06",
+        "U20",
+        "U36"
+      ],
+      "rationale": "Geniş etiketler Pusula yaşam döngüsündeki somut çıktılara bağlanır; tek standart olduğu söylenmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 64,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-012",
+      "name": "Workflow Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U06",
+        "U20",
+        "U36"
+      ],
+      "rationale": "Geniş etiketler Pusula yaşam döngüsündeki somut çıktılara bağlanır; tek standart olduğu söylenmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 65,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-013",
+      "name": "AI-Native SDLC Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U06",
+        "U20",
+        "U36"
+      ],
+      "rationale": "Geniş etiketler Pusula yaşam döngüsündeki somut çıktılara bağlanır; tek standart olduğu söylenmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 66,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-014",
+      "name": "Prompt Optimization / Prompt Evolution",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U09",
+        "U10",
+        "U35"
+      ],
+      "rationale": "Görev, örnek, ölçüt ve optimizasyon değişkenleri ayrı karşılaştırılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 90,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-015",
+      "name": "Retrieval Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U15",
+        "U16"
+      ],
+      "rationale": "Getirme başarısı, kaynak desteği ve ilişki dayanağı ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 91,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-016",
+      "name": "Agentic RAG",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U15",
+        "U16"
+      ],
+      "rationale": "Getirme başarısı, kaynak desteği ve ilişki dayanağı ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 92,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-017",
+      "name": "GraphRAG",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U16",
+        "U20",
+        "U23"
+      ],
+      "rationale": "Bilgi, yürütme ve kod bağımlılık graflarını düğüm/kenar anlamlarıyla ayırır.",
+      "acceptance_boundary": "Bilgi grafı kenarı yürütme yetkisi sayılmaz; eski kod grafının güncellik sınırı ve bakım maliyeti gösterilir.",
+      "proposal_id": "proposal-11",
+      "source_ids": [
+        "S52"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 93,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-018",
+      "name": "Memory Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U14"
+      ],
+      "rationale": "Belleğin kaynağı, ömrü ve silinmesi sınanır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 94,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-019",
+      "name": "Skill Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U08",
+        "U33"
+      ],
+      "rationale": "Paket biçimini, keşfi, çağırmayı, davranışı ve ürün izinlerini ayrı sınar.",
+      "acceptance_boundary": "Aynı SKILL.md dosyasının bulunması farklı ürünlerde aynı çalışma garantisi değildir; desteklenmeyen alan açık kalır.",
+      "proposal_id": "proposal-12",
+      "source_ids": [
+        "S39",
+        "S04"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 95,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-020",
+      "name": "Tool Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 96,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-021",
+      "name": "Context Compaction",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U13",
+        "U14"
+      ],
+      "rationale": "Karar, kaynak revizyonu, açık soru ve yarım işi kısa bağlamda korur.",
+      "acceptance_boundary": "Özet sonrası eski revizyonun geçerli sayılması ve iptal edilmiş işin yeniden başlaması reddedilir.",
+      "proposal_id": "proposal-08",
+      "source_ids": [
+        "S49"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 97,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-022",
+      "name": "Knowledge Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U15",
+        "U16"
+      ],
+      "rationale": "Getirme başarısı, kaynak desteği ve ilişki dayanağı ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 98,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-023",
+      "name": "Evaluation Engineering (Eval Engineering)",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U10",
+        "U24"
+      ],
+      "rationale": "Ölçüt, kabul vakası ve değerlendiricinin yetkisi ayrı tutulur.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 128,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-024",
+      "name": "Verification Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U10",
+        "U24"
+      ],
+      "rationale": "Ölçüt, kabul vakası ve değerlendiricinin yetkisi ayrı tutulur.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 129,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-025",
+      "name": "Guardrail Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 130,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-026",
+      "name": "Policy Engineering / Policy-as-Code",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 131,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-027",
+      "name": "Agent Observability Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U30",
+        "U31"
+      ],
+      "rationale": "Görev izi, hizmet ölçümü ve kurtarma sonucu ilişkilendirilir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 132,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-028",
+      "name": "AgentOps",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U30",
+        "U31"
+      ],
+      "rationale": "Görev izi, hizmet ölçümü ve kurtarma sonucu ilişkilendirilir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 133,
+          "location": "table-first-column"
+        },
+        {
+          "attachment_alias": "research-1",
+          "line": 133,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-029",
+      "name": "Agent Security Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 134,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-030",
+      "name": "Environment Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U01",
+        "U11"
+      ],
+      "rationale": "Kurulu araç ve ortam gözlemi planlanan teknoloji seçiminden ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 135,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-031",
+      "name": "Model Routing / Inference Optimization",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U29"
+      ],
+      "rationale": "Sabit model ile adım bazında yönlendirmeyi aynı kabul setinde karşılaştırır.",
+      "acceptance_boundary": "Yeniden deneme ve inceleme dahil toplam süre/maliyet ile kalite raporlanır; yedek rota veri sınırını genişletemez.",
+      "proposal_id": "proposal-07",
+      "source_ids": [
+        "S48"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 136,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-032",
+      "name": "Human-in-the-Loop Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U03",
+        "U17",
+        "U32"
+      ],
+      "rationale": "İnsan kararının sahibi, tetikleyicisi ve bekleme durumu belirlenir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 137,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-033",
+      "name": "Multi-Agent Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U22",
+        "U23"
+      ],
+      "rationale": "Görev devri, bağımlılık ve kabul sorumluluğu sınanır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 165,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-034",
+      "name": "Orchestration Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U22",
+        "U23"
+      ],
+      "rationale": "Görev devri, bağımlılık ve kabul sorumluluğu sınanır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 166,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-035",
+      "name": "Delegation Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 167,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-036",
+      "name": "Agent Interoperability Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 168,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-037",
+      "name": "Self-Evolving Harness Engineering",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "acceptance_boundary": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "proposal_id": "proposal-09",
+      "source_ids": [
+        "S50"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 169,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-038",
+      "name": "Recursive Self-Improvement (RSI)",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 170,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-039",
+      "name": "Autonomous Research Engineering",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 171,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-040",
+      "name": "Model–Harness Co-Design",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 172,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-041",
+      "name": "Test-Time / Inference-Time Search",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 173,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-042",
+      "name": "MCP",
+      "kind": "protocol_or_protocol_name",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U18"
+      ],
+      "rationale": "Protokol ve uygulama yetkisi birbirinden ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 189,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-043",
+      "name": "A2A",
+      "kind": "protocol_or_protocol_name",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 190,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-044",
+      "name": "Agent Skills",
+      "kind": "technology-or-protocol",
+      "decision": "core",
+      "lesson_ids": [
+        "U08",
+        "U33"
+      ],
+      "rationale": "Paket biçimini, keşfi, çağırmayı, davranışı ve ürün izinlerini ayrı sınar.",
+      "acceptance_boundary": "Aynı SKILL.md dosyasının bulunması farklı ürünlerde aynı çalışma garantisi değildir; desteklenmeyen alan açık kalır.",
+      "proposal_id": "proposal-12",
+      "source_ids": [
+        "S39",
+        "S04"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 191,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-045",
+      "name": "GitHub Spec Kit",
+      "kind": "product_or_project",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 192,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-046",
+      "name": "LangGraph",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U34"
+      ],
+      "rationale": "Bunlar ürün/SDK adaylarıdır; belirli sürüm doğrulanmadan kurulum veya uyum sonucu verilmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 193,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-047",
+      "name": "Google ADK",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U34"
+      ],
+      "rationale": "Bunlar ürün/SDK adaylarıdır; belirli sürüm doğrulanmadan kurulum veya uyum sonucu verilmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 194,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-048",
+      "name": "OpenAI Agents SDK",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U34"
+      ],
+      "rationale": "Bunlar ürün/SDK adaylarıdır; belirli sürüm doğrulanmadan kurulum veya uyum sonucu verilmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 195,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-049",
+      "name": "DSPy / GEPA",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U09",
+        "U10",
+        "U35"
+      ],
+      "rationale": "Görev, örnek, ölçüt ve optimizasyon değişkenleri ayrı karşılaştırılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 196,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-050",
+      "name": "Promptfoo",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U10",
+        "U24"
+      ],
+      "rationale": "Ölçüt, kabul vakası ve değerlendiricinin yetkisi ayrı tutulur.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 197,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-051",
+      "name": "Self-Evolving Harness",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "acceptance_boundary": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "proposal_id": "proposal-09",
+      "source_ids": [
+        "S50"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 169,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 165,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-052",
+      "name": "Recursive Self-Improvement",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 170,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-053",
+      "name": "Autonomous Research",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 171,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-054",
+      "name": "Specification-Driven Development",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 192,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-055",
+      "name": "Spec-Driven Development",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 62,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-056",
+      "name": "Intent + Specification",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance_boundary": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "proposal_id": "proposal-10",
+      "source_ids": [
+        "S51"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 217,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-057",
+      "name": "Context + Memory",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U13",
+        "U14"
+      ],
+      "rationale": "Bağlam seçimi ile kalıcı bellek ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 220,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-058",
+      "name": "Harness + Tool Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 223,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-059",
+      "name": "Loop + Verification",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U19",
+        "U21"
+      ],
+      "rationale": "Tekrar, bütçe, durma ve kesintiden devam deneyleri kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 226,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-060",
+      "name": "Graph + Multi-Agent",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U16",
+        "U20",
+        "U23"
+      ],
+      "rationale": "Bilgi, yürütme ve kod bağımlılık graflarını düğüm/kenar anlamlarıyla ayırır.",
+      "acceptance_boundary": "Bilgi grafı kenarı yürütme yetkisi sayılmaz; eski kod grafının güncellik sınırı ve bakım maliyeti gösterilir.",
+      "proposal_id": "proposal-11",
+      "source_ids": [
+        "S52"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 229,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-061",
+      "name": "Runtime + Policy + AgentOps",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 232,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-062",
+      "name": "Model Routing",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U29"
+      ],
+      "rationale": "Sabit model ile adım bazında yönlendirmeyi aynı kabul setinde karşılaştırır.",
+      "acceptance_boundary": "Yeniden deneme ve inceleme dahil toplam süre/maliyet ile kalite raporlanır; yedek rota veri sınırını genişletemez.",
+      "proposal_id": "proposal-07",
+      "source_ids": [
+        "S48"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 136,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 88,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-063",
+      "name": "Policy-as-Code",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 131,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-064",
+      "name": "Guardrails",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 247,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-065",
+      "name": "Observability",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U30",
+        "U31"
+      ],
+      "rationale": "Görev izi, hizmet ölçümü ve kurtarma sonucu ilişkilendirilir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 132,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-066",
+      "name": "Skills",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U08",
+        "U33"
+      ],
+      "rationale": "Paket biçimini, keşfi, çağırmayı, davranışı ve ürün izinlerini ayrı sınar.",
+      "acceptance_boundary": "Aynı SKILL.md dosyasının bulunması farklı ürünlerde aynı çalışma garantisi değildir; desteklenmeyen alan açık kalır.",
+      "proposal_id": "proposal-12",
+      "source_ids": [
+        "S39",
+        "S04"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 102,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-067",
+      "name": "Skill",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U08",
+        "U33"
+      ],
+      "rationale": "Paket biçimini, keşfi, çağırmayı, davranışı ve ürün izinlerini ayrı sınar.",
+      "acceptance_boundary": "Aynı SKILL.md dosyasının bulunması farklı ürünlerde aynı çalışma garantisi değildir; desteklenmeyen alan açık kalır.",
+      "proposal_id": "proposal-12",
+      "source_ids": [
+        "S39",
+        "S04"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 95,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-068",
+      "name": "Eval Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U10",
+        "U24"
+      ],
+      "rationale": "Ölçüt, kabul vakası ve değerlendiricinin yetkisi ayrı tutulur.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 128,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-069",
+      "name": "AI-Native Production",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U06",
+        "U20",
+        "U36"
+      ],
+      "rationale": "Geniş etiketler Pusula yaşam döngüsündeki somut çıktılara bağlanır; tek standart olduğu söylenmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 247,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-070",
+      "name": "Graph",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U15",
+        "U16"
+      ],
+      "rationale": "Getirme başarısı, kaynak desteği ve ilişki dayanağı ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 17,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 165,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-071",
+      "name": "Loop",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U19",
+        "U21"
+      ],
+      "rationale": "Tekrar, bütçe, durma ve kesintiden devam deneyleri kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 16,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 165,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-072",
+      "name": "Harness",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 15,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 163,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-073",
+      "name": "Runtime",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U20",
+        "U21",
+        "U30"
+      ],
+      "rationale": "Yürütme ortamı, durum ve doğrulama sorumlulukları ayrılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 18,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-074",
+      "name": "Multi-Agent",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U22",
+        "U23"
+      ],
+      "rationale": "Görev devri, bağımlılık ve kabul sorumluluğu sınanır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 165,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-075",
+      "name": "Orchestration",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U22",
+        "U23"
+      ],
+      "rationale": "Görev devri, bağımlılık ve kabul sorumluluğu sınanır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 166,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-076",
+      "name": "Memory",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U14"
+      ],
+      "rationale": "Belleğin kaynağı, ömrü ve silinmesi sınanır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 94,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 163,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-077",
+      "name": "Evaluation",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U10",
+        "U24"
+      ],
+      "rationale": "Ölçüt, kabul vakası ve değerlendiricinin yetkisi ayrı tutulur.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 128,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 12,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-078",
+      "name": "Security",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 134,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 163,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-079",
+      "name": "Context",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U13",
+        "U14"
+      ],
+      "rationale": "Bağlam seçimi ile kalıcı bellek ayrı ölçülür.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 14,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 15,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-080",
+      "name": "Prompt",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U09",
+        "U10",
+        "U35"
+      ],
+      "rationale": "Görev, örnek, ölçüt ve optimizasyon değişkenleri ayrı karşılaştırılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 13,
+          "location": "prose-or-table-cell-label"
+        },
+        {
+          "attachment_alias": "research-2",
+          "line": 163,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-081",
+      "name": "GEPA",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U09",
+        "U10",
+        "U35"
+      ],
+      "rationale": "Görev, örnek, ölçüt ve optimizasyon değişkenleri ayrı karşılaştırılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 114,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-082",
+      "name": "DSPy",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U09",
+        "U10",
+        "U35"
+      ],
+      "rationale": "Görev, örnek, ölçüt ve optimizasyon değişkenleri ayrı karşılaştırılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 196,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-083",
+      "name": "AHE",
+      "kind": "product_or_project",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "acceptance_boundary": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "proposal_id": "proposal-09",
+      "source_ids": [
+        "S50"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-1",
+          "line": 175,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-084",
+      "name": "Agent Experience (AX) Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "rationale": "Ajanın belgeyi bulmasını, uygun işlemi seçmesini ve görevi doğru tamamlamasını ayrı ölçer.",
+      "acceptance_boundary": "Yanlış belgeyi bulan veya yazma aracı seçen aday görev başarılı olsa bile ilgili ölçütte geçmez.",
+      "proposal_id": "proposal-01",
+      "source_ids": [
+        "S38"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 7,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-085",
+      "name": "Agent Identity Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 8,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-086",
+      "name": "Agent Discovery Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 9,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-087",
+      "name": "Agentic Commerce Engineering",
+      "kind": "approach-or-label",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U28"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 10,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-088",
+      "name": "Computer-Use Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U26"
+      ],
+      "rationale": "Algılama hatası, tarayıcı eylemi ve kaynak desteği ayrı değerlendirilir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 11,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-089",
+      "name": "Trajectory Evaluation",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U24",
+        "U30"
+      ],
+      "rationale": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "acceptance_boundary": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "proposal_id": "proposal-02",
+      "source_ids": [
+        "S40",
+        "S41"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 12,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-090",
+      "name": "Simulation-Based Agent Testing",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U24",
+        "U30"
+      ],
+      "rationale": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "acceptance_boundary": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "proposal_id": "proposal-02",
+      "source_ids": [
+        "S40",
+        "S41"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 13,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-091",
+      "name": "Trace-to-Training",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U24",
+        "U30",
+        "U35"
+      ],
+      "rationale": "İzlerin kökenini, kullanım iznini, görev ailesini ve veri ayrımını kaydeder.",
+      "acceptance_boundary": "Aynı kaynak/görev ailesinin türevleri eğitim ve değerlendirme tarafına sızmaz; kullanım izni bilinmeyen iz dışlanır.",
+      "proposal_id": "proposal-06",
+      "source_ids": [
+        "S47"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 14,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-092",
+      "name": "Adaptive Context Compaction",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U13",
+        "U14"
+      ],
+      "rationale": "Karar, kaynak revizyonu, açık soru ve yarım işi kısa bağlamda korur.",
+      "acceptance_boundary": "Özet sonrası eski revizyonun geçerli sayılması ve iptal edilmiş işin yeniden başlaması reddedilir.",
+      "proposal_id": "proposal-08",
+      "source_ids": [
+        "S49"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 15,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-093",
+      "name": "Durable Execution Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U21",
+        "U31"
+      ],
+      "rationale": "İşlem alıcıda tamamlanıp yanıt kaybolduğunda makbuzla sonucu uzlaştırır.",
+      "acceptance_boundary": "Aynı işlem kimliğiyle tekrar denemede alıcıda ikinci etki oluşmaz; yerel checkpoint küresel exactly-once garantisi sayılmaz.",
+      "proposal_id": "proposal-05",
+      "source_ids": [
+        "S45",
+        "S46"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 57,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-094",
+      "name": "Checkpoint & Recovery Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U21",
+        "U31"
+      ],
+      "rationale": "İşlem alıcıda tamamlanıp yanıt kaybolduğunda makbuzla sonucu uzlaştırır.",
+      "acceptance_boundary": "Aynı işlem kimliğiyle tekrar denemede alıcıda ikinci etki oluşmaz; yerel checkpoint küresel exactly-once garantisi sayılmaz.",
+      "proposal_id": "proposal-05",
+      "source_ids": [
+        "S45",
+        "S46"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 58,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-095",
+      "name": "Autonomy Budget Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U19",
+        "U20",
+        "U25"
+      ],
+      "rationale": "Çağrı, süre, maliyet ve işlem kapsamı sınırlarını birlikte uygular.",
+      "acceptance_boundary": "Sınırlardan biri dolunca yeni dış etki başlamaz; bilinmeyen maliyet sıfır kabul edilmez.",
+      "proposal_id": "proposal-04",
+      "source_ids": [
+        "S44"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 59,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-096",
+      "name": "Agent Sandboxing",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U17",
+        "U25"
+      ],
+      "rationale": "Yönerge ile teknik yetki sınırı ayrılır; kontrollü ihlal vakaları kullanılır.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 60,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-097",
+      "name": "Idempotent Action Design",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U21",
+        "U31"
+      ],
+      "rationale": "İşlem alıcıda tamamlanıp yanıt kaybolduğunda makbuzla sonucu uzlaştırır.",
+      "acceptance_boundary": "Aynı işlem kimliğiyle tekrar denemede alıcıda ikinci etki oluşmaz; yerel checkpoint küresel exactly-once garantisi sayılmaz.",
+      "proposal_id": "proposal-05",
+      "source_ids": [
+        "S45",
+        "S46"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 61,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-098",
+      "name": "Failure Injection / Chaos Testing",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U21",
+        "U31"
+      ],
+      "rationale": "İşlem alıcıda tamamlanıp yanıt kaybolduğunda makbuzla sonucu uzlaştırır.",
+      "acceptance_boundary": "Aynı işlem kimliğiyle tekrar denemede alıcıda ikinci etki oluşmaz; yerel checkpoint küresel exactly-once garantisi sayılmaz.",
+      "proposal_id": "proposal-05",
+      "source_ids": [
+        "S45",
+        "S46"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 62,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-099",
+      "name": "Synthetic Trajectory Generation",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U24",
+        "U30"
+      ],
+      "rationale": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "acceptance_boundary": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "proposal_id": "proposal-02",
+      "source_ids": [
+        "S40",
+        "S41"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 84,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-100",
+      "name": "Experience-Driven Optimization",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "acceptance_boundary": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "proposal_id": "proposal-09",
+      "source_ids": [
+        "S50"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 85,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-101",
+      "name": "Tool-Use Policy Optimization",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "acceptance_boundary": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "proposal_id": "proposal-09",
+      "source_ids": [
+        "S50"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 86,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-102",
+      "name": "Test-Time Compute Optimization",
+      "kind": "approach-or-label",
+      "decision": "research",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "rationale": "Araştırma konusu olarak izlenir; yöntem ve sonuçlar Pusula üzerinde yeniden üretilmedi. Kendi hedefini veya kabul ölçütünü sınırsız değiştiren sistem ana uygulamanın kapsamını aşar.",
+      "acceptance_boundary": "Birincil yöntem, sabit değerlendirme seti ve sınırlı deney bütçesi doğrulanmadan zorunlu uygulamaya çevrilmez.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 87,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-103",
+      "name": "Step-Level Model Routing",
+      "kind": "approach-or-label",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U29"
+      ],
+      "rationale": "Sabit model ile adım bazında yönlendirmeyi aynı kabul setinde karşılaştırır.",
+      "acceptance_boundary": "Yeniden deneme ve inceleme dahil toplam süre/maliyet ile kalite raporlanır; yedek rota veri sınırını genişletemez.",
+      "proposal_id": "proposal-07",
+      "source_ids": [
+        "S48"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 88,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-104",
+      "name": "Trace-Driven Debugging",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U24",
+        "U30"
+      ],
+      "rationale": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "acceptance_boundary": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "proposal_id": "proposal-02",
+      "source_ids": [
+        "S40",
+        "S41"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 89,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-105",
+      "name": "Continual Evaluation / Data Flywheel",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U24",
+        "U30"
+      ],
+      "rationale": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "acceptance_boundary": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "proposal_id": "proposal-02",
+      "source_ids": [
+        "S40",
+        "S41"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 90,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-106",
+      "name": "Voice Agent Engineering",
+      "kind": "approach-or-label",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U26"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 114,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-107",
+      "name": "Multimodal Grounding",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U26"
+      ],
+      "rationale": "Algılama hatası, tarayıcı eylemi ve kaynak desteği ayrı değerlendirilir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 115,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-108",
+      "name": "Embodied Agent Engineering",
+      "kind": "approach-or-label",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U26"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 116,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-109",
+      "name": "Agent-Readable Interface Design",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "rationale": "Ajanın belgeyi bulmasını, uygun işlemi seçmesini ve görevi doğru tamamlamasını ayrı ölçer.",
+      "acceptance_boundary": "Yanlış belgeyi bulan veya yazma aracı seçen aday görev başarılı olsa bile ilgili ölçütte geçmez.",
+      "proposal_id": "proposal-01",
+      "source_ids": [
+        "S38"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 117,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-110",
+      "name": "Agentic Web Optimization",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "rationale": "Ajanın belgeyi bulmasını, uygun işlemi seçmesini ve görevi doğru tamamlamasını ayrı ölçer.",
+      "acceptance_boundary": "Yanlış belgeyi bulan veya yazma aracı seçen aday görev başarılı olsa bile ilgili ölçütte geçmez.",
+      "proposal_id": "proposal-01",
+      "source_ids": [
+        "S38"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 118,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-111",
+      "name": "Human–Agent Oversight Design",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U03",
+        "U17",
+        "U32"
+      ],
+      "rationale": "İnsan kararının sahibi, tetikleyicisi ve bekleme durumu belirlenir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 119,
+          "location": "table-first-column"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-112",
+      "name": "Agent-Native Software Engineering",
+      "kind": "approach-or-label",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U06",
+        "U20",
+        "U36"
+      ],
+      "rationale": "Geniş etiketler Pusula yaşam döngüsündeki somut çıktılara bağlanır; tek standart olduğu söylenmez.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 133,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-113",
+      "name": "Agentic Commerce & Payment Engineering",
+      "kind": "approach-or-label",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U28"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 141,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-114",
+      "name": "Agent Governance & Trust Engineering",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 149,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-115",
+      "name": "Agent Experience (AX)",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "rationale": "Ajanın belgeyi bulmasını, uygun işlemi seçmesini ve görevi doğru tamamlamasını ayrı ölçer.",
+      "acceptance_boundary": "Yanlış belgeyi bulan veya yazma aracı seçen aday görev başarılı olsa bile ilgili ölçütte geçmez.",
+      "proposal_id": "proposal-01",
+      "source_ids": [
+        "S38"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 7,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-116",
+      "name": "Agent Identity & Discovery",
+      "kind": "approach-or-label",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance_boundary": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "proposal_id": "proposal-03",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 29,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-117",
+      "name": "AgentRouter",
+      "kind": "product_or_project",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U29"
+      ],
+      "rationale": "Sabit model ile adım bazında yönlendirmeyi aynı kabul setinde karşılaştırır.",
+      "acceptance_boundary": "Yeniden deneme ve inceleme dahil toplam süre/maliyet ile kalite raporlanır; yedek rota veri sınırını genişletemez.",
+      "proposal_id": "proposal-07",
+      "source_ids": [
+        "S48"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 92,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-118",
+      "name": "UCP",
+      "kind": "protocol_or_protocol_name",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U28"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [
+        "S54"
+      ],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 143,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "linked_primary_source"
+    },
+    {
+      "id": "TERM-119",
+      "name": "ACP",
+      "kind": "protocol_or_protocol_name",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U28"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 143,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-120",
+      "name": "AP2",
+      "kind": "protocol_or_protocol_name",
+      "decision": "optional_lab",
+      "lesson_ids": [
+        "U28"
+      ],
+      "rationale": "Ana Pusula akışı bu alanın gerçek hizmetini veya fiziksel etkisini içermez; ayrı veri, alıcı/simülatör ve izin sınırı gerekir.",
+      "acceptance_boundary": "Ayrı laboratuvarın kaynağı, işlem sınırı ve kabul koşulu yazar incelemesinden geçmeden uygulama başlatılmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 143,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    },
+    {
+      "id": "TERM-121",
+      "name": "smithtune",
+      "kind": "product_or_project",
+      "decision": "existing_core",
+      "lesson_ids": [
+        "U35"
+      ],
+      "rationale": "Kaynak izlerini eğitim adayına dönüştürme aracı olarak ayrıca kimlik/sürüm kontrolü gerekir; zorunlu bağımlılık değildir.",
+      "acceptance_boundary": "İlgili uygulamanın kayıtlı görev ve kabul koşulu uygulanır; ayrı bir başarı iddiası kurulmaz.",
+      "proposal_id": null,
+      "source_ids": [],
+      "occurrences": [
+        {
+          "attachment_alias": "research-2",
+          "line": 43,
+          "location": "prose-or-table-cell-label"
+        }
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending",
+      "source_verification": "attachment_term_only_or_existing_topic"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "proposal-01",
+      "title": "Ajan deneyimi (AX)",
+      "decision": "core",
+      "lesson_ids": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "output_paths": [
+        "evals/ax-cases.json",
+        "docs/ax-review.md"
+      ],
+      "rationale": "Ajanın belgeyi bulmasını, uygun işlemi seçmesini ve görevi doğru tamamlamasını ayrı ölçer.",
+      "acceptance": "Yanlış belgeyi bulan veya yazma aracı seçen aday görev başarılı olsa bile ilgili ölçütte geçmez.",
+      "source_ids": [
+        "S38"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-02",
+      "title": "İşlem izi ve simülasyon",
+      "decision": "core",
+      "lesson_ids": [
+        "U24",
+        "U30"
+      ],
+      "output_paths": [
+        "evals/trajectory-cases.json"
+      ],
+      "rationale": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "acceptance": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "source_ids": [
+        "S40",
+        "S41"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-03",
+      "title": "Kimlik, keşif ve yetki devri",
+      "decision": "core",
+      "lesson_ids": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "output_paths": [
+        "policies/delegation.yaml"
+      ],
+      "rationale": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "acceptance": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "source_ids": [
+        "S42",
+        "S43"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-04",
+      "title": "Özerklik bütçesi",
+      "decision": "core",
+      "lesson_ids": [
+        "U19",
+        "U20",
+        "U25"
+      ],
+      "output_paths": [
+        "policies/autonomy-budget.yaml"
+      ],
+      "rationale": "Çağrı, süre, maliyet ve işlem kapsamı sınırlarını birlikte uygular.",
+      "acceptance": "Sınırlardan biri dolunca yeni dış etki başlamaz; bilinmeyen maliyet sıfır kabul edilmez.",
+      "source_ids": [
+        "S44"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-05",
+      "title": "Kesinti ve belirsiz dış etki",
+      "decision": "core",
+      "lesson_ids": [
+        "U21",
+        "U31"
+      ],
+      "output_paths": [
+        "recovery-tests.json"
+      ],
+      "rationale": "İşlem alıcıda tamamlanıp yanıt kaybolduğunda makbuzla sonucu uzlaştırır.",
+      "acceptance": "Aynı işlem kimliğiyle tekrar denemede alıcıda ikinci etki oluşmaz; yerel checkpoint küresel exactly-once garantisi sayılmaz.",
+      "source_ids": [
+        "S45",
+        "S46"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-06",
+      "title": "Çalışma izinden eğitim verisi",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U24",
+        "U30",
+        "U35"
+      ],
+      "output_paths": [
+        "datasets/provenance.json"
+      ],
+      "rationale": "İzlerin kökenini, kullanım iznini, görev ailesini ve veri ayrımını kaydeder.",
+      "acceptance": "Aynı kaynak/görev ailesinin türevleri eğitim ve değerlendirme tarafına sızmaz; kullanım izni bilinmeyen iz dışlanır.",
+      "source_ids": [
+        "S47"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-07",
+      "title": "Adım bazında model yönlendirme",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U29"
+      ],
+      "output_paths": [
+        "evals/routing-comparison.json"
+      ],
+      "rationale": "Sabit model ile adım bazında yönlendirmeyi aynı kabul setinde karşılaştırır.",
+      "acceptance": "Yeniden deneme ve inceleme dahil toplam süre/maliyet ile kalite raporlanır; yedek rota veri sınırını genişletemez.",
+      "source_ids": [
+        "S48"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-08",
+      "title": "Bağlam sıkıştırma",
+      "decision": "core",
+      "lesson_ids": [
+        "U13",
+        "U14"
+      ],
+      "output_paths": [
+        "evals/context-results.json",
+        "memory-tests.json"
+      ],
+      "rationale": "Karar, kaynak revizyonu, açık soru ve yarım işi kısa bağlamda korur.",
+      "acceptance": "Özet sonrası eski revizyonun geçerli sayılması ve iptal edilmiş işin yeniden başlaması reddedilir.",
+      "source_ids": [
+        "S49"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-09",
+      "title": "Deneyle harness iyileştirme",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U34",
+        "U35"
+      ],
+      "output_paths": [
+        "experiments/approach-comparison.json",
+        "experiments/ablation.json"
+      ],
+      "rationale": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "acceptance": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "source_ids": [
+        "S50"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-10",
+      "title": "Gereksinimden teste izlenebilirlik",
+      "decision": "core",
+      "lesson_ids": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "output_paths": [
+        "docs/traceability.md"
+      ],
+      "rationale": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "acceptance": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "source_ids": [
+        "S51"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-11",
+      "title": "Graf türleri",
+      "decision": "advanced",
+      "lesson_ids": [
+        "U16",
+        "U20",
+        "U23"
+      ],
+      "output_paths": [
+        "graph-design.md",
+        "harness-design.md",
+        "parallel-work.md"
+      ],
+      "rationale": "Bilgi, yürütme ve kod bağımlılık graflarını düğüm/kenar anlamlarıyla ayırır.",
+      "acceptance": "Bilgi grafı kenarı yürütme yetkisi sayılmaz; eski kod grafının güncellik sınırı ve bakım maliyeti gösterilir.",
+      "source_ids": [
+        "S52"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    },
+    {
+      "id": "proposal-12",
+      "title": "Skill taşınabilirliği",
+      "decision": "core",
+      "lesson_ids": [
+        "U08",
+        "U33"
+      ],
+      "output_paths": [
+        "docs/skill-compatibility.md",
+        "compatibility.md"
+      ],
+      "rationale": "Paket biçimini, keşfi, çağırmayı, davranışı ve ürün izinlerini ayrı sınar.",
+      "acceptance": "Aynı SKILL.md dosyasının bulunması farklı ürünlerde aynı çalışma garantisi değildir; desteklenmeyen alan açık kalır.",
+      "source_ids": [
+        "S39",
+        "S04"
+      ],
+      "runtime_status": "not_run",
+      "author_review": "pending"
+    }
+  ]
+}

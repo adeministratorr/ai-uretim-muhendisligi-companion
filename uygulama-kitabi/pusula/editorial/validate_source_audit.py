@@ -102,6 +102,9 @@ def main():
     assert len({x['id'] for x in lo}) == len(lo)
     case_by_id = {x['id']: x for x in cases}
     assert len(case_by_id) == len(cases)
+    for source_id, source in sources.items():
+        expected_lessons = {l for o in lo if o['source_id'] == source_id for l in o['lesson_ids']}
+        assert set(source['audited_lesson_ids']) == expected_lessons, f'Audited lesson mismatch: {source_id}'
     for o in lo:
         s = sources[o['source_id']]
         assert s['review_status'] == 'full_read'
@@ -109,6 +112,7 @@ def main():
         assert o['source_revision'] == s['current_sha256']
         assert o['runtime_status'] == 'not_run'
         assert o['status'] in {'mapped', 'gap', 'out_of_scope'}
+        assert o['acceptance_status'] in {'proposed', 'proposed_concrete', 'needs_design'}, o['id']
         assert set(o['lesson_ids']) <= set(lessons) and o['lesson_ids']
         allowed = [p for l in o['lesson_ids'] for p in lessons[l]['outputs']]
         for output in o['output_paths']:
@@ -123,6 +127,7 @@ def main():
             assert c['objective_id'] == o['id']
             assert c['runtime_status'] == 'not_run' and c['observed'] is None
             assert c['scenario'] and c['expected']
+            assert o['acceptance_status'] == c['design_status'], o['id']
             if any(int(l[1:]) <= 8 for l in o['lesson_ids']):
                 assert o.get('acceptance_status') == 'proposed_concrete', o['id']
                 if isinstance(c['scenario'], str):

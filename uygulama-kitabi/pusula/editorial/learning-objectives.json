@@ -15,13 +15,33 @@
         "scope.md",
         "environment.md"
       ],
-      "status": "gap",
-      "gap_reason": "U01 görevinde AI/ML/DL karşılaştırması açık öğretilmiyor; vision.md içinde kısa karşılaştırma alıştırması eklenmeli.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B01-P01-01",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U01 görevinde AI/ML/DL karşılaştırması açık öğretilmiyor; vision.md içinde kısa karşılaştırma alıştırması eklenmeli.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ]
+        },
+        "prompt": "prompts/01.md",
+        "acceptance_case": "AC-C1-B01-P01-01",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C1-B01-P01-02",
@@ -62,7 +82,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-03",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B01-P01-04",
@@ -80,7 +101,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-04",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B01-P01-05",
@@ -100,7 +122,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-05",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B01-P01-06",
@@ -120,7 +143,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-06",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B01-P01-07",
@@ -139,7 +163,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-07",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B01-P01-08",
@@ -183,7 +208,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-09",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B01-P01-10",
@@ -202,7 +228,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B01-P01-10",
       "runtime_status": "not_run",
-      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba"
+      "source_revision": "de28994952618efc7485eb22029f7ed17aca0d0bb507d6c871cf4b9e79d5d7ba",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B02-P01-01",
@@ -263,7 +290,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B02-P01-03",
       "runtime_status": "not_run",
-      "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
+      "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B02-P01-04",
@@ -282,7 +310,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B02-P01-04",
       "runtime_status": "not_run",
-      "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
+      "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B02-P01-05",
@@ -343,7 +372,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B02-P01-07",
       "runtime_status": "not_run",
-      "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88"
+      "source_revision": "16bb60535c5c8ebb8410b4f58ef04ed8288fff2fe674f0e17431abe811f23d88",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B03-P01-01",
@@ -384,7 +414,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B03-P01-02",
       "runtime_status": "not_run",
-      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
+      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B03-P01-03",
@@ -404,7 +435,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B03-P01-03",
       "runtime_status": "not_run",
-      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
+      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B03-P01-04",
@@ -445,7 +477,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B03-P01-05",
       "runtime_status": "not_run",
-      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
+      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B03-P01-06",
@@ -465,7 +498,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B03-P01-06",
       "runtime_status": "not_run",
-      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
+      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B03-P01-07",
@@ -483,7 +517,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B03-P01-07",
       "runtime_status": "not_run",
-      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
+      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B03-P01-08",
@@ -502,7 +537,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B03-P01-08",
       "runtime_status": "not_run",
-      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7"
+      "source_revision": "d74cfd84d1b76c3874a0ca210d096cd7f462477f55e71e8265a4c4188f43f0c7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B05-P01-01",
@@ -572,7 +608,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B05-P01-03",
       "runtime_status": "not_run",
-      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
+      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B05-P01-04",
@@ -592,7 +629,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B05-P01-04",
       "runtime_status": "not_run",
-      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
+      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C1-B05-P01-05",
@@ -611,13 +649,37 @@
         "README.md",
         ".gitignore"
       ],
-      "status": "gap",
-      "gap_reason": "Kaynak 5.9-5.10 tasarım katmanlarını evrensel öncelik sırası gibi anlatıyor. U07 içinde araca özgü resmi belgeyle nitelendirilmeden doğrudan aktarılmamalı.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "editorial_intervention": "Birleştiren editör hedefe özgü yanlış aday ve açık kabul kararını elle ekledi; özgün reader önerisi ilk P01 commitindeki ara okuma kaydında korundu.",
       "acceptance_case": "AC-C1-B05-P01-05",
       "runtime_status": "not_run",
-      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
+      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "Kaynak 5.9-5.10 tasarım katmanlarını evrensel öncelik sırası gibi anlatıyor. U07 içinde araca özgü resmi belgeyle nitelendirilmeden doğrudan aktarılmamalı.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "AC-C1-B05-P01-05",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C1-B05-P01-06",
@@ -657,7 +719,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C1-B05-P01-07",
       "runtime_status": "not_run",
-      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01"
+      "source_revision": "960c5c83a16290bb99308e942b467c29eaeb39f206e79667db47987f50824a01",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C2-B01-O01",
@@ -772,12 +835,32 @@
         "scope.md",
         "environment.md"
       ],
-      "status": "gap",
-      "gap_reason": "Müfredatta kıdem bazlı beceri gelişim matrisi bulunmuyor.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "C2-B01-O06-AC",
       "runtime_status": "not_run",
-      "source_revision": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24"
+      "source_revision": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "Müfredatta kıdem bazlı beceri gelişim matrisi bulunmuyor.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ]
+        },
+        "prompt": "prompts/01.md",
+        "acceptance_case": "C2-B01-O06-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C2-B01-O07",
@@ -832,12 +915,32 @@
         "scope.md",
         "environment.md"
       ],
-      "status": "gap",
-      "gap_reason": "U01 rolleri ayırıyor ancak bölüm laboratuvarındaki 5–8 satırlık üç sütunlu sorumluluk matrisi çıktısı tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "C2-B01-O09-AC",
       "runtime_status": "not_run",
-      "source_revision": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24"
+      "source_revision": "874372a76ae0580bc15515bcfeb5a3a7b6781083a0b347aec249df4bc11a4e24",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U01 rolleri ayırıyor ancak bölüm laboratuvarındaki 5–8 satırlık üç sütunlu sorumluluk matrisi çıktısı tanımlı değil.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ]
+        },
+        "prompt": "prompts/01.md",
+        "acceptance_case": "C2-B01-O09-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C2-B02-O01",
@@ -2025,18 +2128,37 @@
       "heading": "5.8 GUI Araç Seçim Matrisi",
       "objective": "45 dakikalık prototipte otomatik adımlar, müdahale noktası ve gözleme dayalı risk cümlesini kaydet.",
       "lesson_ids": [
-        "U03"
+        "U11"
       ],
       "output_paths": [
-        "design.md",
-        "accessibility.md"
+        "runbook.md",
+        "docs/traceability.md"
       ],
-      "status": "gap",
-      "gap_reason": "U03 tasarım belgesi üretiyor; U11 çalışan uygulamaya daha yakın olsa da süreli GUI prototipi ve müdahale günlüğü müfredatta tanımlı değil. U26 çok kipli/tarayıcı test hedefi bu MVP deneyinin yerine geçmez.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "C2-B05-O08-AC",
       "runtime_status": "not_run",
-      "source_revision": "d70035c898fe16d2abd763eb1c30f0765aea89367d69a151ee9e33ac349b29b6"
+      "source_revision": "d70035c898fe16d2abd763eb1c30f0765aea89367d69a151ee9e33ac349b29b6",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "moved_to_later_lesson",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U03 tasarım belgesi üretiyor; U11 çalışan uygulamaya daha yakın olsa da süreli GUI prototipi ve müdahale günlüğü müfredatta tanımlı değil. U26 çok kipli/tarayıcı test hedefi bu MVP deneyinin yerine geçmez.",
+          "lesson_ids": [
+            "U03"
+          ],
+          "output_paths": [
+            "design.md",
+            "accessibility.md"
+          ]
+        },
+        "prompt": "prompts/11.md",
+        "acceptance_case": "C2-B05-O08-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C2-B06-OBJ-01",
@@ -2580,7 +2702,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C2-B08-P01-03",
       "runtime_status": "not_run",
-      "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5"
+      "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C2-B08-P01-04",
@@ -2645,7 +2768,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C2-B08-P01-06",
       "runtime_status": "not_run",
-      "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5"
+      "source_revision": "74e8fa6b8e57e283d12ee55fee9a9d6be7fd45ab3d8dc7878c8f643480e5adb5",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C2-B09-OBJ-01",
@@ -3003,13 +3127,37 @@
         "README.md",
         ".gitignore"
       ],
-      "status": "gap",
-      "gap_reason": "U07 ortak sınırları ve komutları ister; kaynağın üç yasak, üç doğrulama ve PR devre kesici sayıları açık alıştırma/kabul koşulu olarak tanımlı değil. P02 sayıların öğretim gerekçesini ve gerekecek prompt ekini değerlendirmeli.",
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Reader notundaki açık kabul eklemesi gereksinimi mapped durumundan gap durumuna çıkarıldı.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "C2-B09-AC-15",
       "runtime_status": "not_run",
-      "source_revision": "8a1cf79cf101ded7d599961920b1d60e3a64b87048062d1eac501e31ef55d07b"
+      "source_revision": "8a1cf79cf101ded7d599961920b1d60e3a64b87048062d1eac501e31ef55d07b",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U07 ortak sınırları ve komutları ister; kaynağın üç yasak, üç doğrulama ve PR devre kesici sayıları açık alıştırma/kabul koşulu olarak tanımlı değil. P02 sayıların öğretim gerekçesini ve gerekecek prompt ekini değerlendirmeli.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "C2-B09-AC-15",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C2-B09-GAP-9-13",
@@ -3438,7 +3586,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C3-B07-P01-06",
       "runtime_status": "not_run",
-      "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa"
+      "source_revision": "eb6a4c6c94b4d3aacd29485964875cf6459f6479254ab4ebe4bade6eada8f7aa",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C4-B01-OBJ-01",
@@ -3477,13 +3626,32 @@
         "design.md",
         "accessibility.md"
       ],
-      "status": "gap",
-      "gap_reason": "U03 bekleme, iptal ve eski kaynak durumlarını ister; kaynağın sekiz kullanıcı durumunun tamamını ve özellikle kısmen tamamlandı/sonuç belirsiz ayrımını açık kabul koşuluna bağlamaz. P02de durum karşılaştırma alıştırması ve beklenen ekran kanıtı netleştirilmeli.",
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Pilot tasarım çıktısının kaynakta anlatılan bütün durumları otomatik kapsadığı varsayılmadı.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "C4-B01-AC-02",
       "runtime_status": "not_run",
-      "source_revision": "bfcf29118332a8767f6256d272f7fae4b0df12f8d74f58b134f9e21e487425d4"
+      "source_revision": "bfcf29118332a8767f6256d272f7fae4b0df12f8d74f58b134f9e21e487425d4",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U03 bekleme, iptal ve eski kaynak durumlarını ister; kaynağın sekiz kullanıcı durumunun tamamını ve özellikle kısmen tamamlandı/sonuç belirsiz ayrımını açık kabul koşuluna bağlamaz. P02de durum karşılaştırma alıştırması ve beklenen ekran kanıtı netleştirilmeli.",
+          "lesson_ids": [
+            "U03"
+          ],
+          "output_paths": [
+            "design.md",
+            "accessibility.md"
+          ]
+        },
+        "prompt": "prompts/03.md",
+        "acceptance_case": "C4-B01-AC-02",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "C4-B01-OBJ-03",
@@ -3877,7 +4045,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C4-B06-P01-04",
       "runtime_status": "not_run",
-      "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf"
+      "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C4-B06-P01-05",
@@ -3895,7 +4064,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C4-B06-P01-05",
       "runtime_status": "not_run",
-      "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf"
+      "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "C4-B06-P01-06",
@@ -3914,7 +4084,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-C4-B06-P01-06",
       "runtime_status": "not_run",
-      "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf"
+      "source_revision": "bb8bb6b6149b453631291e8a0007527b777e3e585e8f620370ca4eccd4c3f2cf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B01-O01",
@@ -3953,7 +4124,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B01-O02-AC",
       "runtime_status": "not_run",
-      "source_revision": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7"
+      "source_revision": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B01-O03",
@@ -3975,7 +4147,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B01-O03-AC",
       "runtime_status": "not_run",
-      "source_revision": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7"
+      "source_revision": "e6b1ff2b704c1c76b948425a2d54a9b7713e40280e6ab58eea32cba14f15b0f7",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B01-O04",
@@ -4322,7 +4495,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B02-O07-AC",
       "runtime_status": "not_run",
-      "source_revision": "c434294385f084657574702f77792b1df97439d5e0a3e79bd8f4d2f994a67f2c"
+      "source_revision": "c434294385f084657574702f77792b1df97439d5e0a3e79bd8f4d2f994a67f2c",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B02-O08",
@@ -4397,12 +4571,32 @@
         "scope.md",
         "environment.md"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B03-O03-AC",
       "runtime_status": "not_run",
-      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc"
+      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ]
+        },
+        "prompt": "prompts/01.md",
+        "acceptance_case": "CC-B03-O03-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B03-O04",
@@ -4421,12 +4615,36 @@
         "dependency-policy.md",
         "adr/0001-stack.md"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B03-O04-AC",
       "runtime_status": "not_run",
-      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc"
+      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U01",
+            "U04"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md",
+            "tech-stack.md",
+            "dependency-policy.md",
+            "adr/0001-stack.md"
+          ]
+        },
+        "prompt": "prompts/01.md",
+        "acceptance_case": "CC-B03-O04-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B03-O05",
@@ -4485,7 +4703,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B03-O07-AC",
       "runtime_status": "not_run",
-      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc"
+      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B03-O08",
@@ -4504,7 +4723,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B03-O08-AC",
       "runtime_status": "not_run",
-      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc"
+      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B03-O09",
@@ -4519,12 +4739,32 @@
         "scope.md",
         "environment.md"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B03-O09-AC",
       "runtime_status": "not_run",
-      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc"
+      "source_revision": "d47e5e6d0d44fb6c4d5b3f7a44a0e9496e0aaa4efb6effec64f64bc4e4b857bc",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U01"
+          ],
+          "output_paths": [
+            "vision.md",
+            "scope.md",
+            "environment.md"
+          ]
+        },
+        "prompt": "prompts/01.md",
+        "acceptance_case": "CC-B03-O09-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B03-O10",
@@ -4630,7 +4870,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-CC-B04-P01-04",
       "runtime_status": "not_run",
-      "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20"
+      "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B04-P01-05",
@@ -4649,7 +4890,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-CC-B04-P01-05",
       "runtime_status": "not_run",
-      "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20"
+      "source_revision": "757e7d00fd6f45e7be81ffd4de47bed97a1c4d8fa3964e93c3a77cbc37385a20",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B07-P01-01",
@@ -4797,12 +5039,36 @@
         "README.md",
         ".gitignore"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B10-O02-AC",
       "runtime_status": "not_run",
-      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7"
+      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B10-O02-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B10-O03",
@@ -4821,12 +5087,36 @@
         "README.md",
         ".gitignore"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B10-O03-AC",
       "runtime_status": "not_run",
-      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7"
+      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B10-O03-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B10-O04",
@@ -4985,12 +5275,36 @@
         "README.md",
         ".gitignore"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B10-O10-AC",
       "runtime_status": "not_run",
-      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7"
+      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B10-O10-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B10-O11",
@@ -5013,12 +5327,40 @@
         "README.md",
         ".gitignore"
       ],
-      "status": "gap",
-      "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B10-O11-AC",
       "runtime_status": "not_run",
-      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7"
+      "source_revision": "79930394a654201e72ac5a56f7f7b5d095cf3ba906af3aa63aa805a3738278a7",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "İlgili ders kavramsal karşılık sağlıyor; bu Claude Code kurulum/mod laboratuvarının ayrı çalışma kaydı, dosya çıktısı ve olumlu/olumsuz runtime kabul deneyi mevcut müfredatta açıkça tanımlı değil.",
+          "lesson_ids": [
+            "U06",
+            "U07"
+          ],
+          "output_paths": [
+            "roadmap.md",
+            "tasks.md",
+            "dependencies.md",
+            "AGENTS.md",
+            "docs-map.md",
+            "agent-compatibility.md",
+            "instruction-tests.json",
+            "agent-adapters/",
+            "README.md",
+            ".gitignore"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B10-O11-AC",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B13-O01",
@@ -5403,7 +5745,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-CC-B14-P01-04",
       "runtime_status": "not_run",
-      "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"
+      "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B14-P01-05",
@@ -5421,7 +5764,8 @@
       "gap_reason": null,
       "acceptance_case": "AC-CC-B14-P01-05",
       "runtime_status": "not_run",
-      "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf"
+      "source_revision": "20821aef08662d1581f2f83b42d1d7e68f7496206118a576af1cdec87c77edcf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B14-P01-06",
@@ -5487,13 +5831,34 @@
         "agent-adapters/",
         "environment.md"
       ],
-      "status": "gap",
-      "gap_reason": "U07 yönerge kapsamını işler; ayar kapsamı/sahibi karar matrisi açık çıktı değildir.",
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B15-AC01",
       "runtime_status": "not_run",
-      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b"
+      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U07 yönerge kapsamını işler; ayar kapsamı/sahibi karar matrisi açık çıktı değildir.",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "output_paths": [
+            "agent-compatibility.md",
+            "agent-adapters/",
+            "environment.md"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B15-AC01",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B15-O02",
@@ -5509,13 +5874,34 @@
         "agent-compatibility.md",
         "instruction-tests.json"
       ],
-      "status": "gap",
-      "gap_reason": "U07 sürüm ve alt dizin yönerge testleri var; settings keşif farkı açıkça kapsanmıyor.",
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B15-AC02",
       "runtime_status": "not_run",
-      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b"
+      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U07 sürüm ve alt dizin yönerge testleri var; settings keşif farkı açıkça kapsanmıyor.",
+          "lesson_ids": [
+            "U01",
+            "U07"
+          ],
+          "output_paths": [
+            "environment.md",
+            "agent-compatibility.md",
+            "instruction-tests.json"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B15-AC02",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B15-O03",
@@ -5529,12 +5915,31 @@
         "instruction-tests.json",
         "agent-compatibility.md"
       ],
-      "status": "gap",
-      "gap_reason": "Çelişen yönerge testi ayar dizilerinin birleşmesi testi değildir; U07 kabulüne ayrı koşul gerekir.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B15-AC03",
       "runtime_status": "not_run",
-      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b"
+      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "Çelişen yönerge testi ayar dizilerinin birleşmesi testi değildir; U07 kabulüne ayrı koşul gerekir.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "instruction-tests.json",
+            "agent-compatibility.md"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B15-AC03",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B15-O04",
@@ -5627,12 +6032,31 @@
         "instruction-tests.json",
         "README.md"
       ],
-      "status": "gap",
-      "gap_reason": "U07 tam ayar laboratuvarı ve geri dönüş adımlarını tanımlamıyor; pilot için ek kurulum zorunluluğu yapılmamalı.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B15-AC08",
       "runtime_status": "not_run",
-      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b"
+      "source_revision": "c71fa296cbf3eeed9b4aee666392a05dbedbe85ce31fc919ae8b95ee3deb652b",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U07 tam ayar laboratuvarı ve geri dönüş adımlarını tanımlamıyor; pilot için ek kurulum zorunluluğu yapılmamalı.",
+          "lesson_ids": [
+            "U07"
+          ],
+          "output_paths": [
+            "instruction-tests.json",
+            "README.md"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B15-AC08",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B15-O09",
@@ -5705,13 +6129,33 @@
         "skill-tests.json",
         "agent-compatibility.md"
       ],
-      "status": "gap",
-      "gap_reason": "U08 keşif ve davranış ayrımını ister; kapsam çakışması ve gerçek hedef dizin örneği henüz verilmemiş.",
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B16-AC03",
       "runtime_status": "not_run",
-      "source_revision": "f756b7c39c4fce409d2d845b538e782e90de7ca38910117d562066dbd866fba9"
+      "source_revision": "f756b7c39c4fce409d2d845b538e782e90de7ca38910117d562066dbd866fba9",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U08 keşif ve davranış ayrımını ister; kapsam çakışması ve gerçek hedef dizin örneği henüz verilmemiş.",
+          "lesson_ids": [
+            "U07",
+            "U08"
+          ],
+          "output_paths": [
+            "skill-tests.json",
+            "agent-compatibility.md"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B16-AC03",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B16-O04",
@@ -5804,7 +6248,8 @@
       "gap_reason": "U33 genel uyumluluk/güncelleme içerir; özel komuttan göç vakası needs_design.",
       "acceptance_case": "CC-B16-AC08",
       "runtime_status": "not_run",
-      "source_revision": "f756b7c39c4fce409d2d845b538e782e90de7ca38910117d562066dbd866fba9"
+      "source_revision": "f756b7c39c4fce409d2d845b538e782e90de7ca38910117d562066dbd866fba9",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B16-O09",
@@ -5852,20 +6297,34 @@
         "U08"
       ],
       "output_paths": [
-        "skills/pusula-belge-uret/SKILL.md"
-      ],
-      "status": "gap",
-      "gap_reason": " Ayrıntılı references/belge-iliskileri.md çıktısı U08 müfredat/prompt çıktı listesinde yok; P02de açık çıktı veya SKILL.md içi başvuru kararı gerekli.",
-      "proposed_output_paths": [
         "skills/pusula-belge-uret/SKILL.md",
-        "skills/pusula-belge-uret/references/belge-iliskileri.md",
-        "skill-tests.json"
+        "skills/pusula-belge-uret/references/belge-iliskileri.md"
       ],
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Tanımsız referans çıktısı mevcut çıktı gibi sunulmadı; önerilen yol ayrı alanda korundu.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B17-AC02",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": " Ayrıntılı references/belge-iliskileri.md çıktısı U08 müfredat/prompt çıktı listesinde yok; P02de açık çıktı veya SKILL.md içi başvuru kararı gerekli.",
+          "lesson_ids": [
+            "U08"
+          ],
+          "output_paths": [
+            "skills/pusula-belge-uret/SKILL.md"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B17-AC02",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B17-O03",
@@ -5881,12 +6340,33 @@
         "skill-tests.json",
         "compatibility.md"
       ],
-      "status": "gap",
-      "gap_reason": "U08 uygulama kökünü belirler; taşınmış paket kökü ve ürün/sürüm farklılığı için somut vaka eklenmeli.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B17-AC03",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U08 uygulama kökünü belirler; taşınmış paket kökü ve ürün/sürüm farklılığı için somut vaka eklenmeli.",
+          "lesson_ids": [
+            "U08",
+            "U33"
+          ],
+          "output_paths": [
+            "skills/pusula-belge-uret/SKILL.md",
+            "skill-tests.json",
+            "compatibility.md"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B17-AC03",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B17-O04",
@@ -5920,12 +6400,31 @@
         "skill-tests.json",
         "skills/pusula-kaynak-denetle/SKILL.md"
       ],
-      "status": "gap",
-      "gap_reason": "U08 paket biçimi/skill seçimini ayırıyor; çıktı biçimi ile anlamsal destek için bağımsız doğrulama ve yardımcı betik sözleşmesi yok.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B17-AC05",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U08 paket biçimi/skill seçimini ayırıyor; çıktı biçimi ile anlamsal destek için bağımsız doğrulama ve yardımcı betik sözleşmesi yok.",
+          "lesson_ids": [
+            "U08"
+          ],
+          "output_paths": [
+            "skill-tests.json",
+            "skills/pusula-kaynak-denetle/SKILL.md"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B17-AC05",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B17-O06",
@@ -5943,7 +6442,8 @@
       "gap_reason": "U33 dağıtım hedefi var; Pusula doğrulayıcı betiği ve yürütülebilir sözleşmesi henüz tasarlanmamış. needs_design.",
       "acceptance_case": "CC-B17-AC06",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B17-O07",
@@ -5957,12 +6457,31 @@
         "skill-tests.json",
         "skills/pusula-kaynak-denetle/SKILL.md"
       ],
-      "status": "gap",
-      "gap_reason": "U08 kaynak içi talimatı veri sayar; modelden önce çalışan dinamik kabuk ön işlemi açık denetim maddesi değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B17-AC07",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U08 kaynak içi talimatı veri sayar; modelden önce çalışan dinamik kabuk ön işlemi açık denetim maddesi değil.",
+          "lesson_ids": [
+            "U08"
+          ],
+          "output_paths": [
+            "skill-tests.json",
+            "skills/pusula-kaynak-denetle/SKILL.md"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B17-AC07",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B17-O08",
@@ -6015,12 +6534,33 @@
         "eval-plan.md",
         "evals/rubric.md"
       ],
-      "status": "gap",
-      "gap_reason": "U08 ve U24 Skill kullanılan/kullanılmayan karşı koşulu zorunlu kılmıyor; CC-B17 güncel kaynağındaki önemli açık hedef.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B17-AC10",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U08 ve U24 Skill kullanılan/kullanılmayan karşı koşulu zorunlu kılmıyor; CC-B17 güncel kaynağındaki önemli açık hedef.",
+          "lesson_ids": [
+            "U08",
+            "U24"
+          ],
+          "output_paths": [
+            "skill-tests.json",
+            "eval-plan.md",
+            "evals/rubric.md"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B17-AC10",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B17-O11",
@@ -6057,7 +6597,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B17-AC12",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B17-O13",
@@ -6074,7 +6615,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B17-AC13",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B17-O14",
@@ -6090,12 +6632,33 @@
         "loop-spec.md",
         "loop-tests.json"
       ],
-      "status": "gap",
-      "gap_reason": "U08 Skill düzeltme bütçesi tanımlamıyor; ayrıntı U19a bırakılmalı, pilotta sınırsız iyileştirme sözü verilmemeli.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B17-AC14",
       "runtime_status": "not_run",
-      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf"
+      "source_revision": "157e6448eec4cf72b3652258f8276b160c24ffbb3088c5ff82407c958baf07cf",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U08 Skill düzeltme bütçesi tanımlamıyor; ayrıntı U19a bırakılmalı, pilotta sınırsız iyileştirme sözü verilmemeli.",
+          "lesson_ids": [
+            "U08",
+            "U19"
+          ],
+          "output_paths": [
+            "skill-tests.json",
+            "loop-spec.md",
+            "loop-tests.json"
+          ]
+        },
+        "prompt": "prompts/08.md",
+        "acceptance_case": "CC-B17-AC14",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B21-O01",
@@ -6137,7 +6700,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B21-AC02",
       "runtime_status": "not_run",
-      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a"
+      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B21-O03",
@@ -6156,7 +6720,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B21-AC03",
       "runtime_status": "not_run",
-      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a"
+      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B21-O04",
@@ -6174,7 +6739,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B21-AC04",
       "runtime_status": "not_run",
-      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a"
+      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B21-O05",
@@ -6257,12 +6823,34 @@
         "loop-spec.md",
         "harness-design.md"
       ],
-      "status": "gap",
-      "gap_reason": "Müfredatta kavram ayırımı ilgili derslerde var; Pusulaya özgü sınıflandırma alıştırması yok, kısa köprü etkinliği eklenebilir.",
+      "status": "mapped",
+      "gap_reason": "",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B21-AC08",
       "runtime_status": "not_run",
-      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a"
+      "source_revision": "109d362cb994ea41f7fd1417c9d69aae94b516fe93514c362e2c078a9727540a",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "prompt_extended",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "Müfredatta kavram ayırımı ilgili derslerde var; Pusulaya özgü sınıflandırma alıştırması yok, kısa köprü etkinliği eklenebilir.",
+          "lesson_ids": [
+            "U07",
+            "U19",
+            "U20"
+          ],
+          "output_paths": [
+            "agent-compatibility.md",
+            "loop-spec.md",
+            "harness-design.md"
+          ]
+        },
+        "prompt": "prompts/07.md",
+        "acceptance_case": "CC-B21-AC08",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B29-O01",
@@ -6321,7 +6909,8 @@
       "gap_reason": "U26 görsel/PDF/ses ve tarayıcıyı kapsar; Figma entegrasyonu için karşılık yok, ihtiyaç varsa needs_design.",
       "acceptance_case": "CC-B29-AC03",
       "runtime_status": "not_run",
-      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae"
+      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B29-O04",
@@ -6329,22 +6918,41 @@
       "heading": "Tasarım Skill'lerini görevlerine göre ayırın",
       "objective": "Pusula arayüzünde görsel karar yöntemi ile paketleyici ve tarayıcı doğrulayıcısını ihtiyaca göre seç.",
       "lesson_ids": [
-        "U03",
-        "U07",
-        "U08"
+        "U33"
       ],
       "output_paths": [
-        "design.md",
-        "agent-compatibility.md",
-        "skill-tests.json"
+        "compatibility.md",
+        "docs/skill-compatibility.md"
       ],
-      "status": "gap",
-      "gap_reason": "U03/U08 Pusula Skillleri var; harici tasarım Skill seçimi pilot müfredatının doğrudan amacı değil.",
+      "status": "mapped",
+      "gap_reason": "",
       "editorial_intervention": "Çıktının müfredattaki üreticisi uygulama kimliklerine eklendi; reader önerisi ayrıca korundu.",
       "acceptance_status": "proposed_concrete",
       "acceptance_case": "CC-B29-AC04",
       "runtime_status": "not_run",
-      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae"
+      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "editorial_resolution": {
+        "phase": "P02",
+        "disposition": "moved_to_later_lesson",
+        "previous": {
+          "status": "gap",
+          "gap_reason": "U03/U08 Pusula Skillleri var; harici tasarım Skill seçimi pilot müfredatının doğrudan amacı değil.",
+          "lesson_ids": [
+            "U03",
+            "U07",
+            "U08"
+          ],
+          "output_paths": [
+            "design.md",
+            "agent-compatibility.md",
+            "skill-tests.json"
+          ]
+        },
+        "prompt": "prompts/33.md",
+        "acceptance_case": "CC-B29-AC04",
+        "basis": "Üretim görevi ve kabul koşulu açık alıştırmayla genişletildi; gerçek çalışma sonucu değildir.",
+        "runtime_status": "not_run"
+      }
     },
     {
       "id": "CC-B29-O05",
@@ -6383,7 +6991,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B29-AC06",
       "runtime_status": "not_run",
-      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae"
+      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B29-O07",
@@ -6401,7 +7010,8 @@
       "gap_reason": "U11 tarayıcı gözlemi ister; sabit viewport, insan referans kabulü ve ikinci görsel koşu açık zorunluluk değil.",
       "acceptance_case": "CC-B29-AC07",
       "runtime_status": "not_run",
-      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae"
+      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "acceptance_status": "proposed"
     },
     {
       "id": "CC-B29-O08",
@@ -6457,7 +7067,8 @@
       "gap_reason": null,
       "acceptance_case": "CC-B29-AC10",
       "runtime_status": "not_run",
-      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae"
+      "source_revision": "0ac2ddca5a36b7f7cbdbdebcb8f6e16133751adde5baa434258a02e9165c02ae",
+      "acceptance_status": "proposed"
     }
   ]
 }

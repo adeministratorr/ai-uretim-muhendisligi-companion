@@ -37,6 +37,16 @@ Bu maddeler çalışan ürün, sınanmış prompt veya tamamlanmış kitap anlam
 
 Her uygulama grubunda kaynak incelemesi, üretim, kabul deneyi, düzeltme ve bölüm yazımı tamamlanır. Mevcut kitaplara eklenecek anlatım aynı grubun sonuçlarına dayanır. Cilt/bölüm düzeyindeki ek önerisi ayrı kaydedilir; kitaplar arasındaki ortak kavramlar aynı anlamda kullanılır.
 
-Araç karşılaştırmasının ilk grubu Codex, Claude Code, Qoder IDE/CLI ve ZCode'dur. Koşular erişilebilir araçlarda yürütülür; erişilemeyen araç için belge incelemesi başarı deneyi sayılmaz. Diğer araçlar sonraki uyumluluk teslimlerinde ele alınır.
+Araç kapsamı Codex, Claude Code, Qoder IDE/CLI, ZCode, Antigravity ve OpenCode dahil mevcut uyumluluk tablosuyla korunur. Koşular erişilebilir araçlarda yürütülür; erişilemeyen araç için belge incelemesi başarı deneyi sayılmaz. Diğer araçlar sonraki uyumluluk teslimlerinde ele alınır.
 
 Sonraki uygulamaya geçiş, gereken önceki çıktının kabulüne bağlıdır. Model erişimi, yeni kurulum veya yayın kararı gerektiren işler kendi yürütme aşamasında değerlendirilir. Bu plan, canlı yayın onayı veya yapılmamış deneylerin sonucu değildir.
+
+## Güncel ilerleme
+
+P01 kaynak denetimi tamamlandı. P02 ile 12 yaklaşımın görev, dosya ve kabul koşulları işlendi; 121 terim karar kaydına alındı. P03 koşu kayıt altyapısı yeniden geliştirmeye geçildiğinde ilk iştir. P04–P12 ürün/model deneyleri, bunlara dayalı kitap anlatımı ve bütünlük teslimi beklemektedir. Kaynak kitap ekleri öneri aşamasındadır.
+
+## Deneme araçları ve gider kararı
+
+Kitap örnekleri API veya mevcut abonelik seçeneklerini gösterebilir. Bu projenin gerçek denemelerinde yalnız mevcut abonelikler kullanılacak; ayrıca ücretlenen API çağrısı yapılmayacak. Abonelikte gözlenmeyen gider `null` ve gerekçeyle kaydedilecek; teorik API eşdeğeri gerçek fatura sayılmayacak.
+
+Antigravity öncelikli araçtır. OpenCode, kullanıcının bildirdiği IP sınırı nedeniyle beklemededir; yeniden deneme yapılmaz. Antigravity ile bağımsız kaynak incelemesi tamamlandı, fakat etkileşimsiz düzenleme denemesi komut onayı sınırında dosya değiştirmeden durdu. Bu iki editoryal çalışma U01–U36 pilot koşularına dahil edilmez. 26 Ekim 2026 tarihli son Antigravity çağrısı da kota sınırı (429) nedeniyle başlamadı; araç yaklaşık 4,5 saatlik yenilenme süresi bildirdi. Bu nedenle geliştirme ve gerçek model deneyleri sonraya alındı. Kitap ve prompt hazırlığı tamamlanan editoryal kapsamıyla korunur; başarısız çağrı çalışma sonucu sayılmaz. Codex/Claude yedek seçeneklerdir; ücretli API'ye sessiz geçiş yapılmaz.

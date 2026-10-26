@@ -4,8 +4,8 @@
   "full_text_audit_complete": false,
   "audit_status": "audit_complete",
   "audit_scope": "100-source revision inventory and 31-source U01-U08 full-reading pilot",
-  "pilot_gate_status": "pilot_gap_resolution_pending",
-  "pilot_gap_count": 27,
+  "pilot_gate_status": "teaching_design_mapped_runtime_pending",
+  "pilot_gap_count": 0,
   "scope_note": "Revision metadata is inventory only. Pilot heading dispositions and full-reading attestations are recorded once in pilot-reading-log.json. No runtime or external-primary-source verification is asserted.",
   "repositories": {
     "engineering": {
@@ -777,7 +777,6 @@
       ],
       "audited_lesson_ids": [
         "U01",
-        "U03",
         "U04",
         "U11"
       ],
@@ -3021,9 +3020,9 @@
         "U01",
         "U03",
         "U07",
-        "U08",
         "U11",
-        "U26"
+        "U26",
+        "U33"
       ],
       "pilot": true,
       "bytes": 53673,
@@ -3379,5 +3378,12 @@
       "bytes": 66429,
       "line_count": 1077
     }
-  ]
+  ],
+  "pilot_gap_resolution": {
+    "phase": "P02",
+    "original_gaps": 27,
+    "prompt_extended": 25,
+    "moved_to_later_lesson": 2,
+    "runtime_status": "not_run"
+  }
 }

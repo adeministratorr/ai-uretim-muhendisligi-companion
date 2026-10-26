@@ -40,3 +40,19 @@ brief → vision + scope → prd + acceptance
 ```
 
 Bir gereksinim değiştiğinde etkilenen tasarım, görev, test ve yönerge birlikte gözden geçirilir. Her dosyayı aynı uzun özeti taşıyan bağımsız metin olarak üretmek çelişki riskini artırır. Ortak karar tek yerde tutulur, diğer dosyalar onu açıkça kaynak gösterir.
+
+## Araştırma ekleriyle genişleyen dosyalar
+
+| Dosya | Görev ve üretim sırası |
+|---|---|
+| `docs/traceability.md` | U02 gereksinim bağlarını başlatır; U03–U06 belge ve görev bağlarını, U11 gerçek kod/test bağlarını günceller. |
+| `evals/ax-cases.json`, `docs/ax-review.md` | U07 belge/araç keşfi ve görev başarısını ayırır; U08, U18 ve U33 ilgili gözlemleri ekler. |
+| `docs/skill-compatibility.md` | U08 biçim, keşif, çağırma, davranış ve izin ayrımını kurar; U33 dağıtım deneyini ekler. |
+| `skills/pusula-belge-uret/references/belge-iliskileri.md` | U08 skill paketinin iç başvurusunu üretir; uygulama kökünün kendisi değildir. |
+| `policies/delegation.yaml` | U17 görev yetkisinin kapsamını üretir; U28 ve U32 kimlik/devir ve sahiplik incelemesinde kullanır. |
+| `policies/autonomy-budget.yaml` | U19 bütçe sınırlarını üretir; U20 yürütücüye bağlar, U25 ihlal durumunu sınar. |
+| `evals/trajectory-cases.json` | U24 izinli alternatif yolları ve hatalı işlem izlerini tanımlar; U30 hizmet ölçümüne bağlar. |
+| `datasets/provenance.json` | U24 veri kökeni ve ayrımını başlatır; U30 iz kökenini günceller, U35 eğitim adayı uygunluğunu inceler. |
+| `evals/routing-comparison.json` | U29 aynı görev setinde sabit model ve adım bazında yönlendirmeyi karşılaştırır. |
+
+Bu dosyalar okurun proje çıktılarıdır. Companion içinde adlarının bulunması, üretildikleri veya herhangi bir araç tarafından kendiliğinden okundukları anlamına gelmez. Yeni bağımlılıkların ilk üretimi müfredatta tüketildikleri adımdan önce gelir.

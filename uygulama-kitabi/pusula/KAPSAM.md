@@ -107,10 +107,10 @@ Dört ciltteki 60 bölüm ve Claude Code rehberindeki 40 bölüm aşağıda eşl
 
 Kitap yazımında her satıra alt başlık, öğrenme hedefi, alıştırma ve kabul kanıtı eklenecek. Kavramsal bölümler, karar ve karşılaştırma alıştırmalarıyla karşılanacak. Çeviri ve tarihî teslim kopyaları yeni kapsam sayılmayacak.
 
-## P01 editoryal denetim kaydı
+## P01–P02 editoryal denetim kaydı
 
-100 kaynak dosyanın başlangıç ve güncel SHA-256 değerleri karşılaştırıldı; 8 dosya değişmiş, 92 dosya aynı kalmıştır. Başlangıç özetleri ezilmedi. U01–U08e bağlı31 bölüm baştan sona okunarak başlıkları ve öğrenme hedefleri çıkarıldı; kalan69 kaynak yalnız revizyon envanteri düzeyindedir. `full_text_audit_complete` bu nedenle `false` kalır.
+100 kaynak dosyanın başlangıç ve güncel SHA-256 değerleri karşılaştırıldı: sekiz dosya değişmiş, 92 dosya aynı kalmıştır. İlk sekiz uygulamayla ilişkili 31 bölüm baştan sona okundu; 69 kaynak yalnız revizyon envanteri düzeyindedir. `full_text_audit_complete` bu nedenle `false` kalır.
 
-P01 durumu `audit_complete`, öğretim açığı geçidi `pilot_gap_resolution_pending`dir. Bu ayrım, kaynağın incelenmesiyle öğretim açığının kapanmasını ayırır. Pilot hedeflerinde27 açık kayıt P02ye aktarılacaktır. `mapped` satırlar öğretim eşlemesidir; ürün ve model koşuları `not_run` durumundadır. Kaynak kitap deneylerinin başarıları Pusula sonucu sayılmadı.
+299 öğrenme hedefi ve kabul vakası kaydedildi. P01'de bulunan 27 pilot açığının 25'i promptlarda açıklaştırıldı; GUI prototipi U11'e, harici tasarım skill'i seçimi U33'e taşındı. İleri hedeflerde 50 öğretim/kabul tasarımı açığı sürer. `mapped` öğretim eşlemesidir; bütün ürün ve uygulama koşuları `not_run` durumundadır.
 
-Ayrıntılar: [kaynak/revizyon envanteri](editorial/source-map.json), [okuma kaydı](editorial/pilot-reading-log.json), [öğrenme hedefleri](editorial/learning-objectives.json), [sentetik kabul vakaları](editorial/pilot-acceptance-cases.json) ve [açıklar](editorial/coverage-gaps.md). Kapsam dışı karar alınmadı; ileride gerekirse yazar incelemesine sunulacaktır.
+Ayrıntılar: [kaynak envanteri](editorial/source-map.json), [okuma kaydı](editorial/pilot-reading-log.json), [hedefler](editorial/learning-objectives.json), [kabul vakaları](editorial/pilot-acceptance-cases.json), [açıklar](editorial/coverage-gaps.md) ve [yeni yaklaşım kararları](editorial/approach-decisions.md). Kaynak kitap deneylerinin başarıları Pusula sonucu sayılmadı.

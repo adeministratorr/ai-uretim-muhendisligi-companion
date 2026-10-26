@@ -8,7 +8,7 @@
     "source_chapters": 100,
     "skills": 2,
     "skill_cases": 6,
-    "sources": 37
+    "sources": 54
   },
   "result": "pass",
   "negative_checks": [
@@ -31,15 +31,58 @@
   "model_runs": 0,
   "product_runs": 0,
   "human_acceptance": null,
-  "change_scope": "Production roadmap and next-work acceptance criteria; no model or product run",
+  "change_scope": "P01 source audit and P02 curriculum/editorial extensions; no U01–U36 model or product run",
   "negative_checks_from_commit": "a14927a268aa2897eb23fe8e31bf22e4bc23f652",
   "instruction_behavior_cases": 11,
   "instruction_behavior_runs": 0,
   "terminal_state": "done",
-  "terminal_state_scope": "documentation_package_update_only",
+  "terminal_state_scope": "P01_P02_editorial_delivery_only",
   "instruction_behavior_case_groups": {
     "general": 7,
     "zcode": 4
   },
-  "reviewed_tool_entries": 22
+  "reviewed_tool_entries": 22,
+  "editorial_counts": {
+    "sources_found": 100,
+    "sources_full_read": 31,
+    "sources_pending_full_read": 69,
+    "learning_objectives": 299,
+    "mapped_objectives": 249,
+    "open_future_objectives": 50,
+    "proposals": 12,
+    "terms": 121,
+    "book_update_proposals": 15
+  },
+  "p02_negative_checks": [
+    {
+      "case": "unknown_primary_source",
+      "observed": "rejected"
+    },
+    {
+      "case": "wrong_closure_prompt",
+      "observed": "rejected"
+    }
+  ],
+  "model_runs_scope": "Only curriculum U01–U36; editorial authorship and independent review are excluded.",
+  "independent_reviews": [
+    {
+      "phase": "P01",
+      "reviewer": "Antigravity CLI",
+      "spec": "pass",
+      "quality": "pass_with_followups",
+      "followups": "Resolved in P02; review was sampled and did not rerun source hashes."
+    },
+    {
+      "phase": "P02",
+      "reviewer": "Independent Codex reviewer",
+      "spec": "pass",
+      "quality": "pass",
+      "scope": "27 pilot objective closures, 12 proposals, 121 terms, 15 book proposals, 28 changed lessons"
+    }
+  ],
+  "deferred_work": {
+    "first_task": "P03",
+    "reason": "User permits development deferral; OpenCode IP block reported and Antigravity quota429 observed.",
+    "product_and_curriculum_runs": "not_run"
+  }
 }

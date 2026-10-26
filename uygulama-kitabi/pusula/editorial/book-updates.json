@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "scope": "Mevcut kaynak kitaplar için öneri; kaynak dosyaları değiştirilmedi.",
+  "updates": [
+    {
+      "id": "BOOK-proposal-01",
+      "proposal_id": "proposal-01",
+      "source_chapters": [
+        "C2-B09",
+        "C3-B07",
+        "C3-B04"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Ajanın belgeyi bulmasını, uygun işlemi seçmesini ve görevi doğru tamamlamasını ayrı ölçer.",
+      "learning_objective": "Yanlış belgeyi bulan veya yazma aracı seçen aday görev başarılı olsa bile ilgili ölçütte geçmez.",
+      "required_labs": [
+        "U07",
+        "U08",
+        "U18",
+        "U33"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-02",
+      "proposal_id": "proposal-02",
+      "source_chapters": [
+        "C3-B13",
+        "C4-B04",
+        "C4-B12"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Eksik kullanıcı bilgisi, servis gecikmesi ve izin verilen alternatif araç yollarıyla görev akışını sınar.",
+      "learning_objective": "Tek bir doğru araç sırası dayatılmaz; aynı sonuca yetkisiz yoldan ulaşan iz reddedilir.",
+      "required_labs": [
+        "U24",
+        "U30"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-03",
+      "proposal_id": "proposal-03",
+      "source_chapters": [
+        "C3-B03",
+        "C3-B11",
+        "C4-B11"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Keşif kaydı, kimlik doğrulaması ve görev için verilen yetkiyi ayırır.",
+      "learning_objective": "Kayıtta bulunan ama yetkisi olmayan ajan ve süresi dolmuş devir reddedilir; taslak protokol RFC diye sunulmaz.",
+      "required_labs": [
+        "U17",
+        "U28",
+        "U32"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-04",
+      "proposal_id": "proposal-04",
+      "source_chapters": [
+        "C2-B13",
+        "C3-B08",
+        "C4-B13"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Çağrı, süre, maliyet ve işlem kapsamı sınırlarını birlikte uygular.",
+      "learning_objective": "Sınırlardan biri dolunca yeni dış etki başlamaz; bilinmeyen maliyet sıfır kabul edilmez.",
+      "required_labs": [
+        "U19",
+        "U20",
+        "U25"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-05",
+      "proposal_id": "proposal-05",
+      "source_chapters": [
+        "C4-B02",
+        "C4-B14"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "İşlem alıcıda tamamlanıp yanıt kaybolduğunda makbuzla sonucu uzlaştırır.",
+      "learning_objective": "Aynı işlem kimliğiyle tekrar denemede alıcıda ikinci etki oluşmaz; yerel checkpoint küresel exactly-once garantisi sayılmaz.",
+      "required_labs": [
+        "U21",
+        "U31"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-06",
+      "proposal_id": "proposal-06",
+      "source_chapters": [
+        "C3-B13",
+        "C4-B09",
+        "C4-B12"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "İzlerin kökenini, kullanım iznini, görev ailesini ve veri ayrımını kaydeder.",
+      "learning_objective": "Aynı kaynak/görev ailesinin türevleri eğitim ve değerlendirme tarafına sızmaz; kullanım izni bilinmeyen iz dışlanır.",
+      "required_labs": [
+        "U24",
+        "U30",
+        "U35"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-07",
+      "proposal_id": "proposal-07",
+      "source_chapters": [
+        "C4-B03",
+        "C4-B13"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Sabit model ile adım bazında yönlendirmeyi aynı kabul setinde karşılaştırır.",
+      "learning_objective": "Yeniden deneme ve inceleme dahil toplam süre/maliyet ile kalite raporlanır; yedek rota veri sınırını genişletemez.",
+      "required_labs": [
+        "U29"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-08",
+      "proposal_id": "proposal-08",
+      "source_chapters": [
+        "C2-B03",
+        "C3-B06"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Karar, kaynak revizyonu, açık soru ve yarım işi kısa bağlamda korur.",
+      "learning_objective": "Özet sonrası eski revizyonun geçerli sayılması ve iptal edilmiş işin yeniden başlaması reddedilir.",
+      "required_labs": [
+        "U13",
+        "U14"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-09",
+      "proposal_id": "proposal-09",
+      "source_chapters": [
+        "C3-B08",
+        "C4-B05"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Sabit kabul setinde bir bileşen değişikliğini ve geri dönüşünü ölçer.",
+      "learning_objective": "Saklı değerlendirme seti ayara katılmaz; yetki denetimi optimizasyon adına kaldırılmaz.",
+      "required_labs": [
+        "U34",
+        "U35"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-10",
+      "proposal_id": "proposal-10",
+      "source_chapters": [
+        "C2-B08",
+        "CC-B07",
+        "CC-B21"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Gereksinim değişikliğini belge, görev, kod ve teste bağlar.",
+      "learning_objective": "Var olmayan test planned kalır; kaynak revizyonu değişikliğinde etkilenen bağlar birlikte güncellenir.",
+      "required_labs": [
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07",
+        "U11"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-11",
+      "proposal_id": "proposal-11",
+      "source_chapters": [
+        "C2-B03",
+        "C3-B05",
+        "C3-B10"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Bilgi, yürütme ve kod bağımlılık graflarını düğüm/kenar anlamlarıyla ayırır.",
+      "learning_objective": "Bilgi grafı kenarı yürütme yetkisi sayılmaz; eski kod grafının güncellik sınırı ve bakım maliyeti gösterilir.",
+      "required_labs": [
+        "U16",
+        "U20",
+        "U23"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-proposal-12",
+      "proposal_id": "proposal-12",
+      "source_chapters": [
+        "C2-B10",
+        "C3-B07",
+        "CC-B16",
+        "CC-B17"
+      ],
+      "heading_status": "pending_inspection",
+      "change": "Paket biçimini, keşfi, çağırmayı, davranışı ve ürün izinlerini ayrı sınar.",
+      "learning_objective": "Aynı SKILL.md dosyasının bulunması farklı ürünlerde aynı çalışma garantisi değildir; desteklenmeyen alan açık kalır.",
+      "required_labs": [
+        "U08",
+        "U33"
+      ],
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-SRC-ISSUE-01",
+      "source_issue": "SRC-ISSUE-01",
+      "source_chapters": [
+        "C1-B05"
+      ],
+      "heading": "5.9 Çakışan Talimatlar Nasıl Çözülür?",
+      "heading_status": "verified_in_P01",
+      "change": "Sistem, rol, bağlam ve kullanıcı için verilen sıra bir tasarım çerçevesidir; kullanılan ajanların ve APIlerin evrensel teknik öncelik kuralı olarak aktarılamaz. 5.10 kutusunda aynı sıra tekrarlanır.",
+      "required_action": "P02 U07 öğretiminde seçilen araç için belgelenmiş yükleme ve öncelik koşulunu ayrı doğrula; kaynak kitap düzeltmesini yazar incelemesine sun.",
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-SRC-ISSUE-02",
+      "source_issue": "SRC-ISSUE-02",
+      "source_chapters": [
+        "C2-B10"
+      ],
+      "heading": "Bu Bölümde Ne Öğreneceksiniz?",
+      "heading_status": "verified_in_P01",
+      "change": "Skill tasarımı için Cilt 3 Bölüm 13e yapılan yönlendirme mevcut bölüm kimlikleriyle uyuşmuyor: Skill Tasarımı C3-B07, değerlendirme C3-B13.",
+      "required_action": "P02 book-updates kaydında yazar incelemesine sun; hatalı bölüm numarasını Pusula kaynak yönlendirmesine aktarma.",
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    },
+    {
+      "id": "BOOK-SRC-ISSUE-03",
+      "source_issue": "SRC-ISSUE-03",
+      "source_chapters": [
+        "C1-B02"
+      ],
+      "heading": "2.13 Hangi İş İçin Hangi Model veya Araç Türü Uygundur?",
+      "heading_status": "verified_in_P01",
+      "change": "Numaralı karar çerçevesi hassas veriyi ilk veto sorusu yapıyor; hemen sonraki muhasebe örneği aynı hassasiyet sorusunu son adımda ele alıyor.",
+      "required_action": "Yazar incelemesine sun; Pusula teknoloji kararı örneğinde veri hassasiyetini aday karşılaştırmasından önce sınır olarak kaydet.",
+      "status": "proposed",
+      "author_review": "pending",
+      "source_modified": false
+    }
+  ]
+}

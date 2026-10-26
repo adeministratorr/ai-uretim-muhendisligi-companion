@@ -3977,7 +3977,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+          "reason": "U07 katkısı: Pusula ortak proje kuralı, kişisel tercih, makine istisnası ve kuruluş politikasını sahip ve etki alanına göre ayır. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Dosya yollarını çalışılan ortamla birlikte okuyun",
@@ -3985,7 +3985,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+          "reason": "U07 katkısı: Claude Code uyarlamasında işletim sistemi, başlangıç dizini ve kurulu sürüme göre ayar keşif yolunu kaydet. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Öncelik ile birleşme aynı şey değildir",
@@ -3993,7 +3993,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+          "reason": "U07 katkısı: Tek değer önceliği ile izin dizilerinin birleşmesini ayrı kabul beklentileriyle belgele. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Ayarların birleşmesi ile izin kararı ayrı aşamalardır",
@@ -4002,7 +4002,7 @@
             "U07",
             "U17"
           ],
-          "reason": "Pusula için U07, U17 çıktısında somut yöntem veya kabul koşulu sağlar."
+          "reason": "U07 katkısı: Skill veya yönerge varlığıyla araç yetkisini eşitlemeden deny/ask/allow kararını tasarla. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Kişisel tercih ile takım standardını ayırın",
@@ -4010,7 +4010,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+          "reason": "U07 katkısı: Yerel ayar dosyasının sürüm denetiminden dışlandığını ve gizli bilgi içermediğini ortak yönerge teslimine bağla. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Yönetilen ayar kullanıcı tercihi değildir",
@@ -4018,7 +4018,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+          "reason": "U07 katkısı: Kuruluş politikasını kullanıcı uyarlamasından değiştirmeye kalkışmadan yetki sahibini ve durma koşulunu yaz. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Doğru tanılama aracını doğru soruda kullanın",
@@ -4026,7 +4026,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar."
+          "reason": "U07 katkısı: Biçim sağlığı, kaynak yüklenmesi ve etkin izin kanıtını farklı tanılama kayıtlarında tut. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Laboratuvar: Proje standardı ile yerel istisnayı ayırmak",
@@ -4034,7 +4034,7 @@
           "lesson_ids": [
             "U07"
           ],
-          "reason": "Pusula için U07 çıktısında somut yöntem veya kabul koşulu sağlar. Müfredatta ayrıntı eksik; hedef açık iş olarak korunmalı."
+          "reason": "U07 katkısı: Ayar denemesini ayrı temiz depoda başlangıç ve geri dönüş kanıtıyla tasarla. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Ayar kullanmamanız gereken durumlar",
@@ -4043,7 +4043,7 @@
             "U07",
             "U08"
           ],
-          "reason": "Pusula için U07, U08 çıktısında somut yöntem veya kabul koşulu sağlar."
+          "reason": "U07 katkısı: Pusula yöntemini ayar JSONuna gömmek yerine yönerge, Skill, hook veya teknik sınır ihtiyacını seç. P02 görev ve kabul metninde açıklaştırıldı; çalışma sonucu bekleniyor."
         },
         {
           "heading": "Ayarı kendi projenizde kullanmadan önce",

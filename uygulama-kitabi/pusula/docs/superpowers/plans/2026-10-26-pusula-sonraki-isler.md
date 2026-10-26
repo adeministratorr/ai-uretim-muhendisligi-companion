@@ -10,7 +10,7 @@
 
 **Şartname ve dayanak:** [Başlangıç şartnamesi](../../../SPEC.md), [kitap planı](../../../KITAP_PLANI.md), [uygulama sırası](../../../UYGULAMALAR.md), [ajan uyumluluğu](../../../AJAN_UYUMLULUGU.md). Bu plan, başlangıç şartnamesinde ayrı bırakılan sonraki üretimi tanımlar; başlangıç teslimini geriye dönük olarak genişletmez.
 
-Tarih: 26 Ekim 2026. Başlangıç revizyonu: `629718f48f20a964f45bd4ad7392c90057e1240a`. İşlerin durumu: `planned`.
+Tarih: 26 Ekim 2026. Başlangıç revizyonu: `629718f48f20a964f45bd4ad7392c90057e1240a`. Güncel durum: P01 kaynak denetimi tamamlandı; P02 editoryal düzenlemeleri bağımsız incelemeden geçti. P03–P12 bekliyor.
 
 ## Ortak kurallar ve mevcut durum
 
@@ -51,9 +51,9 @@ P01 tüm üretim boyunca güncellenir. P06'da kurulan bölüm yazım düzeni P07
 
 **Girdi ve çıktı ilişkisi:** Mevcut 100 bölüm kaydı ve iki araştırma metni okunur. Çıktı, her öğrenme hedefinin hangi uygulama, dosya ve kabul deneyiyle öğretileceğini gösterir.
 
-- [ ] Kanonik kitap dosyalarını belirle; mevcut eşlemedeki dosya özetiyle güncel kaynağı karşılaştır. Eski yayın veya panel kopyasını kendiliğinden kanonik sayma.
-- [ ] Önce U01–U08'e bağlanan bölümleri tam oku. Hedef başına `id`, `source_id`, `heading`, `objective`, `lesson_ids`, `output_paths`, `acceptance_case`, `status`, `gap_reason` alanlarını kaydet. Durumlar `mapped`, `gap` veya gerekçeli `out_of_scope` olsun.
-- [ ] Kalan bütün bölümleri sonraki uygulama gruplarına ata; o grup başlamadan aynı denetimi tamamla. Bir kavramın tabloda anılması, uygulanmış öğrenme hedefi sayılmasın.
+- [x] Kanonik kitap dosyalarını belirle; mevcut eşlemedeki dosya özetiyle güncel kaynağı karşılaştır. Eski yayın veya panel kopyasını kendiliğinden kanonik sayma.
+- [x] Önce U01–U08'e bağlanan bölümleri tam oku. Hedef başına `id`, `source_id`, `heading`, `objective`, `lesson_ids`, `output_paths`, `acceptance_case`, `status`, `gap_reason` alanlarını kaydet. Durumlar `mapped`, `gap` veya gerekçeli `out_of_scope` olsun.
+- [x] Kalan 69 bölüm sonraki uygulama gruplarına atandı. Bu madde tam okuma tamamlandı anlamına gelmez; her grup başlamadan aynı denetim yapılacak.
 
 **Kabul:** Pilotun öğrenme hedeflerinde belirsiz uygulama veya kabul eşlemesi kalmaz. Kalan bölümlerin durumu açıkça görünür. Gerekçeli kapsam dışı kararlar yazar incelemesine sunulur; kapsam daralması sessizce kabul edilmiş sayılmaz. `full_text_audit_complete` ancak 100 bölümün tamamı incelenince değişir.
 
@@ -61,9 +61,9 @@ P01 tüm üretim boyunca güncellenir. P06'da kurulan bölüm yazım düzeni P07
 
 **Dosyalar:** Pakette `editorial/approach-decisions.md` ve `editorial/book-updates.json` oluştur; `curriculum.json`, ilgili `prompts/NN.md`, `UYGULAMALAR.md`, `DOSYA_MIMARISI.md`, `YAKLASIMLAR.md` ve `sources.json` birlikte güncelle. Ana kitap deposundaki `docs/uygulama-kitabi/yeni-yaklasimlar-degerlendirmesi-2026-10-26.md` bu işin girdisidir.
 
-- [ ] Aşağıdaki yerleşimi kaynak ve P01 hedefleriyle karşılaştır; her öneriye çekirdek uygulama, ileri deney veya kapsam dışı ek kararı ve gerekçesi yaz.
-- [ ] Önce U01–U08'i etkileyen izlenebilirlik, ajan deneyimi ve skill taşınabilirliğini işle. Diğer önerilerin tam kabul deneyini ilgili uygulama grubuna başlamadan tamamla.
-- [ ] Yeni çıktıların girdilerini ve üretim sırasını denetle; müfredat kaydı ile üç promptun aynı işi tarif ettiğini oku. Mevcut kitaplara eklenecek yerleri cilt/bölüm/alt başlık ve öğrenme hedefiyle kaydet.
+- [x] Aşağıdaki yerleşimi kaynak ve P01 hedefleriyle karşılaştır; her öneriye çekirdek uygulama, ileri deney veya kapsam dışı ek kararı ve gerekçesi yaz.
+- [x] Önce U01–U08'i etkileyen izlenebilirlik, ajan deneyimi ve skill taşınabilirliğini işle. Diğer önerilerin ayrıntılı deney tasarımı ilgili uygulama grubu başlamadan tamamlanacak; gerçek deneyler henüz yapılmadı.
+- [x] Yeni çıktıların girdilerini ve üretim sırasını denetle; müfredat kaydı ile üç promptun aynı işi tarif ettiğini oku. Mevcut kitaplara eklenecek yerleri cilt/bölüm ve öğrenme hedefiyle kaydet; doğrulanmamış alt başlığı pending_inspection bırak.
 
 | Yaklaşım | Uygulamalar | Somut deney veya çıktı |
 |---|---|---|
@@ -193,3 +193,9 @@ Sesli ajanlar, ajanlı ticaret, robotik ve sistemin kendi iyileştirme yöntemin
 4. Bu hazırlık teslimini ayrı commit ile incelemeye aç; ardından P04'te U01'i çalıştır.
 
 İlk gerçek koşuların süre, düzeltme sayısı ve giderleri oluşmadan bütün kitaba takvim veya maliyet sözü verilmez. Pilot raporu sonraki grupların iş tahminini günceller.
+
+## Deneme araçları ve gider kararı
+
+Kitap örnekleri API veya mevcut abonelik seçeneklerini gösterebilir. Bu projenin gerçek denemelerinde yalnız mevcut abonelikler kullanılacak; ayrıca ücretlenen API çağrısı yapılmayacak. Abonelikte gözlenmeyen gider `null` ve gerekçeyle kaydedilecek; teorik API eşdeğeri gerçek fatura sayılmayacak.
+
+Antigravity öncelikli araçtır. OpenCode, kullanıcının bildirdiği IP sınırı nedeniyle beklemededir; yeniden deneme yapılmaz. Antigravity ile bağımsız kaynak incelemesi tamamlandı, fakat etkileşimsiz düzenleme denemesi komut onayı sınırında dosya değiştirmeden durdu. Bu iki editoryal çalışma U01–U36 pilot koşularına dahil edilmez. 26 Ekim 2026 tarihli son Antigravity çağrısı da kota sınırı (429) nedeniyle başlamadı; araç yaklaşık 4,5 saatlik yenilenme süresi bildirdi. Bu nedenle geliştirme ve gerçek model deneyleri sonraya alındı. Kitap ve prompt hazırlığı tamamlanan editoryal kapsamıyla korunur; başarısız çağrı çalışma sonucu sayılmaz. Codex/Claude yedek seçeneklerdir; ücretli API'ye sessiz geçiş yapılmaz.
